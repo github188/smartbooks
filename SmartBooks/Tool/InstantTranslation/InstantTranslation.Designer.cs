@@ -28,9 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // InstantTranslation
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(292, 266);
+            this.Name = "InstantTranslation";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.InstantTranslation_Load);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
