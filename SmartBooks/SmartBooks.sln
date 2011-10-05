@@ -3,6 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartBooks.Translate", "SmartBooks.Translate\SmartBooks.Translate.csproj", "{CFEB87E6-9A21-4D76-A193-66AF5561EA8A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tool", "Tool", "{17D3B3AF-623A-48D1-AE43-22AFE46F4122}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Library", "Library", "{F999D15F-8C09-4002-AAA1-114E7471AE43}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstantTranslation", "Tool\InstantTranslation\InstantTranslation.csproj", "{4512AD7B-CED4-482E-829D-43EE23FA7507}"
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -10,15 +16,39 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x86 = Debug|x86
 		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{CFEB87E6-9A21-4D76-A193-66AF5561EA8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CFEB87E6-9A21-4D76-A193-66AF5561EA8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFEB87E6-9A21-4D76-A193-66AF5561EA8A}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{CFEB87E6-9A21-4D76-A193-66AF5561EA8A}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{CFEB87E6-9A21-4D76-A193-66AF5561EA8A}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{CFEB87E6-9A21-4D76-A193-66AF5561EA8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CFEB87E6-9A21-4D76-A193-66AF5561EA8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFEB87E6-9A21-4D76-A193-66AF5561EA8A}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{CFEB87E6-9A21-4D76-A193-66AF5561EA8A}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{CFEB87E6-9A21-4D76-A193-66AF5561EA8A}.Release|x86.ActiveCfg = Release|Any CPU
+		{4512AD7B-CED4-482E-829D-43EE23FA7507}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{4512AD7B-CED4-482E-829D-43EE23FA7507}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{4512AD7B-CED4-482E-829D-43EE23FA7507}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{4512AD7B-CED4-482E-829D-43EE23FA7507}.Debug|x86.ActiveCfg = Debug|x86
+		{4512AD7B-CED4-482E-829D-43EE23FA7507}.Debug|x86.Build.0 = Debug|x86
+		{4512AD7B-CED4-482E-829D-43EE23FA7507}.Release|Any CPU.ActiveCfg = Release|x86
+		{4512AD7B-CED4-482E-829D-43EE23FA7507}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{4512AD7B-CED4-482E-829D-43EE23FA7507}.Release|Mixed Platforms.Build.0 = Release|x86
+		{4512AD7B-CED4-482E-829D-43EE23FA7507}.Release|x86.ActiveCfg = Release|x86
+		{4512AD7B-CED4-482E-829D-43EE23FA7507}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4512AD7B-CED4-482E-829D-43EE23FA7507} = {17D3B3AF-623A-48D1-AE43-22AFE46F4122}
+		{CFEB87E6-9A21-4D76-A193-66AF5561EA8A} = {F999D15F-8C09-4002-AAA1-114E7471AE43}
 	EndGlobalSection
 EndGlobal
