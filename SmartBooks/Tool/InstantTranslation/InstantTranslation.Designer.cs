@@ -41,10 +41,10 @@
             // 
             // rtxText
             // 
-            this.rtxText.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.rtxText.BackColor = System.Drawing.Color.WhiteSmoke;
             this.rtxText.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtxText.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rtxText.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.rtxText.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.rtxText.ForeColor = System.Drawing.Color.Black;
             this.rtxText.Location = new System.Drawing.Point(0, 0);
             this.rtxText.Name = "rtxText";
@@ -100,7 +100,6 @@
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(451, 121);
             this.Name = "InstantTranslation";
-            this.Opacity = 0.9D;
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
