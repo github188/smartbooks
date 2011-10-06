@@ -44,7 +44,7 @@
             this.rtxText.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.rtxText.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtxText.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rtxText.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.rtxText.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.rtxText.ForeColor = System.Drawing.Color.Black;
             this.rtxText.Location = new System.Drawing.Point(0, 0);
             this.rtxText.Name = "rtxText";
@@ -91,14 +91,16 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(445, 89);
+            this.ControlBox = false;
             this.Controls.Add(this.rtxText);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(451, 121);
+            this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(451, 121);
             this.Name = "InstantTranslation";
-            this.Opacity = 0.8D;
+            this.Opacity = 0.9D;
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
