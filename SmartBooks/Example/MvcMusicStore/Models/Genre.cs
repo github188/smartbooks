@@ -10,9 +10,12 @@ namespace MvcMusicStore.Models
     /// </summary>
     public class Genre
     {
+        public int GenreId { get; set; }
         /// <summary>
         /// 唱片名称
         /// </summary>
         public string Name { get; set; }
+        public string Description { get; set; }
+        public List<Album> Albums { get; set; }
     }
 }
