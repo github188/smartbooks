@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D3D1283C-280F-4070-B842-DC7D8683E476}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SmartCampus.Log</RootNamespace>
+    <AssemblyName>SmartCampus.Log</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Appender\EventLogAppender.cs" />
+    <Compile Include="Appender\MemoryQueueAppender.cs" />
+    <Compile Include="Appender\OracleAppender.cs" />
+    <Compile Include="Appender\RollingFileAppender.cs" />
+    <Compile Include="Appender\SqlAppender.cs" />
+    <Compile Include="Collection\LoggerCollection.cs" />
+    <Compile Include="Collection\LoggerCollectionEnumerator.cs" />
+    <Compile Include="EventData\ApplicationEventData.cs" />
+    <Compile Include="EventData\ExceptionLogEventData.cs" />
+    <Compile Include="EventData\FeedbackEventData.cs" />
+    <Compile Include="EventData\LogEventData.cs" />
+    <Compile Include="EventData\LoginLogEventData.cs" />
+    <Compile Include="EventData\OperateLogEventData.cs" />
+    <Compile Include="EventData\RunningLogEventData.cs" />
+    <Compile Include="Exception\NotImplementAppenderException.cs" />
+    <Compile Include="IAppender.cs" />
+    <Compile Include="ILogger.cs" />
+    <Compile Include="LogCategory.cs" />
+    <Compile Include="LoggerFactory.cs" />
+    <Compile Include="Logger\ConfigManager.cs" />
+    <Compile Include="Logger\EventLogLogger.cs" />
+    <Compile Include="Logger\MemoryQueueLogger.cs" />
+    <Compile Include="Logger\OperationLogger.cs" />
+    <Compile Include="Logger\OperationLoggerSql.cs" />
+    <Compile Include="Logger\OracleLogger.cs" />
+    <Compile Include="Logger\RollingFileLogger.cs" />
+    <Compile Include="Logger\SqlLogger.cs" />
+    <Compile Include="LoginTypeEnum.cs" />
+    <Compile Include="LogLevel.cs" />
+    <Compile Include="LogUtility.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Log.config" />
+    <None Include="SmartCampus.Log.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SmartCampusUtility\SmartCampusUtility.csproj">
+      <Project>{48D2F710-A212-4B3A-A5F1-F44697F47E8C}</Project>
+      <Name>SmartCampusUtility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
