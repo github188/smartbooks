@@ -36,13 +36,11 @@ namespace SmartCampus.Utility
             catch
             {
                 throw new Exception("日期格式错误。");
-                return false;
             }
 
             if (end.AddMonths(-2) > begin)
             {
                 throw new Exception("结束日期不能超过开始日期2个月。");
-                return false;
             }
             return true;
         }
