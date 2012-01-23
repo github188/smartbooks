@@ -4,7 +4,4 @@ using System.Text;
 
 namespace SmartCampus.DTO
 {
-    public class Class1
-    {
-    }
 }

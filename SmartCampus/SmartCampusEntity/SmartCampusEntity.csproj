@@ -46,7 +46,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="BASE_ARTICLE.cs" />
+    <Compile Include="BASE_CRET.cs" />
+    <Compile Include="BASE_CRET_CROUP.cs" />
+    <Compile Include="BASE_CRET_LEVAL.cs" />
+    <Compile Include="BASE_FILE.cs" />
+    <Compile Include="BASE_LINK.cs" />
+    <Compile Include="BASE_MENU.cs" />
+    <Compile Include="BASE_PHOTO.cs" />
+    <Compile Include="BASE_PHOTO_GROUP.cs" />
+    <Compile Include="BASE_STUDENT.cs" />
+    <Compile Include="BASE_STUDENT_CRET.cs" />
+    <Compile Include="BASE_USER.cs" />
+    <Compile Include="BASE_USER_ROLE.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

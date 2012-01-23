@@ -46,8 +46,37 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="BASE_ARTICLE.cs" />
+    <Compile Include="BASE_CRET.cs" />
+    <Compile Include="BASE_CRET_CROUP.cs" />
+    <Compile Include="BASE_CRET_LEVAL.cs" />
+    <Compile Include="BASE_FILE.cs" />
+    <Compile Include="BASE_LINK.cs" />
+    <Compile Include="BASE_MENU.cs" />
+    <Compile Include="BASE_PHOTO.cs" />
+    <Compile Include="BASE_PHOTO_GROUP.cs" />
+    <Compile Include="BASE_STUDENT.cs" />
+    <Compile Include="BASE_STUDENT_CRET.cs" />
+    <Compile Include="BASE_USER.cs" />
+    <Compile Include="BASE_USER_ROLE.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SmartCampusDBUtility\SmartCampusDBUtility.csproj">
+      <Project>{9239C0E1-1E95-46D3-838A-95F75CE73732}</Project>
+      <Name>SmartCampusDBUtility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SmartCampusEntity\SmartCampusEntity.csproj">
+      <Project>{CBA028BD-9E0E-4034-89FC-6EDCAE732643}</Project>
+      <Name>SmartCampusEntity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SmartCampusIDAL\SmartCampusIDAL.csproj">
+      <Project>{0D1D94E5-A7FA-4694-B3EB-1F464B89E067}</Project>
+      <Name>SmartCampusIDAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

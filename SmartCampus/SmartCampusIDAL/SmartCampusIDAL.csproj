@@ -46,8 +46,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IBASE_ARTICLE.cs" />
+    <Compile Include="IBASE_CRET.cs" />
+    <Compile Include="IBASE_CRET_CROUP.cs" />
+    <Compile Include="IBASE_CRET_LEVAL.cs" />
+    <Compile Include="IBASE_FILE.cs" />
+    <Compile Include="IBASE_LINK.cs" />
+    <Compile Include="IBASE_MENU.cs" />
+    <Compile Include="IBASE_PHOTO.cs" />
+    <Compile Include="IBASE_PHOTO_GROUP.cs" />
+    <Compile Include="IBASE_STUDENT.cs" />
+    <Compile Include="IBASE_STUDENT_CRET.cs" />
+    <Compile Include="IBASE_USER.cs" />
+    <Compile Include="IBASE_USER_ROLE.cs" />
     <Compile Include="IDALBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SmartCampusEntity\SmartCampusEntity.csproj">
+      <Project>{CBA028BD-9E0E-4034-89FC-6EDCAE732643}</Project>
+      <Name>SmartCampusEntity</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
