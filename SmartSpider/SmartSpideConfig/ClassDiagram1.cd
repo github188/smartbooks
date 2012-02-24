@@ -89,11 +89,31 @@
       <FileName>NavigationRule.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="SmartSpide.Config.StartingUrlList">
+  <Class Name="SmartSpide.Config.StartingUrlList" Collapsed="true">
     <Position X="12" Y="1.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>StartingUrlList.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartSpide.Config.Replacement" Collapsed="true">
+    <Position X="15.5" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAUAAAAAAAABAAAAAAACAAAAA=</HashCode>
+      <FileName>Replacement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartSpide.Config.RegularExpression">
+    <Position X="15.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAQAAAAAAAAAAA=</HashCode>
+      <FileName>RegularExpression.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Enum Name="SmartSpide.Config.ShutDownMode" Collapsed="true">
@@ -136,6 +156,13 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
       <FileName>Layer.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="SmartSpide.Config.ScheduleMode" Collapsed="true">
+    <Position X="5.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>ScheduleMode.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Font Name="宋体" Size="9" />

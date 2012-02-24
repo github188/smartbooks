@@ -202,6 +202,9 @@ namespace SmartSpide.Config {
             }
         }
 
+        /// <summary>
+        /// 启用定时采集
+        /// </summary>
         public bool ScheduleEnabled {
             get {
                 throw new System.NotImplementedException();
@@ -210,7 +213,10 @@ namespace SmartSpide.Config {
             }
         }
 
-        public int ScheduleMode {
+        /// <summary>
+        /// 调度模式
+        /// </summary>
+        public ScheduleMode ScheduleMode {
             get {
                 throw new System.NotImplementedException();
             }
@@ -218,6 +224,9 @@ namespace SmartSpide.Config {
             }
         }
 
+        /// <summary>
+        /// 定时天
+        /// </summary>
         public int ScheduleDays {
             get {
                 throw new System.NotImplementedException();
@@ -226,6 +235,9 @@ namespace SmartSpide.Config {
             }
         }
 
+        /// <summary>
+        /// 每间隔X小时
+        /// </summary>
         public int ScheduleHours {
             get {
                 throw new System.NotImplementedException();
@@ -234,6 +246,9 @@ namespace SmartSpide.Config {
             }
         }
 
+        /// <summary>
+        /// 分钟调度
+        /// </summary>
         public int ScheduleMinutes {
             get {
                 throw new System.NotImplementedException();
@@ -242,6 +257,9 @@ namespace SmartSpide.Config {
             }
         }
 
+        /// <summary>
+        /// 限制时间范围
+        /// </summary>
         public bool ScheduleLimitTimeRange {
             get {
                 throw new System.NotImplementedException();
@@ -250,6 +268,9 @@ namespace SmartSpide.Config {
             }
         }
 
+        /// <summary>
+        /// 每当X小时调度
+        /// </summary>
         public int ScheduleFromHour {
             get {
                 throw new System.NotImplementedException();
@@ -258,6 +279,9 @@ namespace SmartSpide.Config {
             }
         }
 
+        /// <summary>
+        /// 预定小时
+        /// </summary>
         public int ScheduleToHour {
             get {
                 throw new System.NotImplementedException();
@@ -266,6 +290,9 @@ namespace SmartSpide.Config {
             }
         }
 
+        /// <summary>
+        /// 每当星期几开始
+        /// </summary>
         public int ScheduleFromDayOfWeek {
             get {
                 throw new System.NotImplementedException();
@@ -274,6 +301,9 @@ namespace SmartSpide.Config {
             }
         }
 
+        /// <summary>
+        /// 预定星期几
+        /// </summary>
         public int ScheduleToDayOfWeek {
             get {
                 throw new System.NotImplementedException();
@@ -282,6 +312,9 @@ namespace SmartSpide.Config {
             }
         }
 
+        /// <summary>
+        /// 每当X天
+        /// </summary>
         public int ScheduleFromDay {
             get {
                 throw new System.NotImplementedException();
@@ -290,6 +323,9 @@ namespace SmartSpide.Config {
             }
         }
 
+        /// <summary>
+        /// 预定天
+        /// </summary>
         public int ScheduleToDay {
             get {
                 throw new System.NotImplementedException();
@@ -298,6 +334,9 @@ namespace SmartSpide.Config {
             }
         }
 
+        /// <summary>
+        /// 任务完成后取消定时采集
+        /// </summary>
         public bool DisableScheduleAfterFinish {
             get {
                 throw new System.NotImplementedException();
@@ -339,6 +378,9 @@ namespace SmartSpide.Config {
             }
         }
 
+        /// <summary>
+        /// 发布目标-存储过程
+        /// </summary>
         public string PublicationTarget {
             get {
                 throw new System.NotImplementedException();
@@ -347,6 +389,9 @@ namespace SmartSpide.Config {
             }
         }
 
+        /// <summary>
+        /// 使用过程
+        /// </summary>
         public bool UseProcedure {
             get {
                 throw new System.NotImplementedException();
@@ -363,6 +408,9 @@ namespace SmartSpide.Config {
             }
         }
 
+        /// <summary>
+        /// 发布结果后删除数据
+        /// </summary>
         public bool DeleteResultAfterPublication {
             get {
                 throw new System.NotImplementedException();
@@ -371,6 +419,9 @@ namespace SmartSpide.Config {
             }
         }
 
+        /// <summary>
+        /// 忽略不存在的数据列
+        /// </summary>
         public bool IgnoreDataColumnNotFound {
             get {
                 throw new System.NotImplementedException();
@@ -379,6 +430,9 @@ namespace SmartSpide.Config {
             }
         }
 
+        /// <summary>
+        /// 保存重复行
+        /// </summary>
         public bool SaveRepeatedRows {
             get {
                 throw new System.NotImplementedException();
@@ -398,6 +452,9 @@ namespace SmartSpide.Config {
             }
         }
 
+        /// <summary>
+        /// 使用插件处理采集结果数据行
+        /// </summary>
         public bool UsePluginOfProcessResultRow {
             get {
                 throw new System.NotImplementedException();
@@ -461,6 +518,9 @@ namespace SmartSpide.Config {
             }
         }
 
+        /// <summary>
+        /// 使用插件下载内容文件
+        /// </summary>
         public bool UsePluginOfDownloadContentFile {
             get {
                 throw new System.NotImplementedException();
@@ -469,6 +529,9 @@ namespace SmartSpide.Config {
             }
         }
 
+        /// <summary>
+        /// 使用插件下载独立文件
+        /// </summary>
         public bool UsePluginOfDownloadSingleFile {
             get {
                 throw new System.NotImplementedException();
@@ -477,6 +540,9 @@ namespace SmartSpide.Config {
             }
         }
 
+        /// <summary>
+        /// 使用插件处理下载后的内容文件
+        /// </summary>
         public bool UsePluginOfProcessContentFile {
             get {
                 throw new System.NotImplementedException();
@@ -485,6 +551,9 @@ namespace SmartSpide.Config {
             }
         }
 
+        /// <summary>
+        /// 使用插件处理单个文件
+        /// </summary>
         public bool UsePluginOfProcessSingleFile {
             get {
                 throw new System.NotImplementedException();
@@ -493,6 +562,9 @@ namespace SmartSpide.Config {
             }
         }
 
+        /// <summary>
+        /// 使用插件处理采集结果数据行
+        /// </summary>
         public bool UsePluginOfFilter {
             get {
                 throw new System.NotImplementedException();
@@ -501,6 +573,9 @@ namespace SmartSpide.Config {
             }
         }
 
+        /// <summary>
+        /// 从插件载入代理服务器
+        /// </summary>
         public bool UsePluginOfGetWebProxy {
             get {
                 throw new System.NotImplementedException();
@@ -520,6 +595,9 @@ namespace SmartSpide.Config {
             }
         }
 
+        /// <summary>
+        /// URL列表管理器
+        /// </summary>
         public UrlListManager UrlListManager {
             get {
                 throw new System.NotImplementedException();
@@ -528,6 +606,9 @@ namespace SmartSpide.Config {
             }
         }
 
+        /// <summary>
+        /// 插件数据
+        /// </summary>
         public string PluginData {
             get {
                 throw new System.NotImplementedException();

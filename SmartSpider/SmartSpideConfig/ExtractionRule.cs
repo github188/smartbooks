@@ -19,7 +19,7 @@ namespace SmartSpide.Config {
         }
 
         /// <summary>
-        /// 数据库字段名称
+        /// 数据库字段
         /// </summary>
         public string DataColumn {
             get {
@@ -63,7 +63,7 @@ namespace SmartSpide.Config {
         }
 
         /// <summary>
-        /// 结束标志
+        /// 信息后标志
         /// </summary>
         public string FollowingFlag {
             get {
@@ -279,6 +279,9 @@ namespace SmartSpide.Config {
             }
         }
 
+        /// <summary>
+        /// 文件存在则跳过
+        /// </summary>
         public bool SkipIfFileExisted {
             get {
                 throw new System.NotImplementedException();
@@ -287,6 +290,9 @@ namespace SmartSpide.Config {
             }
         }
 
+        /// <summary>
+        /// 作为结果的URL
+        /// </summary>
         public bool UrlAsResult {
             get {
                 throw new System.NotImplementedException();
@@ -295,6 +301,9 @@ namespace SmartSpide.Config {
             }
         }
 
+        /// <summary>
+        /// 发表参数作为结果
+        /// </summary>
         public bool PostParametersAsResult {
             get {
                 throw new System.NotImplementedException();
@@ -303,6 +312,9 @@ namespace SmartSpide.Config {
             }
         }
 
+        /// <summary>
+        /// 作为结果的时间
+        /// </summary>
         public bool TimeAsResult {
             get {
                 throw new System.NotImplementedException();
@@ -319,6 +331,9 @@ namespace SmartSpide.Config {
             }
         }
 
+        /// <summary>
+        /// 作为结果的响应头
+        /// </summary>
         public bool ResponseHeaderAsResult {
             get {
                 throw new System.NotImplementedException();
@@ -327,6 +342,9 @@ namespace SmartSpide.Config {
             }
         }
 
+        /// <summary>
+        /// 响应头名
+        /// </summary>
         public string ResponseHeaderName {
             get {
                 throw new System.NotImplementedException();
@@ -351,6 +369,9 @@ namespace SmartSpide.Config {
             }
         }
 
+        /// <summary>
+        /// 合并页
+        /// </summary>
         public bool MergePages {
             get {
                 throw new System.NotImplementedException();
@@ -359,6 +380,9 @@ namespace SmartSpide.Config {
             }
         }
 
+        /// <summary>
+        /// 合并后的页面分隔符
+        /// </summary>
         public string MergenceSeparator {
             get {
                 throw new System.NotImplementedException();
@@ -367,6 +391,9 @@ namespace SmartSpide.Config {
             }
         }
 
+        /// <summary>
+        /// 保留所有HTML标记
+        /// </summary>
         public bool ReserveAllHtmlMarks {
             get {
                 throw new System.NotImplementedException();
@@ -375,6 +402,9 @@ namespace SmartSpide.Config {
             }
         }
 
+        /// <summary>
+        /// 保留的HTML标记
+        /// </summary>
         public HtmlMark ReservedHtmlMarks {
             get {
                 throw new System.NotImplementedException();
@@ -383,7 +413,7 @@ namespace SmartSpide.Config {
             }
         }
 
-        public string Replacements {
+        public Replacement Replacements {
             get {
                 throw new System.NotImplementedException();
             }
