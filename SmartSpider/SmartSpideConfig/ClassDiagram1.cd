@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SmartSpide.Config.Configuration" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="2.75" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>inAiBwTniLHwACWRkDAUFwGiCWxPE2DyFBR0i2CGBAQ=</HashCode>
+      <FileName>Configuration.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartSpide.Config.RequestHeader" Collapsed="true">
+    <Position X="3.75" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAAAAIAQAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>RequestHeader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartSpide.Config.Task" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EBJhIBcEQAHgQCkIQAACsNQQAAAAAADAECQQbBRgZAA=</HashCode>
+      <FileName>Task.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartSpide.Config.ExtractionRule" Collapsed="true">
+    <Position X="3.75" Y="1.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>IEJBAMEAAAAABAQIGIgBNAQcAAMAA0AGgAAAAIABROE=</HashCode>
+      <FileName>ExtractionRule.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartSpide.Config.HtmlMark" Collapsed="true">
+    <Position X="10.25" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>HtmlMark.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartSpide.Config.Filter" Collapsed="true">
+    <Position X="12" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAgAAAAIAA=</HashCode>
+      <FileName>Filter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartSpide.Config.UrlListManager" Collapsed="true">
+    <Position X="10.25" Y="1.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>BAAACAAAAAAgAABAAAQABACIAAAAAAAgAAAAAIABIAA=</HashCode>
+      <FileName>UrlListManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartSpide.Config.PagedUrlPattern" Collapsed="true">
+    <Position X="13.75" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AYAAAAAAAAAAAAAAAAAACAAAAAAgAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>PagedUrlPattern.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartSpide.Config.NavigationRule" Collapsed="true">
+    <Position X="13.75" Y="1.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>IAAAwAMAAAQABAAAAQgEBAZAAAAAUAAAAagQAARAgCE=</HashCode>
+      <FileName>NavigationRule.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartSpide.Config.StartingUrlList">
+    <Position X="12" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>StartingUrlList.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="SmartSpide.Config.ShutDownMode" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ShutDownMode.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="SmartSpide.Config.NotifyWindowMode" Collapsed="true">
+    <Position X="7.75" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAABAAACAAAAAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>NotifyWindowMode.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="SmartSpide.Config.LogFileStyle" Collapsed="true">
+    <Position X="5.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAQAAAAACAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>LogFileStyle.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="SmartSpide.Config.State" Collapsed="true">
+    <Position X="7.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>State.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="SmartSpide.Config.DatabaseType" Collapsed="true">
+    <Position X="5.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAABAAACAAAAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>DatabaseType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="SmartSpide.Config.Layer" Collapsed="true">
+    <Position X="7.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Layer.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="宋体" Size="9" />
+</ClassDiagram>
