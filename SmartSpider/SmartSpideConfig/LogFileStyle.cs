@@ -19,7 +19,7 @@ namespace SmartSpide.Config {
         /// <summary>
         /// 多个文件
         /// </summary>
-        [XmlEnum("Single")]
+        [XmlEnum("Pairs")]
         Pairs = 1,
     }
 }

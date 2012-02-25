@@ -1,15 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿namespace SmartSpide.Config {
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+    using System.Runtime.Serialization;
+    using System.Xml.Serialization;
 
-namespace SmartSpide.Config {
     /// <summary>
-    /// 页面层次
+    /// 采集页面层次
     /// </summary>
+    [Serializable]
     public enum Layer {
         /// <summary>
         /// 最终页面
         /// </summary>
+        [XmlEnum("Terminator")]
         Terminator = 0,
     }
 }

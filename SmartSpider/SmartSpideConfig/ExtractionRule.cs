@@ -1,20 +1,74 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿namespace SmartSpide.Config {
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+    using System.Runtime.Serialization;
+    using System.Xml.Serialization;
 
-namespace SmartSpide.Config {
     /// <summary>
     /// 提取规则
     /// </summary>
+    [Serializable]
+    [XmlRoot("ExtractionRule")]
     public class ExtractionRule {
+
+        public ExtractionRule() { 
+        }
+
+        #region 私有变量定义
+        private string _AttachmentUrlIdentifier;
+        private string _ClassDirectoryField;
+        private bool _ConstantAsResult;
+        private string _ConstantValue;
+        private bool _CreateSubDirectories;
+        private string _CurrentSubDirectory;
+        private string _DataColumn;
+        private bool _DataUnique;
+        private bool _DetectRealUrl;
+        private bool _DownloadAttachments;
+        private string _DownloadDirectory;
+        private bool _DownloadFlashes;
+        private bool _DownloadImages;
+        private bool _Essential;
+        private string _FileNameExtension;
+        private int _FilesPerSubDirectory;
+        private Filter _Filters;
+        private string _FollowingFlag;
+        private bool _Global;
+        private bool _IsDownloadUrl;
+        private Layer _Layer;
+        private bool _LinkTextAsResult;
+        private string _MergenceSeparator;
+        private bool _MergePages;
+        private string _Name;
+        private bool _PostParametersAsResult;
+        private string _PreviousFlag;
+        private Replacement _Replacements;
+        private bool _ReserveAllHtmlMarks;
+        private HtmlMark _ReservedHtmlMarks;
+        private bool _ResponseHeaderAsResult;
+        private string _ResponseHeaderName;
+        private bool _SkipIfFileExisted;
+        private bool _Static;
+        private bool _TimeAsResult;
+        private bool _UrlAsResult;
+        private bool _UseClassDirectory;
+        private bool _UsePlugin;
+        private bool _UseRandomFileName;
+        private string _VirtualPath;
+        #endregion
+
+        #region 公共属性定义
+
         /// <summary>
         /// 规则名称
         /// </summary>
         public string Name {
             get {
-                throw new System.NotImplementedException();
+                return _Name;
             }
             set {
+                _Name = value;
             }
         }
 
@@ -23,9 +77,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public string DataColumn {
             get {
-                throw new System.NotImplementedException();
+                return _DataColumn;
             }
             set {
+                _DataColumn = value;
             }
         }
 
@@ -34,9 +89,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public bool DataUnique {
             get {
-                throw new System.NotImplementedException();
+                return _DataUnique;
             }
             set {
+                _DataUnique = value;
             }
         }
 
@@ -45,9 +101,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public Layer Layer {
             get {
-                throw new System.NotImplementedException();
+                return _Layer;
             }
             set {
+                _Layer = value;
             }
         }
 
@@ -56,9 +113,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public string PreviousFlag {
             get {
-                throw new System.NotImplementedException();
+                return _PreviousFlag;
             }
             set {
+                _PreviousFlag = value;
             }
         }
 
@@ -67,9 +125,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public string FollowingFlag {
             get {
-                throw new System.NotImplementedException();
+                return _FollowingFlag;
             }
             set {
+                _FollowingFlag = value;
             }
         }
 
@@ -78,9 +137,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public bool Global {
             get {
-                throw new System.NotImplementedException();
+                return _Global;
             }
             set {
+                _Global = value;
             }
         }
 
@@ -89,9 +149,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public bool Static {
             get {
-                throw new System.NotImplementedException();
+                return _Static;
             }
             set {
+                _Static = value;
             }
         }
 
@@ -100,9 +161,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public bool Essential {
             get {
-                throw new System.NotImplementedException();
+                return _Essential;
             }
             set {
+                _Essential = value;
             }
         }
 
@@ -111,9 +173,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public bool UsePlugin {
             get {
-                throw new System.NotImplementedException();
+                return _UsePlugin;
             }
             set {
+                _UsePlugin = value;
             }
         }
 
@@ -122,9 +185,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public bool IsDownloadUrl {
             get {
-                throw new System.NotImplementedException();
+                return _IsDownloadUrl;
             }
             set {
+                _IsDownloadUrl = value;
             }
         }
 
@@ -133,9 +197,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public bool DetectRealUrl {
             get {
-                throw new System.NotImplementedException();
+                return _DetectRealUrl;
             }
             set {
+                _DetectRealUrl = value;
             }
         }
 
@@ -144,9 +209,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public bool DownloadImages {
             get {
-                throw new System.NotImplementedException();
+                return _DownloadImages;
             }
             set {
+                _DownloadImages = value;
             }
         }
 
@@ -155,9 +221,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public bool DownloadFlashes {
             get {
-                throw new System.NotImplementedException();
+                return _DownloadFlashes;
             }
             set {
+                _DownloadFlashes = value;
             }
         }
 
@@ -166,9 +233,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public bool DownloadAttachments {
             get {
-                throw new System.NotImplementedException();
+                return _DownloadAttachments;
             }
             set {
+                _DownloadAttachments = value;
             }
         }
 
@@ -177,9 +245,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public string AttachmentUrlIdentifier {
             get {
-                throw new System.NotImplementedException();
+                return _AttachmentUrlIdentifier;
             }
             set {
+                _AttachmentUrlIdentifier = value;
             }
         }
 
@@ -188,9 +257,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public string DownloadDirectory {
             get {
-                throw new System.NotImplementedException();
+                return _DownloadDirectory;
             }
             set {
+                _DownloadDirectory = value;
             }
         }
 
@@ -199,9 +269,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public string VirtualPath {
             get {
-                throw new System.NotImplementedException();
+                return _VirtualPath;
             }
             set {
+                _VirtualPath = value;
             }
         }
 
@@ -210,9 +281,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public bool UseRandomFileName {
             get {
-                throw new System.NotImplementedException();
+                return _UseRandomFileName;
             }
             set {
+                _UseRandomFileName = value;
             }
         }
 
@@ -221,9 +293,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public string FileNameExtension {
             get {
-                throw new System.NotImplementedException();
+                return _FileNameExtension;
             }
             set {
+                _FileNameExtension = value;
             }
         }
 
@@ -232,9 +305,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public bool CreateSubDirectories {
             get {
-                throw new System.NotImplementedException();
+                return _CreateSubDirectories;
             }
             set {
+                _CreateSubDirectories = value;
             }
         }
 
@@ -243,9 +317,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public string CurrentSubDirectory {
             get {
-                throw new System.NotImplementedException();
+                return _CurrentSubDirectory;
             }
             set {
+                _CurrentSubDirectory = value;
             }
         }
 
@@ -254,9 +329,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public int FilesPerSubDirectory {
             get {
-                throw new System.NotImplementedException();
+                return _FilesPerSubDirectory;
             }
             set {
+                _FilesPerSubDirectory = value;
             }
         }
 
@@ -265,17 +341,19 @@ namespace SmartSpide.Config {
         /// </summary>
         public bool UseClassDirectory {
             get {
-                throw new System.NotImplementedException();
+                return _UseClassDirectory;
             }
             set {
+                _UseClassDirectory = value;
             }
         }
 
         public string ClassDirectoryField {
             get {
-                throw new System.NotImplementedException();
+                return _ClassDirectoryField;
             }
             set {
+                _ClassDirectoryField = value;
             }
         }
 
@@ -284,9 +362,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public bool SkipIfFileExisted {
             get {
-                throw new System.NotImplementedException();
+                return _SkipIfFileExisted;
             }
             set {
+                _SkipIfFileExisted = value;
             }
         }
 
@@ -295,9 +374,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public bool UrlAsResult {
             get {
-                throw new System.NotImplementedException();
+                return _UrlAsResult;
             }
             set {
+                _UrlAsResult = value;
             }
         }
 
@@ -306,9 +386,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public bool PostParametersAsResult {
             get {
-                throw new System.NotImplementedException();
+                return _PostParametersAsResult;
             }
             set {
+                _PostParametersAsResult = value;
             }
         }
 
@@ -317,17 +398,19 @@ namespace SmartSpide.Config {
         /// </summary>
         public bool TimeAsResult {
             get {
-                throw new System.NotImplementedException();
+                return _TimeAsResult;
             }
             set {
+                _TimeAsResult = value;
             }
         }
 
         public bool LinkTextAsResult {
             get {
-                throw new System.NotImplementedException();
+                return _LinkTextAsResult;
             }
             set {
+                _LinkTextAsResult = value;
             }
         }
 
@@ -336,9 +419,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public bool ResponseHeaderAsResult {
             get {
-                throw new System.NotImplementedException();
+                return _ResponseHeaderAsResult;
             }
             set {
+                _ResponseHeaderAsResult = value;
             }
         }
 
@@ -347,25 +431,28 @@ namespace SmartSpide.Config {
         /// </summary>
         public string ResponseHeaderName {
             get {
-                throw new System.NotImplementedException();
+                return _ResponseHeaderName;
             }
             set {
+                _ResponseHeaderName = value;
             }
         }
 
         public bool ConstantAsResult {
             get {
-                throw new System.NotImplementedException();
+                return _ConstantAsResult;
             }
             set {
+                _ConstantAsResult = value;
             }
         }
 
         public string ConstantValue {
             get {
-                throw new System.NotImplementedException();
+                return _ConstantValue;
             }
             set {
+                _ConstantValue = value;
             }
         }
 
@@ -374,9 +461,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public bool MergePages {
             get {
-                throw new System.NotImplementedException();
+                return _MergePages;
             }
             set {
+                _MergePages = value;
             }
         }
 
@@ -385,9 +473,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public string MergenceSeparator {
             get {
-                throw new System.NotImplementedException();
+                return _MergenceSeparator;
             }
             set {
+                _MergenceSeparator = value;
             }
         }
 
@@ -396,9 +485,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public bool ReserveAllHtmlMarks {
             get {
-                throw new System.NotImplementedException();
+                return _ReserveAllHtmlMarks;
             }
             set {
+                _ReserveAllHtmlMarks = value;
             }
         }
 
@@ -407,26 +497,31 @@ namespace SmartSpide.Config {
         /// </summary>
         public HtmlMark ReservedHtmlMarks {
             get {
-                throw new System.NotImplementedException();
+                return _ReservedHtmlMarks;
             }
             set {
+                _ReservedHtmlMarks = value;
             }
         }
 
         public Replacement Replacements {
             get {
-                throw new System.NotImplementedException();
+                return _Replacements;
             }
             set {
+                _Replacements = value;
             }
         }
 
         public Filter Filters {
             get {
-                throw new System.NotImplementedException();
+                return _Filters;
             }
             set {
+                _Filters = value;
             }
         }
+
+        #endregion
     }
 }

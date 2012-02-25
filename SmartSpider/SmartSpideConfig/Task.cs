@@ -1,17 +1,92 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿namespace SmartSpide.Config {
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+    using System.Runtime.Serialization;
+    using System.Xml.Serialization;
 
-namespace SmartSpide.Config {
+    /// <summary>
+    /// 采集任务XML配置文件类
+    /// 版   本:V1.0
+    /// 创建日志:20120225
+    /// </summary>
+    [Serializable]
+    [XmlRoot("Task")]
     public class Task {
+
+        public Task() {
+        }
+
+        #region 私有变量定义
+        private string _ConnectionString;
+        private string _Cookie;
+        private int _CurrentResultCount;
+        private DatabaseType _DatabaseType;
+        private bool _DeleteResultAfterPublication;
+        private string _Description;
+        private bool _DisableScheduleAfterFinish;
+        private DateTime _ElapsedTime;
+        private int _ErrorRowsCount;
+        private ExtractionRule[] _ExtractionRules;
+        private bool _IgnoreDataColumnNotFound;
+        private string _lastLogFileName;
+        private DateTime _lastStoppingTime;
+        private bool _LoginAtRegularIntervals;
+        private bool _LoginAutomatically;
+        private int _LoginInterval;
+        private string _LoginSuccessFlag;
+        private string _LoginTargetUrl;
+        private string _LoginUrl;
+        private string _LoginUrlReferer;
+        private string _Name;
+        private bool _OutputDetailedLog;
+        private string _PluginData;
+        private string _PluginPath;
+        private string _PublicationTarget;
+        private bool _PublishResultDircetly;
+        private int _RepeatedRowsCount;
+        private int _ResultCount;
+        private bool _SaveErrorRows;
+        private bool _SaveLogToFile;
+        private bool _SaveRepeatedRows;
+        private int _ScheduleDays;
+        private bool _ScheduleEnabled;
+        private int _ScheduleFromDay;
+        private int _ScheduleFromDayOfWeek;
+        private int _ScheduleFromHour;
+        private int _ScheduleHours;
+        private bool _ScheduleLimitTimeRange;
+        private int _ScheduleMinutes;
+        private ScheduleMode _ScheduleMode;
+        private int _ScheduleToDay;
+        private int _ScheduleToDayOfWeek;
+        private int _ScheduleToHour;
+        private DateTime _StartingTime;
+        private State _State;
+        private int _ThreadNumber;
+        private UrlListManager _UrlListManager;
+        private bool _UsePluginOfDownloadContentFile;
+        private bool _UsePluginOfDownloadSingleFile;
+        private bool _UsePluginOfFilter;
+        private bool _UsePluginOfGetWebProxy;
+        private bool _UsePluginOfLogin;
+        private bool _UsePluginOfProcessContentFile;
+        private bool _UsePluginOfProcessResultRow;
+        private bool _UsePluginOfProcessSingleFile;
+        private bool _UseProcedure;
+        #endregion
+
+        #region 公共属性定义
+
         /// <summary>
         /// 任务名称
         /// </summary>
         public string Name {
             get {
-                throw new System.NotImplementedException();
+                return _Name;
             }
             set {
+                _Name = value;
             }
         }
 
@@ -20,9 +95,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public string Description {
             get {
-                throw new System.NotImplementedException();
+                return _Description;
             }
             set {
+                _Description = value;
             }
         }
 
@@ -31,9 +107,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public State State {
             get {
-                throw new System.NotImplementedException();
+                return _State;
             }
             set {
+                _State = value;
             }
         }
 
@@ -42,9 +119,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public DateTime ElapsedTime {
             get {
-                throw new System.NotImplementedException();
+                return _ElapsedTime;
             }
             set {
+                _ElapsedTime = value;
             }
         }
 
@@ -53,9 +131,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public DateTime StartingTime {
             get {
-                throw new System.NotImplementedException();
+                return _StartingTime;
             }
             set {
+                _StartingTime = value;
             }
         }
 
@@ -64,9 +143,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public int ThreadNumber {
             get {
-                throw new System.NotImplementedException();
+                return _ThreadNumber;
             }
             set {
+                _ThreadNumber = value;
             }
         }
 
@@ -75,9 +155,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public bool OutputDetailedLog {
             get {
-                throw new System.NotImplementedException();
+                return _OutputDetailedLog;
             }
             set {
+                _OutputDetailedLog = value;
             }
         }
 
@@ -86,9 +167,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public bool SaveLogToFile {
             get {
-                throw new System.NotImplementedException();
+                return _SaveLogToFile;
             }
             set {
+                _SaveLogToFile = value;
             }
         }
 
@@ -97,9 +179,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public string lastLogFileName {
             get {
-                throw new System.NotImplementedException();
+                return _lastLogFileName;
             }
             set {
+                _lastLogFileName = value;
             }
         }
 
@@ -108,9 +191,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public string Cookie {
             get {
-                throw new System.NotImplementedException();
+                return _Cookie;            
             }
             set {
+                _Cookie = value;
             }
         }
 
@@ -119,9 +203,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public string LoginUrl {
             get {
-                throw new System.NotImplementedException();
+                return _LoginUrl;
             }
             set {
+                _LoginUrl = value;
             }
         }
 
@@ -130,9 +215,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public bool LoginAutomatically {
             get {
-                throw new System.NotImplementedException();
+                return _LoginAutomatically;
             }
             set {
+                _LoginAutomatically = value;
             }
         }
 
@@ -141,9 +227,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public string LoginTargetUrl {
             get {
-                throw new System.NotImplementedException();
+                return _LoginTargetUrl;
             }
             set {
+                _LoginTargetUrl = value;
             }
         }
 
@@ -152,9 +239,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public string LoginSuccessFlag {
             get {
-                throw new System.NotImplementedException();
+                return _LoginSuccessFlag;
             }
             set {
+                _LoginSuccessFlag = value;
             }
         }
 
@@ -163,9 +251,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public bool LoginAtRegularIntervals {
             get {
-                throw new System.NotImplementedException();
+                return _LoginAtRegularIntervals;
             }
             set {
+                _LoginAtRegularIntervals = value;
             }
         }
 
@@ -174,9 +263,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public int LoginInterval {
             get {
-                throw new System.NotImplementedException();
+                return _LoginInterval;
             }
             set {
+                _LoginInterval = value;
             }
         }
 
@@ -185,9 +275,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public bool UsePluginOfLogin {
             get {
-                throw new System.NotImplementedException();
+                return _UsePluginOfLogin;
             }
             set {
+                _UsePluginOfLogin = value;
             }
         }
 
@@ -196,9 +287,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public string LoginUrlReferer {
             get {
-                throw new System.NotImplementedException();
+                return _LoginUrlReferer;
             }
             set {
+                _LoginUrlReferer = value;
             }
         }
 
@@ -207,9 +299,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public bool ScheduleEnabled {
             get {
-                throw new System.NotImplementedException();
+                return _ScheduleEnabled;
             }
             set {
+                _ScheduleEnabled = value;
             }
         }
 
@@ -218,9 +311,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public ScheduleMode ScheduleMode {
             get {
-                throw new System.NotImplementedException();
+                return _ScheduleMode;
             }
             set {
+                _ScheduleMode = value;
             }
         }
 
@@ -229,9 +323,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public int ScheduleDays {
             get {
-                throw new System.NotImplementedException();
+                return _ScheduleDays;
             }
             set {
+                _ScheduleDays = value;
             }
         }
 
@@ -240,9 +335,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public int ScheduleHours {
             get {
-                throw new System.NotImplementedException();
+                return _ScheduleHours;
             }
             set {
+                _ScheduleHours = value;
             }
         }
 
@@ -251,9 +347,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public int ScheduleMinutes {
             get {
-                throw new System.NotImplementedException();
+                return _ScheduleMinutes;
             }
             set {
+                _ScheduleMinutes = value;
             }
         }
 
@@ -262,9 +359,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public bool ScheduleLimitTimeRange {
             get {
-                throw new System.NotImplementedException();
+                return _ScheduleLimitTimeRange;
             }
             set {
+                _ScheduleLimitTimeRange = value;
             }
         }
 
@@ -273,9 +371,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public int ScheduleFromHour {
             get {
-                throw new System.NotImplementedException();
+                return _ScheduleFromHour;
             }
             set {
+                _ScheduleFromHour = value;
             }
         }
 
@@ -284,9 +383,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public int ScheduleToHour {
             get {
-                throw new System.NotImplementedException();
+                return _ScheduleToHour;
             }
             set {
+                _ScheduleToHour = value;
             }
         }
 
@@ -295,9 +395,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public int ScheduleFromDayOfWeek {
             get {
-                throw new System.NotImplementedException();
+                return _ScheduleFromDayOfWeek;
             }
             set {
+                _ScheduleFromDayOfWeek = value;
             }
         }
 
@@ -306,9 +407,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public int ScheduleToDayOfWeek {
             get {
-                throw new System.NotImplementedException();
+                return _ScheduleToDayOfWeek;
             }
             set {
+                _ScheduleToDayOfWeek = value;
             }
         }
 
@@ -317,9 +419,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public int ScheduleFromDay {
             get {
-                throw new System.NotImplementedException();
+                return _ScheduleFromDay;
             }
             set {
+                _ScheduleFromDay = value;
             }
         }
 
@@ -328,9 +431,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public int ScheduleToDay {
             get {
-                throw new System.NotImplementedException();
+                return _ScheduleToDay;
             }
             set {
+                _ScheduleToDay = value;
             }
         }
 
@@ -339,9 +443,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public bool DisableScheduleAfterFinish {
             get {
-                throw new System.NotImplementedException();
+                return _DisableScheduleAfterFinish;
             }
             set {
+                _DisableScheduleAfterFinish = value;
             }
         }
 
@@ -350,9 +455,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public DateTime lastStoppingTime {
             get {
-                throw new System.NotImplementedException();
+                return _lastStoppingTime;
             }
             set {
+                _lastStoppingTime = value;
             }
         }
 
@@ -361,9 +467,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public string ConnectionString {
             get {
-                throw new System.NotImplementedException();
+                return _ConnectionString;
             }
             set {
+                _ConnectionString = value;
             }
         }
 
@@ -372,9 +479,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public DatabaseType DatabaseType {
             get {
-                throw new System.NotImplementedException();
+                return _DatabaseType;
             }
             set {
+                _DatabaseType = value;
             }
         }
 
@@ -383,9 +491,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public string PublicationTarget {
             get {
-                throw new System.NotImplementedException();
+                return _PublicationTarget;
             }
             set {
+                _PublicationTarget = value;
             }
         }
 
@@ -394,17 +503,19 @@ namespace SmartSpide.Config {
         /// </summary>
         public bool UseProcedure {
             get {
-                throw new System.NotImplementedException();
+                return _UseProcedure;
             }
             set {
+                _UseProcedure = value;
             }
         }
 
         public bool PublishResultDircetly {
             get {
-                throw new System.NotImplementedException();
+                return _PublishResultDircetly;
             }
             set {
+                _PublishResultDircetly = value;
             }
         }
 
@@ -413,9 +524,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public bool DeleteResultAfterPublication {
             get {
-                throw new System.NotImplementedException();
+                return _DeleteResultAfterPublication;
             }
             set {
+                _DeleteResultAfterPublication = value;
             }
         }
 
@@ -424,9 +536,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public bool IgnoreDataColumnNotFound {
             get {
-                throw new System.NotImplementedException();
+                return _IgnoreDataColumnNotFound;
             }
             set {
+                _IgnoreDataColumnNotFound = value;
             }
         }
 
@@ -435,9 +548,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public bool SaveRepeatedRows {
             get {
-                throw new System.NotImplementedException();
+                return _SaveRepeatedRows;
             }
             set {
+                _SaveRepeatedRows = value;
             }
         }
 
@@ -446,9 +560,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public bool SaveErrorRows {
             get {
-                throw new System.NotImplementedException();
+                return _SaveErrorRows;
             }
             set {
+                _SaveErrorRows = value;
             }
         }
 
@@ -457,9 +572,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public bool UsePluginOfProcessResultRow {
             get {
-                throw new System.NotImplementedException();
+                return _UsePluginOfProcessResultRow;
             }
             set {
+                _UsePluginOfProcessResultRow = value;
             }
         }
 
@@ -468,9 +584,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public int CurrentResultCount {
             get {
-                throw new System.NotImplementedException();
+                return _CurrentResultCount;
             }
             set {
+                _CurrentResultCount = value;
             }
         }
 
@@ -479,9 +596,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public int ResultCount {
             get {
-                throw new System.NotImplementedException();
+                return _ResultCount;
             }
             set {
+                _ResultCount = value;
             }
         }
 
@@ -490,9 +608,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public int RepeatedRowsCount {
             get {
-                throw new System.NotImplementedException();
+                return _RepeatedRowsCount;
             }
             set {
+                _RepeatedRowsCount = value;
             }
         }
 
@@ -501,9 +620,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public int ErrorRowsCount {
             get {
-                throw new System.NotImplementedException();
+                return _ErrorRowsCount;
             }
             set {
+                _ErrorRowsCount = value;
             }
         }
 
@@ -512,9 +632,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public string PluginPath {
             get {
-                throw new System.NotImplementedException();
+                return _PluginPath;
             }
             set {
+                _PluginPath = value;
             }
         }
 
@@ -523,9 +644,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public bool UsePluginOfDownloadContentFile {
             get {
-                throw new System.NotImplementedException();
+                return _UsePluginOfDownloadContentFile;
             }
             set {
+                _UsePluginOfDownloadContentFile = value;
             }
         }
 
@@ -534,9 +656,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public bool UsePluginOfDownloadSingleFile {
             get {
-                throw new System.NotImplementedException();
+                return _UsePluginOfDownloadSingleFile;
             }
             set {
+                _UsePluginOfDownloadSingleFile = value;
             }
         }
 
@@ -545,9 +668,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public bool UsePluginOfProcessContentFile {
             get {
-                throw new System.NotImplementedException();
+                return _UsePluginOfProcessContentFile;
             }
             set {
+                _UsePluginOfProcessContentFile = value;
             }
         }
 
@@ -556,9 +680,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public bool UsePluginOfProcessSingleFile {
             get {
-                throw new System.NotImplementedException();
+                return _UsePluginOfProcessSingleFile;
             }
             set {
+                _UsePluginOfProcessSingleFile = value;
             }
         }
 
@@ -567,9 +692,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public bool UsePluginOfFilter {
             get {
-                throw new System.NotImplementedException();
+                return _UsePluginOfFilter;
             }
             set {
+                _UsePluginOfFilter = value;
             }
         }
 
@@ -578,9 +704,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public bool UsePluginOfGetWebProxy {
             get {
-                throw new System.NotImplementedException();
+                return _UsePluginOfGetWebProxy;
             }
             set {
+                _UsePluginOfGetWebProxy = value;
             }
         }
 
@@ -589,9 +716,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public SmartSpide.Config.ExtractionRule[] ExtractionRules {
             get {
-                throw new System.NotImplementedException();
+                return _ExtractionRules;
             }
             set {
+                _ExtractionRules = value;
             }
         }
 
@@ -600,9 +728,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public UrlListManager UrlListManager {
             get {
-                throw new System.NotImplementedException();
+                return _UrlListManager;
             }
             set {
+                _UrlListManager = value;
             }
         }
 
@@ -611,10 +740,13 @@ namespace SmartSpide.Config {
         /// </summary>
         public string PluginData {
             get {
-                throw new System.NotImplementedException();
+                return _PluginData;
             }
             set {
+                _PluginData = value;
             }
         }
+
+        #endregion
     }
 }

@@ -1,17 +1,38 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿namespace SmartSpide.Config {
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+    using System.Runtime.Serialization;
+    using System.Xml.Serialization;
 
-namespace SmartSpide.Config {
+    [Serializable]
+    [XmlRoot("UrlListManager")]
     public class UrlListManager {
+        #region 私有变量定义
+        private int _HistoryUrlCapacity;
+        private int _HistoryUrlsCount;
+        private NavigationRule _NavigationRules;
+        private PagedUrlPatterns _PagedUrlPattern;
+        private int _PickedUrlsCount;
+        private int _PickedUrlsPosition;
+        private bool _StartingUrlEncoded;
+        private StartingUrlList _StartingUrlList;
+        private int _StartingUrlListPosition;
+        private string _StartingUrlTemplate;
+        private string _UrlEncoding;
+        private bool _UsePluginOfLoadStartingUrl;
+        #endregion
+
+        #region 公共属性定义
         /// <summary>
         /// 起始URL列表中的位置
         /// </summary>
         public int StartingUrlListPosition {
             get {
-                throw new System.NotImplementedException();
+                return _StartingUrlListPosition;
             }
             set {
+                _StartingUrlListPosition = value;
             }
         }
 
@@ -20,9 +41,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public int PickedUrlsCount {
             get {
-                throw new System.NotImplementedException();
+                return _PickedUrlsCount;
             }
             set {
+                _PickedUrlsCount = value;
             }
         }
 
@@ -31,9 +53,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public int PickedUrlsPosition {
             get {
-                throw new System.NotImplementedException();
+                return _PickedUrlsPosition;
             }
             set {
+                _PickedUrlsPosition = value;
             }
         }
 
@@ -42,9 +65,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public int HistoryUrlsCount {
             get {
-                throw new System.NotImplementedException();
+                return _HistoryUrlsCount;
             }
             set {
+                _HistoryUrlsCount = value;
             }
         }
 
@@ -53,9 +77,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public int HistoryUrlCapacity {
             get {
-                throw new System.NotImplementedException();
+                return _HistoryUrlCapacity;
             }
             set {
+                _HistoryUrlCapacity = value;
             }
         }
 
@@ -64,9 +89,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public string UrlEncoding {
             get {
-                throw new System.NotImplementedException();
+                return _UrlEncoding;
             }
             set {
+                _UrlEncoding = value;
             }
         }
 
@@ -75,9 +101,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public bool StartingUrlEncoded {
             get {
-                throw new System.NotImplementedException();
+                return _StartingUrlEncoded;
             }
             set {
+                _StartingUrlEncoded = value;
             }
         }
 
@@ -86,9 +113,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public bool UsePluginOfLoadStartingUrl {
             get {
-                throw new System.NotImplementedException();
+                return _UsePluginOfLoadStartingUrl;
             }
             set {
+                _UsePluginOfLoadStartingUrl = value;
             }
         }
 
@@ -97,25 +125,28 @@ namespace SmartSpide.Config {
         /// </summary>
         public string StartingUrlTemplate {
             get {
-                throw new System.NotImplementedException();
+                return _StartingUrlTemplate;
             }
             set {
+                _StartingUrlTemplate = value;
             }
         }
 
-        public PagedUrlPattern PagedUrlPattern {
+        public PagedUrlPatterns PagedUrlPattern {
             get {
-                throw new System.NotImplementedException();
+                return _PagedUrlPattern;
             }
             set {
+                _PagedUrlPattern = value;
             }
         }
 
         public NavigationRule NavigationRules {
             get {
-                throw new System.NotImplementedException();
+                return _NavigationRules;
             }
             set {
+                _NavigationRules = value;
             }
         }
 
@@ -124,10 +155,12 @@ namespace SmartSpide.Config {
         /// </summary>
         public StartingUrlList StartingUrlList {
             get {
-                throw new System.NotImplementedException();
+                return _StartingUrlList;
             }
             set {
+                _StartingUrlList = value;
             }
         }
+        #endregion
     }
 }

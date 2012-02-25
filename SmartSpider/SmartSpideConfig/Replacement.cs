@@ -1,17 +1,32 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿namespace SmartSpide.Config {
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+    using System.Runtime.Serialization;
+    using System.Xml.Serialization;
 
-namespace SmartSpide.Config {
+    [Serializable]
+    [XmlRoot("Replacement")]
     public class Replacement {
+
+        #region 私有变量定义
+        private string _NewValue;
+        private string _OldValue;
+        private bool _OnlyMatchOldValue;
+        private bool _Repeatable;
+        private bool _UseRegex;
+        #endregion
+
+        #region 公共属性定义
         /// <summary>
         /// 旧值
         /// </summary>
         public string OldValue {
             get {
-                throw new System.NotImplementedException();
+                return _OldValue;
             }
             set {
+                _OldValue = value;
             }
         }
 
@@ -20,9 +35,10 @@ namespace SmartSpide.Config {
         /// </summary>
         public string NewValue {
             get {
-                throw new System.NotImplementedException();
+                return _NewValue;
             }
             set {
+                _NewValue = value;
             }
         }
 
@@ -31,26 +47,30 @@ namespace SmartSpide.Config {
         /// </summary>
         public bool UseRegex {
             get {
-                throw new System.NotImplementedException();
+                return _UseRegex;
             }
             set {
+                _UseRegex = value;
             }
         }
 
         public bool OnlyMatchOldValue {
             get {
-                throw new System.NotImplementedException();
+                return _OnlyMatchOldValue;
             }
             set {
+                _OnlyMatchOldValue = value;
             }
         }
 
         public bool Repeatable {
             get {
-                throw new System.NotImplementedException();
+                return _Repeatable;
             }
             set {
+                _Repeatable = value;
             }
         }
+        #endregion
     }
 }

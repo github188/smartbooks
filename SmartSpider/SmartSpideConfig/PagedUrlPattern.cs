@@ -1,47 +1,68 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿namespace SmartSpide.Config {
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+    using System.Runtime.Serialization;
+    using System.Xml.Serialization;
 
-namespace SmartSpide.Config {
-    public class PagedUrlPattern {
-        public int startPage {
+    [Serializable]
+    [XmlRoot("PagedUrlPattern")]
+    public class PagedUrlPatterns {
+
+        #region 私有变量定义
+        private int _EndPage;
+        private int _Format;
+        private int _PagedUrlPattern;
+        private int _StartPage;
+        private int _Step;
+        #endregion
+
+        #region 公共属性定义
+
+        public int StartPage {
             get {
-                throw new System.NotImplementedException();
+                return _StartPage;
             }
             set {
+                _StartPage = value;
             }
         }
 
-        public int endPage {
+        public int EndPage {
             get {
-                throw new System.NotImplementedException();
+                return _EndPage;
             }
             set {
+                _EndPage = value;
             }
         }
 
-        public int step {
+        public int Step {
             get {
-                throw new System.NotImplementedException();
+                return _Step;
             }
             set {
+                _Step = value;
             }
         }
 
-        public int format {
+        public int Format {
             get {
-                throw new System.NotImplementedException();
+                return _Format;
             }
             set {
+                _Format = value;
             }
         }
 
-        public int _pagedUrlPattern {
+        public int PagedUrlPattern {
             get {
-                throw new System.NotImplementedException();
+                return _PagedUrlPattern;
             }
             set {
+                _PagedUrlPattern = value;
             }
         }
+        #endregion
     }
 }

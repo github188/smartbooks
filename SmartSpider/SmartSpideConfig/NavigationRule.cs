@@ -1,215 +1,277 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿namespace SmartSpide.Config {
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+    using System.Runtime.Serialization;
+    using System.Xml.Serialization;
 
-namespace SmartSpide.Config {
+    [Serializable]
+    [XmlRoot("NavigationRule")]
     public class NavigationRule {
+
+        #region 私有变量定义
+        private string _ContentEncoding;
+        private string _ExtractionEndFlag;
+        private string _ExtractionStartFlag;
+        private bool _HistoryUrlEnabled;
+        private bool _HistoryUrlOptimization;
+        private string _IterationFlag;
+        private bool _JsDecoding;
+        private int _Name;
+        private bool _NextLayerUrlEncoded;
+        private string _NextLayerUrlPattern;
+        private string _NextLayerUrlReferer;
+        private int _NextPageLargest;
+        private string _NextPageUrlPattern;
+        private string _PickingEndFlag;
+        private string _PickingStartFlag;
+        private bool _PickNextLayerUrls;
+        private bool _PickNextPageUrl;
+        private bool _ProccessScripts;
+        private string _Replacements;
+        private int _RestInterval;
+        private string _SkipToIfPickingFailed;
+        private bool _Terminal;
+        private bool _UsePluginOfPickNextLayerUrls;
+        private bool _UsePluginOfPickNextPageUrl;
+        private bool _UsePluginOfVisit;
+        private bool _UseRegularExpression;
+        #endregion
+
+        #region 公共属性定义
         public int Name {
             get {
-                throw new System.NotImplementedException();
+                return _Name;
             }
             set {
+                _Name = value;
             }
         }
 
         public bool Terminal {
             get {
-                throw new System.NotImplementedException();
+                return _Terminal;
             }
             set {
+                _Terminal = value;
             }
         }
 
         public bool PickNextLayerUrls {
             get {
-                throw new System.NotImplementedException();
+                return _PickNextLayerUrls;
             }
             set {
+                _PickNextLayerUrls = value;
             }
         }
 
         public string NextLayerUrlPattern {
             get {
-                throw new System.NotImplementedException();
+                return _NextLayerUrlPattern;
             }
             set {
+                _NextLayerUrlPattern = value;
             }
         }
 
         public bool UseRegularExpression {
             get {
-                throw new System.NotImplementedException();
+                return _UseRegularExpression;
             }
             set {
+                _UseRegularExpression = value;
             }
         }
 
         public bool HistoryUrlEnabled {
             get {
-                throw new System.NotImplementedException();
+                return _HistoryUrlEnabled;
             }
             set {
+                _HistoryUrlEnabled = value;
             }
         }
 
         public bool HistoryUrlOptimization {
             get {
-                throw new System.NotImplementedException();
+                return _HistoryUrlOptimization;
             }
             set {
+                _HistoryUrlOptimization = value;
             }
         }
 
         public bool PickNextPageUrl {
             get {
-                throw new System.NotImplementedException();
+                return _PickNextPageUrl;
             }
             set {
+                _PickNextPageUrl = value;
             }
         }
 
         public string NextPageUrlPattern {
             get {
-                throw new System.NotImplementedException();
+                return _NextPageUrlPattern;
             }
             set {
+                _NextPageUrlPattern = value;
             }
         }
 
         public int NextPageLargest {
             get {
-                throw new System.NotImplementedException();
+                return _NextPageLargest;
             }
             set {
+                _NextPageLargest = value;
             }
         }
 
         public string PickingStartFlag {
             get {
-                throw new System.NotImplementedException();
+                return _PickingStartFlag;
             }
             set {
+                _PickingStartFlag = value;
             }
         }
 
         public string PickingEndFlag {
             get {
-                throw new System.NotImplementedException();
+                return _PickingEndFlag;
             }
             set {
+                _PickingEndFlag = value;
             }
         }
 
         public string ExtractionStartFlag {
             get {
-                throw new System.NotImplementedException();
+                return _ExtractionStartFlag;
             }
             set {
+                _ExtractionStartFlag = value;
             }
         }
 
         public string ExtractionEndFlag {
             get {
-                throw new System.NotImplementedException();
+                return _ExtractionEndFlag;
             }
             set {
+                _ExtractionEndFlag = value;
             }
         }
 
         public string IterationFlag {
             get {
-                throw new System.NotImplementedException();
+                return _IterationFlag;
             }
             set {
+                _IterationFlag = value;
             }
         }
 
         public int RestInterval {
             get {
-                throw new System.NotImplementedException();
+                return _RestInterval;
             }
             set {
+                _RestInterval = value;
             }
         }
 
         public string ContentEncoding {
             get {
-                throw new System.NotImplementedException();
+                return _ContentEncoding;
             }
             set {
+                _ContentEncoding = value;
             }
         }
 
         public bool ProccessScripts {
             get {
-                throw new System.NotImplementedException();
+                return _ProccessScripts;
             }
             set {
+                _ProccessScripts = value;
             }
         }
 
         public string NextLayerUrlReferer {
             get {
-                throw new System.NotImplementedException();
+                return _NextLayerUrlReferer;
             }
             set {
+                _NextLayerUrlReferer = value;
             }
         }
 
         public bool NextLayerUrlEncoded {
             get {
-                throw new System.NotImplementedException();
+                return _NextLayerUrlEncoded;
             }
             set {
+                _NextLayerUrlEncoded = value;
             }
         }
 
         public bool JsDecoding {
             get {
-                throw new System.NotImplementedException();
+                return _JsDecoding;
             }
             set {
+                _JsDecoding = value;
             }
         }
 
         public string SkipToIfPickingFailed {
             get {
-                throw new System.NotImplementedException();
+                return _SkipToIfPickingFailed;
             }
             set {
+                _SkipToIfPickingFailed = value;
             }
         }
 
         public bool UsePluginOfVisit {
             get {
-                throw new System.NotImplementedException();
+                return _UsePluginOfVisit;
             }
             set {
+                _UsePluginOfVisit = value;
             }
         }
 
         public bool UsePluginOfPickNextLayerUrls {
             get {
-                throw new System.NotImplementedException();
+                return _UsePluginOfPickNextLayerUrls;
             }
             set {
+                _UsePluginOfPickNextLayerUrls = value;
             }
         }
 
         public bool UsePluginOfPickNextPageUrl {
             get {
-                throw new System.NotImplementedException();
+                return _UsePluginOfPickNextPageUrl;
             }
             set {
+                _UsePluginOfPickNextPageUrl = value;
             }
         }
 
         public string Replacements {
             get {
-                throw new System.NotImplementedException();
+                return _Replacements;
             }
             set {
+                _Replacements = value;
             }
         }
+        #endregion
     }
 }

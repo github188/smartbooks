@@ -1,22 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿namespace SmartSpide.Config {
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+    using System.Runtime.Serialization;
+    using System.Xml.Serialization;
 
-namespace SmartSpide.Config {
+    [Serializable]
+    [XmlRoot("RegularExpression")]
     public class RegularExpression {
+        private string _Expression;
+        private string _Name;
+    
         public string Name {
             get {
-                throw new System.NotImplementedException();
+                return _Name;
             }
             set {
+                _Name = value;
             }
         }
 
         public string Expression {
             get {
-                throw new System.NotImplementedException();
+                return _Expression;
             }
             set {
+                _Expression = value;
             }
         }
     }

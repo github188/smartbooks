@@ -1,14 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿namespace SmartSpide.Config {
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+    using System.Runtime.Serialization;
+    using System.Xml.Serialization;
 
-namespace SmartSpide.Config {
+    [Serializable]
+    [XmlRoot("StartingUrlList")]
     public class StartingUrlList {
+        private string _String;
+    
         public string String {
             get {
-                throw new System.NotImplementedException();
+                return _String;
             }
             set {
+                _String = value;
             }
         }
     }
