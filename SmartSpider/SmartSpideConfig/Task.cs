@@ -15,6 +15,57 @@
     public class Task {
 
         public Task() {
+            this._State = Config.Action.Ready;
+            this._ElapsedTime = new DateTime();
+            this._StartingTime = new DateTime(1, 1, 1);
+            this._ThreadNumber = 1;
+            this._OutputDetailedLog = true;
+            this._SaveLogToFile = false;
+            this._lastLogFileName = "";
+            this._Cookie = "";
+            this._LoginUrl = "";
+            this._LoginAutomatically = false;
+            this._LoginTargetUrl = "";
+            this._LoginSuccessFlag = "";
+            this._LoginAtRegularIntervals = false;
+            this._LoginInterval = 20;
+            this._UsePluginOfLogin = false;
+            this._LoginUrlReferer = "";
+            this._ScheduleEnabled = false;
+            this._ScheduleMode = Config.ScheduleMode.Time;
+            this._ScheduleDays = 0;
+            this._ScheduleHours = 0;
+            this._ScheduleMinutes = 0;
+            this._ScheduleLimitTimeRange = false;
+            this._ScheduleFromHour = 0;
+            this._ScheduleToHour = 23;
+            this._ScheduleFromDayOfWeek = Week.Sunday;
+            this._ScheduleToDayOfWeek = Week.Saturday;
+            this._ScheduleFromDay = 1;
+            this._ScheduleToDay = 31;
+            this._DisableScheduleAfterFinish = false;
+            this._lastStoppingTime = new DateTime(1, 1, 1);
+            this._ConnectionString = "";
+            this._DatabaseType = Config.DatabaseType.Access;
+            this._PublicationTarget = "";
+            this._UseProcedure = false;
+            this._PublishResultDircetly = false;
+            this._DeleteResultAfterPublication = false;
+            this._IgnoreDataColumnNotFound = false;
+            this._SaveRepeatedRows = false;
+            this._SaveErrorRows = false;
+            this._UsePluginOfProcessResultRow = false;
+            this._CurrentResultCount = 0;
+            this._ResultCount = 0;
+            this._RepeatedRowsCount = 0;
+            this._ErrorRowsCount = 0;
+            this._PluginPath = "";
+            this._UsePluginOfDownloadContentFile = false;
+            this._UsePluginOfDownloadSingleFile = false;
+            this._UsePluginOfProcessContentFile = false;
+            this._UsePluginOfProcessSingleFile = false;
+            this._UsePluginOfFilter = false;
+            this._PluginData = "";
         }
 
         #region 私有变量定义
@@ -52,17 +103,17 @@
         private int _ScheduleDays;
         private bool _ScheduleEnabled;
         private int _ScheduleFromDay;
-        private int _ScheduleFromDayOfWeek;
+        private Week _ScheduleFromDayOfWeek;
         private int _ScheduleFromHour;
         private int _ScheduleHours;
         private bool _ScheduleLimitTimeRange;
         private int _ScheduleMinutes;
         private ScheduleMode _ScheduleMode;
         private int _ScheduleToDay;
-        private int _ScheduleToDayOfWeek;
+        private Week _ScheduleToDayOfWeek;
         private int _ScheduleToHour;
         private DateTime _StartingTime;
-        private State _State;
+        private Action _State;
         private int _ThreadNumber;
         private UrlListManager _UrlListManager;
         private bool _UsePluginOfDownloadContentFile;
@@ -105,7 +156,7 @@
         /// <summary>
         /// 任务状态
         /// </summary>
-        public State State {
+        public Action State {
             get {
                 return _State;
             }
@@ -393,7 +444,7 @@
         /// <summary>
         /// 每当星期几开始
         /// </summary>
-        public int ScheduleFromDayOfWeek {
+        public Week ScheduleFromDayOfWeek {
             get {
                 return _ScheduleFromDayOfWeek;
             }
@@ -405,7 +456,7 @@
         /// <summary>
         /// 预定星期几
         /// </summary>
-        public int ScheduleToDayOfWeek {
+        public Week ScheduleToDayOfWeek {
             get {
                 return _ScheduleToDayOfWeek;
             }

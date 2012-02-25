@@ -8,6 +8,13 @@
     [Serializable]
     [XmlRoot("Replacement")]
     public class Replacement {
+        public Replacement() {
+            this._NewValue = "";
+            this._OldValue = "";
+            this._OnlyMatchOldValue = false;
+            this._Repeatable = false;
+            this._UseRegex = false;
+        }
 
         #region 私有变量定义
         private string _NewValue;
@@ -54,6 +61,9 @@
             }
         }
 
+        /// <summary>
+        /// 只匹配旧值
+        /// </summary>
         public bool OnlyMatchOldValue {
             get {
                 return _OnlyMatchOldValue;
@@ -63,6 +73,9 @@
             }
         }
 
+        /// <summary>
+        /// 重复替换
+        /// </summary>
         public bool Repeatable {
             get {
                 return _Repeatable;

@@ -41,7 +41,10 @@
     <Compile Include="ExtractionRule.cs" />
     <Compile Include="Filter.cs" />
     <Compile Include="HtmlMark.cs" />
+    <Compile Include="ISmartSpider.cs" />
     <Compile Include="Layer.cs" />
+    <Compile Include="LogEventArgs.cs" />
+    <Compile Include="LogEventHanlder.cs" />
     <Compile Include="LogFileStyle.cs" />
     <Compile Include="NavigationRule.cs" />
     <Compile Include="NotifyWindowMode.cs" />
@@ -50,12 +53,16 @@
     <Compile Include="RegularExpression.cs" />
     <Compile Include="Replacement.cs" />
     <Compile Include="RequestHeader.cs" />
+    <Compile Include="RequiredOptions.cs" />
     <Compile Include="ScheduleMode.cs" />
     <Compile Include="ShutDownMode.cs" />
+    <Compile Include="SmartSpiderInformation.cs" />
+    <Compile Include="SmartSpiderWebProxy.cs" />
     <Compile Include="StartingUrlList.cs" />
-    <Compile Include="State.cs" />
+    <Compile Include="Action.cs" />
     <Compile Include="Task.cs" />
     <Compile Include="UrlListManager.cs" />
+    <Compile Include="Week.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram1.cd" />

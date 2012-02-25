@@ -8,6 +8,21 @@
     [Serializable]
     [XmlRoot("UrlListManager")]
     public class UrlListManager {
+        public UrlListManager() {
+            this._StartingUrlListPosition = 0;
+            this._PickedUrlsCount = 0;
+            this._PickedUrlsPosition = 0;
+            this._HistoryUrlsCount = 0;
+            this._HistoryUrlCapacity = 1000;
+            this._UrlEncoding = "gb2312";
+            this._StartingUrlEncoded = false;
+            this._UsePluginOfLoadStartingUrl = false;
+            this._StartingUrlTemplate = "";
+            this._PagedUrlPattern = new PagedUrlPatterns();
+            this._NavigationRules = new NavigationRule();
+            this._StartingUrlList = new StartingUrlList();
+        }
+
         #region 私有变量定义
         private int _HistoryUrlCapacity;
         private int _HistoryUrlsCount;

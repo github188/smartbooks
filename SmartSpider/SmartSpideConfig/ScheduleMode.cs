@@ -15,5 +15,10 @@
         /// </summary>
         [XmlEnum("Time")]
         Time = 0,
+        /// <summary>
+        /// 天
+        /// </summary>
+        [XmlEnum("Day")]
+        Day = 1,
     }
 }

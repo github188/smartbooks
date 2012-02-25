@@ -8,9 +8,18 @@
     [Serializable]
     [XmlRoot("RegularExpression")]
     public class RegularExpression {
+        public RegularExpression() {
+            this._Name = "";
+            this._Expression = "";
+        }
+
+        #region 私有变量定义
         private string _Expression;
         private string _Name;
-    
+        #endregion
+
+        #region 公共属性定义
+
         public string Name {
             get {
                 return _Name;
@@ -28,5 +37,7 @@
                 _Expression = value;
             }
         }
+
+        #endregion
     }
 }

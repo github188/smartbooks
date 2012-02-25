@@ -8,11 +8,18 @@
     [Serializable]
     [XmlRoot("PagedUrlPattern")]
     public class PagedUrlPatterns {
+        public PagedUrlPatterns() {
+            this._StartPage = 1;
+            this._EndPage = 0;
+            this._Step = 1;
+            this._Format = "";
+            this._PagedUrlPattern = "";
+        }
 
         #region 私有变量定义
         private int _EndPage;
-        private int _Format;
-        private int _PagedUrlPattern;
+        private string _Format;
+        private string _PagedUrlPattern;
         private int _StartPage;
         private int _Step;
         #endregion
@@ -46,7 +53,7 @@
             }
         }
 
-        public int Format {
+        public string Format {
             get {
                 return _Format;
             }
@@ -55,7 +62,7 @@
             }
         }
 
-        public int PagedUrlPattern {
+        public string PagedUrlPattern {
             get {
                 return _PagedUrlPattern;
             }

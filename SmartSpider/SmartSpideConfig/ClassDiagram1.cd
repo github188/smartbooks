@@ -119,6 +119,34 @@
       <FileName>RegularExpression.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="SmartSpide.Config.LogEventArgs" Collapsed="true">
+    <Position X="0.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAEAAAIAAAAAAAAABAAAAAEAAAAIAAAAAA=</HashCode>
+      <FileName>LogEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartSpide.Config.SmartSpiderInformation" Collapsed="true">
+    <Position X="2.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAABCACAAAAAAAAAAAQAAAAAAAACAgCAAAAIACA=</HashCode>
+      <FileName>SmartSpiderInformation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartSpide.Config.SmartSpiderWebProxy" Collapsed="true">
+    <Position X="0.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAQIAAEAACAAACAACAAAAAAAACAA=</HashCode>
+      <FileName>SmartSpiderWebProxy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="SmartSpide.Config.ISmartSpider" Collapsed="true">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>KAAAQAAAACUIAAwAAAAAAAIAABgAAEAgoAAQAQAAAAA=</HashCode>
+      <FileName>ISmartSpider.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
   <Enum Name="SmartSpide.Config.ShutDownMode" Collapsed="true">
     <Position X="4" Y="0.5" Width="1.5" />
     <TypeIdentifier>
@@ -140,11 +168,11 @@
       <FileName>LogFileStyle.cs</FileName>
     </TypeIdentifier>
   </Enum>
-  <Enum Name="SmartSpide.Config.State" Collapsed="true">
+  <Enum Name="SmartSpide.Config.Action" Collapsed="true">
     <Position X="4" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>State.cs</FileName>
+      <HashCode>AAAgCAAAACAAAAEAAAAAAAAAAAAAAAAAIAAAAAAAAAg=</HashCode>
+      <FileName>Action.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="SmartSpide.Config.DatabaseType" Collapsed="true">
@@ -164,9 +192,30 @@
   <Enum Name="SmartSpide.Config.ScheduleMode" Collapsed="true">
     <Position X="5.75" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <HashCode>AAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
       <FileName>ScheduleMode.cs</FileName>
     </TypeIdentifier>
   </Enum>
+  <Enum Name="SmartSpide.Config.Week" Collapsed="true">
+    <Position X="5.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAIAACAAAAAAAAAAACAAIACAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Week.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="SmartSpide.Config.RequiredOptions" Collapsed="true">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>KAAAQAAAAAUIAAQAAAAAAAIAABAAAAAgIAAQAQEAAAA=</HashCode>
+      <FileName>RequiredOptions.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Delegate Name="SmartSpide.Config.LogEventHanlder" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>LogEventHanlder.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
   <Font Name="宋体" Size="9" />
 </ClassDiagram>
