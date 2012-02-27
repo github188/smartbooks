@@ -121,8 +121,14 @@
   <data name="addmax" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\addmax.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="addmin" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\addmin.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="AddMin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\AddMin.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="checkmax" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\checkmax.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="checkmin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\checkmin.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="configmax" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\configmax.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -142,10 +148,28 @@
   <data name="exitmin" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\exitmin.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="foldermax" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\foldermax.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="foldermin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\foldermin.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="loadmax" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\loadmax.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="loadmin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\loadmin.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="stopmax" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\stopmax.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="stopmin" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\stopmin.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="taskmax" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\taskmax.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="taskmin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\taskmin.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -201,10 +201,12 @@
             // 
             // FileItemPublishResults
             // 
+            this.FileItemPublishResults.Enabled = false;
             this.FileItemPublishResults.Name = "FileItemPublishResults";
             this.FileItemPublishResults.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
             this.FileItemPublishResults.Size = new System.Drawing.Size(201, 22);
             this.FileItemPublishResults.Text = "发布结果(&S)";
+            this.FileItemPublishResults.Click += new System.EventHandler(this.FileItemPublishResults_Click);
             // 
             // FileItemSaveAsTo
             // 
@@ -212,6 +214,7 @@
             this.FileItemSaveAsExcel,
             this.FileItemSaveAsTextFile,
             this.FileItemSaveAsAccessDB});
+            this.FileItemSaveAsTo.Enabled = false;
             this.FileItemSaveAsTo.Name = "FileItemSaveAsTo";
             this.FileItemSaveAsTo.Size = new System.Drawing.Size(201, 22);
             this.FileItemSaveAsTo.Text = "将结果导出为(&A)";
@@ -223,6 +226,7 @@
             | System.Windows.Forms.Keys.E)));
             this.FileItemSaveAsExcel.Size = new System.Drawing.Size(225, 22);
             this.FileItemSaveAsExcel.Text = "Excel文件(&E)";
+            this.FileItemSaveAsExcel.Click += new System.EventHandler(this.FileItemSaveAsExcel_Click);
             // 
             // FileItemSaveAsTextFile
             // 
@@ -231,6 +235,7 @@
             | System.Windows.Forms.Keys.T)));
             this.FileItemSaveAsTextFile.Size = new System.Drawing.Size(225, 22);
             this.FileItemSaveAsTextFile.Text = "文本文件(&T)";
+            this.FileItemSaveAsTextFile.Click += new System.EventHandler(this.FileItemSaveAsTextFile_Click);
             // 
             // FileItemSaveAsAccessDB
             // 
@@ -239,13 +244,16 @@
             | System.Windows.Forms.Keys.A)));
             this.FileItemSaveAsAccessDB.Size = new System.Drawing.Size(225, 22);
             this.FileItemSaveAsAccessDB.Text = "Access文件(&A)";
+            this.FileItemSaveAsAccessDB.Click += new System.EventHandler(this.FileItemSaveAsAccessDB_Click);
             // 
             // FileItemViewResult
             // 
+            this.FileItemViewResult.Enabled = false;
             this.FileItemViewResult.Name = "FileItemViewResult";
             this.FileItemViewResult.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
             this.FileItemViewResult.Size = new System.Drawing.Size(201, 22);
             this.FileItemViewResult.Text = "查看结果(&X)";
+            this.FileItemViewResult.Click += new System.EventHandler(this.FileItemViewResult_Click);
             // 
             // toolStripSeparator6
             // 
@@ -254,11 +262,13 @@
             // 
             // FileItemClearResult
             // 
+            this.FileItemClearResult.Enabled = false;
             this.FileItemClearResult.Name = "FileItemClearResult";
             this.FileItemClearResult.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
             | System.Windows.Forms.Keys.D1)));
             this.FileItemClearResult.Size = new System.Drawing.Size(201, 22);
             this.FileItemClearResult.Text = "清空结果(&C)";
+            this.FileItemClearResult.Click += new System.EventHandler(this.FileItemClearResult_Click);
             // 
             // toolStripSeparator7
             // 
@@ -270,6 +280,7 @@
             this.FileItemPublishResultRepeat.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.FileItemPublishResultRepeatView,
             this.FileItemPublishResultRepeatClear});
+            this.FileItemPublishResultRepeat.Enabled = false;
             this.FileItemPublishResultRepeat.Name = "FileItemPublishResultRepeat";
             this.FileItemPublishResultRepeat.Size = new System.Drawing.Size(201, 22);
             this.FileItemPublishResultRepeat.Text = "发布时重复行";
@@ -279,6 +290,7 @@
             this.FileItemPublishResultRepeatView.Name = "FileItemPublishResultRepeatView";
             this.FileItemPublishResultRepeatView.Size = new System.Drawing.Size(177, 22);
             this.FileItemPublishResultRepeatView.Text = "查看(&V)";
+            this.FileItemPublishResultRepeatView.Click += new System.EventHandler(this.FileItemPublishResultRepeatView_Click);
             // 
             // FileItemPublishResultRepeatClear
             // 
@@ -287,12 +299,14 @@
             | System.Windows.Forms.Keys.D2)));
             this.FileItemPublishResultRepeatClear.Size = new System.Drawing.Size(177, 22);
             this.FileItemPublishResultRepeatClear.Text = "清空(&C)";
+            this.FileItemPublishResultRepeatClear.Click += new System.EventHandler(this.FileItemPublishResultRepeatClear_Click);
             // 
             // FileItemPublishResultError
             // 
             this.FileItemPublishResultError.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.FileItemPublishResultErrorView,
             this.FileItemPublishResultErrorClear});
+            this.FileItemPublishResultError.Enabled = false;
             this.FileItemPublishResultError.Name = "FileItemPublishResultError";
             this.FileItemPublishResultError.Size = new System.Drawing.Size(201, 22);
             this.FileItemPublishResultError.Text = "发布时出错行";
@@ -302,6 +316,7 @@
             this.FileItemPublishResultErrorView.Name = "FileItemPublishResultErrorView";
             this.FileItemPublishResultErrorView.Size = new System.Drawing.Size(177, 22);
             this.FileItemPublishResultErrorView.Text = "查看(&V)";
+            this.FileItemPublishResultErrorView.Click += new System.EventHandler(this.FileItemPublishResultErrorView_Click);
             // 
             // FileItemPublishResultErrorClear
             // 
@@ -310,6 +325,7 @@
             | System.Windows.Forms.Keys.D3)));
             this.FileItemPublishResultErrorClear.Size = new System.Drawing.Size(177, 22);
             this.FileItemPublishResultErrorClear.Text = "清空(&C)";
+            this.FileItemPublishResultErrorClear.Click += new System.EventHandler(this.FileItemPublishResultErrorClear_Click);
             // 
             // toolStripSeparator8
             // 
@@ -323,6 +339,7 @@
             this.FileItemHistoryClear,
             this.toolStripSeparator11,
             this.FileItemHistoryEnable});
+            this.FileItemHistory.Enabled = false;
             this.FileItemHistory.Name = "FileItemHistory";
             this.FileItemHistory.Size = new System.Drawing.Size(201, 22);
             this.FileItemHistory.Text = "历史记录";
@@ -332,6 +349,7 @@
             this.FileItemHistoryView.Name = "FileItemHistoryView";
             this.FileItemHistoryView.Size = new System.Drawing.Size(177, 22);
             this.FileItemHistoryView.Text = "查看(&V)";
+            this.FileItemHistoryView.Click += new System.EventHandler(this.FileItemHistoryView_Click);
             // 
             // FileItemHistoryClear
             // 
@@ -340,6 +358,7 @@
             | System.Windows.Forms.Keys.H)));
             this.FileItemHistoryClear.Size = new System.Drawing.Size(177, 22);
             this.FileItemHistoryClear.Text = "清空(&C)";
+            this.FileItemHistoryClear.Click += new System.EventHandler(this.FileItemHistoryClear_Click);
             // 
             // toolStripSeparator11
             // 
@@ -352,6 +371,7 @@
             this.FileItemHistoryEnable.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.H)));
             this.FileItemHistoryEnable.Size = new System.Drawing.Size(177, 22);
             this.FileItemHistoryEnable.Text = "启用(&E)";
+            this.FileItemHistoryEnable.Click += new System.EventHandler(this.FileItemHistoryEnable_Click);
             // 
             // toolStripSeparator10
             // 
@@ -363,6 +383,7 @@
             this.FileItemTaskLog.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.FileItemTaskLogView,
             this.FileItemTaskLogClear});
+            this.FileItemTaskLog.Enabled = false;
             this.FileItemTaskLog.Name = "FileItemTaskLog";
             this.FileItemTaskLog.Size = new System.Drawing.Size(201, 22);
             this.FileItemTaskLog.Text = "任务日志";
@@ -373,6 +394,7 @@
             this.FileItemTaskLogView.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.L)));
             this.FileItemTaskLogView.Size = new System.Drawing.Size(177, 22);
             this.FileItemTaskLogView.Text = "查看(&V)";
+            this.FileItemTaskLogView.Click += new System.EventHandler(this.FileItemTaskLogView_Click);
             // 
             // FileItemTaskLogClear
             // 
@@ -381,6 +403,7 @@
             | System.Windows.Forms.Keys.L)));
             this.FileItemTaskLogClear.Size = new System.Drawing.Size(177, 22);
             this.FileItemTaskLogClear.Text = "清空(&C)";
+            this.FileItemTaskLogClear.Click += new System.EventHandler(this.FileItemTaskLogClear_Click);
             // 
             // toolStripSeparator9
             // 
@@ -389,11 +412,12 @@
             // 
             // FileItemExit
             // 
-            this.FileItemExit.Image = global::SmartSpider.SmartSpider.exitmin;
+            this.FileItemExit.Image = ((System.Drawing.Image)(resources.GetObject("FileItemExit.Image")));
             this.FileItemExit.Name = "FileItemExit";
             this.FileItemExit.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
             this.FileItemExit.Size = new System.Drawing.Size(201, 22);
             this.FileItemExit.Text = "退出(&X)";
+            this.FileItemExit.Click += new System.EventHandler(this.FileItemExit_Click);
             // 
             // tolViewMenu
             // 
@@ -409,14 +433,16 @@
             this.ViewItemShowToolBar.Checked = true;
             this.ViewItemShowToolBar.CheckState = System.Windows.Forms.CheckState.Checked;
             this.ViewItemShowToolBar.Name = "ViewItemShowToolBar";
-            this.ViewItemShowToolBar.Size = new System.Drawing.Size(124, 22);
+            this.ViewItemShowToolBar.Size = new System.Drawing.Size(152, 22);
             this.ViewItemShowToolBar.Text = "工具栏(&T)";
+            this.ViewItemShowToolBar.Click += new System.EventHandler(this.ViewItemShowToolBar_Click);
             // 
             // ViewItemShowFloatFrom
             // 
             this.ViewItemShowFloatFrom.Name = "ViewItemShowFloatFrom";
-            this.ViewItemShowFloatFrom.Size = new System.Drawing.Size(124, 22);
+            this.ViewItemShowFloatFrom.Size = new System.Drawing.Size(152, 22);
             this.ViewItemShowFloatFrom.Text = "悬浮窗(&N)";
+            this.ViewItemShowFloatFrom.Click += new System.EventHandler(this.ViewItemShowFloatFrom_Click);
             // 
             // TolFolderMenu
             // 
@@ -437,20 +463,25 @@
             this.FolderItemAdd.Name = "FolderItemAdd";
             this.FolderItemAdd.Size = new System.Drawing.Size(153, 22);
             this.FolderItemAdd.Text = "新建(&C)";
+            this.FolderItemAdd.Click += new System.EventHandler(this.FolderItemAdd_Click);
             // 
             // FolderItemRename
             // 
+            this.FolderItemRename.Enabled = false;
             this.FolderItemRename.Name = "FolderItemRename";
             this.FolderItemRename.ShortcutKeys = System.Windows.Forms.Keys.F2;
             this.FolderItemRename.Size = new System.Drawing.Size(153, 22);
             this.FolderItemRename.Text = "重命名(&R)";
+            this.FolderItemRename.Click += new System.EventHandler(this.FolderItemRename_Click);
             // 
             // FolderItemDelete
             // 
+            this.FolderItemDelete.Enabled = false;
             this.FolderItemDelete.Name = "FolderItemDelete";
             this.FolderItemDelete.ShortcutKeys = System.Windows.Forms.Keys.Delete;
             this.FolderItemDelete.Size = new System.Drawing.Size(153, 22);
             this.FolderItemDelete.Text = "删除(&D)";
+            this.FolderItemDelete.Click += new System.EventHandler(this.FolderItemDelete_Click);
             // 
             // toolStripSeparator12
             // 
@@ -463,6 +494,7 @@
             this.FolderItemRefresh.ShortcutKeys = System.Windows.Forms.Keys.F8;
             this.FolderItemRefresh.Size = new System.Drawing.Size(153, 22);
             this.FolderItemRefresh.Text = "刷新(&F)";
+            this.FolderItemRefresh.Click += new System.EventHandler(this.FolderItemRefresh_Click);
             // 
             // toolStripSeparator13
             // 
@@ -471,9 +503,11 @@
             // 
             // FolderItemExport
             // 
+            this.FolderItemExport.Enabled = false;
             this.FolderItemExport.Name = "FolderItemExport";
             this.FolderItemExport.Size = new System.Drawing.Size(153, 22);
             this.FolderItemExport.Text = "导出(&E)";
+            this.FolderItemExport.Click += new System.EventHandler(this.FolderItemExport_Click);
             // 
             // TolTaskMenu
             // 
@@ -499,9 +533,11 @@
             // 
             // TaskItemShowInfo
             // 
+            this.TaskItemShowInfo.Enabled = false;
             this.TaskItemShowInfo.Name = "TaskItemShowInfo";
             this.TaskItemShowInfo.Size = new System.Drawing.Size(160, 22);
             this.TaskItemShowInfo.Text = "显示运行信息(&R)";
+            this.TaskItemShowInfo.Click += new System.EventHandler(this.TaskItemShowInfo_Click);
             // 
             // toolStripSeparator14
             // 
@@ -510,25 +546,31 @@
             // 
             // TaskItemStart
             // 
+            this.TaskItemStart.Enabled = false;
             this.TaskItemStart.Name = "TaskItemStart";
             this.TaskItemStart.ShortcutKeys = System.Windows.Forms.Keys.F5;
             this.TaskItemStart.Size = new System.Drawing.Size(160, 22);
             this.TaskItemStart.Text = "开始(&S)";
+            this.TaskItemStart.Click += new System.EventHandler(this.TaskItemStart_Click);
             // 
             // TaskItemSpace
             // 
+            this.TaskItemSpace.Enabled = false;
             this.TaskItemSpace.Name = "TaskItemSpace";
             this.TaskItemSpace.ShortcutKeys = System.Windows.Forms.Keys.F6;
             this.TaskItemSpace.Size = new System.Drawing.Size(160, 22);
             this.TaskItemSpace.Text = "暂停(&P)";
+            this.TaskItemSpace.Click += new System.EventHandler(this.TaskItemSpace_Click);
             // 
             // TaskItemStop
             // 
-            this.TaskItemStop.Image = global::SmartSpider.SmartSpider.stopmin;
+            this.TaskItemStop.Enabled = false;
+            this.TaskItemStop.Image = ((System.Drawing.Image)(resources.GetObject("TaskItemStop.Image")));
             this.TaskItemStop.Name = "TaskItemStop";
             this.TaskItemStop.ShortcutKeys = System.Windows.Forms.Keys.F7;
             this.TaskItemStop.Size = new System.Drawing.Size(160, 22);
             this.TaskItemStop.Text = "停止(&T)";
+            this.TaskItemStop.Click += new System.EventHandler(this.TaskItemStop_Click);
             // 
             // toolStripSeparator15
             // 
@@ -537,32 +579,39 @@
             // 
             // TaskItemAdd
             // 
-            this.TaskItemAdd.Image = global::SmartSpider.SmartSpider.addmin;
+            this.TaskItemAdd.Image = ((System.Drawing.Image)(resources.GetObject("TaskItemAdd.Image")));
             this.TaskItemAdd.Name = "TaskItemAdd";
             this.TaskItemAdd.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
             this.TaskItemAdd.Size = new System.Drawing.Size(160, 22);
             this.TaskItemAdd.Text = "新建(&N)";
+            this.TaskItemAdd.Click += new System.EventHandler(this.TaskItemAdd_Click);
             // 
             // TaskItemEdit
             // 
-            this.TaskItemEdit.Image = global::SmartSpider.SmartSpider.editmin;
+            this.TaskItemEdit.Enabled = false;
+            this.TaskItemEdit.Image = ((System.Drawing.Image)(resources.GetObject("TaskItemEdit.Image")));
             this.TaskItemEdit.Name = "TaskItemEdit";
             this.TaskItemEdit.Size = new System.Drawing.Size(160, 22);
             this.TaskItemEdit.Text = "编辑(&E)";
+            this.TaskItemEdit.Click += new System.EventHandler(this.TaskItemEdit_Click);
             // 
             // TaskItemCopy
             // 
+            this.TaskItemCopy.Enabled = false;
             this.TaskItemCopy.Name = "TaskItemCopy";
             this.TaskItemCopy.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
             this.TaskItemCopy.Size = new System.Drawing.Size(160, 22);
             this.TaskItemCopy.Text = "复制(&C)";
+            this.TaskItemCopy.Click += new System.EventHandler(this.TaskItemCopy_Click);
             // 
             // TaskItemDelete
             // 
+            this.TaskItemDelete.Enabled = false;
             this.TaskItemDelete.Name = "TaskItemDelete";
             this.TaskItemDelete.ShortcutKeys = System.Windows.Forms.Keys.Delete;
             this.TaskItemDelete.Size = new System.Drawing.Size(160, 22);
             this.TaskItemDelete.Text = "删除(&D)";
+            this.TaskItemDelete.Click += new System.EventHandler(this.TaskItemDelete_Click);
             // 
             // toolStripSeparator16
             // 
@@ -571,15 +620,18 @@
             // 
             // TaskItemExport
             // 
+            this.TaskItemExport.Enabled = false;
             this.TaskItemExport.Name = "TaskItemExport";
             this.TaskItemExport.Size = new System.Drawing.Size(160, 22);
             this.TaskItemExport.Text = "导出(&X)";
+            this.TaskItemExport.Click += new System.EventHandler(this.TaskItemExport_Click);
             // 
             // TaskItemImport
             // 
             this.TaskItemImport.Name = "TaskItemImport";
             this.TaskItemImport.Size = new System.Drawing.Size(160, 22);
             this.TaskItemImport.Text = "导入(&I)";
+            this.TaskItemImport.Click += new System.EventHandler(this.TaskItemImport_Click);
             // 
             // toolStripSeparator17
             // 
@@ -588,10 +640,12 @@
             // 
             // TaskItemSelectAll
             // 
+            this.TaskItemSelectAll.Enabled = false;
             this.TaskItemSelectAll.Name = "TaskItemSelectAll";
             this.TaskItemSelectAll.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
             this.TaskItemSelectAll.Size = new System.Drawing.Size(160, 22);
             this.TaskItemSelectAll.Text = "全选(&A)";
+            this.TaskItemSelectAll.Click += new System.EventHandler(this.TaskItemSelectAll_Click);
             // 
             // TolConfigMenu
             // 
@@ -610,18 +664,21 @@
             this.configItemHtmlLable.Name = "configItemHtmlLable";
             this.configItemHtmlLable.Size = new System.Drawing.Size(160, 22);
             this.configItemHtmlLable.Text = "Html标记(&H)";
+            this.configItemHtmlLable.Click += new System.EventHandler(this.configItemHtmlLable_Click);
             // 
             // configItemRegex
             // 
             this.configItemRegex.Name = "configItemRegex";
             this.configItemRegex.Size = new System.Drawing.Size(160, 22);
             this.configItemRegex.Text = "正则表达式(&R)";
+            this.configItemRegex.Click += new System.EventHandler(this.configItemRegex_Click);
             // 
             // configItemPreviewRulesName
             // 
             this.configItemPreviewRulesName.Name = "configItemPreviewRulesName";
             this.configItemPreviewRulesName.Size = new System.Drawing.Size(160, 22);
             this.configItemPreviewRulesName.Text = "预置规则名称(&P)";
+            this.configItemPreviewRulesName.Click += new System.EventHandler(this.configItemPreviewRulesName_Click);
             // 
             // toolStripSeparator18
             // 
@@ -630,10 +687,11 @@
             // 
             // configItemOption
             // 
-            this.configItemOption.Image = global::SmartSpider.SmartSpider.configmin;
+            this.configItemOption.Image = ((System.Drawing.Image)(resources.GetObject("configItemOption.Image")));
             this.configItemOption.Name = "configItemOption";
             this.configItemOption.Size = new System.Drawing.Size(160, 22);
             this.configItemOption.Text = "选项(&O)";
+            this.configItemOption.Click += new System.EventHandler(this.configItemOption_Click);
             // 
             // TolToolMenu
             // 
@@ -654,6 +712,7 @@
             this.ToolItemSourceView.Name = "ToolItemSourceView";
             this.ToolItemSourceView.Size = new System.Drawing.Size(160, 22);
             this.ToolItemSourceView.Text = "源文件查看器(&V)";
+            this.ToolItemSourceView.Click += new System.EventHandler(this.ToolItemSourceView_Click);
             // 
             // toolStripSeparator19
             // 
@@ -665,18 +724,21 @@
             this.ToolItemRegesTest.Name = "ToolItemRegesTest";
             this.ToolItemRegesTest.Size = new System.Drawing.Size(160, 22);
             this.ToolItemRegesTest.Text = "正则式测试器(&R)";
+            this.ToolItemRegesTest.Click += new System.EventHandler(this.ToolItemRegesTest_Click);
             // 
             // ToolItemUrlEncoding
             // 
             this.ToolItemUrlEncoding.Name = "ToolItemUrlEncoding";
             this.ToolItemUrlEncoding.Size = new System.Drawing.Size(160, 22);
             this.ToolItemUrlEncoding.Text = "网址编码器(&U)";
+            this.ToolItemUrlEncoding.Click += new System.EventHandler(this.ToolItemUrlEncoding_Click);
             // 
             // ToolItemTaskUpdate
             // 
             this.ToolItemTaskUpdate.Name = "ToolItemTaskUpdate";
             this.ToolItemTaskUpdate.Size = new System.Drawing.Size(160, 22);
             this.ToolItemTaskUpdate.Text = "任务升级器(&T)";
+            this.ToolItemTaskUpdate.Click += new System.EventHandler(this.ToolItemTaskUpdate_Click);
             // 
             // toolStripSeparator20
             // 
@@ -688,6 +750,7 @@
             this.ToolItemOnLinePublish.Name = "ToolItemOnLinePublish";
             this.ToolItemOnLinePublish.Size = new System.Drawing.Size(160, 22);
             this.ToolItemOnLinePublish.Text = "在线发布器(&P)";
+            this.ToolItemOnLinePublish.Click += new System.EventHandler(this.ToolItemOnLinePublish_Click);
             // 
             // TolHelpMenu
             // 
@@ -709,18 +772,21 @@
             this.HelpItemOnLineHelp.ShortcutKeys = System.Windows.Forms.Keys.F1;
             this.HelpItemOnLineHelp.Size = new System.Drawing.Size(178, 22);
             this.HelpItemOnLineHelp.Text = "在线帮助(&O)";
+            this.HelpItemOnLineHelp.Click += new System.EventHandler(this.HelpItemOnLineHelp_Click);
             // 
             // HelpItemSite
             // 
             this.HelpItemSite.Name = "HelpItemSite";
             this.HelpItemSite.Size = new System.Drawing.Size(178, 22);
             this.HelpItemSite.Text = "网站(&W)";
+            this.HelpItemSite.Click += new System.EventHandler(this.HelpItemSite_Click);
             // 
             // HelpItemBBS
             // 
             this.HelpItemBBS.Name = "HelpItemBBS";
             this.HelpItemBBS.Size = new System.Drawing.Size(178, 22);
             this.HelpItemBBS.Text = "论坛(&F)";
+            this.HelpItemBBS.Click += new System.EventHandler(this.HelpItemBBS_Click);
             // 
             // toolStripSeparator21
             // 
@@ -732,6 +798,7 @@
             this.HelpItemBuy.Name = "HelpItemBuy";
             this.HelpItemBuy.Size = new System.Drawing.Size(178, 22);
             this.HelpItemBuy.Text = "购买(&B)";
+            this.HelpItemBuy.Click += new System.EventHandler(this.HelpItemBuy_Click);
             // 
             // toolStripSeparator22
             // 
@@ -743,6 +810,7 @@
             this.HelpItemAboutUS.Name = "HelpItemAboutUS";
             this.HelpItemAboutUS.Size = new System.Drawing.Size(178, 22);
             this.HelpItemAboutUS.Text = "关于SmartSpider(&A)";
+            this.HelpItemAboutUS.Click += new System.EventHandler(this.HelpItemAboutUS_Click);
             // 
             // ToolBar
             // 
@@ -774,29 +842,35 @@
             // tolStartTask
             // 
             this.tolStartTask.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tolStartTask.Enabled = false;
             this.tolStartTask.Image = ((System.Drawing.Image)(resources.GetObject("tolStartTask.Image")));
             this.tolStartTask.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tolStartTask.Name = "tolStartTask";
             this.tolStartTask.Size = new System.Drawing.Size(23, 22);
             this.tolStartTask.Text = "开始任务";
+            this.tolStartTask.Click += new System.EventHandler(this.tolStartTask_Click);
             // 
             // tolPauseTask
             // 
             this.tolPauseTask.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tolPauseTask.Enabled = false;
             this.tolPauseTask.Image = ((System.Drawing.Image)(resources.GetObject("tolPauseTask.Image")));
             this.tolPauseTask.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tolPauseTask.Name = "tolPauseTask";
             this.tolPauseTask.Size = new System.Drawing.Size(23, 22);
             this.tolPauseTask.Text = "暂停任务";
+            this.tolPauseTask.Click += new System.EventHandler(this.tolPauseTask_Click);
             // 
             // tolStopTask
             // 
             this.tolStopTask.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tolStopTask.Image = global::SmartSpider.SmartSpider.stopmax;
+            this.tolStopTask.Enabled = false;
+            this.tolStopTask.Image = ((System.Drawing.Image)(resources.GetObject("tolStopTask.Image")));
             this.tolStopTask.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tolStopTask.Name = "tolStopTask";
             this.tolStopTask.Size = new System.Drawing.Size(23, 22);
             this.tolStopTask.Text = "停止任务";
+            this.tolStopTask.Click += new System.EventHandler(this.tolStopTask_Click);
             // 
             // toolStripSeparator1
             // 
@@ -806,29 +880,34 @@
             // tolAddTask
             // 
             this.tolAddTask.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tolAddTask.Image = global::SmartSpider.SmartSpider.addmax;
+            this.tolAddTask.Image = ((System.Drawing.Image)(resources.GetObject("tolAddTask.Image")));
             this.tolAddTask.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tolAddTask.Name = "tolAddTask";
             this.tolAddTask.Size = new System.Drawing.Size(23, 22);
             this.tolAddTask.Text = "新建任务";
+            this.tolAddTask.Click += new System.EventHandler(this.tolAddTask_Click);
             // 
             // tolEditTask
             // 
             this.tolEditTask.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tolEditTask.Image = global::SmartSpider.SmartSpider.editmax;
+            this.tolEditTask.Enabled = false;
+            this.tolEditTask.Image = ((System.Drawing.Image)(resources.GetObject("tolEditTask.Image")));
             this.tolEditTask.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tolEditTask.Name = "tolEditTask";
             this.tolEditTask.Size = new System.Drawing.Size(23, 22);
             this.tolEditTask.Text = "编辑任务";
+            this.tolEditTask.Click += new System.EventHandler(this.tolEditTask_Click);
             // 
             // tolDeleteTask
             // 
             this.tolDeleteTask.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tolDeleteTask.Enabled = false;
             this.tolDeleteTask.Image = ((System.Drawing.Image)(resources.GetObject("tolDeleteTask.Image")));
             this.tolDeleteTask.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tolDeleteTask.Name = "tolDeleteTask";
             this.tolDeleteTask.Size = new System.Drawing.Size(23, 22);
             this.tolDeleteTask.Text = "删除任务";
+            this.tolDeleteTask.Click += new System.EventHandler(this.tolDeleteTask_Click);
             // 
             // toolStripSeparator2
             // 
@@ -842,6 +921,7 @@
             this.ExportToExcel,
             this.ExportToTextFile,
             this.ExportToAccessDB});
+            this.tolExportTo.Enabled = false;
             this.tolExportTo.Image = ((System.Drawing.Image)(resources.GetObject("tolExportTo.Image")));
             this.tolExportTo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tolExportTo.Name = "tolExportTo";
@@ -853,18 +933,21 @@
             this.ExportToExcel.Name = "ExportToExcel";
             this.ExportToExcel.Size = new System.Drawing.Size(184, 22);
             this.ExportToExcel.Text = "导出为Excel文件(&E)";
+            this.ExportToExcel.Click += new System.EventHandler(this.ExportToExcel_Click);
             // 
             // ExportToTextFile
             // 
             this.ExportToTextFile.Name = "ExportToTextFile";
             this.ExportToTextFile.Size = new System.Drawing.Size(184, 22);
             this.ExportToTextFile.Text = "导出为文本文件(&T)";
+            this.ExportToTextFile.Click += new System.EventHandler(this.ExportToTextFile_Click);
             // 
             // ExportToAccessDB
             // 
             this.ExportToAccessDB.Name = "ExportToAccessDB";
             this.ExportToAccessDB.Size = new System.Drawing.Size(184, 22);
             this.ExportToAccessDB.Text = "导出为Access文件(&A)";
+            this.ExportToAccessDB.Click += new System.EventHandler(this.ExportToAccessDB_Click);
             // 
             // toolStripSeparator3
             // 
@@ -874,29 +957,34 @@
             // tolAllTaskSuccessShutdown
             // 
             this.tolAllTaskSuccessShutdown.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tolAllTaskSuccessShutdown.Enabled = false;
             this.tolAllTaskSuccessShutdown.Image = ((System.Drawing.Image)(resources.GetObject("tolAllTaskSuccessShutdown.Image")));
             this.tolAllTaskSuccessShutdown.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tolAllTaskSuccessShutdown.Name = "tolAllTaskSuccessShutdown";
             this.tolAllTaskSuccessShutdown.Size = new System.Drawing.Size(23, 22);
             this.tolAllTaskSuccessShutdown.Text = "所有任务完成后关机";
+            this.tolAllTaskSuccessShutdown.Click += new System.EventHandler(this.tolAllTaskSuccessShutdown_Click);
             // 
             // TolDisableAllTimingAcquisitionTask
             // 
             this.TolDisableAllTimingAcquisitionTask.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.TolDisableAllTimingAcquisitionTask.Enabled = false;
             this.TolDisableAllTimingAcquisitionTask.Image = ((System.Drawing.Image)(resources.GetObject("TolDisableAllTimingAcquisitionTask.Image")));
             this.TolDisableAllTimingAcquisitionTask.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.TolDisableAllTimingAcquisitionTask.Name = "TolDisableAllTimingAcquisitionTask";
             this.TolDisableAllTimingAcquisitionTask.Size = new System.Drawing.Size(23, 22);
             this.TolDisableAllTimingAcquisitionTask.Text = "禁用定时采集（针对所有任务）";
+            this.TolDisableAllTimingAcquisitionTask.Click += new System.EventHandler(this.TolDisableAllTimingAcquisitionTask_Click);
             // 
             // tolOption
             // 
             this.tolOption.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tolOption.Image = global::SmartSpider.SmartSpider.configmax;
+            this.tolOption.Image = ((System.Drawing.Image)(resources.GetObject("tolOption.Image")));
             this.tolOption.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tolOption.Name = "tolOption";
             this.tolOption.Size = new System.Drawing.Size(23, 22);
             this.tolOption.Text = "选项";
+            this.tolOption.Click += new System.EventHandler(this.tolOption_Click);
             // 
             // toolStripSeparator4
             // 
@@ -911,6 +999,7 @@
             this.TolOnLineHelp.Name = "TolOnLineHelp";
             this.TolOnLineHelp.Size = new System.Drawing.Size(23, 22);
             this.TolOnLineHelp.Text = "在线帮助";
+            this.TolOnLineHelp.Click += new System.EventHandler(this.TolOnLineHelp_Click);
             // 
             // TolAboutUS
             // 
@@ -920,6 +1009,7 @@
             this.TolAboutUS.Name = "TolAboutUS";
             this.TolAboutUS.Size = new System.Drawing.Size(23, 22);
             this.TolAboutUS.Text = "关于SmartSpider";
+            this.TolAboutUS.Click += new System.EventHandler(this.TolAboutUS_Click);
             // 
             // toolStripSeparator5
             // 
@@ -929,11 +1019,12 @@
             // TolExit
             // 
             this.TolExit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.TolExit.Image = global::SmartSpider.SmartSpider.exitmax;
+            this.TolExit.Image = ((System.Drawing.Image)(resources.GetObject("TolExit.Image")));
             this.TolExit.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.TolExit.Name = "TolExit";
             this.TolExit.Size = new System.Drawing.Size(23, 22);
             this.TolExit.Text = "退出";
+            this.TolExit.Click += new System.EventHandler(this.TolExit_Click);
             // 
             // StatusBar
             // 

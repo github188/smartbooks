@@ -67,9 +67,23 @@ namespace SmartSpider {
             }
         }
         
-        internal static System.Drawing.Bitmap addmin {
+        internal static System.Drawing.Bitmap AddMin {
             get {
-                object obj = ResourceManager.GetObject("addmin", resourceCulture);
+                object obj = ResourceManager.GetObject("AddMin", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap checkmax {
+            get {
+                object obj = ResourceManager.GetObject("checkmax", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap checkmin {
+            get {
+                object obj = ResourceManager.GetObject("checkmin", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -116,6 +130,34 @@ namespace SmartSpider {
             }
         }
         
+        internal static System.Drawing.Bitmap foldermax {
+            get {
+                object obj = ResourceManager.GetObject("foldermax", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap foldermin {
+            get {
+                object obj = ResourceManager.GetObject("foldermin", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap loadmax {
+            get {
+                object obj = ResourceManager.GetObject("loadmax", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap loadmin {
+            get {
+                object obj = ResourceManager.GetObject("loadmin", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap stopmax {
             get {
                 object obj = ResourceManager.GetObject("stopmax", resourceCulture);
@@ -126,6 +168,20 @@ namespace SmartSpider {
         internal static System.Drawing.Bitmap stopmin {
             get {
                 object obj = ResourceManager.GetObject("stopmin", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap taskmax {
+            get {
+                object obj = ResourceManager.GetObject("taskmax", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap taskmin {
+            get {
+                object obj = ResourceManager.GetObject("taskmin", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -36,6 +36,7 @@ namespace SmartSpider.Utility {
             TreeNode node = new TreeNode(parentNodeName);
             node.Expand();
             node.Tag = taskPath;
+            node.ImageKey = "foldermax.png";
 
             if (dirs.Length != 0) {
                 for (int i = 0; i < dirs.Length; i++) {

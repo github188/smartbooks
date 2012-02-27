@@ -84,6 +84,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SmartSpider.resx</DependentUpon>
     </Compile>
+    <Compile Include="FrmMainUtility.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Utility\TaskFolderTree.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -164,6 +167,30 @@
       <Project>{4E1169EC-CCD2-4F8E-8157-47CE07753DD9}</Project>
       <Name>SmartSpiderConfig</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checkmax.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checkmin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\foldermax.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\foldermin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loadmax.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loadmin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\taskmax.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\taskmin.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
