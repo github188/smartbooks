@@ -41,6 +41,8 @@
     <Compile Include="ExtractionRule.cs" />
     <Compile Include="Filter.cs" />
     <Compile Include="HtmlMark.cs" />
+    <Compile Include="HttpHelper.cs" />
+    <Compile Include="HttpMethod.cs" />
     <Compile Include="ISmartSpider.cs" />
     <Compile Include="Layer.cs" />
     <Compile Include="LogEventArgs.cs" />
@@ -61,6 +63,8 @@
     <Compile Include="StartingUrlList.cs" />
     <Compile Include="Action.cs" />
     <Compile Include="Task.cs" />
+    <Compile Include="TaskController.cs" />
+    <Compile Include="TaskUnit.cs" />
     <Compile Include="UrlListManager.cs" />
     <Compile Include="Week.cs" />
   </ItemGroup>
