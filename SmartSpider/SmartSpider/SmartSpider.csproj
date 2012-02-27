@@ -159,6 +159,12 @@
   <ItemGroup>
     <None Include="Resources\stopmin.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SmartSpiderConfig\SmartSpiderConfig.csproj">
+      <Project>{4E1169EC-CCD2-4F8E-8157-47CE07753DD9}</Project>
+      <Name>SmartSpiderConfig</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

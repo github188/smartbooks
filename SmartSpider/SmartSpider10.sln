@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartSpider", "SmartSpider\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartSpiderIUtility", "SmartSpiderIUtility\SmartSpiderIUtility.csproj", "{950212EF-1D9A-47D1-A278-9C5D2A9F6D67}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartSpiderConfig", "SmartSpiderConfig\SmartSpiderConfig.csproj", "{4E1169EC-CCD2-4F8E-8157-47CE07753DD9}"
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -42,6 +44,16 @@ Global
 		{950212EF-1D9A-47D1-A278-9C5D2A9F6D67}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{950212EF-1D9A-47D1-A278-9C5D2A9F6D67}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{950212EF-1D9A-47D1-A278-9C5D2A9F6D67}.Release|x86.ActiveCfg = Release|Any CPU
+		{4E1169EC-CCD2-4F8E-8157-47CE07753DD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E1169EC-CCD2-4F8E-8157-47CE07753DD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E1169EC-CCD2-4F8E-8157-47CE07753DD9}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{4E1169EC-CCD2-4F8E-8157-47CE07753DD9}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{4E1169EC-CCD2-4F8E-8157-47CE07753DD9}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{4E1169EC-CCD2-4F8E-8157-47CE07753DD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E1169EC-CCD2-4F8E-8157-47CE07753DD9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E1169EC-CCD2-4F8E-8157-47CE07753DD9}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{4E1169EC-CCD2-4F8E-8157-47CE07753DD9}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{4E1169EC-CCD2-4F8E-8157-47CE07753DD9}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
