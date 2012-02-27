@@ -11,8 +11,8 @@ namespace SmartSpider {
         static void Main() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new FrmLoading());
-            Application.Run(new FrmMain());
+            Application.Run(new FrmLoading());
+            //Application.Run(new FrmMain());
         }
     }
 }

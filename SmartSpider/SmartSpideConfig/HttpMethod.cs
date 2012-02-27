@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SmartSpide.Config {
+namespace SmartSpider.Config {
     public enum HttpMethod {
         /// <summary>
         /// Http GET请求方式

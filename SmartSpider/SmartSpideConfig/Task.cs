@@ -1,4 +1,4 @@
-﻿namespace SmartSpide.Config {
+﻿namespace SmartSpider.Config {
     using System;
     using System.Collections.Generic;
     using System.Text;
@@ -765,7 +765,7 @@
         /// <summary>
         /// 提取规则
         /// </summary>
-        public SmartSpide.Config.ExtractionRule[] ExtractionRules {
+        public SmartSpider.Config.ExtractionRule[] ExtractionRules {
             get {
                 return _ExtractionRules;
             }

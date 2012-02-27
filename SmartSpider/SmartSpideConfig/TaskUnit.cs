@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SmartSpide.Config {
+namespace SmartSpider.Config {
     public class TaskUnit : ISmartSpider {
         private Task _TaskConfig;
         private Action _Action;

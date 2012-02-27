@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartSpider", "SmartSpider\SmartSpider.csproj", "{865963E2-E6AC-4617-94C8-908564665DF4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartSpideConfig", "SmartSpideConfig\SmartSpideConfig.csproj", "{4E1169EC-CCD2-4F8E-8157-47CE07753DD9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartSpiderConfig", "SmartSpideConfig\SmartSpiderConfig.csproj", "{4E1169EC-CCD2-4F8E-8157-47CE07753DD9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartSpiderIUtility", "SmartSpiderIUtility\SmartSpiderIUtility.csproj", "{950212EF-1D9A-47D1-A278-9C5D2A9F6D67}"
 EndProject

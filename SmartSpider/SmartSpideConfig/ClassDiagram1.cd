@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="SmartSpide.Config.Configuration" Collapsed="true">
+  <Class Name="SmartSpider.Config.Configuration" Collapsed="true">
     <Position X="0.5" Y="0.5" Width="1.5" />
     <Compartments>
       <Compartment Name="Fields" Collapsed="true" />
@@ -12,7 +12,7 @@
       <FileName>Configuration.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="SmartSpide.Config.RequestHeader" Collapsed="true">
+  <Class Name="SmartSpider.Config.RequestHeader" Collapsed="true">
     <Position X="2.25" Y="0.5" Width="1.5" />
     <Compartments>
       <Compartment Name="Properties" Collapsed="true" />
@@ -22,14 +22,14 @@
       <FileName>RequestHeader.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="SmartSpide.Config.Task" Collapsed="true">
+  <Class Name="SmartSpider.Config.Task" Collapsed="true">
     <Position X="0.5" Y="1.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>EBJxYFc85EHiQKkMwSkCsNSZRQApEIzEkiwQbPRw5AA=</HashCode>
       <FileName>Task.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="SmartSpide.Config.ExtractionRule" Collapsed="true">
+  <Class Name="SmartSpider.Config.ExtractionRule" Collapsed="true">
     <Position X="2.25" Y="1.25" Width="1.5" />
     <Compartments>
       <Compartment Name="Properties" Collapsed="true" />
@@ -39,7 +39,7 @@
       <FileName>ExtractionRule.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="SmartSpide.Config.HtmlMark" Collapsed="true">
+  <Class Name="SmartSpider.Config.HtmlMark" Collapsed="true">
     <Position X="0.5" Y="2" Width="1.5" />
     <Compartments>
       <Compartment Name="Properties" Collapsed="true" />
@@ -49,7 +49,7 @@
       <FileName>HtmlMark.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="SmartSpide.Config.Filter" Collapsed="true">
+  <Class Name="SmartSpider.Config.Filter" Collapsed="true">
     <Position X="0.5" Y="3.5" Width="1.5" />
     <Compartments>
       <Compartment Name="Properties" Collapsed="true" />
@@ -59,7 +59,7 @@
       <FileName>Filter.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="SmartSpide.Config.UrlListManager" Collapsed="true">
+  <Class Name="SmartSpider.Config.UrlListManager" Collapsed="true">
     <Position X="2.25" Y="2" Width="1.5" />
     <Compartments>
       <Compartment Name="Properties" Collapsed="true" />
@@ -69,7 +69,7 @@
       <FileName>UrlListManager.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="SmartSpide.Config.PagedUrlPatterns" Collapsed="true">
+  <Class Name="SmartSpider.Config.PagedUrlPatterns" Collapsed="true">
     <Position X="0.5" Y="2.75" Width="1.5" />
     <Compartments>
       <Compartment Name="Properties" Collapsed="true" />
@@ -79,7 +79,7 @@
       <FileName>PagedUrlPattern.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="SmartSpide.Config.NavigationRule" Collapsed="true">
+  <Class Name="SmartSpider.Config.NavigationRule" Collapsed="true">
     <Position X="2.25" Y="4.25" Width="1.5" />
     <Compartments>
       <Compartment Name="Properties" Collapsed="true" />
@@ -89,7 +89,7 @@
       <FileName>NavigationRule.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="SmartSpide.Config.StartingUrlList" Collapsed="true">
+  <Class Name="SmartSpider.Config.StartingUrlList" Collapsed="true">
     <Position X="0.5" Y="4.25" Width="1.5" />
     <Compartments>
       <Compartment Name="Properties" Collapsed="true" />
@@ -99,7 +99,7 @@
       <FileName>StartingUrlList.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="SmartSpide.Config.Replacement" Collapsed="true">
+  <Class Name="SmartSpider.Config.Replacement" Collapsed="true">
     <Position X="2.25" Y="2.75" Width="1.5" />
     <Compartments>
       <Compartment Name="Properties" Collapsed="true" />
@@ -109,7 +109,7 @@
       <FileName>Replacement.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="SmartSpide.Config.RegularExpression" Collapsed="true">
+  <Class Name="SmartSpider.Config.RegularExpression" Collapsed="true">
     <Position X="2.25" Y="3.5" Width="1.5" />
     <Compartments>
       <Compartment Name="Properties" Collapsed="true" />
@@ -119,35 +119,35 @@
       <FileName>RegularExpression.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="SmartSpide.Config.LogEventArgs" Collapsed="true">
+  <Class Name="SmartSpider.Config.LogEventArgs" Collapsed="true">
     <Position X="0.5" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAIAAAAAAAAEAAAIAAAAAAAAABAAAAAEAAAAIAAAAAA=</HashCode>
       <FileName>LogEventArgs.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="SmartSpide.Config.SmartSpiderInformation" Collapsed="true">
+  <Class Name="SmartSpider.Config.SmartSpiderInformation" Collapsed="true">
     <Position X="2.25" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAACAABCACAAAAAAAAAAAQAAAAAAAACAgCAAAAIACA=</HashCode>
       <FileName>SmartSpiderInformation.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="SmartSpide.Config.SmartSpiderWebProxy" Collapsed="true">
+  <Class Name="SmartSpider.Config.SmartSpiderWebProxy" Collapsed="true">
     <Position X="0.5" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAEAAAQIAAEAACAAACAACAAAAAAAACAA=</HashCode>
       <FileName>SmartSpiderWebProxy.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="SmartSpide.Config.TaskController" Collapsed="true">
+  <Class Name="SmartSpider.Config.TaskController" Collapsed="true">
     <Position X="2.25" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAIAAAAAAABAAAAAAAAABAAAAAEAAAAAgAAAAAAAEAA=</HashCode>
       <FileName>TaskController.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="SmartSpide.Config.TaskUnit" Collapsed="true">
+  <Class Name="SmartSpider.Config.TaskUnit" Collapsed="true">
     <Position X="0.5" Y="6.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>KAAhSQAABCUIAAwAAAAAgAIACBgAAEAgoAAQAQAAAAQ=</HashCode>
@@ -155,91 +155,91 @@
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="SmartSpide.Config.HttpHelper" Collapsed="true">
+  <Class Name="SmartSpider.Config.HttpHelper" Collapsed="true">
     <Position X="2.25" Y="6.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIAAAAQAAAAAAAAAAAA=</HashCode>
       <FileName>HttpHelper.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Interface Name="SmartSpide.Config.ISmartSpider" Collapsed="true">
+  <Interface Name="SmartSpider.Config.ISmartSpider" Collapsed="true">
     <Position X="9.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>KAAAQAAAACUIAAwAAAAAAAIAABgAAEAgoAAQAQAAAAA=</HashCode>
       <FileName>ISmartSpider.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Enum Name="SmartSpide.Config.ShutDownMode" Collapsed="true">
+  <Enum Name="SmartSpider.Config.ShutDownMode" Collapsed="true">
     <Position X="4" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAQAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>ShutDownMode.cs</FileName>
     </TypeIdentifier>
   </Enum>
-  <Enum Name="SmartSpide.Config.NotifyWindowMode" Collapsed="true">
+  <Enum Name="SmartSpider.Config.NotifyWindowMode" Collapsed="true">
     <Position X="5.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAABAAACAAAAAAAAAAAAAACAAAAAAA=</HashCode>
       <FileName>NotifyWindowMode.cs</FileName>
     </TypeIdentifier>
   </Enum>
-  <Enum Name="SmartSpide.Config.LogFileStyle" Collapsed="true">
+  <Enum Name="SmartSpider.Config.LogFileStyle" Collapsed="true">
     <Position X="4" Y="1.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAQAAAAACAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>LogFileStyle.cs</FileName>
     </TypeIdentifier>
   </Enum>
-  <Enum Name="SmartSpide.Config.Action" Collapsed="true">
+  <Enum Name="SmartSpider.Config.Action" Collapsed="true">
     <Position X="4" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAgCAAAACAAAAEAAAAAAAAAAAAAAAAAIAAAAAAAAAg=</HashCode>
       <FileName>Action.cs</FileName>
     </TypeIdentifier>
   </Enum>
-  <Enum Name="SmartSpide.Config.DatabaseType" Collapsed="true">
+  <Enum Name="SmartSpider.Config.DatabaseType" Collapsed="true">
     <Position X="5.75" Y="1.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAEAAAAABAAACAAAAAAEAAAAAAAAAAAA=</HashCode>
       <FileName>DatabaseType.cs</FileName>
     </TypeIdentifier>
   </Enum>
-  <Enum Name="SmartSpide.Config.Layer" Collapsed="true">
+  <Enum Name="SmartSpider.Config.Layer" Collapsed="true">
     <Position X="4" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
       <FileName>Layer.cs</FileName>
     </TypeIdentifier>
   </Enum>
-  <Enum Name="SmartSpide.Config.ScheduleMode" Collapsed="true">
+  <Enum Name="SmartSpider.Config.ScheduleMode" Collapsed="true">
     <Position X="5.75" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
       <FileName>ScheduleMode.cs</FileName>
     </TypeIdentifier>
   </Enum>
-  <Enum Name="SmartSpide.Config.Week" Collapsed="true">
+  <Enum Name="SmartSpider.Config.Week" Collapsed="true">
     <Position X="5.75" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAQAAIAACAAAAAAAAAAACAAIACAIAAAAAAAAAAAAAA=</HashCode>
       <FileName>Week.cs</FileName>
     </TypeIdentifier>
   </Enum>
-  <Enum Name="SmartSpide.Config.RequiredOptions" Collapsed="true">
+  <Enum Name="SmartSpider.Config.RequiredOptions" Collapsed="true">
     <Position X="4" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>KAAAQAAAAAUIAAQAAAAAAAIAABAAAAAgIAAQAQEAAAA=</HashCode>
       <FileName>RequiredOptions.cs</FileName>
     </TypeIdentifier>
   </Enum>
-  <Enum Name="SmartSpide.Config.HttpMethod" Collapsed="true">
+  <Enum Name="SmartSpider.Config.HttpMethod" Collapsed="true">
     <Position X="5.75" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAIAAACAAAEAQAAAAAAAAAAAAAgAAAAAAAAAAAAAAA=</HashCode>
       <FileName>HttpMethod.cs</FileName>
     </TypeIdentifier>
   </Enum>
-  <Delegate Name="SmartSpide.Config.LogEventHanlder" Collapsed="true">
+  <Delegate Name="SmartSpider.Config.LogEventHanlder" Collapsed="true">
     <Position X="7.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAABAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>

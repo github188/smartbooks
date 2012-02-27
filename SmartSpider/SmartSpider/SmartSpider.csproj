@@ -84,6 +84,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SmartSpider.resx</DependentUpon>
     </Compile>
+    <Compile Include="Utility\TaskFolderTree.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <EmbeddedResource Include="FrmAboutUS.resx">
       <DependentUpon>FrmAboutUS.cs</DependentUpon>
     </EmbeddedResource>
@@ -115,6 +118,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>SmartSpider.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -154,6 +158,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\stopmin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SmartSpideConfig\SmartSpiderConfig.csproj">
+      <Project>{4E1169EC-CCD2-4F8E-8157-47CE07753DD9}</Project>
+      <Name>SmartSpiderConfig</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

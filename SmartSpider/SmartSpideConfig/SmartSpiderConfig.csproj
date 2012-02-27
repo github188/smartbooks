@@ -8,8 +8,8 @@
     <ProjectGuid>{4E1169EC-CCD2-4F8E-8157-47CE07753DD9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SmartSpide.Config</RootNamespace>
-    <AssemblyName>SmartSpide.Config</AssemblyName>
+    <RootNamespace>SmartSpider.Config</RootNamespace>
+    <AssemblyName>SmartSpider.Config</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

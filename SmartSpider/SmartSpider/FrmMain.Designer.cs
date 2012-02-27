@@ -134,6 +134,18 @@
             this.trwTaskFolder = new System.Windows.Forms.TreeView();
             this.splitContainerRight = new System.Windows.Forms.SplitContainer();
             this.livTaskView = new System.Windows.Forms.ListView();
+            this.taskName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ExtractCount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ExtractURL = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ExtractStartSuccessUrl = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ExtractStartUrl = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ExtractHistory = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ExtractCurrent = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ExtractResult = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ReleaseRepeat = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ReleaseError = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ExtractSpaceTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.StartTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabContent = new System.Windows.Forms.TabControl();
             this.tabPageDefault = new System.Windows.Forms.TabPage();
             this.webDefaultView = new System.Windows.Forms.WebBrowser();
@@ -207,24 +219,24 @@
             // FileItemSaveAsExcel
             // 
             this.FileItemSaveAsExcel.Name = "FileItemSaveAsExcel";
-            this.FileItemSaveAsExcel.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift)
-                        | System.Windows.Forms.Keys.E)));
+            this.FileItemSaveAsExcel.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.E)));
             this.FileItemSaveAsExcel.Size = new System.Drawing.Size(225, 22);
             this.FileItemSaveAsExcel.Text = "Excel文件(&E)";
             // 
             // FileItemSaveAsTextFile
             // 
             this.FileItemSaveAsTextFile.Name = "FileItemSaveAsTextFile";
-            this.FileItemSaveAsTextFile.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift)
-                        | System.Windows.Forms.Keys.T)));
+            this.FileItemSaveAsTextFile.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.T)));
             this.FileItemSaveAsTextFile.Size = new System.Drawing.Size(225, 22);
             this.FileItemSaveAsTextFile.Text = "文本文件(&T)";
             // 
             // FileItemSaveAsAccessDB
             // 
             this.FileItemSaveAsAccessDB.Name = "FileItemSaveAsAccessDB";
-            this.FileItemSaveAsAccessDB.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift)
-                        | System.Windows.Forms.Keys.A)));
+            this.FileItemSaveAsAccessDB.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.A)));
             this.FileItemSaveAsAccessDB.Size = new System.Drawing.Size(225, 22);
             this.FileItemSaveAsAccessDB.Text = "Access文件(&A)";
             // 
@@ -243,8 +255,8 @@
             // FileItemClearResult
             // 
             this.FileItemClearResult.Name = "FileItemClearResult";
-            this.FileItemClearResult.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt)
-                        | System.Windows.Forms.Keys.D1)));
+            this.FileItemClearResult.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
+            | System.Windows.Forms.Keys.D1)));
             this.FileItemClearResult.Size = new System.Drawing.Size(201, 22);
             this.FileItemClearResult.Text = "清空结果(&C)";
             // 
@@ -271,8 +283,8 @@
             // FileItemPublishResultRepeatClear
             // 
             this.FileItemPublishResultRepeatClear.Name = "FileItemPublishResultRepeatClear";
-            this.FileItemPublishResultRepeatClear.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt)
-                        | System.Windows.Forms.Keys.D2)));
+            this.FileItemPublishResultRepeatClear.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
+            | System.Windows.Forms.Keys.D2)));
             this.FileItemPublishResultRepeatClear.Size = new System.Drawing.Size(177, 22);
             this.FileItemPublishResultRepeatClear.Text = "清空(&C)";
             // 
@@ -294,8 +306,8 @@
             // FileItemPublishResultErrorClear
             // 
             this.FileItemPublishResultErrorClear.Name = "FileItemPublishResultErrorClear";
-            this.FileItemPublishResultErrorClear.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt)
-                        | System.Windows.Forms.Keys.D3)));
+            this.FileItemPublishResultErrorClear.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
+            | System.Windows.Forms.Keys.D3)));
             this.FileItemPublishResultErrorClear.Size = new System.Drawing.Size(177, 22);
             this.FileItemPublishResultErrorClear.Text = "清空(&C)";
             // 
@@ -324,8 +336,8 @@
             // FileItemHistoryClear
             // 
             this.FileItemHistoryClear.Name = "FileItemHistoryClear";
-            this.FileItemHistoryClear.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt)
-                        | System.Windows.Forms.Keys.H)));
+            this.FileItemHistoryClear.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
+            | System.Windows.Forms.Keys.H)));
             this.FileItemHistoryClear.Size = new System.Drawing.Size(177, 22);
             this.FileItemHistoryClear.Text = "清空(&C)";
             // 
@@ -365,8 +377,8 @@
             // FileItemTaskLogClear
             // 
             this.FileItemTaskLogClear.Name = "FileItemTaskLogClear";
-            this.FileItemTaskLogClear.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt)
-                        | System.Windows.Forms.Keys.L)));
+            this.FileItemTaskLogClear.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
+            | System.Windows.Forms.Keys.L)));
             this.FileItemTaskLogClear.Size = new System.Drawing.Size(177, 22);
             this.FileItemTaskLogClear.Text = "清空(&C)";
             // 
@@ -939,9 +951,9 @@
             // 
             // staTaskCount
             // 
-            this.staTaskCount.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top)
-                        | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right)
-                        | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
+            this.staTaskCount.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
             this.staTaskCount.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenOuter;
             this.staTaskCount.Name = "staTaskCount";
             this.staTaskCount.Size = new System.Drawing.Size(115, 17);
@@ -951,9 +963,9 @@
             // 
             // staSelectTaskCount
             // 
-            this.staSelectTaskCount.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top)
-                        | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right)
-                        | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
+            this.staSelectTaskCount.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
             this.staSelectTaskCount.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenOuter;
             this.staSelectTaskCount.Name = "staSelectTaskCount";
             this.staSelectTaskCount.Size = new System.Drawing.Size(115, 17);
@@ -963,9 +975,9 @@
             // 
             // staTaskName
             // 
-            this.staTaskName.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top)
-                        | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right)
-                        | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
+            this.staTaskName.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
             this.staTaskName.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenOuter;
             this.staTaskName.Name = "staTaskName";
             this.staTaskName.Size = new System.Drawing.Size(115, 17);
@@ -975,9 +987,9 @@
             // 
             // staTaskStatus
             // 
-            this.staTaskStatus.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top)
-                        | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right)
-                        | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
+            this.staTaskStatus.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
             this.staTaskStatus.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenOuter;
             this.staTaskStatus.Name = "staTaskStatus";
             this.staTaskStatus.Size = new System.Drawing.Size(115, 17);
@@ -987,9 +999,9 @@
             // 
             // staThreadNumber
             // 
-            this.staThreadNumber.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top)
-                        | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right)
-                        | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
+            this.staThreadNumber.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
             this.staThreadNumber.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenOuter;
             this.staThreadNumber.Name = "staThreadNumber";
             this.staThreadNumber.Size = new System.Drawing.Size(115, 17);
@@ -1021,11 +1033,15 @@
             // 
             // trwTaskFolder
             // 
+            this.trwTaskFolder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.trwTaskFolder.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.trwTaskFolder.Font = new System.Drawing.Font("宋体", 12F);
+            this.trwTaskFolder.ItemHeight = 20;
             this.trwTaskFolder.Location = new System.Drawing.Point(0, 0);
             this.trwTaskFolder.Name = "trwTaskFolder";
             this.trwTaskFolder.Size = new System.Drawing.Size(200, 302);
             this.trwTaskFolder.TabIndex = 0;
+            this.trwTaskFolder.MouseClick += new System.Windows.Forms.MouseEventHandler(this.trwTaskFolder_MouseClick);
             // 
             // splitContainerRight
             // 
@@ -1050,12 +1066,79 @@
             // 
             // livTaskView
             // 
+            this.livTaskView.Activation = System.Windows.Forms.ItemActivation.TwoClick;
+            this.livTaskView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.livTaskView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.taskName,
+            this.ExtractCount,
+            this.ExtractURL,
+            this.ExtractStartSuccessUrl,
+            this.ExtractStartUrl,
+            this.ExtractHistory,
+            this.ExtractCurrent,
+            this.ExtractResult,
+            this.ReleaseRepeat,
+            this.ReleaseError,
+            this.ExtractSpaceTime,
+            this.StartTime});
             this.livTaskView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.livTaskView.Font = new System.Drawing.Font("宋体", 9F);
             this.livTaskView.Location = new System.Drawing.Point(0, 0);
+            this.livTaskView.MultiSelect = false;
             this.livTaskView.Name = "livTaskView";
             this.livTaskView.Size = new System.Drawing.Size(389, 150);
             this.livTaskView.TabIndex = 0;
             this.livTaskView.UseCompatibleStateImageBehavior = false;
+            this.livTaskView.View = System.Windows.Forms.View.Details;
+            this.livTaskView.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.livTaskView_MouseDoubleClick);
+            // 
+            // taskName
+            // 
+            this.taskName.Text = "任务名称";
+            // 
+            // ExtractCount
+            // 
+            this.ExtractCount.Text = "完成提取";
+            // 
+            // ExtractURL
+            // 
+            this.ExtractURL.Text = "提取网址";
+            // 
+            // ExtractStartSuccessUrl
+            // 
+            this.ExtractStartSuccessUrl.Text = "完成起始";
+            // 
+            // ExtractStartUrl
+            // 
+            this.ExtractStartUrl.Text = "起始地址";
+            // 
+            // ExtractHistory
+            // 
+            this.ExtractHistory.Text = "历史记录";
+            // 
+            // ExtractCurrent
+            // 
+            this.ExtractCurrent.Text = "当前采集";
+            // 
+            // ExtractResult
+            // 
+            this.ExtractResult.Text = "采集结果";
+            // 
+            // ReleaseRepeat
+            // 
+            this.ReleaseRepeat.Text = "发布重复";
+            // 
+            // ReleaseError
+            // 
+            this.ReleaseError.Text = "发布出错";
+            // 
+            // ExtractSpaceTime
+            // 
+            this.ExtractSpaceTime.Text = "采集用时";
+            // 
+            // StartTime
+            // 
+            this.StartTime.Text = "开始时间";
             // 
             // tabContent
             // 
@@ -1104,6 +1187,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SmartSpider 1.0.0.0";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmMain_FormClosed);
             this.MenuBar.ResumeLayout(false);
             this.MenuBar.PerformLayout();
             this.ToolBar.ResumeLayout(false);
@@ -1233,10 +1317,23 @@
         private System.Windows.Forms.ToolStripStatusLabel staThreadNumber;
         private System.Windows.Forms.SplitContainer splitContainerMain;
         private System.Windows.Forms.TreeView trwTaskFolder;
+        //private Utility.TaskFolderTree trwTaskFolder;
         private System.Windows.Forms.SplitContainer splitContainerRight;
         private System.Windows.Forms.ListView livTaskView;
         private System.Windows.Forms.TabControl tabContent;
         private System.Windows.Forms.TabPage tabPageDefault;
         private System.Windows.Forms.WebBrowser webDefaultView;
+        private System.Windows.Forms.ColumnHeader taskName;
+        private System.Windows.Forms.ColumnHeader ExtractCount;
+        private System.Windows.Forms.ColumnHeader ExtractURL;
+        private System.Windows.Forms.ColumnHeader ExtractStartSuccessUrl;
+        private System.Windows.Forms.ColumnHeader ExtractStartUrl;
+        private System.Windows.Forms.ColumnHeader ExtractHistory;
+        private System.Windows.Forms.ColumnHeader ExtractCurrent;
+        private System.Windows.Forms.ColumnHeader ExtractResult;
+        private System.Windows.Forms.ColumnHeader ReleaseRepeat;
+        private System.Windows.Forms.ColumnHeader ReleaseError;
+        private System.Windows.Forms.ColumnHeader ExtractSpaceTime;
+        private System.Windows.Forms.ColumnHeader StartTime;
     }
 }

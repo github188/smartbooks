@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SmartSpide.Config {
+namespace SmartSpider.Config {
     public class TaskController {
-        private SmartSpide.Config.TaskUnit[] _TaskUnit;
+        private SmartSpider.Config.TaskUnit[] _TaskUnit;
         /// <summary>
         /// </summary>
         private Configuration _Configuration;

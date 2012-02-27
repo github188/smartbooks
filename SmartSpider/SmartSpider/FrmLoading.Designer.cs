@@ -23,7 +23,15 @@
         /// 使用代码编辑器修改此方法的内容。
         /// </summary>
         private void InitializeComponent() {
+            this.components = new System.ComponentModel.Container();
+            this.timerLoading = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
+            // 
+            // timerLoading
+            // 
+            this.timerLoading.Enabled = true;
+            this.timerLoading.Interval = 50;
+            this.timerLoading.Tick += new System.EventHandler(this.timerLoading_Tick);
             // 
             // FrmLoading
             // 
@@ -34,15 +42,19 @@
             this.MaximumSize = new System.Drawing.Size(350, 220);
             this.MinimumSize = new System.Drawing.Size(350, 220);
             this.Name = "FrmLoading";
+            this.Opacity = 0.5D;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmLoading";
             this.TopMost = true;
+            this.Load += new System.EventHandler(this.FrmLoading_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Timer timerLoading;
     }
 }
 
