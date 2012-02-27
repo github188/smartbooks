@@ -38,6 +38,7 @@
         /// <summary>
         /// 继续
         /// </summary>
+        [XmlEnum("Continue")]
         Continue = 5,        
     }
 }
