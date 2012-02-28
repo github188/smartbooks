@@ -265,6 +265,60 @@
   <ItemGroup>
     <None Include="Resources\yesmin.gif" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\aboutmax.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\aboutmin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\deletemax.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\deletemin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exportmax.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exportmin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\helpmax.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\helpmin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pausemax.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pausemin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shutdownmax.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shutdownmin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sitemax.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sitemin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\startmax.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\startmin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\timemax.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\timemin.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -146,12 +146,17 @@
 
         }
         //任务菜单：新建
-        private void TaskItemAdd_Click(object sender, EventArgs e) {
-
+        private void TaskItemAdd_Click(object sender, EventArgs e) {            
+            FrmTask newTask = new FrmTask(new TaskUnit());
+            newTask.ShowDialog();
         }
         //任务菜单：编辑
         private void TaskItemEdit_Click(object sender, EventArgs e) {
-
+            if (this.livTaskView.SelectedItems.Count != 0) {
+                TaskUnit unit = (TaskUnit)this.livTaskView.SelectedItems[0].Tag;
+                FrmTask newTask = new FrmTask(unit);
+                newTask.ShowDialog();
+            }
         }
         //任务菜单：复制
         private void TaskItemCopy_Click(object sender, EventArgs e) {
@@ -190,7 +195,8 @@
         }
         //设置菜单：选项
         private void configItemOption_Click(object sender, EventArgs e) {
-
+            FrmOption option = new FrmOption(this._Configuration);
+            option.ShowDialog();
         }
         #endregion
 
@@ -236,7 +242,8 @@
         }
         //帮助菜单：关于SmartSpider
         private void HelpItemAboutUS_Click(object sender, EventArgs e) {
-
+            FrmAboutUS about = new FrmAboutUS();
+            about.ShowDialog();
         }
         #endregion
 
@@ -274,7 +281,7 @@
             }
         }
         //工具栏：新建任务
-        private void tolAddTask_Click(object sender, EventArgs e) {
+        private void tolAddTask_Click(object sender, EventArgs e) {            
             FrmTask newTask = new FrmTask(new TaskUnit());
             newTask.ShowDialog();
         }
@@ -303,7 +310,7 @@
         }
         //工具栏：选项
         private void tolOption_Click(object sender, EventArgs e) {
-            FrmOption option = new FrmOption();
+            FrmOption option = new FrmOption(this._Configuration);
             option.ShowDialog();
         }
         //工具栏：在线帮助
@@ -312,7 +319,8 @@
         }
         //工具栏：关于SmartSpider
         private void TolAboutUS_Click(object sender, EventArgs e) {
-
+            FrmAboutUS about = new FrmAboutUS();
+            about.ShowDialog();
         }
         //工具栏：退出
         private void TolExit_Click(object sender, EventArgs e) {

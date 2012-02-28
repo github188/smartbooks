@@ -23,6 +23,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.MenuBar = new System.Windows.Forms.MenuStrip();
             this.tolFileMenu = new System.Windows.Forms.ToolStripMenuItem();
@@ -132,6 +133,7 @@
             this.staThreadNumber = new System.Windows.Forms.ToolStripStatusLabel();
             this.splitContainerMain = new System.Windows.Forms.SplitContainer();
             this.trwTaskFolder = new System.Windows.Forms.TreeView();
+            this.imageListMax = new System.Windows.Forms.ImageList(this.components);
             this.splitContainerRight = new System.Windows.Forms.SplitContainer();
             this.livTaskView = new System.Windows.Forms.ListView();
             this.taskName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -412,7 +414,7 @@
             // 
             // FileItemExit
             // 
-            this.FileItemExit.Image = ((System.Drawing.Image)(resources.GetObject("FileItemExit.Image")));
+            this.FileItemExit.Image = global::SmartSpider.SmartSpider.exitmin;
             this.FileItemExit.Name = "FileItemExit";
             this.FileItemExit.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
             this.FileItemExit.Size = new System.Drawing.Size(201, 22);
@@ -433,14 +435,14 @@
             this.ViewItemShowToolBar.Checked = true;
             this.ViewItemShowToolBar.CheckState = System.Windows.Forms.CheckState.Checked;
             this.ViewItemShowToolBar.Name = "ViewItemShowToolBar";
-            this.ViewItemShowToolBar.Size = new System.Drawing.Size(152, 22);
+            this.ViewItemShowToolBar.Size = new System.Drawing.Size(124, 22);
             this.ViewItemShowToolBar.Text = "工具栏(&T)";
             this.ViewItemShowToolBar.Click += new System.EventHandler(this.ViewItemShowToolBar_Click);
             // 
             // ViewItemShowFloatFrom
             // 
             this.ViewItemShowFloatFrom.Name = "ViewItemShowFloatFrom";
-            this.ViewItemShowFloatFrom.Size = new System.Drawing.Size(152, 22);
+            this.ViewItemShowFloatFrom.Size = new System.Drawing.Size(124, 22);
             this.ViewItemShowFloatFrom.Text = "悬浮窗(&N)";
             this.ViewItemShowFloatFrom.Click += new System.EventHandler(this.ViewItemShowFloatFrom_Click);
             // 
@@ -460,6 +462,7 @@
             // 
             // FolderItemAdd
             // 
+            this.FolderItemAdd.Image = global::SmartSpider.SmartSpider.addmin;
             this.FolderItemAdd.Name = "FolderItemAdd";
             this.FolderItemAdd.Size = new System.Drawing.Size(153, 22);
             this.FolderItemAdd.Text = "新建(&C)";
@@ -477,6 +480,7 @@
             // FolderItemDelete
             // 
             this.FolderItemDelete.Enabled = false;
+            this.FolderItemDelete.Image = global::SmartSpider.SmartSpider.deletemin;
             this.FolderItemDelete.Name = "FolderItemDelete";
             this.FolderItemDelete.ShortcutKeys = System.Windows.Forms.Keys.Delete;
             this.FolderItemDelete.Size = new System.Drawing.Size(153, 22);
@@ -490,6 +494,7 @@
             // 
             // FolderItemRefresh
             // 
+            this.FolderItemRefresh.Image = global::SmartSpider.SmartSpider.loadmin;
             this.FolderItemRefresh.Name = "FolderItemRefresh";
             this.FolderItemRefresh.ShortcutKeys = System.Windows.Forms.Keys.F8;
             this.FolderItemRefresh.Size = new System.Drawing.Size(153, 22);
@@ -504,6 +509,7 @@
             // FolderItemExport
             // 
             this.FolderItemExport.Enabled = false;
+            this.FolderItemExport.Image = global::SmartSpider.SmartSpider.exportmin;
             this.FolderItemExport.Name = "FolderItemExport";
             this.FolderItemExport.Size = new System.Drawing.Size(153, 22);
             this.FolderItemExport.Text = "导出(&E)";
@@ -547,6 +553,7 @@
             // TaskItemStart
             // 
             this.TaskItemStart.Enabled = false;
+            this.TaskItemStart.Image = global::SmartSpider.SmartSpider.startmin;
             this.TaskItemStart.Name = "TaskItemStart";
             this.TaskItemStart.ShortcutKeys = System.Windows.Forms.Keys.F5;
             this.TaskItemStart.Size = new System.Drawing.Size(160, 22);
@@ -556,6 +563,7 @@
             // TaskItemSpace
             // 
             this.TaskItemSpace.Enabled = false;
+            this.TaskItemSpace.Image = global::SmartSpider.SmartSpider.pausemin;
             this.TaskItemSpace.Name = "TaskItemSpace";
             this.TaskItemSpace.ShortcutKeys = System.Windows.Forms.Keys.F6;
             this.TaskItemSpace.Size = new System.Drawing.Size(160, 22);
@@ -565,7 +573,7 @@
             // TaskItemStop
             // 
             this.TaskItemStop.Enabled = false;
-            this.TaskItemStop.Image = ((System.Drawing.Image)(resources.GetObject("TaskItemStop.Image")));
+            this.TaskItemStop.Image = global::SmartSpider.SmartSpider.stopmin;
             this.TaskItemStop.Name = "TaskItemStop";
             this.TaskItemStop.ShortcutKeys = System.Windows.Forms.Keys.F7;
             this.TaskItemStop.Size = new System.Drawing.Size(160, 22);
@@ -579,7 +587,7 @@
             // 
             // TaskItemAdd
             // 
-            this.TaskItemAdd.Image = ((System.Drawing.Image)(resources.GetObject("TaskItemAdd.Image")));
+            this.TaskItemAdd.Image = global::SmartSpider.SmartSpider.addmin;
             this.TaskItemAdd.Name = "TaskItemAdd";
             this.TaskItemAdd.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
             this.TaskItemAdd.Size = new System.Drawing.Size(160, 22);
@@ -589,7 +597,7 @@
             // TaskItemEdit
             // 
             this.TaskItemEdit.Enabled = false;
-            this.TaskItemEdit.Image = ((System.Drawing.Image)(resources.GetObject("TaskItemEdit.Image")));
+            this.TaskItemEdit.Image = global::SmartSpider.SmartSpider.editmin;
             this.TaskItemEdit.Name = "TaskItemEdit";
             this.TaskItemEdit.Size = new System.Drawing.Size(160, 22);
             this.TaskItemEdit.Text = "编辑(&E)";
@@ -607,6 +615,7 @@
             // TaskItemDelete
             // 
             this.TaskItemDelete.Enabled = false;
+            this.TaskItemDelete.Image = global::SmartSpider.SmartSpider.deletemin;
             this.TaskItemDelete.Name = "TaskItemDelete";
             this.TaskItemDelete.ShortcutKeys = System.Windows.Forms.Keys.Delete;
             this.TaskItemDelete.Size = new System.Drawing.Size(160, 22);
@@ -621,6 +630,7 @@
             // TaskItemExport
             // 
             this.TaskItemExport.Enabled = false;
+            this.TaskItemExport.Image = global::SmartSpider.SmartSpider.exportmin;
             this.TaskItemExport.Name = "TaskItemExport";
             this.TaskItemExport.Size = new System.Drawing.Size(160, 22);
             this.TaskItemExport.Text = "导出(&X)";
@@ -687,7 +697,7 @@
             // 
             // configItemOption
             // 
-            this.configItemOption.Image = ((System.Drawing.Image)(resources.GetObject("configItemOption.Image")));
+            this.configItemOption.Image = global::SmartSpider.SmartSpider.configmin;
             this.configItemOption.Name = "configItemOption";
             this.configItemOption.Size = new System.Drawing.Size(160, 22);
             this.configItemOption.Text = "选项(&O)";
@@ -768,6 +778,7 @@
             // 
             // HelpItemOnLineHelp
             // 
+            this.HelpItemOnLineHelp.Image = global::SmartSpider.SmartSpider.helpmin;
             this.HelpItemOnLineHelp.Name = "HelpItemOnLineHelp";
             this.HelpItemOnLineHelp.ShortcutKeys = System.Windows.Forms.Keys.F1;
             this.HelpItemOnLineHelp.Size = new System.Drawing.Size(178, 22);
@@ -776,6 +787,7 @@
             // 
             // HelpItemSite
             // 
+            this.HelpItemSite.Image = global::SmartSpider.SmartSpider.sitemin;
             this.HelpItemSite.Name = "HelpItemSite";
             this.HelpItemSite.Size = new System.Drawing.Size(178, 22);
             this.HelpItemSite.Text = "网站(&W)";
@@ -807,6 +819,7 @@
             // 
             // HelpItemAboutUS
             // 
+            this.HelpItemAboutUS.Image = global::SmartSpider.SmartSpider.aboutmin;
             this.HelpItemAboutUS.Name = "HelpItemAboutUS";
             this.HelpItemAboutUS.Size = new System.Drawing.Size(178, 22);
             this.HelpItemAboutUS.Text = "关于SmartSpider(&A)";
@@ -835,7 +848,7 @@
             this.TolExit});
             this.ToolBar.Location = new System.Drawing.Point(0, 24);
             this.ToolBar.Name = "ToolBar";
-            this.ToolBar.Size = new System.Drawing.Size(592, 25);
+            this.ToolBar.Size = new System.Drawing.Size(592, 39);
             this.ToolBar.TabIndex = 1;
             this.ToolBar.Text = "toolStrip1";
             // 
@@ -843,10 +856,11 @@
             // 
             this.tolStartTask.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.tolStartTask.Enabled = false;
-            this.tolStartTask.Image = ((System.Drawing.Image)(resources.GetObject("tolStartTask.Image")));
+            this.tolStartTask.Image = global::SmartSpider.SmartSpider.startmax;
+            this.tolStartTask.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.tolStartTask.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tolStartTask.Name = "tolStartTask";
-            this.tolStartTask.Size = new System.Drawing.Size(23, 22);
+            this.tolStartTask.Size = new System.Drawing.Size(36, 36);
             this.tolStartTask.Text = "开始任务";
             this.tolStartTask.Click += new System.EventHandler(this.tolStartTask_Click);
             // 
@@ -854,36 +868,38 @@
             // 
             this.tolPauseTask.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.tolPauseTask.Enabled = false;
-            this.tolPauseTask.Image = ((System.Drawing.Image)(resources.GetObject("tolPauseTask.Image")));
+            this.tolPauseTask.Image = global::SmartSpider.SmartSpider.pausemax;
+            this.tolPauseTask.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.tolPauseTask.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tolPauseTask.Name = "tolPauseTask";
-            this.tolPauseTask.Size = new System.Drawing.Size(23, 22);
+            this.tolPauseTask.Size = new System.Drawing.Size(36, 36);
             this.tolPauseTask.Text = "暂停任务";
             this.tolPauseTask.Click += new System.EventHandler(this.tolPauseTask_Click);
             // 
             // tolStopTask
             // 
             this.tolStopTask.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tolStopTask.Enabled = false;
-            this.tolStopTask.Image = ((System.Drawing.Image)(resources.GetObject("tolStopTask.Image")));
+            this.tolStopTask.Image = global::SmartSpider.SmartSpider.stopmax;
+            this.tolStopTask.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.tolStopTask.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tolStopTask.Name = "tolStopTask";
-            this.tolStopTask.Size = new System.Drawing.Size(23, 22);
+            this.tolStopTask.Size = new System.Drawing.Size(36, 36);
             this.tolStopTask.Text = "停止任务";
             this.tolStopTask.Click += new System.EventHandler(this.tolStopTask_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 39);
             // 
             // tolAddTask
             // 
             this.tolAddTask.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tolAddTask.Image = ((System.Drawing.Image)(resources.GetObject("tolAddTask.Image")));
+            this.tolAddTask.Image = global::SmartSpider.SmartSpider.addmax;
+            this.tolAddTask.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.tolAddTask.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tolAddTask.Name = "tolAddTask";
-            this.tolAddTask.Size = new System.Drawing.Size(23, 22);
+            this.tolAddTask.Size = new System.Drawing.Size(36, 36);
             this.tolAddTask.Text = "新建任务";
             this.tolAddTask.Click += new System.EventHandler(this.tolAddTask_Click);
             // 
@@ -891,10 +907,11 @@
             // 
             this.tolEditTask.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.tolEditTask.Enabled = false;
-            this.tolEditTask.Image = ((System.Drawing.Image)(resources.GetObject("tolEditTask.Image")));
+            this.tolEditTask.Image = global::SmartSpider.SmartSpider.editmax;
+            this.tolEditTask.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.tolEditTask.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tolEditTask.Name = "tolEditTask";
-            this.tolEditTask.Size = new System.Drawing.Size(23, 22);
+            this.tolEditTask.Size = new System.Drawing.Size(36, 36);
             this.tolEditTask.Text = "编辑任务";
             this.tolEditTask.Click += new System.EventHandler(this.tolEditTask_Click);
             // 
@@ -902,17 +919,18 @@
             // 
             this.tolDeleteTask.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.tolDeleteTask.Enabled = false;
-            this.tolDeleteTask.Image = ((System.Drawing.Image)(resources.GetObject("tolDeleteTask.Image")));
+            this.tolDeleteTask.Image = global::SmartSpider.SmartSpider.deletemax;
+            this.tolDeleteTask.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.tolDeleteTask.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tolDeleteTask.Name = "tolDeleteTask";
-            this.tolDeleteTask.Size = new System.Drawing.Size(23, 22);
+            this.tolDeleteTask.Size = new System.Drawing.Size(36, 36);
             this.tolDeleteTask.Text = "删除任务";
             this.tolDeleteTask.Click += new System.EventHandler(this.tolDeleteTask_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 39);
             // 
             // tolExportTo
             // 
@@ -922,10 +940,11 @@
             this.ExportToTextFile,
             this.ExportToAccessDB});
             this.tolExportTo.Enabled = false;
-            this.tolExportTo.Image = ((System.Drawing.Image)(resources.GetObject("tolExportTo.Image")));
+            this.tolExportTo.Image = global::SmartSpider.SmartSpider.exportmax;
+            this.tolExportTo.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.tolExportTo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tolExportTo.Name = "tolExportTo";
-            this.tolExportTo.Size = new System.Drawing.Size(32, 22);
+            this.tolExportTo.Size = new System.Drawing.Size(48, 36);
             this.tolExportTo.Text = "导出结果";
             // 
             // ExportToExcel
@@ -952,16 +971,17 @@
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 39);
             // 
             // tolAllTaskSuccessShutdown
             // 
             this.tolAllTaskSuccessShutdown.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.tolAllTaskSuccessShutdown.Enabled = false;
-            this.tolAllTaskSuccessShutdown.Image = ((System.Drawing.Image)(resources.GetObject("tolAllTaskSuccessShutdown.Image")));
+            this.tolAllTaskSuccessShutdown.Image = global::SmartSpider.SmartSpider.shutdownmax;
+            this.tolAllTaskSuccessShutdown.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.tolAllTaskSuccessShutdown.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tolAllTaskSuccessShutdown.Name = "tolAllTaskSuccessShutdown";
-            this.tolAllTaskSuccessShutdown.Size = new System.Drawing.Size(23, 22);
+            this.tolAllTaskSuccessShutdown.Size = new System.Drawing.Size(36, 36);
             this.tolAllTaskSuccessShutdown.Text = "所有任务完成后关机";
             this.tolAllTaskSuccessShutdown.Click += new System.EventHandler(this.tolAllTaskSuccessShutdown_Click);
             // 
@@ -969,60 +989,65 @@
             // 
             this.TolDisableAllTimingAcquisitionTask.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.TolDisableAllTimingAcquisitionTask.Enabled = false;
-            this.TolDisableAllTimingAcquisitionTask.Image = ((System.Drawing.Image)(resources.GetObject("TolDisableAllTimingAcquisitionTask.Image")));
+            this.TolDisableAllTimingAcquisitionTask.Image = global::SmartSpider.SmartSpider.timemax;
+            this.TolDisableAllTimingAcquisitionTask.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.TolDisableAllTimingAcquisitionTask.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.TolDisableAllTimingAcquisitionTask.Name = "TolDisableAllTimingAcquisitionTask";
-            this.TolDisableAllTimingAcquisitionTask.Size = new System.Drawing.Size(23, 22);
+            this.TolDisableAllTimingAcquisitionTask.Size = new System.Drawing.Size(36, 36);
             this.TolDisableAllTimingAcquisitionTask.Text = "禁用定时采集（针对所有任务）";
             this.TolDisableAllTimingAcquisitionTask.Click += new System.EventHandler(this.TolDisableAllTimingAcquisitionTask_Click);
             // 
             // tolOption
             // 
             this.tolOption.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tolOption.Image = ((System.Drawing.Image)(resources.GetObject("tolOption.Image")));
+            this.tolOption.Image = global::SmartSpider.SmartSpider.configmax;
+            this.tolOption.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.tolOption.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tolOption.Name = "tolOption";
-            this.tolOption.Size = new System.Drawing.Size(23, 22);
+            this.tolOption.Size = new System.Drawing.Size(36, 36);
             this.tolOption.Text = "选项";
             this.tolOption.Click += new System.EventHandler(this.tolOption_Click);
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 39);
             // 
             // TolOnLineHelp
             // 
             this.TolOnLineHelp.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.TolOnLineHelp.Image = ((System.Drawing.Image)(resources.GetObject("TolOnLineHelp.Image")));
+            this.TolOnLineHelp.Image = global::SmartSpider.SmartSpider.helpmax;
+            this.TolOnLineHelp.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.TolOnLineHelp.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.TolOnLineHelp.Name = "TolOnLineHelp";
-            this.TolOnLineHelp.Size = new System.Drawing.Size(23, 22);
+            this.TolOnLineHelp.Size = new System.Drawing.Size(36, 36);
             this.TolOnLineHelp.Text = "在线帮助";
             this.TolOnLineHelp.Click += new System.EventHandler(this.TolOnLineHelp_Click);
             // 
             // TolAboutUS
             // 
             this.TolAboutUS.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.TolAboutUS.Image = ((System.Drawing.Image)(resources.GetObject("TolAboutUS.Image")));
+            this.TolAboutUS.Image = global::SmartSpider.SmartSpider.aboutmax;
+            this.TolAboutUS.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.TolAboutUS.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.TolAboutUS.Name = "TolAboutUS";
-            this.TolAboutUS.Size = new System.Drawing.Size(23, 22);
+            this.TolAboutUS.Size = new System.Drawing.Size(36, 36);
             this.TolAboutUS.Text = "关于SmartSpider";
             this.TolAboutUS.Click += new System.EventHandler(this.TolAboutUS_Click);
             // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 39);
             // 
             // TolExit
             // 
             this.TolExit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.TolExit.Image = ((System.Drawing.Image)(resources.GetObject("TolExit.Image")));
+            this.TolExit.Image = global::SmartSpider.SmartSpider.exitmax;
+            this.TolExit.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.TolExit.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.TolExit.Name = "TolExit";
-            this.TolExit.Size = new System.Drawing.Size(23, 22);
+            this.TolExit.Size = new System.Drawing.Size(36, 36);
             this.TolExit.Text = "退出";
             this.TolExit.Click += new System.EventHandler(this.TolExit_Click);
             // 
@@ -1104,7 +1129,7 @@
             // 
             this.splitContainerMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainerMain.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
-            this.splitContainerMain.Location = new System.Drawing.Point(0, 49);
+            this.splitContainerMain.Location = new System.Drawing.Point(0, 63);
             this.splitContainerMain.Name = "splitContainerMain";
             // 
             // splitContainerMain.Panel1
@@ -1117,7 +1142,7 @@
             // 
             this.splitContainerMain.Panel2.Controls.Add(this.splitContainerRight);
             this.splitContainerMain.Panel2MinSize = 50;
-            this.splitContainerMain.Size = new System.Drawing.Size(592, 302);
+            this.splitContainerMain.Size = new System.Drawing.Size(592, 288);
             this.splitContainerMain.SplitterDistance = 200;
             this.splitContainerMain.SplitterWidth = 3;
             this.splitContainerMain.TabIndex = 3;
@@ -1127,12 +1152,38 @@
             this.trwTaskFolder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.trwTaskFolder.Dock = System.Windows.Forms.DockStyle.Fill;
             this.trwTaskFolder.Font = new System.Drawing.Font("宋体", 12F);
+            this.trwTaskFolder.ImageIndex = 8;
+            this.trwTaskFolder.ImageList = this.imageListMax;
             this.trwTaskFolder.ItemHeight = 20;
             this.trwTaskFolder.Location = new System.Drawing.Point(0, 0);
             this.trwTaskFolder.Name = "trwTaskFolder";
-            this.trwTaskFolder.Size = new System.Drawing.Size(200, 302);
+            this.trwTaskFolder.SelectedImageIndex = 8;
+            this.trwTaskFolder.Size = new System.Drawing.Size(200, 288);
             this.trwTaskFolder.TabIndex = 0;
             this.trwTaskFolder.MouseClick += new System.Windows.Forms.MouseEventHandler(this.trwTaskFolder_MouseClick);
+            // 
+            // imageListMax
+            // 
+            this.imageListMax.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListMax.ImageStream")));
+            this.imageListMax.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageListMax.Images.SetKeyName(0, "aboutmin.png");
+            this.imageListMax.Images.SetKeyName(1, "addmin.png");
+            this.imageListMax.Images.SetKeyName(2, "checkmin.png");
+            this.imageListMax.Images.SetKeyName(3, "configmin.png");
+            this.imageListMax.Images.SetKeyName(4, "deletemin.png");
+            this.imageListMax.Images.SetKeyName(5, "editmin.png");
+            this.imageListMax.Images.SetKeyName(6, "exitmin.png");
+            this.imageListMax.Images.SetKeyName(7, "exportmin.png");
+            this.imageListMax.Images.SetKeyName(8, "foldermin.png");
+            this.imageListMax.Images.SetKeyName(9, "helpmin.png");
+            this.imageListMax.Images.SetKeyName(10, "loadmin.png");
+            this.imageListMax.Images.SetKeyName(11, "pausemin.png");
+            this.imageListMax.Images.SetKeyName(12, "shutdownmin.png");
+            this.imageListMax.Images.SetKeyName(13, "sitemin.png");
+            this.imageListMax.Images.SetKeyName(14, "startmin.png");
+            this.imageListMax.Images.SetKeyName(15, "stopmin.png");
+            this.imageListMax.Images.SetKeyName(16, "taskmin.png");
+            this.imageListMax.Images.SetKeyName(17, "timemin.png");
             // 
             // splitContainerRight
             // 
@@ -1151,7 +1202,7 @@
             // 
             this.splitContainerRight.Panel2.Controls.Add(this.tabContent);
             this.splitContainerRight.Panel2MinSize = 100;
-            this.splitContainerRight.Size = new System.Drawing.Size(389, 302);
+            this.splitContainerRight.Size = new System.Drawing.Size(389, 288);
             this.splitContainerRight.SplitterDistance = 150;
             this.splitContainerRight.TabIndex = 0;
             // 
@@ -1174,10 +1225,12 @@
             this.StartTime});
             this.livTaskView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.livTaskView.Font = new System.Drawing.Font("宋体", 9F);
+            this.livTaskView.FullRowSelect = true;
+            this.livTaskView.LargeImageList = this.imageListMax;
             this.livTaskView.Location = new System.Drawing.Point(0, 0);
-            this.livTaskView.MultiSelect = false;
             this.livTaskView.Name = "livTaskView";
             this.livTaskView.Size = new System.Drawing.Size(389, 150);
+            this.livTaskView.SmallImageList = this.imageListMax;
             this.livTaskView.TabIndex = 0;
             this.livTaskView.UseCompatibleStateImageBehavior = false;
             this.livTaskView.View = System.Windows.Forms.View.Details;
@@ -1186,69 +1239,82 @@
             // taskName
             // 
             this.taskName.Text = "任务名称";
+            this.taskName.Width = 120;
             // 
             // ExtractCount
             // 
             this.ExtractCount.Text = "完成提取";
+            this.ExtractCount.Width = 80;
             // 
             // ExtractURL
             // 
             this.ExtractURL.Text = "提取网址";
+            this.ExtractURL.Width = 80;
             // 
             // ExtractStartSuccessUrl
             // 
             this.ExtractStartSuccessUrl.Text = "完成起始";
+            this.ExtractStartSuccessUrl.Width = 80;
             // 
             // ExtractStartUrl
             // 
             this.ExtractStartUrl.Text = "起始地址";
+            this.ExtractStartUrl.Width = 80;
             // 
             // ExtractHistory
             // 
             this.ExtractHistory.Text = "历史记录";
+            this.ExtractHistory.Width = 80;
             // 
             // ExtractCurrent
             // 
             this.ExtractCurrent.Text = "当前采集";
+            this.ExtractCurrent.Width = 80;
             // 
             // ExtractResult
             // 
             this.ExtractResult.Text = "采集结果";
+            this.ExtractResult.Width = 80;
             // 
             // ReleaseRepeat
             // 
             this.ReleaseRepeat.Text = "发布重复";
+            this.ReleaseRepeat.Width = 80;
             // 
             // ReleaseError
             // 
             this.ReleaseError.Text = "发布出错";
+            this.ReleaseError.Width = 80;
             // 
             // ExtractSpaceTime
             // 
             this.ExtractSpaceTime.Text = "采集用时";
+            this.ExtractSpaceTime.Width = 120;
             // 
             // StartTime
             // 
             this.StartTime.Text = "开始时间";
+            this.StartTime.Width = 120;
             // 
             // tabContent
             // 
+            this.tabContent.Appearance = System.Windows.Forms.TabAppearance.Buttons;
             this.tabContent.Controls.Add(this.tabPageDefault);
             this.tabContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabContent.Location = new System.Drawing.Point(0, 0);
             this.tabContent.Multiline = true;
             this.tabContent.Name = "tabContent";
             this.tabContent.SelectedIndex = 0;
-            this.tabContent.Size = new System.Drawing.Size(389, 148);
+            this.tabContent.Size = new System.Drawing.Size(389, 134);
             this.tabContent.TabIndex = 0;
             // 
             // tabPageDefault
             // 
             this.tabPageDefault.Controls.Add(this.webDefaultView);
-            this.tabPageDefault.Location = new System.Drawing.Point(4, 21);
+            this.tabPageDefault.Location = new System.Drawing.Point(4, 24);
             this.tabPageDefault.Name = "tabPageDefault";
             this.tabPageDefault.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageDefault.Size = new System.Drawing.Size(381, 123);
+            this.tabPageDefault.Size = new System.Drawing.Size(381, 106);
             this.tabPageDefault.TabIndex = 0;
             this.tabPageDefault.Text = "SmartSpider";
             this.tabPageDefault.UseVisualStyleBackColor = true;
@@ -1256,12 +1322,15 @@
             // webDefaultView
             // 
             this.webDefaultView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.webDefaultView.IsWebBrowserContextMenuEnabled = false;
             this.webDefaultView.Location = new System.Drawing.Point(3, 3);
             this.webDefaultView.MinimumSize = new System.Drawing.Size(20, 20);
             this.webDefaultView.Name = "webDefaultView";
-            this.webDefaultView.Size = new System.Drawing.Size(375, 117);
+            this.webDefaultView.ScriptErrorsSuppressed = true;
+            this.webDefaultView.Size = new System.Drawing.Size(375, 100);
             this.webDefaultView.TabIndex = 0;
             this.webDefaultView.Url = new System.Uri("http://www.google.com.hk", System.UriKind.Absolute);
+            this.webDefaultView.WebBrowserShortcutsEnabled = false;
             // 
             // FrmMain
             // 
@@ -1426,5 +1495,6 @@
         private System.Windows.Forms.ColumnHeader ReleaseError;
         private System.Windows.Forms.ColumnHeader ExtractSpaceTime;
         private System.Windows.Forms.ColumnHeader StartTime;
+        private System.Windows.Forms.ImageList imageListMax;
     }
 }

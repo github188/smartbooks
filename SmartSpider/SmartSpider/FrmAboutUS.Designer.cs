@@ -59,6 +59,7 @@
             this.MinimizeBox = false;
             this.Name = "FrmAboutUS";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "关于SmartSpider";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

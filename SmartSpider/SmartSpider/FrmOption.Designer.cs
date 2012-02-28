@@ -1220,6 +1220,7 @@
             this.MinimizeBox = false;
             this.Name = "FrmOption";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "选项";
             this.tabOption.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
