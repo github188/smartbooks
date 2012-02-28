@@ -6,7 +6,9 @@
     using System.Xml.Serialization;
 
     /// <summary>
-    /// 提取规则
+    /// 采集规则配置类
+    /// 版本:V1.0
+    /// 标志:20120228
     /// </summary>
     [Serializable]
     [XmlRoot("ExtractionRule")]

@@ -5,6 +5,11 @@
     using System.Runtime.Serialization;
     using System.Xml.Serialization;
 
+    /// <summary>
+    /// 导航规则配置类
+    /// 版  本:V1.0
+    /// 标  志:20120228
+    /// </summary>
     [Serializable]
     [XmlRoot("NavigationRule")]
     public class NavigationRule {
@@ -28,7 +33,6 @@
         private bool _PickNextLayerUrls;
         private bool _PickNextPageUrl;
         private bool _ProccessScripts;
-        private string _Replacements;
         private int _RestInterval;
         private string _SkipToIfPickingFailed;
         private bool _Terminal;
@@ -36,9 +40,13 @@
         private bool _UsePluginOfPickNextPageUrl;
         private bool _UsePluginOfVisit;
         private bool _UseRegularExpression;
+        private Replacement[] _Replacements;
         #endregion
 
         #region 公共属性定义
+        /// <summary>
+        /// 层次名称
+        /// </summary>
         public int Name {
             get {
                 return _Name;
@@ -48,6 +56,9 @@
             }
         }
 
+        /// <summary>
+        /// 最终页面
+        /// </summary>
         public bool Terminal {
             get {
                 return _Terminal;
@@ -57,6 +68,9 @@
             }
         }
 
+        /// <summary>
+        /// 是否提取下一层的网址
+        /// </summary>
         public bool PickNextLayerUrls {
             get {
                 return _PickNextLayerUrls;
@@ -66,6 +80,9 @@
             }
         }
 
+        /// <summary>
+        /// 下一层网址模板
+        /// </summary>
         public string NextLayerUrlPattern {
             get {
                 return _NextLayerUrlPattern;
@@ -75,6 +92,9 @@
             }
         }
 
+        /// <summary>
+        /// 使用正则表达式
+        /// </summary>
         public bool UseRegularExpression {
             get {
                 return _UseRegularExpression;
@@ -84,6 +104,9 @@
             }
         }
 
+        /// <summary>
+        /// 是否允许历史网址重复
+        /// </summary>
         public bool HistoryUrlEnabled {
             get {
                 return _HistoryUrlEnabled;
@@ -93,6 +116,9 @@
             }
         }
 
+        /// <summary>
+        /// 是否优化历史网址记录
+        /// </summary>
         public bool HistoryUrlOptimization {
             get {
                 return _HistoryUrlOptimization;
@@ -102,6 +128,9 @@
             }
         }
 
+        /// <summary>
+        /// 是否提取下一页的网址
+        /// </summary>
         public bool PickNextPageUrl {
             get {
                 return _PickNextPageUrl;
@@ -111,6 +140,9 @@
             }
         }
 
+        /// <summary>
+        /// 下一页网址模板
+        /// </summary>
         public string NextPageUrlPattern {
             get {
                 return _NextPageUrlPattern;
@@ -120,6 +152,9 @@
             }
         }
 
+        /// <summary>
+        /// 最大页数
+        /// </summary>
         public int NextPageLargest {
             get {
                 return _NextPageLargest;
@@ -129,6 +164,9 @@
             }
         }
 
+        /// <summary>
+        /// 网址提取范围-开始标志
+        /// </summary>
         public string PickingStartFlag {
             get {
                 return _PickingStartFlag;
@@ -138,6 +176,9 @@
             }
         }
 
+        /// <summary>
+        /// 网址提取范围-结束标志
+        /// </summary>
         public string PickingEndFlag {
             get {
                 return _PickingEndFlag;
@@ -147,6 +188,9 @@
             }
         }
 
+        /// <summary>
+        /// 内容采集范围-开始标志
+        /// </summary>
         public string ExtractionStartFlag {
             get {
                 return _ExtractionStartFlag;
@@ -156,6 +200,9 @@
             }
         }
 
+        /// <summary>
+        /// 内容采集范围-结束标志
+        /// </summary>
         public string ExtractionEndFlag {
             get {
                 return _ExtractionEndFlag;
@@ -165,6 +212,9 @@
             }
         }
 
+        /// <summary>
+        /// 循环标志
+        /// </summary>
         public string IterationFlag {
             get {
                 return _IterationFlag;
@@ -174,6 +224,9 @@
             }
         }
 
+        /// <summary>
+        /// 访问休息间隔（秒）
+        /// </summary>
         public int RestInterval {
             get {
                 return _RestInterval;
@@ -183,6 +236,9 @@
             }
         }
 
+        /// <summary>
+        /// 内容编码
+        /// </summary>
         public string ContentEncoding {
             get {
                 return _ContentEncoding;
@@ -192,6 +248,9 @@
             }
         }
 
+        /// <summary>
+        /// 提取下一页网址-是否提取（下一页标志）
+        /// </summary>
         public bool ProccessScripts {
             get {
                 return _ProccessScripts;
@@ -201,6 +260,9 @@
             }
         }
 
+        /// <summary>
+        /// 下一层网址的Referer
+        /// </summary>
         public string NextLayerUrlReferer {
             get {
                 return _NextLayerUrlReferer;
@@ -210,6 +272,9 @@
             }
         }
 
+        /// <summary>
+        /// 下一层网址已编码
+        /// </summary>
         public bool NextLayerUrlEncoded {
             get {
                 return _NextLayerUrlEncoded;
@@ -219,6 +284,9 @@
             }
         }
 
+        /// <summary>
+        /// 对源文件进行JS解密
+        /// </summary>
         public bool JsDecoding {
             get {
                 return _JsDecoding;
@@ -228,6 +296,9 @@
             }
         }
 
+        /// <summary>
+        /// 如果下一层网址提取失败则跳转到层？
+        /// </summary>
         public string SkipToIfPickingFailed {
             get {
                 return _SkipToIfPickingFailed;
@@ -237,6 +308,9 @@
             }
         }
 
+        /// <summary>
+        /// 使用插件请求本层URL
+        /// </summary>
         public bool UsePluginOfVisit {
             get {
                 return _UsePluginOfVisit;
@@ -246,6 +320,9 @@
             }
         }
 
+        /// <summary>
+        /// 使用插件提取下一层网址
+        /// </summary>
         public bool UsePluginOfPickNextLayerUrls {
             get {
                 return _UsePluginOfPickNextLayerUrls;
@@ -255,6 +332,9 @@
             }
         }
 
+        /// <summary>
+        /// 使用插件提取下一页网址
+        /// </summary>
         public bool UsePluginOfPickNextPageUrl {
             get {
                 return _UsePluginOfPickNextPageUrl;
@@ -264,7 +344,10 @@
             }
         }
 
-        public string Replacements {
+        /// <summary>
+        /// 源文件替换
+        /// </summary>
+        public Replacement[] Replacements {
             get {
                 return _Replacements;
             }

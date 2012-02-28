@@ -5,6 +5,11 @@
     using System.Runtime.Serialization;
     using System.Xml.Serialization;
 
+    /// <summary>
+    /// 起始地址配置类
+    /// 版  本:V1.0
+    /// 标  志:20120228
+    /// </summary>
     [Serializable]
     [XmlRoot("UrlListManager")]
     public class UrlListManager {
@@ -40,7 +45,7 @@
 
         #region 公共属性定义
         /// <summary>
-        /// 起始URL列表中的位置
+        /// 起始URL列表位置
         /// </summary>
         public int StartingUrlListPosition {
             get {
@@ -52,7 +57,7 @@
         }
 
         /// <summary>
-        /// 导读网址计数
+        /// 采集Url总数
         /// </summary>
         public int PickedUrlsCount {
             get {
@@ -64,7 +69,7 @@
         }
 
         /// <summary>
-        /// 导读网址位置
+        /// 采集Url位置
         /// </summary>
         public int PickedUrlsPosition {
             get {
@@ -112,7 +117,7 @@
         }
 
         /// <summary>
-        /// 启动URL编码
+        /// 起始网址是否编码
         /// </summary>
         public bool StartingUrlEncoded {
             get {
@@ -147,6 +152,9 @@
             }
         }
 
+        /// <summary>
+        /// 分页URL模式
+        /// </summary>
         public PagedUrlPatterns PagedUrlPattern {
             get {
                 return _PagedUrlPattern;
@@ -156,6 +164,9 @@
             }
         }
 
+        /// <summary>
+        /// 导航规则
+        /// </summary>
         public NavigationRule NavigationRules {
             get {
                 return _NavigationRules;

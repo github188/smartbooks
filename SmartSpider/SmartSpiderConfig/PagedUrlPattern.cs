@@ -26,6 +26,9 @@
 
         #region 公共属性定义
 
+        /// <summary>
+        /// 开始页码
+        /// </summary>
         public int StartPage {
             get {
                 return _StartPage;
@@ -35,6 +38,9 @@
             }
         }
 
+        /// <summary>
+        /// 结束页码
+        /// </summary>
         public int EndPage {
             get {
                 return _EndPage;
@@ -44,6 +50,9 @@
             }
         }
 
+        /// <summary>
+        /// 递增或递减
+        /// </summary>
         public int Step {
             get {
                 return _Step;
@@ -53,6 +62,9 @@
             }
         }
 
+        /// <summary>
+        /// 格式
+        /// </summary>
         public string Format {
             get {
                 return _Format;
@@ -62,6 +74,9 @@
             }
         }
 
+        /// <summary>
+        /// 分页URL模式
+        /// </summary>
         public string PagedUrlPattern {
             get {
                 return _PagedUrlPattern;
