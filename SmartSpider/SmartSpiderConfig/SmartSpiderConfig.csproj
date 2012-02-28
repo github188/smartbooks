@@ -58,6 +58,7 @@
     <Compile Include="RequiredOptions.cs" />
     <Compile Include="ScheduleMode.cs" />
     <Compile Include="ShutDownMode.cs" />
+    <Compile Include="SmartSpiderCore.cs" />
     <Compile Include="SmartSpiderInformation.cs" />
     <Compile Include="SmartSpiderWebProxy.cs" />
     <Compile Include="StartingUrlList.cs" />

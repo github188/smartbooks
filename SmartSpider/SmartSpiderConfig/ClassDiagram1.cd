@@ -150,7 +150,7 @@
   <Class Name="SmartSpider.Config.TaskUnit" Collapsed="true">
     <Position X="0.5" Y="6.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>KAAhSQAABCUIAAwAAAAAgAIACBgAAEAgoAAQAQAAAAQ=</HashCode>
+      <HashCode>AAAhSQAABSAIAAQAAAAAgAAACBAAAAAAIgAAAAAAAAQ=</HashCode>
       <FileName>TaskUnit.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -158,9 +158,17 @@
   <Class Name="SmartSpider.Config.HttpHelper" Collapsed="true">
     <Position X="2.25" Y="6.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIAAAAQAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIACAAQAAAAAAAAAEAA=</HashCode>
       <FileName>HttpHelper.cs</FileName>
     </TypeIdentifier>
+  </Class>
+  <Class Name="SmartSpider.Config.SmartSpiderCore" Collapsed="true">
+    <Position X="0.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>KAAAQAAAACUIAAwAAAAAAAIAABgAAEAgoAAQAQAAAAA=</HashCode>
+      <FileName>SmartSpiderCore.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Interface Name="SmartSpider.Config.ISmartSpider" Collapsed="true">
     <Position X="9.25" Y="0.5" Width="1.5" />
@@ -242,7 +250,7 @@
   <Delegate Name="SmartSpider.Config.LogEventHanlder" Collapsed="true">
     <Position X="7.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAABAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAEA=</HashCode>
       <FileName>LogEventHanlder.cs</FileName>
     </TypeIdentifier>
   </Delegate>

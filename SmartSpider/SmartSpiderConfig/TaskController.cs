@@ -1,21 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿namespace SmartSpider.Config {
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+    using System.Xml.Serialization;
 
-namespace SmartSpider.Config {
     public class TaskController {
-        private SmartSpider.Config.TaskUnit[] _TaskUnit;
+        #region 私有变量定义
+        private Configuration _Configuration = new Configuration();
+        private List<TaskUnit> _TaskUnit = new List<TaskUnit>();
+        #endregion
+
+        #region 公共属性定义
         /// <summary>
+        /// 任务单元集合
         /// </summary>
-        private Configuration _Configuration;
-        /// <summary>
-        /// 任务集合
-        /// </summary>
-        public TaskUnit[] TaskUnit {
+        public List<TaskUnit> TaskUnit {
             get {
-                throw new System.NotImplementedException();
+                return _TaskUnit;
             }
             set {
+                _TaskUnit = value;
             }
         }
 
@@ -24,17 +28,23 @@ namespace SmartSpider.Config {
         /// </summary>
         public Configuration Configuration {
             get {
-                throw new System.NotImplementedException();
+                return _Configuration;
             }
             set {
+                _Configuration = value;
             }
+        }
+        #endregion
+
+        #region 公共方法定义
+        public TaskController() {
         }
 
         /// <summary>
         /// 增加一个任务单元到任务控制器
         /// </summary>
         public void Add(TaskUnit task) {
-            throw new System.NotImplementedException();
+            this._TaskUnit.Add(task);
         }
 
         /// <summary>
@@ -42,7 +52,7 @@ namespace SmartSpider.Config {
         /// </summary>
         /// <param name="task">任务单元</param>
         public void Remove(TaskUnit task) {
-            throw new System.NotImplementedException();
+            this._TaskUnit.Remove(task);
         }
 
         /// <summary>
@@ -50,7 +60,8 @@ namespace SmartSpider.Config {
         /// </summary>
         /// <param name="index">索引位置</param>
         public void Remove(int index) {
-            throw new System.NotImplementedException();
+            this._TaskUnit.RemoveAt(index);
         }
+        #endregion
     }
 }

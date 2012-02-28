@@ -17,6 +17,12 @@
         /// </summary>
         public FrmMain() {
             InitializeComponent();
+
+            //初始化为默认Ui
+            SetDefaultUI();
+
+            //加载系统配置文件
+            LoadConfiguration();
         }
         #endregion
         
@@ -241,27 +247,51 @@
         #region 工具栏事件
         //工具栏：开始
         private void tolStartTask_Click(object sender, EventArgs e) {
-
+            foreach (ListViewItem item in this.livTaskView.SelectedItems) {
+                TaskUnit unit = (TaskUnit)item.Tag;
+                unit.Start();
+            }
         }
         //工具栏：暂停/继续
         private void tolPauseTask_Click(object sender, EventArgs e) {
-
+            foreach (ListViewItem item in this.livTaskView.SelectedItems) {
+                TaskUnit unit = (TaskUnit)item.Tag;
+                switch (unit.Action) {
+                    case Action.Pause:
+                        unit.Continue();
+                        break;
+                    case Action.Continue:
+                        unit.Pause();
+                        break;
+                }
+            }
         }
         //工具栏：停止
         private void tolStopTask_Click(object sender, EventArgs e) {
-
+            foreach (ListViewItem item in this.livTaskView.SelectedItems) {
+                TaskUnit unit = (TaskUnit)item.Tag;
+                unit.Stop();
+            }
         }
         //工具栏：新建任务
         private void tolAddTask_Click(object sender, EventArgs e) {
-
+            FrmTask newTask = new FrmTask(new TaskUnit());
+            newTask.ShowDialog();
         }
         //工具栏：编辑任务
         private void tolEditTask_Click(object sender, EventArgs e) {
-
+            if (livTaskView.SelectedItems.Count != 0) {
+                TaskUnit unit = (TaskUnit)livTaskView.SelectedItems[0].Tag;
+                FrmTask taskEdit = new FrmTask(unit);
+                taskEdit.ShowDialog();
+            }
         }
         //工具栏：删除任务
         private void tolDeleteTask_Click(object sender, EventArgs e) {
-
+            foreach (ListViewItem item in this.livTaskView.SelectedItems) {
+                TaskUnit unit = (TaskUnit)item.Tag;
+                unit.DeleteTask();
+            }
         }
         //工具栏：所有任务完成后关机
         private void tolAllTaskSuccessShutdown_Click(object sender, EventArgs e) {
@@ -273,7 +303,8 @@
         }
         //工具栏：选项
         private void tolOption_Click(object sender, EventArgs e) {
-
+            FrmOption option = new FrmOption();
+            option.ShowDialog();
         }
         //工具栏：在线帮助
         private void TolOnLineHelp_Click(object sender, EventArgs e) {
@@ -285,7 +316,9 @@
         }
         //工具栏：退出
         private void TolExit_Click(object sender, EventArgs e) {
+            Application.Exit();
 
+            this.SaveConfiguration();
         }
         //工具栏：导出到Excel
         private void ExportToExcel_Click(object sender, EventArgs e) {
@@ -308,39 +341,84 @@
         }
         //任务文件夹：单击节点显示到任务信息到任务窗口
         private void trwTaskFolder_MouseClick(object sender, MouseEventArgs e) {
-            string taskPath = trwTaskFolder.SelectedNode.Tag.ToString();
-            string[] files = Directory.GetFiles(taskPath, "*.xml");
+            TaskController controller = (TaskController)trwTaskFolder.SelectedNode.Tag;
             livTaskView.Items.Clear();
-            for (int i = 0; i < files.Length; i++) {
-                try {
-                    XmlSerializer xs = new XmlSerializer(typeof(Task));
-                    Stream readStream = new FileStream(files[i], FileMode.Open, FileAccess.Read, FileShare.Read);
-                    Task task = (Task)xs.Deserialize(readStream);
-                    ListViewItem livItem = new ListViewItem();
-                    livItem.Text = task.Name;
-                    livItem.Tag = files[i];
-                    livItem.ToolTipText = task.Description;
-                    livItem.ImageKey = "taskmin.png";
-                    livItem.SubItems.Add(new ListViewItem.ListViewSubItem(livItem, "0"));   //完成提取
-                    livItem.SubItems.Add(new ListViewItem.ListViewSubItem(livItem, "0"));   //提取网址
-                    livItem.SubItems.Add(new ListViewItem.ListViewSubItem(livItem, "0"));   //完成起始
-                    livItem.SubItems.Add(new ListViewItem.ListViewSubItem(livItem, "0"));   //起始地址
-                    livItem.SubItems.Add(new ListViewItem.ListViewSubItem(livItem, "0"));   //历史记录
-                    livItem.SubItems.Add(new ListViewItem.ListViewSubItem(livItem, task.CurrentResultCount.ToString()));   //当前采集
-                    livItem.SubItems.Add(new ListViewItem.ListViewSubItem(livItem, task.ResultCount.ToString()));   //采集结果
-                    livItem.SubItems.Add(new ListViewItem.ListViewSubItem(livItem, task.RepeatedRowsCount.ToString()));   //发布重复
-                    livItem.SubItems.Add(new ListViewItem.ListViewSubItem(livItem, task.ErrorRowsCount.ToString()));   //发布出错
-                    livItem.SubItems.Add(new ListViewItem.ListViewSubItem(livItem, task.ElapsedTime.ToString()));   //采集时间
-                    livItem.SubItems.Add(new ListViewItem.ListViewSubItem(livItem, task.StartingTime.ToString()));   //开始时间
-                    livTaskView.Items.Add(livItem);
-                } catch { }
+            foreach (TaskUnit unit in controller.TaskUnit) {
+                ListViewItem livItem = new ListViewItem();
+                livItem.Text = unit.TaskConfig.Name;
+                livItem.Tag = unit;
+                livItem.ToolTipText = unit.TaskConfig.Description;
+                livItem.ImageKey = "taskmin.png";
+                livItem.SubItems.Add(new ListViewItem.ListViewSubItem(livItem, "0"));   //完成提取
+                livItem.SubItems.Add(new ListViewItem.ListViewSubItem(livItem, "0"));   //提取网址
+                livItem.SubItems.Add(new ListViewItem.ListViewSubItem(livItem, "0"));   //完成起始
+                livItem.SubItems.Add(new ListViewItem.ListViewSubItem(livItem, "0"));   //起始地址
+                livItem.SubItems.Add(new ListViewItem.ListViewSubItem(livItem, "0"));   //历史记录
+                livItem.SubItems.Add(new ListViewItem.ListViewSubItem(livItem, unit.TaskConfig.CurrentResultCount.ToString()));   //当前采集
+                livItem.SubItems.Add(new ListViewItem.ListViewSubItem(livItem, unit.TaskConfig.ResultCount.ToString()));   //采集结果
+                livItem.SubItems.Add(new ListViewItem.ListViewSubItem(livItem, unit.TaskConfig.RepeatedRowsCount.ToString()));   //发布重复
+                livItem.SubItems.Add(new ListViewItem.ListViewSubItem(livItem, unit.TaskConfig.ErrorRowsCount.ToString()));   //发布出错
+                livItem.SubItems.Add(new ListViewItem.ListViewSubItem(livItem, unit.TaskConfig.ElapsedTime.ToString()));   //采集时间
+                livItem.SubItems.Add(new ListViewItem.ListViewSubItem(livItem, unit.TaskConfig.StartingTime.ToString()));   //开始时间
+                livTaskView.Items.Add(livItem);
             }
             this.livTaskView.Refresh();
             this.trwTaskFolder.Refresh();
         }
         //任务运行信息窗口：双击编辑任务配置
         private void livTaskView_MouseDoubleClick(object sender, MouseEventArgs e) {
+            if (livTaskView.SelectedItems.Count != 0) {
+                TaskUnit unit = (TaskUnit)livTaskView.SelectedItems[0].Tag;
+                FrmTask taskConfig = new FrmTask(unit);
+                taskConfig.ShowDialog();
+            }
+        }
+        #endregion
 
+        #region 私有方法定义
+        /// <summary>
+        /// 加载系统配置文件
+        /// </summary>
+        private void LoadConfiguration() {
+            string configPath = AppDomain.CurrentDomain.BaseDirectory + "Configuration.xml";
+            Stream readStream;
+            try {
+                XmlSerializer xs = new XmlSerializer(typeof(Config.Configuration));
+                readStream = new FileStream(configPath, FileMode.Open, FileAccess.Read, FileShare.Delete);
+                this._Configuration = (Config.Configuration)xs.Deserialize(readStream);
+                readStream.Close();
+                readStream.Dispose();
+            } catch {
+                readStream = null;
+
+                SaveConfiguration();
+            }
+        }
+        /// <summary>
+        /// 保存配置文件
+        /// </summary>
+        private void SaveConfiguration() {
+            string configPath = AppDomain.CurrentDomain.BaseDirectory + "Configuration.xml";
+            File.Delete(configPath);
+            XmlSerializer xs = new XmlSerializer(typeof(Config.Configuration));
+            Stream WriteStream = new FileStream(configPath, FileMode.Create, FileAccess.Write, FileShare.Read);
+            xs.Serialize(WriteStream, this._Configuration);
+            WriteStream.Close();
+            WriteStream.Dispose();
+        }
+        #endregion
+
+        #region 私有字段定义
+        private Configuration _Configuration = new Configuration();
+        #endregion
+
+        #region 公共属性定义
+        /// <summary>
+        /// 系统配置
+        /// </summary>
+        public Configuration Configuration {
+            get { return _Configuration; }
+            set { _Configuration = value; }
         }
         #endregion
     }

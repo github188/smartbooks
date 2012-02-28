@@ -71,12 +71,26 @@ namespace SmartSpider{
             #endregion
 
             #region 设置菜单
+            this.configItemHtmlLable.Enabled = true;    //Html标记
+            this.configItemRegex.Enabled = true;    //正则表达式
+            this.configItemPreviewRulesName.Enabled = true; //预置规则名称
+            this.configItemOption.Enabled = true;   //选项
             #endregion
 
             #region 工具菜单
+            this.ToolItemSourceView.Enabled = true; //源文件查看器
+            this.ToolItemRegesTest.Enabled = true;  //正则式测试器
+            this.ToolItemUrlEncoding.Enabled = true;    //Url编码工具
+            this.ToolItemTaskUpdate.Enabled = true; //任务升级器
+            this.ToolItemOnLinePublish.Enabled = true;  //在线发布
             #endregion
 
             #region 帮助菜单
+            this.HelpItemOnLineHelp.Enabled = true; //在线帮助
+            this.HelpItemSite.Enabled = true;   //网站
+            this.HelpItemBBS.Enabled = true;    //论坛
+            this.HelpItemBuy.Enabled = true;    //购买
+            this.HelpItemAboutUS.Enabled = true;    //关于我闷
             #endregion
             #endregion
         }
