@@ -23,20 +23,17 @@
             this._StartingUrlEncoded = false;
             this._UsePluginOfLoadStartingUrl = false;
             this._StartingUrlTemplate = "";
-            this._PagedUrlPattern = new PagedUrlPatterns();
-            this._NavigationRules = new NavigationRule();
-            this._StartingUrlList = new StartingUrlList();
         }
 
         #region 私有变量定义
         private int _HistoryUrlCapacity;
         private int _HistoryUrlsCount;
-        private NavigationRule _NavigationRules;
-        private PagedUrlPatterns _PagedUrlPattern;
+        private NavigationRule[] _NavigationRules;
+        private PagedUrlPatterns[] _PagedUrlPattern;
         private int _PickedUrlsCount;
         private int _PickedUrlsPosition;
         private bool _StartingUrlEncoded;
-        private StartingUrlList _StartingUrlList;
+        private StartingUrlList[] _StartingUrlList;
         private int _StartingUrlListPosition;
         private string _StartingUrlTemplate;
         private string _UrlEncoding;
@@ -45,7 +42,7 @@
 
         #region 公共属性定义
         /// <summary>
-        /// 起始URL列表位置
+        /// 起始URL列表中的位置(从第几条网址开始)
         /// </summary>
         public int StartingUrlListPosition {
             get {
@@ -57,7 +54,7 @@
         }
 
         /// <summary>
-        /// 采集Url总数
+        /// 导航Url总数
         /// </summary>
         public int PickedUrlsCount {
             get {
@@ -69,7 +66,7 @@
         }
 
         /// <summary>
-        /// 采集Url位置
+        /// 导航URL地址
         /// </summary>
         public int PickedUrlsPosition {
             get {
@@ -81,7 +78,7 @@
         }
 
         /// <summary>
-        /// 历史上的网址计数
+        /// 历史网址总数
         /// </summary>
         public int HistoryUrlsCount {
             get {
@@ -93,7 +90,7 @@
         }
 
         /// <summary>
-        /// 起始URL列表中的位置
+        /// 允许最大的历史记录网址数
         /// </summary>
         public int HistoryUrlCapacity {
             get {
@@ -105,7 +102,7 @@
         }
 
         /// <summary>
-        /// URL编码
+        /// 网址编码(默认gb2312)
         /// </summary>
         public string UrlEncoding {
             get {
@@ -117,7 +114,7 @@
         }
 
         /// <summary>
-        /// 起始网址是否编码
+        /// 起始地址已编码
         /// </summary>
         public bool StartingUrlEncoded {
             get {
@@ -141,7 +138,7 @@
         }
 
         /// <summary>
-        /// 启动URL模板
+        /// 起始Url地址模板
         /// </summary>
         public string StartingUrlTemplate {
             get {
@@ -155,7 +152,8 @@
         /// <summary>
         /// 分页URL模式
         /// </summary>
-        public PagedUrlPatterns PagedUrlPattern {
+        /// <remarks>针对起始地址中的“{0,200,50}”参数。</remarks>
+        public PagedUrlPatterns[] PagedUrlPattern {
             get {
                 return _PagedUrlPattern;
             }
@@ -167,7 +165,7 @@
         /// <summary>
         /// 导航规则
         /// </summary>
-        public NavigationRule NavigationRules {
+        public NavigationRule[] NavigationRules {
             get {
                 return _NavigationRules;
             }
@@ -177,9 +175,10 @@
         }
 
         /// <summary>
-        /// 启动URL列表
+        /// 起始URL地址集合
         /// </summary>
-        public StartingUrlList StartingUrlList {
+        /// <remarks>保存起Url地址集合，包括模板网址。</remarks>
+        public StartingUrlList[] StartingUrlList {
             get {
                 return _StartingUrlList;
             }

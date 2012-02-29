@@ -21,6 +21,14 @@
         }
 
         public HttpHelper() { }
+
+        /// <summary>
+        /// 请求结果
+        /// </summary>
+        /// <param name="url">Url地址</param>
+        public string RequestResult(string url) {
+            throw new System.NotImplementedException();
+        }
         #endregion
 
         #region 公共属性定义

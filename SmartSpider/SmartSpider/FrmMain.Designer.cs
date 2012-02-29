@@ -132,7 +132,7 @@
             this.staTaskStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.staThreadNumber = new System.Windows.Forms.ToolStripStatusLabel();
             this.splitContainerMain = new System.Windows.Forms.SplitContainer();
-            this.trwTaskFolder = new System.Windows.Forms.TreeView();
+            this.trwTaskFolder = new Utility.TaskFolderTree();
             this.imageListMax = new System.Windows.Forms.ImageList(this.components);
             this.splitContainerRight = new System.Windows.Forms.SplitContainer();
             this.livTaskView = new System.Windows.Forms.ListView();
@@ -1235,6 +1235,8 @@
             this.livTaskView.UseCompatibleStateImageBehavior = false;
             this.livTaskView.View = System.Windows.Forms.View.Details;
             this.livTaskView.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.livTaskView_MouseDoubleClick);
+            this.livTaskView.MouseClick += new System.Windows.Forms.MouseEventHandler(this.livTaskView_MouseClick);
+            this.livTaskView.SelectedIndexChanged += new System.EventHandler(this.livTaskView_SelectedIndexChanged);
             // 
             // taskName
             // 
@@ -1298,7 +1300,7 @@
             // 
             // tabContent
             // 
-            this.tabContent.Appearance = System.Windows.Forms.TabAppearance.Buttons;
+            this.tabContent.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
             this.tabContent.Controls.Add(this.tabPageDefault);
             this.tabContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabContent.Location = new System.Drawing.Point(0, 0);
@@ -1476,8 +1478,8 @@
         private System.Windows.Forms.ToolStripStatusLabel staTaskStatus;
         private System.Windows.Forms.ToolStripStatusLabel staThreadNumber;
         private System.Windows.Forms.SplitContainer splitContainerMain;
-        private System.Windows.Forms.TreeView trwTaskFolder;
-        //private Utility.TaskFolderTree trwTaskFolder;
+        //private System.Windows.Forms.TreeView trwTaskFolder;
+        private Utility.TaskFolderTree trwTaskFolder;
         private System.Windows.Forms.SplitContainer splitContainerRight;
         private System.Windows.Forms.ListView livTaskView;
         private System.Windows.Forms.TabControl tabContent;

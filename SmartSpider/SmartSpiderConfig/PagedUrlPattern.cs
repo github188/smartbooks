@@ -51,7 +51,7 @@
         }
 
         /// <summary>
-        /// 递增或递减
+        /// 递增或递减量
         /// </summary>
         public int Step {
             get {
@@ -75,8 +75,9 @@
         }
 
         /// <summary>
-        /// 分页URL模式
+        /// 分页URL模板
         /// </summary>
+        /// <remarks>示例格式：baidu.com{0,200,50}</remarks>
         public string PagedUrlPattern {
             get {
                 return _PagedUrlPattern;

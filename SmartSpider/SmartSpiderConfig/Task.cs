@@ -66,6 +66,7 @@
             this._UsePluginOfProcessSingleFile = false;
             this._UsePluginOfFilter = false;
             this._PluginData = "";
+            this._ExtractionRules = new List<ExtractionRule>();
         }
 
         #region 私有变量定义
@@ -78,7 +79,7 @@
         private bool _DisableScheduleAfterFinish;
         private DateTime _ElapsedTime;
         private int _ErrorRowsCount;
-        private ExtractionRule[] _ExtractionRules;
+        private List<ExtractionRule> _ExtractionRules;
         private bool _IgnoreDataColumnNotFound;
         private string _lastLogFileName;
         private DateTime _lastStoppingTime;
@@ -765,7 +766,7 @@
         /// <summary>
         /// 提取规则
         /// </summary>
-        public SmartSpider.Config.ExtractionRule[] ExtractionRules {
+        public List<SmartSpider.Config.ExtractionRule> ExtractionRules {
             get {
                 return _ExtractionRules;
             }

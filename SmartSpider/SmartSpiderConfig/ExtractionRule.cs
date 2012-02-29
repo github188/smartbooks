@@ -18,8 +18,8 @@
         }
 
         #region 私有变量定义
-        private string _AttachmentUrlIdentifier;
-        private string _ClassDirectoryField;
+        private string _AttachmentUrlIdentifier = "";
+        private string _ClassDirectoryField = "";
         private bool _ConstantAsResult;
         private string _ConstantValue;
         private bool _CreateSubDirectories;

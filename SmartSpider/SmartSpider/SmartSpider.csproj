@@ -90,6 +90,9 @@
     <Compile Include="Utility\TaskFolderTree.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Utility\TaskResultLog.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <EmbeddedResource Include="FrmAboutUS.resx">
       <DependentUpon>FrmAboutUS.cs</DependentUpon>
     </EmbeddedResource>
@@ -121,6 +124,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>SmartSpider.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utility\TaskResultLog.resx">
+      <DependentUpon>TaskResultLog.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">

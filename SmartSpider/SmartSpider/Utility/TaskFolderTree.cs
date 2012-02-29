@@ -67,6 +67,8 @@
                     XmlSerializer xs = new XmlSerializer(typeof(Task));
                     Stream readStream = new FileStream(files[i], FileMode.Open, FileAccess.Read, FileShare.Read);
                     Task task = (Task)xs.Deserialize(readStream);
+                    readStream.Close();
+                    readStream.Dispose();
 
                     TaskUnit taskUnit = new TaskUnit();
                     taskUnit.TaskConfig = task;
