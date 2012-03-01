@@ -171,7 +171,7 @@
         }
 
         /// <summary>
-        /// 使用插件
+        /// 使用插件采集数据
         /// </summary>
         public bool UsePlugin {
             get {
@@ -372,7 +372,7 @@
         }
 
         /// <summary>
-        /// 作为结果的URL
+        /// 记录当前网址
         /// </summary>
         public bool UrlAsResult {
             get {
@@ -384,7 +384,7 @@
         }
 
         /// <summary>
-        /// 发表参数作为结果
+        /// POST参数作为结果
         /// </summary>
         public bool PostParametersAsResult {
             get {
@@ -396,7 +396,7 @@
         }
 
         /// <summary>
-        /// 作为结果的时间
+        /// 记录采集时间
         /// </summary>
         public bool TimeAsResult {
             get {
@@ -417,7 +417,7 @@
         }
 
         /// <summary>
-        /// 作为结果的响应头
+        /// Http响应头作为结果
         /// </summary>
         public bool ResponseHeaderAsResult {
             get {

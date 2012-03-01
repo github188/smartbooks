@@ -38,11 +38,65 @@
         /// 绑定任务单元到UI界面,用于新建/修改任务
         /// </summary>
         private void SetUnitToUI() {
-            this.txtName.Text = this._TaskUnit.TaskConfig.Name;
-            this.txtDescription.Text = this._TaskUnit.TaskConfig.Description;
-            this.txtCookie.Text = this._TaskUnit.TaskConfig.Cookie;
-            this.nudThreadNumber.Value = this._TaskUnit.TaskConfig.ThreadNumber;
-            this.txtStartingUrlTemplate.Text = this._TaskUnit.TaskConfig.UrlListManager.StartingUrlTemplate;
+            this.txtName.Text = this._TaskUnit.TaskConfig.Name;                                                         //任务名称
+            this.txtDescription.Text = this._TaskUnit.TaskConfig.Description;                                           //任务描述
+            this.txtCookie.Text = this._TaskUnit.TaskConfig.Cookie;                                                     //Cookie
+            this.nudThreadNumber.Value = this._TaskUnit.TaskConfig.ThreadNumber;                                        //线程数量
+            this.txtStartingUrlTemplate.Text = this._TaskUnit.TaskConfig.UrlListManager.StartingUrlTemplate;            //起始Url地址模板
+            this.txtConnectionString.Text = this._TaskUnit.TaskConfig.ConnectionString;                                 //数据库连接字符串
+            this.chbDeleteResultAfterPublication.Checked = this._TaskUnit.TaskConfig.DeleteResultAfterPublication;      //发布结果后删除数据
+            this.chbDisableScheduleAfterFinish.Checked = this._TaskUnit.TaskConfig.DisableScheduleAfterFinish;          //取消定时采集
+            this.txtPluginPath.Text = this._TaskUnit.TaskConfig.PluginPath;                                             //插件路径
+            this.chbUseProcedure.Checked = this._TaskUnit.TaskConfig.UseProcedure;                                      //使用存储过程
+                        
+            //CurrentResultCount
+            //DatabaseType
+            //ElapsedTime
+            //ErrorRowsCount
+            //ExtractionRules
+            //IgnoreDataColumnNotFound
+            //lastLogFileName
+            //lastStoppingTime
+            //LoginAtRegularIntervals
+            //LoginAutomatically
+            //LoginInterval
+            //LoginSuccessFlag
+            //LoginTargetUrl
+            //LoginUrl
+            //LoginUrlReferer
+            //OutputDetailedLog
+            //PluginData
+            //PublicationTarget
+            //PublishResultDircetly
+            //RepeatedRowsCount
+            //ResultCount
+            //SaveErrorRows
+            //SaveLogToFile
+            //SaveRepeatedRows
+            //ScheduleDays
+            //ScheduleEnabled
+            //ScheduleFromDay
+            //WeekScheduleFromDayOfWeek
+            //ScheduleFromHour
+            //ScheduleHours
+            //ScheduleLimitTimeRange
+            //ScheduleMinutes
+            //ScheduleModeScheduleMode
+            //ScheduleToDay
+            //WeekScheduleToDayOfWeek
+            //ScheduleToHour
+            //DateTimeStartingTime
+            //ActionState
+            //ThreadNumber
+            //UrlListManagerUrlListManager
+            //UsePluginOfDownloadContentFile
+            //UsePluginOfDownloadSingleFile
+            //UsePluginOfFilter
+            //UsePluginOfGetWebProxy
+            //UsePluginOfLogin
+            //UsePluginOfProcessContentFile
+            //UsePluginOfProcessResultRow
+            //UsePluginOfProcessSingleFile
         }
 
         /// <summary>
