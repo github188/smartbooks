@@ -67,6 +67,7 @@
             this._UsePluginOfFilter = false;
             this._PluginData = "";
             this._ExtractionRules = new List<ExtractionRule>();
+            this._UrlListManager = new UrlListManager();
         }
 
         #region 私有变量定义

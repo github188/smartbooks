@@ -218,14 +218,15 @@
         }
         //任务菜单：新建
         private void TaskItemAdd_Click(object sender, EventArgs e) {
-            FrmTask newTask = new FrmTask(new TaskUnit());
+            TaskUnit unit = new TaskUnit();
+            FrmTask newTask = new FrmTask(ref unit);
             newTask.ShowDialog();
         }
         //任务菜单：编辑
         private void TaskItemEdit_Click(object sender, EventArgs e) {
             if (this.livTaskView.SelectedItems.Count != 0) {
                 TaskUnit unit = (TaskUnit)this.livTaskView.SelectedItems[0].Tag;
-                FrmTask newTask = new FrmTask(unit);
+                FrmTask newTask = new FrmTask(ref unit);
                 newTask.ShowDialog();
             }
         }
@@ -375,14 +376,15 @@
         }
         //工具栏：新建任务
         private void tolAddTask_Click(object sender, EventArgs e) {
-            FrmTask newTask = new FrmTask(new TaskUnit());
+            TaskUnit unit = new TaskUnit();
+            FrmTask newTask = new FrmTask(ref unit);
             newTask.ShowDialog();
         }
         //工具栏：编辑任务
         private void tolEditTask_Click(object sender, EventArgs e) {
             if (livTaskView.SelectedItems.Count != 0) {
                 TaskUnit unit = (TaskUnit)livTaskView.SelectedItems[0].Tag;
-                FrmTask taskEdit = new FrmTask(unit);
+                FrmTask taskEdit = new FrmTask(ref unit);
                 taskEdit.ShowDialog();
             }
         }
@@ -526,7 +528,7 @@
             if (livTaskView.SelectedItems.Count != 0) {
                 TaskUnit unit = (TaskUnit)livTaskView.SelectedItems[0].Tag;
                 if (GetRuntimeAreaTaskUnit(unit.ConfigPath) == null) {
-                    FrmTask taskConfig = new FrmTask(unit);
+                    FrmTask taskConfig = new FrmTask(ref unit);
                     taskConfig.ShowDialog();
                 } else {
                     MessageBox.Show("任务正在运行中不能进行编辑操作!", "提示");

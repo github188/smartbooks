@@ -26,60 +26,60 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.linkLabel4 = new System.Windows.Forms.LinkLabel();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.chbDisableScheduleAfterFinish = new System.Windows.Forms.CheckBox();
+            this.SetScheduleLimitTimeRange = new System.Windows.Forms.LinkLabel();
+            this.chbScheduleLimitTimeRange = new System.Windows.Forms.CheckBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.numericUpDown5 = new System.Windows.Forms.NumericUpDown();
+            this.nudSecond = new System.Windows.Forms.NumericUpDown();
             this.label9 = new System.Windows.Forms.Label();
-            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
+            this.nudMinute = new System.Windows.Forms.NumericUpDown();
             this.label8 = new System.Windows.Forms.Label();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
+            this.nudDay = new System.Windows.Forms.NumericUpDown();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.chbScheduleEnabled = new System.Windows.Forms.CheckBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.linkLabel3 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.linkSetAutoLogin = new System.Windows.Forms.LinkLabel();
+            this.linkManualLogin = new System.Windows.Forms.LinkLabel();
+            this.txtCookie = new System.Windows.Forms.TextBox();
+            this.rdbAutoLogin = new System.Windows.Forms.RadioButton();
+            this.rdbManualLogin = new System.Windows.Forms.RadioButton();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.chbSaveLogToFile = new System.Windows.Forms.CheckBox();
+            this.chbOutputDetailedLog = new System.Windows.Forms.CheckBox();
+            this.nudHistoryCount = new System.Windows.Forms.NumericUpDown();
+            this.cbxUrlEncoding = new System.Windows.Forms.ComboBox();
+            this.nudThreadNumber = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtDescription = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage7 = new System.Windows.Forms.TabPage();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
+            this.chbStartingUrlEncoded = new System.Windows.Forms.CheckBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.btnExport = new System.Windows.Forms.Button();
+            this.btnImport = new System.Windows.Forms.Button();
+            this.btnMoveDown = new System.Windows.Forms.Button();
+            this.btnMoveUP = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnBrowse = new System.Windows.Forms.Button();
+            this.btnModify = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnCapture = new System.Windows.Forms.Button();
+            this.btnInsert = new System.Windows.Forms.Button();
+            this.libStartingUrlList = new System.Windows.Forms.ListBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtStartingUrlTemplate = new System.Windows.Forms.TextBox();
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
@@ -143,13 +143,13 @@
             this.checkBox8 = new System.Windows.Forms.CheckBox();
             this.checkBox7 = new System.Windows.Forms.CheckBox();
             this.button14 = new System.Windows.Forms.Button();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.txtNextLayerUrlPattern = new System.Windows.Forms.TextBox();
             this.radioButton6 = new System.Windows.Forms.RadioButton();
             this.radioButton5 = new System.Windows.Forms.RadioButton();
             this.label17 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cbxName = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.livNavigationRule = new System.Windows.Forms.ListView();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
             this.textBox25 = new System.Windows.Forms.TextBox();
@@ -222,57 +222,57 @@
             this.label41 = new System.Windows.Forms.Label();
             this.listView2 = new System.Windows.Forms.ListView();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.groupBox13 = new System.Windows.Forms.GroupBox();
+            this.groupBox15 = new System.Windows.Forms.GroupBox();
+            this.checkBox42 = new System.Windows.Forms.CheckBox();
+            this.checkBox22 = new System.Windows.Forms.CheckBox();
+            this.checkBox21 = new System.Windows.Forms.CheckBox();
+            this.checkBox20 = new System.Windows.Forms.CheckBox();
+            this.groupBox14 = new System.Windows.Forms.GroupBox();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.label36 = new System.Windows.Forms.Label();
+            this.checkBox19 = new System.Windows.Forms.CheckBox();
+            this.button33 = new System.Windows.Forms.Button();
+            this.textBox21 = new System.Windows.Forms.TextBox();
+            this.label35 = new System.Windows.Forms.Label();
+            this.radioButton15 = new System.Windows.Forms.RadioButton();
+            this.radioButton14 = new System.Windows.Forms.RadioButton();
+            this.radioButton13 = new System.Windows.Forms.RadioButton();
+            this.radioButton12 = new System.Windows.Forms.RadioButton();
+            this.radioButton11 = new System.Windows.Forms.RadioButton();
+            this.label34 = new System.Windows.Forms.Label();
+            this.radioButton10 = new System.Windows.Forms.RadioButton();
+            this.radioButton9 = new System.Windows.Forms.RadioButton();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.groupBox16 = new System.Windows.Forms.GroupBox();
+            this.groupBox19 = new System.Windows.Forms.GroupBox();
+            this.checkBox49 = new System.Windows.Forms.CheckBox();
+            this.checkBox47 = new System.Windows.Forms.CheckBox();
+            this.checkBox48 = new System.Windows.Forms.CheckBox();
+            this.groupBox18 = new System.Windows.Forms.GroupBox();
+            this.checkBox45 = new System.Windows.Forms.CheckBox();
+            this.checkBox46 = new System.Windows.Forms.CheckBox();
+            this.groupBox17 = new System.Windows.Forms.GroupBox();
+            this.checkBox44 = new System.Windows.Forms.CheckBox();
+            this.checkBox43 = new System.Windows.Forms.CheckBox();
+            this.button35 = new System.Windows.Forms.Button();
+            this.button34 = new System.Windows.Forms.Button();
+            this.textBox22 = new System.Windows.Forms.TextBox();
+            this.label37 = new System.Windows.Forms.Label();
             this.btnAccept = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSubmit = new System.Windows.Forms.Button();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.groupBox13 = new System.Windows.Forms.GroupBox();
-            this.radioButton9 = new System.Windows.Forms.RadioButton();
-            this.radioButton10 = new System.Windows.Forms.RadioButton();
-            this.groupBox14 = new System.Windows.Forms.GroupBox();
-            this.label34 = new System.Windows.Forms.Label();
-            this.radioButton11 = new System.Windows.Forms.RadioButton();
-            this.radioButton12 = new System.Windows.Forms.RadioButton();
-            this.radioButton13 = new System.Windows.Forms.RadioButton();
-            this.radioButton14 = new System.Windows.Forms.RadioButton();
-            this.radioButton15 = new System.Windows.Forms.RadioButton();
-            this.label35 = new System.Windows.Forms.Label();
-            this.textBox21 = new System.Windows.Forms.TextBox();
-            this.button33 = new System.Windows.Forms.Button();
-            this.checkBox19 = new System.Windows.Forms.CheckBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.label36 = new System.Windows.Forms.Label();
-            this.groupBox15 = new System.Windows.Forms.GroupBox();
-            this.checkBox20 = new System.Windows.Forms.CheckBox();
-            this.checkBox21 = new System.Windows.Forms.CheckBox();
-            this.checkBox22 = new System.Windows.Forms.CheckBox();
-            this.checkBox42 = new System.Windows.Forms.CheckBox();
-            this.groupBox16 = new System.Windows.Forms.GroupBox();
-            this.label37 = new System.Windows.Forms.Label();
-            this.textBox22 = new System.Windows.Forms.TextBox();
-            this.button34 = new System.Windows.Forms.Button();
-            this.button35 = new System.Windows.Forms.Button();
-            this.groupBox17 = new System.Windows.Forms.GroupBox();
-            this.groupBox18 = new System.Windows.Forms.GroupBox();
-            this.groupBox19 = new System.Windows.Forms.GroupBox();
-            this.checkBox43 = new System.Windows.Forms.CheckBox();
-            this.checkBox44 = new System.Windows.Forms.CheckBox();
-            this.checkBox45 = new System.Windows.Forms.CheckBox();
-            this.checkBox46 = new System.Windows.Forms.CheckBox();
-            this.checkBox47 = new System.Windows.Forms.CheckBox();
-            this.checkBox48 = new System.Windows.Forms.CheckBox();
-            this.checkBox49 = new System.Windows.Forms.CheckBox();
+            this.linkViewSourceFile = new System.Windows.Forms.LinkLabel();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSecond)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMinute)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDay)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudHistoryCount)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudThreadNumber)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -305,14 +305,14 @@
             this.tabPage18.SuspendLayout();
             this.tabPage20.SuspendLayout();
             this.tabPage5.SuspendLayout();
-            this.tabPage6.SuspendLayout();
             this.groupBox13.SuspendLayout();
-            this.groupBox14.SuspendLayout();
             this.groupBox15.SuspendLayout();
+            this.groupBox14.SuspendLayout();
+            this.tabPage6.SuspendLayout();
             this.groupBox16.SuspendLayout();
-            this.groupBox17.SuspendLayout();
-            this.groupBox18.SuspendLayout();
             this.groupBox19.SuspendLayout();
+            this.groupBox18.SuspendLayout();
+            this.groupBox17.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -347,18 +347,18 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.checkBox5);
-            this.groupBox4.Controls.Add(this.linkLabel4);
-            this.groupBox4.Controls.Add(this.checkBox4);
+            this.groupBox4.Controls.Add(this.chbDisableScheduleAfterFinish);
+            this.groupBox4.Controls.Add(this.SetScheduleLimitTimeRange);
+            this.groupBox4.Controls.Add(this.chbScheduleLimitTimeRange);
             this.groupBox4.Controls.Add(this.label10);
-            this.groupBox4.Controls.Add(this.numericUpDown5);
+            this.groupBox4.Controls.Add(this.nudSecond);
             this.groupBox4.Controls.Add(this.label9);
-            this.groupBox4.Controls.Add(this.numericUpDown4);
+            this.groupBox4.Controls.Add(this.nudMinute);
             this.groupBox4.Controls.Add(this.label8);
-            this.groupBox4.Controls.Add(this.numericUpDown3);
+            this.groupBox4.Controls.Add(this.nudDay);
             this.groupBox4.Controls.Add(this.radioButton4);
             this.groupBox4.Controls.Add(this.radioButton3);
-            this.groupBox4.Controls.Add(this.checkBox3);
+            this.groupBox4.Controls.Add(this.chbScheduleEnabled);
             this.groupBox4.Location = new System.Drawing.Point(6, 324);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(730, 114);
@@ -366,37 +366,37 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "定时采集";
             // 
-            // checkBox5
+            // chbDisableScheduleAfterFinish
             // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.checkBox5.Location = new System.Drawing.Point(442, 58);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(154, 16);
-            this.checkBox5.TabIndex = 14;
-            this.checkBox5.Text = "任务完成后取消定时采集";
-            this.checkBox5.UseVisualStyleBackColor = true;
+            this.chbDisableScheduleAfterFinish.AutoSize = true;
+            this.chbDisableScheduleAfterFinish.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.chbDisableScheduleAfterFinish.Location = new System.Drawing.Point(442, 58);
+            this.chbDisableScheduleAfterFinish.Name = "chbDisableScheduleAfterFinish";
+            this.chbDisableScheduleAfterFinish.Size = new System.Drawing.Size(154, 16);
+            this.chbDisableScheduleAfterFinish.TabIndex = 14;
+            this.chbDisableScheduleAfterFinish.Text = "任务完成后取消定时采集";
+            this.chbDisableScheduleAfterFinish.UseVisualStyleBackColor = true;
             // 
-            // linkLabel4
+            // SetScheduleLimitTimeRange
             // 
-            this.linkLabel4.AutoSize = true;
-            this.linkLabel4.Location = new System.Drawing.Point(341, 62);
-            this.linkLabel4.Name = "linkLabel4";
-            this.linkLabel4.Size = new System.Drawing.Size(77, 12);
-            this.linkLabel4.TabIndex = 13;
-            this.linkLabel4.TabStop = true;
-            this.linkLabel4.Text = "设置时间范围";
+            this.SetScheduleLimitTimeRange.AutoSize = true;
+            this.SetScheduleLimitTimeRange.Location = new System.Drawing.Point(341, 62);
+            this.SetScheduleLimitTimeRange.Name = "SetScheduleLimitTimeRange";
+            this.SetScheduleLimitTimeRange.Size = new System.Drawing.Size(77, 12);
+            this.SetScheduleLimitTimeRange.TabIndex = 13;
+            this.SetScheduleLimitTimeRange.TabStop = true;
+            this.SetScheduleLimitTimeRange.Text = "设置时间范围";
             // 
-            // checkBox4
+            // chbScheduleLimitTimeRange
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.checkBox4.Location = new System.Drawing.Point(209, 58);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(94, 16);
-            this.checkBox4.TabIndex = 12;
-            this.checkBox4.Text = "限制时间范围";
-            this.checkBox4.UseVisualStyleBackColor = true;
+            this.chbScheduleLimitTimeRange.AutoSize = true;
+            this.chbScheduleLimitTimeRange.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.chbScheduleLimitTimeRange.Location = new System.Drawing.Point(209, 58);
+            this.chbScheduleLimitTimeRange.Name = "chbScheduleLimitTimeRange";
+            this.chbScheduleLimitTimeRange.Size = new System.Drawing.Size(94, 16);
+            this.chbScheduleLimitTimeRange.TabIndex = 12;
+            this.chbScheduleLimitTimeRange.Text = "限制时间范围";
+            this.chbScheduleLimitTimeRange.UseVisualStyleBackColor = true;
             // 
             // label10
             // 
@@ -407,13 +407,13 @@
             this.label10.TabIndex = 11;
             this.label10.Text = "秒";
             // 
-            // numericUpDown5
+            // nudSecond
             // 
-            this.numericUpDown5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.numericUpDown5.Location = new System.Drawing.Point(541, 20);
-            this.numericUpDown5.Name = "numericUpDown5";
-            this.numericUpDown5.Size = new System.Drawing.Size(70, 21);
-            this.numericUpDown5.TabIndex = 10;
+            this.nudSecond.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.nudSecond.Location = new System.Drawing.Point(541, 20);
+            this.nudSecond.Name = "nudSecond";
+            this.nudSecond.Size = new System.Drawing.Size(70, 21);
+            this.nudSecond.TabIndex = 10;
             // 
             // label9
             // 
@@ -424,13 +424,13 @@
             this.label9.TabIndex = 9;
             this.label9.Text = "分";
             // 
-            // numericUpDown4
+            // nudMinute
             // 
-            this.numericUpDown4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.numericUpDown4.Location = new System.Drawing.Point(442, 20);
-            this.numericUpDown4.Name = "numericUpDown4";
-            this.numericUpDown4.Size = new System.Drawing.Size(70, 21);
-            this.numericUpDown4.TabIndex = 8;
+            this.nudMinute.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.nudMinute.Location = new System.Drawing.Point(442, 20);
+            this.nudMinute.Name = "nudMinute";
+            this.nudMinute.Size = new System.Drawing.Size(70, 21);
+            this.nudMinute.TabIndex = 8;
             // 
             // label8
             // 
@@ -441,13 +441,13 @@
             this.label8.TabIndex = 7;
             this.label8.Text = "天";
             // 
-            // numericUpDown3
+            // nudDay
             // 
-            this.numericUpDown3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.numericUpDown3.Location = new System.Drawing.Point(343, 20);
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(70, 21);
-            this.numericUpDown3.TabIndex = 6;
+            this.nudDay.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.nudDay.Location = new System.Drawing.Point(343, 20);
+            this.nudDay.Name = "nudDay";
+            this.nudDay.Size = new System.Drawing.Size(70, 21);
+            this.nudDay.TabIndex = 6;
             // 
             // radioButton4
             // 
@@ -473,24 +473,24 @@
             this.radioButton3.Text = "每当";
             this.radioButton3.UseVisualStyleBackColor = true;
             // 
-            // checkBox3
+            // chbScheduleEnabled
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.checkBox3.Location = new System.Drawing.Point(21, 58);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(94, 16);
-            this.checkBox3.TabIndex = 0;
-            this.checkBox3.Text = "启用定时采集";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.chbScheduleEnabled.AutoSize = true;
+            this.chbScheduleEnabled.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.chbScheduleEnabled.Location = new System.Drawing.Point(21, 58);
+            this.chbScheduleEnabled.Name = "chbScheduleEnabled";
+            this.chbScheduleEnabled.Size = new System.Drawing.Size(94, 16);
+            this.chbScheduleEnabled.TabIndex = 0;
+            this.chbScheduleEnabled.Text = "启用定时采集";
+            this.chbScheduleEnabled.UseVisualStyleBackColor = true;
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.linkLabel3);
-            this.groupBox3.Controls.Add(this.linkLabel2);
-            this.groupBox3.Controls.Add(this.textBox2);
-            this.groupBox3.Controls.Add(this.radioButton2);
-            this.groupBox3.Controls.Add(this.radioButton1);
+            this.groupBox3.Controls.Add(this.linkSetAutoLogin);
+            this.groupBox3.Controls.Add(this.linkManualLogin);
+            this.groupBox3.Controls.Add(this.txtCookie);
+            this.groupBox3.Controls.Add(this.rdbAutoLogin);
+            this.groupBox3.Controls.Add(this.rdbManualLogin);
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Location = new System.Drawing.Point(6, 218);
             this.groupBox3.Name = "groupBox3";
@@ -499,57 +499,57 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "网站登录";
             // 
-            // linkLabel3
+            // linkSetAutoLogin
             // 
-            this.linkLabel3.AutoSize = true;
-            this.linkLabel3.Location = new System.Drawing.Point(497, 44);
-            this.linkLabel3.Name = "linkLabel3";
-            this.linkLabel3.Size = new System.Drawing.Size(77, 12);
-            this.linkLabel3.TabIndex = 5;
-            this.linkLabel3.TabStop = true;
-            this.linkLabel3.Text = "设置自动登录";
+            this.linkSetAutoLogin.AutoSize = true;
+            this.linkSetAutoLogin.Location = new System.Drawing.Point(497, 44);
+            this.linkSetAutoLogin.Name = "linkSetAutoLogin";
+            this.linkSetAutoLogin.Size = new System.Drawing.Size(77, 12);
+            this.linkSetAutoLogin.TabIndex = 5;
+            this.linkSetAutoLogin.TabStop = true;
+            this.linkSetAutoLogin.Text = "设置自动登录";
             // 
-            // linkLabel2
+            // linkManualLogin
             // 
-            this.linkLabel2.AutoSize = true;
-            this.linkLabel2.Location = new System.Drawing.Point(414, 44);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(77, 12);
-            this.linkLabel2.TabIndex = 4;
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "进行手工登录";
+            this.linkManualLogin.AutoSize = true;
+            this.linkManualLogin.Location = new System.Drawing.Point(414, 44);
+            this.linkManualLogin.Name = "linkManualLogin";
+            this.linkManualLogin.Size = new System.Drawing.Size(77, 12);
+            this.linkManualLogin.TabIndex = 4;
+            this.linkManualLogin.TabStop = true;
+            this.linkManualLogin.Text = "进行手工登录";
             // 
-            // textBox2
+            // txtCookie
             // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Location = new System.Drawing.Point(104, 41);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(277, 21);
-            this.textBox2.TabIndex = 3;
+            this.txtCookie.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCookie.Location = new System.Drawing.Point(104, 41);
+            this.txtCookie.Name = "txtCookie";
+            this.txtCookie.Size = new System.Drawing.Size(277, 21);
+            this.txtCookie.TabIndex = 3;
             // 
-            // radioButton2
+            // rdbAutoLogin
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.radioButton2.Location = new System.Drawing.Point(209, 20);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(70, 16);
-            this.radioButton2.TabIndex = 2;
-            this.radioButton2.Text = "自动登录";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rdbAutoLogin.AutoSize = true;
+            this.rdbAutoLogin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.rdbAutoLogin.Location = new System.Drawing.Point(209, 20);
+            this.rdbAutoLogin.Name = "rdbAutoLogin";
+            this.rdbAutoLogin.Size = new System.Drawing.Size(70, 16);
+            this.rdbAutoLogin.TabIndex = 2;
+            this.rdbAutoLogin.Text = "自动登录";
+            this.rdbAutoLogin.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // rdbManualLogin
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Checked = true;
-            this.radioButton1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.radioButton1.Location = new System.Drawing.Point(104, 20);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(70, 16);
-            this.radioButton1.TabIndex = 1;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "手工登录";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rdbManualLogin.AutoSize = true;
+            this.rdbManualLogin.Checked = true;
+            this.rdbManualLogin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.rdbManualLogin.Location = new System.Drawing.Point(104, 20);
+            this.rdbManualLogin.Name = "rdbManualLogin";
+            this.rdbManualLogin.Size = new System.Drawing.Size(70, 16);
+            this.rdbManualLogin.TabIndex = 1;
+            this.rdbManualLogin.TabStop = true;
+            this.rdbManualLogin.Text = "手工登录";
+            this.rdbManualLogin.UseVisualStyleBackColor = true;
             // 
             // label7
             // 
@@ -562,11 +562,11 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.checkBox2);
-            this.groupBox2.Controls.Add(this.checkBox1);
-            this.groupBox2.Controls.Add(this.numericUpDown2);
-            this.groupBox2.Controls.Add(this.comboBox1);
-            this.groupBox2.Controls.Add(this.numericUpDown1);
+            this.groupBox2.Controls.Add(this.chbSaveLogToFile);
+            this.groupBox2.Controls.Add(this.chbOutputDetailedLog);
+            this.groupBox2.Controls.Add(this.nudHistoryCount);
+            this.groupBox2.Controls.Add(this.cbxUrlEncoding);
+            this.groupBox2.Controls.Add(this.nudThreadNumber);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label4);
@@ -578,71 +578,71 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "高级";
             // 
-            // checkBox2
+            // chbSaveLogToFile
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.checkBox2.Location = new System.Drawing.Point(209, 66);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(106, 16);
-            this.checkBox2.TabIndex = 9;
-            this.checkBox2.Text = "日志保存到文件";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.chbSaveLogToFile.AutoSize = true;
+            this.chbSaveLogToFile.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.chbSaveLogToFile.Location = new System.Drawing.Point(209, 66);
+            this.chbSaveLogToFile.Name = "chbSaveLogToFile";
+            this.chbSaveLogToFile.Size = new System.Drawing.Size(106, 16);
+            this.chbSaveLogToFile.TabIndex = 9;
+            this.chbSaveLogToFile.Text = "日志保存到文件";
+            this.chbSaveLogToFile.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // chbOutputDetailedLog
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Checked = true;
-            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.checkBox1.Location = new System.Drawing.Point(104, 66);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(94, 16);
-            this.checkBox1.TabIndex = 8;
-            this.checkBox1.Text = "输出详细日志";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.chbOutputDetailedLog.AutoSize = true;
+            this.chbOutputDetailedLog.Checked = true;
+            this.chbOutputDetailedLog.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chbOutputDetailedLog.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.chbOutputDetailedLog.Location = new System.Drawing.Point(104, 66);
+            this.chbOutputDetailedLog.Name = "chbOutputDetailedLog";
+            this.chbOutputDetailedLog.Size = new System.Drawing.Size(94, 16);
+            this.chbOutputDetailedLog.TabIndex = 8;
+            this.chbOutputDetailedLog.Text = "输出详细日志";
+            this.chbOutputDetailedLog.UseVisualStyleBackColor = true;
             // 
-            // numericUpDown2
+            // nudHistoryCount
             // 
-            this.numericUpDown2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.numericUpDown2.Location = new System.Drawing.Point(497, 24);
-            this.numericUpDown2.Maximum = new decimal(new int[] {
+            this.nudHistoryCount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.nudHistoryCount.Location = new System.Drawing.Point(497, 24);
+            this.nudHistoryCount.Maximum = new decimal(new int[] {
             10000,
             0,
             0,
             0});
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(70, 21);
-            this.numericUpDown2.TabIndex = 7;
-            this.numericUpDown2.Value = new decimal(new int[] {
+            this.nudHistoryCount.Name = "nudHistoryCount";
+            this.nudHistoryCount.Size = new System.Drawing.Size(70, 21);
+            this.nudHistoryCount.TabIndex = 7;
+            this.nudHistoryCount.Value = new decimal(new int[] {
             1000,
             0,
             0,
             0});
             // 
-            // comboBox1
+            // cbxUrlEncoding
             // 
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(266, 23);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(115, 20);
-            this.comboBox1.TabIndex = 6;
-            this.comboBox1.Text = "utf-8";
+            this.cbxUrlEncoding.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cbxUrlEncoding.FormattingEnabled = true;
+            this.cbxUrlEncoding.Location = new System.Drawing.Point(266, 23);
+            this.cbxUrlEncoding.Name = "cbxUrlEncoding";
+            this.cbxUrlEncoding.Size = new System.Drawing.Size(115, 20);
+            this.cbxUrlEncoding.TabIndex = 6;
+            this.cbxUrlEncoding.Text = "utf-8";
             // 
-            // numericUpDown1
+            // nudThreadNumber
             // 
-            this.numericUpDown1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.numericUpDown1.Location = new System.Drawing.Point(104, 24);
-            this.numericUpDown1.Minimum = new decimal(new int[] {
+            this.nudThreadNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.nudThreadNumber.Location = new System.Drawing.Point(104, 24);
+            this.nudThreadNumber.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(70, 21);
-            this.numericUpDown1.TabIndex = 5;
-            this.numericUpDown1.Value = new decimal(new int[] {
+            this.nudThreadNumber.Name = "nudThreadNumber";
+            this.nudThreadNumber.Size = new System.Drawing.Size(70, 21);
+            this.nudThreadNumber.TabIndex = 5;
+            this.nudThreadNumber.Value = new decimal(new int[] {
             1,
             0,
             0,
@@ -686,8 +686,8 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtDescription);
+            this.groupBox1.Controls.Add(this.txtName);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(6, 6);
@@ -697,23 +697,23 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "常规";
             // 
-            // textBox4
+            // txtDescription
             // 
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox4.Location = new System.Drawing.Point(104, 44);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox4.Size = new System.Drawing.Size(620, 50);
-            this.textBox4.TabIndex = 3;
+            this.txtDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDescription.Location = new System.Drawing.Point(104, 44);
+            this.txtDescription.Multiline = true;
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtDescription.Size = new System.Drawing.Size(620, 50);
+            this.txtDescription.TabIndex = 3;
             // 
-            // textBox1
+            // txtName
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(104, 14);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(620, 21);
-            this.textBox1.TabIndex = 2;
+            this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtName.Location = new System.Drawing.Point(104, 14);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(620, 21);
+            this.txtName.TabIndex = 2;
             // 
             // label2
             // 
@@ -769,20 +769,20 @@
             // 
             // tabPage7
             // 
-            this.tabPage7.Controls.Add(this.checkBox6);
+            this.tabPage7.Controls.Add(this.chbStartingUrlEncoded);
             this.tabPage7.Controls.Add(this.label11);
-            this.tabPage7.Controls.Add(this.button11);
-            this.tabPage7.Controls.Add(this.button10);
-            this.tabPage7.Controls.Add(this.button9);
-            this.tabPage7.Controls.Add(this.button8);
-            this.tabPage7.Controls.Add(this.button7);
-            this.tabPage7.Controls.Add(this.button6);
-            this.tabPage7.Controls.Add(this.button5);
-            this.tabPage7.Controls.Add(this.button4);
-            this.tabPage7.Controls.Add(this.button3);
-            this.tabPage7.Controls.Add(this.button2);
-            this.tabPage7.Controls.Add(this.button1);
-            this.tabPage7.Controls.Add(this.listBox1);
+            this.tabPage7.Controls.Add(this.btnExport);
+            this.tabPage7.Controls.Add(this.btnImport);
+            this.tabPage7.Controls.Add(this.btnMoveDown);
+            this.tabPage7.Controls.Add(this.btnMoveUP);
+            this.tabPage7.Controls.Add(this.btnClear);
+            this.tabPage7.Controls.Add(this.btnDelete);
+            this.tabPage7.Controls.Add(this.btnBrowse);
+            this.tabPage7.Controls.Add(this.btnModify);
+            this.tabPage7.Controls.Add(this.btnAdd);
+            this.tabPage7.Controls.Add(this.btnCapture);
+            this.tabPage7.Controls.Add(this.btnInsert);
+            this.tabPage7.Controls.Add(this.libStartingUrlList);
             this.tabPage7.Controls.Add(this.groupBox6);
             this.tabPage7.Location = new System.Drawing.Point(4, 24);
             this.tabPage7.Name = "tabPage7";
@@ -792,15 +792,15 @@
             this.tabPage7.Text = "添加与修改";
             this.tabPage7.UseVisualStyleBackColor = true;
             // 
-            // checkBox6
+            // chbStartingUrlEncoded
             // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Location = new System.Drawing.Point(502, 347);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(108, 16);
-            this.checkBox6.TabIndex = 15;
-            this.checkBox6.Text = "起始地址已编码";
-            this.checkBox6.UseVisualStyleBackColor = true;
+            this.chbStartingUrlEncoded.AutoSize = true;
+            this.chbStartingUrlEncoded.Location = new System.Drawing.Point(502, 347);
+            this.chbStartingUrlEncoded.Name = "chbStartingUrlEncoded";
+            this.chbStartingUrlEncoded.Size = new System.Drawing.Size(108, 16);
+            this.chbStartingUrlEncoded.TabIndex = 15;
+            this.chbStartingUrlEncoded.Text = "起始地址已编码";
+            this.chbStartingUrlEncoded.UseVisualStyleBackColor = true;
             // 
             // label11
             // 
@@ -811,131 +811,131 @@
             this.label11.TabIndex = 13;
             this.label11.Text = "地址总数 0";
             // 
-            // button11
+            // btnExport
             // 
-            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button11.Location = new System.Drawing.Point(622, 336);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(86, 27);
-            this.button11.TabIndex = 12;
-            this.button11.Text = "导出(&E)";
-            this.button11.UseVisualStyleBackColor = true;
+            this.btnExport.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnExport.Location = new System.Drawing.Point(622, 336);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(86, 27);
+            this.btnExport.TabIndex = 12;
+            this.btnExport.Text = "导出(&E)";
+            this.btnExport.UseVisualStyleBackColor = true;
             // 
-            // button10
+            // btnImport
             // 
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button10.Location = new System.Drawing.Point(622, 303);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(86, 27);
-            this.button10.TabIndex = 11;
-            this.button10.Text = "导入(&I)";
-            this.button10.UseVisualStyleBackColor = true;
+            this.btnImport.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnImport.Location = new System.Drawing.Point(622, 303);
+            this.btnImport.Name = "btnImport";
+            this.btnImport.Size = new System.Drawing.Size(86, 27);
+            this.btnImport.TabIndex = 11;
+            this.btnImport.Text = "导入(&I)";
+            this.btnImport.UseVisualStyleBackColor = true;
             // 
-            // button9
+            // btnMoveDown
             // 
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button9.Location = new System.Drawing.Point(622, 270);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(86, 27);
-            this.button9.TabIndex = 10;
-            this.button9.Text = "下移(&M)";
-            this.button9.UseVisualStyleBackColor = true;
+            this.btnMoveDown.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnMoveDown.Location = new System.Drawing.Point(622, 270);
+            this.btnMoveDown.Name = "btnMoveDown";
+            this.btnMoveDown.Size = new System.Drawing.Size(86, 27);
+            this.btnMoveDown.TabIndex = 10;
+            this.btnMoveDown.Text = "下移(&M)";
+            this.btnMoveDown.UseVisualStyleBackColor = true;
             // 
-            // button8
+            // btnMoveUP
             // 
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button8.Location = new System.Drawing.Point(622, 237);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(86, 27);
-            this.button8.TabIndex = 9;
-            this.button8.Text = "上移(&U)";
-            this.button8.UseVisualStyleBackColor = true;
+            this.btnMoveUP.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnMoveUP.Location = new System.Drawing.Point(622, 237);
+            this.btnMoveUP.Name = "btnMoveUP";
+            this.btnMoveUP.Size = new System.Drawing.Size(86, 27);
+            this.btnMoveUP.TabIndex = 9;
+            this.btnMoveUP.Text = "上移(&U)";
+            this.btnMoveUP.UseVisualStyleBackColor = true;
             // 
-            // button7
+            // btnClear
             // 
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button7.Location = new System.Drawing.Point(622, 204);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(86, 27);
-            this.button7.TabIndex = 8;
-            this.button7.Text = "清空(&C)";
-            this.button7.UseVisualStyleBackColor = true;
+            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnClear.Location = new System.Drawing.Point(622, 204);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(86, 27);
+            this.btnClear.TabIndex = 8;
+            this.btnClear.Text = "清空(&C)";
+            this.btnClear.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // btnDelete
             // 
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button6.Location = new System.Drawing.Point(622, 171);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(86, 27);
-            this.button6.TabIndex = 7;
-            this.button6.Text = "删除(&D)";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnDelete.Location = new System.Drawing.Point(622, 171);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(86, 27);
+            this.btnDelete.TabIndex = 7;
+            this.btnDelete.Text = "删除(&D)";
+            this.btnDelete.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // btnBrowse
             // 
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button5.Location = new System.Drawing.Point(622, 138);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(86, 27);
-            this.button5.TabIndex = 6;
-            this.button5.Text = "浏览(&B)";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnBrowse.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBrowse.Location = new System.Drawing.Point(622, 138);
+            this.btnBrowse.Name = "btnBrowse";
+            this.btnBrowse.Size = new System.Drawing.Size(86, 27);
+            this.btnBrowse.TabIndex = 6;
+            this.btnBrowse.Text = "浏览(&B)";
+            this.btnBrowse.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnModify
             // 
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button4.Location = new System.Drawing.Point(622, 105);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(86, 27);
-            this.button4.TabIndex = 5;
-            this.button4.Text = "修改(&S)";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnModify.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnModify.Location = new System.Drawing.Point(622, 105);
+            this.btnModify.Name = "btnModify";
+            this.btnModify.Size = new System.Drawing.Size(86, 27);
+            this.btnModify.TabIndex = 5;
+            this.btnModify.Text = "修改(&S)";
+            this.btnModify.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnAdd
             // 
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button3.Location = new System.Drawing.Point(622, 72);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(86, 27);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "添加(&A)";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAdd.Location = new System.Drawing.Point(622, 72);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(86, 27);
+            this.btnAdd.TabIndex = 4;
+            this.btnAdd.Text = "添加(&A)";
+            this.btnAdd.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnCapture
             // 
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Location = new System.Drawing.Point(622, 39);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(86, 27);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "捕获(&T)";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnCapture.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCapture.Location = new System.Drawing.Point(622, 39);
+            this.btnCapture.Name = "btnCapture";
+            this.btnCapture.Size = new System.Drawing.Size(86, 27);
+            this.btnCapture.TabIndex = 3;
+            this.btnCapture.Text = "捕获(&T)";
+            this.btnCapture.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnInsert
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Location = new System.Drawing.Point(622, 6);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(86, 27);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "插入(&I)";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnInsert.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnInsert.Location = new System.Drawing.Point(622, 6);
+            this.btnInsert.Name = "btnInsert";
+            this.btnInsert.Size = new System.Drawing.Size(86, 27);
+            this.btnInsert.TabIndex = 2;
+            this.btnInsert.Text = "插入(&I)";
+            this.btnInsert.UseVisualStyleBackColor = true;
             // 
-            // listBox1
+            // libStartingUrlList
             // 
-            this.listBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 12;
-            this.listBox1.Items.AddRange(new object[] {
+            this.libStartingUrlList.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.libStartingUrlList.FormattingEnabled = true;
+            this.libStartingUrlList.ItemHeight = 12;
+            this.libStartingUrlList.Items.AddRange(new object[] {
             " "});
-            this.listBox1.Location = new System.Drawing.Point(6, 126);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(610, 218);
-            this.listBox1.TabIndex = 1;
+            this.libStartingUrlList.Location = new System.Drawing.Point(6, 126);
+            this.libStartingUrlList.Name = "libStartingUrlList";
+            this.libStartingUrlList.Size = new System.Drawing.Size(610, 218);
+            this.libStartingUrlList.TabIndex = 1;
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.textBox3);
+            this.groupBox6.Controls.Add(this.txtStartingUrlTemplate);
             this.groupBox6.Location = new System.Drawing.Point(6, 6);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(610, 114);
@@ -943,15 +943,15 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "起始地址";
             // 
-            // textBox3
+            // txtStartingUrlTemplate
             // 
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Location = new System.Drawing.Point(6, 20);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox3.Size = new System.Drawing.Size(598, 88);
-            this.textBox3.TabIndex = 0;
+            this.txtStartingUrlTemplate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtStartingUrlTemplate.Location = new System.Drawing.Point(6, 20);
+            this.txtStartingUrlTemplate.Multiline = true;
+            this.txtStartingUrlTemplate.Name = "txtStartingUrlTemplate";
+            this.txtStartingUrlTemplate.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtStartingUrlTemplate.Size = new System.Drawing.Size(598, 88);
+            this.txtStartingUrlTemplate.TabIndex = 0;
             // 
             // tabPage8
             // 
@@ -1116,9 +1116,9 @@
             this.groupBox10.Controls.Add(this.radioButton6);
             this.groupBox10.Controls.Add(this.radioButton5);
             this.groupBox10.Controls.Add(this.label17);
-            this.groupBox10.Controls.Add(this.comboBox2);
+            this.groupBox10.Controls.Add(this.cbxName);
             this.groupBox10.Controls.Add(this.label16);
-            this.groupBox10.Controls.Add(this.listView1);
+            this.groupBox10.Controls.Add(this.livNavigationRule);
             this.groupBox10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.groupBox10.Location = new System.Drawing.Point(3, 3);
             this.groupBox10.Name = "groupBox10";
@@ -1596,7 +1596,7 @@
             this.groupBox11.Controls.Add(this.checkBox8);
             this.groupBox11.Controls.Add(this.checkBox7);
             this.groupBox11.Controls.Add(this.button14);
-            this.groupBox11.Controls.Add(this.textBox9);
+            this.groupBox11.Controls.Add(this.txtNextLayerUrlPattern);
             this.groupBox11.Location = new System.Drawing.Point(6, 179);
             this.groupBox11.Name = "groupBox11";
             this.groupBox11.Size = new System.Drawing.Size(722, 72);
@@ -1658,13 +1658,13 @@
             this.button14.Text = "转";
             this.button14.UseVisualStyleBackColor = true;
             // 
-            // textBox9
+            // txtNextLayerUrlPattern
             // 
-            this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox9.Location = new System.Drawing.Point(6, 20);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(675, 21);
-            this.textBox9.TabIndex = 2;
+            this.txtNextLayerUrlPattern.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNextLayerUrlPattern.Location = new System.Drawing.Point(6, 20);
+            this.txtNextLayerUrlPattern.Name = "txtNextLayerUrlPattern";
+            this.txtNextLayerUrlPattern.Size = new System.Drawing.Size(675, 21);
+            this.txtNextLayerUrlPattern.TabIndex = 2;
             // 
             // radioButton6
             // 
@@ -1699,14 +1699,14 @@
             this.label17.TabIndex = 3;
             this.label17.Text = "层次类型";
             // 
-            // comboBox2
+            // cbxName
             // 
-            this.comboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(76, 153);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 20);
-            this.comboBox2.TabIndex = 2;
+            this.cbxName.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cbxName.FormattingEnabled = true;
+            this.cbxName.Location = new System.Drawing.Point(76, 153);
+            this.cbxName.Name = "cbxName";
+            this.cbxName.Size = new System.Drawing.Size(121, 20);
+            this.cbxName.TabIndex = 2;
             // 
             // label16
             // 
@@ -1717,14 +1717,14 @@
             this.label16.TabIndex = 1;
             this.label16.Text = "层次名称";
             // 
-            // listView1
+            // livNavigationRule
             // 
-            this.listView1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.listView1.Location = new System.Drawing.Point(6, 20);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(722, 124);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.livNavigationRule.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.livNavigationRule.Location = new System.Drawing.Point(6, 20);
+            this.livNavigationRule.Name = "livNavigationRule";
+            this.livNavigationRule.Size = new System.Drawing.Size(722, 124);
+            this.livNavigationRule.TabIndex = 0;
+            this.livNavigationRule.UseCompatibleStateImageBehavior = false;
             // 
             // tabPage4
             // 
@@ -2529,6 +2529,246 @@
             this.tabPage5.Text = "采集结果";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
+            // groupBox13
+            // 
+            this.groupBox13.Controls.Add(this.groupBox15);
+            this.groupBox13.Controls.Add(this.groupBox14);
+            this.groupBox13.Controls.Add(this.radioButton10);
+            this.groupBox13.Controls.Add(this.radioButton9);
+            this.groupBox13.Location = new System.Drawing.Point(3, 3);
+            this.groupBox13.Name = "groupBox13";
+            this.groupBox13.Size = new System.Drawing.Size(734, 436);
+            this.groupBox13.TabIndex = 0;
+            this.groupBox13.TabStop = false;
+            this.groupBox13.Text = "采集结果";
+            // 
+            // groupBox15
+            // 
+            this.groupBox15.Controls.Add(this.checkBox42);
+            this.groupBox15.Controls.Add(this.checkBox22);
+            this.groupBox15.Controls.Add(this.checkBox21);
+            this.groupBox15.Controls.Add(this.checkBox20);
+            this.groupBox15.Location = new System.Drawing.Point(18, 236);
+            this.groupBox15.Name = "groupBox15";
+            this.groupBox15.Size = new System.Drawing.Size(697, 194);
+            this.groupBox15.TabIndex = 8;
+            this.groupBox15.TabStop = false;
+            this.groupBox15.Text = "发布结果选项";
+            // 
+            // checkBox42
+            // 
+            this.checkBox42.AutoSize = true;
+            this.checkBox42.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.checkBox42.Location = new System.Drawing.Point(21, 86);
+            this.checkBox42.Name = "checkBox42";
+            this.checkBox42.Size = new System.Drawing.Size(178, 16);
+            this.checkBox42.TabIndex = 27;
+            this.checkBox42.Text = "将发布时的出错行保存到文件";
+            this.checkBox42.UseVisualStyleBackColor = true;
+            // 
+            // checkBox22
+            // 
+            this.checkBox22.AutoSize = true;
+            this.checkBox22.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.checkBox22.Location = new System.Drawing.Point(21, 64);
+            this.checkBox22.Name = "checkBox22";
+            this.checkBox22.Size = new System.Drawing.Size(178, 16);
+            this.checkBox22.TabIndex = 26;
+            this.checkBox22.Text = "将发布时的重复行保存到文件";
+            this.checkBox22.UseVisualStyleBackColor = true;
+            // 
+            // checkBox21
+            // 
+            this.checkBox21.AutoSize = true;
+            this.checkBox21.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.checkBox21.Location = new System.Drawing.Point(21, 42);
+            this.checkBox21.Name = "checkBox21";
+            this.checkBox21.Size = new System.Drawing.Size(322, 16);
+            this.checkBox21.TabIndex = 25;
+            this.checkBox21.Text = "从结果文件发布到数据库时，同时删除结果文件中的数据";
+            this.checkBox21.UseVisualStyleBackColor = true;
+            // 
+            // checkBox20
+            // 
+            this.checkBox20.AutoSize = true;
+            this.checkBox20.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.checkBox20.Location = new System.Drawing.Point(21, 20);
+            this.checkBox20.Name = "checkBox20";
+            this.checkBox20.Size = new System.Drawing.Size(310, 16);
+            this.checkBox20.TabIndex = 24;
+            this.checkBox20.Text = "在数据库中找不到对应字段或存储过程参数时忽略错误";
+            this.checkBox20.UseVisualStyleBackColor = true;
+            // 
+            // groupBox14
+            // 
+            this.groupBox14.Controls.Add(this.comboBox4);
+            this.groupBox14.Controls.Add(this.label36);
+            this.groupBox14.Controls.Add(this.checkBox19);
+            this.groupBox14.Controls.Add(this.button33);
+            this.groupBox14.Controls.Add(this.textBox21);
+            this.groupBox14.Controls.Add(this.label35);
+            this.groupBox14.Controls.Add(this.radioButton15);
+            this.groupBox14.Controls.Add(this.radioButton14);
+            this.groupBox14.Controls.Add(this.radioButton13);
+            this.groupBox14.Controls.Add(this.radioButton12);
+            this.groupBox14.Controls.Add(this.radioButton11);
+            this.groupBox14.Controls.Add(this.label34);
+            this.groupBox14.Location = new System.Drawing.Point(18, 55);
+            this.groupBox14.Name = "groupBox14";
+            this.groupBox14.Size = new System.Drawing.Size(697, 175);
+            this.groupBox14.TabIndex = 7;
+            this.groupBox14.TabStop = false;
+            this.groupBox14.Text = "设置数据库连接";
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Location = new System.Drawing.Point(198, 137);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(165, 20);
+            this.comboBox4.TabIndex = 25;
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(139, 140);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(53, 12);
+            this.label36.TabIndex = 24;
+            this.label36.Text = "数据库表";
+            // 
+            // checkBox19
+            // 
+            this.checkBox19.AutoSize = true;
+            this.checkBox19.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.checkBox19.Location = new System.Drawing.Point(21, 136);
+            this.checkBox19.Name = "checkBox19";
+            this.checkBox19.Size = new System.Drawing.Size(94, 16);
+            this.checkBox19.TabIndex = 23;
+            this.checkBox19.Text = "使用存储过程";
+            this.checkBox19.UseVisualStyleBackColor = true;
+            // 
+            // button33
+            // 
+            this.button33.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button33.Location = new System.Drawing.Point(616, 99);
+            this.button33.Name = "button33";
+            this.button33.Size = new System.Drawing.Size(75, 23);
+            this.button33.TabIndex = 15;
+            this.button33.Text = "设置(&S)";
+            this.button33.UseVisualStyleBackColor = true;
+            // 
+            // textBox21
+            // 
+            this.textBox21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox21.Location = new System.Drawing.Point(21, 99);
+            this.textBox21.Name = "textBox21";
+            this.textBox21.Size = new System.Drawing.Size(589, 21);
+            this.textBox21.TabIndex = 14;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(19, 75);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(41, 12);
+            this.label35.TabIndex = 13;
+            this.label35.Text = "连接串";
+            // 
+            // radioButton15
+            // 
+            this.radioButton15.AutoSize = true;
+            this.radioButton15.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.radioButton15.Location = new System.Drawing.Point(385, 45);
+            this.radioButton15.Name = "radioButton15";
+            this.radioButton15.Size = new System.Drawing.Size(46, 16);
+            this.radioButton15.TabIndex = 11;
+            this.radioButton15.TabStop = true;
+            this.radioButton15.Text = "其他";
+            this.radioButton15.UseVisualStyleBackColor = true;
+            // 
+            // radioButton14
+            // 
+            this.radioButton14.AutoSize = true;
+            this.radioButton14.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.radioButton14.Location = new System.Drawing.Point(292, 45);
+            this.radioButton14.Name = "radioButton14";
+            this.radioButton14.Size = new System.Drawing.Size(58, 16);
+            this.radioButton14.TabIndex = 10;
+            this.radioButton14.TabStop = true;
+            this.radioButton14.Text = "Oracle";
+            this.radioButton14.UseVisualStyleBackColor = true;
+            // 
+            // radioButton13
+            // 
+            this.radioButton13.AutoSize = true;
+            this.radioButton13.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.radioButton13.Location = new System.Drawing.Point(198, 45);
+            this.radioButton13.Name = "radioButton13";
+            this.radioButton13.Size = new System.Drawing.Size(52, 16);
+            this.radioButton13.TabIndex = 9;
+            this.radioButton13.TabStop = true;
+            this.radioButton13.Text = "MySql";
+            this.radioButton13.UseVisualStyleBackColor = true;
+            // 
+            // radioButton12
+            // 
+            this.radioButton12.AutoSize = true;
+            this.radioButton12.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.radioButton12.Location = new System.Drawing.Point(110, 45);
+            this.radioButton12.Name = "radioButton12";
+            this.radioButton12.Size = new System.Drawing.Size(82, 16);
+            this.radioButton12.TabIndex = 8;
+            this.radioButton12.TabStop = true;
+            this.radioButton12.Text = "SQL Server";
+            this.radioButton12.UseVisualStyleBackColor = true;
+            // 
+            // radioButton11
+            // 
+            this.radioButton11.AutoSize = true;
+            this.radioButton11.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.radioButton11.Location = new System.Drawing.Point(21, 45);
+            this.radioButton11.Name = "radioButton11";
+            this.radioButton11.Size = new System.Drawing.Size(58, 16);
+            this.radioButton11.TabIndex = 7;
+            this.radioButton11.TabStop = true;
+            this.radioButton11.Text = "Access";
+            this.radioButton11.UseVisualStyleBackColor = true;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(19, 21);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(65, 12);
+            this.label34.TabIndex = 0;
+            this.label34.Text = "数据库类型";
+            // 
+            // radioButton10
+            // 
+            this.radioButton10.AutoSize = true;
+            this.radioButton10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.radioButton10.Location = new System.Drawing.Point(310, 29);
+            this.radioButton10.Name = "radioButton10";
+            this.radioButton10.Size = new System.Drawing.Size(118, 16);
+            this.radioButton10.TabIndex = 6;
+            this.radioButton10.TabStop = true;
+            this.radioButton10.Text = "直接发布到数据库";
+            this.radioButton10.UseVisualStyleBackColor = true;
+            // 
+            // radioButton9
+            // 
+            this.radioButton9.AutoSize = true;
+            this.radioButton9.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.radioButton9.Location = new System.Drawing.Point(18, 29);
+            this.radioButton9.Name = "radioButton9";
+            this.radioButton9.Size = new System.Drawing.Size(238, 16);
+            this.radioButton9.TabIndex = 5;
+            this.radioButton9.TabStop = true;
+            this.radioButton9.Text = "保存到结果文件（以后可以发布或导出）";
+            this.radioButton9.UseVisualStyleBackColor = true;
+            // 
             // tabPage6
             // 
             this.tabPage6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -2539,6 +2779,170 @@
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "插件设置";
             this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // groupBox16
+            // 
+            this.groupBox16.Controls.Add(this.groupBox19);
+            this.groupBox16.Controls.Add(this.groupBox18);
+            this.groupBox16.Controls.Add(this.groupBox17);
+            this.groupBox16.Controls.Add(this.button35);
+            this.groupBox16.Controls.Add(this.button34);
+            this.groupBox16.Controls.Add(this.textBox22);
+            this.groupBox16.Controls.Add(this.label37);
+            this.groupBox16.Location = new System.Drawing.Point(3, 3);
+            this.groupBox16.Name = "groupBox16";
+            this.groupBox16.Size = new System.Drawing.Size(734, 436);
+            this.groupBox16.TabIndex = 0;
+            this.groupBox16.TabStop = false;
+            this.groupBox16.Text = "插件设置";
+            // 
+            // groupBox19
+            // 
+            this.groupBox19.Controls.Add(this.checkBox49);
+            this.groupBox19.Controls.Add(this.checkBox47);
+            this.groupBox19.Controls.Add(this.checkBox48);
+            this.groupBox19.Location = new System.Drawing.Point(18, 236);
+            this.groupBox19.Name = "groupBox19";
+            this.groupBox19.Size = new System.Drawing.Size(696, 184);
+            this.groupBox19.TabIndex = 20;
+            this.groupBox19.TabStop = false;
+            this.groupBox19.Text = "其他插件功能";
+            // 
+            // checkBox49
+            // 
+            this.checkBox49.AutoSize = true;
+            this.checkBox49.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.checkBox49.Location = new System.Drawing.Point(16, 64);
+            this.checkBox49.Name = "checkBox49";
+            this.checkBox49.Size = new System.Drawing.Size(142, 16);
+            this.checkBox49.TabIndex = 31;
+            this.checkBox49.Text = "从插件载入代理服务器";
+            this.checkBox49.UseVisualStyleBackColor = true;
+            // 
+            // checkBox47
+            // 
+            this.checkBox47.AutoSize = true;
+            this.checkBox47.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.checkBox47.Location = new System.Drawing.Point(16, 42);
+            this.checkBox47.Name = "checkBox47";
+            this.checkBox47.Size = new System.Drawing.Size(346, 16);
+            this.checkBox47.TabIndex = 30;
+            this.checkBox47.Text = "使用插件对采集结果进行筛选（将在软件内置筛选之后进行）";
+            this.checkBox47.UseVisualStyleBackColor = true;
+            // 
+            // checkBox48
+            // 
+            this.checkBox48.AutoSize = true;
+            this.checkBox48.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.checkBox48.Location = new System.Drawing.Point(16, 20);
+            this.checkBox48.Name = "checkBox48";
+            this.checkBox48.Size = new System.Drawing.Size(178, 16);
+            this.checkBox48.TabIndex = 29;
+            this.checkBox48.Text = "使用插件处理采集结果数据行";
+            this.checkBox48.UseVisualStyleBackColor = true;
+            // 
+            // groupBox18
+            // 
+            this.groupBox18.Controls.Add(this.checkBox45);
+            this.groupBox18.Controls.Add(this.checkBox46);
+            this.groupBox18.Location = new System.Drawing.Point(18, 160);
+            this.groupBox18.Name = "groupBox18";
+            this.groupBox18.Size = new System.Drawing.Size(696, 70);
+            this.groupBox18.TabIndex = 19;
+            this.groupBox18.TabStop = false;
+            this.groupBox18.Text = "使用插件下载文件（替代软件）";
+            // 
+            // checkBox45
+            // 
+            this.checkBox45.AutoSize = true;
+            this.checkBox45.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.checkBox45.Location = new System.Drawing.Point(16, 42);
+            this.checkBox45.Name = "checkBox45";
+            this.checkBox45.Size = new System.Drawing.Size(142, 16);
+            this.checkBox45.TabIndex = 30;
+            this.checkBox45.Text = "使用插件下载独立文件";
+            this.checkBox45.UseVisualStyleBackColor = true;
+            // 
+            // checkBox46
+            // 
+            this.checkBox46.AutoSize = true;
+            this.checkBox46.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.checkBox46.Location = new System.Drawing.Point(16, 20);
+            this.checkBox46.Name = "checkBox46";
+            this.checkBox46.Size = new System.Drawing.Size(142, 16);
+            this.checkBox46.TabIndex = 29;
+            this.checkBox46.Text = "使用插件下载内容文件";
+            this.checkBox46.UseVisualStyleBackColor = true;
+            // 
+            // groupBox17
+            // 
+            this.groupBox17.Controls.Add(this.checkBox44);
+            this.groupBox17.Controls.Add(this.checkBox43);
+            this.groupBox17.Location = new System.Drawing.Point(18, 83);
+            this.groupBox17.Name = "groupBox17";
+            this.groupBox17.Size = new System.Drawing.Size(696, 71);
+            this.groupBox17.TabIndex = 18;
+            this.groupBox17.TabStop = false;
+            this.groupBox17.Text = "使用插件处理下载后的文件";
+            // 
+            // checkBox44
+            // 
+            this.checkBox44.AutoSize = true;
+            this.checkBox44.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.checkBox44.Location = new System.Drawing.Point(16, 42);
+            this.checkBox44.Name = "checkBox44";
+            this.checkBox44.Size = new System.Drawing.Size(190, 16);
+            this.checkBox44.TabIndex = 28;
+            this.checkBox44.Text = "使用插件处理下载后的独立文件";
+            this.checkBox44.UseVisualStyleBackColor = true;
+            // 
+            // checkBox43
+            // 
+            this.checkBox43.AutoSize = true;
+            this.checkBox43.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.checkBox43.Location = new System.Drawing.Point(16, 20);
+            this.checkBox43.Name = "checkBox43";
+            this.checkBox43.Size = new System.Drawing.Size(190, 16);
+            this.checkBox43.TabIndex = 27;
+            this.checkBox43.Text = "使用插件处理下载后的内容文件";
+            this.checkBox43.UseVisualStyleBackColor = true;
+            // 
+            // button35
+            // 
+            this.button35.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button35.Location = new System.Drawing.Point(639, 42);
+            this.button35.Name = "button35";
+            this.button35.Size = new System.Drawing.Size(75, 23);
+            this.button35.TabIndex = 17;
+            this.button35.Text = "设置(&S)";
+            this.button35.UseVisualStyleBackColor = true;
+            // 
+            // button34
+            // 
+            this.button34.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button34.Location = new System.Drawing.Point(558, 42);
+            this.button34.Name = "button34";
+            this.button34.Size = new System.Drawing.Size(75, 23);
+            this.button34.TabIndex = 16;
+            this.button34.Text = "浏览(&B)";
+            this.button34.UseVisualStyleBackColor = true;
+            // 
+            // textBox22
+            // 
+            this.textBox22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox22.Location = new System.Drawing.Point(18, 45);
+            this.textBox22.Name = "textBox22";
+            this.textBox22.Size = new System.Drawing.Size(534, 21);
+            this.textBox22.TabIndex = 15;
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(16, 17);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(53, 12);
+            this.label37.TabIndex = 0;
+            this.label37.Text = "插件路径";
             // 
             // btnAccept
             // 
@@ -2570,426 +2974,22 @@
             this.btnSubmit.Text = "确定(&O)";
             this.btnSubmit.UseVisualStyleBackColor = true;
             // 
-            // linkLabel1
-            // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(14, 495);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(149, 12);
-            this.linkLabel1.TabIndex = 4;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "点击打开《源文件查看器》";
-            // 
-            // groupBox13
-            // 
-            this.groupBox13.Controls.Add(this.groupBox15);
-            this.groupBox13.Controls.Add(this.groupBox14);
-            this.groupBox13.Controls.Add(this.radioButton10);
-            this.groupBox13.Controls.Add(this.radioButton9);
-            this.groupBox13.Location = new System.Drawing.Point(3, 3);
-            this.groupBox13.Name = "groupBox13";
-            this.groupBox13.Size = new System.Drawing.Size(734, 436);
-            this.groupBox13.TabIndex = 0;
-            this.groupBox13.TabStop = false;
-            this.groupBox13.Text = "采集结果";
-            // 
-            // radioButton9
-            // 
-            this.radioButton9.AutoSize = true;
-            this.radioButton9.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.radioButton9.Location = new System.Drawing.Point(18, 29);
-            this.radioButton9.Name = "radioButton9";
-            this.radioButton9.Size = new System.Drawing.Size(238, 16);
-            this.radioButton9.TabIndex = 5;
-            this.radioButton9.TabStop = true;
-            this.radioButton9.Text = "保存到结果文件（以后可以发布或导出）";
-            this.radioButton9.UseVisualStyleBackColor = true;
-            // 
-            // radioButton10
-            // 
-            this.radioButton10.AutoSize = true;
-            this.radioButton10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.radioButton10.Location = new System.Drawing.Point(310, 29);
-            this.radioButton10.Name = "radioButton10";
-            this.radioButton10.Size = new System.Drawing.Size(118, 16);
-            this.radioButton10.TabIndex = 6;
-            this.radioButton10.TabStop = true;
-            this.radioButton10.Text = "直接发布到数据库";
-            this.radioButton10.UseVisualStyleBackColor = true;
-            // 
-            // groupBox14
-            // 
-            this.groupBox14.Controls.Add(this.comboBox4);
-            this.groupBox14.Controls.Add(this.label36);
-            this.groupBox14.Controls.Add(this.checkBox19);
-            this.groupBox14.Controls.Add(this.button33);
-            this.groupBox14.Controls.Add(this.textBox21);
-            this.groupBox14.Controls.Add(this.label35);
-            this.groupBox14.Controls.Add(this.radioButton15);
-            this.groupBox14.Controls.Add(this.radioButton14);
-            this.groupBox14.Controls.Add(this.radioButton13);
-            this.groupBox14.Controls.Add(this.radioButton12);
-            this.groupBox14.Controls.Add(this.radioButton11);
-            this.groupBox14.Controls.Add(this.label34);
-            this.groupBox14.Location = new System.Drawing.Point(18, 55);
-            this.groupBox14.Name = "groupBox14";
-            this.groupBox14.Size = new System.Drawing.Size(697, 175);
-            this.groupBox14.TabIndex = 7;
-            this.groupBox14.TabStop = false;
-            this.groupBox14.Text = "设置数据库连接";
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(19, 21);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(65, 12);
-            this.label34.TabIndex = 0;
-            this.label34.Text = "数据库类型";
-            // 
-            // radioButton11
-            // 
-            this.radioButton11.AutoSize = true;
-            this.radioButton11.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.radioButton11.Location = new System.Drawing.Point(21, 45);
-            this.radioButton11.Name = "radioButton11";
-            this.radioButton11.Size = new System.Drawing.Size(58, 16);
-            this.radioButton11.TabIndex = 7;
-            this.radioButton11.TabStop = true;
-            this.radioButton11.Text = "Access";
-            this.radioButton11.UseVisualStyleBackColor = true;
-            // 
-            // radioButton12
-            // 
-            this.radioButton12.AutoSize = true;
-            this.radioButton12.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.radioButton12.Location = new System.Drawing.Point(110, 45);
-            this.radioButton12.Name = "radioButton12";
-            this.radioButton12.Size = new System.Drawing.Size(82, 16);
-            this.radioButton12.TabIndex = 8;
-            this.radioButton12.TabStop = true;
-            this.radioButton12.Text = "SQL Server";
-            this.radioButton12.UseVisualStyleBackColor = true;
-            // 
-            // radioButton13
-            // 
-            this.radioButton13.AutoSize = true;
-            this.radioButton13.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.radioButton13.Location = new System.Drawing.Point(198, 45);
-            this.radioButton13.Name = "radioButton13";
-            this.radioButton13.Size = new System.Drawing.Size(52, 16);
-            this.radioButton13.TabIndex = 9;
-            this.radioButton13.TabStop = true;
-            this.radioButton13.Text = "MySql";
-            this.radioButton13.UseVisualStyleBackColor = true;
-            // 
-            // radioButton14
-            // 
-            this.radioButton14.AutoSize = true;
-            this.radioButton14.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.radioButton14.Location = new System.Drawing.Point(292, 45);
-            this.radioButton14.Name = "radioButton14";
-            this.radioButton14.Size = new System.Drawing.Size(58, 16);
-            this.radioButton14.TabIndex = 10;
-            this.radioButton14.TabStop = true;
-            this.radioButton14.Text = "Oracle";
-            this.radioButton14.UseVisualStyleBackColor = true;
-            // 
-            // radioButton15
-            // 
-            this.radioButton15.AutoSize = true;
-            this.radioButton15.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.radioButton15.Location = new System.Drawing.Point(385, 45);
-            this.radioButton15.Name = "radioButton15";
-            this.radioButton15.Size = new System.Drawing.Size(46, 16);
-            this.radioButton15.TabIndex = 11;
-            this.radioButton15.TabStop = true;
-            this.radioButton15.Text = "其他";
-            this.radioButton15.UseVisualStyleBackColor = true;
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(19, 75);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(41, 12);
-            this.label35.TabIndex = 13;
-            this.label35.Text = "连接串";
-            // 
-            // textBox21
-            // 
-            this.textBox21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox21.Location = new System.Drawing.Point(21, 99);
-            this.textBox21.Name = "textBox21";
-            this.textBox21.Size = new System.Drawing.Size(589, 21);
-            this.textBox21.TabIndex = 14;
-            // 
-            // button33
-            // 
-            this.button33.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button33.Location = new System.Drawing.Point(616, 99);
-            this.button33.Name = "button33";
-            this.button33.Size = new System.Drawing.Size(75, 23);
-            this.button33.TabIndex = 15;
-            this.button33.Text = "设置(&S)";
-            this.button33.UseVisualStyleBackColor = true;
-            // 
-            // checkBox19
-            // 
-            this.checkBox19.AutoSize = true;
-            this.checkBox19.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.checkBox19.Location = new System.Drawing.Point(21, 136);
-            this.checkBox19.Name = "checkBox19";
-            this.checkBox19.Size = new System.Drawing.Size(94, 16);
-            this.checkBox19.TabIndex = 23;
-            this.checkBox19.Text = "使用存储过程";
-            this.checkBox19.UseVisualStyleBackColor = true;
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(198, 137);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(165, 20);
-            this.comboBox4.TabIndex = 25;
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(139, 140);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(53, 12);
-            this.label36.TabIndex = 24;
-            this.label36.Text = "数据库表";
-            // 
-            // groupBox15
-            // 
-            this.groupBox15.Controls.Add(this.checkBox42);
-            this.groupBox15.Controls.Add(this.checkBox22);
-            this.groupBox15.Controls.Add(this.checkBox21);
-            this.groupBox15.Controls.Add(this.checkBox20);
-            this.groupBox15.Location = new System.Drawing.Point(18, 236);
-            this.groupBox15.Name = "groupBox15";
-            this.groupBox15.Size = new System.Drawing.Size(697, 194);
-            this.groupBox15.TabIndex = 8;
-            this.groupBox15.TabStop = false;
-            this.groupBox15.Text = "发布结果选项";
-            // 
-            // checkBox20
-            // 
-            this.checkBox20.AutoSize = true;
-            this.checkBox20.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.checkBox20.Location = new System.Drawing.Point(21, 20);
-            this.checkBox20.Name = "checkBox20";
-            this.checkBox20.Size = new System.Drawing.Size(310, 16);
-            this.checkBox20.TabIndex = 24;
-            this.checkBox20.Text = "在数据库中找不到对应字段或存储过程参数时忽略错误";
-            this.checkBox20.UseVisualStyleBackColor = true;
-            // 
-            // checkBox21
-            // 
-            this.checkBox21.AutoSize = true;
-            this.checkBox21.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.checkBox21.Location = new System.Drawing.Point(21, 42);
-            this.checkBox21.Name = "checkBox21";
-            this.checkBox21.Size = new System.Drawing.Size(322, 16);
-            this.checkBox21.TabIndex = 25;
-            this.checkBox21.Text = "从结果文件发布到数据库时，同时删除结果文件中的数据";
-            this.checkBox21.UseVisualStyleBackColor = true;
-            // 
-            // checkBox22
-            // 
-            this.checkBox22.AutoSize = true;
-            this.checkBox22.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.checkBox22.Location = new System.Drawing.Point(21, 64);
-            this.checkBox22.Name = "checkBox22";
-            this.checkBox22.Size = new System.Drawing.Size(178, 16);
-            this.checkBox22.TabIndex = 26;
-            this.checkBox22.Text = "将发布时的重复行保存到文件";
-            this.checkBox22.UseVisualStyleBackColor = true;
-            // 
-            // checkBox42
-            // 
-            this.checkBox42.AutoSize = true;
-            this.checkBox42.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.checkBox42.Location = new System.Drawing.Point(21, 86);
-            this.checkBox42.Name = "checkBox42";
-            this.checkBox42.Size = new System.Drawing.Size(178, 16);
-            this.checkBox42.TabIndex = 27;
-            this.checkBox42.Text = "将发布时的出错行保存到文件";
-            this.checkBox42.UseVisualStyleBackColor = true;
-            // 
-            // groupBox16
-            // 
-            this.groupBox16.Controls.Add(this.groupBox19);
-            this.groupBox16.Controls.Add(this.groupBox18);
-            this.groupBox16.Controls.Add(this.groupBox17);
-            this.groupBox16.Controls.Add(this.button35);
-            this.groupBox16.Controls.Add(this.button34);
-            this.groupBox16.Controls.Add(this.textBox22);
-            this.groupBox16.Controls.Add(this.label37);
-            this.groupBox16.Location = new System.Drawing.Point(3, 3);
-            this.groupBox16.Name = "groupBox16";
-            this.groupBox16.Size = new System.Drawing.Size(734, 436);
-            this.groupBox16.TabIndex = 0;
-            this.groupBox16.TabStop = false;
-            this.groupBox16.Text = "插件设置";
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(16, 17);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(53, 12);
-            this.label37.TabIndex = 0;
-            this.label37.Text = "插件路径";
-            // 
-            // textBox22
-            // 
-            this.textBox22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox22.Location = new System.Drawing.Point(18, 45);
-            this.textBox22.Name = "textBox22";
-            this.textBox22.Size = new System.Drawing.Size(534, 21);
-            this.textBox22.TabIndex = 15;
-            // 
-            // button34
-            // 
-            this.button34.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button34.Location = new System.Drawing.Point(558, 42);
-            this.button34.Name = "button34";
-            this.button34.Size = new System.Drawing.Size(75, 23);
-            this.button34.TabIndex = 16;
-            this.button34.Text = "浏览(&B)";
-            this.button34.UseVisualStyleBackColor = true;
-            // 
-            // button35
-            // 
-            this.button35.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button35.Location = new System.Drawing.Point(639, 42);
-            this.button35.Name = "button35";
-            this.button35.Size = new System.Drawing.Size(75, 23);
-            this.button35.TabIndex = 17;
-            this.button35.Text = "设置(&S)";
-            this.button35.UseVisualStyleBackColor = true;
-            // 
-            // groupBox17
-            // 
-            this.groupBox17.Controls.Add(this.checkBox44);
-            this.groupBox17.Controls.Add(this.checkBox43);
-            this.groupBox17.Location = new System.Drawing.Point(18, 83);
-            this.groupBox17.Name = "groupBox17";
-            this.groupBox17.Size = new System.Drawing.Size(696, 71);
-            this.groupBox17.TabIndex = 18;
-            this.groupBox17.TabStop = false;
-            this.groupBox17.Text = "使用插件处理下载后的文件";
-            // 
-            // groupBox18
-            // 
-            this.groupBox18.Controls.Add(this.checkBox45);
-            this.groupBox18.Controls.Add(this.checkBox46);
-            this.groupBox18.Location = new System.Drawing.Point(18, 160);
-            this.groupBox18.Name = "groupBox18";
-            this.groupBox18.Size = new System.Drawing.Size(696, 70);
-            this.groupBox18.TabIndex = 19;
-            this.groupBox18.TabStop = false;
-            this.groupBox18.Text = "使用插件下载文件（替代软件）";
-            // 
-            // groupBox19
-            // 
-            this.groupBox19.Controls.Add(this.checkBox49);
-            this.groupBox19.Controls.Add(this.checkBox47);
-            this.groupBox19.Controls.Add(this.checkBox48);
-            this.groupBox19.Location = new System.Drawing.Point(18, 236);
-            this.groupBox19.Name = "groupBox19";
-            this.groupBox19.Size = new System.Drawing.Size(696, 184);
-            this.groupBox19.TabIndex = 20;
-            this.groupBox19.TabStop = false;
-            this.groupBox19.Text = "其他插件功能";
-            // 
-            // checkBox43
-            // 
-            this.checkBox43.AutoSize = true;
-            this.checkBox43.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.checkBox43.Location = new System.Drawing.Point(16, 20);
-            this.checkBox43.Name = "checkBox43";
-            this.checkBox43.Size = new System.Drawing.Size(190, 16);
-            this.checkBox43.TabIndex = 27;
-            this.checkBox43.Text = "使用插件处理下载后的内容文件";
-            this.checkBox43.UseVisualStyleBackColor = true;
-            // 
-            // checkBox44
-            // 
-            this.checkBox44.AutoSize = true;
-            this.checkBox44.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.checkBox44.Location = new System.Drawing.Point(16, 42);
-            this.checkBox44.Name = "checkBox44";
-            this.checkBox44.Size = new System.Drawing.Size(190, 16);
-            this.checkBox44.TabIndex = 28;
-            this.checkBox44.Text = "使用插件处理下载后的独立文件";
-            this.checkBox44.UseVisualStyleBackColor = true;
-            // 
-            // checkBox45
-            // 
-            this.checkBox45.AutoSize = true;
-            this.checkBox45.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.checkBox45.Location = new System.Drawing.Point(16, 42);
-            this.checkBox45.Name = "checkBox45";
-            this.checkBox45.Size = new System.Drawing.Size(142, 16);
-            this.checkBox45.TabIndex = 30;
-            this.checkBox45.Text = "使用插件下载独立文件";
-            this.checkBox45.UseVisualStyleBackColor = true;
-            // 
-            // checkBox46
-            // 
-            this.checkBox46.AutoSize = true;
-            this.checkBox46.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.checkBox46.Location = new System.Drawing.Point(16, 20);
-            this.checkBox46.Name = "checkBox46";
-            this.checkBox46.Size = new System.Drawing.Size(142, 16);
-            this.checkBox46.TabIndex = 29;
-            this.checkBox46.Text = "使用插件下载内容文件";
-            this.checkBox46.UseVisualStyleBackColor = true;
-            // 
-            // checkBox47
-            // 
-            this.checkBox47.AutoSize = true;
-            this.checkBox47.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.checkBox47.Location = new System.Drawing.Point(16, 42);
-            this.checkBox47.Name = "checkBox47";
-            this.checkBox47.Size = new System.Drawing.Size(346, 16);
-            this.checkBox47.TabIndex = 30;
-            this.checkBox47.Text = "使用插件对采集结果进行筛选（将在软件内置筛选之后进行）";
-            this.checkBox47.UseVisualStyleBackColor = true;
-            // 
-            // checkBox48
-            // 
-            this.checkBox48.AutoSize = true;
-            this.checkBox48.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.checkBox48.Location = new System.Drawing.Point(16, 20);
-            this.checkBox48.Name = "checkBox48";
-            this.checkBox48.Size = new System.Drawing.Size(178, 16);
-            this.checkBox48.TabIndex = 29;
-            this.checkBox48.Text = "使用插件处理采集结果数据行";
-            this.checkBox48.UseVisualStyleBackColor = true;
-            // 
-            // checkBox49
-            // 
-            this.checkBox49.AutoSize = true;
-            this.checkBox49.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.checkBox49.Location = new System.Drawing.Point(16, 64);
-            this.checkBox49.Name = "checkBox49";
-            this.checkBox49.Size = new System.Drawing.Size(142, 16);
-            this.checkBox49.TabIndex = 31;
-            this.checkBox49.Text = "从插件载入代理服务器";
-            this.checkBox49.UseVisualStyleBackColor = true;
+            // linkViewSourceFile
+            // 
+            this.linkViewSourceFile.AutoSize = true;
+            this.linkViewSourceFile.Location = new System.Drawing.Point(14, 495);
+            this.linkViewSourceFile.Name = "linkViewSourceFile";
+            this.linkViewSourceFile.Size = new System.Drawing.Size(149, 12);
+            this.linkViewSourceFile.TabIndex = 4;
+            this.linkViewSourceFile.TabStop = true;
+            this.linkViewSourceFile.Text = "点击打开《源文件查看器》";
             // 
             // FrmTask
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(774, 525);
-            this.Controls.Add(this.linkLabel1);
+            this.Controls.Add(this.linkViewSourceFile);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAccept);
@@ -3007,15 +3007,15 @@
             this.tabPage1.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSecond)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMinute)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDay)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudHistoryCount)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudThreadNumber)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
@@ -3068,21 +3068,21 @@
             this.tabPage20.ResumeLayout(false);
             this.tabPage20.PerformLayout();
             this.tabPage5.ResumeLayout(false);
-            this.tabPage6.ResumeLayout(false);
             this.groupBox13.ResumeLayout(false);
             this.groupBox13.PerformLayout();
-            this.groupBox14.ResumeLayout(false);
-            this.groupBox14.PerformLayout();
             this.groupBox15.ResumeLayout(false);
             this.groupBox15.PerformLayout();
+            this.groupBox14.ResumeLayout(false);
+            this.groupBox14.PerformLayout();
+            this.tabPage6.ResumeLayout(false);
             this.groupBox16.ResumeLayout(false);
             this.groupBox16.PerformLayout();
-            this.groupBox17.ResumeLayout(false);
-            this.groupBox17.PerformLayout();
-            this.groupBox18.ResumeLayout(false);
-            this.groupBox18.PerformLayout();
             this.groupBox19.ResumeLayout(false);
             this.groupBox19.PerformLayout();
+            this.groupBox18.ResumeLayout(false);
+            this.groupBox18.PerformLayout();
+            this.groupBox17.ResumeLayout(false);
+            this.groupBox17.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3096,7 +3096,7 @@
         private System.Windows.Forms.Button btnAccept;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnSubmit;
-        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.LinkLabel linkViewSourceFile;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.TabPage tabPage5;
@@ -3105,57 +3105,57 @@
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.NumericUpDown nudThreadNumber;
+        private System.Windows.Forms.ComboBox cbxUrlEncoding;
+        private System.Windows.Forms.NumericUpDown nudHistoryCount;
+        private System.Windows.Forms.CheckBox chbOutputDetailedLog;
+        private System.Windows.Forms.CheckBox chbSaveLogToFile;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.LinkLabel linkLabel2;
-        private System.Windows.Forms.LinkLabel linkLabel3;
-        private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.RadioButton rdbAutoLogin;
+        private System.Windows.Forms.RadioButton rdbManualLogin;
+        private System.Windows.Forms.TextBox txtCookie;
+        private System.Windows.Forms.LinkLabel linkManualLogin;
+        private System.Windows.Forms.LinkLabel linkSetAutoLogin;
+        private System.Windows.Forms.CheckBox chbScheduleEnabled;
         private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.RadioButton radioButton4;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
+        private System.Windows.Forms.NumericUpDown nudDay;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.NumericUpDown numericUpDown4;
+        private System.Windows.Forms.NumericUpDown nudMinute;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.NumericUpDown numericUpDown5;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.LinkLabel linkLabel4;
-        private System.Windows.Forms.CheckBox checkBox5;
+        private System.Windows.Forms.NumericUpDown nudSecond;
+        private System.Windows.Forms.CheckBox chbScheduleLimitTimeRange;
+        private System.Windows.Forms.LinkLabel SetScheduleLimitTimeRange;
+        private System.Windows.Forms.CheckBox chbDisableScheduleAfterFinish;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.TabControl tabControl2;
         private System.Windows.Forms.TabPage tabPage7;
         private System.Windows.Forms.TabPage tabPage8;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtStartingUrlTemplate;
+        private System.Windows.Forms.ListBox libStartingUrlList;
+        private System.Windows.Forms.Button btnExport;
+        private System.Windows.Forms.Button btnImport;
+        private System.Windows.Forms.Button btnMoveDown;
+        private System.Windows.Forms.Button btnMoveUP;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnBrowse;
+        private System.Windows.Forms.Button btnModify;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnCapture;
+        private System.Windows.Forms.Button btnInsert;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.CheckBox checkBox6;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.CheckBox chbStartingUrlEncoded;
+        private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.GroupBox groupBox8;
@@ -3170,14 +3170,14 @@
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.GroupBox groupBox10;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView livNavigationRule;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cbxName;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.RadioButton radioButton6;
         private System.Windows.Forms.RadioButton radioButton5;
         private System.Windows.Forms.GroupBox groupBox11;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox txtNextLayerUrlPattern;
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.CheckBox checkBox7;
         private System.Windows.Forms.CheckBox checkBox8;
