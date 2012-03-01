@@ -13,8 +13,11 @@
         /// 构造函数
         /// </summary>
         public TaskFolderTree() {
-            this.Nodes.Clear();
+            this.Nodes.Clear();            
             this.Nodes.Add(Load(_defaultTaskPath, "根文件夹"));
+            TreeNode RuntimeArea = new TreeNode("运行区");
+            RuntimeArea.Tag = new TaskController();
+            this.Nodes.Add(RuntimeArea);
             this.Refresh();
         }
 
@@ -22,8 +25,11 @@
         /// 重新加载并刷新任务夹树
         /// </summary>
         public void ReLoad() {
-            this.Nodes.Clear();
+            this.Nodes.Clear();            
             this.Nodes.Add(Load(_defaultTaskPath, "根文件夹"));
+            TreeNode RuntimeArea = new TreeNode("运行区");
+            RuntimeArea.Tag = new TaskController();
+            this.Nodes.Add(RuntimeArea);
             this.Refresh();
         }
 
@@ -39,7 +45,7 @@
             node.Expand();
             node.Tag = taskPath;
             node.ImageKey = "foldermax.png";
-            node = AddToNode(node, taskPath);
+            //node = AddToNode(node, taskPath);
 
             if (dirs.Length != 0) {
                 for (int i = 0; i < dirs.Length; i++) {

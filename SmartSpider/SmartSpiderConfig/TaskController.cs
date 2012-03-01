@@ -44,7 +44,9 @@
         /// 增加一个任务单元到任务控制器
         /// </summary>
         public void Add(TaskUnit task) {
-            this._TaskUnit.Add(task);
+            if (!this._TaskUnit.Contains(task)) {
+                this._TaskUnit.Add(task);
+            }
         }
 
         /// <summary>

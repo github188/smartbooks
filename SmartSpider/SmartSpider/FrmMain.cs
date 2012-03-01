@@ -32,6 +32,48 @@
             //}
             //log.AppendRow(new DataGridViewRow());
         }
+
+        /// <summary>
+        /// 获取任务运行区指定名称的任务单元
+        /// </summary>
+        /// <param name="taskPath">任务单元完整文件路径+文件名称</param>
+        /// <returns>任务单元</returns>
+        private TaskUnit GetRuntimeAreaTaskUnit(string taskPath) {
+            foreach (TreeNode node in this.trwTaskFolder.Nodes) {
+                if (node.Text.Equals("运行区")) {
+                    TaskController controller = (TaskController)node.Tag;
+                    foreach (TaskUnit unit in controller.TaskUnit) {
+                        if (unit.ConfigPath.Equals(taskPath)) {
+                            return unit;
+                        }
+                    }
+                }
+            }
+            return null;
+        }
+
+        /// <summary>
+        /// 返回任务状态对应的图标
+        /// </summary>
+        /// <param name="action">任务状态</param>
+        /// <returns>小图标</returns>
+        private string SetTaskStatusImages(Action action) {
+            switch (action) {
+                case Action.Start:
+                    SetStopTaskStatus();
+                    return "taskmin.png";
+                case Action.Pause:
+                    SetPauseTaskStatus();
+                    return "pausemin.png";
+                case Action.Stop:
+                    SetStartTaskStatus();
+                    return "taskmin.png";
+                case Action.Finish:
+                    SetStopTaskStatus();
+                    return "editmin.png";
+            }
+            return "taskmin.png";
+        }
         #endregion
         
         #region 菜单栏事件
@@ -262,12 +304,29 @@
         #region 工具栏事件
         //工具栏：开始
         private void tolStartTask_Click(object sender, EventArgs e) {
-            foreach (ListViewItem item in this.livTaskView.SelectedItems) {
-                TaskUnit unit = (TaskUnit)item.Tag;
-                Utility.TaskResultLog resultFrom = new Utility.TaskResultLog(unit.TaskConfig.Name, unit.Results, ref unit);
-                this.tabContent.TabPages.Add(resultFrom);
-                this.tabContent.SelectedTab = resultFrom;
-                unit.Start();
+            //筛选出运行区节点
+            foreach (TreeNode node in this.trwTaskFolder.Nodes) {
+                if (node.Text.Equals("运行区")) {
+                    //将任务加入运行区
+                    TaskController controller = (TaskController)node.Tag;   //获取运行区任务控制器
+                    foreach (ListViewItem item in this.livTaskView.SelectedItems) {
+                        TaskUnit unit = (TaskUnit)item.Tag;
+                        if (unit.Action == Action.Finish) {
+                            if (MessageBox.Show("该任务已经采集完毕，确定重新采集吗？", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Information) ==
+                                System.Windows.Forms.DialogResult.Yes) {
+                                unit.Start();           //启动任务
+                                SetStartTaskStatus();   //设置任务启动状态界面UI
+                                controller.Add(unit);   //任务单元加入运行区域
+                                item.ImageKey = SetTaskStatusImages(unit.Action);
+                            }
+                        } else {
+                            unit.Start();           //启动任务
+                            SetStartTaskStatus();   //设置任务启动状态界面UI
+                            controller.Add(unit);   //任务单元加入运行区域
+                            item.ImageKey = SetTaskStatusImages(unit.Action);
+                        }
+                    }
+                }
             }
         }
         //工具栏：暂停/继续
@@ -306,14 +365,14 @@
         }
         //工具栏：删除任务
         private void tolDeleteTask_Click(object sender, EventArgs e) {
-            foreach (ListViewItem item in this.livTaskView.SelectedItems) {
-                TaskUnit unit = (TaskUnit)item.Tag;
-                unit.DeleteTask();                
-                unit.Dispose();
-                item.Remove();
-                this.livTaskView.Refresh();
-            }
-            this.trwTaskFolder.ReLoad();
+            //foreach (ListViewItem item in this.livTaskView.SelectedItems) {
+            //    TaskUnit unit = (TaskUnit)item.Tag;
+            //    unit.DeleteTask();                
+            //    unit.Dispose();
+            //    item.Remove();
+            //    this.livTaskView.Refresh();
+            //}
+            //this.trwTaskFolder.ReLoad();
         }
         //工具栏：所有任务完成后关机
         private void tolAllTaskSuccessShutdown_Click(object sender, EventArgs e) {
@@ -365,42 +424,99 @@
         //任务文件夹：单击节点显示到任务信息到任务窗口
         private void trwTaskFolder_MouseClick(object sender, MouseEventArgs e) {
             if (this.trwTaskFolder.SelectedNode != null) {
-                TaskController controller = (TaskController)trwTaskFolder.SelectedNode.Tag;
-                livTaskView.Items.Clear();
-                foreach (TaskUnit unit in controller.TaskUnit) {
-                    ListViewItem livItem = new ListViewItem();
-                    livItem.Text = unit.TaskConfig.Name;
-                    livItem.Tag = unit;
-                    livItem.ToolTipText = unit.TaskConfig.Description;
-                    livItem.ImageKey = "taskmin.png";
-                    livItem.SubItems.Add(new ListViewItem.ListViewSubItem(livItem, "0"));   //完成提取
-                    livItem.SubItems.Add(new ListViewItem.ListViewSubItem(livItem, "0"));   //提取网址
-                    livItem.SubItems.Add(new ListViewItem.ListViewSubItem(livItem, "0"));   //完成起始
-                    livItem.SubItems.Add(new ListViewItem.ListViewSubItem(livItem, "0"));   //起始地址
-                    livItem.SubItems.Add(new ListViewItem.ListViewSubItem(livItem, "0"));   //历史记录
-                    livItem.SubItems.Add(new ListViewItem.ListViewSubItem(livItem, unit.TaskConfig.CurrentResultCount.ToString()));   //当前采集
-                    livItem.SubItems.Add(new ListViewItem.ListViewSubItem(livItem, unit.TaskConfig.ResultCount.ToString()));   //采集结果
-                    livItem.SubItems.Add(new ListViewItem.ListViewSubItem(livItem, unit.TaskConfig.RepeatedRowsCount.ToString()));   //发布重复
-                    livItem.SubItems.Add(new ListViewItem.ListViewSubItem(livItem, unit.TaskConfig.ErrorRowsCount.ToString()));   //发布出错
-                    livItem.SubItems.Add(new ListViewItem.ListViewSubItem(livItem, unit.TaskConfig.ElapsedTime.ToString()));   //采集时间
-                    livItem.SubItems.Add(new ListViewItem.ListViewSubItem(livItem, unit.TaskConfig.StartingTime.ToString()));   //开始时间
-                    livTaskView.Items.Add(livItem);
+                this.livTaskView.Items.Clear();
+                if (this.trwTaskFolder.SelectedNode.Text.Equals("运行区")) {
+                    #region 将运行区任务显示到窗口
+                    TaskController runtimeAreaTask = (TaskController)this.trwTaskFolder.SelectedNode.Tag;
+                    foreach (TaskUnit unit in runtimeAreaTask.TaskUnit) {                        
+                        //加入显示窗体
+                        ListViewItem livItem = new ListViewItem();
+                        livItem.ImageKey = SetTaskStatusImages(unit.Action);
+                        livItem.Text = unit.TaskConfig.Name;
+                        livItem.Tag = unit;
+                        livItem.ToolTipText = unit.TaskConfig.Description;                        
+                        livItem.SubItems.Add(new ListViewItem.ListViewSubItem(livItem, "0"));   //完成提取
+                        livItem.SubItems.Add(new ListViewItem.ListViewSubItem(livItem, "0"));   //提取网址
+                        livItem.SubItems.Add(new ListViewItem.ListViewSubItem(livItem, "0"));   //完成起始
+                        livItem.SubItems.Add(new ListViewItem.ListViewSubItem(livItem, "0"));   //起始地址
+                        livItem.SubItems.Add(new ListViewItem.ListViewSubItem(livItem, "0"));   //历史记录
+                        livItem.SubItems.Add(new ListViewItem.ListViewSubItem(livItem, unit.TaskConfig.CurrentResultCount.ToString()));   //当前采集
+                        livItem.SubItems.Add(new ListViewItem.ListViewSubItem(livItem, unit.TaskConfig.ResultCount.ToString()));   //采集结果
+                        livItem.SubItems.Add(new ListViewItem.ListViewSubItem(livItem, unit.TaskConfig.RepeatedRowsCount.ToString()));   //发布重复
+                        livItem.SubItems.Add(new ListViewItem.ListViewSubItem(livItem, unit.TaskConfig.ErrorRowsCount.ToString()));   //发布出错
+                        livItem.SubItems.Add(new ListViewItem.ListViewSubItem(livItem, unit.TaskConfig.ElapsedTime.ToString()));   //采集时间
+                        livItem.SubItems.Add(new ListViewItem.ListViewSubItem(livItem, unit.TaskConfig.StartingTime.ToString()));   //开始时间
+                        livTaskView.Items.Add(livItem);
+                    }
+                    #endregion
+                } else {
+                    #region 加载指定目录下Xml配置文件
+                    string[] files = Directory.GetFiles(trwTaskFolder.SelectedNode.Tag.ToString(), "*.xml");
+                    for (int i = 0; i < files.Length; i++) {
+                        try {
+                            //反序列化配置文件
+                            XmlSerializer xs = new XmlSerializer(typeof(Task));
+                            Stream readStream = new FileStream(files[i], FileMode.Open, FileAccess.Read, FileShare.Read);
+                            Task task = (Task)xs.Deserialize(readStream);
+                            readStream.Close();
+                            readStream.Dispose();
+
+                            //生成任务控制单元
+                            TaskUnit unit = GetRuntimeAreaTaskUnit(files[i]);
+                            ListViewItem livItem = new ListViewItem();
+
+                            //判断该任务是否已在运行区存在
+                            if (unit == null) {
+                                unit = new TaskUnit();
+                                unit.TaskConfig = task;
+                                unit.ConfigPath = files[i];
+                            }
+
+                            //加入到显示窗口
+                            livItem.ImageKey = SetTaskStatusImages(unit.Action);
+                            livItem.Text = unit.TaskConfig.Name;
+                            livItem.Tag = unit;
+                            livItem.ToolTipText = unit.TaskConfig.Description;                            
+                            livItem.SubItems.Add(new ListViewItem.ListViewSubItem(livItem, "0"));   //完成提取
+                            livItem.SubItems.Add(new ListViewItem.ListViewSubItem(livItem, "0"));   //提取网址
+                            livItem.SubItems.Add(new ListViewItem.ListViewSubItem(livItem, "0"));   //完成起始
+                            livItem.SubItems.Add(new ListViewItem.ListViewSubItem(livItem, "0"));   //起始地址
+                            livItem.SubItems.Add(new ListViewItem.ListViewSubItem(livItem, "0"));   //历史记录
+                            livItem.SubItems.Add(new ListViewItem.ListViewSubItem(livItem, unit.TaskConfig.CurrentResultCount.ToString()));   //当前采集
+                            livItem.SubItems.Add(new ListViewItem.ListViewSubItem(livItem, unit.TaskConfig.ResultCount.ToString()));   //采集结果
+                            livItem.SubItems.Add(new ListViewItem.ListViewSubItem(livItem, unit.TaskConfig.RepeatedRowsCount.ToString()));   //发布重复
+                            livItem.SubItems.Add(new ListViewItem.ListViewSubItem(livItem, unit.TaskConfig.ErrorRowsCount.ToString()));   //发布出错
+                            livItem.SubItems.Add(new ListViewItem.ListViewSubItem(livItem, unit.TaskConfig.ElapsedTime.ToString()));   //采集时间
+                            livItem.SubItems.Add(new ListViewItem.ListViewSubItem(livItem, unit.TaskConfig.StartingTime.ToString()));   //开始时间
+                            livTaskView.Items.Add(livItem);
+                        } catch (Exception ex) {
+                            throw new Exception(ex.Message);
+                        }
+                    }
+                    #endregion
                 }
                 this.livTaskView.Refresh();
-                this.trwTaskFolder.Refresh();
             }
         }
         //任务运行信息窗口：双击编辑任务配置
         private void livTaskView_MouseDoubleClick(object sender, MouseEventArgs e) {
-            if (livTaskView.SelectedItems.Count != 0) {
+            if (livTaskView.SelectedItems.Count != 0) {                
                 TaskUnit unit = (TaskUnit)livTaskView.SelectedItems[0].Tag;
-                FrmTask taskConfig = new FrmTask(unit);
-                taskConfig.ShowDialog();
+                if (GetRuntimeAreaTaskUnit(unit.ConfigPath) == null) {
+                    FrmTask taskConfig = new FrmTask(unit);
+                    taskConfig.ShowDialog();
+                } else {
+                    MessageBox.Show("任务正在运行中不能进行编辑操作!", "提示");
+                }
             }
         }
         //任务运行信息窗口：单击任务
         private void livTaskView_MouseClick(object sender, MouseEventArgs e) {
-            SetSelectOneTask();
+            //SetSelectOneTask();
+            foreach (ListViewItem item in this.livTaskView.SelectedItems) {
+                TaskUnit unit = (TaskUnit)item.Tag;
+                item.ImageKey = SetTaskStatusImages(unit.Action);                
+            }
         }
         //任务运行信息窗口：选定项改变
         private void livTaskView_SelectedIndexChanged(object sender, EventArgs e) {
