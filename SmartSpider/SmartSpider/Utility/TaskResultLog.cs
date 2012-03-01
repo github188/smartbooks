@@ -1,44 +1,53 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows.Forms;
-using System.Data;
+﻿namespace SmartSpider.Utility {
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+    using System.Windows.Forms;
+    using System.Data;    
 
-namespace SmartSpider.Utility {
     public class TaskResultLog : TabPage {
         private SplitContainer splitContainerMain = new SplitContainer();
         private RichTextBox rtxLogEvent = new RichTextBox();
         private DataGridView dgvResult = new DataGridView();
-        private Config.TaskUnit _unit;
+        private delegate void SetTextCallback(Config.LogEventArgs e);
+        private Config.TaskUnit _unit = new Config.TaskUnit();
 
         /// <summary>
         /// 构造函数
         /// </summary>
-        /// <param name="title">选项卡标题</param>
-        /// <param name="dataResult">采集结果表结构</param>
         /// <param name="unit">任务控制单元</param>
-        public TaskResultLog(string title, DataTable dataResult, ref Config.TaskUnit unit) {
+        public TaskResultLog(ref Config.TaskUnit unit) {
             this.BindController();
-            this.Text = title;
-            this.dgvResult.DataSource = dataResult;
+            this.Text = unit.TaskConfig.Name;
+            this.dgvResult.DataSource = unit.Results;
             this._unit = unit;
-            this._unit.Log +=new Config.LogEventHanlder(OnUnitLog);
+            this._unit.Log += new Config.LogEventHanlder(On_unitLog);
+            this.Tag = unit.ConfigPath;
         }
-        
+
         /// <summary>
         /// 追加日志信息
         /// </summary>
-        /// <param name="loginfo">日志信息</param>
-        /// <param name="indent">空格字符数</param>
-        public void AppendLog(string loginfo, int indent) {
+        /// <param name="src">LogEventArgs对象</param>
+        public void AppendLog(object src) {
+            Config.LogEventArgs e = (Config.LogEventArgs)src;
             string space = "";
-            for (int i = 0; i < indent; i++) {
+            for (int i = 0; i < e.Indent; i++) {
                 space += " ";
             }
-            this.rtxLogEvent.AppendText(space + loginfo + "\r\n");
-            this.rtxLogEvent.Select(rtxLogEvent.Text.Length - 1, 1);
-            this.rtxLogEvent.ScrollToCaret();
-            this.rtxLogEvent.Refresh();
+
+            if (this.rtxLogEvent.InvokeRequired) {
+                SetTextCallback callBack = new SetTextCallback(AppendLog);
+                this.Invoke(callBack, new object[] { e });
+            } else {
+                
+                this.rtxLogEvent.AppendText(space + e.Message + "\r\n");
+                if (this.rtxLogEvent.Text.Length > 1) {
+                    this.rtxLogEvent.Select(rtxLogEvent.Text.Length - 1, 1);
+                }
+                this.rtxLogEvent.ScrollToCaret();
+                this.rtxLogEvent.Refresh();
+            }
         }
 
         /// <summary>
@@ -105,12 +114,8 @@ namespace SmartSpider.Utility {
             this.Controls.Add(splitContainerMain);
         }
 
-        private void OnUnitLog(object sender, Config.LogEventArgs e) {
-            string space = "";
-            for (int i = 0; i < e.Indent; i++) {
-                space += " ";
-            }
-            this.rtxLogEvent.AppendText(space + e.Message + "\r\n");
+        private void On_unitLog(object sender,Config.LogEventArgs e) {
+            this.AppendLog(e);
         }
     }
 }

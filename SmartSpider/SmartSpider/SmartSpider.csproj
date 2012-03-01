@@ -87,10 +87,10 @@
     <Compile Include="FrmMainUtility.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Utility\TaskFolderTree.cs">
+    <Compile Include="Utility\TaskResultLog.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Utility\TaskResultLog.cs">
+    <Compile Include="Utility\TaskFolderTree.cs">
       <SubType>Component</SubType>
     </Compile>
     <EmbeddedResource Include="FrmAboutUS.resx">

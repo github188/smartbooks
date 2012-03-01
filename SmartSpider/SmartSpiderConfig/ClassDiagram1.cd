@@ -150,7 +150,7 @@
   <Class Name="SmartSpider.Config.TaskUnit" Collapsed="true">
     <Position X="0.5" Y="6.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AgAjSQAABSAIABQAAAAAgAAACBAAAAAAIiAAAAAAAAQ=</HashCode>
+      <HashCode>AgAjSQAABSAIABQQAAAAiAAACBgAAAAAIiAAEEAAAAQ=</HashCode>
       <FileName>TaskUnit.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />

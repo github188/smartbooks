@@ -24,9 +24,9 @@
         private LogEventArgs eventArgs = new LogEventArgs("", 0, true);
         private StringCollection NavigationUrls = new StringCollection();
         #endregion
-        
+                
         #region 公共方法定义
-        public TaskUnit() {            
+        public TaskUnit() {
             //构造采集结果数据表结构
             this._Results = new DataTable();
             foreach (ExtractionRule rule in this._TaskConfig.ExtractionRules) {
@@ -44,10 +44,10 @@
         /// 开始
         /// </summary>
         public void Start() {
-            eventArgs.Message = "开始任务 " + this._TaskConfig.Name;
-            if (this.Log != null) {
-                this.Log(this, eventArgs);
-            }
+            eventArgs.Message = DateTime.Now.ToString();
+            this.AppendLog();
+            eventArgs.Message = "开始任务 " + this._TaskConfig.Name;            
+            this.AppendLog();
 
             this._Action = Config.Action.Start;
 
@@ -58,9 +58,8 @@
             }
 
             eventArgs.Message = "加载导航地址";
-            if (this.Log != null) {
-                this.Log(this, eventArgs);
-            }
+            this.AppendLog();
+
             ThreadPool.QueueUserWorkItem(new WaitCallback(ExtractTheContents));
             Thread.Sleep(1);
         }
@@ -71,9 +70,7 @@
         public void Stop() {
             this._Action = Config.Action.Stop;
             eventArgs.Message = "停止任务";
-            if (this.Log != null) {
-                this.Log(this, eventArgs);
-            }
+            this.AppendLog();
         }
 
         /// <summary>
@@ -82,9 +79,7 @@
         public void Pause() {
             this._Action = Config.Action.Pause;
             eventArgs.Message = "暂停任务";
-            if (this.Log != null) {
-                this.Log(this, eventArgs);
-            }
+            this.AppendLog();
         }
 
         /// <summary>
@@ -93,9 +88,7 @@
         public void Continue() {
             this._Action = Config.Action.Continue;
             eventArgs.Message = "继续任务";
-            if (this.Log != null) {
-                this.Log(this, eventArgs);
-            }
+            this.AppendLog();
         }
 
         /// <summary>
@@ -103,9 +96,7 @@
         /// </summary>
         public void DeleteTask() {
             eventArgs.Message = "删除任务配置文件" + _ConfigPath;
-            if (this.Log != null) {
-                this.Log(this, eventArgs);
-            }
+            this.AppendLog();
 
             //删除任务配置文件，并销毁对象自身。
             File.Delete(this._ConfigPath);
@@ -129,9 +120,7 @@
             string startUrl = (string)start;
             foreach (NavigationRule navigationRole in this._TaskConfig.UrlListManager.NavigationRules) {
                 eventArgs.Message = "从起始页面提取导航Url：" + start;
-                if (this.Log != null) {
-                    this.Log(this, eventArgs);
-                }
+                this.AppendLog();
 
                 //监测当前任务状态
                 if (this._Action == Config.Action.Start || this._Action == Config.Action.Continue) {
@@ -157,9 +146,7 @@
         private void ExtractTheContents(object param) {
             foreach (string navUrl in NavigationUrls) {
                 eventArgs.Message = "采集内容：" + navUrl;
-                if (this.Log != null) {
-                    this.Log(this, eventArgs);
-                }
+                this.AppendLog();
 
                 if (this._Action == Config.Action.Start || this._Action == Config.Action.Continue) {
                     DataRow row = this._Results.NewRow();
@@ -180,9 +167,7 @@
             }
             this._Action = Config.Action.Finish;    //设置任务状态为完成
             eventArgs.Message = "任务执行完毕。";
-            if (this.Log != null) {
-                this.Log(this, eventArgs);
-            }
+            this.AppendLog();
         }
 
         /// <summary>
@@ -192,9 +177,7 @@
         /// <param name="htmlText">Html文本</param>
         public string LoadingExtractionRule(SmartSpider.Config.ExtractionRule extractionRule, string htmlText) {
             eventArgs.Message = "开始提取内容";
-            if (this.Log != null) {
-                this.Log(this, eventArgs);
-            }
+            this.AppendLog();
 
             return eventArgs.Message;
         }
@@ -206,9 +189,7 @@
         /// <param name="htmlText">Html文本</param>
         public StringCollection LoadingNavigationRule(SmartSpider.Config.NavigationRule navigationRule, string htmlText) {
             eventArgs.Message = "加载导航规则";
-            if (this.Log != null) {
-                this.Log(this, eventArgs);
-            }
+            this.AppendLog();
 
             return new StringCollection();
         }
@@ -218,9 +199,7 @@
         /// </summary>
         public StringCollection LoadingStartingUrl() {
             eventArgs.Message = "加载起始地址";
-            if (this.Log != null) {
-                this.Log(this, eventArgs);
-            }
+            this.AppendLog();
 
             return new StringCollection();
         }
@@ -231,14 +210,19 @@
         public void PublishResult() {
             if (this._Action == Config.Action.Finish) {
                 eventArgs.Message = "开始发布结果";
-                if (this.Log != null) {
-                    this.Log(this, eventArgs);
-                }
+                this.AppendLog();
             } else {
                 eventArgs.Message = "任务未完成，不允许发布结果。";
-                if (this.Log != null) {
-                    this.Log(this, eventArgs);
-                }
+                this.AppendLog();
+            }
+        }
+
+        /// <summary>
+        /// 追加日志记录信息
+        /// </summary>
+        private void AppendLog() {
+            if (this.Log != null) {
+                this.Log(this, eventArgs);                
             }
         }
         #endregion
