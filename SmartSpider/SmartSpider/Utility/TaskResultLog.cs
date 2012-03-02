@@ -22,6 +22,7 @@
             this.dgvResult.DataSource = unit.Results;
             this._unit = unit;
             this._unit.Log += new Config.LogEventHanlder(On_unitLog);
+            this._unit.onAppendResult += new Config.OnAppendResult(On_AppendResult);
             this.Tag = unit.ConfigPath;
         }
 
@@ -47,16 +48,6 @@
                 }
                 this.rtxLogEvent.ScrollToCaret();
                 this.rtxLogEvent.Refresh();
-            }
-        }
-
-        /// <summary>
-        /// 追加一行数据
-        /// </summary>
-        /// <param name="row">数据行</param>
-        public void AppendRow(DataGridViewRow row) {
-            if (dgvResult.ColumnCount != 0) {
-                dgvResult.Rows.Add(row);
             }
         }
 
@@ -116,6 +107,10 @@
 
         private void On_unitLog(object sender,Config.LogEventArgs e) {
             this.AppendLog(e);
+        }
+
+        private void On_AppendResult(System.Data.DataRow row) {
+            this.dgvResult.Rows.Add(row);
         }
     }
 }

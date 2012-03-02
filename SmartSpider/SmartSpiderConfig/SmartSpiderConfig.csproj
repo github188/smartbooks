@@ -43,6 +43,7 @@
     <Compile Include="ExtractionRule.cs" />
     <Compile Include="Filter.cs" />
     <Compile Include="HtmlMark.cs" />
+    <Compile Include="HtmlMarkDictionary.cs" />
     <Compile Include="HttpHelper.cs" />
     <Compile Include="HttpMethod.cs" />
     <Compile Include="ISmartSpider.cs" />
@@ -52,7 +53,9 @@
     <Compile Include="LogFileStyle.cs" />
     <Compile Include="NavigationRule.cs" />
     <Compile Include="NotifyWindowMode.cs" />
+    <Compile Include="OnAppendResult.cs" />
     <Compile Include="PagedUrlPattern.cs" />
+    <Compile Include="PagedUrlPatternsMode.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegularExpression.cs" />
     <Compile Include="Replacement.cs" />
@@ -63,7 +66,6 @@
     <Compile Include="SmartSpiderCore.cs" />
     <Compile Include="SmartSpiderInformation.cs" />
     <Compile Include="SmartSpiderWebProxy.cs" />
-    <Compile Include="StartingUrlList.cs" />
     <Compile Include="Action.cs" />
     <Compile Include="Task.cs" />
     <Compile Include="TaskController.cs" />

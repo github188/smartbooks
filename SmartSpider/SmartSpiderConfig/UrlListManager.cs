@@ -26,18 +26,18 @@
         }
 
         #region 私有变量定义
-        private int _HistoryUrlCapacity;
-        private int _HistoryUrlsCount;
-        private NavigationRule[] _NavigationRules;
-        private PagedUrlPatterns[] _PagedUrlPattern;
-        private int _PickedUrlsCount;
-        private int _PickedUrlsPosition;
-        private bool _StartingUrlEncoded;
-        private StartingUrlList[] _StartingUrlList;
-        private int _StartingUrlListPosition;
-        private string _StartingUrlTemplate;
-        private string _UrlEncoding;
-        private bool _UsePluginOfLoadStartingUrl;
+        private int _HistoryUrlCapacity = 0;
+        private int _HistoryUrlsCount = 0;
+        private List<NavigationRule> _NavigationRules = new List<NavigationRule>();
+        private List<PagedUrlPatterns> _PagedUrlPattern = new List<PagedUrlPatterns>();
+        private int _PickedUrlsCount = 0;
+        private int _PickedUrlsPosition = 0;
+        private bool _StartingUrlEncoded = false;
+        private List<string> _StartingUrlList = new List<string>();
+        private int _StartingUrlListPosition = 0;
+        private string _StartingUrlTemplate = "";
+        private string _UrlEncoding = "gb2312";
+        private bool _UsePluginOfLoadStartingUrl = false;
         #endregion
 
         #region 公共属性定义
@@ -150,10 +150,10 @@
         }
 
         /// <summary>
-        /// 分页URL模式
+        /// 分页模式URL模板
         /// </summary>
         /// <remarks>针对起始地址中的“{0,200,50}”参数。</remarks>
-        public PagedUrlPatterns[] PagedUrlPattern {
+        public List<PagedUrlPatterns> PagedUrlPattern {
             get {
                 return _PagedUrlPattern;
             }
@@ -165,7 +165,7 @@
         /// <summary>
         /// 导航规则
         /// </summary>
-        public NavigationRule[] NavigationRules {
+        public List<NavigationRule> NavigationRules {
             get {
                 return _NavigationRules;
             }
@@ -178,7 +178,7 @@
         /// 起始URL地址集合
         /// </summary>
         /// <remarks>保存起Url地址集合，包括模板网址。</remarks>
-        public StartingUrlList[] StartingUrlList {
+        public List<string> StartingUrlList {
             get {
                 return _StartingUrlList;
             }

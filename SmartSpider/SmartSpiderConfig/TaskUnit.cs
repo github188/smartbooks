@@ -6,13 +6,18 @@
     using System.Collections.Specialized;
     using System.IO;
     using System.Threading;
+    using System.Text.RegularExpressions;
 
-    public class TaskUnit :IDisposable {
+    public class TaskUnit : IDisposable {
         #region 公共事件定义
         /// <summary>
         /// 日志记录事件
         /// </summary>
         public event LogEventHanlder Log;
+        /// <summary>
+        /// 当增加一条采集结果行时触发的事件
+        /// </summary>
+        public event OnAppendResult onAppendResult;
         #endregion
 
         #region 私有变量定义
@@ -24,7 +29,7 @@
         private LogEventArgs eventArgs = new LogEventArgs("", 0, true);
         private StringCollection NavigationUrls = new StringCollection();
         #endregion
-                
+
         #region 公共方法定义
         public TaskUnit() {
             //构造采集结果数据表结构
@@ -46,7 +51,7 @@
         public void Start() {
             eventArgs.Message = DateTime.Now.ToString();
             this.AppendLog();
-            eventArgs.Message = "开始任务 " + this._TaskConfig.Name;            
+            eventArgs.Message = "开始任务 " + this._TaskConfig.Name;
             this.AppendLog();
 
             this._Action = Config.Action.Start;
@@ -131,8 +136,8 @@
                     }
                 } else if (this._Action == Config.Action.Pause) {
                     Thread.Sleep(10000);    //挂起10秒钟
-                } else if (this._Action == Config.Action.Stop || 
-                    this._Action == Config.Action.Ready || 
+                } else if (this._Action == Config.Action.Stop ||
+                    this._Action == Config.Action.Ready ||
                     this._Action == Config.Action.Finish) {
                     Thread.CurrentThread.Abort();   //终止线程
                     return;
@@ -155,10 +160,11 @@
                         string resultContent = this.LoadingExtractionRule(extractionRule, htmlText);
                         row[extractionRule.DataColumn] = resultContent;
                     }
+
                     this._Results.Rows.Add(row);
                     NavigationUrls.Remove(navUrl);  //移除采集的Url地址
                 } else if (this._Action == Config.Action.Pause) {
-                    Thread.Sleep(10000);    //挂起10秒钟
+                    Thread.Sleep(10000);    //任务暂停状态，挂起10秒钟
                 } else if (this._Action == Config.Action.Stop || this._Action == Config.Action.Ready ||
                     this._Action == Config.Action.Finish) {
                     Thread.CurrentThread.Abort();   //终止线程
@@ -175,11 +181,64 @@
         /// </summary>
         /// <param name="extractionRule">内容提取规则</param>
         /// <param name="htmlText">Html文本</param>
-        public string LoadingExtractionRule(SmartSpider.Config.ExtractionRule extractionRule, string htmlText) {
+        private string LoadingExtractionRule(SmartSpider.Config.ExtractionRule extractionRule, string htmlText) {
             eventArgs.Message = "开始提取内容";
             this.AppendLog();
+            string result = string.Empty;
 
-            return eventArgs.Message;
+            //特殊结果
+            if (extractionRule.TimeAsResult) return DateTime.Now.ToString();  //记录采集时间
+            if (extractionRule.UrlAsResult) return this.HttpHelper.WebRequest.RequestUri.ToString();  //记录当前网址
+            if (extractionRule.ResponseHeaderAsResult) return this.HttpHelper.WebResponse.Headers[extractionRule.ResponseHeaderName];   //响应头作为结果  
+            if (extractionRule.ConstantAsResult) return extractionRule.ConstantValue;   //将固定值最为结果
+            //if(extractionRule.PostParametersAsResult) return this.HttpHelper.WebRequest.GetRequestStream();   //POST参数作为结果
+            //if (extractionRule.LinkTextAsResult) return ""; //链接文本作为结果
+
+
+            //截取内容
+            int indexPreviousFlag = htmlText.IndexOf(extractionRule.FollowingFlag); //信息前标志
+            int indexFollowingFlag = htmlText.IndexOf(extractionRule.PreviousFlag); //信息后标志
+            int indexLength = indexFollowingFlag - indexPreviousFlag;
+            if (indexLength > 1) {
+                result = htmlText.Substring(indexPreviousFlag, indexLength);
+            }
+
+            //过滤信息
+            if (result.Length != 0) {
+                #region 采集结果替换
+                foreach (Replacement replacement in extractionRule.Replacements) {
+                    // 使用正则表达式替换结果
+                    if (replacement.UseRegex) {
+                        MatchCollection matchs = Regex.Matches(result, replacement.OldValue);
+                        foreach (Match match in matchs) {
+                            result = result.Replace(match.Value, replacement.NewValue);
+                        }
+                    } else {
+                        result = result.Replace(replacement.OldValue, replacement.NewValue);
+                    }
+                }
+                #endregion
+
+                #region 保留HTML标记 
+                //<p ([^>]+)>([^<]+)</p>
+                List<HtmlMarkDictionary> element = new List<HtmlMarkDictionary>();
+                foreach (HtmlMark htmlMark in extractionRule.ReservedHtmlMarks) {
+                    MatchCollection matchs = Regex.Matches(result, htmlMark.RegexText,RegexOptions.IgnoreCase);
+                    foreach (Match match in matchs) {
+                        HtmlMarkDictionary directory = new HtmlMarkDictionary();
+                        directory.Index = match.Index;
+                        directory.Text = match.Value;
+                        element.Add(directory);
+                    }
+                }
+                element.Sort();
+                result = "";
+                foreach (HtmlMarkDictionary elm in element) {
+                    result += elm.Text;
+                }                
+                #endregion
+            }
+            return result;
         }
 
         /// <summary>
@@ -187,27 +246,59 @@
         /// </summary>
         /// <param name="navigationRule">导航Url提取规则</param>
         /// <param name="htmlText">Html文本</param>
-        public StringCollection LoadingNavigationRule(SmartSpider.Config.NavigationRule navigationRule, string htmlText) {
+        private StringCollection LoadingNavigationRule(SmartSpider.Config.NavigationRule navigationRule, string htmlText) {
             eventArgs.Message = "加载导航规则";
             this.AppendLog();
-
+            StringCollection navigationUrls = new StringCollection();
+            if (navigationRule.Terminal) return navigationUrls;
+            MatchCollection matchColl = Regex.Matches(htmlText, navigationRule.NextLayerUrlPattern);
+            foreach (Match match in matchColl) {
+                navigationUrls.Add(match.Value);
+            }
             return new StringCollection();
         }
 
         /// <summary>
         /// 加载起始地址
         /// </summary>
-        public StringCollection LoadingStartingUrl() {
+        private StringCollection LoadingStartingUrl() {
             eventArgs.Message = "加载起始地址";
             this.AppendLog();
 
-            return new StringCollection();
+            StringCollection startingUrls = new StringCollection();
+            //先加载列表地址
+            foreach (string url in this._TaskConfig.UrlListManager.StartingUrlList) {
+                startingUrls.Add(url);
+            }
+
+            //加载模板网址
+            //匹配：{[0-9,-]*} {100,1,-1}            
+            foreach (PagedUrlPatterns pageUrl in this._TaskConfig.UrlListManager.PagedUrlPattern) {
+                MatchCollection regexMatch = Regex.Matches(pageUrl.PagedUrlPattern, "{[0-9,-]*}");
+                string url = pageUrl.PagedUrlPattern;
+                if (pageUrl.Format == PagedUrlPatternsMode.Increment) { //递增模式
+                    for (int i = pageUrl.StartPage; i < pageUrl.EndPage; i += pageUrl.Step) {
+                        if (regexMatch.Count != 0) {
+                            url = url.Replace(regexMatch[0].Value, i.ToString());
+                        }
+                        startingUrls.Add(url);
+                    }
+                } else if (pageUrl.Format == PagedUrlPatternsMode.Decreasing) { //递减模式
+                    for (int i = pageUrl.EndPage; i > pageUrl.StartPage; i -= pageUrl.Step) {
+                        if (regexMatch.Count != 0) {
+                            url = url.Replace(regexMatch[0].Value, i.ToString());
+                        }
+                        startingUrls.Add(url);
+                    }
+                }
+            }
+            return startingUrls;
         }
 
         /// <summary>
         /// 发布采集结果
         /// </summary>
-        public void PublishResult() {
+        private void PublishResult() {
             if (this._Action == Config.Action.Finish) {
                 eventArgs.Message = "开始发布结果";
                 this.AppendLog();
@@ -222,7 +313,17 @@
         /// </summary>
         private void AppendLog() {
             if (this.Log != null) {
-                this.Log(this, eventArgs);                
+                this.Log(this, eventArgs);
+            }
+        }
+
+        /// <summary>
+        /// 追加一条数据记录
+        /// </summary>
+        /// <param name="row">数据行</param>
+        private void AppendRow(System.Data.DataRow row) {
+            if (this.onAppendResult != null) {
+                this.onAppendResult(row);
             }
         }
         #endregion

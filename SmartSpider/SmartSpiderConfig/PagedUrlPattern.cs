@@ -12,13 +12,13 @@
             this._StartPage = 1;
             this._EndPage = 0;
             this._Step = 1;
-            this._Format = "";
+            this._Format = PagedUrlPatternsMode.Increment;
             this._PagedUrlPattern = "";
         }
 
         #region 私有变量定义
         private int _EndPage;
-        private string _Format;
+        private SmartSpider.Config.PagedUrlPatternsMode _Format;
         private string _PagedUrlPattern;
         private int _StartPage;
         private int _Step;
@@ -63,9 +63,9 @@
         }
 
         /// <summary>
-        /// 格式
+        /// Url递增模式
         /// </summary>
-        public string Format {
+        public PagedUrlPatternsMode Format {
             get {
                 return _Format;
             }

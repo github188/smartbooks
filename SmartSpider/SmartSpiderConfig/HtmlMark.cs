@@ -15,11 +15,13 @@
         public HtmlMark() {
             this._Name = "";
             this._DisplayName = "";
+            this._RegexText = "";
         }
 
         #region 私有变量定义
         private string _DisplayName;
         private string _Name;
+        private string _RegexText;
         #endregion
 
         #region 公共属性定义
@@ -44,6 +46,18 @@
             }
             set {
                 _DisplayName = value;
+            }
+        }
+
+        /// <summary>
+        /// 正则表达式
+        /// </summary>
+        public string RegexText {
+            get {
+                return _RegexText;
+            }
+            set {
+                _RegexText = value;
             }
         }
         #endregion

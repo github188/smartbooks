@@ -34,7 +34,7 @@
         private bool _Essential;
         private string _FileNameExtension;
         private int _FilesPerSubDirectory;
-        private Filter _Filters;
+        private List<Filter> _Filters;
         private string _FollowingFlag;
         private bool _Global;
         private bool _IsDownloadUrl;
@@ -45,9 +45,9 @@
         private string _Name;
         private bool _PostParametersAsResult;
         private string _PreviousFlag;
-        private Replacement _Replacements;
+        private List<Replacement> _Replacements;
         private bool _ReserveAllHtmlMarks;
-        private HtmlMark _ReservedHtmlMarks;
+        private List<HtmlMark> _ReservedHtmlMarks;
         private bool _ResponseHeaderAsResult;
         private string _ResponseHeaderName;
         private bool _SkipIfFileExisted;
@@ -111,7 +111,7 @@
         }
 
         /// <summary>
-        /// 开始标志
+        /// 信息前标志
         /// </summary>
         public string PreviousFlag {
             get {
@@ -407,6 +407,9 @@
             }
         }
 
+        /// <summary>
+        /// 链接文本作为结果
+        /// </summary>
         public bool LinkTextAsResult {
             get {
                 return _LinkTextAsResult;
@@ -440,6 +443,9 @@
             }
         }
 
+        /// <summary>
+        /// 将固定值作为结果
+        /// </summary>
         public bool ConstantAsResult {
             get {
                 return _ConstantAsResult;
@@ -449,6 +455,9 @@
             }
         }
 
+        /// <summary>
+        /// 将固定值作为结果[值]
+        /// </summary>
         public string ConstantValue {
             get {
                 return _ConstantValue;
@@ -497,7 +506,7 @@
         /// <summary>
         /// 保留的HTML标记
         /// </summary>
-        public HtmlMark ReservedHtmlMarks {
+        public List<HtmlMark> ReservedHtmlMarks {
             get {
                 return _ReservedHtmlMarks;
             }
@@ -506,7 +515,10 @@
             }
         }
 
-        public Replacement Replacements {
+        /// <summary>
+        /// 采集结果替换
+        /// </summary>
+        public List<Replacement> Replacements {
             get {
                 return _Replacements;
             }
@@ -515,7 +527,7 @@
             }
         }
 
-        public Filter Filters {
+        public List<Filter> Filters {
             get {
                 return _Filters;
             }
