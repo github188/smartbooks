@@ -30,16 +30,19 @@
             });
             t.ExtractionRules.Add(new ExtractionRule() {
                 Name = "标题",
+                DataColumn = "title",
                 PreviousFlag = "<title>",
                 FollowingFlag = "</title>"
             });
             t.ExtractionRules.Add(new ExtractionRule() {
                 Name = "内容",
+                DataColumn = "Content",
                 PreviousFlag = @"<!-- 正文内容 begin -->",
                 FollowingFlag = @"<!-- 分享 begin -->"
             });
             t.ExtractionRules.Add(new ExtractionRule() {
                 Name = "网址",
+                DataColumn = "Urls",
                 UrlAsResult = true
             });
 

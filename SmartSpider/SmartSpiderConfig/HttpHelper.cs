@@ -9,7 +9,7 @@
         #region 私有变量定义
         private HttpWebRequest _WebRequest;
         private HttpWebResponse _WebResponse;
-        private CookieContainer _Cookie = new CookieContainer();
+        private CookieContainer _Cookie;
         #endregion
 
         #region 公共字段定义
@@ -35,6 +35,7 @@
             } else {
                 this._encoding = encoding;
             }
+            this._Cookie = new CookieContainer();
         }
 
         /// <summary>
@@ -62,13 +63,16 @@
         /// <param name="method">请求模式</param>
         /// <param name="data">post数据(仅用于POST模式)</param>
         public string RequestResult(string url, string referer, HttpMethod method, string data) {
+            this._WebRequest = (HttpWebRequest)System.Net.WebRequest.Create(url);
             this._WebRequest.CookieContainer = this._Cookie;
             this._WebRequest.Method = method.ToString();
             this._WebRequest.Accept = "*/*";
             this._WebRequest.ContentType = "application/x-www-form-urlencoded";
-            byte[] buffer = this._encoding.GetBytes(data);
-            this._WebRequest.ContentLength = buffer.Length;
-            this._WebRequest.GetRequestStream().Write(buffer, 0, buffer.Length);
+            if (method == HttpMethod.POST) {
+                byte[] buffer = this._encoding.GetBytes(data);
+                this._WebRequest.ContentLength = buffer.Length;
+                this._WebRequest.GetRequestStream().Write(buffer, 0, buffer.Length);
+            }
             this._WebResponse = (HttpWebResponse)this._WebRequest.GetResponse();
             StreamReader read = new StreamReader(this._WebResponse.GetResponseStream(), this._encoding);
             this._Cookie.Add(this._WebResponse.Cookies);

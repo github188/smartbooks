@@ -10,6 +10,7 @@
         private RichTextBox rtxLogEvent = new RichTextBox();
         private DataGridView dgvResult = new DataGridView();
         private delegate void SetTextCallback(Config.LogEventArgs e);
+        private delegate void RefererDataSource();
         private Config.TaskUnit _unit = new Config.TaskUnit();
 
         /// <summary>
@@ -81,14 +82,20 @@
             this.rtxLogEvent.Size = new System.Drawing.Size(100, 96);
             this.rtxLogEvent.TabIndex = 0;
             this.rtxLogEvent.Text = "";
+            this.rtxLogEvent.TextChanged += new System.EventHandler(this.rtxLogEvent_TextChanged);
             // 
             // dgvResult
             // 
+            this.dgvResult.AllowUserToDeleteRows = false;
+            this.dgvResult.AllowUserToResizeRows = false;
+            this.dgvResult.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvResult.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvResult.Location = new System.Drawing.Point(0, 0);
             this.dgvResult.Name = "dgvResult";
+            this.dgvResult.ReadOnly = true;
             this.dgvResult.RowTemplate.Height = 23;
+            this.dgvResult.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvResult.Size = new System.Drawing.Size(240, 150);
             this.dgvResult.TabIndex = 0;
             this.splitContainerMain.ResumeLayout(false);
@@ -109,8 +116,22 @@
             this.AppendLog(e);
         }
 
-        private void On_AppendResult(System.Data.DataRow row) {
-            this.dgvResult.Rows.Add(row);
+        private void On_AppendResult() {            
+            if (this.dgvResult.InvokeRequired) {
+                RefererDataSource referer = new RefererDataSource(On_AppendResult);
+                this.Invoke(referer);
+            } else {
+                this.dgvResult.DataSource = this._unit.Results.DefaultView;
+                this.dgvResult.Rows[this.dgvResult.Rows.Count - 1].Selected = true;
+                this.dgvResult.FirstDisplayedScrollingRowIndex = this.dgvResult.Rows.Count - 1;
+                this.dgvResult.Refresh();
+            }
+        }
+
+        private void rtxLogEvent_TextChanged(object sender, EventArgs e) {
+            if (this.rtxLogEvent.TextLength > 5000) {
+                this.rtxLogEvent.Clear();
+            }
         }
     }
 }
