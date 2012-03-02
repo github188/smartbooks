@@ -22,7 +22,7 @@
         private bool _HistoryUrlOptimization;
         private string _IterationFlag;
         private bool _JsDecoding;
-        private int _Name;
+        private string _Name;
         private bool _NextLayerUrlEncoded;
         private string _NextLayerUrlPattern;
         private string _NextLayerUrlReferer;
@@ -47,7 +47,7 @@
         /// <summary>
         /// 层次名称
         /// </summary>
-        public int Name {
+        public string Name {
             get {
                 return _Name;
             }

@@ -24,7 +24,7 @@
         private Task _TaskConfig = new Task();
         private Action _Action = new Action();
         private DataTable _Results = new DataTable();
-        private HttpHelper _HttpHelper = new HttpHelper();
+        private HttpHelper _HttpHelper;
         private string _ConfigPath = "";
         private LogEventArgs eventArgs = new LogEventArgs("", 0, true);
         private StringCollection NavigationUrls = new StringCollection();
@@ -43,6 +43,7 @@
 
                 this._Results.Columns.Add(colume);
             }
+            this._HttpHelper = new HttpHelper(Encoding.GetEncoding(this._TaskConfig.UrlListManager.UrlEncoding));
         }
 
         /// <summary>
