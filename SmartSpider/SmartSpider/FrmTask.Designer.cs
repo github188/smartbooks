@@ -2562,7 +2562,9 @@
             this.columnHeader5,
             this.columnHeader6,
             this.columnHeader7});
+            this.LivExtractionRule.FullRowSelect = true;
             this.LivExtractionRule.Location = new System.Drawing.Point(6, 20);
+            this.LivExtractionRule.MultiSelect = false;
             this.LivExtractionRule.Name = "LivExtractionRule";
             this.LivExtractionRule.Size = new System.Drawing.Size(722, 124);
             this.LivExtractionRule.TabIndex = 0;
