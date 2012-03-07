@@ -20,6 +20,9 @@
         #endregion
 
         #region 公共方法定义
+        public HttpHelper() {
+            this._WebRequest.Timeout = 10000;   //默认超时10秒钟
+        }
 
         /// <param name="handers">Hander集合</param>
         /// <param name="method">Http请求方式</param>
@@ -29,6 +32,10 @@
             throw new System.NotImplementedException();
         }
 
+        /// <summary>
+        /// 构造函数
+        /// </summary>
+        /// <param name="encoding">请求编码</param>
         public HttpHelper(Encoding encoding) {
             if (encoding == null) {
                 this._encoding = Encoding.Default;

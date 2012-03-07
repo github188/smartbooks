@@ -3,6 +3,7 @@
     using System.Collections.Generic;
     using System.Text;
     using System.Data;
+    using System.Data.SqlClient;
     using System.Collections.Specialized;
     using System.IO;
     using System.Threading;
@@ -18,6 +19,10 @@
         /// 当增加一条采集结果行时触发的事件
         /// </summary>
         public event OnAppendResult onAppendResult;
+        /// <summary>
+        /// 当任务状态改变时执行的事件
+        /// </summary>
+        public event OnTaskStatusChanges OnTaskStatusChanges;
         #endregion
 
         #region 私有变量定义
@@ -31,6 +36,12 @@
         #endregion
 
         #region 公共方法定义
+
+        #region 任务控制
+
+        /// <summary>
+        /// 构造函数
+        /// </summary>
         public TaskUnit() {
             this._HttpHelper = new HttpHelper(Encoding.GetEncoding(this._TaskConfig.UrlListManager.UrlEncoding));
         }
@@ -39,34 +50,35 @@
         /// 开始
         /// </summary>
         public void Start() {
-            this._Action = Config.Action.Start;
-            this._Results = new DataTable();    //构造采集结果数据表结构
+            this.Action = Config.Action.Start;
+            eventArgs.Message = string.Format("{0}\r\n开始任务 {1}\r\n", DateTime.Now.ToString(), this._TaskConfig.Name);
+            this.AppendLog();
+
+            #region 构造采集结果数据表结构
+            this._Results = new DataTable();
             foreach (ExtractionRule rule in this._TaskConfig.ExtractionRules) {
                 DataColumn colume = new DataColumn();
                 colume.DataType = typeof(string);
                 colume.ColumnName = rule.Name;
                 colume.Caption = rule.DataColumn;
                 colume.Unique = rule.DataUnique;
-
                 this._Results.Columns.Add(colume);
             }
+            #endregion
 
-            eventArgs.Message = string.Format("{0}开始任务{1}", DateTime.Now.ToString(), this._TaskConfig.Name);
-            this.AppendLog();
-
+            #region 根据起始页面规则，加载导航地址采集规则
             StringCollection startUrls = this.LoadingStartingUrl();
             foreach (string startUrl in startUrls) {
                 ExtractTheNavigationAddress(startUrl);
             }
-
-            ThreadPool.QueueUserWorkItem(new WaitCallback(ExtractTheContents), "");
+            #endregion
         }
 
         /// <summary>
         /// 停止
         /// </summary>
         public void Stop() {
-            this._Action = Config.Action.Stop;
+            this.Action = Config.Action.Stop;
             eventArgs.Message = "停止任务";
             this.AppendLog();
         }
@@ -75,7 +87,7 @@
         /// 暂停
         /// </summary>
         public void Pause() {
-            this._Action = Config.Action.Pause;
+            this.Action = Config.Action.Pause;
             eventArgs.Message = "暂停任务";
             this.AppendLog();
         }
@@ -84,7 +96,7 @@
         /// 继续
         /// </summary>
         public void Continue() {
-            this._Action = Config.Action.Continue;
+            this.Action = Config.Action.Continue;
             eventArgs.Message = "继续任务";
             this.AppendLog();
         }
@@ -109,63 +121,98 @@
             this._Results = null;
             this._TaskConfig = null;
         }
+        #endregion
 
+        #region 采集结果处理
         /// <summary>
         /// 提取导航地址
         /// </summary>
         /// <param name="start">起始地址Url</param>
         private void ExtractTheNavigationAddress(object start) {
             string startUrl = (string)start;
-            foreach (NavigationRule navigationRole in this._TaskConfig.UrlListManager.NavigationRules) {
-                eventArgs.Message = "从起始页面提取导航Url：" + start;
-                this.AppendLog();
+            eventArgs.Message = string.Format("提取导航地址 {0}", start);
+            this.AppendLog();
 
+            foreach (NavigationRule navigationRole in this._TaskConfig.UrlListManager.NavigationRules) {
                 //监测当前任务状态
-                if (this._Action == Config.Action.Start || this._Action == Config.Action.Continue) {
-                    string htmlText = this._HttpHelper.RequestResult(startUrl);
-                    StringCollection navUrls = this.LoadingNavigationRule(navigationRole, htmlText);
-                    foreach (string url in navUrls) {
-                        NavigationUrls.Add(url);
+                if (this.Action == Config.Action.Start || this.Action == Config.Action.Continue) {
+                    // 采用深度优先模式提取内容采集结果
+                    string htmlText = "";
+                    try {
+                        htmlText = this._HttpHelper.RequestResult(startUrl);
+                    } catch (Exception e) {
+                        eventArgs.Message = string.Format("请求网址失败 {0},原因 {1}\r\n", start, e.Message);
+                        this.AppendLog();
                     }
-                } else if (this._Action == Config.Action.Pause) {
-                    Thread.Sleep(10000);    //挂起10秒钟
-                } else if (this._Action == Config.Action.Stop ||
-                    this._Action == Config.Action.Ready ||
-                    this._Action == Config.Action.Finish) {
-                    Thread.CurrentThread.Abort();   //终止线程
+
+                    //判断是否为最终页面导航规则，如果为最终页面导航规则，则直接提取页面内容。
+                    if (navigationRole.Terminal) {
+                        ThreadPool.QueueUserWorkItem(new WaitCallback(ExtractTheContents), startUrl);
+                    } else {
+                        StringCollection navUrls = this.LoadingNavigationRule(navigationRole, htmlText);
+                        foreach (string url in navUrls) {
+                            //根据导航地址提取内容结果
+                            ThreadPool.QueueUserWorkItem(new WaitCallback(ExtractTheContents), url);
+                        }
+                    }
+                } else if (this.Action == Config.Action.Pause) {
+                    //挂起10秒钟
+                    Thread.Sleep(10000);
+                } else if (this.Action == Config.Action.Stop ||
+                    this.Action == Config.Action.Ready ||
+                    this.Action == Config.Action.Finish) {
+                    //终止线程
+                    Thread.CurrentThread.Abort();
                     return;
                 }
             }
         }
 
         /// <summary>
-        /// 采集内容(线程池回调方法)
+        /// 提取请求结果内容
         /// </summary>
+        /// <param name="param">导航地址Url</param>
         private void ExtractTheContents(object param) {
-            foreach (string navUrl in NavigationUrls) {
-                eventArgs.Message = "采集内容：" + navUrl;
-                this.AppendLog();
-
-                if (this._Action == Config.Action.Start || this._Action == Config.Action.Continue) {
-                    DataRow row = this._Results.NewRow();
-                    foreach (ExtractionRule extractionRule in this._TaskConfig.ExtractionRules) {
-                        string htmlText = this._HttpHelper.RequestResult(navUrl);
-                        string resultContent = this.LoadingExtractionRule(extractionRule, htmlText);
-                        row[extractionRule.Name] = resultContent;
-                    }
-                    this._Results.Rows.Add(row);
-                    this.onAppendResult();
-                } else if (this._Action == Config.Action.Pause) {
-                    Thread.Sleep(10000);    //任务暂停状态，挂起10秒钟
-                } else if (this._Action == Config.Action.Stop || this._Action == Config.Action.Ready ||
-                    this._Action == Config.Action.Finish) {
-                    Thread.CurrentThread.Abort();   //终止线程
-                    return;
-                }
-            }
-            this._Action = Config.Action.Finish;    //设置任务状态为完成
-            eventArgs.Message = "任务执行完毕。";
+            string contentUrl = (string)param;
+            eventArgs.Message = string.Format("采集内容 {0}\r\n", contentUrl);
             this.AppendLog();
+
+            if (this.Action == Config.Action.Start || this.Action == Config.Action.Continue) {
+                DataRow row = this._Results.NewRow();
+
+                string htmlText = "";
+                try {
+                    //请求Web服务器返回Html文本
+                    htmlText = this._HttpHelper.RequestResult(contentUrl);
+                } catch (Exception e) {
+                    eventArgs.Message = string.Format("请求失败 {0} ", contentUrl);
+                    this.AppendLog();
+                    eventArgs.Message = string.Format("原因 {0}\r\n", e.Message);
+                    this.AppendLog();
+                }
+
+                //循环内容采集规则
+                foreach (ExtractionRule extractionRule in this._TaskConfig.ExtractionRules) {
+                    row[extractionRule.Name] = this.LoadingExtractionRule(extractionRule, htmlText);
+                }
+
+                //内容提取结果加入采集结果
+                this._Results.Rows.Add(row);
+                this.onAppendResult();
+            } else if (this.Action == Config.Action.Pause) {
+                //任务暂停状态，挂起10秒钟
+                Thread.Sleep(10000);
+            } else if (this.Action == Config.Action.Stop || this.Action == Config.Action.Ready ||
+                this.Action == Config.Action.Finish) {
+                //终止线程
+                Thread.CurrentThread.Abort();
+                return;
+            }
+
+            //发布结果
+            if (this.TaskConfig.PublishResultDircetly) {
+                PublishResult();
+            }
         }
 
         /// <summary>
@@ -190,7 +237,7 @@
             int indexFollowingFlag = htmlText.IndexOf(extractionRule.FollowingFlag);//信息后标志
             int indexLength = indexFollowingFlag - indexPreviousFlag;
             if (indexLength > 1) {
-                result = htmlText.Substring(indexPreviousFlag + extractionRule.PreviousFlag.Length, 
+                result = htmlText.Substring(indexPreviousFlag + extractionRule.PreviousFlag.Length,
                     indexLength - extractionRule.FollowingFlag.Length);
             }
 
@@ -240,10 +287,7 @@
         /// <param name="navigationRule">导航Url提取规则</param>
         /// <param name="htmlText">Html文本</param>
         private StringCollection LoadingNavigationRule(SmartSpider.Config.NavigationRule navigationRule, string htmlText) {
-            eventArgs.Message = "加载导航规则";
-            this.AppendLog();
             StringCollection navigationUrls = new StringCollection();
-            if (navigationRule.Terminal) return navigationUrls;
             MatchCollection matchColl = Regex.Matches(htmlText, navigationRule.NextLayerUrlPattern);
             foreach (Match match in matchColl) {
                 navigationUrls.Add(match.Value);
@@ -290,19 +334,6 @@
         }
 
         /// <summary>
-        /// 发布采集结果
-        /// </summary>
-        private void PublishResult() {
-            if (this._Action == Config.Action.Finish) {
-                eventArgs.Message = "开始发布结果";
-                this.AppendLog();
-            } else {
-                eventArgs.Message = "任务未完成，不允许发布结果。";
-                this.AppendLog();
-            }
-        }
-
-        /// <summary>
         /// 追加日志记录信息
         /// </summary>
         private void AppendLog() {
@@ -310,6 +341,132 @@
                 this.Log(this, eventArgs);
             }
         }
+        #endregion
+
+        #region 发布结果
+
+        /// <summary>
+        /// 发布采集结果
+        /// </summary>
+        /// <returns>发布成功记录条数</returns>
+        public int PublishResult() {
+            eventArgs.Message = "开始发布结果";
+            this.AppendLog();
+
+            if (this.TaskConfig.DatabaseType == DatabaseType.Access) {
+                return PublishResultToAccess();
+            } else if (this.TaskConfig.DatabaseType == DatabaseType.MySql) {
+                return PublishResultToMySql();
+            } else if (this.TaskConfig.DatabaseType == DatabaseType.Oracle) {
+                return PublishResultToOracle();
+            } else if (this.TaskConfig.DatabaseType == DatabaseType.SqlLite) {
+                return PublishResultToSqlLite();
+            } else if (this.TaskConfig.DatabaseType == DatabaseType.SqlServer) {
+                return PublishResultToSqlServer();
+            }
+
+            return 0;
+        }
+
+        /// <summary>
+        /// 发布结果到Access数据库
+        /// </summary>
+        /// <returns>发布成功记录数</returns>
+        private int PublishResultToAccess() {
+            return 0;
+        }
+
+        /// <summary>
+        /// 发布结果到MySql数据库
+        /// </summary>
+        /// <returns>发布成功记录数</returns>
+        private int PublishResultToMySql() {
+            return 0;
+        }
+
+        /// <summary>
+        /// 发布结果到Oracle数据库
+        /// </summary>
+        /// <returns>发布成功记录数</returns>
+        private int PublishResultToOracle() {
+            return 0;
+        }
+
+        /// <summary>
+        /// 发布结果到SqlLite数据库
+        /// </summary>
+        /// <returns>发布成功记录数</returns>
+        private int PublishResultToSqlLite() {
+            return 0;
+        }
+
+        /// <summary>
+        /// 发布结果到SqlServer数据库
+        /// </summary>
+        /// <returns>发布成功记录数</returns>
+        private int PublishResultToSqlServer() {
+            int publishResultCount = 0;
+            SqlConnection sqlConn = new SqlConnection(this.TaskConfig.ConnectionString);
+            try {
+                sqlConn.Open();
+                if (this.TaskConfig.UseProcedure) {
+                    #region 使用存储过程发布结果
+                    SqlCommand cmd = new SqlCommand();
+                    foreach (DataRow row in this.Results.Rows) {
+                        foreach (DataColumn col in this.Results.Columns) {
+                            SqlParameter colParam = new SqlParameter(col.Caption, row[col.ColumnName].ToString().Replace('\'', '\"'));
+                            cmd.Parameters.Add(colParam);
+                        }
+                    }
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Connection = sqlConn;
+                    cmd.CommandTimeout = 10;
+                    cmd.CommandText = this.TaskConfig.PublicationTarget;
+                    publishResultCount = cmd.ExecuteNonQuery();
+                    #endregion
+                } else {
+                    #region 发布到数据库表
+                    List<string> inserts = new List<string>();
+                    #region 构造Insert语句
+                    foreach (DataRow row in this.Results.Rows) {
+                        string into = "";
+                        string values = "";
+                        for (int i = 0; i < this.Results.Columns.Count; i++) {
+                            if (i < this.Results.Columns.Count - 1) {
+                                into += string.Format("{0}", this.Results.Columns[i].Caption);
+                                values += string.Format("'{0}'", row[this.Results.Columns[i].ColumnName].ToString().Replace('\'', '\"'));
+                            } else {
+                                into += string.Format("{0},", this.Results.Columns[i].Caption);
+                                values += string.Format("'{0}',", row[this.Results.Columns[i].ColumnName].ToString().Replace('\'', '\"'));
+                            }
+                        }
+                        inserts.Add(string.Format("insert into {0}({1})values({2})",
+                                this.TaskConfig.PublicationTarget, into, values));
+                    }
+                    #endregion
+
+                    SqlCommand cmd = new SqlCommand();
+                    foreach (string item in inserts) {
+                        cmd.CommandType = CommandType.Text;
+                        cmd.Connection = sqlConn;
+                        cmd.CommandTimeout = 10;
+                        cmd.CommandText = item;
+                        publishResultCount += cmd.ExecuteNonQuery();
+                    }
+                    cmd.Dispose();
+                    #endregion
+                }
+            } catch (Exception e) {
+                eventArgs.Message = string.Format("发布结果到 {0} 数据库时出现错误，错误详细信息：", DatabaseType.SqlServer, e.Message);
+                this.AppendLog();
+            } finally {
+                sqlConn.Close();
+                sqlConn.Dispose();
+            }
+            return publishResultCount;
+        }
+        #endregion
+
         #endregion
 
         #region 公共属性定义
@@ -334,6 +491,9 @@
             }
             set {
                 _Action = value;
+                if (OnTaskStatusChanges != null) {
+                    this.OnTaskStatusChanges(this, value);
+                }
             }
         }
 

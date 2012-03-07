@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>mainProgram.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -87,12 +90,14 @@
     <Compile Include="FrmMainUtility.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Utility\ExtractionRulesItem.cs" />
     <Compile Include="Utility\TaskResultLog.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Utility\TaskFolderTree.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Utility\TaskViewItem.cs" />
     <EmbeddedResource Include="FrmAboutUS.resx">
       <DependentUpon>FrmAboutUS.cs</DependentUpon>
     </EmbeddedResource>
@@ -324,6 +329,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\timemin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="mainProgram.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

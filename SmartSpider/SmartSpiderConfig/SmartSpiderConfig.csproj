@@ -54,6 +54,7 @@
     <Compile Include="NavigationRule.cs" />
     <Compile Include="NotifyWindowMode.cs" />
     <Compile Include="OnAppendResult.cs" />
+    <Compile Include="OnTaskStatusChanges.cs" />
     <Compile Include="PagedUrlPattern.cs" />
     <Compile Include="PagedUrlPatternsMode.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

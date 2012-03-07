@@ -123,6 +123,7 @@
             this.label24 = new System.Windows.Forms.Label();
             this.txtIterationFlag = new System.Windows.Forms.TextBox();
             this.tabPage13 = new System.Windows.Forms.TabPage();
+            this.cbxSkipToIfPickingFailed = new System.Windows.Forms.ComboBox();
             this.chbUsePluginOfPickNextPageUrl = new System.Windows.Forms.CheckBox();
             this.chbUsePluginOfPickNextLayerUrls = new System.Windows.Forms.CheckBox();
             this.label28 = new System.Windows.Forms.Label();
@@ -149,6 +150,12 @@
             this.cbxLayerName = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
             this.livNavigationRule = new System.Windows.Forms.ListView();
+            this.LayerNumber = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.LayerName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.EndPage = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ExtractNextlayer = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.NextLayerUrlTemplate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ExtractNextPage = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
             this.txtPreviousFlag = new System.Windows.Forms.TextBox();
@@ -220,13 +227,20 @@
             this.cbxName = new System.Windows.Forms.ComboBox();
             this.label41 = new System.Windows.Forms.Label();
             this.LivExtractionRule = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
             this.groupBox15 = new System.Windows.Forms.GroupBox();
             this.chbSaveErrorRows = new System.Windows.Forms.CheckBox();
             this.chbSaveRepeatedRows = new System.Windows.Forms.CheckBox();
             this.chbDeleteResultAfterPublication = new System.Windows.Forms.CheckBox();
-            this.checkBox20 = new System.Windows.Forms.CheckBox();
+            this.chbIgnoreDataColumnNotFound = new System.Windows.Forms.CheckBox();
             this.groupBox14 = new System.Windows.Forms.GroupBox();
             this.cbxPublicationTarget = new System.Windows.Forms.ComboBox();
             this.label36 = new System.Windows.Forms.Label();
@@ -234,11 +248,11 @@
             this.button33 = new System.Windows.Forms.Button();
             this.txtConnectionString = new System.Windows.Forms.TextBox();
             this.label35 = new System.Windows.Forms.Label();
-            this.radioButton15 = new System.Windows.Forms.RadioButton();
-            this.radioButton14 = new System.Windows.Forms.RadioButton();
-            this.radioButton13 = new System.Windows.Forms.RadioButton();
-            this.radioButton12 = new System.Windows.Forms.RadioButton();
-            this.radioButton11 = new System.Windows.Forms.RadioButton();
+            this.rdoDataTypeSqlLite = new System.Windows.Forms.RadioButton();
+            this.rdoDataTypeOracle = new System.Windows.Forms.RadioButton();
+            this.rdoDataTypeMySql = new System.Windows.Forms.RadioButton();
+            this.rdoDataTypeSqlServer = new System.Windows.Forms.RadioButton();
+            this.rdoDataTypeAccess = new System.Windows.Forms.RadioButton();
             this.label34 = new System.Windows.Forms.Label();
             this.radioButton10 = new System.Windows.Forms.RadioButton();
             this.radioButton9 = new System.Windows.Forms.RadioButton();
@@ -262,20 +276,6 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.linkViewSourceFile = new System.Windows.Forms.LinkLabel();
-            this.LayerNumber = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.LayerName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.EndPage = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.ExtractNextlayer = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.NextLayerUrlTemplate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.ExtractNextPage = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.cbxSkipToIfPickingFailed = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -1446,6 +1446,16 @@
             this.tabPage13.Text = "高级选项";
             this.tabPage13.UseVisualStyleBackColor = true;
             // 
+            // cbxSkipToIfPickingFailed
+            // 
+            this.cbxSkipToIfPickingFailed.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cbxSkipToIfPickingFailed.FormattingEnabled = true;
+            this.cbxSkipToIfPickingFailed.Location = new System.Drawing.Point(209, 76);
+            this.cbxSkipToIfPickingFailed.Name = "cbxSkipToIfPickingFailed";
+            this.cbxSkipToIfPickingFailed.Size = new System.Drawing.Size(169, 20);
+            this.cbxSkipToIfPickingFailed.TabIndex = 27;
+            this.cbxSkipToIfPickingFailed.Text = "最终页面";
+            // 
             // chbUsePluginOfPickNextPageUrl
             // 
             this.chbUsePluginOfPickNextPageUrl.AutoSize = true;
@@ -1728,6 +1738,35 @@
             this.livNavigationRule.TabIndex = 0;
             this.livNavigationRule.UseCompatibleStateImageBehavior = false;
             this.livNavigationRule.View = System.Windows.Forms.View.Details;
+            // 
+            // LayerNumber
+            // 
+            this.LayerNumber.Text = "层次";
+            // 
+            // LayerName
+            // 
+            this.LayerName.Text = "层次名称";
+            this.LayerName.Width = 120;
+            // 
+            // EndPage
+            // 
+            this.EndPage.Text = "最终页面";
+            this.EndPage.Width = 80;
+            // 
+            // ExtractNextlayer
+            // 
+            this.ExtractNextlayer.Text = "提取下一层";
+            this.ExtractNextlayer.Width = 80;
+            // 
+            // NextLayerUrlTemplate
+            // 
+            this.NextLayerUrlTemplate.Text = "下一层网址模板";
+            this.NextLayerUrlTemplate.Width = 300;
+            // 
+            // ExtractNextPage
+            // 
+            this.ExtractNextPage.Text = "提取下一页";
+            this.ExtractNextPage.Width = 80;
             // 
             // tabPage4
             // 
@@ -2530,6 +2569,40 @@
             this.LivExtractionRule.UseCompatibleStateImageBehavior = false;
             this.LivExtractionRule.View = System.Windows.Forms.View.Details;
             // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "序号";
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "规则名称";
+            this.columnHeader2.Width = 120;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "所属层析";
+            this.columnHeader3.Width = 80;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "数据列名";
+            this.columnHeader4.Width = 80;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "不能重复";
+            this.columnHeader5.Width = 80;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "信息前标志";
+            this.columnHeader6.Width = 150;
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "信息后标志";
+            this.columnHeader7.Width = 150;
+            // 
             // tabPage5
             // 
             this.tabPage5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -2559,7 +2632,7 @@
             this.groupBox15.Controls.Add(this.chbSaveErrorRows);
             this.groupBox15.Controls.Add(this.chbSaveRepeatedRows);
             this.groupBox15.Controls.Add(this.chbDeleteResultAfterPublication);
-            this.groupBox15.Controls.Add(this.checkBox20);
+            this.groupBox15.Controls.Add(this.chbIgnoreDataColumnNotFound);
             this.groupBox15.Location = new System.Drawing.Point(18, 236);
             this.groupBox15.Name = "groupBox15";
             this.groupBox15.Size = new System.Drawing.Size(697, 194);
@@ -2600,16 +2673,16 @@
             this.chbDeleteResultAfterPublication.Text = "从结果文件发布到数据库时，同时删除结果文件中的数据";
             this.chbDeleteResultAfterPublication.UseVisualStyleBackColor = true;
             // 
-            // checkBox20
+            // chbIgnoreDataColumnNotFound
             // 
-            this.checkBox20.AutoSize = true;
-            this.checkBox20.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.checkBox20.Location = new System.Drawing.Point(21, 20);
-            this.checkBox20.Name = "checkBox20";
-            this.checkBox20.Size = new System.Drawing.Size(310, 16);
-            this.checkBox20.TabIndex = 24;
-            this.checkBox20.Text = "在数据库中找不到对应字段或存储过程参数时忽略错误";
-            this.checkBox20.UseVisualStyleBackColor = true;
+            this.chbIgnoreDataColumnNotFound.AutoSize = true;
+            this.chbIgnoreDataColumnNotFound.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.chbIgnoreDataColumnNotFound.Location = new System.Drawing.Point(21, 20);
+            this.chbIgnoreDataColumnNotFound.Name = "chbIgnoreDataColumnNotFound";
+            this.chbIgnoreDataColumnNotFound.Size = new System.Drawing.Size(310, 16);
+            this.chbIgnoreDataColumnNotFound.TabIndex = 24;
+            this.chbIgnoreDataColumnNotFound.Text = "在数据库中找不到对应字段或存储过程参数时忽略错误";
+            this.chbIgnoreDataColumnNotFound.UseVisualStyleBackColor = true;
             // 
             // groupBox14
             // 
@@ -2619,11 +2692,11 @@
             this.groupBox14.Controls.Add(this.button33);
             this.groupBox14.Controls.Add(this.txtConnectionString);
             this.groupBox14.Controls.Add(this.label35);
-            this.groupBox14.Controls.Add(this.radioButton15);
-            this.groupBox14.Controls.Add(this.radioButton14);
-            this.groupBox14.Controls.Add(this.radioButton13);
-            this.groupBox14.Controls.Add(this.radioButton12);
-            this.groupBox14.Controls.Add(this.radioButton11);
+            this.groupBox14.Controls.Add(this.rdoDataTypeSqlLite);
+            this.groupBox14.Controls.Add(this.rdoDataTypeOracle);
+            this.groupBox14.Controls.Add(this.rdoDataTypeMySql);
+            this.groupBox14.Controls.Add(this.rdoDataTypeSqlServer);
+            this.groupBox14.Controls.Add(this.rdoDataTypeAccess);
             this.groupBox14.Controls.Add(this.label34);
             this.groupBox14.Location = new System.Drawing.Point(18, 55);
             this.groupBox14.Name = "groupBox14";
@@ -2688,65 +2761,65 @@
             this.label35.TabIndex = 13;
             this.label35.Text = "连接串";
             // 
-            // radioButton15
+            // rdoDataTypeSqlLite
             // 
-            this.radioButton15.AutoSize = true;
-            this.radioButton15.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.radioButton15.Location = new System.Drawing.Point(385, 45);
-            this.radioButton15.Name = "radioButton15";
-            this.radioButton15.Size = new System.Drawing.Size(46, 16);
-            this.radioButton15.TabIndex = 11;
-            this.radioButton15.TabStop = true;
-            this.radioButton15.Text = "其他";
-            this.radioButton15.UseVisualStyleBackColor = true;
+            this.rdoDataTypeSqlLite.AutoSize = true;
+            this.rdoDataTypeSqlLite.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.rdoDataTypeSqlLite.Location = new System.Drawing.Point(385, 45);
+            this.rdoDataTypeSqlLite.Name = "rdoDataTypeSqlLite";
+            this.rdoDataTypeSqlLite.Size = new System.Drawing.Size(64, 16);
+            this.rdoDataTypeSqlLite.TabIndex = 11;
+            this.rdoDataTypeSqlLite.TabStop = true;
+            this.rdoDataTypeSqlLite.Text = "SqlLite";
+            this.rdoDataTypeSqlLite.UseVisualStyleBackColor = true;
             // 
-            // radioButton14
+            // rdoDataTypeOracle
             // 
-            this.radioButton14.AutoSize = true;
-            this.radioButton14.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.radioButton14.Location = new System.Drawing.Point(292, 45);
-            this.radioButton14.Name = "radioButton14";
-            this.radioButton14.Size = new System.Drawing.Size(58, 16);
-            this.radioButton14.TabIndex = 10;
-            this.radioButton14.TabStop = true;
-            this.radioButton14.Text = "Oracle";
-            this.radioButton14.UseVisualStyleBackColor = true;
+            this.rdoDataTypeOracle.AutoSize = true;
+            this.rdoDataTypeOracle.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.rdoDataTypeOracle.Location = new System.Drawing.Point(292, 45);
+            this.rdoDataTypeOracle.Name = "rdoDataTypeOracle";
+            this.rdoDataTypeOracle.Size = new System.Drawing.Size(58, 16);
+            this.rdoDataTypeOracle.TabIndex = 10;
+            this.rdoDataTypeOracle.TabStop = true;
+            this.rdoDataTypeOracle.Text = "Oracle";
+            this.rdoDataTypeOracle.UseVisualStyleBackColor = true;
             // 
-            // radioButton13
+            // rdoDataTypeMySql
             // 
-            this.radioButton13.AutoSize = true;
-            this.radioButton13.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.radioButton13.Location = new System.Drawing.Point(198, 45);
-            this.radioButton13.Name = "radioButton13";
-            this.radioButton13.Size = new System.Drawing.Size(52, 16);
-            this.radioButton13.TabIndex = 9;
-            this.radioButton13.TabStop = true;
-            this.radioButton13.Text = "MySql";
-            this.radioButton13.UseVisualStyleBackColor = true;
+            this.rdoDataTypeMySql.AutoSize = true;
+            this.rdoDataTypeMySql.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.rdoDataTypeMySql.Location = new System.Drawing.Point(198, 45);
+            this.rdoDataTypeMySql.Name = "rdoDataTypeMySql";
+            this.rdoDataTypeMySql.Size = new System.Drawing.Size(52, 16);
+            this.rdoDataTypeMySql.TabIndex = 9;
+            this.rdoDataTypeMySql.TabStop = true;
+            this.rdoDataTypeMySql.Text = "MySql";
+            this.rdoDataTypeMySql.UseVisualStyleBackColor = true;
             // 
-            // radioButton12
+            // rdoDataTypeSqlServer
             // 
-            this.radioButton12.AutoSize = true;
-            this.radioButton12.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.radioButton12.Location = new System.Drawing.Point(110, 45);
-            this.radioButton12.Name = "radioButton12";
-            this.radioButton12.Size = new System.Drawing.Size(82, 16);
-            this.radioButton12.TabIndex = 8;
-            this.radioButton12.TabStop = true;
-            this.radioButton12.Text = "SQL Server";
-            this.radioButton12.UseVisualStyleBackColor = true;
+            this.rdoDataTypeSqlServer.AutoSize = true;
+            this.rdoDataTypeSqlServer.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.rdoDataTypeSqlServer.Location = new System.Drawing.Point(110, 45);
+            this.rdoDataTypeSqlServer.Name = "rdoDataTypeSqlServer";
+            this.rdoDataTypeSqlServer.Size = new System.Drawing.Size(82, 16);
+            this.rdoDataTypeSqlServer.TabIndex = 8;
+            this.rdoDataTypeSqlServer.TabStop = true;
+            this.rdoDataTypeSqlServer.Text = "SQL Server";
+            this.rdoDataTypeSqlServer.UseVisualStyleBackColor = true;
             // 
-            // radioButton11
+            // rdoDataTypeAccess
             // 
-            this.radioButton11.AutoSize = true;
-            this.radioButton11.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.radioButton11.Location = new System.Drawing.Point(21, 45);
-            this.radioButton11.Name = "radioButton11";
-            this.radioButton11.Size = new System.Drawing.Size(58, 16);
-            this.radioButton11.TabIndex = 7;
-            this.radioButton11.TabStop = true;
-            this.radioButton11.Text = "Access";
-            this.radioButton11.UseVisualStyleBackColor = true;
+            this.rdoDataTypeAccess.AutoSize = true;
+            this.rdoDataTypeAccess.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.rdoDataTypeAccess.Location = new System.Drawing.Point(21, 45);
+            this.rdoDataTypeAccess.Name = "rdoDataTypeAccess";
+            this.rdoDataTypeAccess.Size = new System.Drawing.Size(58, 16);
+            this.rdoDataTypeAccess.TabIndex = 7;
+            this.rdoDataTypeAccess.TabStop = true;
+            this.rdoDataTypeAccess.Text = "Access";
+            this.rdoDataTypeAccess.UseVisualStyleBackColor = true;
             // 
             // label34
             // 
@@ -2995,79 +3068,6 @@
             this.linkViewSourceFile.TabIndex = 4;
             this.linkViewSourceFile.TabStop = true;
             this.linkViewSourceFile.Text = "点击打开《源文件查看器》";
-            // 
-            // LayerNumber
-            // 
-            this.LayerNumber.Text = "层次";
-            // 
-            // LayerName
-            // 
-            this.LayerName.Text = "层次名称";
-            this.LayerName.Width = 120;
-            // 
-            // EndPage
-            // 
-            this.EndPage.Text = "最终页面";
-            this.EndPage.Width = 80;
-            // 
-            // ExtractNextlayer
-            // 
-            this.ExtractNextlayer.Text = "提取下一层";
-            this.ExtractNextlayer.Width = 80;
-            // 
-            // NextLayerUrlTemplate
-            // 
-            this.NextLayerUrlTemplate.Text = "下一层网址模板";
-            this.NextLayerUrlTemplate.Width = 300;
-            // 
-            // ExtractNextPage
-            // 
-            this.ExtractNextPage.Text = "提取下一页";
-            this.ExtractNextPage.Width = 80;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "序号";
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "规则名称";
-            this.columnHeader2.Width = 120;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "所属层析";
-            this.columnHeader3.Width = 80;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "数据列名";
-            this.columnHeader4.Width = 80;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "不能重复";
-            this.columnHeader5.Width = 80;
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "信息前标志";
-            this.columnHeader6.Width = 150;
-            // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "信息后标志";
-            this.columnHeader7.Width = 150;
-            // 
-            // cbxSkipToIfPickingFailed
-            // 
-            this.cbxSkipToIfPickingFailed.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cbxSkipToIfPickingFailed.FormattingEnabled = true;
-            this.cbxSkipToIfPickingFailed.Location = new System.Drawing.Point(209, 76);
-            this.cbxSkipToIfPickingFailed.Name = "cbxSkipToIfPickingFailed";
-            this.cbxSkipToIfPickingFailed.Size = new System.Drawing.Size(169, 20);
-            this.cbxSkipToIfPickingFailed.TabIndex = 27;
-            this.cbxSkipToIfPickingFailed.Text = "最终页面";
             // 
             // FrmTask
             // 
@@ -3382,11 +3382,11 @@
         private System.Windows.Forms.RadioButton radioButton9;
         private System.Windows.Forms.GroupBox groupBox14;
         private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.RadioButton radioButton11;
-        private System.Windows.Forms.RadioButton radioButton15;
-        private System.Windows.Forms.RadioButton radioButton14;
-        private System.Windows.Forms.RadioButton radioButton13;
-        private System.Windows.Forms.RadioButton radioButton12;
+        private System.Windows.Forms.RadioButton rdoDataTypeAccess;
+        private System.Windows.Forms.RadioButton rdoDataTypeSqlLite;
+        private System.Windows.Forms.RadioButton rdoDataTypeOracle;
+        private System.Windows.Forms.RadioButton rdoDataTypeMySql;
+        private System.Windows.Forms.RadioButton rdoDataTypeSqlServer;
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.TextBox txtConnectionString;
         private System.Windows.Forms.Button button33;
@@ -3397,7 +3397,7 @@
         private System.Windows.Forms.CheckBox chbSaveErrorRows;
         private System.Windows.Forms.CheckBox chbSaveRepeatedRows;
         private System.Windows.Forms.CheckBox chbDeleteResultAfterPublication;
-        private System.Windows.Forms.CheckBox checkBox20;
+        private System.Windows.Forms.CheckBox chbIgnoreDataColumnNotFound;
         private System.Windows.Forms.GroupBox groupBox16;
         private System.Windows.Forms.TextBox txtPluginPath;
         private System.Windows.Forms.Label label37;

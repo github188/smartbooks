@@ -15,7 +15,7 @@ namespace SmartSpider.Config {
         /// <param name="taskPath">Task配置文件路径</param>
         /// <param name="pluginPath">插件配置路径</param>
         /// <param name="smartSpiderInfo">客户端信息(验证用)</param>
-        /// <param name="action">任务状态</param>
+        /// <param name="sender">任务状态</param>
         /// <param name="firstCall">完成后是否回调</param>
         public void Create(string taskPath, string pluginPath, SmartSpiderInformation smartSpiderInfo, Action action, bool firstCall) {
             throw new NotImplementedException();
@@ -24,7 +24,7 @@ namespace SmartSpider.Config {
         /// <summary>
         /// 释放资源
         /// </summary>
-        /// <param name="action">任务状态</param>
+        /// <param name="sender">任务状态</param>
         public void Dispose(Action action) {
             throw new NotImplementedException();
         }

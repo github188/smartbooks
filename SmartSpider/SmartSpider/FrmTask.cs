@@ -48,15 +48,37 @@
             this.chbDisableScheduleAfterFinish.Checked = this._TaskUnit.TaskConfig.DisableScheduleAfterFinish;          //取消定时采集
             this.txtPluginPath.Text = this._TaskUnit.TaskConfig.PluginPath;                                             //插件路径
             this.chbUseProcedure.Checked = this._TaskUnit.TaskConfig.UseProcedure;                                      //使用存储过程
-                        
+            this.chbIgnoreDataColumnNotFound.Checked = this._TaskUnit.TaskConfig.IgnoreDataColumnNotFound;              //忽略不存在的数据列
+            this.rdbAutoLogin.Checked = this._TaskUnit.TaskConfig.LoginAutomatically;                                   //自动登录
+            //this.rdbManualLogin.Checked = this._TaskUnit.TaskConfig.LoginAtRegularIntervals;                            //定期登录
+            #region 数据库类型
+            switch (this._TaskUnit.TaskConfig.DatabaseType) {
+                case DatabaseType.Access :
+                    rdoDataTypeAccess.Checked = true;
+                    break;
+                case DatabaseType.MySql :
+                    rdoDataTypeMySql.Checked = true;
+                    break;
+                case DatabaseType.Oracle :
+                    rdoDataTypeOracle.Checked = true;
+                    break;
+                case DatabaseType.SqlLite :
+                    rdoDataTypeSqlLite.Checked = true;
+                    break;
+                case DatabaseType.SqlServer :
+                    rdoDataTypeSqlServer.Checked = true;
+                    break;
+            }
+            #endregion
+            
             //CurrentResultCount
-            //DatabaseType
             //ElapsedTime
             //ErrorRowsCount
-            //ExtractionRules
-            //IgnoreDataColumnNotFound
             //lastLogFileName
+
+            //ExtractionRules            
             //lastStoppingTime
+
             //LoginAtRegularIntervals
             //LoginAutomatically
             //LoginInterval
@@ -64,6 +86,7 @@
             //LoginTargetUrl
             //LoginUrl
             //LoginUrlReferer
+
             //OutputDetailedLog
             //PluginData
             //PublicationTarget

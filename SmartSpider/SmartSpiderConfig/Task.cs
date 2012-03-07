@@ -540,7 +540,7 @@
         }
 
         /// <summary>
-        /// 发布目标-存储过程
+        /// 发布目标：数据库表/存储过程
         /// </summary>
         public string PublicationTarget {
             get {
@@ -563,6 +563,9 @@
             }
         }
 
+        /// <summary>
+        /// 发布结果选项（false保存到结果文件 true直接发布到数据库）
+        /// </summary>
         public bool PublishResultDircetly {
             get {
                 return _PublishResultDircetly;
