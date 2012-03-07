@@ -21,7 +21,8 @@
             this.SubItems.Clear();
             this.rule = rule;
             this.Text = index.ToString();
-            this.ImageKey = "";            
+            this.ImageKey = "taskmin.png";
+            this.Font = new System.Drawing.Font("宋体", 10);
             this.SubItems.Add(new ListViewSubItem(this, rule.Name));
             this.SubItems.Add(new ListViewSubItem(this, rule.Layer.ToString()));
             this.SubItems.Add(new ListViewSubItem(this, rule.DataColumn));

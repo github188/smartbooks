@@ -20,7 +20,7 @@
             this.SubItems.Clear();
             this.rule = rule;
             this.Text = index.ToString();
-            this.ImageKey = "";
+            this.ImageKey = "taskmin.png";
             this.SubItems.Add(new ListViewSubItem(this, rule.Name));    //层次名称
             this.SubItems.Add(new ListViewSubItem(this, rule.Terminal.ToString())); //最终页面            
             this.SubItems.Add(new ListViewSubItem(this, rule.PickNextLayerUrls.ToString()));    //提取下一层网址

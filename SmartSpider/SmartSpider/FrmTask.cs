@@ -21,6 +21,8 @@
             this._TaskUnit = taskUnit;
 
             this.SetUnitToUI();
+
+            
         }
 
         /// <summary>

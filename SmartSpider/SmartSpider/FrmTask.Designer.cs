@@ -23,6 +23,8 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmTask));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -276,6 +278,7 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.linkViewSourceFile = new System.Windows.Forms.LinkLabel();
+            this.imageListTaskEdit = new System.Windows.Forms.ImageList(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -1731,10 +1734,13 @@
             this.ExtractNextlayer,
             this.NextLayerUrlTemplate,
             this.ExtractNextPage});
+            this.livNavigationRule.FullRowSelect = true;
+            this.livNavigationRule.HideSelection = false;
             this.livNavigationRule.Location = new System.Drawing.Point(6, 20);
             this.livNavigationRule.MultiSelect = false;
             this.livNavigationRule.Name = "livNavigationRule";
             this.livNavigationRule.Size = new System.Drawing.Size(722, 124);
+            this.livNavigationRule.SmallImageList = this.imageListTaskEdit;
             this.livNavigationRule.TabIndex = 0;
             this.livNavigationRule.UseCompatibleStateImageBehavior = false;
             this.livNavigationRule.View = System.Windows.Forms.View.Details;
@@ -2562,11 +2568,15 @@
             this.columnHeader5,
             this.columnHeader6,
             this.columnHeader7});
+            this.LivExtractionRule.Font = new System.Drawing.Font("宋体", 9F);
             this.LivExtractionRule.FullRowSelect = true;
+            this.LivExtractionRule.HideSelection = false;
             this.LivExtractionRule.Location = new System.Drawing.Point(6, 20);
             this.LivExtractionRule.MultiSelect = false;
             this.LivExtractionRule.Name = "LivExtractionRule";
+            this.LivExtractionRule.ShowItemToolTips = true;
             this.LivExtractionRule.Size = new System.Drawing.Size(722, 124);
+            this.LivExtractionRule.SmallImageList = this.imageListTaskEdit;
             this.LivExtractionRule.TabIndex = 0;
             this.LivExtractionRule.UseCompatibleStateImageBehavior = false;
             this.LivExtractionRule.View = System.Windows.Forms.View.Details;
@@ -3074,6 +3084,12 @@
             this.linkViewSourceFile.TabStop = true;
             this.linkViewSourceFile.Text = "点击打开《源文件查看器》";
             // 
+            // imageListTaskEdit
+            // 
+            this.imageListTaskEdit.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListTaskEdit.ImageStream")));
+            this.imageListTaskEdit.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageListTaskEdit.Images.SetKeyName(0, "taskmin.png");
+            // 
             // FrmTask
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -3432,5 +3448,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.ComboBox cbxSkipToIfPickingFailed;
+        private System.Windows.Forms.ImageList imageListTaskEdit;
     }
 }
