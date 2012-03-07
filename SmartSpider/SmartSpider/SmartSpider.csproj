@@ -91,6 +91,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Utility\ExtractionRulesItem.cs" />
+    <Compile Include="Utility\NavigationRuleItem.cs" />
     <Compile Include="Utility\TaskResultLog.cs">
       <SubType>Component</SubType>
     </Compile>

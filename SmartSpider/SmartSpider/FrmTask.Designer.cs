@@ -30,9 +30,9 @@
             this.SetScheduleLimitTimeRange = new System.Windows.Forms.LinkLabel();
             this.chbScheduleLimitTimeRange = new System.Windows.Forms.CheckBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.nudSecond = new System.Windows.Forms.NumericUpDown();
+            this.nudScheduleMinutes = new System.Windows.Forms.NumericUpDown();
             this.label9 = new System.Windows.Forms.Label();
-            this.nudMinute = new System.Windows.Forms.NumericUpDown();
+            this.nudScheduleHours = new System.Windows.Forms.NumericUpDown();
             this.label8 = new System.Windows.Forms.Label();
             this.nudScheduleDays = new System.Windows.Forms.NumericUpDown();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
@@ -254,8 +254,8 @@
             this.rdoDataTypeSqlServer = new System.Windows.Forms.RadioButton();
             this.rdoDataTypeAccess = new System.Windows.Forms.RadioButton();
             this.label34 = new System.Windows.Forms.Label();
-            this.radioButton10 = new System.Windows.Forms.RadioButton();
-            this.radioButton9 = new System.Windows.Forms.RadioButton();
+            this.rdoResultSaveDB = new System.Windows.Forms.RadioButton();
+            this.rdoResultSaveFile = new System.Windows.Forms.RadioButton();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.groupBox16 = new System.Windows.Forms.GroupBox();
             this.groupBox19 = new System.Windows.Forms.GroupBox();
@@ -263,7 +263,7 @@
             this.checkBox47 = new System.Windows.Forms.CheckBox();
             this.chbUsePluginOfProcessResultRow = new System.Windows.Forms.CheckBox();
             this.groupBox18 = new System.Windows.Forms.GroupBox();
-            this.checkBox45 = new System.Windows.Forms.CheckBox();
+            this.chbUsePluginOfDownloadSingleFile = new System.Windows.Forms.CheckBox();
             this.chbUsePluginOfDownloadContentFile = new System.Windows.Forms.CheckBox();
             this.groupBox17 = new System.Windows.Forms.GroupBox();
             this.chbUsePluginOfProcessSingleFile = new System.Windows.Forms.CheckBox();
@@ -279,8 +279,8 @@
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudSecond)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMinute)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudScheduleMinutes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudScheduleHours)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudScheduleDays)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -363,9 +363,9 @@
             this.groupBox4.Controls.Add(this.SetScheduleLimitTimeRange);
             this.groupBox4.Controls.Add(this.chbScheduleLimitTimeRange);
             this.groupBox4.Controls.Add(this.label10);
-            this.groupBox4.Controls.Add(this.nudSecond);
+            this.groupBox4.Controls.Add(this.nudScheduleMinutes);
             this.groupBox4.Controls.Add(this.label9);
-            this.groupBox4.Controls.Add(this.nudMinute);
+            this.groupBox4.Controls.Add(this.nudScheduleHours);
             this.groupBox4.Controls.Add(this.label8);
             this.groupBox4.Controls.Add(this.nudScheduleDays);
             this.groupBox4.Controls.Add(this.radioButton4);
@@ -417,15 +417,15 @@
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(17, 12);
             this.label10.TabIndex = 11;
-            this.label10.Text = "秒";
+            this.label10.Text = "分";
             // 
-            // nudSecond
+            // nudScheduleMinutes
             // 
-            this.nudSecond.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.nudSecond.Location = new System.Drawing.Point(541, 20);
-            this.nudSecond.Name = "nudSecond";
-            this.nudSecond.Size = new System.Drawing.Size(70, 21);
-            this.nudSecond.TabIndex = 10;
+            this.nudScheduleMinutes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.nudScheduleMinutes.Location = new System.Drawing.Point(541, 20);
+            this.nudScheduleMinutes.Name = "nudScheduleMinutes";
+            this.nudScheduleMinutes.Size = new System.Drawing.Size(70, 21);
+            this.nudScheduleMinutes.TabIndex = 10;
             // 
             // label9
             // 
@@ -434,15 +434,15 @@
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(17, 12);
             this.label9.TabIndex = 9;
-            this.label9.Text = "分";
+            this.label9.Text = "时";
             // 
-            // nudMinute
+            // nudScheduleHours
             // 
-            this.nudMinute.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.nudMinute.Location = new System.Drawing.Point(442, 20);
-            this.nudMinute.Name = "nudMinute";
-            this.nudMinute.Size = new System.Drawing.Size(70, 21);
-            this.nudMinute.TabIndex = 8;
+            this.nudScheduleHours.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.nudScheduleHours.Location = new System.Drawing.Point(442, 20);
+            this.nudScheduleHours.Name = "nudScheduleHours";
+            this.nudScheduleHours.Size = new System.Drawing.Size(70, 21);
+            this.nudScheduleHours.TabIndex = 8;
             // 
             // label8
             // 
@@ -2618,8 +2618,8 @@
             // 
             this.groupBox13.Controls.Add(this.groupBox15);
             this.groupBox13.Controls.Add(this.groupBox14);
-            this.groupBox13.Controls.Add(this.radioButton10);
-            this.groupBox13.Controls.Add(this.radioButton9);
+            this.groupBox13.Controls.Add(this.rdoResultSaveDB);
+            this.groupBox13.Controls.Add(this.rdoResultSaveFile);
             this.groupBox13.Location = new System.Drawing.Point(3, 3);
             this.groupBox13.Name = "groupBox13";
             this.groupBox13.Size = new System.Drawing.Size(734, 436);
@@ -2830,29 +2830,29 @@
             this.label34.TabIndex = 0;
             this.label34.Text = "数据库类型";
             // 
-            // radioButton10
+            // rdoResultSaveDB
             // 
-            this.radioButton10.AutoSize = true;
-            this.radioButton10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.radioButton10.Location = new System.Drawing.Point(310, 29);
-            this.radioButton10.Name = "radioButton10";
-            this.radioButton10.Size = new System.Drawing.Size(118, 16);
-            this.radioButton10.TabIndex = 6;
-            this.radioButton10.TabStop = true;
-            this.radioButton10.Text = "直接发布到数据库";
-            this.radioButton10.UseVisualStyleBackColor = true;
+            this.rdoResultSaveDB.AutoSize = true;
+            this.rdoResultSaveDB.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.rdoResultSaveDB.Location = new System.Drawing.Point(310, 29);
+            this.rdoResultSaveDB.Name = "rdoResultSaveDB";
+            this.rdoResultSaveDB.Size = new System.Drawing.Size(118, 16);
+            this.rdoResultSaveDB.TabIndex = 6;
+            this.rdoResultSaveDB.TabStop = true;
+            this.rdoResultSaveDB.Text = "直接发布到数据库";
+            this.rdoResultSaveDB.UseVisualStyleBackColor = true;
             // 
-            // radioButton9
+            // rdoResultSaveFile
             // 
-            this.radioButton9.AutoSize = true;
-            this.radioButton9.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.radioButton9.Location = new System.Drawing.Point(18, 29);
-            this.radioButton9.Name = "radioButton9";
-            this.radioButton9.Size = new System.Drawing.Size(238, 16);
-            this.radioButton9.TabIndex = 5;
-            this.radioButton9.TabStop = true;
-            this.radioButton9.Text = "保存到结果文件（以后可以发布或导出）";
-            this.radioButton9.UseVisualStyleBackColor = true;
+            this.rdoResultSaveFile.AutoSize = true;
+            this.rdoResultSaveFile.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.rdoResultSaveFile.Location = new System.Drawing.Point(18, 29);
+            this.rdoResultSaveFile.Name = "rdoResultSaveFile";
+            this.rdoResultSaveFile.Size = new System.Drawing.Size(238, 16);
+            this.rdoResultSaveFile.TabIndex = 5;
+            this.rdoResultSaveFile.TabStop = true;
+            this.rdoResultSaveFile.Text = "保存到结果文件（以后可以发布或导出）";
+            this.rdoResultSaveFile.UseVisualStyleBackColor = true;
             // 
             // tabPage6
             // 
@@ -2928,7 +2928,7 @@
             // 
             // groupBox18
             // 
-            this.groupBox18.Controls.Add(this.checkBox45);
+            this.groupBox18.Controls.Add(this.chbUsePluginOfDownloadSingleFile);
             this.groupBox18.Controls.Add(this.chbUsePluginOfDownloadContentFile);
             this.groupBox18.Location = new System.Drawing.Point(18, 160);
             this.groupBox18.Name = "groupBox18";
@@ -2937,16 +2937,16 @@
             this.groupBox18.TabStop = false;
             this.groupBox18.Text = "使用插件下载文件（替代软件）";
             // 
-            // checkBox45
+            // chbUsePluginOfDownloadSingleFile
             // 
-            this.checkBox45.AutoSize = true;
-            this.checkBox45.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.checkBox45.Location = new System.Drawing.Point(16, 42);
-            this.checkBox45.Name = "checkBox45";
-            this.checkBox45.Size = new System.Drawing.Size(142, 16);
-            this.checkBox45.TabIndex = 30;
-            this.checkBox45.Text = "使用插件下载独立文件";
-            this.checkBox45.UseVisualStyleBackColor = true;
+            this.chbUsePluginOfDownloadSingleFile.AutoSize = true;
+            this.chbUsePluginOfDownloadSingleFile.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.chbUsePluginOfDownloadSingleFile.Location = new System.Drawing.Point(16, 42);
+            this.chbUsePluginOfDownloadSingleFile.Name = "chbUsePluginOfDownloadSingleFile";
+            this.chbUsePluginOfDownloadSingleFile.Size = new System.Drawing.Size(142, 16);
+            this.chbUsePluginOfDownloadSingleFile.TabIndex = 30;
+            this.chbUsePluginOfDownloadSingleFile.Text = "使用插件下载独立文件";
+            this.chbUsePluginOfDownloadSingleFile.UseVisualStyleBackColor = true;
             // 
             // chbUsePluginOfDownloadContentFile
             // 
@@ -3038,6 +3038,7 @@
             this.btnAccept.TabIndex = 1;
             this.btnAccept.Text = "应用(&A)";
             this.btnAccept.UseVisualStyleBackColor = true;
+            this.btnAccept.Click += new System.EventHandler(this.btnAccept_Click);
             // 
             // btnCancel
             // 
@@ -3048,6 +3049,7 @@
             this.btnCancel.TabIndex = 2;
             this.btnCancel.Text = "取消(&C)";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSubmit
             // 
@@ -3058,6 +3060,7 @@
             this.btnSubmit.TabIndex = 3;
             this.btnSubmit.Text = "确定(&O)";
             this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // linkViewSourceFile
             // 
@@ -3092,8 +3095,8 @@
             this.tabPage1.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudSecond)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMinute)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudScheduleMinutes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudScheduleHours)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudScheduleDays)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
@@ -3213,9 +3216,9 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.NumericUpDown nudScheduleDays;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.NumericUpDown nudMinute;
+        private System.Windows.Forms.NumericUpDown nudScheduleHours;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.NumericUpDown nudSecond;
+        private System.Windows.Forms.NumericUpDown nudScheduleMinutes;
         private System.Windows.Forms.CheckBox chbScheduleLimitTimeRange;
         private System.Windows.Forms.LinkLabel SetScheduleLimitTimeRange;
         private System.Windows.Forms.CheckBox chbDisableScheduleAfterFinish;
@@ -3378,8 +3381,8 @@
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.TextBox txtMergenceSeparator;
         private System.Windows.Forms.GroupBox groupBox13;
-        private System.Windows.Forms.RadioButton radioButton10;
-        private System.Windows.Forms.RadioButton radioButton9;
+        private System.Windows.Forms.RadioButton rdoResultSaveDB;
+        private System.Windows.Forms.RadioButton rdoResultSaveFile;
         private System.Windows.Forms.GroupBox groupBox14;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.RadioButton rdoDataTypeAccess;
@@ -3408,7 +3411,7 @@
         private System.Windows.Forms.GroupBox groupBox19;
         private System.Windows.Forms.CheckBox checkBox47;
         private System.Windows.Forms.CheckBox chbUsePluginOfProcessResultRow;
-        private System.Windows.Forms.CheckBox checkBox45;
+        private System.Windows.Forms.CheckBox chbUsePluginOfDownloadSingleFile;
         private System.Windows.Forms.CheckBox chbUsePluginOfDownloadContentFile;
         private System.Windows.Forms.CheckBox chbUsePluginOfProcessSingleFile;
         private System.Windows.Forms.CheckBox chbUsePluginOfProcessContentFile;

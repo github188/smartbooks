@@ -1,6 +1,4 @@
-﻿
-
-namespace SmartSpider.Utility {
+﻿namespace SmartSpider.Utility {
     using System;
     using System.Collections.Generic;
     using System.Text;
@@ -11,5 +9,25 @@ namespace SmartSpider.Utility {
     /// 提取规则项
     /// </summary>
     public class ExtractionRulesItem : ListViewItem {
+
+        public ExtractionRule rule;
+
+        /// <summary>
+        /// 构造函数
+        /// </summary>
+        /// <param name="rule">采集规则</param>
+        ///<param name="index">层次编号</param>
+        public ExtractionRulesItem(ExtractionRule rule, int index) {
+            this.SubItems.Clear();
+            this.rule = rule;
+            this.Text = index.ToString();
+            this.ImageKey = "";            
+            this.SubItems.Add(new ListViewSubItem(this, rule.Name));
+            this.SubItems.Add(new ListViewSubItem(this, rule.Layer.ToString()));
+            this.SubItems.Add(new ListViewSubItem(this, rule.DataColumn));
+            this.SubItems.Add(new ListViewSubItem(this, rule.DataUnique.ToString()));
+            this.SubItems.Add(new ListViewSubItem(this, rule.PreviousFlag));
+            this.SubItems.Add(new ListViewSubItem(this, rule.FollowingFlag));
+        }
     }
 }

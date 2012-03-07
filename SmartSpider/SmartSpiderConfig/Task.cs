@@ -16,7 +16,7 @@
 
         public Task() {
             this._State = Config.Action.Ready;
-            this._ElapsedTime = new DateTime();
+            this._ElapsedTime = 0;
             this._StartingTime = new DateTime(1, 1, 1);
             this._ThreadNumber = 1;
             this._OutputDetailedLog = true;
@@ -78,7 +78,7 @@
         private bool _DeleteResultAfterPublication;
         private string _Description;
         private bool _DisableScheduleAfterFinish;
-        private DateTime _ElapsedTime;
+        private int _ElapsedTime;
         private int _ErrorRowsCount;
         private List<ExtractionRule> _ExtractionRules;
         private bool _IgnoreDataColumnNotFound;
@@ -168,9 +168,9 @@
         }
 
         /// <summary>
-        /// 运行时间
+        /// 运行时间(秒)
         /// </summary>
-        public DateTime ElapsedTime {
+        public int ElapsedTime {
             get {
                 return _ElapsedTime;
             }
