@@ -135,35 +135,24 @@
 
             foreach (NavigationRule navigationRole in this._TaskConfig.UrlListManager.NavigationRules) {
                 //监测当前任务状态
-                if (this.Action == Config.Action.Start || this.Action == Config.Action.Continue) {
-                    // 采用深度优先模式提取内容采集结果
-                    string htmlText = "";
-                    try {
-                        htmlText = this._HttpHelper.RequestResult(startUrl);
-                    } catch (Exception e) {
-                        eventArgs.Message = string.Format("请求网址失败 {0},原因 {1}\r\n", start, e.Message);
-                        this.AppendLog();
-                    }
+                // 采用深度优先模式提取内容采集结果
+                string htmlText = "";
+                try {
+                    htmlText = this._HttpHelper.RequestResult(startUrl);
+                } catch (Exception e) {
+                    eventArgs.Message = string.Format("请求网址失败 {0},原因 {1}\r\n", start, e.Message);
+                    this.AppendLog();
+                }
 
-                    //判断是否为最终页面导航规则，如果为最终页面导航规则，则直接提取页面内容。
-                    if (navigationRole.Terminal) {
-                        ThreadPool.QueueUserWorkItem(new WaitCallback(ExtractTheContents), startUrl);
-                    } else {
-                        StringCollection navUrls = this.LoadingNavigationRule(navigationRole, htmlText);
-                        foreach (string url in navUrls) {
-                            //根据导航地址提取内容结果
-                            ThreadPool.QueueUserWorkItem(new WaitCallback(ExtractTheContents), url);
-                        }
+                //判断是否为最终页面导航规则，如果为最终页面导航规则，则直接提取页面内容。
+                if (navigationRole.Terminal) {
+                    ThreadPool.QueueUserWorkItem(new WaitCallback(ExtractTheContents), startUrl);
+                } else {
+                    StringCollection navUrls = this.LoadingNavigationRule(navigationRole, htmlText);
+                    foreach (string url in navUrls) {
+                        //根据导航地址提取内容结果
+                        ThreadPool.QueueUserWorkItem(new WaitCallback(ExtractTheContents), url);
                     }
-                } else if (this.Action == Config.Action.Pause) {
-                    //挂起10秒钟
-                    Thread.Sleep(10000);
-                } else if (this.Action == Config.Action.Stop ||
-                    this.Action == Config.Action.Ready ||
-                    this.Action == Config.Action.Finish) {
-                    //终止线程
-                    Thread.CurrentThread.Abort();
-                    return;
                 }
             }
         }
@@ -173,41 +162,31 @@
         /// </summary>
         /// <param name="param">导航地址Url</param>
         private void ExtractTheContents(object param) {
+            string con = string.Format("{0} {1}\r\n", Thread.CurrentThread.ManagedThreadId.ToString(), DateTime.Now.ToString());
+            File.AppendAllText("c:\\log.txt", con, Encoding.UTF8);
             string contentUrl = (string)param;
+            DataRow row = this._Results.NewRow();
+            string htmlText = "";
             eventArgs.Message = string.Format("采集内容 {0}\r\n", contentUrl);
             this.AppendLog();
-
-            if (this.Action == Config.Action.Start || this.Action == Config.Action.Continue) {
-                DataRow row = this._Results.NewRow();
-
-                string htmlText = "";
-                try {
-                    //请求Web服务器返回Html文本
-                    htmlText = this._HttpHelper.RequestResult(contentUrl);
-                } catch (Exception e) {
-                    eventArgs.Message = string.Format("请求失败 {0} ", contentUrl);
-                    this.AppendLog();
-                    eventArgs.Message = string.Format("原因 {0}\r\n", e.Message);
-                    this.AppendLog();
-                }
-
-                //循环内容采集规则
-                foreach (ExtractionRule extractionRule in this._TaskConfig.ExtractionRules) {
-                    row[extractionRule.Name] = this.LoadingExtractionRule(extractionRule, htmlText);
-                }
-
-                //内容提取结果加入采集结果
-                this._Results.Rows.Add(row);
-                this.onAppendResult();
-            } else if (this.Action == Config.Action.Pause) {
-                //任务暂停状态，挂起10秒钟
-                Thread.Sleep(10000);
-            } else if (this.Action == Config.Action.Stop || this.Action == Config.Action.Ready ||
-                this.Action == Config.Action.Finish) {
-                //终止线程
-                Thread.CurrentThread.Abort();
-                return;
+            try {
+                //请求Web服务器返回Html文本
+                htmlText = this._HttpHelper.RequestResult(contentUrl);
+            } catch (Exception e) {
+                eventArgs.Message = string.Format("请求失败 {0} ", contentUrl);
+                this.AppendLog();
+                eventArgs.Message = string.Format("原因 {0}\r\n", e.Message);
+                this.AppendLog();
             }
+
+            //循环内容采集规则
+            foreach (ExtractionRule extractionRule in this._TaskConfig.ExtractionRules) {
+                row[extractionRule.Name] = this.LoadingExtractionRule(extractionRule, htmlText);
+            }
+
+            //内容提取结果加入采集结果
+            this._Results.Rows.Add(row);
+            this.onAppendResult();
 
             //发布结果
             if (this.TaskConfig.PublishResultDircetly) {
@@ -313,7 +292,7 @@
             foreach (PagedUrlPatterns pageUrl in this._TaskConfig.UrlListManager.PagedUrlPattern) {
                 MatchCollection regexMatch = Regex.Matches(pageUrl.PagedUrlPattern, "{[0-9,-]*}");
                 if (pageUrl.Format == PagedUrlPatternsMode.Increment) { //递增模式
-                    for (int i = pageUrl.StartPage; i < pageUrl.EndPage; i += pageUrl.Step) {
+                    for (double i = pageUrl.StartPage; i <= pageUrl.EndPage; i += pageUrl.Step) {
                         string url = pageUrl.PagedUrlPattern;
                         if (regexMatch.Count != 0) {
                             url = url.Replace(regexMatch[0].Value, i.ToString());
@@ -321,7 +300,7 @@
                         startingUrls.Add(url);
                     }
                 } else if (pageUrl.Format == PagedUrlPatternsMode.Decreasing) { //递减模式
-                    for (int i = pageUrl.EndPage; i > pageUrl.StartPage; i -= pageUrl.Step) {
+                    for (double i = pageUrl.EndPage; i >= pageUrl.StartPage; i -= pageUrl.Step) {
                         string url = pageUrl.PagedUrlPattern;
                         if (regexMatch.Count != 0) {
                             url = url.Replace(regexMatch[0].Value, i.ToString());

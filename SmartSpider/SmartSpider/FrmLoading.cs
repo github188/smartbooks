@@ -15,8 +15,9 @@
             InitializeComponent();
             Task t = new Task();
             t.Name = "新浪新闻-国内";
+            t.Description = "新浪新闻采集";
             t.UrlListManager.PagedUrlPattern.Add(new PagedUrlPatterns() {
-                PagedUrlPattern = @"http://roll.news.sina.com.cn/news/gjxw/hqqw/index_{1,1,5}.shtml",
+                PagedUrlPattern = @"http://roll.news.sina.com.cn/news/gjxw/hqqw/index_{0,5,1}.shtml",
                 Format = PagedUrlPatternsMode.Increment,
                 StartPage = 0,
                 EndPage = 5,

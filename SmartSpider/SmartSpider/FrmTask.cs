@@ -5,6 +5,7 @@
     using System.Data;
     using System.Drawing;
     using System.Text;
+    using System.Text.RegularExpressions;
     using System.Windows.Forms;
     using Config;
     using System.Xml.Serialization;
@@ -21,8 +22,6 @@
             this._TaskUnit = taskUnit;
 
             this.SetUnitToUI();
-
-            
         }
 
         /// <summary>
@@ -32,7 +31,7 @@
         /// <param name="path">文件保存路径</param>
         private void SaveTaskConfig(Task task, string path) {
             XmlSerializer xs = new XmlSerializer(typeof(Task));
-            Stream writeStream = new FileStream(this._TaskUnit.ConfigPath, FileMode.CreateNew, FileAccess.Write, FileShare.Write);
+            Stream writeStream = new FileStream(path, FileMode.Create, FileAccess.Write, FileShare.Write);
             xs.Serialize(writeStream, task);
             writeStream.Close();
             writeStream.Dispose();
@@ -65,7 +64,8 @@
             this.chbUsePluginOfGetWebProxy.Checked = this._TaskUnit.TaskConfig.UsePluginOfGetWebProxy;                  //从插件载入代理服务器
             this.chbUsePluginOfProcessContentFile.Checked = this._TaskUnit.TaskConfig.UsePluginOfProcessContentFile;    //使用插件处理下载后的内容文件
             this.chbUsePluginOfProcessSingleFile.Checked = this._TaskUnit.TaskConfig.UsePluginOfProcessSingleFile;      //使用插件处理单个文件
-            //this.rdbManualLogin.Checked = this._TaskUnit.TaskConfig.LoginAtRegularIntervals;                            //定期登录
+            this.cbxUrlEncoding.Text = this._TaskUnit.TaskConfig.UrlListManager.UrlEncoding;                            //网址编码
+            this.nudHistoryCount.Value = this._TaskUnit.TaskConfig.UrlListManager.HistoryUrlCapacity;                   //历史记录网址最大容量
 
             #region 数据库类型
             switch (this._TaskUnit.TaskConfig.DatabaseType) {
@@ -118,43 +118,10 @@
             foreach (string url in this._TaskUnit.TaskConfig.UrlListManager.StartingUrlList) {
                 this.libStartingUrlList.Items.Add(url);
             }
+            foreach (PagedUrlPatterns p in this._TaskUnit.TaskConfig.UrlListManager.PagedUrlPattern) {
+                this.libStartingUrlList.Items.Add(p.PagedUrlPattern);
+            }
             #endregion
-
-            //CurrentResultCount
-            //ElapsedTime
-            //ErrorRowsCount
-            //lastLogFileName
-            //LoginAtRegularIntervals
-            //LoginAutomatically
-            //LoginInterval
-            //LoginSuccessFlag
-            //LoginTargetUrl
-            //LoginUrl
-            //LoginUrlReferer
-            //PluginData
-            //RepeatedRowsCount
-            //ResultCount
-            //UsePluginOfLogin
-
-            //ExtractionRules            
-            //lastStoppingTime
-
-            //ScheduleDays
-            //ScheduleEnabled
-            //ScheduleFromDay
-            //WeekScheduleFromDayOfWeek
-            //ScheduleFromHour
-            //ScheduleHours
-            //ScheduleLimitTimeRange
-            //ScheduleMinutes
-            //ScheduleModeScheduleMode
-            //ScheduleToDay
-            //WeekScheduleToDayOfWeek
-            //ScheduleToHour
-            //DateTimeStartingTime
-            //ActionState
-
-            //UrlListManagerUrlListManager
         }
 
         /// <summary>
@@ -168,7 +135,7 @@
             t.Description = this.txtDescription.Text;
             t.ThreadNumber = Convert.ToInt32(this.nudThreadNumber.Value);
             t.UrlListManager.UrlEncoding = this.cbxUrlEncoding.Text;
-            t.UrlListManager.HistoryUrlsCount = Convert.ToInt32(this.nudHistoryCount.Value);
+            t.UrlListManager.HistoryUrlCapacity = Convert.ToInt32(this.nudHistoryCount.Value);
             t.OutputDetailedLog = this.chbOutputDetailedLog.Checked;
             t.SaveLogToFile = this.chbSaveLogToFile.Checked;
             t.LoginAutomatically = this.rdbAutoLogin.Checked;
@@ -218,9 +185,26 @@
             }
             #endregion
 
-            #region 起始地址
+            #region 起始地址 {start, end, step}
             foreach (string url in this.libStartingUrlList.Items) {
-                t.UrlListManager.StartingUrlList.Add(url);
+                MatchCollection regexMatch = Regex.Matches(url, "{[0-9,-]*}");
+                if (regexMatch.Count != 0) {
+                    string[] v = regexMatch[0].Value.Replace("}", "").Replace("{","").Split(',');
+                    PagedUrlPatterns p = new PagedUrlPatterns();
+                    p.Format = PagedUrlPatternsMode.Increment;
+                    p.PagedUrlPattern = url;
+                    p.StartPage = Convert.ToDouble(v[0]);
+                    p.EndPage = Convert.ToDouble(v[1]);
+                    if (v.Length >= 3) {
+                        p.Step = Convert.ToDouble(v[2]);
+                    }
+                    if (p.StartPage > p.EndPage) {
+                        p.Format = PagedUrlPatternsMode.Decreasing;
+                    }
+                    t.UrlListManager.PagedUrlPattern.Add(p);
+                } else {
+                    t.UrlListManager.StartingUrlList.Add(url);
+                }
             }
             #endregion
 
@@ -250,6 +234,8 @@
                     this.SaveTaskConfig(t, this._TaskUnit.ConfigPath);
                 }
             }
+            this.Close();
+            this.Dispose();
         }
         //取消
         private void btnCancel_Click(object sender, EventArgs e) {

@@ -9,7 +9,7 @@
     [XmlRoot("PagedUrlPattern")]
     public class PagedUrlPatterns {
         public PagedUrlPatterns() {
-            this._StartPage = 1;
+            this._StartPage = 0;
             this._EndPage = 0;
             this._Step = 1;
             this._Format = PagedUrlPatternsMode.Increment;
@@ -17,11 +17,11 @@
         }
 
         #region 私有变量定义
-        private int _EndPage;
+        private double _EndPage;
         private SmartSpider.Config.PagedUrlPatternsMode _Format;
         private string _PagedUrlPattern;
-        private int _StartPage;
-        private int _Step;
+        private double _StartPage;
+        private double _Step;
         #endregion
 
         #region 公共属性定义
@@ -29,7 +29,7 @@
         /// <summary>
         /// 开始页码
         /// </summary>
-        public int StartPage {
+        public double StartPage {
             get {
                 return _StartPage;
             }
@@ -41,7 +41,7 @@
         /// <summary>
         /// 结束页码
         /// </summary>
-        public int EndPage {
+        public double EndPage {
             get {
                 return _EndPage;
             }
@@ -53,7 +53,7 @@
         /// <summary>
         /// 递增或递减量
         /// </summary>
-        public int Step {
+        public double Step {
             get {
                 return _Step;
             }

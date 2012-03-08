@@ -21,7 +21,7 @@
 
         #region 公共方法定义
         public HttpHelper() {
-            this._WebRequest.Timeout = 10000;   //默认超时10秒钟
+            this._WebRequest.Timeout = 5000;   //默认超时5秒钟
         }
 
         /// <param name="handers">Hander集合</param>
