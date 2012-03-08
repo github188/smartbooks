@@ -40,7 +40,7 @@
         private bool _UsePluginOfPickNextPageUrl;
         private bool _UsePluginOfVisit;
         private bool _UseRegularExpression;
-        private Replacement[] _Replacements;
+        private List<Replacement> _Replacements;
         #endregion
 
         #region 公共属性定义
@@ -347,7 +347,7 @@
         /// <summary>
         /// 源文件替换
         /// </summary>
-        public Replacement[] Replacements {
+        public List<Replacement> Replacements {
             get {
                 return _Replacements;
             }
