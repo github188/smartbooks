@@ -17,7 +17,7 @@
         /// </summary>
         public FrmMain() {
             InitializeComponent();
-            this.Text = "网络信息智能采集系统 V1.0.0.0 内部测试版 - 郑州豫图信息技术有限公司";
+            //this.Text = "网络信息智能采集系统 V1.0.0.0 内部测试版 - 郑州豫图信息技术有限公司";
             this.Icon = new System.Drawing.Icon("mainProgram.ico");
 
             //初始化为默认Ui

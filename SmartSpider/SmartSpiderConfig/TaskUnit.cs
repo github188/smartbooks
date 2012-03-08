@@ -70,6 +70,7 @@
             StringCollection startUrls = this.LoadingStartingUrl();
             foreach (string startUrl in startUrls) {
                 ExtractTheNavigationAddress(startUrl);
+                //ThreadPool.QueueUserWorkItem(new WaitCallback(ExtractTheNavigationAddress), startUrl);                
             }
             #endregion
         }
@@ -134,7 +135,6 @@
             this.AppendLog();
 
             foreach (NavigationRule navigationRole in this._TaskConfig.UrlListManager.NavigationRules) {
-                //监测当前任务状态
                 // 采用深度优先模式提取内容采集结果
                 string htmlText = "";
                 try {
@@ -152,6 +152,7 @@
                     foreach (string url in navUrls) {
                         //根据导航地址提取内容结果
                         ThreadPool.QueueUserWorkItem(new WaitCallback(ExtractTheContents), url);
+                        //ExtractTheContents(url);
                     }
                 }
             }
@@ -162,8 +163,6 @@
         /// </summary>
         /// <param name="param">导航地址Url</param>
         private void ExtractTheContents(object param) {
-            string con = string.Format("{0} {1}\r\n", Thread.CurrentThread.ManagedThreadId.ToString(), DateTime.Now.ToString());
-            File.AppendAllText("c:\\log.txt", con, Encoding.UTF8);
             string contentUrl = (string)param;
             DataRow row = this._Results.NewRow();
             string htmlText = "";
