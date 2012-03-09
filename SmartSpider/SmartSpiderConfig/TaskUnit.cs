@@ -69,8 +69,8 @@
             #region 根据起始页面规则，加载导航地址采集规则
             StringCollection startUrls = this.LoadingStartingUrl();
             foreach (string startUrl in startUrls) {
-                ExtractTheNavigationAddress(startUrl);
-                //ThreadPool.QueueUserWorkItem(new WaitCallback(ExtractTheNavigationAddress), startUrl);                
+                //ExtractTheNavigationAddress(startUrl);
+                ThreadPool.QueueUserWorkItem(new WaitCallback(ExtractTheNavigationAddress), startUrl);
             }
             #endregion
         }
@@ -179,13 +179,17 @@
             }
 
             //循环内容采集规则
-            foreach (ExtractionRule extractionRule in this._TaskConfig.ExtractionRules) {
-                row[extractionRule.Name] = this.LoadingExtractionRule(extractionRule, htmlText);
+            string[] r = new string[this._TaskConfig.ExtractionRules.Count];
+            for (int i = 0; i < this._TaskConfig.ExtractionRules.Count; i++) {
+                string result = this.LoadingExtractionRule(_TaskConfig.ExtractionRules[i], htmlText);
+                row[_TaskConfig.ExtractionRules[i].Name] = result;
+                r[i] = result;
             }
-
             //内容提取结果加入采集结果
             this._Results.Rows.Add(row);
-            this.onAppendResult();
+            if (this.onAppendResult != null) {
+                this.onAppendResult(r);
+            }
 
             //发布结果
             if (this.TaskConfig.PublishResultDircetly) {
@@ -316,7 +320,7 @@
         /// </summary>
         private void AppendLog() {
             if (this.Log != null) {
-                this.Log(this, eventArgs);
+                this.Log(eventArgs);
             }
         }
         #endregion

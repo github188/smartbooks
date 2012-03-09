@@ -3,14 +3,14 @@
     using System.Collections.Generic;
     using System.Text;
     using System.Windows.Forms;
-    using System.Data;    
+    using System.Data;
 
     public class TaskResultLog : TabPage {
         private SplitContainer splitContainerMain = new SplitContainer();
         private RichTextBox rtxLogEvent = new RichTextBox();
         private DataGridView dgvResult = new DataGridView();
         private delegate void SetTextCallback(Config.LogEventArgs e);
-        private delegate void RefererDataSource();
+        private delegate void RefererDataSource(params object[] values);
         private Config.TaskUnit _unit = new Config.TaskUnit();
 
         /// <summary>
@@ -20,36 +20,10 @@
         public TaskResultLog(ref Config.TaskUnit unit) {
             this.BindController();
             this.Text = unit.TaskConfig.Name;
-            this.dgvResult.DataSource = unit.Results;
             this._unit = unit;
             this._unit.Log += new Config.LogEventHanlder(On_unitLog);
             this._unit.onAppendResult += new Config.OnAppendResult(On_AppendResult);
             this.Tag = unit.ConfigPath;
-        }
-
-        /// <summary>
-        /// 追加日志信息
-        /// </summary>
-        /// <param name="src">LogEventArgs对象</param>
-        public void AppendLog(object src) {
-            Config.LogEventArgs e = (Config.LogEventArgs)src;
-            string space = "";
-            for (int i = 0; i < e.Indent; i++) {
-                space += " ";
-            }
-
-            if (this.rtxLogEvent.InvokeRequired) {
-                SetTextCallback callBack = new SetTextCallback(AppendLog);
-                this.Invoke(callBack, new object[] { e });
-            } else {
-                
-                this.rtxLogEvent.AppendText(space + e.Message + "\r\n");
-                if (this.rtxLogEvent.Text.Length > 1) {
-                    this.rtxLogEvent.Select(rtxLogEvent.Text.Length - 1, 1);
-                }
-                this.rtxLogEvent.ScrollToCaret();
-                this.rtxLogEvent.Refresh();
-            }
         }
 
         private void InitializeComponent() {
@@ -111,23 +85,51 @@
             this.splitContainerMain.Panel2.Controls.Add(rtxLogEvent);
             this.Controls.Add(splitContainerMain);
         }
+        //添加日志
+        private void On_unitLog(Config.LogEventArgs e) {
+            try {
+                string space = "";
+                for (int i = 0; i < e.Indent; i++) {
+                    space += " ";
+                }
 
-        private void On_unitLog(object sender,Config.LogEventArgs e) {
-            this.AppendLog(e);
-        }
-
-        private void On_AppendResult() {            
-            if (this.dgvResult.InvokeRequired) {
-                RefererDataSource referer = new RefererDataSource(On_AppendResult);
-                this.Invoke(referer);
-            } else {
-                this.dgvResult.DataSource = this._unit.Results.DefaultView;
-                this.dgvResult.Rows[this.dgvResult.Rows.Count - 1].Selected = true;
-                this.dgvResult.FirstDisplayedScrollingRowIndex = this.dgvResult.Rows.Count - 1;
-                this.dgvResult.Refresh();
+                if (this.rtxLogEvent.InvokeRequired) {
+                    SetTextCallback callBack = new SetTextCallback(On_unitLog);
+                    this.Invoke(callBack, new object[] { e });
+                } else {
+                    this.rtxLogEvent.AppendText(space + e.Message + "\r\n");
+                    if (this.rtxLogEvent.Text.Length > 1) {
+                        this.rtxLogEvent.Select(rtxLogEvent.Text.Length - 1, 1);
+                    }
+                    this.rtxLogEvent.ScrollToCaret();
+                    this.rtxLogEvent.Refresh();
+                }
+            } catch (Exception ex) {
+                throw ex;
             }
         }
-
+        //添加结果
+        private void On_AppendResult(params object[] values) {
+            try {
+                if (this.dgvResult.InvokeRequired) {
+                    RefererDataSource referer = new RefererDataSource(On_AppendResult);
+                    this.Invoke(referer, new object[] { values });
+                } else {
+                    if (this.dgvResult.Columns.Count == 0) {
+                        foreach (Config.ExtractionRule item in this._unit.TaskConfig.ExtractionRules) {
+                            this.dgvResult.Columns.Add(item.DataColumn, item.Name);
+                        }
+                    }
+                    this.dgvResult.Rows.Add(values);
+                    this.dgvResult.Rows[this.dgvResult.Rows.Count - 1].Selected = true;
+                    this.dgvResult.FirstDisplayedScrollingRowIndex = this.dgvResult.Rows.Count - 1;
+                    this.dgvResult.Refresh();
+                }
+            } catch (Exception e) {
+                throw e;
+            }
+        }
+        //日志大于5000自动清空
         private void rtxLogEvent_TextChanged(object sender, EventArgs e) {
             if (this.rtxLogEvent.TextLength > 5000) {
                 this.rtxLogEvent.Clear();

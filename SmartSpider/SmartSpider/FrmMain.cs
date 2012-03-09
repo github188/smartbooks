@@ -348,7 +348,9 @@
                             }
                         } else {
                             ShowTaskRuntimesInfo(ref unit);                     //显示任务运行日志信息窗口
-                            unit.Start();                                       //启动任务
+                            System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(unit.Start));
+                            t.Start();
+                            //unit.Start();                                     //启动任务
                             controller.Add(unit);                               //任务单元加入运行区域
                             item.ImageKey = SetTaskStatusImages(unit.Action);   //设置任务状态图标
                         }
