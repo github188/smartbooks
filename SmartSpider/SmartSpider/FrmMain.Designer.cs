@@ -1241,62 +1241,74 @@
             // taskName
             // 
             this.taskName.Text = "任务名称";
-            this.taskName.Width = 120;
+            this.taskName.Width = 150;
+            this.taskName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // ExtractCount
             // 
             this.ExtractCount.Text = "完成提取";
             this.ExtractCount.Width = 80;
+            this.ExtractCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // ExtractURL
             // 
             this.ExtractURL.Text = "提取网址";
             this.ExtractURL.Width = 80;
+            this.ExtractURL.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // ExtractStartSuccessUrl
             // 
             this.ExtractStartSuccessUrl.Text = "完成起始";
             this.ExtractStartSuccessUrl.Width = 80;
+            this.ExtractStartSuccessUrl.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // ExtractStartUrl
             // 
             this.ExtractStartUrl.Text = "起始地址";
             this.ExtractStartUrl.Width = 80;
+            this.ExtractStartUrl.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // ExtractHistory
             // 
             this.ExtractHistory.Text = "历史记录";
             this.ExtractHistory.Width = 80;
+            this.ExtractHistory.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // ExtractCurrent
             // 
             this.ExtractCurrent.Text = "当前采集";
             this.ExtractCurrent.Width = 80;
+            this.ExtractCurrent.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // ExtractResult
             // 
             this.ExtractResult.Text = "采集结果";
             this.ExtractResult.Width = 80;
+            this.ExtractResult.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // ReleaseRepeat
             // 
             this.ReleaseRepeat.Text = "发布重复";
             this.ReleaseRepeat.Width = 80;
+            this.ReleaseRepeat.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // ReleaseError
             // 
             this.ReleaseError.Text = "发布出错";
             this.ReleaseError.Width = 80;
+            this.ReleaseError.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // ExtractSpaceTime
             // 
             this.ExtractSpaceTime.Text = "采集用时";
             this.ExtractSpaceTime.Width = 120;
+            this.ExtractSpaceTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // StartTime
             // 
             this.StartTime.Text = "开始时间";
-            this.StartTime.Width = 120;
+            this.StartTime.Width = 150;
+            this.StartTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tabContent
             // 

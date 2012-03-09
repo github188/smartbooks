@@ -22,7 +22,7 @@
             this.Text = unit.TaskConfig.Name;
             this._unit = unit;
             this._unit.Log += new Config.LogEventHanlder(On_unitLog);
-            this._unit.onAppendResult += new Config.OnAppendResult(On_AppendResult);
+            this._unit.onAppendResult += new Config.OnAppendSingleResult(On_AppendResult);
             this.Tag = unit.ConfigPath;
         }
 

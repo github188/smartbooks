@@ -55,32 +55,6 @@
         }
 
         /// <summary>
-        /// 返回任务状态对应的图标
-        /// </summary>
-        /// <param name="sender">任务状态</param>
-        /// <returns>小图标</returns>
-        private string SetTaskStatusImages(Action action) {
-            switch (action) {
-                case Action.Start:
-                    SetStartTaskStatus();
-                    return "startmin.png";
-                case Action.Pause:
-                    SetPauseTaskStatus();
-                    return "pausemin.png";
-                case Action.Stop:
-                    SetStartTaskStatus();
-                    return "stopmin.png";
-                case Action.Finish:
-                    SetStopTaskStatus();
-                    return "editmin.png";
-                case Action.Ready:
-                    return "taskmin.png";
-                default :
-                    return "stopmin.png";
-            }
-        }
-
-        /// <summary>
         /// 显示任务运行日志信息窗口
         /// </summary>
         /// <param name="unit">任务单元</param>
@@ -344,7 +318,6 @@
                                 ShowTaskRuntimesInfo(ref unit);                     //显示任务运行日志信息窗口
                                 unit.Start();                                       //启动任务
                                 controller.Add(unit);                               //任务单元加入运行区域
-                                item.ImageKey = SetTaskStatusImages(unit.Action);   //设置任务状态图标
                             }
                         } else {
                             ShowTaskRuntimesInfo(ref unit);                     //显示任务运行日志信息窗口
@@ -352,24 +325,30 @@
                             t.Start();
                             //unit.Start();                                     //启动任务
                             controller.Add(unit);                               //任务单元加入运行区域
-                            item.ImageKey = SetTaskStatusImages(unit.Action);   //设置任务状态图标
                         }
                     }
                 }
             }
+            this.tolStartTask.Enabled = false;
+            this.tolPauseTask.Enabled = true;
+            this.tolStopTask.Enabled = true;
+
+            this.tolAddTask.Enabled = true;
+            this.tolEditTask.Enabled = false;
+            this.tolDeleteTask.Enabled = false;
         }
-        //工具栏：暂停/继续
+        //工具栏：暂停
         private void tolPauseTask_Click(object sender, EventArgs e) {
             foreach (ListViewItem item in this.livTaskView.SelectedItems) {
                 TaskUnit unit = (TaskUnit)item.Tag;
-                switch (unit.Action) {
-                    case Action.Pause:
-                        unit.Continue();
-                        break;
-                    case Action.Continue:
-                        unit.Pause();
-                        break;
-                }
+                unit.Pause();
+                this.tolPauseTask.Enabled = false;
+                this.tolStartTask.Enabled = true;
+                this.tolStopTask.Enabled = true;
+
+                this.tolAddTask.Enabled = true;
+                this.tolEditTask.Enabled = true;
+                this.tolDeleteTask.Enabled = true;
             }
         }
         //工具栏：停止
@@ -377,6 +356,13 @@
             foreach (ListViewItem item in this.livTaskView.SelectedItems) {
                 TaskUnit unit = (TaskUnit)item.Tag;
                 unit.Stop();
+                this.tolPauseTask.Enabled = false;
+                this.tolStartTask.Enabled = true;
+                this.tolStopTask.Enabled = false;
+
+                this.tolAddTask.Enabled = true;
+                this.tolEditTask.Enabled = true;
+                this.tolDeleteTask.Enabled = true;
             }
         }
         //工具栏：新建任务
@@ -511,7 +497,7 @@
         //任务运行信息窗口：单击任务
         private void livTaskView_MouseClick(object sender, MouseEventArgs e) {
             foreach (Utility.TaskViewItem item in this.livTaskView.SelectedItems) {
-                item.ImageKey = SetTaskStatusImages(item.Action);
+                SetTaskStatusUi(item.Action);
             }
         }
         //任务运行信息窗口：选定项改变
@@ -519,7 +505,9 @@
             if (this.livTaskView.SelectedItems.Count == 0) {
                 SetDefaultUI();
             } else if (this.livTaskView.SelectedItems.Count == 1) {
-                SetSelectOneTask();
+                foreach (Utility.TaskViewItem item in this.livTaskView.SelectedItems) {
+                    SetTaskStatusUi(item.Action);
+                }
             } else {
                 SetSelectMultiTask();
             }

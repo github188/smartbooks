@@ -9,6 +9,15 @@
     using System.Threading;
     using System.Text.RegularExpressions;
 
+    public delegate void OnTaskStatusChanges(object sender, Action action);
+    public delegate void LogEventHanlder(LogEventArgs e);
+    public delegate void OnTaskStarting();
+    public delegate void OnTaskPause();
+    public delegate void OnTaskStop();
+    public delegate void OnTaskComplete();
+    public delegate void OnAppendSingleResult(params object[] values);
+    public delegate void OnPublishResult();
+
     public class TaskUnit : IDisposable {
         #region 公共事件定义
         /// <summary>
@@ -18,11 +27,15 @@
         /// <summary>
         /// 当增加一条采集结果行时触发的事件
         /// </summary>
-        public event OnAppendResult onAppendResult;
+        public event OnAppendSingleResult onAppendResult;
         /// <summary>
         /// 当任务状态改变时执行的事件
         /// </summary>
         public event OnTaskStatusChanges OnTaskStatusChanges;
+        /// <summary>
+        /// 当任务完成时产生的事件
+        /// </summary>
+        public event OnTaskComplete OnTaskComplete;
         #endregion
 
         #region 私有变量定义
@@ -51,6 +64,7 @@
         /// </summary>
         public void Start() {
             this.Action = Config.Action.Start;
+            this._TaskConfig.StartingTime = DateTime.Now;
             eventArgs.Message = string.Format("{0}\r\n开始任务 {1}\r\n", DateTime.Now.ToString(), this._TaskConfig.Name);
             this.AppendLog();
 
@@ -94,15 +108,6 @@
         }
 
         /// <summary>
-        /// 继续
-        /// </summary>
-        public void Continue() {
-            this.Action = Config.Action.Continue;
-            eventArgs.Message = "继续任务";
-            this.AppendLog();
-        }
-
-        /// <summary>
         /// 删除任务
         /// </summary>
         public void DeleteTask() {
@@ -135,6 +140,7 @@
             this.AppendLog();
 
             foreach (NavigationRule navigationRole in this._TaskConfig.UrlListManager.NavigationRules) {
+                if (this.Action == Config.Action.Stop) return;
                 // 采用深度优先模式提取内容采集结果
                 string htmlText = "";
                 try {
@@ -146,13 +152,14 @@
 
                 //判断是否为最终页面导航规则，如果为最终页面导航规则，则直接提取页面内容。
                 if (navigationRole.Terminal) {
-                    ThreadPool.QueueUserWorkItem(new WaitCallback(ExtractTheContents), startUrl);
+                    ThreadPool.QueueUserWorkItem(new WaitCallback(ExtractTheContents), startUrl);                    
                 } else {
                     StringCollection navUrls = this.LoadingNavigationRule(navigationRole, htmlText);
                     foreach (string url in navUrls) {
+                        if (this.Action == Config.Action.Stop) return;
                         //根据导航地址提取内容结果
-                        ThreadPool.QueueUserWorkItem(new WaitCallback(ExtractTheContents), url);
-                        //ExtractTheContents(url);
+                        ExtractTheContents(url);
+                        //ThreadPool.QueueUserWorkItem(new WaitCallback(ExtractTheContents), url);
                     }
                 }
             }
@@ -163,6 +170,8 @@
         /// </summary>
         /// <param name="param">导航地址Url</param>
         private void ExtractTheContents(object param) {
+            if (this.Action == Config.Action.Stop) return;
+
             string contentUrl = (string)param;
             DataRow row = this._Results.NewRow();
             string htmlText = "";
@@ -194,6 +203,10 @@
             //发布结果
             if (this.TaskConfig.PublishResultDircetly) {
                 PublishResult();
+            }
+
+            if (this.OnTaskComplete != null) {
+                this.OnTaskComplete();
             }
         }
 

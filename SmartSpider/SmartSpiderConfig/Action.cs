@@ -35,10 +35,5 @@
         /// </summary>
         [XmlEnum("Finish")]
         Finish = 4,
-        /// <summary>
-        /// 继续
-        /// </summary>
-        [XmlEnum("Continue")]
-        Continue = 5,        
     }
 }
