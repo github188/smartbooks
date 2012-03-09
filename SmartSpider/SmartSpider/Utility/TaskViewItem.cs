@@ -51,6 +51,9 @@
             }
         }
 
+        /// <summary>
+        /// 更新任务ICO图标
+        /// </summary>
         private void UpItemIcon() {
             switch (_unit.Action) {
                 case Config.Action.Finish:
@@ -71,20 +74,23 @@
             }
         }
 
+        /// <summary>
+        /// 刷新任务状态数据
+        /// </summary>
         private void UpDateTaskStatus() {
             try {
                 UpItemIcon();
                 _unit.TaskConfig.ElapsedTime = DateTime.Now.Subtract(_unit.TaskConfig.StartingTime).Seconds;
 
-                this.SubItems[1].Text = "0";
-                this.SubItems[2].Text = "1";
-                this.SubItems[3].Text = "2";
-                this.SubItems[4].Text = "3";
-                this.SubItems[5].Text = "4";
+                this.SubItems[1].Text = _unit.TaskConfig.UrlListManager.PickedUrlsPosition.ToString();
+                this.SubItems[2].Text = _unit.TaskConfig.UrlListManager.PickedUrlsCount.ToString();
+                this.SubItems[3].Text = _unit.TaskConfig.UrlListManager.StartingUrlListPosition.ToString();
+                this.SubItems[4].Text = _unit.TaskConfig.UrlListManager.StartingUrlList.Count.ToString();
+                this.SubItems[5].Text = _unit.TaskConfig.UrlListManager.HistoryUrlsCount.ToString();
                 this.SubItems[6].Text = _unit.Results.Rows.Count.ToString();
-                this.SubItems[7].Text = "6";
-                this.SubItems[8].Text = "7";
-                this.SubItems[9].Text = "8";
+                this.SubItems[7].Text = _unit.TaskConfig.ResultCount.ToString();
+                this.SubItems[8].Text = _unit.TaskConfig.RepeatedRowsCount.ToString();
+                this.SubItems[9].Text = _unit.TaskConfig.ErrorRowsCount.ToString();
                 this.SubItems[10].Text = _unit.TaskConfig.ElapsedTime + " 秒";
                 this.SubItems[11].Text = _unit.TaskConfig.StartingTime.ToString("yyyy-MM-dd HH:mm:ss");    //开始时间                
             } catch (Exception ex) {

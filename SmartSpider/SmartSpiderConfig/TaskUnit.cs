@@ -83,8 +83,8 @@
             #region 根据起始页面规则，加载导航地址采集规则
             StringCollection startUrls = this.LoadingStartingUrl();
             foreach (string startUrl in startUrls) {
-                //ExtractTheNavigationAddress(startUrl);
-                ThreadPool.QueueUserWorkItem(new WaitCallback(ExtractTheNavigationAddress), startUrl);
+                ExtractTheNavigationAddress(startUrl);
+                //ThreadPool.QueueUserWorkItem(new WaitCallback(ExtractTheNavigationAddress), startUrl);
             }
             #endregion
         }

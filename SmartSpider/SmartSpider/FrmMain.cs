@@ -11,6 +11,8 @@
     using Config;
 
     public partial class FrmMain : Form {
+        private List<TaskUnit> t = new List<TaskUnit>();
+
         #region 构造方法
         /// <summary>
         /// 构造函数
@@ -305,30 +307,21 @@
         #region 工具栏事件
         //工具栏：开始
         private void tolStartTask_Click(object sender, EventArgs e) {
-            //筛选出运行区节点
-            foreach (TreeNode node in this.trwTaskFolder.Nodes) {
-                if (node.Text.Equals("运行区")) {
-                    //将任务加入运行区
-                    TaskController controller = (TaskController)node.Tag;   //获取运行区任务控制器
-                    foreach (ListViewItem item in this.livTaskView.SelectedItems) {
-                        TaskUnit unit = (TaskUnit)item.Tag;
-                        if (unit.Action == Action.Finish) {
-                            if (MessageBox.Show("该任务已经采集完毕，确定重新采集吗？", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Information) ==
-                                System.Windows.Forms.DialogResult.Yes) {
-                                ShowTaskRuntimesInfo(ref unit);                     //显示任务运行日志信息窗口
-                                unit.Start();                                       //启动任务
-                                controller.Add(unit);                               //任务单元加入运行区域
-                            }
-                        } else {
-                            ShowTaskRuntimesInfo(ref unit);                     //显示任务运行日志信息窗口
-                            System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(unit.Start));
-                            t.Start();
-                            //unit.Start();                                     //启动任务
-                            controller.Add(unit);                               //任务单元加入运行区域
-                        }
+            foreach (ListViewItem item in this.livTaskView.SelectedItems) {
+                TaskUnit unit = (TaskUnit)item.Tag;
+                if (unit.Action == Action.Finish) {
+                    if (MessageBox.Show("该任务已经采集完毕，确定重新采集吗？", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Information) ==
+                        System.Windows.Forms.DialogResult.Yes) {
+                        ShowTaskRuntimesInfo(ref unit);                     //显示任务运行日志信息窗口
+                        unit.Start();                                       //启动任务
                     }
+                } else {
+                    ShowTaskRuntimesInfo(ref unit);                     //显示任务运行日志信息窗口
+                    System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(unit.Start));
+                    t.Start();
                 }
             }
+
             this.tolStartTask.Enabled = false;
             this.tolPauseTask.Enabled = true;
             this.tolStopTask.Enabled = true;
@@ -414,8 +407,8 @@
         }
         //工具栏：退出
         private void TolExit_Click(object sender, EventArgs e) {
+            Application.ExitThread();
             Application.Exit();
-
             this.SaveConfiguration();
         }
         //工具栏：导出到Excel
@@ -441,15 +434,15 @@
         private void trwTaskFolder_AfterSelect(object sender, TreeViewEventArgs e) {
             if (this.trwTaskFolder.SelectedNode != null) {
                 this.livTaskView.Items.Clear();
-
                 if (this.trwTaskFolder.SelectedNode.Text.Equals("运行区")) {
-                    #region 显示运行区任务
-                    TaskController runtimeAreaTask = (TaskController)this.trwTaskFolder.SelectedNode.Tag;
-                    for (int i = 0; i < runtimeAreaTask.TaskUnit.Count; i++) {
-                        //Utility.TaskViewItem item = new Utility.TaskViewItem(ref runtimeAreaTask.TaskUnit[i]);
-                        //livTaskView.Items.Add(item);
+                    //循环遍历每个节点，筛选出运行状态的任务，显示出来
+                    foreach (TaskUnit u in t) {
+                        if (u.Action == Action.Start) {
+                            TaskUnit uNew = u;
+                            Utility.TaskViewItem item = new Utility.TaskViewItem(ref uNew);
+                            livTaskView.Items.Add(item);
+                        }
                     }
-                    #endregion
                 } else {
                     #region 加载指定目录下Xml配置文件
                     string[] files = Directory.GetFiles(trwTaskFolder.SelectedNode.Tag.ToString(), "*.xml");
@@ -471,6 +464,19 @@
                                 unit.TaskConfig = task;
                                 unit.ConfigPath = files[i];
                             }
+
+                            if (!t.Exists(delegate(TaskUnit u) {
+                                if (u.ConfigPath == unit.ConfigPath) return true;
+                                return false;
+                            })) {
+                                this.t.Add(unit);
+                            }
+
+                            t.Find(delegate(TaskUnit u) {
+                                if (u.ConfigPath == unit.ConfigPath) return true;
+                                return false;
+                            });
+
                             Utility.TaskViewItem item = new Utility.TaskViewItem(ref unit);
                             livTaskView.Items.Add(item);
                         } catch (Exception ex) {
