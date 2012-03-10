@@ -4,7 +4,7 @@
 
 <Workspace>
 	<Local Expanded="Yes">
-		<Model Expanded="Yes" ID="{4D795553-F315-42F1-97A8-58D6276143D6}" Name="SmartPomsDB" Selected="Yes" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="SmartPomsDB.pdm"/>
+		<Model Expanded="Yes" ID="{E655C78F-20E5-41F1-AB09-0CEED4786008}" Name="SmartPomsDB" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="SmartPomsDB.pdm"/>
 	</Local>
 	<BrowserModule Name="Repository"/>
 </Workspace>
