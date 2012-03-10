@@ -36,7 +36,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="BASE_ARTICLE.cs" />
+    <Compile Include="BASE_ROLE.cs" />
+    <Compile Include="BASE_TOPIC.cs" />
+    <Compile Include="BASE_USER.cs" />
+    <Compile Include="BASE_WARNING.cs" />
+    <Compile Include="BASE_WORD.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
