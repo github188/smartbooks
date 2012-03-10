@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="adminBack.master" AutoEventWireup="true" CodeFile="adminTop.aspx.cs" Inherits="menber_adminTop" Title="页眉--智慧校园管理平台" %>
+﻿<%@ Page Language="C#" MasterPageFile="adminBack.master" AutoEventWireup="true" CodeFile="adminTop.aspx.cs" Inherits="menber_adminTop" Title="页眉--网络舆情监控平台" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <style type="text/css">
