@@ -1,0 +1,1 @@
+IAreaService area = ComponentFactory<IAreaService>.GetBLLPlugin();
