@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<SystemConfig>
+  <InterfaceMapping>
+  </InterfaceMapping>
+  <ComponentFactory>
+    <!--业务逻辑组件-->
+    <BLL LoadFromAssembly="Smart.AppFacade"  FacadeNameSpace ="Smart.AppFacade"></BLL>
+    <!--数据访问层组件-->
+    <DAL LoadFromAssembly="Smart.SqlServerDAL" FacadeNameSpace ="Smart.SqlServerDAL"></DAL>
+  </ComponentFactory>
+</SystemConfig>
