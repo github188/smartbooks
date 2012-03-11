@@ -51,6 +51,7 @@
     <Content Include="adminMain.aspx" />
     <Content Include="adminRight.aspx" />
     <Content Include="adminTop.aspx" />
+    <Content Include="bin\SmartPomsApp.dll" />
     <Content Include="content\jquery-ui-1.8.17\AUTHORS.txt" />
     <Content Include="content\jquery-ui-1.8.17\external\jquery.bgiframe-2.1.2.js" />
     <Content Include="content\jquery-ui-1.8.17\external\jquery.cookie.js" />
