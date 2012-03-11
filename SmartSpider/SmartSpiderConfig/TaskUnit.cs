@@ -46,6 +46,7 @@
         private string _ConfigPath = "";
         private LogEventArgs eventArgs = new LogEventArgs("", 0, true);
         private StringCollection NavigationUrls = new StringCollection();
+        public Thread t;
         #endregion
 
         #region 公共方法定义
@@ -57,6 +58,7 @@
         /// </summary>
         public TaskUnit() {
             this._HttpHelper = new HttpHelper(Encoding.GetEncoding(this._TaskConfig.UrlListManager.UrlEncoding));
+            t = new Thread(new ThreadStart(this.Start));
         }
 
         /// <summary>

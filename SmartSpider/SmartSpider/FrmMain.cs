@@ -11,7 +11,7 @@
     using Config;
 
     public partial class FrmMain : Form {
-        private List<TaskUnit> t = new List<TaskUnit>();
+        private TaskUnit[] taskItem = new TaskUnit[1];
 
         #region 构造方法
         /// <summary>
@@ -316,9 +316,10 @@
                         unit.Start();                                       //启动任务
                     }
                 } else {
-                    ShowTaskRuntimesInfo(ref unit);                     //显示任务运行日志信息窗口
-                    System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(unit.Start));
-                    t.Start();
+                    ShowTaskRuntimesInfo(ref taskItem[0]);                     //显示任务运行日志信息窗口
+                    taskItem[0].t.Start();
+                    //System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(taskItem[0].Start));
+                    //t.Start();
                 }
             }
 
@@ -436,12 +437,16 @@
                 this.livTaskView.Items.Clear();
                 if (this.trwTaskFolder.SelectedNode.Text.Equals("运行区")) {
                     //循环遍历每个节点，筛选出运行状态的任务，显示出来
-                    foreach (TaskUnit u in t) {
-                        if (u.Action == Action.Start) {
-                            TaskUnit uNew = u;
-                            Utility.TaskViewItem item = new Utility.TaskViewItem(ref uNew);
+                    for (int i = 0; i < taskItem.Length; i++)
+                    {
+                        if (taskItem[i].Action == Action.Start)
+                        {
+                            Utility.TaskViewItem item = new Utility.TaskViewItem(ref taskItem[i]);
                             livTaskView.Items.Add(item);
                         }
+                        //MessageBox.Show(taskItem[i].Action.ToString());
+                        //Utility.TaskViewItem item = new Utility.TaskViewItem(ref taskItem[i]);
+                        //livTaskView.Items.Add(item);
                     }
                 } else {
                     #region 加载指定目录下Xml配置文件
@@ -464,20 +469,8 @@
                                 unit.TaskConfig = task;
                                 unit.ConfigPath = files[i];
                             }
-
-                            if (!t.Exists(delegate(TaskUnit u) {
-                                if (u.ConfigPath == unit.ConfigPath) return true;
-                                return false;
-                            })) {
-                                this.t.Add(unit);
-                            }
-
-                            t.Find(delegate(TaskUnit u) {
-                                if (u.ConfigPath == unit.ConfigPath) return true;
-                                return false;
-                            });
-
-                            Utility.TaskViewItem item = new Utility.TaskViewItem(ref unit);
+                            taskItem[0] = unit;
+                            Utility.TaskViewItem item = new Utility.TaskViewItem(ref taskItem[0]);
                             livTaskView.Items.Add(item);
                         } catch (Exception ex) {
                             throw new Exception(ex.Message);
