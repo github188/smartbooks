@@ -18,7 +18,7 @@ namespace Smart.ServiceFactory
         /// <summary>
         /// 插件名称：不含命名空间
         /// </summary>
-        private string pluginName; 
+        private string pluginName;
         /// <summary>
         /// 插件命名空间
         /// </summary>
@@ -43,7 +43,7 @@ namespace Smart.ServiceFactory
                 assemblerName = value;
             }
         }
-        
+
         /// <summary>
         /// 插件名称
         /// 获取不带命名空间的类名,去除首字母"I"

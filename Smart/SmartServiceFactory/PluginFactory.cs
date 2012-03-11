@@ -13,7 +13,8 @@ namespace Smart.ServiceFactory
     ///       如果要new多个对象，需要使用GetPluginNew()
     /// </summary>
     /// <typeparam name="T">泛型对象</typeparam>
-    /*public*/ internal static class PluginFactory<T>// where T : new()
+    /*public*/
+    internal static class PluginFactory<T>// where T : new()
     {
         #region private fields
         /// <summary>
@@ -29,9 +30,9 @@ namespace Smart.ServiceFactory
         /// 构造
         /// </summary>
         static PluginFactory()
-        {  
-        
-        }   
+        {
+
+        }
         /// <summary>
         /// 获取指定类型插件
         /// 如果没有Cache，则Create
@@ -39,14 +40,14 @@ namespace Smart.ServiceFactory
         /// <returns>构造的对象</returns>
         public static T GetPlugin()
         {
-            string key = PluginUtils.ConcisionTypeName<T>(); 
+            string key = PluginUtils.ConcisionTypeName<T>();
             T plugin = (T)cache[key];
 
             lock (syncObj)
             {
                 if (null == plugin)
-                {                         
-                    plugin = BuildPlugin();  
+                {
+                    plugin = BuildPlugin();
                     if (plugin != null)
                         cache[key] = plugin;
                 }
@@ -62,7 +63,7 @@ namespace Smart.ServiceFactory
             return (T)System.Activator.CreateInstance(GetPlugin().GetType());
         }
 
-        #region private 
+        #region private
         /// <summary>
         /// 构造插件
         /// </summary>

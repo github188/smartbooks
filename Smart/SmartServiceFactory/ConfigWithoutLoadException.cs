@@ -19,5 +19,5 @@ namespace Smart.ServiceFactory
         {
         }
     }
-   
+
 }

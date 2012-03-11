@@ -29,13 +29,13 @@ namespace Smart.ServiceFactory
         public static XmlDocument LoadPluginData()
         {
             string fileName = GetConfigFile();
-           
+
             if (doc == null)
                 doc = new XmlDocument();
             else
                 doc.RemoveAll();
 
-            doc.Load(fileName);  
+            doc.Load(fileName);
             return doc;
         }
 
@@ -51,8 +51,8 @@ namespace Smart.ServiceFactory
                 return LoadPluginData();
             else
                 return doc;
-        }    
-       
+        }
+
         /// <summary>
         /// 从ComponentFactory配置节点获取插件信息
         /// </summary>

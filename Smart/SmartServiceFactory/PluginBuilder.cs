@@ -25,7 +25,7 @@ namespace Smart.ServiceFactory
         {
             LoadPluginConfig();
         }
-        
+
         /// <summary>
         /// 获取指定类型的对象
         /// </summary>
@@ -43,10 +43,10 @@ namespace Smart.ServiceFactory
                 Node = root.SelectSingleNode("InterfaceMapping/" + t.Name);
             }
             catch (TypeInitializationException)
-            {   
+            {
                 return null;
-            }  
-           
+            }
+
             if (Node != null)
             {
                 System.Runtime.Remoting.ObjectHandle objHandle = null;
@@ -56,30 +56,30 @@ namespace Smart.ServiceFactory
             else
                 return null;
         }
-        
+
         /// <summary>
         /// 从指定程序集加载指定类型对象
         /// </summary>
         /// <param name="assemblyName">程序集名称</param>
         /// <param name="typeName">类名称</param>
         /// <returns></returns>
-        public static Object GetPlugin(string assemblyName,string typeName)
+        public static Object GetPlugin(string assemblyName, string typeName)
         {
-            System.Runtime.Remoting.ObjectHandle objHandle = System.Activator.CreateInstance(assemblyName,typeName);
+            System.Runtime.Remoting.ObjectHandle objHandle = System.Activator.CreateInstance(assemblyName, typeName);
             if (objHandle != null)
                 return objHandle.Unwrap();
             else
-                throw new ApplicationException("从程序集"+assemblyName+"反射对象"+typeName+"时，构件对象为NULL");
-        }   
+                throw new ApplicationException("从程序集" + assemblyName + "反射对象" + typeName + "时，构件对象为NULL");
+        }
 
         /// <summary>
         /// 加载配置
         /// </summary>
         /// <returns></returns>
         public static void LoadPluginConfig()
-        {   
+        {
             xdConfig = PluginConfig.GetPluginData();
-        }   
+        }
     }
 }
 

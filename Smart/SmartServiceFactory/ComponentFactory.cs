@@ -18,8 +18,8 @@ namespace Smart.ServiceFactory
     ///        否则，如果没对接口进行配置，从组件中反射出对象是接口，非实现
     /// </summary>
     /// <typeparam name="T">构造的类型</typeparam>
-    public static class ComponentFactory <T>
-    {  
+    public static class ComponentFactory<T>
+    {
         /// <summary>
         /// 获取业务逻辑插件
         /// 
@@ -58,14 +58,14 @@ namespace Smart.ServiceFactory
             }
             return plugin;
         }
-      
+
         /// <summary>
         /// 从ComponentFactory配置节点建立对象
         /// </summary>
         /// <param name="componentNodeName">配置节点名称</param>
         /// <param name="typeName">反射对象类型：不含父路径</param>
         /// <returns>构造的对象</returns>
-        private static T GetPluginFromComponentNode(string componentNodeName,string typeName)
+        private static T GetPluginFromComponentNode(string componentNodeName, string typeName)
         {
             PluginUtils util = PluginConfig.GetComponentAssemblerInfo(componentNodeName);
             util.PluginName = typeName;
