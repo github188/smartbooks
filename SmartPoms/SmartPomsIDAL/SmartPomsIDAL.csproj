@@ -36,12 +36,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IBASE_ARTICLE.cs" />
-    <Compile Include="IBASE_ROLE.cs" />
-    <Compile Include="IBASE_TOPIC.cs" />
-    <Compile Include="IBASE_USER.cs" />
-    <Compile Include="IBASE_WARNING.cs" />
-    <Compile Include="IBASE_WORD.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
