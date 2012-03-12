@@ -9,7 +9,7 @@ using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 
-public partial class menber_adminCenter : System.Web.UI.Page
+public partial class adminCenter : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {

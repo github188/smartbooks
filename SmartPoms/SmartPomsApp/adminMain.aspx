@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="adminBack.master" AutoEventWireup="true" CodeFile="adminMain.aspx.cs" Inherits="menber_adminMain" Title="管理中心--网络舆情监控平台" %>
+﻿<%@ Page Language="C#" MasterPageFile="adminBack.master" AutoEventWireup="true" CodeFile="adminMain.aspx.cs" Inherits="adminMain" Title="管理中心--网络舆情监控平台" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <frameset rows="127,*,11" frameborder="no" border="0" framespacing="0">

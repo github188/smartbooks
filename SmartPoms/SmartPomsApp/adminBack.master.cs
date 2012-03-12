@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 
-public partial class menber_adminBack : System.Web.UI.MasterPage {
+public partial class adminBack : System.Web.UI.MasterPage {
     protected void Page_Load(object sender, EventArgs e) {
         if (!VerificationLoginUser()) {
             Response.Redirect("~/adminLogin.aspx");
