@@ -1,5 +1,5 @@
 ﻿
-namespace SmartCampus.DBUtility
+namespace Smart.DBUtility
 {
     using System;
     using System.Collections.Generic;
