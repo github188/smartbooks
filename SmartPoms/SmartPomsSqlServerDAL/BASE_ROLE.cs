@@ -40,9 +40,9 @@ namespace SmartPoms.SQLServerDAL {
         public int Add(Entity.BASE_ROLE entity) {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("insert into BASE_ROLE(");
-            strSql.Append("ROLENAME,ROLEIDPARENT,SORT,SUMMARY,ENABLE");
+            strSql.Append("ROLENAME,ROLEIDPARENT,SORT,SUMMARY,ENABLE,LINK");
             strSql.Append(") values (");
-            strSql.Append("@ROLENAME,@ROLEIDPARENT,@SORT,@SUMMARY,@ENABLE");
+            strSql.Append("@ROLENAME,@ROLEIDPARENT,@SORT,@SUMMARY,@ENABLE,@LINK");
             strSql.Append(") ");
             strSql.Append(";select @@IDENTITY");
             SqlParameter[] parameters = {
@@ -50,7 +50,8 @@ namespace SmartPoms.SQLServerDAL {
                         new SqlParameter("@ROLEIDPARENT", SqlDbType.Int,4) ,            
                         new SqlParameter("@SORT", SqlDbType.Int,4) ,            
                         new SqlParameter("@SUMMARY", SqlDbType.VarChar,50) ,            
-                        new SqlParameter("@ENABLE", SqlDbType.Int,4)             
+                        new SqlParameter("@ENABLE", SqlDbType.Int,4),
+                        new SqlParameter("@LINK", SqlDbType.VarChar,50)
               
             };
 
@@ -59,6 +60,7 @@ namespace SmartPoms.SQLServerDAL {
             parameters[2].Value = entity.SORT;
             parameters[3].Value = entity.SUMMARY;
             parameters[4].Value = entity.ENABLE;
+            parameters[5].Value = entity.LINK;
 
             object obj = SqlServerHelper.GetSingle(strSql.ToString(), parameters);
             if (obj == null) {
@@ -83,6 +85,7 @@ namespace SmartPoms.SQLServerDAL {
             strSql.Append(" SORT = @SORT , ");
             strSql.Append(" SUMMARY = @SUMMARY , ");
             strSql.Append(" ENABLE = @ENABLE  ");
+            strSql.Append(" LINK = @LINK  ");
             strSql.Append(" where ROLEID=@ROLEID ");
 
             SqlParameter[] parameters = {
@@ -91,16 +94,17 @@ namespace SmartPoms.SQLServerDAL {
                         new SqlParameter("@ROLEIDPARENT", SqlDbType.Int,4) ,            
                         new SqlParameter("@SORT", SqlDbType.Int,4) ,            
                         new SqlParameter("@SUMMARY", SqlDbType.VarChar,50) ,            
-                        new SqlParameter("@ENABLE", SqlDbType.Int,4)             
-              
+                        new SqlParameter("@ENABLE", SqlDbType.Int,4),
+                         new SqlParameter("@LINK", SqlDbType.VarChar,50)
             };
 
-            parameters[5].Value = entity.ROLEID;
-            parameters[6].Value = entity.ROLENAME;
-            parameters[7].Value = entity.ROLEIDPARENT;
-            parameters[8].Value = entity.SORT;
-            parameters[9].Value = entity.SUMMARY;
-            parameters[10].Value = entity.ENABLE;
+            parameters[0].Value = entity.ROLEID;
+            parameters[1].Value = entity.ROLENAME;
+            parameters[2].Value = entity.ROLEIDPARENT;
+            parameters[3].Value = entity.SORT;
+            parameters[4].Value = entity.SUMMARY;
+            parameters[5].Value = entity.ENABLE;
+            parameters[6].Value = entity.LINK;
             int rows = SqlServerHelper.ExecuteSql(strSql.ToString(), parameters);
             if (rows > 0) {
                 return true;
@@ -152,7 +156,7 @@ namespace SmartPoms.SQLServerDAL {
         public Entity.BASE_ROLE GetEntity(int ROLEID) {
 
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("select ROLEID, ROLENAME, ROLEIDPARENT, SORT, SUMMARY, ENABLE  ");
+            strSql.Append("select ROLEID, ROLENAME, ROLEIDPARENT, SORT, SUMMARY, ENABLE,LINK  ");
             strSql.Append("  from BASE_ROLE ");
             strSql.Append(" where ROLEID=@ROLEID");
             SqlParameter[] parameters = {
@@ -179,6 +183,7 @@ namespace SmartPoms.SQLServerDAL {
                 if (ds.Tables[0].Rows[0]["ENABLE"].ToString() != "") {
                     entity.ENABLE = int.Parse(ds.Tables[0].Rows[0]["ENABLE"].ToString());
                 }
+                entity.LINK = ds.Tables[0].Rows[0]["LINK"].ToString();
 
                 return entity;
             } else {
@@ -191,7 +196,7 @@ namespace SmartPoms.SQLServerDAL {
         /// </summary>
         public DataSet GetList(string strWhere) {
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("select * ");
+            strSql.Append("select ROLEID,ROLENAME,ROLEIDPARENT,SORT,SUMMARY,ENABLE,LINK ");
             strSql.Append(" FROM BASE_ROLE ");
             if (strWhere.Trim() != "") {
                 strSql.Append(" where " + strWhere);

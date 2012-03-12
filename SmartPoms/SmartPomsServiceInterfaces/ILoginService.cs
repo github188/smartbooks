@@ -1,9 +1,6 @@
 ﻿
 
 namespace SmartPoms.ServiceInterfaces {
-    using System;
-    using System.Collections.Generic;
-    using System.Text;
     using Entity;
 
     /// <summary>

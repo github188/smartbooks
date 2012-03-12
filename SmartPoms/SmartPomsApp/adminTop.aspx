@@ -8,6 +8,8 @@
             margin-top: 0px;
             margin-right: 0px;
             margin-bottom: 0px;
+            font-size:9px;
+            color:Black;
         }
         .STYLE1
         {
@@ -22,6 +24,11 @@
         {
             font-size: 12px;
             color: #FFFFFF;
+        }
+        .jq-page-top-username
+        {
+            margin:0; padding:0; width:52px; height:17px; display:block; background-image:url('images/user.gif'); background-position:left;
+            color:#3B6375; line-height:17px; float:left; margin-left:5px; padding-left:17px; overflow:hidden; font-size:9px;
         }
     </style>
 </asp:Content>
@@ -48,15 +55,16 @@
                                             <tr>
                                                 <td height="17">
                                                     <div align="right">
-                                                        <img src="images/pass.gif" width="69" height="17" /></div>
+                                                        <img src="images/pass.gif" width="69" height="17" />
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <span class="jq-page-top-username">用户信息</span>
                                                 </td>
                                                 <td>
                                                     <div align="right">
-                                                        <img src="images/user.gif" width="69" height="17" /></div>
-                                                </td>
-                                                <td>
-                                                    <div align="right">
-                                                        <img src="images/quit.gif" width="69" height="17" /></div>
+                                                        <img src="images/quit.gif" width="69" height="17" />
+                                                    </div>
                                                 </td>
                                             </tr>
                                         </table>
@@ -127,7 +135,7 @@
                                     </td>
                                     <td width="75%">
                                         <div align="center">
-                                            <span class="STYLE7">服务器时间：2008-03-18 14:35:56</span></div>
+                                            <span class="STYLE7">服务器时间：<%=DateTime.Now.ToString("yyyy-mm-dd HH:MM:ss") %></span></div>
                                     </td>
                                     <td width="9%">
                                         &nbsp;
@@ -168,15 +176,21 @@
                             <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                 <tr>
                                     <td height="20" valign="bottom">
-                                        <span class="STYLE1">当前登录用户：admin &nbsp;用户角色：管理员</span>
+                                        <span class="STYLE1">当前用户：<%=Session["username"]%></span>
                                     </td>
                                     <td valign="bottom" class="STYLE1">
                                         <div align="right">
                                             <img src="images/sj.gif" width="6" height="7" />
-                                            IP：192.168.0.11 &nbsp; &nbsp;&nbsp;<img src="images/sj.gif" width="6" height="7" />
-                                            &nbsp;提供商：中国深圳 &nbsp; &nbsp;
+                                            当前IP：<%=Request.UserHostAddress %>&nbsp;&nbsp;
                                             <img src="images/sj.gif" width="6" height="7" />
-                                            &nbsp;单位：深圳某单位</div>
+                                            授权单位:<%=ConfigurationManager.AppSettings["Authorize"]%>&nbsp;&nbsp;
+                                            <img src="images/sj.gif" width="6" height="7" />
+                                            产品名称:<%=ConfigurationManager.AppSettings["Product"]%>&nbsp;&nbsp;
+                                            <img src="images/sj.gif" width="6" height="7" />
+                                            发型版本:<%=ConfigurationManager.AppSettings["Version"] %>&nbsp;&nbsp;
+                                            <img src="images/sj.gif" width="6" height="7" />
+                                            技术支持:<%=ConfigurationManager.AppSettings["Company"] %>&nbsp;&nbsp;
+                                        </div>
                                     </td>
                                 </tr>
                             </table>

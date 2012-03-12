@@ -53,14 +53,16 @@
                             <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                 <tr>
                                     <td width="381" height="84" background="images/login_06.gif">
-                                        &nbsp;
                                     </td>
                                     <td width="162" valign="middle" background="images/login_07.gif">
+                                        <span>
+                                            <asp:Label ID="lblError" runat="server" ForeColor="Red"></asp:Label>
+                                        </span>
                                         <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                             <tr>
                                                 <td width="44" height="24" valign="bottom">
                                                     <div align="right">
-                                                        <span class="STYLE3">用户</span></div>
+                                                        <span class="STYLE3">用户名</span></div>
                                                 </td>
                                                 <td width="10" valign="bottom">
                                                     &nbsp;
@@ -75,7 +77,7 @@
                                             <tr>
                                                 <td height="24" valign="bottom">
                                                     <div align="right">
-                                                        <span class="STYLE3">密码</span></div>
+                                                        <span class="STYLE3">密&nbsp;&nbsp;码</span></div>
                                                 </td>
                                                 <td width="10" valign="bottom">
                                                     &nbsp;

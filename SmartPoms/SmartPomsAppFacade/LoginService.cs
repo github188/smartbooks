@@ -1,11 +1,8 @@
 ﻿
 namespace SmartPoms.AppFacade {
     using System;
-    using System.Collections.Generic;
-    using System.Text;
     using System.Data;
     using ServiceInterfaces;
-    using Entity;
 
     /// <summary>
     /// 用户登录服务

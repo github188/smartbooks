@@ -19,14 +19,14 @@
                 &nbsp;
             </td>
             <td width="147" valign="top">
-                <iframe height="100%" width="100%" border="0" frameborder="0" src="adminLeft.aspx">
+                <iframe height="100%" width="100%" border="0" frameborder="0" src="adminLeft.aspx" id="leftframe" name="leftframe">
                 </iframe>
             </td>
             <td width="10" bgcolor="#add2da">
                 &nbsp;
             </td>
             <td valign="top">
-                <iframe height="100%" width="100%" border="0" frameborder="0" src="adminRight.aspx">
+                <iframe height="100%" width="100%" border="0" frameborder="0" src="adminRight.aspx" id="rightframe" name="rightframe">
                 </iframe>
             </td>
             <td width="8" bgcolor="#353c44">

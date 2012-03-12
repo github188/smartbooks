@@ -38,6 +38,7 @@ namespace SmartPoms.Entity {
         /// ENABLE
         /// </summary>		
         private int _ENABLE;
+        private string _LINK;
 
         /// <summary>
         /// ROLEID
@@ -80,6 +81,13 @@ namespace SmartPoms.Entity {
         public int ENABLE {
             get { return _ENABLE; }
             set { _ENABLE = value; }
+        }
+        /// <summary>
+        /// 链接
+        /// </summary>
+        public string LINK {
+            get { return _LINK; }
+            set { _LINK = value; }
         }
     }
 }

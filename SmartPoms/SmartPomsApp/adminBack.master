@@ -6,11 +6,8 @@
     <title>网络舆情监控平台--母版页</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <style type="text/css">
-        body
-        {
-            margin: 0;
-            padding: 0;
-        }
+        body{margin: 0;padding: 0; font-size:9px;}
+        a:link,a:visited{text-decoration:none;}
     </style>
     <script src="content/scripts/jquery-1.4.1.js" type="text/javascript"></script>
     <asp:ContentPlaceHolder ID="head" runat="server">
