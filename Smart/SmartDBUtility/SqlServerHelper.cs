@@ -7,11 +7,17 @@ namespace Smart.DBUtility
     using System.Text;
     using System.Data.SqlClient;
     using System.Data;
+    using System.Configuration;
 
+    /// <summary>
+    /// SqlServer数据库连接助手
+    /// </summary>
     public abstract class SqlServerHelper
     {
-        //数据库连接字符串(web.config来配置)
-        public static string connectionString = "";
+        /// <summary>
+        /// 数据库连接字符串(web.config来配置)ConnectionStrings
+        /// </summary>
+        public static string connectionString = ConfigurationManager.AppSettings["ConnectionStrings"];
 
         #region 公用方法
         /// <summary>

@@ -78,6 +78,7 @@ namespace Smart.ServiceFactory
         private static string GetConfigFile()
         {
             string fileName = ConfigurationManager.AppSettings["PluginConfig"];
+            fileName = System.Web.HttpContext.Current.Server.MapPath(fileName);
             if (fileName != null && fileName.Trim() != "" && File.Exists(fileName))
             {
                 return fileName;
