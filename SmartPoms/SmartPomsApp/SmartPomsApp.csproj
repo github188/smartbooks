@@ -527,6 +527,9 @@
       <DependentUpon>adminLogin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="adminLogin.aspx.designer.cs">
+      <DependentUpon>adminLogin.aspx</DependentUpon>
+    </Compile>
     <Compile Include="adminMain.aspx.cs">
       <DependentUpon>adminMain.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
