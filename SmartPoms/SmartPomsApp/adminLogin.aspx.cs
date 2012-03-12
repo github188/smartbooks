@@ -15,4 +15,13 @@ public partial class menber_adminLogin : System.Web.UI.Page
     {
 
     }
+
+    //登录
+    protected void imgBtnLogin_Click(object sender, ImageClickEventArgs e) {
+        
+    }
+    //重置
+    protected void imgBtnReset_Click(object sender, ImageClickEventArgs e) {
+        
+    }
 }

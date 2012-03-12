@@ -15,6 +15,15 @@
             font-size: 12px;
             color: #adc9d9;
         }
+        .loginfrombutton
+        {
+            width: 100px; 
+            height: 17px;
+            background-color: #87adbf;
+            border: solid 1px #153966;
+            font-size: 12px;
+            color: #283439;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
@@ -51,8 +60,8 @@
                                                 </td>
                                                 <td height="24" colspan="2" valign="bottom">
                                                     <div align="left">
-                                                        <input type="text" name="textfield" id="textfield" style="width: 100px; height: 17px;
-                                                            background-color: #87adbf; border: solid 1px #153966; font-size: 12px; color: #283439;">
+                                                        <asp:TextBox ID="txtUserName" runat="server" MaxLength="18" CssClass="loginfrombutton">
+                                                        </asp:TextBox>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -65,8 +74,8 @@
                                                     &nbsp;
                                                 </td>
                                                 <td height="24" colspan="2" valign="bottom">
-                                                    <input type="password" name="textfield2" id="textfield2" style="width: 100px; height: 17px;
-                                                        background-color: #87adbf; border: solid 1px #153966; font-size: 12px; color: #283439;">
+                                                    <asp:TextBox ID="txtUserPwd" runat="server" MaxLength="18" 
+                                                        CssClass="loginfrombutton" TextMode="Password"></asp:TextBox>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -78,17 +87,15 @@
                                                     &nbsp;
                                                 </td>
                                                 <td width="52" height="24" valign="bottom">
-                                                    <input type="text" name="textfield3" id="textfield3" style="width: 50px; height: 17px;
-                                                        background-color: #87adbf; border: solid 1px #153966; font-size: 12px; color: #283439;">
+                                                    <asp:TextBox ID="txtCaptche" runat="server" MaxLength="4" CssClass="loginfrombutton" Width="50">
+                                                    </asp:TextBox>
                                                 </td>
                                                 <td width="62" valign="bottom">
                                                     <div align="left">
                                                         <img src="images/yzm.gif" width="38" height="15"></div>
                                                 </td>
                                             </tr>
-                                            <tr>
-                                            </tr>
-                                        </table>
+                                            </table>
                                     </td>
                                     <td width="26">
                                         <img src="images/login_08.gif" width="26" height="84">
@@ -98,13 +105,19 @@
                                             <tr>
                                                 <td height="25">
                                                     <div align="center">
-                                                        <img src="images/dl.gif" width="57" height="20"></div>
+                                                        <asp:ImageButton ID="imgBtnLogin" runat="server" 
+                                                            ImageUrl="~/images/dl.gif" width="57" height="20" 
+                                                            onclick="imgBtnLogin_Click" ToolTip="登录" />
+                                                    </div>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td height="25">
                                                     <div align="center">
-                                                        <img src="images/cz.gif" width="57" height="20"></div>
+                                                        <asp:ImageButton ID="imgBtnReset" runat="server" 
+                                                            ImageUrl="~/images/cz.gif" width="57" height="20" 
+                                                            onclick="imgBtnReset_Click" ToolTip="重置" />
+                                                    </div>
                                                 </td>
                                             </tr>
                                         </table>

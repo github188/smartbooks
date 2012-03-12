@@ -11,7 +11,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartPomsSqlServerDAL", "Sm
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartPomsEntity", "SmartPomsEntity\SmartPomsEntity.csproj", "{978284E9-1DC9-4439-8462-CC41144C5EA3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartPomsServiceInterfaces", "SmartPomsServiceInterfaces\SmartPomsServiceInterfaces.csproj", "{E3CE882C-002B-4B64-83EA-9A4A8AE2626C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartPomsAppFacade", "SmartPomsAppFacade\SmartPomsAppFacade.csproj", "{910DFD29-38DD-4D69-96F9-48F71C65459E}"
+EndProject
 Global
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -37,12 +45,16 @@ Global
 		{978284E9-1DC9-4439-8462-CC41144C5EA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{978284E9-1DC9-4439-8462-CC41144C5EA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{978284E9-1DC9-4439-8462-CC41144C5EA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3CE882C-002B-4B64-83EA-9A4A8AE2626C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3CE882C-002B-4B64-83EA-9A4A8AE2626C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3CE882C-002B-4B64-83EA-9A4A8AE2626C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3CE882C-002B-4B64-83EA-9A4A8AE2626C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{910DFD29-38DD-4D69-96F9-48F71C65459E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{910DFD29-38DD-4D69-96F9-48F71C65459E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{910DFD29-38DD-4D69-96F9-48F71C65459E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{910DFD29-38DD-4D69-96F9-48F71C65459E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(SubversionScc) = preSolution
-		Svn-Managed = True
-		Manager = AnkhSVN - Subversion Support for Visual Studio
 	EndGlobalSection
 EndGlobal
