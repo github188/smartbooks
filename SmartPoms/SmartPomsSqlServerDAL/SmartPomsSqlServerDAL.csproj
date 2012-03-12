@@ -38,6 +38,16 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SmartPomsEntity\SmartPomsEntity.csproj">
+      <Project>{978284E9-1DC9-4439-8462-CC41144C5EA3}</Project>
+      <Name>SmartPomsEntity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SmartPomsIDAL\SmartPomsIDAL.csproj">
+      <Project>{A0F522E6-CA62-43D7-9AB1-9FC70DC030CB}</Project>
+      <Name>SmartPomsIDAL</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
