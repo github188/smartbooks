@@ -36,7 +36,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IBASE_ARTICLE.cs" />
+    <Compile Include="IBASE_ROLE.cs" />
+    <Compile Include="IBASE_TOPIC.cs" />
+    <Compile Include="IBASE_USER.cs" />
+    <Compile Include="IBASE_WARNING.cs" />
+    <Compile Include="IBASE_WORD.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SmartPomsEntity\SmartPomsEntity.csproj">
+      <Project>{978284E9-1DC9-4439-8462-CC41144C5EA3}</Project>
+      <Name>SmartPomsEntity</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
