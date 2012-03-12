@@ -5,89 +5,81 @@
 // 功能描述:角色信息表 -- 实体定义
 //
 // 创建标识： 王 亚 2012-03-12
-namespace SmartPoms.Entity
-{
+namespace SmartPoms.Entity {
     using System;
     using System.Collections.Generic;
     using System.Text;
-	
+
     /// <summary>
     /// 角色信息表 -- 实体定义
     /// </summary>
-    public class BASE_ROLE
-    {
-		/// <summary>
+    public class BASE_ROLE {
+        /// <summary>
         /// ROLEID
         /// </summary>		
         private int _ROLEID;
-		/// <summary>
+        /// <summary>
         /// ROLENAME
         /// </summary>		
         private string _ROLENAME;
-		/// <summary>
+        /// <summary>
         /// ROLEIDPARENT
         /// </summary>		
         private int _ROLEIDPARENT;
-		/// <summary>
+        /// <summary>
         /// SORT
         /// </summary>		
         private int _SORT;
-		/// <summary>
+        /// <summary>
         /// SUMMARY
         /// </summary>		
         private string _SUMMARY;
-		/// <summary>
+        /// <summary>
         /// ENABLE
         /// </summary>		
         private int _ENABLE;
-	
-	        /// <summary>
+
+        /// <summary>
         /// ROLEID
         /// </summary>
-        public int ROLEID
-        {
+        public int ROLEID {
             get { return _ROLEID; }
             set { _ROLEID = value; }
         }
-	        /// <summary>
+        /// <summary>
         /// ROLENAME
         /// </summary>
-        public string ROLENAME
-        {
+        public string ROLENAME {
             get { return _ROLENAME; }
             set { _ROLENAME = value; }
         }
-	        /// <summary>
+        /// <summary>
         /// ROLEIDPARENT
         /// </summary>
-        public int ROLEIDPARENT
-        {
+        public int ROLEIDPARENT {
             get { return _ROLEIDPARENT; }
             set { _ROLEIDPARENT = value; }
         }
-	        /// <summary>
+        /// <summary>
         /// SORT
         /// </summary>
-        public int SORT
-        {
+        public int SORT {
             get { return _SORT; }
             set { _SORT = value; }
         }
-	        /// <summary>
+        /// <summary>
         /// SUMMARY
         /// </summary>
-        public string SUMMARY
-        {
+        public string SUMMARY {
             get { return _SUMMARY; }
             set { _SUMMARY = value; }
         }
-	        /// <summary>
+        /// <summary>
         /// ENABLE
         /// </summary>
-        public int ENABLE
-        {
+        public int ENABLE {
             get { return _ENABLE; }
             set { _ENABLE = value; }
         }
-	}
+    }
 }

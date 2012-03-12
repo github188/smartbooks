@@ -8,8 +8,8 @@
     <ProjectGuid>{A0F522E6-CA62-43D7-9AB1-9FC70DC030CB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SmartPomsIDAL</RootNamespace>
-    <AssemblyName>SmartPomsIDAL</AssemblyName>
+    <RootNamespace>SmartPoms.IDAL</RootNamespace>
+    <AssemblyName>SmartPoms.IDAL</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -36,6 +36,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BASE_ARTICLE.cs" />
+    <Compile Include="BASE_ROLE.cs" />
+    <Compile Include="BASE_TOPIC.cs" />
+    <Compile Include="BASE_USER.cs" />
+    <Compile Include="BASE_WARNING.cs" />
+    <Compile Include="BASE_WORD.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

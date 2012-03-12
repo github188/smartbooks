@@ -8,8 +8,8 @@
     <ProjectGuid>{86C9D43C-66D6-41EA-B19D-F20269829628}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SmartPomsSqlServerDAL</RootNamespace>
-    <AssemblyName>SmartPomsSqlServerDAL</AssemblyName>
+    <RootNamespace>SmartPoms.SqlServerDAL</RootNamespace>
+    <AssemblyName>SmartPoms.SqlServerDAL</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -31,11 +31,20 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Smart.DBUtility">
+      <HintPath>..\..\Smart\FreeAssembly\Smart.DBUtility.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BASE_ARTICLE.cs" />
+    <Compile Include="BASE_ROLE.cs" />
+    <Compile Include="BASE_TOPIC.cs" />
+    <Compile Include="BASE_USER.cs" />
+    <Compile Include="BASE_WARNING.cs" />
+    <Compile Include="BASE_WORD.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -5,125 +5,114 @@
 // 功能描述:预警信息表 -- 实体定义
 //
 // 创建标识： 王 亚 2012-03-12
-namespace SmartPoms.Entity
-{
+namespace SmartPoms.Entity {
     using System;
     using System.Collections.Generic;
     using System.Text;
-	
+
     /// <summary>
     /// 预警信息表 -- 实体定义
     /// </summary>
-    public class BASE_WARNING
-    {
-		/// <summary>
+    public class BASE_WARNING {
+        /// <summary>
         /// WARNINGID
         /// </summary>		
         private int _WARNINGID;
-		/// <summary>
+        /// <summary>
         /// TITLE
         /// </summary>		
         private string _TITLE;
-		/// <summary>
+        /// <summary>
         /// DETAIL
         /// </summary>		
         private string _DETAIL;
-		/// <summary>
+        /// <summary>
         /// GENERATEDATE
         /// </summary>		
         private DateTime _GENERATEDATE;
-		/// <summary>
+        /// <summary>
         /// ARTICLE
         /// </summary>		
         private int _ARTICLE;
-		/// <summary>
+        /// <summary>
         /// ENABLE
         /// </summary>		
         private int _ENABLE;
-		/// <summary>
+        /// <summary>
         /// SNAPSHOT
         /// </summary>		
         private string _SNAPSHOT;
-		/// <summary>
+        /// <summary>
         /// ISREAD
         /// </summary>		
         private int _ISREAD;
-		/// <summary>
+        /// <summary>
         /// SORT
         /// </summary>		
         private int _SORT;
-	
-	        /// <summary>
+
+        /// <summary>
         /// WARNINGID
         /// </summary>
-        public int WARNINGID
-        {
+        public int WARNINGID {
             get { return _WARNINGID; }
             set { _WARNINGID = value; }
         }
-	        /// <summary>
+        /// <summary>
         /// TITLE
         /// </summary>
-        public string TITLE
-        {
+        public string TITLE {
             get { return _TITLE; }
             set { _TITLE = value; }
         }
-	        /// <summary>
+        /// <summary>
         /// DETAIL
         /// </summary>
-        public string DETAIL
-        {
+        public string DETAIL {
             get { return _DETAIL; }
             set { _DETAIL = value; }
         }
-	        /// <summary>
+        /// <summary>
         /// GENERATEDATE
         /// </summary>
-        public DateTime GENERATEDATE
-        {
+        public DateTime GENERATEDATE {
             get { return _GENERATEDATE; }
             set { _GENERATEDATE = value; }
         }
-	        /// <summary>
+        /// <summary>
         /// ARTICLE
         /// </summary>
-        public int ARTICLE
-        {
+        public int ARTICLE {
             get { return _ARTICLE; }
             set { _ARTICLE = value; }
         }
-	        /// <summary>
+        /// <summary>
         /// ENABLE
         /// </summary>
-        public int ENABLE
-        {
+        public int ENABLE {
             get { return _ENABLE; }
             set { _ENABLE = value; }
         }
-	        /// <summary>
+        /// <summary>
         /// SNAPSHOT
         /// </summary>
-        public string SNAPSHOT
-        {
+        public string SNAPSHOT {
             get { return _SNAPSHOT; }
             set { _SNAPSHOT = value; }
         }
-	        /// <summary>
+        /// <summary>
         /// ISREAD
         /// </summary>
-        public int ISREAD
-        {
+        public int ISREAD {
             get { return _ISREAD; }
             set { _ISREAD = value; }
         }
-	        /// <summary>
+        /// <summary>
         /// SORT
         /// </summary>
-        public int SORT
-        {
+        public int SORT {
             get { return _SORT; }
             set { _SORT = value; }
         }
-	}
+    }
 }

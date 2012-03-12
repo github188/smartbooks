@@ -5,65 +5,59 @@
 // 功能描述:用户信息表 -- 实体定义
 //
 // 创建标识： 王 亚 2012-03-12
-namespace SmartPoms.Entity
-{
+namespace SmartPoms.Entity {
     using System;
     using System.Collections.Generic;
     using System.Text;
-	
+
     /// <summary>
     /// 用户信息表 -- 实体定义
     /// </summary>
-    public class BASE_USER
-    {
-		/// <summary>
+    public class BASE_USER {
+        /// <summary>
         /// USERID
         /// </summary>		
         private int _USERID;
-		/// <summary>
+        /// <summary>
         /// USERNAME
         /// </summary>		
         private string _USERNAME;
-		/// <summary>
+        /// <summary>
         /// USERPWD
         /// </summary>		
         private string _USERPWD;
-		/// <summary>
+        /// <summary>
         /// ROLEID
         /// </summary>		
         private string _ROLEID;
-	
-	        /// <summary>
+
+        /// <summary>
         /// USERID
         /// </summary>
-        public int USERID
-        {
+        public int USERID {
             get { return _USERID; }
             set { _USERID = value; }
         }
-	        /// <summary>
+        /// <summary>
         /// USERNAME
         /// </summary>
-        public string USERNAME
-        {
+        public string USERNAME {
             get { return _USERNAME; }
             set { _USERNAME = value; }
         }
-	        /// <summary>
+        /// <summary>
         /// USERPWD
         /// </summary>
-        public string USERPWD
-        {
+        public string USERPWD {
             get { return _USERPWD; }
             set { _USERPWD = value; }
         }
-	        /// <summary>
+        /// <summary>
         /// ROLEID
         /// </summary>
-        public string ROLEID
-        {
+        public string ROLEID {
             get { return _ROLEID; }
             set { _ROLEID = value; }
         }
-	}
+    }
 }

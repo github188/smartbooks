@@ -5,101 +5,92 @@
 // 功能描述:专题信息表 -- 实体定义
 //
 // 创建标识： 王 亚 2012-03-12
-namespace SmartPoms.Entity
-{
+namespace SmartPoms.Entity {
     using System;
     using System.Collections.Generic;
     using System.Text;
-	
+
     /// <summary>
     /// 专题信息表 -- 实体定义
     /// </summary>
-    public class BASE_TOPIC
-    {
-		/// <summary>
+    public class BASE_TOPIC {
+        /// <summary>
         /// TOPICID
         /// </summary>		
         private int _TOPICID;
-		/// <summary>
+        /// <summary>
         /// TOPICNAME
         /// </summary>		
         private string _TOPICNAME;
-		/// <summary>
+        /// <summary>
         /// SUMMARY
         /// </summary>		
         private string _SUMMARY;
-		/// <summary>
+        /// <summary>
         /// SCORE
         /// </summary>		
         private int _SCORE;
-		/// <summary>
+        /// <summary>
         /// TOPICIDPARENT
         /// </summary>		
         private int _TOPICIDPARENT;
-		/// <summary>
+        /// <summary>
         /// ENABLE
         /// </summary>		
         private int _ENABLE;
-		/// <summary>
+        /// <summary>
         /// SORT
         /// </summary>		
         private int _SORT;
-	
-	        /// <summary>
+
+        /// <summary>
         /// TOPICID
         /// </summary>
-        public int TOPICID
-        {
+        public int TOPICID {
             get { return _TOPICID; }
             set { _TOPICID = value; }
         }
-	        /// <summary>
+        /// <summary>
         /// TOPICNAME
         /// </summary>
-        public string TOPICNAME
-        {
+        public string TOPICNAME {
             get { return _TOPICNAME; }
             set { _TOPICNAME = value; }
         }
-	        /// <summary>
+        /// <summary>
         /// SUMMARY
         /// </summary>
-        public string SUMMARY
-        {
+        public string SUMMARY {
             get { return _SUMMARY; }
             set { _SUMMARY = value; }
         }
-	        /// <summary>
+        /// <summary>
         /// SCORE
         /// </summary>
-        public int SCORE
-        {
+        public int SCORE {
             get { return _SCORE; }
             set { _SCORE = value; }
         }
-	        /// <summary>
+        /// <summary>
         /// TOPICIDPARENT
         /// </summary>
-        public int TOPICIDPARENT
-        {
+        public int TOPICIDPARENT {
             get { return _TOPICIDPARENT; }
             set { _TOPICIDPARENT = value; }
         }
-	        /// <summary>
+        /// <summary>
         /// ENABLE
         /// </summary>
-        public int ENABLE
-        {
+        public int ENABLE {
             get { return _ENABLE; }
             set { _ENABLE = value; }
         }
-	        /// <summary>
+        /// <summary>
         /// SORT
         /// </summary>
-        public int SORT
-        {
+        public int SORT {
             get { return _SORT; }
             set { _SORT = value; }
         }
-	}
+    }
 }

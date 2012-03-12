@@ -8,8 +8,8 @@
     <ProjectGuid>{7383FCD3-1F29-4FAF-8C41-BFA05C61226A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SmartPomsBLL</RootNamespace>
-    <AssemblyName>SmartPomsBLL</AssemblyName>
+    <RootNamespace>SmartPoms.BLL</RootNamespace>
+    <AssemblyName>SmartPoms.BLL</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

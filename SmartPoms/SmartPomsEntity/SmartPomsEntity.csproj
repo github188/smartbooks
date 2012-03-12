@@ -8,8 +8,8 @@
     <ProjectGuid>{978284E9-1DC9-4439-8462-CC41144C5EA3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SmartPomsEntity</RootNamespace>
-    <AssemblyName>SmartPomsEntity</AssemblyName>
+    <RootNamespace>SmartPoms.Entity</RootNamespace>
+    <AssemblyName>SmartPoms.Entity</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

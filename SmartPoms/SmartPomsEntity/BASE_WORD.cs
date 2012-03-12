@@ -5,89 +5,81 @@
 // 功能描述:关键字信息表 -- 实体定义
 //
 // 创建标识： 王 亚 2012-03-12
-namespace SmartPoms.Entity
-{
+namespace SmartPoms.Entity {
     using System;
     using System.Collections.Generic;
     using System.Text;
-	
+
     /// <summary>
     /// 关键字信息表 -- 实体定义
     /// </summary>
-    public class BASE_WORD
-    {
-		/// <summary>
+    public class BASE_WORD {
+        /// <summary>
         /// WORDID
         /// </summary>		
         private int _WORDID;
-		/// <summary>
+        /// <summary>
         /// WORDNAME
         /// </summary>		
         private string _WORDNAME;
-		/// <summary>
+        /// <summary>
         /// SCORE
         /// </summary>		
         private decimal _SCORE;
-		/// <summary>
+        /// <summary>
         /// WORDIDPARENT
         /// </summary>		
         private int _WORDIDPARENT;
-		/// <summary>
+        /// <summary>
         /// ENABLE
         /// </summary>		
         private int _ENABLE;
-		/// <summary>
+        /// <summary>
         /// TOPICID
         /// </summary>		
         private string _TOPICID;
-	
-	        /// <summary>
+
+        /// <summary>
         /// WORDID
         /// </summary>
-        public int WORDID
-        {
+        public int WORDID {
             get { return _WORDID; }
             set { _WORDID = value; }
         }
-	        /// <summary>
+        /// <summary>
         /// WORDNAME
         /// </summary>
-        public string WORDNAME
-        {
+        public string WORDNAME {
             get { return _WORDNAME; }
             set { _WORDNAME = value; }
         }
-	        /// <summary>
+        /// <summary>
         /// SCORE
         /// </summary>
-        public decimal SCORE
-        {
+        public decimal SCORE {
             get { return _SCORE; }
             set { _SCORE = value; }
         }
-	        /// <summary>
+        /// <summary>
         /// WORDIDPARENT
         /// </summary>
-        public int WORDIDPARENT
-        {
+        public int WORDIDPARENT {
             get { return _WORDIDPARENT; }
             set { _WORDIDPARENT = value; }
         }
-	        /// <summary>
+        /// <summary>
         /// ENABLE
         /// </summary>
-        public int ENABLE
-        {
+        public int ENABLE {
             get { return _ENABLE; }
             set { _ENABLE = value; }
         }
-	        /// <summary>
+        /// <summary>
         /// TOPICID
         /// </summary>
-        public string TOPICID
-        {
+        public string TOPICID {
             get { return _TOPICID; }
             set { _TOPICID = value; }
         }
-	}
+    }
 }

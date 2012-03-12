@@ -5,161 +5,147 @@
 // 功能描述:文章信息表 -- 实体定义
 //
 // 创建标识： 王 亚 2012-03-12
-namespace SmartPoms.Entity
-{
+namespace SmartPoms.Entity {
     using System;
     using System.Collections.Generic;
     using System.Text;
-	
+
     /// <summary>
     /// 文章信息表 -- 实体定义
     /// </summary>
-    public class BASE_ARTICLE
-    {
-		/// <summary>
+    public class BASE_ARTICLE {
+        /// <summary>
         /// ARTICLEID
         /// </summary>		
         private int _ARTICLEID;
-		/// <summary>
+        /// <summary>
         /// TOPICID
         /// </summary>		
         private string _TOPICID;
-		/// <summary>
+        /// <summary>
         /// TITLE
         /// </summary>		
         private string _TITLE;
-		/// <summary>
+        /// <summary>
         /// PUBLISHDATE
         /// </summary>		
         private DateTime _PUBLISHDATE;
-		/// <summary>
+        /// <summary>
         /// SOURCE
         /// </summary>		
         private string _SOURCE;
-		/// <summary>
+        /// <summary>
         /// AUTHOR
         /// </summary>		
         private string _AUTHOR;
-		/// <summary>
+        /// <summary>
         /// CLICK
         /// </summary>		
         private int _CLICK;
-		/// <summary>
+        /// <summary>
         /// COMMENT
         /// </summary>		
         private int _COMMENT;
-		/// <summary>
+        /// <summary>
         /// DETAIL
         /// </summary>		
         private string _DETAIL;
-		/// <summary>
+        /// <summary>
         /// REFERER
         /// </summary>		
         private string _REFERER;
-		/// <summary>
+        /// <summary>
         /// EXTRACTIONDATE
         /// </summary>		
         private DateTime _EXTRACTIONDATE;
-		/// <summary>
+        /// <summary>
         /// SCORE
         /// </summary>		
         private decimal _SCORE;
-	
-	        /// <summary>
+
+        /// <summary>
         /// ARTICLEID
         /// </summary>
-        public int ARTICLEID
-        {
+        public int ARTICLEID {
             get { return _ARTICLEID; }
             set { _ARTICLEID = value; }
         }
-	        /// <summary>
+        /// <summary>
         /// TOPICID
         /// </summary>
-        public string TOPICID
-        {
+        public string TOPICID {
             get { return _TOPICID; }
             set { _TOPICID = value; }
         }
-	        /// <summary>
+        /// <summary>
         /// TITLE
         /// </summary>
-        public string TITLE
-        {
+        public string TITLE {
             get { return _TITLE; }
             set { _TITLE = value; }
         }
-	        /// <summary>
+        /// <summary>
         /// PUBLISHDATE
         /// </summary>
-        public DateTime PUBLISHDATE
-        {
+        public DateTime PUBLISHDATE {
             get { return _PUBLISHDATE; }
             set { _PUBLISHDATE = value; }
         }
-	        /// <summary>
+        /// <summary>
         /// SOURCE
         /// </summary>
-        public string SOURCE
-        {
+        public string SOURCE {
             get { return _SOURCE; }
             set { _SOURCE = value; }
         }
-	        /// <summary>
+        /// <summary>
         /// AUTHOR
         /// </summary>
-        public string AUTHOR
-        {
+        public string AUTHOR {
             get { return _AUTHOR; }
             set { _AUTHOR = value; }
         }
-	        /// <summary>
+        /// <summary>
         /// CLICK
         /// </summary>
-        public int CLICK
-        {
+        public int CLICK {
             get { return _CLICK; }
             set { _CLICK = value; }
         }
-	        /// <summary>
+        /// <summary>
         /// COMMENT
         /// </summary>
-        public int COMMENT
-        {
+        public int COMMENT {
             get { return _COMMENT; }
             set { _COMMENT = value; }
         }
-	        /// <summary>
+        /// <summary>
         /// DETAIL
         /// </summary>
-        public string DETAIL
-        {
+        public string DETAIL {
             get { return _DETAIL; }
             set { _DETAIL = value; }
         }
-	        /// <summary>
+        /// <summary>
         /// REFERER
         /// </summary>
-        public string REFERER
-        {
+        public string REFERER {
             get { return _REFERER; }
             set { _REFERER = value; }
         }
-	        /// <summary>
+        /// <summary>
         /// EXTRACTIONDATE
         /// </summary>
-        public DateTime EXTRACTIONDATE
-        {
+        public DateTime EXTRACTIONDATE {
             get { return _EXTRACTIONDATE; }
             set { _EXTRACTIONDATE = value; }
         }
-	        /// <summary>
+        /// <summary>
         /// SCORE
         /// </summary>
-        public decimal SCORE
-        {
+        public decimal SCORE {
             get { return _SCORE; }
             set { _SCORE = value; }
         }
-	}
+    }
 }
