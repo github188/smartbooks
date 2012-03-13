@@ -36,6 +36,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="KeywordService.cs" />
     <Compile Include="LoginService.cs" />
     <Compile Include="MenuService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

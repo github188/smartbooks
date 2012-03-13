@@ -28,5 +28,12 @@
       <FileName>ITopicService.cs</FileName>
     </TypeIdentifier>
   </Interface>
+  <Interface Name="SmartPoms.ServiceInterfaces.IKeywordService" Collapsed="true">
+    <Position X="3.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAIAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IKeywordService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
   <Font Name="宋体" Size="9" />
 </ClassDiagram>
