@@ -501,6 +501,24 @@
     <Content Include="content\scripts\jquery-1.4.1-vsdoc.js" />
     <Content Include="content\scripts\jquery-1.4.1.js" />
     <Content Include="content\scripts\jquery-1.4.1.min.js" />
+    <Content Include="poms\ascx\CountArea.ascx" />
+    <Content Include="poms\ascx\CountClick.ascx" />
+    <Content Include="poms\ascx\CountComment.ascx" />
+    <Content Include="poms\ascx\CountMedia.ascx" />
+    <Content Include="poms\ascx\CountTopic.ascx" />
+    <Content Include="poms\ascx\CountWebSite.ascx" />
+    <Content Include="poms\ascx\MessageEmail.ascx" />
+    <Content Include="poms\ascx\MessageSMS.ascx" />
+    <Content Include="poms\ascx\NegativeComments.ascx" />
+    <Content Include="poms\ascx\NegativeReported.ascx" />
+    <Content Include="poms\ascx\OpinionDayReport.ascx" />
+    <Content Include="poms\ascx\OpinionMonthReport.ascx" />
+    <Content Include="poms\ascx\OpinionQuarterReport.ascx" />
+    <Content Include="poms\ascx\OpinionWeekReport.ascx" />
+    <Content Include="poms\ascx\OpinionYearReport.ascx" />
+    <Content Include="poms\ascx\RatingDissemination.ascx" />
+    <Content Include="poms\ascx\RatingEmotional.ascx" />
+    <Content Include="poms\ascx\RatingSituationEvolution.ascx" />
     <Content Include="poms\CountArea.aspx" />
     <Content Include="poms\CountClick.aspx" />
     <Content Include="poms\CountComment.aspx" />
@@ -562,6 +580,135 @@
     <Compile Include="adminTop.aspx.cs">
       <DependentUpon>adminTop.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_Code\PomsMasterPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="poms\ascx\CountArea.ascx.cs">
+      <DependentUpon>CountArea.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="poms\ascx\CountArea.ascx.designer.cs">
+      <DependentUpon>CountArea.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="poms\ascx\CountClick.ascx.cs">
+      <DependentUpon>CountClick.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="poms\ascx\CountClick.ascx.designer.cs">
+      <DependentUpon>CountClick.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="poms\ascx\CountComment.ascx.cs">
+      <DependentUpon>CountComment.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="poms\ascx\CountComment.ascx.designer.cs">
+      <DependentUpon>CountComment.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="poms\ascx\CountMedia.ascx.cs">
+      <DependentUpon>CountMedia.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="poms\ascx\CountMedia.ascx.designer.cs">
+      <DependentUpon>CountMedia.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="poms\ascx\CountTopic.ascx.cs">
+      <DependentUpon>CountTopic.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="poms\ascx\CountTopic.ascx.designer.cs">
+      <DependentUpon>CountTopic.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="poms\ascx\CountWebSite.ascx.cs">
+      <DependentUpon>CountWebSite.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="poms\ascx\CountWebSite.ascx.designer.cs">
+      <DependentUpon>CountWebSite.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="poms\ascx\MessageEmail.ascx.cs">
+      <DependentUpon>MessageEmail.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="poms\ascx\MessageEmail.ascx.designer.cs">
+      <DependentUpon>MessageEmail.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="poms\ascx\MessageSMS.ascx.cs">
+      <DependentUpon>MessageSMS.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="poms\ascx\MessageSMS.ascx.designer.cs">
+      <DependentUpon>MessageSMS.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="poms\ascx\NegativeComments.ascx.cs">
+      <DependentUpon>NegativeComments.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="poms\ascx\NegativeComments.ascx.designer.cs">
+      <DependentUpon>NegativeComments.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="poms\ascx\NegativeReported.ascx.cs">
+      <DependentUpon>NegativeReported.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="poms\ascx\NegativeReported.ascx.designer.cs">
+      <DependentUpon>NegativeReported.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="poms\ascx\OpinionDayReport.ascx.cs">
+      <DependentUpon>OpinionDayReport.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="poms\ascx\OpinionDayReport.ascx.designer.cs">
+      <DependentUpon>OpinionDayReport.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="poms\ascx\OpinionMonthReport.ascx.cs">
+      <DependentUpon>OpinionMonthReport.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="poms\ascx\OpinionMonthReport.ascx.designer.cs">
+      <DependentUpon>OpinionMonthReport.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="poms\ascx\OpinionQuarterReport.ascx.cs">
+      <DependentUpon>OpinionQuarterReport.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="poms\ascx\OpinionQuarterReport.ascx.designer.cs">
+      <DependentUpon>OpinionQuarterReport.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="poms\ascx\OpinionWeekReport.ascx.cs">
+      <DependentUpon>OpinionWeekReport.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="poms\ascx\OpinionWeekReport.ascx.designer.cs">
+      <DependentUpon>OpinionWeekReport.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="poms\ascx\OpinionYearReport.ascx.cs">
+      <DependentUpon>OpinionYearReport.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="poms\ascx\OpinionYearReport.ascx.designer.cs">
+      <DependentUpon>OpinionYearReport.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="poms\ascx\RatingDissemination.ascx.cs">
+      <DependentUpon>RatingDissemination.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="poms\ascx\RatingDissemination.ascx.designer.cs">
+      <DependentUpon>RatingDissemination.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="poms\ascx\RatingEmotional.ascx.cs">
+      <DependentUpon>RatingEmotional.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="poms\ascx\RatingEmotional.ascx.designer.cs">
+      <DependentUpon>RatingEmotional.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="poms\ascx\RatingSituationEvolution.ascx.cs">
+      <DependentUpon>RatingSituationEvolution.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="poms\ascx\RatingSituationEvolution.ascx.designer.cs">
+      <DependentUpon>RatingSituationEvolution.ascx</DependentUpon>
     </Compile>
     <Compile Include="poms\CountArea.aspx.cs">
       <DependentUpon>CountArea.aspx</DependentUpon>
@@ -699,7 +846,6 @@
     <Folder Include="content\kindeditor-4.0.5\attached\" />
     <Folder Include="content\themes\" />
     <Folder Include="log\" />
-    <Folder Include="poms\ascx\" />
     <Folder Include="public\" />
     <Folder Include="scripts\" />
     <Folder Include="template\" />

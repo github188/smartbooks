@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+﻿
 
 namespace SmartPomsApp.poms {
-    public partial class CountTopic : System.Web.UI.Page {
+    using System;
+    using System.Collections.Generic;
+    using System.Web;
+    using System.Web.UI;
+    using System.Web.UI.WebControls;
+
+    public partial class CountTopic : PomsMasterPage {
         protected void Page_Load(object sender, EventArgs e) {
 
         }

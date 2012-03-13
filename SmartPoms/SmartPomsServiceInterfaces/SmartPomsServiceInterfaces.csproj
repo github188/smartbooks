@@ -39,6 +39,7 @@
     <Compile Include="ILoginService.cs" />
     <Compile Include="IMenuService.cs" />
     <Compile Include="IService.cs" />
+    <Compile Include="ITopicService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

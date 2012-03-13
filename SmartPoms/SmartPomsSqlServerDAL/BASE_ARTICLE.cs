@@ -231,7 +231,7 @@ namespace SmartPoms.SQLServerDAL {
         /// </summary>
         public DataSet GetList(string strWhere) {
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("select * ");
+            strSql.Append("select ARTICLEID,TOPICID,TITLE,PUBLISHDATE,SOURCE,AUTHOR,CLICK,COMMENT,DETAIL,REFERER,EXTRACTIONDATE,SCORE ");
             strSql.Append(" FROM BASE_ARTICLE ");
             if (strWhere.Trim() != "") {
                 strSql.Append(" where " + strWhere);

@@ -199,7 +199,7 @@ namespace SmartPoms.SQLServerDAL {
         /// </summary>
         public DataSet GetList(string strWhere) {
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("select * ");
+            strSql.Append("select TOPICID,TOPICNAME,SUMMARY,SCORE,TOPICIDPARENT,EBABLE,SCORT ");
             strSql.Append(" FROM BASE_TOPIC ");
             if (strWhere.Trim() != "") {
                 strSql.Append(" where " + strWhere);
