@@ -8,31 +8,10 @@
     </TypeIdentifier>
   </Interface>
   <Interface Name="SmartPoms.ServiceInterfaces.ILoginService" Collapsed="true">
-    <Position X="3.5" Y="0.5" Width="1.5" />
+    <Position X="2.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAgAAAAAAAAAQAAAAAAAAAAAAAAIBAEEAA=</HashCode>
+      <HashCode>EAAACAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAA=</HashCode>
       <FileName>ILoginService.cs</FileName>
-    </TypeIdentifier>
-  </Interface>
-  <Interface Name="SmartPoms.ServiceInterfaces.IMenuService" Collapsed="true">
-    <Position X="3.5" Y="1.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAIAQAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAEAAA=</HashCode>
-      <FileName>IMenuService.cs</FileName>
-    </TypeIdentifier>
-  </Interface>
-  <Interface Name="SmartPoms.ServiceInterfaces.ITopicService" Collapsed="true">
-    <Position X="3.5" Y="2" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAIAAAAAAAQAAAAAQAAAAAAAAAAAGAAA=</HashCode>
-      <FileName>ITopicService.cs</FileName>
-    </TypeIdentifier>
-  </Interface>
-  <Interface Name="SmartPoms.ServiceInterfaces.IKeywordService" Collapsed="true">
-    <Position X="3.5" Y="2.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAgAAAAAAAAIAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>IKeywordService.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Font Name="宋体" Size="9" />
