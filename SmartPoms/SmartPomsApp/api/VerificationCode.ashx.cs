@@ -1,5 +1,5 @@
 ﻿
-namespace SmartPomsApp.api
+namespace SmartPomsApp.Api
 {
     using System;
     using System.Collections.Generic;
