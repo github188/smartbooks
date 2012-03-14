@@ -67,6 +67,18 @@ public partial class adminLogin : System.Web.UI.Page {
             this.txtCaptche.Focus();
             return false;
         }
+        if (this.txtCaptche.Text.Length < 4) {
+            this.lblError.Text = "验证码位数错误。";
+            this.txtCaptche.Focus();
+            return false;
+        }
+        if (this.Request.Cookies["captche"].Value == null || 
+            this.Request.Cookies["captche"].Value != this.txtCaptche.Text) {
+            this.lblError.Text = "验证码错误。";
+            this.txtCaptche.Text = "";
+            this.txtCaptche.Focus();
+            return false;
+        }
         return true;
     }
 

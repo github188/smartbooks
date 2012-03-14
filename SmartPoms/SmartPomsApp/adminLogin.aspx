@@ -101,7 +101,7 @@
                                                 </td>
                                                 <td width="62" valign="bottom">
                                                     <div align="left">
-                                                        <img src="images/yzm.gif" width="38" height="15"></div>
+                                                        <img src="api/VerificationCode.ashx" width="50" height="20"></div>
                                                 </td>
                                             </tr>
                                             </table>

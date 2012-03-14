@@ -40,6 +40,9 @@
     <Reference Include="Smart.ServiceFactory">
       <HintPath>..\..\Smart\FreeAssembly\Smart.ServiceFactory.dll</HintPath>
     </Reference>
+    <Reference Include="Smart.Utility">
+      <HintPath>..\..\Smart\FreeAssembly\Smart.Utility.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -584,6 +587,9 @@
     <Compile Include="App_Code\PomsMasterPage.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="api\VerificationCode.ashx.cs">
+      <DependentUpon>VerificationCode.ashx</DependentUpon>
+    </Compile>
     <Compile Include="poms\ascx\CountArea.ascx.cs">
       <DependentUpon>CountArea.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -863,6 +869,9 @@
       <Project>{E3CE882C-002B-4B64-83EA-9A4A8AE2626C}</Project>
       <Name>SmartPomsServiceInterfaces</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="api\VerificationCode.ashx" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

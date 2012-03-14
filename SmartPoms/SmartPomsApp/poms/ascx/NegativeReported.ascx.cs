@@ -20,7 +20,9 @@ namespace SmartPomsApp.poms.ascx {
             ITopicService topicService = ComponentFactory<ITopicService>.GetBLLPlugin();
             IKeywordService wordService = ComponentFactory<IKeywordService>.GetBLLPlugin();
             DataTable dtWord = wordService.getTopicKeywords(0);
-            DataTable dt = topicService.getArticle(0, 10, "2011-01-01", "2013-01-01", 0);
+            DataTable dt = topicService.getArticle(0, 10, "2011-01-01", DateTime.Now.ToString("yyyy-mm-dd"), 0);
+
+            #region 格式化文章内容
             foreach (DataRow r in dt.Rows) {
                 //截摘要长度
                 string conn = r["DETAIL"].ToString();
@@ -42,6 +44,7 @@ namespace SmartPomsApp.poms.ascx {
                     }
                 }
             }
+            #endregion
             this.ddlViewList.DataSource = dt;
             this.ddlViewList.DataBind();
         }
