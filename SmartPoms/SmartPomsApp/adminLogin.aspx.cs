@@ -23,25 +23,25 @@ public partial class adminLogin : System.Web.UI.Page {
     }
     //登录
     protected void imgBtnLogin_Click(object sender, ImageClickEventArgs e) {
-        if (CheckInput()) {
-            string user = this.txtUserName.Text.Trim().Replace("'", "\"");
-            string pwd = Smart.Security.MD5.MD5Encrypt(this.txtUserPwd.Text.Trim()).ToUpper();
-            string captche = this.txtCaptche.Text.Trim();
+        //if (CheckInput()) {
+        //    string user = this.txtUserName.Text.Trim().Replace("'", "\"");
+        //    string pwd = Smart.Security.MD5.MD5Encrypt(this.txtUserPwd.Text.Trim()).ToUpper();
+        //    string captche = this.txtCaptche.Text.Trim();
 
-            ILoginService loginService = ComponentFactory<ILoginService>.GetBLLPlugin();
-            BASE_USER base_user = loginService.login(user, pwd);
-            if (base_user != null) {
-                Session["username"] = base_user.USERNAME;
-                Session["pwd"] = base_user.USERPWD;
-                Session["uid"] = base_user.USERID;
-                Session["role"] = base_user.ROLEID;
+        //    ILoginService loginService = ComponentFactory<ILoginService>.GetBLLPlugin();
+        //    BASE_USER base_user = loginService.login(user, pwd);
+        //    if (base_user != null) {
+        //        Session["username"] = base_user.USERNAME;
+        //        Session["pwd"] = base_user.USERPWD;
+        //        Session["uid"] = base_user.USERID;
+        //        Session["role"] = base_user.ROLEID;
 
-                Response.Redirect("adminMain.aspx", true);
-            } else {
-                this.lblError.Text = "提示：登录失败!";
-                ResultControleDefaultValue();
-            }
-        }
+        //        Response.Redirect("adminMain.aspx", true);
+        //    } else {
+        //        this.lblError.Text = "提示：登录失败!";
+        //        ResultControleDefaultValue();
+        //    }
+        //}
     }
 
     private void ResultControleDefaultValue() {

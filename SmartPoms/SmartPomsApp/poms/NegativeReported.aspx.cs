@@ -8,7 +8,7 @@ namespace SmartPomsApp.poms {
     using System.Web.UI.WebControls;
 
     public partial class NegativeReported : PomsMasterPage {
-        protected void Page_Load(object sender, EventArgs e) {
+        new protected void Page_Load(object sender, EventArgs e) {
 
         }
     }

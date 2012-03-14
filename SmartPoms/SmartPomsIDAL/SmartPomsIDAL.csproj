@@ -36,6 +36,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Base_Article.cs" />
+    <Compile Include="Base_AuthorityDir.cs" />
+    <Compile Include="Base_Configuration.cs" />
+    <Compile Include="Base_Event.cs" />
+    <Compile Include="Base_EventArticle.cs" />
+    <Compile Include="Base_EventWord.cs" />
+    <Compile Include="Base_Group.cs" />
+    <Compile Include="Base_Message.cs" />
+    <Compile Include="Base_Module.cs" />
+    <Compile Include="Base_ModuleAuthorityList.cs" />
+    <Compile Include="Base_ModuleType.cs" />
+    <Compile Include="Base_Role.cs" />
+    <Compile Include="Base_RoleAuthorityKist.cs" />
+    <Compile Include="Base_User.cs" />
+    <Compile Include="Base_UserEvent.cs" />
+    <Compile Include="Base_UserGroup.cs" />
+    <Compile Include="Base_UserRole.cs" />
+    <Compile Include="Base_Word.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

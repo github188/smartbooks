@@ -17,36 +17,36 @@ namespace SmartPomsApp.poms.ascx {
         }
 
         protected void bindDateSource() {
-            ITopicService topicService = ComponentFactory<ITopicService>.GetBLLPlugin();
-            IKeywordService wordService = ComponentFactory<IKeywordService>.GetBLLPlugin();
-            DataTable dtWord = wordService.getTopicKeywords(0);
-            DataTable dt = topicService.getArticle(0, 10, "2011-01-01", DateTime.Now.ToString("yyyy-mm-dd"), 0);
+            //ITopicService topicService = ComponentFactory<ITopicService>.GetBLLPlugin();
+            //IKeywordService wordService = ComponentFactory<IKeywordService>.GetBLLPlugin();
+            //DataTable dtWord = wordService.getTopicKeywords(0);
+            //DataTable dt = topicService.getArticle(0, 10, "2011-01-01", DateTime.Now.ToString("yyyy-mm-dd"), 0);
 
-            #region 格式化文章内容
-            foreach (DataRow r in dt.Rows) {
-                //截摘要长度
-                string conn = r["DETAIL"].ToString();
-                if (conn.Length > 80) {
-                    conn = conn.Substring(0, 79);
-                    r["DETAIL"] = conn;
-                }
-                string wordTextTemp = "";
-                foreach (DataRow wordRow in dtWord.Rows) {
-                    //标题着重关键字显示
-                    wordTextTemp = wordRow["WORDNAME"].ToString();
-                    if (r["TITLE"].ToString().Contains(wordTextTemp)) {
-                        r["TITLE"] = r["TITLE"].ToString().Replace(wordTextTemp, string.Format("<em>{0}</em>", wordTextTemp));
-                    }
+            //#region 格式化文章内容
+            //foreach (DataRow r in dt.Rows) {
+            //    //截摘要长度
+            //    string conn = r["DETAIL"].ToString();
+            //    if (conn.Length > 80) {
+            //        conn = conn.Substring(0, 79);
+            //        r["DETAIL"] = conn;
+            //    }
+            //    string wordTextTemp = "";
+            //    foreach (DataRow wordRow in dtWord.Rows) {
+            //        //标题着重关键字显示
+            //        wordTextTemp = wordRow["WORDNAME"].ToString();
+            //        if (r["TITLE"].ToString().Contains(wordTextTemp)) {
+            //            r["TITLE"] = r["TITLE"].ToString().Replace(wordTextTemp, string.Format("<em>{0}</em>", wordTextTemp));
+            //        }
 
-                    //摘要着重关键字显示
-                    if (r["DETAIL"].ToString().Contains(wordTextTemp)) {
-                        r["DETAIL"] = r["DETAIL"].ToString().Replace(wordTextTemp, string.Format("<em>{0}</em>", wordTextTemp));
-                    }
-                }
-            }
-            #endregion
-            this.ddlViewList.DataSource = dt;
-            this.ddlViewList.DataBind();
+            //        //摘要着重关键字显示
+            //        if (r["DETAIL"].ToString().Contains(wordTextTemp)) {
+            //            r["DETAIL"] = r["DETAIL"].ToString().Replace(wordTextTemp, string.Format("<em>{0}</em>", wordTextTemp));
+            //        }
+            //    }
+            //}
+            //#endregion
+            //this.ddlViewList.DataSource = dt;
+            //this.ddlViewList.DataBind();
         }
     }
 }
