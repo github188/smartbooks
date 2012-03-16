@@ -1,8 +1,8 @@
 ﻿// Copyright (C) 2009-2012 郑州豫图信息技术有限公司
 // 版权所有。 
 //
-// 文件名称:BASE_ROLEAUTHORITYKIST.cs
-// 功能描述:Base_RoleAuthorityKist -- 接口实现
+// 文件名称:BASE_ROLEAUTHORITYLIST.cs
+// 功能描述:BASE_ROLEAUTHORITYLIST -- 接口实现
 //
 // 创建标识：王 亚 2012-03-14
 namespace SmartPoms.SQLServerDAL {
@@ -15,15 +15,15 @@ namespace SmartPoms.SQLServerDAL {
     using IDAL;
 
     /// <summary>
-    /// Base_RoleAuthorityKist -- 接口实现
+    /// BASE_ROLEAUTHORITYLIST -- 接口实现
     /// </summary>
-    public partial class BASE_ROLEAUTHORITYKIST : IBASE_ROLEAUTHORITYKIST {
+    public partial class BASE_ROLEAUTHORITYLIST : IBASE_ROLEAUTHORITYLIST {
         /// <summary>
         /// 确定记录是否存在
         /// </summary>
         public bool Exists(int ID) {
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("select count(1) from Base_RoleAuthorityKist");
+            strSql.Append("select count(1) from BASE_ROLEAUTHORITYLIST");
             strSql.Append(" where ");
             strSql.Append(" ID = @ID  ");
             SqlParameter[] parameters = {
@@ -39,9 +39,9 @@ namespace SmartPoms.SQLServerDAL {
         /// <summary>
         /// 增加一条数据
         /// </summary>
-        public int Add(Entity.BASE_ROLEAUTHORITYKIST entity) {
+        public int Add(Entity.BASE_ROLEAUTHORITYLIST entity) {
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("insert into Base_RoleAuthorityKist(");
+            strSql.Append("insert into BASE_ROLEAUTHORITYLIST(");
             strSql.Append("UserID,RoleID,GroupID,ModuleID,AuthorityTag,Flag");
             strSql.Append(") values (");
             strSql.Append("@UserID,@RoleID,@GroupID,@ModuleID,@AuthorityTag,@Flag");
@@ -79,9 +79,9 @@ namespace SmartPoms.SQLServerDAL {
         /// <summary>
         /// 更新一条数据
         /// </summary>
-        public bool Update(Entity.BASE_ROLEAUTHORITYKIST entity) {
+        public bool Update(Entity.BASE_ROLEAUTHORITYLIST entity) {
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("update Base_RoleAuthorityKist set ");
+            strSql.Append("update BASE_ROLEAUTHORITYLIST set ");
 
             strSql.Append(" UserID = @UserID , ");
             strSql.Append(" RoleID = @RoleID , ");
@@ -124,7 +124,7 @@ namespace SmartPoms.SQLServerDAL {
         public bool Delete(int ID) {
 
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("delete from Base_RoleAuthorityKist ");
+            strSql.Append("delete from BASE_ROLEAUTHORITYLIST ");
             strSql.Append(" where ID=@ID");
             SqlParameter[] parameters = {
 					new SqlParameter("@ID", SqlDbType.Int,4)
@@ -145,7 +145,7 @@ namespace SmartPoms.SQLServerDAL {
         /// </summary>
         public bool DeleteList(string IDlist) {
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("delete from Base_RoleAuthorityKist ");
+            strSql.Append("delete from BASE_ROLEAUTHORITYLIST ");
             strSql.Append(" where ID in (" + IDlist + ")  ");
             int rows = SqlServerHelper.ExecuteSql(strSql.ToString());
             if (rows > 0) {
@@ -159,11 +159,11 @@ namespace SmartPoms.SQLServerDAL {
         /// <summary>
         /// 得到一个对象实体
         /// </summary>
-        public Entity.BASE_ROLEAUTHORITYKIST GetEntity(int ID) {
+        public Entity.BASE_ROLEAUTHORITYLIST GetEntity(int ID) {
 
             StringBuilder strSql = new StringBuilder();
             strSql.Append("select ID, UserID, RoleID, GroupID, ModuleID, AuthorityTag, Flag  ");
-            strSql.Append("  from Base_RoleAuthorityKist ");
+            strSql.Append("  from BASE_ROLEAUTHORITYLIST ");
             strSql.Append(" where ID=@ID");
             SqlParameter[] parameters = {
 					new SqlParameter("@ID", SqlDbType.Int,4)
@@ -171,7 +171,7 @@ namespace SmartPoms.SQLServerDAL {
             parameters[0].Value = ID;
 
 
-            Entity.BASE_ROLEAUTHORITYKIST entity = new Entity.BASE_ROLEAUTHORITYKIST();
+            Entity.BASE_ROLEAUTHORITYLIST entity = new Entity.BASE_ROLEAUTHORITYLIST();
             DataSet ds = SqlServerHelper.Query(strSql.ToString(), parameters);
 
             if (ds.Tables[0].Rows.Count > 0) {
@@ -212,7 +212,7 @@ namespace SmartPoms.SQLServerDAL {
         public DataSet GetList(string strWhere) {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("select * ");
-            strSql.Append(" FROM Base_RoleAuthorityKist ");
+            strSql.Append(" FROM BASE_ROLEAUTHORITYLIST ");
             if (strWhere.Trim() != "") {
                 strSql.Append(" where " + strWhere);
             }
@@ -229,7 +229,7 @@ namespace SmartPoms.SQLServerDAL {
                 strSql.Append(" top " + Top.ToString());
             }
             strSql.Append(" * ");
-            strSql.Append(" FROM Base_RoleAuthorityKist ");
+            strSql.Append(" FROM BASE_ROLEAUTHORITYLIST ");
             if (strWhere.Trim() != "") {
                 strSql.Append(" where " + strWhere);
             }
