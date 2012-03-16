@@ -137,8 +137,7 @@ namespace Smart.DBUtility
                     try
                     {
                         connection.Open();
-                        int rows = cmd.ExecuteNonQuery();
-                        return rows;
+                        return cmd.ExecuteNonQuery();
                     }
                     catch (System.Data.SqlClient.SqlException e)
                     {
@@ -206,6 +205,34 @@ namespace Smart.DBUtility
                 }
             }
         }
+
+        /// <summary>
+        /// 执行多条SQL语句，实现数据库事务。
+        /// </summary>
+        /// <param name="SQLStringList">多条SQL语句</param>		
+        public static void ExecuteSqlTran(ArrayList SQLStringList) {
+            using (SqlConnection conn = new SqlConnection(connectionString)) {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = conn;
+                SqlTransaction tx = conn.BeginTransaction();
+                cmd.Transaction = tx;
+                try {
+                    for (int n = 0; n < SQLStringList.Count; n++) {
+                        string strsql = SQLStringList[n].ToString();
+                        if (strsql.Trim().Length > 1) {
+                            cmd.CommandText = strsql;
+                            cmd.ExecuteNonQuery();
+                        }
+                    }
+                    tx.Commit();
+                } catch (System.Data.SqlClient.SqlException E) {
+                    tx.Rollback();
+                    throw new Exception(E.Message);
+                }
+            }
+        }
+
         /// <summary>
         /// 执行带一个存储过程参数的的SQL语句。
         /// </summary>
