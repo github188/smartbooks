@@ -31,9 +31,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Smart.DBUtility">
-      <HintPath>..\..\Smart\FreeAssembly\Smart.DBUtility.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -51,7 +48,7 @@
     <Compile Include="Base_ModuleAuthorityList.cs" />
     <Compile Include="Base_ModuleType.cs" />
     <Compile Include="Base_Role.cs" />
-    <Compile Include="Base_RoleAuthorityKist.cs" />
+    <Compile Include="Base_RoleAuthorityList.cs" />
     <Compile Include="Base_User.cs" />
     <Compile Include="Base_UserEvent.cs" />
     <Compile Include="Base_UserGroup.cs" />
@@ -60,6 +57,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Smart\SmartDBUtility\SmartDBUtility.csproj">
+      <Project>{40B79F71-57F3-4E04-8277-25A24CDCB7A5}</Project>
+      <Name>SmartDBUtility</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SmartPomsEntity\SmartPomsEntity.csproj">
       <Project>{978284E9-1DC9-4439-8462-CC41144C5EA3}</Project>
       <Name>SmartPomsEntity</Name>

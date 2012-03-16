@@ -12,22 +12,20 @@ namespace SmartPoms.AppFacade {
     public class LoginService :ILoginService {
         d.BASE_USER userDal = new d.BASE_USER();
 
-        public Entity.BASE_USER Login(Entity.BASE_USER entity) {
-            DataTable dt = userDal.GetList(string.Format("UserName='{0}' AND Password='{1}'", 
-                entity.UserName, entity.Password)).Tables[0];
-            if (dt != null && dt.Rows.Count != 0) {
-                return userDal.GetEntity(Convert.ToInt32(dt.Rows[0]["UserID"].ToString()));
-            }
-            return null;
+        public bool CheckLogin(string UserName, string pwd) {
+            return userDal.CheckLogin(UserName, pwd);
         }
 
-        public void UpdateLoginTime(Entity.BASE_USER entity) {
-            entity.LastLoginTime = DateTime.Now;
-            userDal.Update(entity);
+        public void UpdateLoginTime(int userid) {
+            userDal.UpdateLoginTime(userid);
         }
 
         public void RegisterUser(Entity.BASE_USER entity) {
             userDal.Add(entity);
+        }
+
+        public Entity.BASE_USER GetUserEntity(string UserName){
+            return userDal.GetUserModel(UserName);
         }
 
         public string Description {

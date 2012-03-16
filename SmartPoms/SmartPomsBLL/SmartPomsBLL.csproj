@@ -36,7 +36,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BASE_AUTHORITYDIR.cs" />
+    <Compile Include="BASE_CONFIGURATION.cs" />
+    <Compile Include="BASE_GROUP.cs" />
+    <Compile Include="BASE_MODULE.cs" />
+    <Compile Include="BASE_ROLE.cs" />
+    <Compile Include="BASE_USER.cs" />
+    <Compile Include="BASE_USERGROUP.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SmartPomsEntity\SmartPomsEntity.csproj">
+      <Project>{978284E9-1DC9-4439-8462-CC41144C5EA3}</Project>
+      <Name>SmartPomsEntity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SmartPomsIDAL\SmartPomsIDAL.csproj">
+      <Project>{A0F522E6-CA62-43D7-9AB1-9FC70DC030CB}</Project>
+      <Name>SmartPomsIDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SmartPomsSqlServerDAL\SmartPomsSqlServerDAL.csproj">
+      <Project>{86C9D43C-66D6-41EA-B19D-F20269829628}</Project>
+      <Name>SmartPomsSqlServerDAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

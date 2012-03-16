@@ -56,5 +56,72 @@ namespace SmartPoms.IDAL {
         /// 获得前几行数据
         /// </summary>
         DataSet GetList(int Top, string strWhere, string filedOrder);
+
+
+        #region 用户分组
+        /// <summary>
+        /// 判断用户分组是否存在
+        /// </summary>
+        /// <param name="Name">用户分组名称</param>
+        /// <returns></returns>
+        bool UserGroupExists(string Name);
+
+        /// <summary>
+        /// 增加一个用户分组
+        /// </summary>
+        /// <param name="model">用户分组实体类</param>
+        /// <returns></returns>
+        int CreateUserGroup(Entity.BASE_USERGROUP model);
+
+        /// <summary>
+        /// 更新一条数据
+        /// </summary>
+        /// <param name="model">用户分组实体类</param>
+        /// <returns></returns>
+        bool UpdateUserGroup(Entity.BASE_USERGROUP model);
+
+        /// <summary>
+        /// 删除用户分组
+        /// </summary>
+        /// <param name="ID">用户分组ID</param>
+        /// <returns></returns>
+        int DeleteUserGroup(int id);
+
+        /// <summary>
+        /// 获取模块深度
+        /// </summary>
+        /// <param name="ID">模块ID</param>
+        /// <returns></returns>
+        int GetUserGroupDepth(int id);
+
+        /// <summary>
+        /// 得到一个用户分组实体
+        /// </summary>
+        /// <param name="ID">用户分组ID</param>
+        /// <returns></returns>
+        Entity.BASE_USERGROUP GetUserGroupModel(int id);
+
+        /// <summary>
+        /// 获得用户分组数据列表
+        /// </summary>
+        /// <param name="strWhere">Where条件</param>
+        /// <returns></returns>
+        DataSet GetUserGroupList(string strWhere);
+
+        /// <summary>
+        /// 获得用户分组下级分类
+        /// </summary>
+        /// <param name="id">分类ID</param>
+        /// <returns></returns>
+        DataSet GetChildUserGroupList(int id);
+
+        /// <summary>
+        /// 判断用户分组下是否有模块
+        /// </summary>
+        /// <param name="ID">分类iD</param>
+        /// <returns></returns>
+        bool IsUser(int id);
+
+        #endregion
     }
 }

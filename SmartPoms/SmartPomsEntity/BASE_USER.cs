@@ -8,6 +8,7 @@
 namespace SmartPoms.Entity {
     using System;
     using System.Collections.Generic;
+    using System.Collections;
     using System.Text;
 
     /// <summary>
@@ -41,7 +42,7 @@ namespace SmartPoms.Entity {
         /// <summary>
         /// 角色
         /// </summary>		
-        private int _RoleID;
+        private ArrayList _RoleID;
         /// <summary>
         /// 用户组
         /// </summary>		
@@ -112,7 +113,7 @@ namespace SmartPoms.Entity {
         /// <summary>
         /// 角色
         /// </summary>
-        public int RoleID {
+        public ArrayList RoleID {
             get { return _RoleID; }
             set { _RoleID = value; }
         }

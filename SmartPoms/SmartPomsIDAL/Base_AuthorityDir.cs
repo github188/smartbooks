@@ -56,5 +56,48 @@ namespace SmartPoms.IDAL {
         /// 获得前几行数据
         /// </summary>
         DataSet GetList(int Top, string strWhere, string filedOrder);
+
+        /// <summary>
+        /// 判断权限标识否存在
+        /// </summary>
+        /// <param name="AuthorityTag">权限标识</param>
+        /// <returns></returns>
+        bool Exists(string AuthorityTag);
+
+        /// <summary>
+        /// 增加一个权限
+        /// </summary>
+        /// <param name="model">权限实体类</param>
+        /// <returns></returns>
+        bool CreateAuthority(Entity.BASE_AUTHORITYDIR model);
+
+        /// <summary>
+        /// 更新指定的权限
+        /// </summary>
+        /// <param name="model">权限实体类</param>
+        /// <returns></returns>
+        bool UpdateAuthority(Entity.BASE_AUTHORITYDIR model);
+
+        /// <summary>
+        /// 删除一个权限
+        /// </summary>
+        /// <param name="AuthorityID">权限ID</param>
+        /// <returns></returns>
+        bool DeleteAuthority(int AuthorityID);
+
+        /// <summary>
+        /// 得到一个权限实体
+        /// </summary>
+        /// <param name="AuthorityID">权限ID</param>
+        /// <returns></returns>
+        Entity.BASE_AUTHORITYDIR GetAuthorityModel(int AuthorityID);
+
+        /// <summary>
+        /// 获得权限数据列表
+        /// </summary>
+        /// <param name="strWhere">Where条件</param>
+        /// <param name="strOrder">排序条件</param>
+        /// <returns></returns>
+        DataSet GetAuthorityList(string strWhere, string strOrder);
     }
 }

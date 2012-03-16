@@ -9,10 +9,12 @@ namespace SmartPoms.ServiceInterfaces {
     /// 登录服务接口定义
     /// </summary>
     public interface ILoginService : IService {
-        BASE_USER Login(BASE_USER entity);
+        bool CheckLogin(string UserName, string pwd);
 
-        void UpdateLoginTime(BASE_USER entity);
+        void UpdateLoginTime(int userid);
 
         void RegisterUser(BASE_USER entity);
+
+        Entity.BASE_USER GetUserEntity(string UserName);
     }
 }
