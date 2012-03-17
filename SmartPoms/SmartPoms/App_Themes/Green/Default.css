@@ -1,0 +1,139 @@
+﻿body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td
+{
+    margin: 0;
+    padding: 0;
+    color: #43860c;
+}
+body, button, input, select, textarea
+{
+    font: 12px/1.5 tahoma,arial,\5b8b\4f53;
+}
+h1, h2, h3, h4, h5, h6
+{
+    font-size: 100%;
+}
+address, cite, dfn, em, var
+{
+    font-style: normal;
+}
+code, kbd, pre, samp
+{
+    font-family: courier new,courier,monospace;
+}
+small
+{
+    font-size: 12px;
+}
+ul, ol
+{
+    list-style: none;
+}
+a
+{
+    color: #06482A;
+    text-decoration: none;
+}
+a:hover
+{
+    color: Red;
+    cursor: pointer;
+    text-decoration: underline;
+}
+sup
+{
+    vertical-align: text-top;
+}
+sub
+{
+    vertical-align: text-bottom;
+}
+legend
+{
+    color: #000;
+}
+fieldset, img
+{
+    border: none;
+    float: left;
+}
+button, input, select, textarea
+{
+    font-size: 100%;
+}
+table
+{
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/*常见控件样式*/
+.textbox
+{
+    background-image: url("images/textbox.png");
+    width: 130px;
+    height: 18px;
+    overflow: hidden;
+    border: none;
+    float: left;
+    margin: 2px 10px 2px 10px;
+}
+.button
+{
+    background-image: url("images/button.png");
+    width: 53px;
+    height: 22px;
+    margin: 5px 5px 5px 5px;
+    line-height: 22px;
+    text-align: center;
+    overflow: hidden;
+    border: none;
+    float: left;
+    cursor: pointer;
+}
+.table
+{
+    background-color: #c0de98;
+    border: none;
+    margin: 2px;
+    float:left;
+}
+.table tr:hover td
+{
+    background-color: #eafcd5;
+}
+.table td
+{
+    background-color: #FFF;
+    text-align:center;
+    border:1px solid #c0de98;
+}
+.table th
+{
+    width:50px;
+    height:26px;
+    line-height:26px;
+    text-align:center;
+    border:1px solid #c0de98;
+    color:#06482A;
+    background-image:url("images/th.png");
+}
+.panel
+{
+    border: solid 1px #c0de98;
+    background-color: #f3ffe3;
+    margin: 2px;
+    padding: 5px;
+    float:left;
+}
+/*面板标题*/
+legend
+{
+    height: 13px;
+    line-height: 13px;
+    padding-left:20px;
+    color: #06482A;
+    font-weight:bold;
+    background-image:url("images/icotable.png");
+    background-repeat:no-repeat;
+    margin-bottom:5px;
+}

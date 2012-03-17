@@ -1,0 +1,415 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{485BE367-A396-4B78-B235-0F702CE82F23}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SmartPoms</RootNamespace>
+    <AssemblyName>SmartPoms</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AdminError.aspx" />
+    <Content Include="AdminLogin.aspx" />
+    <Content Include="admin\ascx\AuthorityPage.ascx" />
+    <Content Include="admin\ascx\ConfigPage.ascx" />
+    <Content Include="admin\ascx\EditUserPage.ascx" />
+    <Content Include="admin\ascx\GroupsPage.ascx" />
+    <Content Include="admin\ascx\ListUsers.ascx" />
+    <Content Include="admin\ascx\ModulesInfoPage.ascx" />
+    <Content Include="admin\ascx\ModulesPage.ascx" />
+    <Content Include="admin\ascx\RolesAuthorizedPage.ascx" />
+    <Content Include="admin\ascx\RolesPage.ascx" />
+    <Content Include="admin\ascx\UserGrant.ascx" />
+    <Content Include="admin\ascx\UserGroups.ascx" />
+    <Content Include="admin\AuthorityPage.aspx" />
+    <Content Include="admin\ConfigPage.aspx" />
+    <Content Include="admin\EditUserPage.aspx" />
+    <Content Include="admin\GroupsPage.aspx" />
+    <Content Include="admin\ListUsers.aspx" />
+    <Content Include="admin\ModulesInfoPage.aspx" />
+    <Content Include="admin\ModulesPage.aspx" />
+    <Content Include="admin\RolesAuthorizedPage.aspx" />
+    <Content Include="admin\RolesPage.aspx" />
+    <Content Include="admin\UserGrant.aspx" />
+    <Content Include="admin\UserGroups.aspx" />
+    <Content Include="App_Themes\Green\Default.css" />
+    <Content Include="App_Themes\Green\Images\button.png" />
+    <Content Include="App_Themes\Green\Images\icotable.png" />
+    <Content Include="App_Themes\Green\Images\textbox.png" />
+    <Content Include="Ascx\AdminError.ascx" />
+    <Content Include="Ascx\AdminHander.ascx" />
+    <Content Include="Ascx\AdminMenu.ascx" />
+    <Content Include="css\baseLogin.css" />
+    <Content Include="css\baseMain.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="Images\bg.png" />
+    <Content Include="Images\hander.png" />
+    <Content Include="Images\handerlogo.png" />
+    <Content Include="Images\loginpanel.png" />
+    <Content Include="Images\loginpanelback.png" />
+    <Content Include="Images\menuconfig.png" />
+    <Content Include="Images\menuload.png" />
+    <Content Include="Images\menusave.png" />
+    <Content Include="Images\menutitle.png" />
+    <Content Include="Images\status.png" />
+    <Content Include="js\baseMain.js" />
+    <Content Include="Poms\Ascx\CountArea.ascx" />
+    <Content Include="Poms\CountArea.aspx" />
+    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdminError.aspx.cs">
+      <DependentUpon>AdminError.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminError.aspx.designer.cs">
+      <DependentUpon>AdminError.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminLogin.aspx.cs">
+      <DependentUpon>AdminLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminLogin.aspx.designer.cs">
+      <DependentUpon>AdminLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminMaster.Master.cs">
+      <DependentUpon>AdminMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminMaster.Master.designer.cs">
+      <DependentUpon>AdminMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="admin\ascx\AuthorityPage.ascx.cs">
+      <DependentUpon>AuthorityPage.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\ascx\AuthorityPage.ascx.designer.cs">
+      <DependentUpon>AuthorityPage.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\ascx\ConfigPage.ascx.cs">
+      <DependentUpon>ConfigPage.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\ascx\ConfigPage.ascx.designer.cs">
+      <DependentUpon>ConfigPage.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\ascx\EditUserPage.ascx.cs">
+      <DependentUpon>EditUserPage.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\ascx\EditUserPage.ascx.designer.cs">
+      <DependentUpon>EditUserPage.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\ascx\GroupsPage.ascx.cs">
+      <DependentUpon>GroupsPage.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\ascx\GroupsPage.ascx.designer.cs">
+      <DependentUpon>GroupsPage.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\ascx\ListUsers.ascx.cs">
+      <DependentUpon>ListUsers.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\ascx\ListUsers.ascx.designer.cs">
+      <DependentUpon>ListUsers.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\ascx\ModulesInfoPage.ascx.cs">
+      <DependentUpon>ModulesInfoPage.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\ascx\ModulesInfoPage.ascx.designer.cs">
+      <DependentUpon>ModulesInfoPage.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\ascx\ModulesPage.ascx.cs">
+      <DependentUpon>ModulesPage.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\ascx\ModulesPage.ascx.designer.cs">
+      <DependentUpon>ModulesPage.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\ascx\RolesAuthorizedPage.ascx.cs">
+      <DependentUpon>RolesAuthorizedPage.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\ascx\RolesAuthorizedPage.ascx.designer.cs">
+      <DependentUpon>RolesAuthorizedPage.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\ascx\RolesPage.ascx.cs">
+      <DependentUpon>RolesPage.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\ascx\RolesPage.ascx.designer.cs">
+      <DependentUpon>RolesPage.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\ascx\UserGrant.ascx.cs">
+      <DependentUpon>UserGrant.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\ascx\UserGrant.ascx.designer.cs">
+      <DependentUpon>UserGrant.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\ascx\UserGroups.ascx.cs">
+      <DependentUpon>UserGroups.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\ascx\UserGroups.ascx.designer.cs">
+      <DependentUpon>UserGroups.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\AuthorityPage.aspx.cs">
+      <DependentUpon>AuthorityPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\AuthorityPage.aspx.designer.cs">
+      <DependentUpon>AuthorityPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\ConfigPage.aspx.cs">
+      <DependentUpon>ConfigPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\ConfigPage.aspx.designer.cs">
+      <DependentUpon>ConfigPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\EditUserPage.aspx.cs">
+      <DependentUpon>EditUserPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\EditUserPage.aspx.designer.cs">
+      <DependentUpon>EditUserPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\GroupsPage.aspx.cs">
+      <DependentUpon>GroupsPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\GroupsPage.aspx.designer.cs">
+      <DependentUpon>GroupsPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\ListUsers.aspx.cs">
+      <DependentUpon>ListUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\ListUsers.aspx.designer.cs">
+      <DependentUpon>ListUsers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\ModulesInfoPage.aspx.cs">
+      <DependentUpon>ModulesInfoPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\ModulesInfoPage.aspx.designer.cs">
+      <DependentUpon>ModulesInfoPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\ModulesPage.aspx.cs">
+      <DependentUpon>ModulesPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\ModulesPage.aspx.designer.cs">
+      <DependentUpon>ModulesPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\RolesAuthorizedPage.aspx.cs">
+      <DependentUpon>RolesAuthorizedPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\RolesAuthorizedPage.aspx.designer.cs">
+      <DependentUpon>RolesAuthorizedPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\RolesPage.aspx.cs">
+      <DependentUpon>RolesPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\RolesPage.aspx.designer.cs">
+      <DependentUpon>RolesPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\UserGrant.aspx.cs">
+      <DependentUpon>UserGrant.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\UserGrant.aspx.designer.cs">
+      <DependentUpon>UserGrant.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\UserGroups.aspx.cs">
+      <DependentUpon>UserGroups.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\UserGroups.aspx.designer.cs">
+      <DependentUpon>UserGroups.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Api\VerificationCode.ashx.cs">
+      <DependentUpon>VerificationCode.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Ascx\AdminError.ascx.cs">
+      <DependentUpon>AdminError.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ascx\AdminError.ascx.designer.cs">
+      <DependentUpon>AdminError.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Ascx\AdminHander.ascx.cs">
+      <DependentUpon>AdminHander.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ascx\AdminHander.ascx.designer.cs">
+      <DependentUpon>AdminHander.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Ascx\AdminMenu.ascx.cs">
+      <DependentUpon>AdminMenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ascx\AdminMenu.ascx.designer.cs">
+      <DependentUpon>AdminMenu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Code\ExceptionSession.cs" />
+    <Compile Include="Code\SessionBox.cs" />
+    <Compile Include="Code\Tag.cs" />
+    <Compile Include="Code\UserHandle.cs" />
+    <Compile Include="Code\UserSession.cs" />
+    <Compile Include="Code\Value.cs" />
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Poms\Ascx\CountArea.ascx.cs">
+      <DependentUpon>CountArea.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Poms\Ascx\CountArea.ascx.designer.cs">
+      <DependentUpon>CountArea.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Poms\CountArea.aspx.cs">
+      <DependentUpon>CountArea.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Poms\CountArea.aspx.designer.cs">
+      <DependentUpon>CountArea.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AdminMaster.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Api\VerificationCode.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Themes\Green\Default.skin" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Smart\SmartSecurity\SmartSecurity.csproj">
+      <Project>{116EC11E-6812-48DF-BFD6-8B3FF66C884F}</Project>
+      <Name>SmartSecurity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Smart\SmartServiceFactory\SmartServiceFactory.csproj">
+      <Project>{5E738C96-481C-48FE-BDF6-ED78973188FF}</Project>
+      <Name>SmartServiceFactory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Smart\SmartUtility\SmartUtility.csproj">
+      <Project>{B7456CA5-DDD6-47D7-9618-9C4A5F7C8D6B}</Project>
+      <Name>SmartUtility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SmartPomsBLL\SmartPomsBLL.csproj">
+      <Project>{7383FCD3-1F29-4FAF-8C41-BFA05C61226A}</Project>
+      <Name>SmartPomsBLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SmartPomsEntity\SmartPomsEntity.csproj">
+      <Project>{978284E9-1DC9-4439-8462-CC41144C5EA3}</Project>
+      <Name>SmartPomsEntity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SmartPomsIDAL\SmartPomsIDAL.csproj">
+      <Project>{A0F522E6-CA62-43D7-9AB1-9FC70DC030CB}</Project>
+      <Name>SmartPomsIDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SmartPomsServiceInterfaces\SmartPomsServiceInterfaces.csproj">
+      <Project>{E3CE882C-002B-4B64-83EA-9A4A8AE2626C}</Project>
+      <Name>SmartPomsServiceInterfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SmartPomsSqlServerDAL\SmartPomsSqlServerDAL.csproj">
+      <Project>{86C9D43C-66D6-41EA-B19D-F20269829628}</Project>
+      <Name>SmartPomsSqlServerDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SmartPomsUI\SmartPomsUI.csproj">
+      <Project>{9FB976DD-6014-4B2A-9073-3665166AA8C9}</Project>
+      <Name>SmartPomsUI</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1677</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:1677/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
