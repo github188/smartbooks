@@ -46,7 +46,7 @@
         /// <returns>true：验证通过</returns>
         public static bool IsValidDate(string strIn)
         {
-            return Regex.IsMatch(strIn, @"^2\d{3}-(?:0?[1-9]|1[0-2])-(?:0?[1-9]|[1-2]\d|3[0-1])(?:0?[1-9]|1\d|2[0-3]):(?:0?[1-9]|[1-5]\d):(?:0?[1-9]|[1-5]\d)$");
+            return Regex.IsMatch(strIn, @"[\d]{4}-[0-1][0-9]-[0-3][0-9]");
         }
         /// <summary>
         /// 验证值大小：是否在minValue至maxValue之间 

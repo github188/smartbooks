@@ -7,9 +7,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>网络舆情监控平台--母版页</title>
-    <link type="text/css" rel="stylesheet" href='<%=weburl%>css/baseMain.css'  />
-    <script type="text/jscript" src="Scripts/jquery-1.4.1.js" ></script>
-    <script type="text/jscript" src="js/baseMain.js"></script>
+    <link type="text/css" rel="stylesheet" href='http://lennox/poms/css/baseMain.css'  />
+    <script type="text/jscript" src="http://lennox/poms/Scripts/jquery-1.4.1.js" ></script>
+    <script type="text/jscript" src="http://lennox/poms/js/baseMain.js"></script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>

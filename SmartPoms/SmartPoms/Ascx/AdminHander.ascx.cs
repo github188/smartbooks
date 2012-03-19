@@ -10,5 +10,26 @@ namespace SmartPoms.Ascx {
         protected void Page_Load(object sender, EventArgs e) {
 
         }
+
+        protected void btnQuit_Click(object sender, EventArgs e) {
+            SmartPoms.Code.SessionBox.RemoveUserSession();
+            this.Response.Redirect("~/AdminLogin.aspx");
+        }
+
+        protected void btnGoHome_Click(object sender, EventArgs e) {
+            this.Response.Redirect("~/Default.aspx");
+        }
+
+        protected void btnGoBack_Click(object sender, EventArgs e) {
+            this.Response.Redirect(this.Request.UrlReferrer.ToString());
+        }
+
+        protected void btnGo_Click(object sender, EventArgs e) {
+
+        }
+
+        protected void btnRefresh_Click(object sender, EventArgs e) {
+
+        }
     }
 }

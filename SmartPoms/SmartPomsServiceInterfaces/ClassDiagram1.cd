@@ -10,8 +10,15 @@
   <Interface Name="SmartPoms.ServiceInterfaces.ILoginService" Collapsed="true">
     <Position X="2.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>EAAACAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAA=</HashCode>
+      <HashCode>EAAAAAAAAEAAAAAAAAAAAAAAAAAAAgAACAAAAAAAAAA=</HashCode>
       <FileName>ILoginService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SmartPoms.ServiceInterfaces.IArticleService" Collapsed="true">
+    <Position X="2.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>IArticleService.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Font Name="宋体" Size="9" />
