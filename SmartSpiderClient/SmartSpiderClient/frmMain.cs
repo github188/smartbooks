@@ -49,8 +49,8 @@ namespace Smart.Spider.Client
                     task[i].Time.Start();
                 }
             }
-            this.btnStart.Enabled = false;
-            this.btnPause.Enabled = true;
+            //this.btnStart.Enabled = false;
+            //this.btnPause.Enabled = true;
         }
 
         private void StopTask()
@@ -62,23 +62,23 @@ namespace Smart.Spider.Client
                     task[i].Time.Stop();
                 }
             }
-            this.btnStart.Enabled = true;
-            this.btnPause.Enabled = false;
+            //this.btnStart.Enabled = true;
+            //this.btnPause.Enabled = false;
         }
 
         private void LoadUrl()
         {            
             DataTable dt = new DataTable();
-            string select = "select url from XXX";
+            string select = "select UrlAddress from Base_Urls";
             //1.从数据库加载1000条Url地址
             dt = Smart.DBUtility.SqlServerHelper.Query(select).Tables[0];
 
             //循环实例化任务单元
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-                if (i < 10000)
+                if (i < 9999)
                 {
-                    task[i] = new TaskUnit(dt.Rows[i]["url"].ToString());
+                    task[i] = new TaskUnit(dt.Rows[i]["UrlAddress"].ToString());
                 }
                 else
                 {

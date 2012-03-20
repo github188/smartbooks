@@ -21,7 +21,8 @@
 
         #region 公共方法定义
         public HttpHelper() {
-            this._WebRequest.Timeout = 5000;   //默认超时5秒钟
+            this._encoding = Encoding.UTF8;
+            this._Cookie = new CookieContainer();
         }
 
         /// <param name="handers">Hander集合</param>
@@ -71,6 +72,7 @@
         /// <param name="data">post数据(仅用于POST模式)</param>
         public string RequestResult(string url, string referer, HttpMethod method, string data) {
             this._WebRequest = (HttpWebRequest)System.Net.WebRequest.Create(url);
+            this._WebRequest.Timeout = 5000;   //默认超时5秒钟
             this._WebRequest.CookieContainer = this._Cookie;
             this._WebRequest.Method = method.ToString();
             this._WebRequest.Accept = "*/*";
