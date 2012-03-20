@@ -609,6 +609,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Files\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="AdminMaster.Master" />
@@ -620,6 +621,10 @@
     <Content Include="App_Themes\Green\Default.skin" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Smart\SmartDBUtility\SmartDBUtility.csproj">
+      <Project>{40B79F71-57F3-4E04-8277-25A24CDCB7A5}</Project>
+      <Name>SmartDBUtility</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Smart\SmartSecurity\SmartSecurity.csproj">
       <Project>{116EC11E-6812-48DF-BFD6-8B3FF66C884F}</Project>
       <Name>SmartSecurity</Name>
@@ -656,6 +661,9 @@
       <Project>{9FB976DD-6014-4B2A-9073-3665166AA8C9}</Project>
       <Name>SmartPomsUI</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Template\OpinionWeekReport.docx" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
