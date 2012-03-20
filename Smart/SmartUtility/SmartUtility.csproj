@@ -45,6 +45,7 @@
     <Compile Include="ConfigHelper.cs" />
     <Compile Include="ConnectionInfo.cs" />
     <Compile Include="DataCache.cs" />
+    <Compile Include="Date\WeekService.cs" />
     <Compile Include="JScript.cs" />
     <Compile Include="NumberToChineseChar.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
