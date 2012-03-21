@@ -1,6 +1,8 @@
 ﻿body
 {
-    background-image: url("../images/bg.png");
+    background-image: url("../images/loginbg.jpg");
+    background-repeat:no-repeat;
+    background-color:#efefef;
 }
 .loginPanel
 {

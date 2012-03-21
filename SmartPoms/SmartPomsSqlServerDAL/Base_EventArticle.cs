@@ -41,23 +41,20 @@ namespace SmartPoms.SQLServerDAL {
         public void Add(Entity.BASE_EVENTARTICLE entity) {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("insert into Base_EventArticle(");
-            strSql.Append("ID,ArticleID,EventID");
+            strSql.Append("ArticleID,EventID");
             strSql.Append(") values (");
-            strSql.Append("@ID,@ArticleID,@EventID");
+            strSql.Append("@ArticleID,@EventID");
             strSql.Append(") ");
 
             SqlParameter[] parameters = {
-			            new SqlParameter("@ID", SqlDbType.Int,4) ,            
-                        new SqlParameter("@ArticleID", SqlDbType.Int,4) ,            
+			            new SqlParameter("@ArticleID", SqlDbType.Int,4) ,            
                         new SqlParameter("@EventID", SqlDbType.Int,4)             
               
             };
 
-            parameters[0].Value = entity.ID;
-            parameters[1].Value = entity.ArticleID;
-            parameters[2].Value = entity.EventID;
+            parameters[0].Value = entity.ArticleID;
+            parameters[1].Value = entity.EventID;
             SqlServerHelper.ExecuteSql(strSql.ToString(), parameters);
-
         }
 
 

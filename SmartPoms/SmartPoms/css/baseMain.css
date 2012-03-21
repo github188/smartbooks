@@ -3,6 +3,7 @@
     overflow:hidden;
     height:100%;
     width:100%;
+    background-color:#f6f9fd;    
 }
 
 /*头部样式开始*/
@@ -53,7 +54,7 @@ span.username
     height:20px;
     line-height:20px;
     overflow:hidden;
-    color:#699631;
+    color:#062E6B;
     float:left;
     font-size:9px;
     margin:37px 0px 0px 38px;
@@ -67,7 +68,7 @@ span.username
     overflow:hidden;
     float:left;
     display:block;
-    border:solid 1px #9ad452;    
+    border:solid 1px #7C96BE;    
 }
 /*内容部分样式结束*/
 
@@ -80,9 +81,9 @@ span.username
     overflow:hidden;
     display:block;
     margin-top:2px;
-    border-left:1px solid #699631;
-    border-right:1px solid #699631;
-    background-color:#f0fde0;
+    border-left:1px solid #7c96be;
+    border-right:1px solid #7c96be;
+    background-color:#e8eef7;
 }
 /*菜单项*/
 .menuitem
@@ -113,6 +114,10 @@ div.menuelement
     float:left;
     overflow:hidden;
     display:block;    
+}
+div.menuelement:hover
+{
+    background-color:#9cc5fd;
 }
 /*菜单子项图标*/
 img.meunico

@@ -12,9 +12,15 @@
     <br />
     <asp:GridView ID="dgvComments" runat="server" AllowPaging="True" Width="100%"
         onpageindexchanging="dgvComments_PageIndexChanging" 
-        EnableModelValidation="True">
-        <Columns>
-            <asp:ButtonField ButtonType="Link" HeaderText="查看" Text="查看"/>
+        EnableModelValidation="True" PageSize="50" >
+        <Columns>                    
+            <asp:TemplateField HeaderText="原文链接">
+                <ItemTemplate>
+                    <asp:HyperLink ID="HyperLink1" runat="server" 
+                        NavigateUrl='<%# Eval("页面链接") %>' Target="_blank">查看
+                    </asp:HyperLink>
+                </ItemTemplate>
+            </asp:TemplateField>                    
         </Columns>
         <PagerSettings FirstPageText="第一页" LastPageText="最后一页" 
             Mode="NextPreviousFirstLast" NextPageText="下一页" PreviousPageText="上一页" />        

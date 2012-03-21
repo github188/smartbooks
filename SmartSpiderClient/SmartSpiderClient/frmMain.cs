@@ -26,6 +26,9 @@ namespace Smart.Spider.Client
             Thread t = new Thread(new ThreadStart(StartTask));
             t.Start();
             Thread.Sleep(1);
+
+            this.btnStart.Enabled = false;
+            this.btnPause.Enabled = true;
         }
 
         private void btnPause_Click(object sender, EventArgs e)
@@ -33,6 +36,8 @@ namespace Smart.Spider.Client
             Thread t = new Thread(new ThreadStart(StopTask));
             t.Start();
             Thread.Sleep(1);
+            this.btnStart.Enabled = true;
+            this.btnPause.Enabled = false;
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -46,11 +51,9 @@ namespace Smart.Spider.Client
             {
                 if (task[i] != null)
                 {
-                    task[i].Time.Start();
+                    task[i].Start();
                 }
             }
-            //this.btnStart.Enabled = false;
-            //this.btnPause.Enabled = true;
         }
 
         private void StopTask()
@@ -59,17 +62,15 @@ namespace Smart.Spider.Client
             {
                 if (task[i] != null)
                 {
-                    task[i].Time.Stop();
+                    task[i].Stop();
                 }
             }
-            //this.btnStart.Enabled = true;
-            //this.btnPause.Enabled = false;
         }
 
         private void LoadUrl()
         {            
             DataTable dt = new DataTable();
-            string select = "select UrlAddress from Base_Urls";
+            string select = "select UrlAddress from Base_Urls WHERE enable=0";
             //1.从数据库加载1000条Url地址
             dt = Smart.DBUtility.SqlServerHelper.Query(select).Tables[0];
 

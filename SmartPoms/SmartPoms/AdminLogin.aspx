@@ -11,6 +11,11 @@
             $("#captche").mouseover(function () {
                 $(this).attr("src", "Api/VerificationCode.ashx");
             });
+
+            /*居中登录面板*/
+            var height = $(document.body).height();
+            var width = $(document.body).width();
+            //$(".container").css("left", width);
         });
     </script>
 </head>

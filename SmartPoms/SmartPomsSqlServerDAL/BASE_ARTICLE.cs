@@ -49,7 +49,7 @@ namespace SmartPoms.SQLServerDAL {
             strSql.Append(";select @@IDENTITY");
             SqlParameter[] parameters = {
 			            new SqlParameter("@Title", SqlDbType.VarChar,200) ,            
-                        new SqlParameter("@Detail", SqlDbType.VarChar,8000) ,            
+                        new SqlParameter("@Detail", SqlDbType.Text) ,            
                         new SqlParameter("@SendTime", SqlDbType.DateTime) ,            
                         new SqlParameter("@Media", SqlDbType.VarChar,50) ,            
                         new SqlParameter("@Author", SqlDbType.VarChar,50) ,            

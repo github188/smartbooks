@@ -9,20 +9,18 @@
         #region 私有变量定义
         private HttpWebRequest _WebRequest;
         private HttpWebResponse _WebResponse;
-        private CookieContainer _Cookie;
+        private CookieContainer _Cookie = new CookieContainer();
         #endregion
 
         #region 公共字段定义
         /// <summary>
         /// Http请求内容编码
         /// </summary>
-        public Encoding _encoding;
+        public Encoding _encoding = Encoding.Default;
         #endregion
 
         #region 公共方法定义
         public HttpHelper() {
-            this._encoding = Encoding.UTF8;
-            this._Cookie = new CookieContainer();
         }
 
         /// <param name="handers">Hander集合</param>
@@ -38,12 +36,7 @@
         /// </summary>
         /// <param name="encoding">请求编码</param>
         public HttpHelper(Encoding encoding) {
-            if (encoding == null) {
-                this._encoding = Encoding.Default;
-            } else {
-                this._encoding = encoding;
-            }
-            this._Cookie = new CookieContainer();
+            this._encoding = encoding;
         }
 
         /// <summary>
@@ -51,6 +44,32 @@
         /// </summary>
         /// <param name="url">Url地址</param>
         public string RequestResult(string url) {
+            return this.RequestResult(url, "");
+        }
+
+        public Stream RequestResult(string url, int timeOut) {
+            try {
+                this._WebRequest = (HttpWebRequest)System.Net.WebRequest.Create(url);
+                this._WebRequest.Timeout = timeOut;
+                this._WebRequest.CookieContainer = this._Cookie;
+                this._WebRequest.Method = "GET";
+                this._WebRequest.Accept = "*/*";
+                this._WebRequest.ContentType = "application/x-www-form-urlencoded";
+                this._WebResponse = (HttpWebResponse)this._WebRequest.GetResponse();
+                return this._WebResponse.GetResponseStream();
+            } catch {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// 发送一次Web请求
+        /// </summary>
+        /// <param name="url">Url地址</param>
+        /// <param name="encoding">内容编码</param>
+        /// <returns>Html Content</returns>
+        public string RequestResult(string url, Encoding encoding) {
+            this._encoding = encoding;
             return this.RequestResult(url, "");
         }
 
