@@ -52,6 +52,7 @@
     <Compile Include="PublicCheck.cs" />
     <Compile Include="RegexLib.cs" />
     <Compile Include="SecurityEncryption.cs" />
+    <Compile Include="SerializeUtilities.cs" />
     <Compile Include="StringHandle.cs" />
     <Compile Include="StringHelper.cs" />
     <Compile Include="TypeParse.cs" />
