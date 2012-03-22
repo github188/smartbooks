@@ -134,6 +134,7 @@
     <EmbeddedResource Include="Utility\TaskResultLog.resx">
       <DependentUpon>TaskResultLog.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="app.config" />
     <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -200,6 +201,14 @@
     <None Include="Resources\taskmin.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Smart\SmartDBUtility\SmartDBUtility.csproj">
+      <Project>{40B79F71-57F3-4E04-8277-25A24CDCB7A5}</Project>
+      <Name>SmartDBUtility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Smart\SmartUtility\SmartUtility.csproj">
+      <Project>{B7456CA5-DDD6-47D7-9618-9C4A5F7C8D6B}</Project>
+      <Name>SmartUtility</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SmartSpiderConfig\SmartSpiderConfig.csproj">
       <Project>{4E1169EC-CCD2-4F8E-8157-47CE07753DD9}</Project>
       <Name>SmartSpiderConfig</Name>

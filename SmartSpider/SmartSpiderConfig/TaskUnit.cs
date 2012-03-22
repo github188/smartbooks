@@ -44,9 +44,10 @@
         private DataTable _Results = new DataTable();
         private HttpHelper _HttpHelper;
         private string _ConfigPath = "";
+        private string _ConfigDir = "";
         private LogEventArgs eventArgs = new LogEventArgs("", 0, true);
-        private StringCollection NavigationUrls = new StringCollection();
-        public Thread t;
+        private StringCollection NavigationUrls = new StringCollection();        
+        public Timer time;
         #endregion
 
         #region 公共方法定义
@@ -58,13 +59,16 @@
         /// </summary>
         public TaskUnit() {
             this._HttpHelper = new HttpHelper(Encoding.GetEncoding(this._TaskConfig.UrlListManager.UrlEncoding));
-            t = new Thread(new ThreadStart(this.Start));
+            time = new Timer(new TimerCallback(Start), "", Timeout.Infinite, Timeout.Infinite);
         }
 
         /// <summary>
         /// 开始
         /// </summary>
-        public void Start() {
+        public void Start(object sender) {
+            /*启动计时器*/
+            //time.Change(0, 60000);
+
             this.Action = Config.Action.Start;
             this._TaskConfig.StartingTime = DateTime.Now;
             eventArgs.Message = string.Format("{0}\r\n开始任务 {1}\r\n", DateTime.Now.ToString(), this._TaskConfig.Name);
@@ -85,6 +89,7 @@
             #region 根据起始页面规则，加载导航地址采集规则
             StringCollection startUrls = this.LoadingStartingUrl();
             foreach (string startUrl in startUrls) {
+                if (this.Action == Config.Action.Stop || this.Action == Config.Action.Pause) return;
                 ExtractTheNavigationAddress(startUrl);
                 //ThreadPool.QueueUserWorkItem(new WaitCallback(ExtractTheNavigationAddress), startUrl);
             }
@@ -95,6 +100,9 @@
         /// 停止
         /// </summary>
         public void Stop() {
+            /*停止任务*/
+            //time.Change(Timeout.Infinite, Timeout.Infinite);
+
             this.Action = Config.Action.Stop;
             eventArgs.Message = "停止任务";
             this.AppendLog();
@@ -104,6 +112,9 @@
         /// 暂停
         /// </summary>
         public void Pause() {
+            /*停止任务(之后选择合适的方式暂停)*/
+            //time.Change(Timeout.Infinite, Timeout.Infinite);
+
             this.Action = Config.Action.Pause;
             eventArgs.Message = "暂停任务";
             this.AppendLog();
@@ -142,7 +153,7 @@
             this.AppendLog();
 
             foreach (NavigationRule navigationRole in this._TaskConfig.UrlListManager.NavigationRules) {
-                if (this.Action == Config.Action.Stop) return;
+                if (this.Action == Config.Action.Stop || this.Action == Config.Action.Pause) return;
                 // 采用深度优先模式提取内容采集结果
                 string htmlText = "";
                 try {
@@ -158,7 +169,7 @@
                 } else {
                     StringCollection navUrls = this.LoadingNavigationRule(navigationRole, htmlText);
                     foreach (string url in navUrls) {
-                        if (this.Action == Config.Action.Stop) return;
+                        if (this.Action == Config.Action.Stop || this.Action == Config.Action.Pause) return;
                         //根据导航地址提取内容结果
                         ExtractTheContents(url);
                         //ThreadPool.QueueUserWorkItem(new WaitCallback(ExtractTheContents), url);
@@ -524,6 +535,14 @@
         public string ConfigPath {
             get { return _ConfigPath; }
             set { _ConfigPath = value; }
+        }
+
+        /// <summary>
+        /// 配置文件目录
+        /// </summary>
+        public string ConfigDir {
+            get { return _ConfigDir; }
+            set { _ConfigDir = value; }
         }
         #endregion
     }

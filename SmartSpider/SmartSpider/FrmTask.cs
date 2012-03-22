@@ -410,11 +410,11 @@
         private void btnSubmit_Click(object sender, EventArgs e) {
             Task t = GetUiConfig();
             if (!this._TaskUnit.TaskConfig.Equals(t)) {
-                if (MessageBox.Show("配置文件已更改，是否保存配置文件？", "保存提示",
-                    MessageBoxButtons.YesNo, MessageBoxIcon.Information) ==
-                    System.Windows.Forms.DialogResult.Yes) {
-                    this.SaveTaskConfig(t, this._TaskUnit.ConfigPath);
+                string filePath = _TaskUnit.ConfigPath;
+                if (string.IsNullOrEmpty(t.Name) || string.IsNullOrEmpty(_TaskUnit.ConfigPath)) {
+                    filePath = string.Format("{0}task\\{1}.xml", AppDomain.CurrentDomain.BaseDirectory, t.Name);
                 }
+                this.SaveTaskConfig(t, filePath);
             }
             this.Close();
             this.Dispose();

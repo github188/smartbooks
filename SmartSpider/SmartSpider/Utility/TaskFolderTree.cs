@@ -15,9 +15,6 @@
         public TaskFolderTree() {
             this.Nodes.Clear();            
             this.Nodes.Add(Load(_defaultTaskPath, "根文件夹"));
-            TreeNode RuntimeArea = new TreeNode("运行区");
-            RuntimeArea.Tag = new TaskController();
-            this.Nodes.Add(RuntimeArea);
             this.Refresh();
         }
 
@@ -27,9 +24,6 @@
         public void ReLoad() {
             this.Nodes.Clear();            
             this.Nodes.Add(Load(_defaultTaskPath, "根文件夹"));
-            TreeNode RuntimeArea = new TreeNode("运行区");
-            RuntimeArea.Tag = new TaskController();
-            this.Nodes.Add(RuntimeArea);
             this.Refresh();
         }
 

@@ -11,22 +11,24 @@
     using Config;
 
     public partial class FrmMain : Form {
-        private TaskUnit[] taskItem = new TaskUnit[1];
-
         #region 构造方法
         /// <summary>
         /// 构造函数
         /// </summary>
         public FrmMain() {
             InitializeComponent();
-            //this.Text = "网络信息智能采集系统 V1.0.0.0 内部测试版 - 郑州豫图信息技术有限公司";
-            //this.Icon = new System.Drawing.Icon("mainProgram.ico");
 
             //初始化为默认Ui
             SetDefaultUI();
 
             //加载系统配置文件
             LoadConfiguration();
+
+            //加载本地XML任务配置文件
+            LoadLocationTaskItem();
+
+            /*加载DBTaskList*/
+            //LoadDBTaskItem();
 
             //测试选项卡
             //Utility.TaskResultLog log = new Utility.TaskResultLog("测试选项卡", new DataTable());
@@ -35,46 +37,9 @@
             //    log.AppendLog("追加的测试日志", 4);
             //}
             //log.AppendRow(new DataGridViewRow());
-        }
 
-        /// <summary>
-        /// 获取任务运行区指定名称的任务单元
-        /// </summary>
-        /// <param name="taskPath">任务单元完整文件路径+文件名称</param>
-        /// <returns>任务单元</returns>
-        private TaskUnit GetRuntimeAreaTaskUnit(string taskPath) {
-            foreach (TreeNode node in this.trwTaskFolder.Nodes) {
-                if (node.Text.Equals("运行区")) {
-                    TaskController controller = (TaskController)node.Tag;
-                    foreach (TaskUnit unit in controller.TaskUnit) {
-                        if (unit.ConfigPath.Equals(taskPath)) {
-                            return unit;
-                        }
-                    }
-                }
-            }
-            return null;
-        }
-
-        /// <summary>
-        /// 显示任务运行日志信息窗口
-        /// </summary>
-        /// <param name="unit">任务单元</param>
-        private void ShowTaskRuntimesInfo(ref TaskUnit unit) {
-            bool isNull = true;
-            foreach (TabPage page in this.tabContent.TabPages) {
-                string kind = (string)page.Tag;
-                if (kind == unit.ConfigPath) {
-                    this.tabContent.SelectedTab = page;
-                    isNull = false;
-                    break;
-                }
-            }
-            if (isNull) {
-                Utility.TaskResultLog log = new Utility.TaskResultLog(ref unit);
-                this.tabContent.TabPages.Add(log);
-                this.tabContent.SelectedTab = log;
-            }
+            this.Text = "网络信息智能采集系统 V1.0.0.0 内部测试版 - 郑州豫图信息技术有限公司";
+            this.Icon = new System.Drawing.Icon("mainProgram.ico");
         }
         #endregion
 
@@ -142,7 +107,17 @@
         }
         //文件菜单：退出
         private void FileItemExit_Click(object sender, EventArgs e) {
+            /*保存配置文件*/
+            SaveConfiguration();
 
+            /*保存任务信息到数据库*/
+            //SaveTaskItemToDB();
+
+            /*保存任务信息到本地Task目录下*/
+            //SaveLoactionTaskItem();
+
+            Application.ExitThread();
+            Application.Exit();
         }
         #endregion
 
@@ -308,18 +283,16 @@
         //工具栏：开始
         private void tolStartTask_Click(object sender, EventArgs e) {
             foreach (ListViewItem item in this.livTaskView.SelectedItems) {
-                TaskUnit unit = (TaskUnit)item.Tag;
-                if (unit.Action == Action.Finish) {
+                int taskIndex = (int)item.Tag;
+                if (taskItem[taskIndex].Action == Action.Finish) {
                     if (MessageBox.Show("该任务已经采集完毕，确定重新采集吗？", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Information) ==
                         System.Windows.Forms.DialogResult.Yes) {
-                        ShowTaskRuntimesInfo(ref unit);                     //显示任务运行日志信息窗口
-                        unit.Start();                                       //启动任务
+                        ShowTaskRuntimesInfo(ref taskItem[taskIndex]);  //显示任务运行日志信息窗口
+                        taskItem[taskIndex].Start("");
                     }
                 } else {
-                    ShowTaskRuntimesInfo(ref taskItem[0]);                     //显示任务运行日志信息窗口
-                    taskItem[0].t.Start();
-                    //System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(taskItem[0].Start));
-                    //t.Start();
+                    ShowTaskRuntimesInfo(ref taskItem[taskIndex]);      //显示任务运行日志信息窗口
+                    taskItem[taskIndex].time.Change(0, 60000);
                 }
             }
 
@@ -334,8 +307,10 @@
         //工具栏：暂停
         private void tolPauseTask_Click(object sender, EventArgs e) {
             foreach (ListViewItem item in this.livTaskView.SelectedItems) {
-                TaskUnit unit = (TaskUnit)item.Tag;
-                unit.Pause();
+                int taskIndex = (int)item.Tag;
+                taskItem[taskIndex].time.Change(System.Threading.Timeout.Infinite, System.Threading.Timeout.Infinite);
+                taskItem[taskIndex].Pause();
+
                 this.tolPauseTask.Enabled = false;
                 this.tolStartTask.Enabled = true;
                 this.tolStopTask.Enabled = true;
@@ -348,8 +323,10 @@
         //工具栏：停止
         private void tolStopTask_Click(object sender, EventArgs e) {
             foreach (ListViewItem item in this.livTaskView.SelectedItems) {
-                TaskUnit unit = (TaskUnit)item.Tag;
-                unit.Stop();
+                int taskIndex = (int)item.Tag;
+                taskItem[taskIndex].time.Change(System.Threading.Timeout.Infinite, System.Threading.Timeout.Infinite);
+                taskItem[taskIndex].Stop();
+
                 this.tolPauseTask.Enabled = false;
                 this.tolStartTask.Enabled = true;
                 this.tolStopTask.Enabled = false;
@@ -408,9 +385,17 @@
         }
         //工具栏：退出
         private void TolExit_Click(object sender, EventArgs e) {
+            /*保存配置文件*/
+            SaveConfiguration();
+
+            /*保存任务信息到数据库*/
+            //SaveTaskItemToDB();
+
+            /*保存任务信息到本地Task目录下*/
+            //SaveLoactionTaskItem();
+
             Application.ExitThread();
             Application.Exit();
-            this.SaveConfiguration();
         }
         //工具栏：导出到Excel
         private void ExportToExcel_Click(object sender, EventArgs e) {
@@ -429,67 +414,48 @@
         #region 窗体控件事件
         //主窗体：点击X按钮，退出程序
         private void FrmMain_FormClosed(object sender, FormClosedEventArgs e) {
+            /*保存配置文件*/
+            SaveConfiguration();
+
+            /*保存任务信息到数据库*/
+            //SaveTaskItemToDB();
+
+            /*保存任务信息到本地Task目录下*/
+            //SaveLoactionTaskItem();
+
+            Application.ExitThread();
             Application.Exit();
         }
         //任务文件夹：单击节点显示到任务信息到任务窗口
         private void trwTaskFolder_AfterSelect(object sender, TreeViewEventArgs e) {
-            if (this.trwTaskFolder.SelectedNode != null) {
-                this.livTaskView.Items.Clear();
-                if (this.trwTaskFolder.SelectedNode.Text.Equals("运行区")) {
-                    //循环遍历每个节点，筛选出运行状态的任务，显示出来
-                    for (int i = 0; i < taskItem.Length; i++)
-                    {
-                        if (taskItem[i].Action == Action.Start)
-                        {
-                            Utility.TaskViewItem item = new Utility.TaskViewItem(ref taskItem[i]);
-                            livTaskView.Items.Add(item);
-                        }
-                        //MessageBox.Show(taskItem[i].Action.ToString());
-                        //Utility.TaskViewItem item = new Utility.TaskViewItem(ref taskItem[i]);
-                        //livTaskView.Items.Add(item);
+            //筛选出tag分类下任务显示到任务详细信息窗口
+            this.livTaskView.Items.Clear();
+            string dir = (string)trwTaskFolder.SelectedNode.Tag;
+            for (int i = 0; i < taskItem.Length; i++) {
+                if (taskItem[i] != null) {
+                    if (taskItem[i].ConfigDir.Equals(dir)) {
+                        Utility.TaskViewItem item = new Utility.TaskViewItem(ref taskItem[i], i);
+                        this.livTaskView.Items.Add(item);
                     }
-                } else {
-                    #region 加载指定目录下Xml配置文件
-                    string[] files = Directory.GetFiles(trwTaskFolder.SelectedNode.Tag.ToString(), "*.xml");
-                    for (int i = 0; i < files.Length; i++) {
-                        try {
-                            //反序列化配置文件
-                            XmlSerializer xs = new XmlSerializer(typeof(Task));
-                            Stream readStream = new FileStream(files[i], FileMode.Open, FileAccess.Read, FileShare.Read);
-                            Task task = (Task)xs.Deserialize(readStream);
-                            readStream.Close();
-                            readStream.Dispose();
-
-                            //生成任务控制单元
-                            TaskUnit unit = GetRuntimeAreaTaskUnit(files[i]);
-
-                            //判断该任务是否已在运行区存在
-                            if (unit == null) {
-                                unit = new TaskUnit();
-                                unit.TaskConfig = task;
-                                unit.ConfigPath = files[i];
-                            }
-                            taskItem[0] = unit;
-                            Utility.TaskViewItem item = new Utility.TaskViewItem(ref taskItem[0]);
-                            livTaskView.Items.Add(item);
-                        } catch (Exception ex) {
-                            throw new Exception(ex.Message);
-                        }
-                    }
-                    #endregion
                 }
-                this.livTaskView.Refresh();
             }
         }
         //任务运行信息窗口：双击编辑任务配置
         private void livTaskView_MouseDoubleClick(object sender, MouseEventArgs e) {
             if (livTaskView.SelectedItems.Count != 0) {
-                TaskUnit unit = (TaskUnit)livTaskView.SelectedItems[0].Tag;
-                if (GetRuntimeAreaTaskUnit(unit.ConfigPath) == null) {
-                    FrmTask taskConfig = new FrmTask(ref unit);
-                    taskConfig.ShowDialog();
+                int taskIndex = (int)livTaskView.SelectedItems[0].Tag;
+                FrmTask edit = new FrmTask(ref taskItem[taskIndex]);
+                if (taskItem[taskIndex].Action != Action.Stop) {
+                    if (MessageBox.Show("任务处于非停止状态，单击YES按钮暂停任务已进行编辑，单击No按钮取消编辑操作!", "提示",
+                        MessageBoxButtons.YesNo, MessageBoxIcon.Question) ==
+                        System.Windows.Forms.DialogResult.Yes) {
+                        taskItem[taskIndex].Action = Action.Stop;
+                        taskItem[taskIndex].time.Change(System.Threading.Timeout.Infinite, System.Threading.Timeout.Infinite);
+                        edit.ShowDialog();
+                    }
+                    return;
                 } else {
-                    MessageBox.Show("任务正在运行中不能进行编辑操作!", "提示");
+                    edit.ShowDialog();
                 }
             }
         }
@@ -514,6 +480,7 @@
         #endregion
 
         #region 私有方法定义
+        #region 加载/保存配置文件和任务列表
         /// <summary>
         /// 加载系统配置文件
         /// </summary>
@@ -544,10 +511,134 @@
             WriteStream.Close();
             WriteStream.Dispose();
         }
+        /// <summary>
+        /// 从数据库加载task列表
+        /// </summary>
+        private void LoadDBTaskItem() {
+            /*从数据库加载task列表*/
+            DataTable dt = new DataTable();
+            string sec = "";
+            dt = Smart.DBUtility.SqlServerHelper.Query(sec).Tables[0];
+
+            /*构造任务实例*/
+            taskItem = new TaskUnit[dt.Rows.Count];
+            for (int i = 0; i < dt.Rows.Count; i++) {
+                string configStr = dt.Rows[i][""].ToString();/*读取配置文件字段内容*/
+                if (taskItem[i] == null) {
+                    taskItem[i] = new TaskUnit();
+                }
+                taskItem[i].TaskConfig = Smart.Utility.SerializeUtilities.Desrialize(taskItem[i].TaskConfig, configStr);
+            }
+
+            /*构造左侧导航树分类*/
+            sec = ""; //节点:ID,名称,父ID
+            dt = Smart.DBUtility.SqlServerHelper.Query(sec).Tables[0];
+            TreeNode rootNode = new TreeNode();
+            foreach (DataRow row in dt.Rows) {
+                TreeNode subNode = new TreeNode();
+                string id = row["id"].ToString();
+                string nodeText = row["nodeName"].ToString();
+                string pid = row["pid"].ToString(); /*父ID*/
+                if (pid.Equals("0")) {
+                    /*添加根节点*/
+                } else {
+                    /*遍历子节点*/
+                    foreach (DataRow subRow in dt.Rows) {
+                        string subId = row["id"].ToString();
+                        string subNodeText = row["nodeName"].ToString();
+                        string subPid = row["pid"].ToString();
+                        if (subId.Equals(id)) {
+                            /*添加子节点*/
+                        }
+                    }
+                }
+            }
+        }
+        /// <summary>
+        /// 保存任务列表到数据库
+        /// </summary>
+        private void SaveTaskItemToDB() {
+            for (int i = 0; i < taskItem.Length; i++) {
+                if (taskItem[i] != null) {
+                    /*将任务序列化为字符串然后进行Base64编码处理*/
+                    string configStr = Smart.Utility.SerializeUtilities.Serialize(taskItem[i].TaskConfig);
+
+                    /*构造Sql语句，更新任务配置信息*/
+                    string update = "";
+                    Smart.DBUtility.SqlServerHelper.Query(update);
+                }
+            }
+        }
+        /// <summary>
+        /// 加载本地任务列表(默认在当前程序所在目录task目录下)
+        /// </summary>
+        private void LoadLocationTaskItem() {
+            string taskRootPath = AppDomain.CurrentDomain.BaseDirectory + "Task";
+            string[] files = Directory.GetFiles(taskRootPath, "*.xml", SearchOption.AllDirectories);
+            this.taskItem = new TaskUnit[files.Length];
+            for (int i = 0; i < files.Length; i++) {
+                try {
+                    //反序列化配置文件
+                    XmlSerializer xs = new XmlSerializer(typeof(Task));
+                    Stream readStream = new FileStream(files[i], FileMode.Open, FileAccess.Read, FileShare.Read);
+                    Task task = (Task)xs.Deserialize(readStream);
+                    readStream.Close();
+                    readStream.Dispose();
+
+                    if (taskItem[i] == null) {
+                        taskItem[i] = new TaskUnit();
+                    }
+
+                    taskItem[i].ConfigPath = files[i];
+                    taskItem[i].TaskConfig = task;
+                    taskItem[i].ConfigDir = Directory.GetParent(files[i]).FullName;
+
+                } catch (Exception ex) {
+                    throw new Exception(ex.Message);
+                }
+            }
+        }
+        private void SaveLoactionTaskItem() {
+        }
+
+        private TreeNode RecursiveCreateNode(string id, DataTable dt) {
+            TreeNode node = new TreeNode();
+            foreach (DataRow row in dt.Rows) {
+                if (row["pid"].ToString().Equals(id)) {
+                    node.Text = row["nodeName"].ToString();
+                } else {
+                    return RecursiveCreateNode(row[""].ToString(), dt);
+                }
+            }
+            return node;
+        }
+        #endregion
+
+        /// <summary>
+        /// 显示任务运行日志信息窗口
+        /// </summary>
+        /// <param name="unit">任务单元</param>
+        private void ShowTaskRuntimesInfo(ref TaskUnit unit) {
+            bool isNull = true;
+            foreach (TabPage page in this.tabContent.TabPages) {
+                string kind = (string)page.Tag;
+                if (kind == unit.ConfigPath) {
+                    this.tabContent.SelectedTab = page;
+                    isNull = false;
+                    break;
+                }
+            }
+            if (isNull) {
+                Utility.TaskResultLog log = new Utility.TaskResultLog(ref unit);
+                this.tabContent.TabPages.Add(log);
+                this.tabContent.SelectedTab = log;
+            }
+        }
         #endregion
 
         #region 私有字段定义
         private Configuration _Configuration = new Configuration();
+        private TaskUnit[] taskItem;
         #endregion
 
         #region 公共属性定义
