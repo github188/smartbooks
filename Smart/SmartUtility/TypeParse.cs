@@ -247,7 +247,7 @@ namespace Smart.Utility {
         /// <returns></returns>
         public static int MinInt(int[] n) {
             int ret = 0;
-            if (n[0] != null) {
+            if (n.Length != 0) {
                 ret = n[0];
             }
             for (int i = 1; i < n.Length; i++) {

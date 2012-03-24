@@ -38,7 +38,7 @@ namespace SmartPoms {
                                 entity.IsLimit,
                                 entity.Status));
                             /*跳转到后台主页*/
-                            Response.Redirect("~/Default.aspx", true);
+                            Response.Redirect("~/poms/NegativeComments.aspx", true);
                         } else {
                             ResultControleDefaultValue();
                             this.lblError.Text = "用户或密码错误!";

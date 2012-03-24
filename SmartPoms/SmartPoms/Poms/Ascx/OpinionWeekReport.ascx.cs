@@ -76,40 +76,40 @@ namespace SmartPoms.Poms.Ascx {
             #endregion
 
             #region 编写正文内容
-            pam.BodyContent = string.Format("{0}至{1}期间，主要监测舆情分类为：", 
-                beginDate.ToString("yyyy年MM月dd日"), 
-                endDate.ToString("yyyy年MM月dd日"));
-            foreach (DataRow eventRow in eventDt.Rows) {
-                pam.BodyContent += string.Format("{0}、", eventRow["eventName"].ToString());
-            }
-            foreach (DataRow eventRow in eventDt.Rows) {
-                #region 获取该分类下文章
-                DataTable articleDt = articleService.GetEventArticle(
-                    beginDate.ToString("yyyy-MM-dd"),
-                    endDate.ToString("yyyy-MM-dd"), 
-                    Convert.ToInt32(eventRow["eventid"]));
+            //pam.BodyContent = string.Format("{0}至{1}期间，主要监测舆情分类为：", 
+            //    beginDate.ToString("yyyy年MM月dd日"), 
+            //    endDate.ToString("yyyy年MM月dd日"));
+            //foreach (DataRow eventRow in eventDt.Rows) {
+            //    pam.BodyContent += string.Format("{0}、", eventRow["eventName"].ToString());
+            //}
+            //foreach (DataRow eventRow in eventDt.Rows) {
+            //    #region 获取该分类下文章
+            //    DataTable articleDt = articleService.GetEventArticle(
+            //        beginDate.ToString("yyyy-MM-dd"),
+            //        endDate.ToString("yyyy-MM-dd"), 
+            //        Convert.ToInt32(eventRow["eventid"]));
 
-                pam.BodyContent += string.Format("其中在舆情监测分类 {0} 下,本周共监测到 {1} 条舆情信息。",
-                    eventRow["eventName"].ToString(),
-                    articleDt.Rows.Count.ToString());
+            //    pam.BodyContent += string.Format("其中在舆情监测分类 {0} 下,本周共监测到 {1} 条舆情信息。",
+            //        eventRow["eventName"].ToString(),
+            //        articleDt.Rows.Count.ToString());
 
-                #region 编写舆情分类下内容
-                if (articleDt.Rows.Count != 0) {
-                    pam.BodyContent += "其中负面比值较高的舆情信息为以下几条：";
-                    for (int i = 0; i < articleDt.Rows.Count; i++) {
-                        if (i < 10) {
-                            pam.BodyContent += string.Format("{0}.{1}。",
-                                (i + 1).ToString(),
-                                articleDt.Rows[i]["文章标题"].ToString());
-                        } else if (i > 10) {
-                            break;
-                        }
-                    }
-                    pam.BodyContent += "。";
-                }
-                #endregion
-                #endregion
-            }
+            //    #region 编写舆情分类下内容
+            //    if (articleDt.Rows.Count != 0) {
+            //        pam.BodyContent += "其中负面比值较高的舆情信息为以下几条：";
+            //        for (int i = 0; i < articleDt.Rows.Count; i++) {
+            //            if (i < 10) {
+            //                pam.BodyContent += string.Format("{0}.{1}。",
+            //                    (i + 1).ToString(),
+            //                    articleDt.Rows[i]["文章标题"].ToString());
+            //            } else if (i > 10) {
+            //                break;
+            //            }
+            //        }
+            //        pam.BodyContent += "。";
+            //    }
+            //    #endregion
+            //    #endregion
+            //}
             #endregion
 
             #region 初始化简报内容并生成简报文件
