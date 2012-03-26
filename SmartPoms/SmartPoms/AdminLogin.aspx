@@ -5,9 +5,9 @@
 <head runat="server">
     <title>用户登录-网络舆情监测系统</title>
     <link rel="stylesheet" href="css/baseLogin.css" type="text/css" />
-    <script type="text/jscript" src="Scripts/jquery-1.4.1.js" ></script>
+    <script type="text/jscript" src="Scripts/jquery-ui-1.8.16/jquery-1.6.2.js" ></script>
     <script type="text/jscript">
-        $(document).ready(function () {
+        $(document).ready(function() {
             $("#captche").mouseover(function () {
                 $(this).attr("src", "Api/VerificationCode.ashx");
             });

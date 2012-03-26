@@ -112,6 +112,7 @@
     <Content Include="Poms\Ascx\RatingDissemination.ascx" />
     <Content Include="Poms\Ascx\RatingEmotional.ascx" />
     <Content Include="Poms\Ascx\RatingSituationEvolution.ascx" />
+    <Content Include="Poms\Ascx\WeiBo.ascx" />
     <Content Include="Poms\CountArea.aspx" />
     <Content Include="Poms\CountClick.aspx" />
     <Content Include="Poms\CountComment.aspx" />
@@ -129,6 +130,7 @@
     <Content Include="Poms\RatingDissemination.aspx" />
     <Content Include="Poms\RatingEmotional.aspx" />
     <Content Include="Poms\RatingSituationEvolution.aspx" />
+    <Content Include="Poms\WeiBo.aspx" />
     <Content Include="Scripts\jquery-ui-1.8.16\jquery-1.6.2.js" />
     <Content Include="Scripts\jquery-ui-1.8.16\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Scripts\jquery-ui-1.8.16\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
@@ -313,6 +315,7 @@
     <Content Include="Scripts\jquery-ui-1.8.16\ui\minified\jquery.ui.widget.min.js" />
     <Content Include="Scripts\jquery-ui-timepicker-addon.js" />
     <Content Include="Scripts\jquery.ui.datepicker-zh-CN.js" />
+    <Content Include="Scripts\json2.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -497,6 +500,9 @@
     <Compile Include="admin\UserGroups.aspx.designer.cs">
       <DependentUpon>UserGroups.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Api\SinaWB.ashx.cs">
+      <DependentUpon>SinaWB.ashx</DependentUpon>
+    </Compile>
     <Compile Include="Api\VerificationCode.ashx.cs">
       <DependentUpon>VerificationCode.ashx</DependentUpon>
     </Compile>
@@ -522,6 +528,8 @@
       <DependentUpon>AdminMenu.ascx</DependentUpon>
     </Compile>
     <Compile Include="Code\ExceptionSession.cs" />
+    <Compile Include="Code\HttpHelper.cs" />
+    <Compile Include="Code\HttpMethod.cs" />
     <Compile Include="Code\SessionBox.cs" />
     <Compile Include="Code\Tag.cs" />
     <Compile Include="Code\UserHandle.cs" />
@@ -656,6 +664,13 @@
     <Compile Include="Poms\Ascx\RatingSituationEvolution.ascx.designer.cs">
       <DependentUpon>RatingSituationEvolution.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Poms\Ascx\WeiBo.ascx.cs">
+      <DependentUpon>WeiBo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Poms\Ascx\WeiBo.ascx.designer.cs">
+      <DependentUpon>WeiBo.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Poms\CountArea.aspx.cs">
       <DependentUpon>CountArea.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -775,6 +790,13 @@
     <Compile Include="Poms\RatingSituationEvolution.aspx.designer.cs">
       <DependentUpon>RatingSituationEvolution.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Poms\WeiBo.aspx.cs">
+      <DependentUpon>WeiBo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Poms\WeiBo.aspx.designer.cs">
+      <DependentUpon>WeiBo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -833,6 +855,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Api\SinaWB.ashx" />
     <None Include="Template\OpinionWeekReport.docx" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

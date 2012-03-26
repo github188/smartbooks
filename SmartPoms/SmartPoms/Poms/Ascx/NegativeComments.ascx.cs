@@ -31,11 +31,14 @@ namespace SmartPoms.Poms.Ascx {
             SmartPoms.BLL.Service.ArticleService article = new BLL.Service.ArticleService();
             System.Data.DataTable dt = new System.Data.DataTable();
             dt = article.GetEventArticle(beginDate, endDate, siteName, keys, sortType);
+            if (dt.Rows.Count == 0) {
+                dt.Rows.Add(dt.NewRow());
+            }
             this.dgvComments.DataSource = dt;
             this.dgvComments.DataBind();
 
             /*绑定查询结果*/
-            this.panelResult.GroupingText = string.Format("共查询到 {0} 条记录", dt.Rows.Count.ToString());
+            this.panelResult.GroupingText = string.Format("共查询到 {0} 条记录", (dt.Rows.Count-1).ToString());
         }
 
         protected void dgvComments_PageIndexChanging(object sender, GridViewPageEventArgs e) {
