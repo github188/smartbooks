@@ -500,8 +500,11 @@
     <Compile Include="admin\UserGroups.aspx.designer.cs">
       <DependentUpon>UserGroups.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Api\SinaWB.ashx.cs">
-      <DependentUpon>SinaWB.ashx</DependentUpon>
+    <Compile Include="Api\AddArticle.ashx.cs">
+      <DependentUpon>AddArticle.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Api\HttpUtility.ashx.cs">
+      <DependentUpon>HttpUtility.ashx</DependentUpon>
     </Compile>
     <Compile Include="Api\VerificationCode.ashx.cs">
       <DependentUpon>VerificationCode.ashx</DependentUpon>
@@ -855,7 +858,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Api\SinaWB.ashx" />
+    <Content Include="Api\HttpUtility.ashx" />
+    <Content Include="Api\AddArticle.ashx" />
     <None Include="Template\OpinionWeekReport.docx" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
