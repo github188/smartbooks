@@ -17,6 +17,7 @@ namespace SmartPoms.Poms.Ascx {
         private void BindDataSource() {
             DataTable dt = new DataTable();
             /*获取数据源*/
+            dt = Smart.DBUtility.SqlServerHelper.Query("SELECT TOP 100 title,sendtime,author FROM Base_Article where sitename='新浪微博' order by articleid desc").Tables[0];
 
             /*加入一空行*/
             if (dt.Rows.Count == 0) {
