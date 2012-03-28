@@ -700,14 +700,18 @@ namespace Smart.DBUtility
         /// <returns>SqlDataReader</returns>
         public static SqlDataReader RunProcedure(string storedProcName, IDataParameter[] parameters)
         {
-            SqlConnection connection = new SqlConnection(connectionString);
-            SqlDataReader returnReader;
-            connection.Open();
-            SqlCommand command = BuildQueryCommand(connection, storedProcName, parameters);
-            command.CommandType = CommandType.StoredProcedure;
-            returnReader = command.ExecuteReader(CommandBehavior.CloseConnection);
-            return returnReader;
-
+            try {
+                using (SqlConnection connection = new SqlConnection(connectionString)) {
+                    SqlDataReader returnReader;
+                    connection.Open();
+                    SqlCommand command = BuildQueryCommand(connection, storedProcName, parameters);
+                    command.CommandType = CommandType.StoredProcedure;
+                    returnReader = command.ExecuteReader(CommandBehavior.CloseConnection);
+                    return returnReader;
+                }
+            } catch (Exception ex) {
+                throw ex;
+            }
         }
 
 
@@ -756,23 +760,20 @@ namespace Smart.DBUtility
         /// <returns>SqlCommand</returns>
         private static SqlCommand BuildQueryCommand(SqlConnection connection, string storedProcName, IDataParameter[] parameters)
         {
-            SqlCommand command = new SqlCommand(storedProcName, connection);
-            command.CommandType = CommandType.StoredProcedure;
-            foreach (SqlParameter parameter in parameters)
-            {
-                if (parameter != null)
-                {
-                    // 检查未分配值的输出参数,将其分配以DBNull.Value.
-                    if ((parameter.Direction == ParameterDirection.InputOutput || parameter.Direction == ParameterDirection.Input) &&
-                        (parameter.Value == null))
-                    {
-                        parameter.Value = DBNull.Value;
+            using (SqlCommand command = new SqlCommand(storedProcName, connection)) {
+                command.CommandType = CommandType.StoredProcedure;
+                foreach (SqlParameter parameter in parameters) {
+                    if (parameter != null) {
+                        // 检查未分配值的输出参数,将其分配以DBNull.Value.
+                        if ((parameter.Direction == ParameterDirection.InputOutput || parameter.Direction == ParameterDirection.Input) &&
+                            (parameter.Value == null)) {
+                            parameter.Value = DBNull.Value;
+                        }
+                        command.Parameters.Add(parameter);
                     }
-                    command.Parameters.Add(parameter);
                 }
+                return command;
             }
-
-            return command;
         }
 
         /// <summary>
