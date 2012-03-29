@@ -10,6 +10,29 @@
     fieldset{ border:1px solid #448CCB;width:820px;margin:auto;}
     legend{ font-size:12px; color:#448CCB;}
 </style>
+    <script type="text/javascript" src="../Script/jquery-1.6.2.js"></script>
+    <script type="text/javascript" src="../Script/kindeditor-4.0.5/kindeditor-min.js"></script>
+    <script type="text/javascript" src="../Script/kindeditor-4.0.5/lang/zh_CN.js"></script>    
+    <script type="text/jscript" language="javascript">
+        $(document).ready(function () {
+            var editor;
+            KindEditor.ready(function (K) {
+                editor = K.create('textarea[name="t_contents"]', {
+                    items: ['source', '|', 'undo', 'redo', '|', 'preview', 'print', 'template', 'cut', 'copy',
+                            'paste', 'plainpaste', 'wordpaste', '|', 'justifyleft', 'justifycenter', 'justifyright',
+                            'justifyfull', 'insertorderedlist', 'insertunorderedlist', 'indent', 'outdent',
+                            'subscript', 'superscript', 'clearhtml', 'quickformat', 'selectall', '|', 'fullscreen', '/',
+                            'formatblock', 'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold',
+                            'italic', 'underline', 'strikethrough', 'lineheight', 'removeformat', '|', 'image',
+                            'flash', 'media', 'insertfile', 'table', 'hr', 'emoticons', 'map', 'code', 'pagebreak',
+                            'link', 'unlink', '|'],
+                    width: "100%",
+                    height: "350px",
+                    resizeMode: 1
+                });
+            });
+        });
+    </script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -34,10 +57,8 @@
   </tr>
   <tr>
     <td height="30" align="center">文章内容：</td>
-    <td><textarea name="t_contents" style="display:none"><%=ViewState["strContent"]%></textarea>
-          <iframe name="eWEditor" src="edithtml/ewebeditor.htm?id=t_contents&style=blue"
-          frameborder="0" scrolling="no" width="100%" height="400" id="IFRAME1">
-          </iframe></td>
+    <td><textarea name="t_contents"><%=ViewState["strContent"]%></textarea>
+          </td>
   </tr>
   <tr>
     <td height="30" align="center">&nbsp;</td>
