@@ -3,7 +3,7 @@
 
 <%@ Register Src="Ascx/WeiBo.ascx" TagName="WeiBo" TagPrefix="uc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <script type="text/jscript" src="../Scripts/jquery.timeago-zh-CN.js"></script>
+    <script type="text/javascript" src="../Scripts/jquery.timeago-zh-CN.js"></script>
     <script type="text/javascript" language="javascript">
         $(document).ready(function () {
             /*加载Cookie*/
