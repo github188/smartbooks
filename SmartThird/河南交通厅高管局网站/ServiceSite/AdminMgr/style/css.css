@@ -1,0 +1,166 @@
+﻿/* CSS Document */
+
+/*通用样式*/
+*{ font-size:12px;
+   font-family:"宋体";
+	}
+body,div,img,ol,ul,li,p{ border:none;
+                       margin:0px;
+					   padding:0px;
+					   list-style-type:none;
+	}
+
+.InputBorderStyle{ border:1px solid #B8C9D6; height:16px;}
+.TextAreaStyle{ border:1px solid #B8C9D6;}
+ 
+ 
+.leftmenu-bg{background-image:url(../images/left.gif); background-repeat:repeat-y;}
+.leftmenu-leftdiv{ border-top:2px solid #B8C9D6;margin-left:14px;width:198px;}
+.leftmenu-leftdiv .header{ width:198px;height:55px; background-image:url(../images/nav01.gif); background-repeat:repeat-x;}
+.leftmenu-leftdiv .header .left{ float:left; width:55px;text-align:center; height:55px; padding-top:10px;}
+.leftmenu-leftdiv .header .right1{ float:left;text-align:left; width:140px; height:22px; padding-top:10px;font-size: 12px;color: #448CCB;text-decoration: none;}
+.leftmenu-leftdiv .header .right2{ float:left;text-align:left; width:140px; height:23px; font-size: 12px;color: #448CCB;text-decoration: none;}
+.leftmenu-leftdiv .menu{ background-image:url(../images/nav02.gif); background-repeat:no-repeat; width:198px; height:28px; padding-top:5px; padding-left:10px; margin-top:8px; margin-bottom:8px;}
+.leftmenu-leftdiv .menu img{ margin-right:5px;}
+.leftmenu-leftdiv .menu a{ color:#555555; font-size:12px; text-decoration:none}
+.leftmenu-leftdiv .menu a:hover{ color:#FF0000; font-size:12px; text-decoration:underline}
+
+.leftmenu-leftdiv .submemu{width:198px; height:24px; padding-top:6px; padding-left:12px;}
+.leftmenu-leftdiv .submemu img{ margin-right:8px;}
+.leftmenu-leftdiv .submemu a{ color:#555555; font-size:12px; text-decoration:none}
+.leftmenu-leftdiv .submemu a:hover{ color:#FF0000; font-size:12px; text-decoration:underline}
+
+.topnavbg{ background-image:url(../images/top_bg.jpg); background-repeat:repeat-x; width:100%; height:59px;}
+.topnavbg .left{ float:left}
+.topnavbg .right{ float:right}
+
+.serviceBtnOut a{ background-image:url(../images/btnon.jpg);
+                float:left;
+                width:80px;
+				text-decoration:none;
+				height:25px;
+				line-height:25px;
+				border-width:0px;
+				margin:0px;
+				padding:0px;
+				text-align:center;
+				color:#0033FF;
+}
+.serviceBtnOut a:hover{ background-image:url(../images/btnover.jpg);
+                width:80px;
+				height:25px;
+				line-height:25px;
+				float:left;
+				border-width:0px;
+				margin:0px;
+				padding:0px;
+				text-align:center;
+				text-decoration:none;
+				color:#0033FF;
+				color:#FFFFFF;
+}
+/*服务区列表*/
+.ServiceList{ width:100%; margin-top:10px; margin-bottom:10px;
+}
+.ServiceList li{ float:left;
+                         overflow:hidden;
+						 width:80px;
+						 height:25px;
+						 line-height:25px;
+						 background-image:url(../images/btnon.jpg);
+						 text-align:center;
+						 font-size:12px;
+						 font-weight:bold;
+						 margin:0 0 10px 18px;
+						 list-style:none;
+						 color:#448CCB
+}
+.ServiceList a,a:hover{ text-decoration:none;color:#448CCB;}
+
+
+
+
+.ServiceItemNavDvi{ text-align:left; line-height:25px;}
+.ServiceItemNavDvi li{ list-style:none; float:left;}
+.ServiceItemNavBtn{ width:100px;
+                    padding-top:2px;
+					text-align:center;  
+ }
+ 
+.blankbg{background-color: #4AA3D8;}
+.blankpic{ text-align:center;}
+
+.linkadduser{ font-size:14px; color:#0000FF; text-decoration:none;}
+a.linkadduser:hover{ font-size:14px; color:#0000FF; text-decoration:underline;}
+
+.editadvert{ font-size:14px; color:#0000FF; text-decoration:none;}
+a.editadvert:hover{ font-size:14px; color:#0000FF; text-decoration:underline;}
+
+
+.Font13{ font-size:13px; font-weight:bold; color:#6298e1;}
+.Font13Add{ font-size:13px; font-weight:bold; color:#000; text-decoration:none;}
+.Font13Add:hover{ text-decoration:underline; font-size:13px; font-weight:bold; color:#6298e1;}
+
+/*内容页样式*/
+.righttopnavbg{background:url(../images/nav04.gif) left center repeat-x;height:61px; overflow:hidden;border-top:1px solid #B8C9D6; font-size:18px; font-weight:bold ; color:#448CCB; text-indent:12px; line-height:61px;}
+.divContent{ margin-left:5px; margin-right:10px; margin-top:5px;}
+.divContent .topadd{ width:100%; text-align:right; height:30px;}
+
+
+
+
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+/*超链接样式*/
+a{text-decoration:none;
+   color:#000;
+	}
+a:hover{text-decoration:underline;
+		 color:#000;
+	}
+.redlink{ text-decoration:none;
+          color:#000;
+	}
+a.redlink:hover{ color:#F00;
+                text-decoration:underline
+	}
+.bluelink{ text-decoration:none;
+           color:#000;
+	}
+a.bluelink:hover{ text-decoration:underline;
+                 color:#00F;
+				 }
+
+
+	
+

@@ -1,0 +1,67 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="main.master.cs" Inherits="main" %>
+<%@ Import Namespace="Model" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+    <title></title>
+    <link href="style/service.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="js/prototype.js"></script>
+    <script type="text/javascript" src="js/scriptaculous.js?load=effects,builder"></script>
+    <script type="text/javascript" src="js/lightbox.js"></script>
+    <link rel="stylesheet" href="css/lightbox.css" type="text/css" media="screen" />
+</head>
+<body>
+<div id="box">
+    <form id="form1" runat="server">
+    <!--头部-->
+<div id="header">
+  <div class="top_line">
+    <div class="right"><a href="javascript:window.external.AddFavorite
+(location.href,document.title);">加入收藏</a> | <a href="javascript:this.style.behavior='url(#default#homepage)';this.setHomePage('http://service.hngsgl.info');">设为首页</a></div>
+    <marquee direction="left" scrollamount="3"  height="22px" width="400px"> <%=((ServiceInfo)Session["serviceinfo"]).S_Welcome %></marquee>
+    </div>
+    <%
+        if (((ServiceInfo)Session["serviceinfo"]).S_HeaderImg == "")
+        {
+      %>
+        <img src="images/banner.jpg" width="980" height="180" />
+      <%
+        }
+        else { 
+         %>
+        <img src="ServiceImg/<%=((ServiceInfo)Session["serviceinfo"]).S_HeaderImg %>" width="980" height="180" />
+      <%
+        }
+     %>
+<div id="banner"></div>
+</div>
+<div id="menu">
+<ul>
+	<li class="menu-service"><a href="index.aspx">首页</a></li>
+	<li class="menu-jianjie"><a href="ServiceBasicInfo.aspx"  target="_blank">服务区简介</a></li>
+	<li class="menu-neirong"><a href="ServiceItemList.aspx"  target="_blank">服务内容</a></li>
+	<li class="menu-zhengshu"><a href="CertificateList.aspx" target="_blank">认证证书</a></li>
+	<li class="menu-news"><a href="ServiceNewsList.aspx" target="_blank">驿站新闻</a></li>
+	<li class="menu-zhidu"><a href="NewsList.aspx?tid=3"  target="_blank">管理制度</a></li>
+	<li class="menu-wenhua"><a href="NewsList.aspx?tid=7"  target="_blank">驿站文化</a></li>
+	<li class="menu-wenming"><a href="NewsList.aspx?tid=5"  target="_blank">文明创建</a></li>
+	<li class="menu-yuandi"><a href="NewsList.aspx?tid=8"  target="_blank">学习园地</a></li>
+<li class="menu-liuyan"><a href="MessageBoardList.aspx"  target="_blank">服务留言</a></li></ul>
+    <div class="clear"></div>
+</div>
+    <div>
+        <asp:contentplaceholder id="ContentPlaceHolder1" runat="server">
+        </asp:contentplaceholder>
+    </div>
+    <!--底部-->
+    <div class="footer_line"></div>
+<div id="footer">
+主办：河南省交通运输厅高速公路管理局  技术支持：郑州豫图信息技术有限公司<br />地址：郑州市金水东路与农业东路交叉口东北角
+</div>
+    </form>
+    </div>
+</body>
+</html>

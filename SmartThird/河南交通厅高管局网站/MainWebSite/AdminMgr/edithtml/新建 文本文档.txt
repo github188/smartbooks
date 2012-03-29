@@ -1,0 +1,47 @@
+          <textarea name="t_contents" style="display:none"></textarea>
+          <iframe name="eWEditor" src="../edithtml/ewebeditor.htm?id=t_contents&style=blue"
+          frameborder="0" scrolling="no" width="100%" height="300" id="IFRAME1">
+          </iframe>
+          <%@ Page Language="C#" ValidateRequest="false" %>
+           在请求数据的页面设置validateRequest="false" 就可以了
+
+
+
+
+
+
+
+
+先创建一个textarea域,示例:
+<textarea name="content" style="display:none"></textarea>
+其中style="display:none" 决定了这个文本域是隐藏的.
+在调用eWebEditer,示例:
+<iframe ID="eWebEditor1" src="/ewebeditor.htm?id=content1&style=coolblue" frameborder="0" scrolling="no" width="500" HEIGHT="350"></iframe>
+其中src="/ewebeditor.htm?id=content&style=coolblue"中id=后面的第一个参数必须和textarea域的name属性的值一致.
+输入信息页面完整示例:
+<html>
+<head>
+<title>Untitled</title>
+</head>
+<body>
+<form name="myform" method="post" action="display.asp">
+<textarea name="content" style="display:none"></textarea>
+<iframe ID="eWebEditor1" src="/ewebeditor.htm?id=content&style=coolblue" frameborder="0" scrolling="no" width="500" HEIGHT="350"></iframe>
+<input type="submit" name="btnSubmit" value="Submit">
+</form>
+</body>
+</html>
+
+二.关于获取eWebEditor中输入的值:
+在上面完整代码中<form name="myform" method="post" action="display.asp">这一段中 属性action="display.asp"
+display.asp指示了处理上面表单的程序.下面我们在display.asp中获取eWebEditor中编辑的值,示例:
+<%
+  sContent = Request.Form("content")
+  Response.Write sContent
+%>
+其中Request.Form("content")中参数必须和textarea域中name的属性一致.
+这样我们在display.asp已经获取了在eWebEditor中编辑的代码.
+三.将获取的文本插入数据库:
+由于eWebEditor中取出的值可能太长,你既然使用的是ACCESS数据库,那建议将保存该字段的类型设置为备注型,这样能存储更长的字符传.
+在display.asp已经获取了eWebEditor编辑框框中的值,保存在了变量sContent了
+

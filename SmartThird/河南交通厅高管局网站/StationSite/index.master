@@ -1,0 +1,44 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="index.master.cs" Inherits="index" %>
+<%@ Import Namespace="System.Data" %>
+<%@ Import Namespace="StationModel" %>
+<%@ Import Namespace="StationService" %>
+<%@ Import Namespace="PubClass" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+    <title><%=((TollStation)Session["stationinfo"]).TS_Name %>门户网站</title>
+    <link href="style/style.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="js/prototype.js"></script>
+    <script type="text/javascript" src="js/scriptaculous.js?load=effects,builder"></script>
+    <script type="text/javascript" src="js/lightbox.js"></script>
+    <link rel="stylesheet" href="css/lightbox.css" type="text/css" media="screen" />
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="box">
+    
+    <!--header begin-->
+	<div id="topline">
+	<p class="right mar_r20"><a href="javascript:window.external.AddFavorite(location.href,document.title);">加入收藏</a> | <a href="javascript:this.style.behavior='url(#default#homepage)';this.setHomePage('http://station.hngsgl.info');">设为首页</a></p>
+	<p style=" width:500px; padding-left:20px;"><marquee direction="left" scrolldelay="150"><%=((TollStation)Session["stationinfo"]).TS_Welcome %></marquee></p>
+	</div>
+    <div id="banner"><img src="Logo/<%=((TollStation)Session["stationinfo"]).TS_Logo %>" width="826" height="194" /></div>
+    <div id="menu"><a href="index.aspx" class="hovers">收费站首页</a><a href="StationInfo.aspx">收费站简介</a><a href="NewsList.aspx?tid=1">最新动态</a><a href="HonourList.aspx?tid=3">荣誉展示</a><a href="StarsList.aspx?tid=4">服务之星</a><a href="NewsList.aspx?tid=5">站区文化</a><a href="FengCaiList.aspx?tid=6">收费站风采</a>
+    	<div class="clear"></div>
+    </div>
+    <!--header end-->
+    
+        <asp:contentplaceholder id="ContentPlaceHolder1" runat="server">
+        </asp:contentplaceholder>
+        
+        <!--footer begin-->      
+	<div id="footer" class=" mar_t10">版权所有 河南省交通运输厅高速公路管理局  技术支持 郑州豫图信息技术有限公司  ICP备案编号 豫ICP备11005980号</div>
+    <!--footer end-->
+    
+    </div>
+    </form>
+</body>
+</html>

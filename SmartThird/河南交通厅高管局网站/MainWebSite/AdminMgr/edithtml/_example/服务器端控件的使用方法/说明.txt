@@ -1,0 +1,18 @@
+例子说明：
+=================
+此目录中的例子只在说明带有服务器端控件的使用方法，未提供工程文件及编译文件，不能直接运行，里面只有几行代码，可用记事本类的打开看一下就知道其如何使用了。
+
+这里指的服务器端控件是指，具有runat=server属性的，或如<asp:Button></asp:Button>这类结构的控件。
+
+基本上整个使用与_example目录下的test1.aspx,test2.aspx是一样的。
+
+
+注意：
+=================
+<input type=hidden name="content">
+<iframe src=......>
+不能写为
+<input type=hidden name="content" runat=server>
+<iframe src=......>
+
+

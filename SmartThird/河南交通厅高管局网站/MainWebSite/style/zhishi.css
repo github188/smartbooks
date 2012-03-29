@@ -1,0 +1,73 @@
+@charset "gb2312";
+/* CSS Document */
+
+body, div, address, blockquote, iframe, ul, li, dl, dt, dd, 
+h1, h2, h3, h4, h5, h6, p, pre, table, caption, th, td, 
+form, legend, fieldset, input, button, select, img, textarea,div {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 12px;
+    font-family:"宋体";
+	color:#333333;
+	line-height:22px;
+	 list-style-type:none;
+	 border:none;
+}
+
+.clear{ clear:both;}
+.fon14{ font-size:14px;}
+
+.left{ float:left;}
+.right{ float:right;}
+
+.mar_l10{ margin-left:10px;}
+.mar_r20{ margin-right:20px;}
+.mar_t10{ margin-top:10px;}
+.mar_t20{ margin-top:20px;}
+
+.align{ text-align:center;}
+a{ text-decoration:none; color:#333;}
+a:hover{ color:#F90;}
+.blue{ color:#06c; font-weight:bold;}
+.red{ color:#C00;}
+
+
+/*----------高速知识---------*/
+.box{ overflow:hidden;}
+.index_bg{ width:1024px; margin:0 auto; background:url(../images/zhishi/bg.jpg) no-repeat; height:695px; overflow:hidden;}
+
+.copyrights{ width:1024px; margin-top:120px; text-align:center; color:#FFF;}
+.backs{float:right; margin-top:13px; margin-right:30px;overflow:hidden;}
+.backs a{ float:left; display:block; text-align:center; margin-left:15px; line-height:22px; color:#FFF; background:url(../images/zhishi/btn.jpg) no-repeat; width:60px; height:22px; overflow:hidden;}
+
+
+
+.list_bg{ background:url(../images/zhishi/list_bg.jpg) no-repeat; width:1000px; height:616px; margin:0 auto; overflow:hidden;}
+
+.left1{width:20px; margin-left:12px; _margin-left:7px;  margin-top:65px; overflow:hidden;}
+.left1 a{ color:#FFF; font-weight:bold; line-height:16px;}
+.left1 a:hover{ color:#f7f7f7; text-decoration:underline;}
+.left2{ width:320px; margin-left:20px; margin-top:40px;}
+
+.wenti_list dt{ background:url(../images/zhishi/tits_bg.jpg) no-repeat; line-height:33px; font-size:14px; font-weight:bold; padding-left:3em; color:#000; height:33px;}
+.wenti_list dd{ margin-top:10px; padding-left:1em; border:1px #CCC solid; line-height:30px; height:28px;}
+
+.left3{ width:440px; margin-left:120px; margin-top:40px;}
+
+.answer_list dt{ background:url(../images/zhishi/tit_bg.jpg) no-repeat; line-height:33px; font-size:14px; font-weight:bold; padding-left:3em; color:#000; height:33px;}
+.answer_list dd{ padding-left:1em; border-bottom:1px #CCC dashed; line-height:28px; height:28px;}
+
+.left4{ margin-left:30px; margin-top:200px; text-align:center; width:30px;}
+.left4 a{ color:#FFF; font-weight:bold;}
+
+/*-----------翻页-------------*/
+.fanye{ width:440px; margin:0 auto;line-height:30px; color:#000; text-align:center; margin-top:20px; background:#e3f7fe; overflow:hidden;}
+.fanye span{ margin:0 10px;}
+
+.page_name{ font-size:14px; text-align:center; font-weight:bold; color:#900;}
+.page_btn{ margin:10px auto; height:22px; line-height:22px; text-align:right;background:#f7f7f7; }
+.page_btn a{ margin-right:20px; color:#C00; text-decoration:underline;}
+.page_btn a:hover{ color:#F60;}
+.page_con{ font-size:12px; width:440px; overflow:hidden;}

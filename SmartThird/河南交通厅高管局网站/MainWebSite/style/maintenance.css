@@ -1,0 +1,136 @@
+@charset "gb2312";
+/* CSS Document */
+
+body, div, address, blockquote, iframe, ul, li, dl, dt, dd, 
+h1, h2, h3, h4, h5, h6, p, pre, table, caption, th, td, 
+form, legend, fieldset, input, button, select, img, textarea,div {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 12px;
+    font-family:"宋体";
+	color:#333333;
+	line-height:22px;
+	 list-style-type:none;
+	 border:none;
+}
+input{ height:18px;}
+.clear{ clear:both;}
+.fon14{ font-size:14px;}
+
+.left{ float:left;}
+.right{ float:right;}
+
+.mar_l10{ margin-left:10px;}
+.mar_r20{ margin-right:20px;}
+.mar_t10{ margin-top:10px;}
+.mar_t20{ margin-top:20px;}
+
+.align{ text-align:center;}
+a{ text-decoration:none; color:#333;}
+a:hover{ color:#F90;}
+.blue{ color:#06c; font-weight:bold;}
+.red{ color:#C00;}
+
+
+.more{ float:right; margin-right:10px; _margin-right:5px; margin-top:3px; color:#000;}
+.more2{ float:right; margin-right:20px; _margin-right:10px; margin-top:6px;}
+
+.wid700{ width:700px; overflow:hidden;}
+.wid270{ width:270px; overflow:hidden;}
+#main{ width:980px; margin:0 auto; margin-top:10px; overflow:hidden;}
+
+
+#gg{ width:238px; border:1px #ee7c0a solid; overflow:hidden;}
+#gg dt{ background:url(../images/yh/gg_t.jpg) no-repeat; height:28px; overflow:hidden;}
+#dongtai{ width:448px;border:1px #2991f2 solid; height:200px; overflow:hidden;}
+#dongtai dt{ background:url(../images/yh/dongtai_t.jpg) no-repeat; height:28px; overflow:hidden;}
+
+#jiceng{ width:343px; height:228px; _height:225px; border:1px #7979bb solid; overflow:hidden;}
+#jiceng dt{ background:url(../images/yh/jiceng_t.jpg) no-repeat; height:28px; overflow:hidden;}
+#download{ width:343px; height:228px; _height:225px; border:1px #278eed solid; overflow:hidden;}
+#download dt{ background:url(../images/yh/download_t.jpg) no-repeat; height:28px; overflow:hidden;}
+
+.guanli{ width:698px; border:1px #2eabfe solid;overflow:hidden;}
+.guanli_type{  width:335px; height:140px; margin:0 7px; _margin:0 5px;  margin-top:10px;overflow:hidden;}
+.guanli_type dt{background:url(../images/yh/guanli_type_t.jpg) no-repeat; height:28px; line-height:28px; overflow:hidden;}
+.guanli_type dt{ color:#005b79; padding-left:2.5em; line-height:28px; font-weight:bold;}
+
+#dongtai ul,#jiceng ul,#download ul{ margin:0 10px; margin-top:4px; overflow:hidden;}
+#dongtai ul li,#jiceng ul li,#download ul li{ line-height:27px; background:url(../images/yh/ico1.jpg) left center no-repeat; padding-left:1em; border-bottom:1px #CCC dashed;}
+#dongtai ul li span,#jiceng ul li span,#download ul li span,.guanli_type ul li span,#bszn ul li span,#guizhang ul li span,#wenming ul li span{ float:right;}
+
+.guanli_type ul{ margin:0 10px; margin-top:5px; overflow:hidden;}
+.guanli_type ul li{ line-height:26px; background:url(../images/yh/ico3.jpg) left center no-repeat; padding-left:1em; border-bottom:1px #CCC dashed;}
+
+
+
+#bszn,#guizhang,#wenming{ width:268px; border:1px #015bcb solid; overflow:hidden;}
+#bszn{height:200px;}
+#guizhang{ height:256px; _height:255px;}
+#wenming{ height:256px; _height:255px;}
+#bszn dt,#guizhang dt,#wenming dt{ background:url(../images/yh/r_t.jpg) no-repeat; height:28px; padding-left:1.5em; color:#FFF; font-size:14px; font-weight:bold; line-height:28px; overflow:hidden;} 
+
+#bszn ul,#guizhang ul,#wenming ul{ margin:0 10px; margin-top:5px; overflow:hidden;}
+#bszn ul li,#guizhang ul li,#wenming ul li{line-height:27px; background:url(../images/yh/ico2.jpg) left center no-repeat; padding-left:1em; border-bottom:1px #CCC dashed;}
+
+#jiaoliu{ width:700px; height:185px; overflow:hidden;}
+#jiaoliu dt{ background:url(../images/yh/jiaoliu_t.jpg) no-repeat; height:33px; overflow:hidden;}
+#jiaoliu dd{ background:url(../images/yh/jiaoliu_c.jpg) repeat-y; overflow:hidden;}
+#jiaoliu dd.jiaoliu_b{ background:url(../images/yh/jiaoliu_b.jpg) no-repeat; height:7px; overflow:hidden;}
+
+.jiaoliu_con{width:680px; margin:0 auto; padding:6px 0;}
+.jiaoliu_con ul li{ float:left; margin:0 10px; _margin:0 7px; width:310px; background:url(../images/yh/ico3.jpg) left center no-repeat; padding-left:10px;overflow:hidden;}
+.jiaoliu_con ul li span{ float:right;}
+
+.photos{ width:980px; margin:0 auto; overflow:hidden;}
+.photos_l{ background:url(../images/yh/lueying_l.jpg) left center no-repeat; height:141px; overflow:hidden;}
+.photos_r{ background:url(../images/yh/lueying_r.jpg) right center no-repeat; height:141px; overflow:hidden;}
+.photos_t{ background:url(../images/yh/lueying_t.jpg) center top no-repeat; overflow:hidden;}
+.photos_b{ background:url(../images/yh/lueying_b.jpg) center bottom no-repeat; overflow:hidden;}
+
+/*养护掠影图片滚动*/
+
+.gundong{width:860px;line-height:22px;text-align:center; margin-left:86px; margin-top:5px;overflow:hidden;}
+.gundong a{ color:#F60;}
+.gundong table tr td img{ width:132px; height:102px; overflow:hidden; padding:1px; border:1px #D5E2ED solid;}
+.gundong2 tr td { text-align:center; padding-left:5px; padding-top:5px;}
+
+
+
+/*所有二级页面*/
+
+#main2{ width:800px; margin:0 auto; margin-top:10px; overflow:hidden;}
+.wid210{ width:210px; overflow:hidden;}
+.wid580{ width:580px; overflow:hidden;}
+
+
+.search2{ background:url(../images/search2.jpg) no-repeat; height:70px; overflow:hidden;}
+
+.weizhi{ background:url(../images/weizhi_bg.jpg) no-repeat; padding-left:3em; margin-bottom:10px; line-height:26px; height:26px; overflow:hidden;}
+
+.contact_weizhi{ background:url(../images/contact_weizhi.jpg) no-repeat; padding-left:3em; margin-bottom:10px; line-height:26px; height:26px; overflow:hidden;}
+
+/*-----------翻页-------------*/
+.fanye{ width:560px; margin:0 auto; color:#000; text-align:center; margin-top:10px; background:#e3f7fe; overflow:hidden;}
+.fanye span{ margin:0 10px;}
+
+
+/*---------------单页------------------*/
+.pages h1{ font-size:14px; text-align:center; margin-top:20px; font-weight:bold; color:#F90;}
+.page_date{ color:#999; text-align:center; padding-bottom:10px; border-bottom:1px #54a6d0 dashed;}
+.page_con{ margin-top:10px;}
+
+
+#gonggaolist,#newlist{ width:540px; margin:0 auto; overflow:hidden;}
+#gonggaolist li{ background:url(../images/fuwu/ico2.jpg) left 5px no-repeat; margin-top:10px; border-bottom:1px #CCC dashed; padding-left:1em; overflow:hidden;}
+#gonggaolist li span{ color:#F90; margin-left:20px;}
+
+#newlist li{ background:url(../images/yh/ico1.jpg) left center no-repeat; line-height:26px; padding-left:1em; overflow:hidden;}
+#newlist li span{ color:#F90; float:right;}
+
+#photolist li{ margin:10px; _margin:8px; float:left; width:124px; text-align:center; overflow:hidden;}
+#photolist li img{ width:120px; height:90px; padding:1px; border:1px #CCC solid; overflow:hidden;}
+
+

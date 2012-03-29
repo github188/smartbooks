@@ -1,0 +1,55 @@
+@charset "gb2312";
+/* CSS Document */
+
+body, div, address, blockquote, iframe, ul, li, ol, dl, dt, dd, 
+h1, h2, h3, h4, h5, h6, p, pre, table, caption, th, td, 
+form, legend, fieldset, input, button, select, img, textarea,div {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 12px;
+    font-family:"宋体";
+	color:#333333;
+	line-height:22px;
+	 list-style-type:none;
+	 border:none;
+}
+input{ height:18px;}
+.clear{ clear:both;}
+.fon14{ font-size:14px;}
+
+.left{ float:left;}
+.right{ float:right;}
+
+.mar_l10{ margin-left:10px;}
+.mar_r20{ margin-right:20px;}
+.mar_t10{ margin-top:10px;}
+.mar_t20{ margin-top:20px;}
+
+.align{ text-align:center;}
+a{ text-decoration:none; color:#333;}
+a:hover{ color:#F90;}
+.blue{ color:#06c; font-weight:bold;}
+.red{ color:#C00;}
+
+
+
+/*--------------------------通用头部-----------------------------*/
+#header2,#footer2{ width:800px; margin:0 auto; overflow:hidden;}
+.top_line2{ background:#4182cd; height:22px; color:#FFF; border-bottom:1px #FFF solid; padding:0 10px; line-height:22px; overflow:hidden;}
+.top_line2 a,.top_line2 p{ color:#FFF;}
+.top_line2 a{ padding:0 10px;}
+#menu2{ background:url(../images/menu_bg2.jpg) no-repeat; height:81px; overflow:hidden;}
+#menu2 ul li{  float:left;width:98px; height:27px; line-height:27px;text-align:center; color:#FFF; font-weight:bold; overflow:hidden;}
+#menu2 ul li.tree1{ background:url(../images/tree1.jpg) 0px 1px no-repeat; width:2px; height:25px; overflow:hidden;}
+#menu2 ul li.tree2{ background:url(../images/tree2.jpg) 0px 1px no-repeat; width:2px; height:25px; overflow:hidden;}
+#menu2 ul li.tree3{ background:url(../images/tree3.jpg) 0px 1px no-repeat; width:2px; height:25px; overflow:hidden;}
+#menu2 ul li a{display:block;  width:98px; height:27px; line-height:27px;text-align:center; color:#FFF; font-weight:bold; }
+
+#menu2 ul li a:hover{ background:#09C;}
+#menu2 ul li a span{ font-size:14px;}
+
+/*--------------------------通用底部-----------------------------*/
+#footer2{ margin-top:20px;background:url(../images/footer_bg2.jpg) no-repeat; height:30px; line-height:30px; text-align:center; color:#000;  overflow:hidden;}
+

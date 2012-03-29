@@ -1,0 +1,248 @@
+@charset "gb2312";
+/* CSS Document */
+
+body, div, address, blockquote, iframe, ul, li, ol, dl, dt, dd, 
+h1, h2, h3, h4, h5, h6, p, pre, table, caption, th, td, 
+form, legend, fieldset, input, button, select, img, textarea,div {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 12px;
+    font-family:"宋体";
+	color:#333333;
+	line-height:22px;
+	 list-style-type:none;
+	 border:none;
+}
+
+body{background:url(../images/bg.gif) repeat;}
+#box{ width:980px; margin:0 auto; background:#FFF; overflow:hidden;}
+
+input{ height:18px;}
+.clear{ clear:both;}
+.fon14{ font-size:14px;}
+.fon16{ font-size:16px; color:#f00; font-weight:bold;}
+
+.left{ float:left;}
+.right{ float:right;}
+
+.mar_l10{ margin-left:10px;}
+.mar_r20{ margin-right:20px;}
+.mar_t10{ margin-top:10px;}
+.mar_t20{ margin-top:20px;}
+
+.align{ text-align:center;}
+a{ text-decoration:none; color:#333;}
+a:hover{ color:#F90;}
+.blue{ color:#06c; font-weight:bold;}
+.red{ color:#C00;}
+
+.box,#header,#menu,#main,#footer{ width:980px; margin:0 auto; overflow:hidden;}
+
+.top_line{ height:20px;background:#0d5e8e; color:#FFF; padding:0 15px;  overflow:hidden;}
+.top_line a{ color:#FFF; padding:0 5px;}
+.top_line a:hover{ color:#F90;}
+#banner img{ width:980px; height:180px; overflow:hidden;}
+#menu{ width:980px; overflow:hidden;}
+#menu ul li a{ float:left; background:url(../images/nav.png) no-repeat;width:98px; height:30px; text-indent:-999px; display:block;}
+
+
+/*文本框*/
+.inputborder1{border:1px #CCC solid}
+.inputborder2{ border:none;}
+
+#menu ul li{ float:left; overflow:hidden;}
+#menu ul li.menu-service a{background-position: 0 0px;}
+#menu ul li.menu-jianjie a{background-position: -98px 0;}
+#menu ul li.menu-neirong a{background-position: -196px 0;}
+#menu ul li.menu-zhengshu a{background-position: -294px 0;}
+#menu ul li.menu-news a{background-position: -392px 0;}
+#menu ul li.menu-zhidu a{background-position: -490px 0;}
+#menu ul li.menu-wenhua a{background-position: -588px 0;}
+#menu ul li.menu-wenming a{background-position: -686px 0;}
+#menu ul li.menu-yuandi a{background-position: -784px 0;}
+#menu ul li.menu-liuyan a{background-position: -882px 0;}
+
+#menu ul li.menu-service a:hover{background-position: 0 -30px;}
+#menu ul li.menu-jianjie a:hover{background-position: -98px -30px;}
+#menu ul li.menu-neirong a:hover{background-position: -196px -30px;}
+#menu ul li.menu-zhengshu a:hover{background-position: -294px -30px;}
+#menu ul li.menu-news a:hover{background-position: -392px -30px;}
+#menu ul li.menu-zhidu a:hover{background-position: -490px -30px;}
+#menu ul li.menu-wenhua a:hover{background-position: -588px -30px;}
+#menu ul li.menu-wenming a:hover{background-position: -686px -30px;}
+#menu ul li.menu-yuandi a:hover{background-position: -784px -30px;}
+#menu ul li.menu-liuyan a:hover{background-position: -882px -30px;}
+
+
+
+.footer_line{ width:980px; margin:0 auto; margin-top:10px; background:#2389cd; height:2px; _height:2px; overflow:hidden;}
+#footer{ text-align:center; margin-top:20px;}
+
+/*基本信息*/
+dt{ font-size:14px; line-height:37px; padding-left:1.5em; font-weight:bold; color:#FFF;}
+#jiben{width:230px; overflow:hidden;}
+#jiben dt{ background:url(../images/jb_t.jpg) no-repeat; height:37px; overflow:hidden;}
+#jiben dd{ background:url(../images/jb_c.jpg) repeat-y; overflow:hidden;}
+#jiben dd.jiben_b{ background:url(../images/jb_b.jpg) no-repeat; height:10px; overflow:hidden;}
+#jiben dd div.wid200{ width:200px; margin:0 auto; padding-top:5px;overflow:hidden;}
+
+
+.service_pic{ float:left; margin-right:5px;}
+.service_pic img{ width:96px; height:80px; padding:1px; border:1px #CCC solid; overflow:hidden;}
+
+.diaocha{ background:url(../images/diaocha.jpg) no-repeat; width:230px; height:100px; overflow:hidden;}
+.diaocha_con{width:210px; margin:0 auto;margin-top:80px;}
+.diaocha_con a{ color:#004891; font-weight:bold;}
+.diaocha_con a:hover{ color:#0048ff;}
+/*基本信息*/
+#news,#zhengshu{ width:470px; overflow:hidden;}
+
+#news dt{ background:url(../images/new_t.jpg) no-repeat; height:37px; overflow:hidden;}
+#news dd{ background:url(../images/new_c.jpg) repeat-y; overflow:hidden;}
+#news dd.news_b{ background:url(../images/new_b.jpg) no-repeat; height:10px;}
+.news_con{ width:450px; margin:0 auto; padding-top:3px; overflow:hidden;}
+
+.newlist li{ background:url(../images/ico1.jpg) left center no-repeat; padding-left:1em; line-height:26px; width:280px; border-bottom:1px #afecea dashed;}
+.newlist li span{ float:right;}
+
+/*证书*/
+#zhengshu dt{ background:url(../images/ISO_t.jpg) no-repeat; height:32px; overflow:hidden;}
+#zhengshu dd{ background:url(../images/ISO_c.jpg) repeat-y;overflow:hidden;}
+#zhengshu dd.zhengshu_b{ background:url(../images/ISO_b.jpg) no-repeat; height:10px; overflow:hidden;}
+
+.zhengshu{padding-top:10px;}
+.zhengshu li{ float:left; width:132px; text-align:center; margin-left:18px; _margin-left:12px; overflow:hidden;}
+.zhengshu li p{ width:128px; height:96px; padding:1px; border:1px #88cbfb solid; overflow:hidden;}
+.zhengshu li img{ width:128px;border:none; overflow:hidden;}
+
+#gonggao{ width:260px; overflow:hidden;}
+#guanli{ width:260px;  overflow:hidden;}
+#gonggao dt,#guanli dt{ background:url(../images/rt_t.jpg) no-repeat; overflow:hidden;}
+#gonggao dd{ background:url(../images/rt_c.jpg) repeat-y; overflow:hidden;}
+#guanli dd{ background:url(../images/rt_c.jpg) repeat-y; height:150px; overflow:hidden;}
+#gonggao dd.gonggao_b,#guanli dd.guanli_b{background:url(../images/rt_b.jpg) no-repeat; height:10px; overflow:hidden;}
+.gonggao_con{ width:230px; margin:0 auto; padding-top:5px;overflow:hidden; }
+
+.guanli_con{ width:230px; margin:0 auto; margin-bottom:0px; overflow:hidden; }
+
+.gllist li{ background:url(../images/ico1.jpg) left center no-repeat; padding-left:1em; line-height:24px; border-bottom:1px #afecea dashed;}
+.gllist li span,.page_newlist li span{ float:right;}
+
+
+
+.gglist li{ background:url(../images/ico2.jpg) 0 5px no-repeat; padding-left:1.5em; overflow:hidden;}
+.gglist li span{ padding-left:10px; color:#F90;}
+
+.more37{ line-height:37px; float:right; margin-right:10px; overflow:hidden;}
+.more32{ line-height:32px; float:right;  margin-right:10px; overflow:hidden;}
+.more32 a{color:#FFF;}
+
+.serivcelist_t{ background:url(../images/service_t.jpg) no-repeat; height:50px; overflow:hidden;}
+.servicelist_bg{ margin-top:10px;background:url(../images/service_bg.jpg) no-repeat; width:320px; height:218px; overflow:hidden;}
+
+
+
+
+#link{ width:978px; margin:0 auto; margin-top:10px; border:1px #CCC solid; overflow:hidden;}
+#link dt{ background:url(../images/link_t.jpg) no-repeat; height:28px; overflow:hidden;}
+#link dd{ width:960px; margin:10px auto;}
+#link dd a{ margin:0 10px;color:#004891;}
+#link dd a:hover{ color:#F90;}
+
+.type table tr{ height:50px;}
+.type table tr th{ font-size:14px; color:#F90; font-weight:bold;}
+.typestyle{ margin-top:8px;}
+.typestyle a{ display:block; float:left; border-right:1px #afceea solid; color:#000; padding:0 7px; line-height:21px; height:21px; overflow:hidden;}
+.typestyle a:hover{ font-weight:bold; background:#FFF;}
+
+.typelist{ margin:5px auto; width:310px; overflow:hidden; }
+.typelist li{ background:url(../images/ico1.jpg) left center no-repeat; padding-left:1em; border-bottom:1px #afceea dashed;}
+.typelist li span{ float:right;}
+
+
+
+#diaochatable{width:660px;margin:0 auto; padding:10px 0;}
+#diaochatable table{  background:#cccccc; overflow:hidden;}
+#diaochatable table tr{ background:#FFF;}
+#diaochatable table tr th{ text-align:left; color:#000; padding-left:1em;}
+#diaochatable table tr td{ color:#333; padding-left:1em;}
+
+
+
+/*二级页面*/
+
+.daohang{ background:url(../images/daohang.jpg) 15px center no-repeat; font-weight:bold; padding-left:50px; line-height:24px;color:#0e5194; height:24px;}
+.daohang a{ color:#126bc3;}
+.daohang a:hover{ color:#48a2de;}
+
+.weizhi{ margin-top:10px; float:right; margin-right:20px;_margin-right:10px;}
+
+.page_name{ font-size:16px; color:#C00; margin-top:20px; text-align:center; font-weight:bold;}
+.page_date{ background:#eee; height:22px; line-height:22px; width:940px; color:#666; margin:0 auto; margin-top:5px; text-align:center;}
+.page_con{ width:940px; margin:20px auto; font-size:14px; margin-bottom:10px; overflow:hidden;}
+.page_bottom{width:940px; margin:0 auto; color:#126bc3; text-align:right; overflow:hidden;}
+.page_bottom a{color:#74b9e7;}
+.page_bottom a:hover{color:#74b9e7; text-decoration:underline;}
+
+#pager{ width:740px; overflow:hidden;}
+#pager dt{ background:url(../images/pager_t.jpg) no-repeat; height:37px; overflow:hidden;}
+#pager dd{ background:url(../images/pager_c.jpg) repeat-y; height:540px;overflow:hidden;}
+#pager dd.pager_b{ background:url(../images/pager_b.jpg) no-repeat; height:10px; overflow:hidden;}
+.page_bg{ height:540px; background:url(../images/list_bg.jpg) 100px bottom no-repeat;}
+
+.basecontent{ width:740px; overflow:hidden;}
+.basecontent dt{ background:url(../images/pager_t.jpg) no-repeat; height:37px; overflow:hidden;}
+.basecontent dd{ background:url(../images/pager_c.jpg) repeat-y;overflow:hidden;}
+.basecontent dd.pager_b{ background:url(../images/pager_b.jpg) no-repeat; height:10px; overflow:hidden;}
+
+
+.gonggaolist{ width:660px; margin:20px auto;}
+.gonggaolist li{background:url(../images/ico1.jpg) 0px 10px no-repeat; padding-left:1em; line-height:22px; border-bottom:1px #afecea dashed; margin-bottom:10px;}
+.gonggaolist li span{ margin-left:20px; color:#F90;}
+
+
+.page_newlist{ width:660px; margin:0 auto; padding:20px 0;}
+.page_newlist li{ background:url(../images/ico1.jpg) left center no-repeat; padding-left:1em; line-height:30px; border-bottom:1px #afecea dashed;}
+.pages{ text-align:center; width:660px; margin:0 auto; padding-bottom:20px;}
+
+
+.page_newlist li label{ color:#F90;}
+
+.page_piclist{ width:730px; margin:0 auto; padding:10px 0;}
+.page_piclist li{ width:154px; float:left; text-align:center; padding-top:10px; margin-left:22px;_margin-left:17px; overflow:hidden;}
+.page_piclist li img{ width:150px; height:120px; padding:1px; border:1px #CCC solid; overflow:hidden;}
+
+.mess_name{padding-left:1.5em; padding-top:10px; font-size:14px; font-weight:bold;}
+.mess_con{margin:0 auto; margin-top:10px; border:1px #CCC solid; width:700px; overflow:hidden;}
+
+.answer{background:url(../images/admin.gif) 5px 8px no-repeat;padding:5px 0; padding-left:2em;  border-top:1px #CCC solid;}
+.say_con{padding:5px 0;padding-left:2em;}
+.say_date{background:#eee url(../images/people.gif) 5px 3px no-repeat; border-bottom:1px #ddd solid; padding-left:2em;}
+.liuyan{margin:0 auto; padding:20px 0; width:700px; overflow:hidden;}
+.liuyan_name{background:url(../images/liuyan.jpg) 5px 0 no-repeat; color:#06C; font-size:14px; font-weight:bold; padding-left:2em;}
+
+.services{ width:230px; overflow:hidden;}
+.services dt{ background:url(../images/jianjie_t.jpg) no-repeat; height:37px; overflow:hidden;}
+.services dd{background:url(../images/jianjie_c.jpg) repeat-y; overflow:hidden;}
+.services dd.service_b{ background:url(../images/jianjie_b.jpg) no-repeat; height:10px; overflow:hidden;}
+.services dd ul{ padding-top:5px;}
+.services dd ul li{width:190px; margin:0 auto; padding-bottom:3px; overflow:hidden;}
+
+.jianjie_con{ width:660px; margin:0 auto; font-size:14px; padding:20px 0; overflow:hidden;}
+.jianjie_pic{ text-align:center; padding-bottom:20px;}
+.jianjie_pic img{ width:600px; border:1px #CCC solid; padding:1px; overflow:hidden;}
+
+
+/*图片轮换*/
+.picsGlide1{width:150px; height:135px; overflow:hidden; position:relative;}
+.picsGlide1 .GsPicList{margin:0; padding:0; list-style:none;width:2600px; position:absolute;}
+.picsGlide1 .GsPicList li{float:left; margin:0; padding:0;}
+.picsGlide1 .GsPicList li img{ display:block;width:150px; height:117px; border:none;overflow:hidden; }
+.picsGlide1 .GsPicList .title {line-height:22px; height:22px; width:150px; text-align:center; font-size:12px; background-color:#FFF; color:#000; font-weight:bold;border-top:1px solid #FFF;}
+.picsGlide1 .GsPicList .title a,.picsGlide1 .GsPicList .title a:visited {color:#000; text-decoration:none;}
+.picsGlide1 .GsPicList .title a:hover { text-decoration:underline;}
+.picsGlide1 .GlideList {font-size:12px; position:absolute; bottom:22px; right:2px;}
+.picsGlide1 .GlideList li{ float:left; background:url(../images/button_bg.gif) no-repeat -15px 0;width:15px; line-height:15px; height:15px; list-style:none; color:#000; text-align:center;  cursor:pointer; padding:0px; margin:0px;margin-right:3px;}
+.picsGlide1 .GlideList li:hover,.GlideList li.active{ background:url(../images/button_bg.gif) no-repeat 0 0; color:#fff;}

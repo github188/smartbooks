@@ -1,0 +1,4 @@
+body, a, table, div, span, td, th, input, select{font-size:9pt;font-family:Verdana, Arial, Helvetica, sans-serif;}
+body { padding: 0px;background-color:menu}
+td {line-height:150%}
+body.upload {margin:0px}
