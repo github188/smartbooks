@@ -13,7 +13,7 @@
     <script type="text/javascript" src="../Script/jquery-1.6.2.js"></script>
     <script type="text/javascript" src="../Script/kindeditor-4.0.5/kindeditor-min.js"></script>
     <script type="text/javascript" src="../Script/kindeditor-4.0.5/lang/zh_CN.js"></script>    
-    <script type="text/jscript" language="javascript">
+    <script type="text/javascript" language="javascript">
         $(document).ready(function () {
             var editor;
             KindEditor.ready(function (K) {
