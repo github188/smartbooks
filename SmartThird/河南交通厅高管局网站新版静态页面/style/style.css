@@ -31,7 +31,8 @@ a:active {text-decoration : none ;color : #393a39 ;} */
 #logo_flash{ height:155px; width:100%;}
 
 /*menu*/
-#menu{ width:600px; height:38px; float:left; }
+/*#menu{ width:600px; height:38px; float:left; }*/
+#menu{ width:960px; height:38px; float:left;background:#fff url(../images/three_0.gif) repeat-x;}
 #nav {
 	padding:0;
 	margin:0;
@@ -39,7 +40,7 @@ a:active {text-decoration : none ;color : #393a39 ;} */
 	height:38px;
 	background:#fff url(../images/three_0.gif) repeat-x;
 	z-index:1000;
-	width:960px;
+	width:640px;
 	font-family:"微软雅黑";
 	float:left;
 
@@ -83,17 +84,17 @@ a:active {text-decoration : none ;color : #393a39 ;} */
 	border-bottom:2px solid #97a8c2; 
 	border-left:2px solid #97a8c2;
 	border-right:2px solid #97a8c2;
-	width:110px; 
+	width:115px; 
 	height:auto; 
-	word-wrap: break-word;
+	word-wrap:break-word;
 }/* controls drop down box */
 #nav li:hover ul.sub li
-{display:block; height:auto; position:relative; float:left; width:107px; font-weight:normal; word-wrap: break-word; }
+{display:block; height:auto; position:relative; float:left; width:102px; font-weight:normal; word-wrap: break-word; }
 #nav li:hover ul.sub li span{
 	padding-left:14px;
 }
 #nav li:hover ul.sub li a
-{ display:block; font-size:12px;  width:100px; line-height:18px;  color:#333; text-decoration:none;border-bottom:1px solid #fff; padding:3px 0px 3px 10px;}
+{ display:block; font-size:12px;  width:105px; line-height:18px;  color:#333; text-decoration:none;border-bottom:1px solid #fff; padding:3px 0px 3px 10px;}
 /* controls text in drop down and hover width*/
 #nav li ul.sub li a.fly 
 {background: url(../images/arrow.gif) 150px 6px no-repeat;}
@@ -133,20 +134,20 @@ a:active {text-decoration : none ;color : #393a39 ;} */
 	width:250px;
 	height:38px;
 	line-height:38px;
-	background-image:url(../images/searchbg.png);
+	background-image:url(../images/searchbg1.png);
 	background-repeat:no-repeat;
 	background-position:left top;
 }
 #search_text{
-	height:36px;
+	height:22px;
 	width:auto;
-	margin-left:40px;
-	margin-top:13px;
-	line-height:36px;
+	padding-left:23px;
+	padding-top:13px;
+	line-height:22px;
 	float:left;
 	display:inline;/* 消除用float时在IE6浏览器下margin会加倍的问题*/
 }
-#search_text input{background:none;border:none;}
+#search_text input{background:none;border:none; color:#999;}
 #search_btn{float:left;	margin-top:9px; margin-left:2px; display:block;}
 
 /*网站主题*/

@@ -48,9 +48,16 @@ body, html {
 	margin:0px;
 	padding:0px;
 }
-#s-nav li {
+#s-nav li{
 	list-style:none;
 }
+
+#s-nav .normal{
+	background-image:url(../images/zhengwugongkai-ui1.png);
+	background-repeat:no-repeat;
+	background-position:42px 9px;
+}
+
 #s-nav li a {
 	width:100px;
 	height:35px;
@@ -62,7 +69,32 @@ body, html {
 	font-weight:bold;
 
 }
-#s-nav li a:link,#s-nav li a:visited{
+#s-nav li a:link{
+	/*background-image:url(../images/images/zhengwugongkai-01.png);*/
+	background-repeat:no-repeat;
+/*	border-bottom:2px #d3d3d3 solid;*/
+	font-size:14px;
+	font-family:"黑体";
+	color:#3f6187;
+	font-weight:bold;
+	}
+.active {
+	background:#FFF;
+	width:167px;
+	height:35px;
+	border-left:2px #d3d3d3 solid;
+	border-top:2px #d3d3d3 solid;
+	border-bottom:2px #d3d3d3 solid;
+	font-size:14px;
+	font-family:"黑体";
+	color:#3f6187;
+	font-weight:bold;
+	background-image:url(../images/zhengwugongkai-ui0.png);
+	background-repeat:no-repeat;
+	background-position:41px 9px;
+}
+
+/*#s-nav li a:link,#s-nav li a:visited{
 	font-family:"黑体";
 	background-image:url(../images/zhengwugongkai-ui1.png);
 	background-repeat:no-repeat;
@@ -77,20 +109,9 @@ body, html {
 	background-repeat:no-repeat;
 	background-position:41px 9px;
 
-}
-.active {
+}*/
 
-	background:#FFF;
-	width:167px;
-	height:34px;
-	border-left:2px #d3d3d3 solid;
-	border-top:2px #d3d3d3 solid;
-	border-bottom:2px #d3d3d3 solid;
-	font-size:14px;
-	font-family:"黑体";
-	color:#3f6187;
-	font-weight:bold;
-}
+
 /*选项卡能容部分 end*/
 #mainContent {
 	width:770px;

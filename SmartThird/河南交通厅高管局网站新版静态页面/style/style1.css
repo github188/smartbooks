@@ -1,0 +1,135 @@
+﻿
+
+/*单选下拉框样式*/
+.mainCon{
+	position: relative;
+	display: inline;
+	width:196px;
+	z-index: 500;
+}
+div.selectbox-wrapper {
+	border:#b7d1eb 1px solid;  /*展开层边框色*/
+	position: absolute; 
+	background-color:#fff; 
+	text-align:left;
+	z-index: 100;
+	display:block;
+	left:0px;
+
+	top:18px;
+	>top:25px;
+}
+div.selectbox-wrapper ul li.selected {
+	background-color: #e0ecf7;/*选中项背景色*/
+}
+div.selectbox-wrapper ul li.current {
+	color: #fff;
+	background-color: #3366cc;/*鼠标移入项背景色*/
+}
+div.selectbox-wrapper ul li.group{
+	font-weight:bold;
+	background-image:url(form/selArr.gif);
+	background-repeat:no-repeat;
+	background-position:0% 50%;
+	padding-left:15px;
+	_width:196px;
+}
+div.selectbox-wrapper ul li {
+	padding-right:3px;
+	padding-left:3px;
+	
+	padding-bottom:3px;
+	cursor:pointer;
+	cursor:hand;
+	line-height:20px;
+	padding-top:3px;
+	_width:100%;
+}
+.selectbox { 
+	width:200px;
+	border:none;  
+	cursor: pointer;  
+	cursor: hand;
+	font-size: 12px;
+	height: 20px; 
+	line-height: 20px;
+	overflow-y:hidden;
+	border-left: solid 1px #5b779c;
+	border-top: solid 1px #5b779c;
+	border-bottom: solid 1px #5b779c;
+}
+.selectboxFont{
+	font-family: "Lucida Console","Eras Medium ITC","Goudy Old Style",Default;
+}
+.tipColor{
+	color:gray;
+}
+.selBtn{
+	background-image: url(form/xl-.png);
+	width: 22px;
+	height: 24px;
+	border: 0;
+	background-repeat: no-repeat;
+	cursor: pointer;
+	cursor: hand;
+	border-bottom:solid 1px #bdcfde;
+    *border-bottom:0;
+    _border-bottom:0;
+	border-left: solid 1px #5b779c;
+	border-top: solid 1px #5b779c;
+	border-bottom: solid 1px #5b779c;
+	border-right: solid 1px #5b779c;
+}
+.selBtn_ie9 { 
+	padding: 8px 0 1px 0!important; 
+	border-bottom:0!important; 
+}
+.selBtn_safari{
+	background-image: url(form/selBtn.jpg);
+	width: 22px;
+	height: 24px;
+	border: 0;
+	background-repeat: no-repeat;
+	cursor: pointer;
+	cursor: hand;
+	padding: 0;
+	border-bottom:solid 1px #bdcfde;
+}
+.selBtn_linux{
+	background-image: url(form/selBtn.jpg);
+	width: 22px;
+	height: 24px;
+	border: 0;
+	background-repeat: no-repeat;
+	cursor: pointer;
+	cursor: hand;
+	padding: 1px 0 8px 0;
+}
+.loader{
+	position:absolute;
+	z-index:500;
+	left:0px;
+	top:-8px;
+	padding-left:5px;
+	padding-top:3px;
+	>padding-top:8px;
+	width:100%;
+	height:30px;
+	-moz-opacity:0.8;opacity:.80;filter:alpha(opacity=80);
+	background-color:white;
+}
+.li_left{
+	float:left;
+}
+.mainCon .inputDisabled{
+	background-color:#eeeeee!important;
+	background-image:none!important;
+	color:#c0bfbf!important;
+	cursor: default!important;
+	width:196px;!important;
+}
+.selBtn_disabled{
+	background-image: url(form/selBtn_disabled.jpg)!important;
+	cursor: default!important;
+}
+/*单选下拉框样式*/
