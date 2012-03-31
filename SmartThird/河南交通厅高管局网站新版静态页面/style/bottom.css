@@ -1,0 +1,35 @@
+@charset "gb2312";
+/* CSS Document */
+
+body,html{
+	margin:0px; padding:0px; 
+	font-size:12px;
+	margin-right:10px;
+}
+#bottom{
+	width:960px;
+	height:32px;}
+	
+.bott-1{
+	width:10px;
+	height:32px;
+	float:left;}
+
+
+.bott-bg{
+	width:950px;
+	height:32px;
+	float:right;}
+	
+.bott-2{
+	width:940px;
+	height:26px;
+	float:left;
+	background-image:url(../images/bottom-3.gif);
+	background-repeat:repeat-x;
+	text-align:center;
+	padding-top:6px;}
+.bott-3{
+	width:10px;
+	height:32px;
+	float:right;}

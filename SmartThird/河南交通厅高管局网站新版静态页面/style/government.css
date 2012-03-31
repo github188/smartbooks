@@ -1,0 +1,401 @@
+@charset "gb2312";
+/* CSS Document */
+
+body,html  {
+	font:12px; 宋体, 新宋体;
+	margin: 0; /* 最好将 body 元素的边距和填充设置为 0 以覆盖不同的浏览器默认值 */
+	padding: 0;
+	color: #000000;
+	height:100%;
+}
+#maincontainer01{
+	width:960px;
+	height:615px;
+	clear:both;}
+.maincontainer1-top{
+	width:950px;
+	height:23px;
+	background: #e8e8e8;
+	background-image:url(../images/images/line.gif);
+	background-position:bottom;
+	background-repeat:repeat-x;
+	padding-top:7px;
+	padding-left:10px;}
+.maincontainer1-bott{
+	width:960px;
+	height:600px;
+	}
+
+ #sidebar1 {
+	float: left; /* 由于此元素是浮动的，因此必须指定宽度 */
+	width: 192px;
+	height:100%;/* 在符合标准的浏览器中或者在 Internet Explorer 中的标准模式下，此 div 的实际宽度除了包括宽度外，还包括填充和边框 */
+	background: #e8e8e8;/* 将显示背景色，其宽度等于栏中内容的长度，*/
+	border-right:2px #d3d3d3 solid;
+	padding-left:17px;
+}
+#sidebar1 ul{
+	width:172px;
+	display:block;
+	margin:0px;
+	padding:0px;}
+#s-nav li{
+	list-style:none;
+	background-image:url(../images/images/zhengwugongkai-ui1.png);
+	background-repeat:no-repeat;
+	background-position:42px 9px;
+}
+#s-nav li a{
+	width:100px;
+	height:38px;
+	display:block;
+	line-height:36px;
+	position:relative;
+	padding-left:70px;
+	}
+
+#s-nav li a:link{
+	/*background-image:url(../images/images/zhengwugongkai-01.png);*/
+	background-repeat:no-repeat;
+	border-bottom:2px #d3d3d3 solid;
+	font-size:14px;
+	font-family:"黑体";
+	color:#3f6187;
+	font-weight:bold;}
+	/*
+#s-nav li a:hover{
+	background:#FFF;
+	width:125px;
+	height:36px;
+	border-left:2px #d3d3d3 solid;
+	border-bottom:2px #d3d3d3 solid;
+	font-size:14px;
+	font-family:"黑体";
+	color:#3f6187;
+	font-weight:bold;
+	padding-left:67px;
+	background-image:url(../images/images/zhengwugongkai-ui1.png);
+	background-repeat:no-repeat;
+	background-position:41px 9px;
+}*/
+.on{
+	background:#FFF;
+	width:190px;
+	height:36px;
+	border-left:2px #d3d3d3 solid;
+	border-bottom:2px #d3d3d3 solid;
+	font-size:14px;
+	font-family:"黑体";
+	color:#3f6187;
+	font-weight:bold;
+	padding-left:2px;
+	background-image:url(../images/images/zhengwugongkai-ui1.png);
+	background-repeat:no-repeat;
+	background-position:41px 9px;
+}
+
+/*选项卡能容部分 开始*/
+#mainContent {
+	width:728px;
+	float:right;
+	padding-left:20px;
+}
+/*机构简介  开始*/
+#d1{
+	width:708px;
+	float:right;
+	padding-left:20px;
+	background-image:url(../images/zhengwugongkai/01.jpg);
+	background-repeat:no-repeat;
+	background-position:bottom;
+	line-height:30px;
+	text-indent:22px;
+	display:block;
+}
+
+/*机构简介  开始*/
+
+
+/*
+#d2,#d4,#d5,#d6,#d7,#d8,#d9{
+	display:none;}*/
+#d2{
+	width:708px;
+	height:1218px;
+	background:#FFF;}
+	
+/*政务信息、工作动态、政策文件、领导讲话  开始*/
+#d3 ul,#d4 ul{
+	width:700px;
+	height:135px;
+	margin:0px;
+	padding:0px;
+	border-bottom:1px #3f6187 dashed;
+	padding-top:15px;
+	clear:both;}
+#d6 ul,#d7 ul{
+	width:700px;
+	height:450px;
+	margin:0px;
+	padding:0px;
+	padding-top:15px;
+	clear:both;}
+#d6 ul li,#d7 ul li{
+	width:685px;
+	height:29px;
+	line-height:29px;
+	list-style:none;
+	background-image:url(../images/ui.jpg);
+	background-repeat:no-repeat;
+	padding-left:15px;
+	background-position:3px;}
+#d3 ul li,#d4 ul li{
+	width:685px;
+	height:24px;
+	line-height:24px;
+	list-style:none;
+	background-image:url(../images/ui.jpg);
+	background-repeat:no-repeat;
+	padding-left:15px;
+	background-position:3px;}
+#d3 a,#d4 a{
+	width:600px;
+	height:24px;
+	overflow:hidden;
+	float:left;
+	display:block;}
+#d6 a,#d7 a{
+	width:600px;
+	height:29px;
+	overflow:hidden;
+	float:left;
+	display:block;}
+#d3 span,#d4 span,#d6 span,#d7 span{
+	width:80px;
+	float:right;
+	display:block;}
+/*政务信息、工作动态、政策文件、领导讲话  结束*/
+
+
+/*法律法规  开始*/
+.d5-1,.d5-2,.d5-3{
+	background:#f4f4f4;
+	margin-top:15px;}
+.d5-dh{
+	width:718px;
+	height:30px;
+	padding-left:10px;}
+.d5-dh ul{
+	width:718px;
+	margin:0px;
+	padding:0px;
+	}
+
+.d5-dh ul li{
+	width:683px;
+	height:20px;
+	list-style:none;
+	background-image:url(../images/ui-01.jpg);
+	background-repeat:no-repeat;
+	border-bottom:2px #3f6187 solid;
+	padding-left:25px;
+	padding-top:10px;
+	background-position:3px;}
+.d5-dh ul span{
+	width:150px;
+	float:left;}
+.d5-dh ul a{
+	width:40px;
+	float:right;}
+.d5-list{
+	width:728px;
+	height:155px;
+	padding-top:15px;
+	}
+.d5-list ul{
+	width:728px;
+	margin:0px;
+	padding:0px;}
+.d5-list li{
+	width:325px;
+	height:27px;
+	line-height:27px;
+	list-style:none;
+	display:inline;
+	float:left;
+	background-image:url(../images/0_107.png);
+	background-repeat:no-repeat;
+	background-position:3px;
+	padding-left:15px;
+	margin-left:15px;
+	border-bottom:1px #3f6187 dashed;
+	}
+.d5-list a{
+	width:230px;
+	height:27px;
+	overflow:hidden;
+	float:left;
+	}
+.d5-list span{
+	width:60px;
+	float:right;
+	}
+/*法律法规  结束*/
+.biaoti{
+	font-size:16px;
+	color:#3f6187;
+	font-weight:bold;
+	text-align:center;
+	line-height:14px;
+	padding-top:5px;
+	}
+.h1{
+	width:709px;
+	height:404px;
+}
+/*选项卡能容部分 开始*/
+.banner-01{
+	width:728px;
+	height:128px;
+	margin-top:15px;}
+.lianzheng-main{
+	width:723px;
+	height:551px;
+	background:#f3f3f3;
+	margin-top:15px;
+	}
+.lianzheng01{
+	width:348px;
+	height:173px;
+	float:left;
+	margin:6px;}
+.lianzheng01-dh{
+	width:348px;
+	height:38px;}
+.lianzheng01-dh-top{
+	width:348px;
+	height:36px;}
+.lianzheng01-dh-top ul{
+	width:340px;
+	margin:0px;
+	padding:0px;}
+.lianzheng01-dh-top ul li{
+	width:320px;
+	height:23px;
+	list-style:none;
+	background-image:url(../images/images/lianzheng-0_07.jpg);
+	background-repeat:no-repeat;
+	background-position:3px;
+	padding-left:20px;
+	padding-top:13px;}
+.lianzheng01-dh-top ul li span{
+	width:150px;
+	display:block;
+	float:left;
+	color:#970202;}
+.lianzheng01-dh-top ul li a{
+	width:40px;
+	display:block;
+	float:right;}
+.lianzheng01-dh-top a:link{
+	color:#970202;}
+
+
+.lianzheng01-dh-bott{
+	width:348px;
+	height:2px;}
+	
+.lianzheng01-list{
+	width:333px;
+	height:125px;
+	padding-top:10px;
+	padding-left:15px;}
+
+.lianzheng01-list ul{
+	width:340px;
+	padding:0px;
+	margin:0px;}
+.lianzheng01-list ul li{
+	width:325px;
+	height:24px;
+	line-height:24px;
+	list-style:none;
+	background-image:url(../images/0_96.png);
+	background-repeat:no-repeat;
+	background-position:3px;
+	padding-left:15px;
+	overflow:hidden;}
+
+#d9{
+	width:728px;
+	clear:both;
+	height:300px;
+	padding-top:15px;
+	
+	}
+
+.dajishi{
+	width:728px;
+	height:58px;
+	text-align:center;
+	margin-top:20px;}
+.dajishi1{
+	width:728px;
+	height:38px;
+	clear:both;
+	text-align:center;
+
+	}
+.dajishi2{
+	width:728px;
+	height:38px;
+	clear:both;
+	text-align:center;
+	margin-top:20px;
+	}
+.dajishi a:link,.dajishi1 a:link,.dajishi2 a:link{
+	font-size:14px;
+	color:#3f6187;
+	text-decoration:none;}
+.dajishi a:hover,.dajishi1 a:hover,.dajishi2 a:hover{
+	font-size:14px;
+	color:#666;
+	}
+.dajishi2012,.dajishi2009{
+	width:237px;
+	height:28px;
+	float:left;
+	background-image:url(../images/images/dashiji_03.jpg);
+	background-repeat:no-repeat;
+	padding-top:10px;
+	}
+.dajishi01,.dajishi01-1{
+	width:491px;
+	height:38px;
+	float:right;
+	}
+.dajishi2011,.dajishi2008{
+	width:237px;
+	height:28px;
+	float:left;
+	padding-top:10px;
+	background-image:url(../images/images/dashiji_03.jpg);
+	background-repeat:no-repeat;
+	margin-left:9px;}
+.dajishi2010,.dajishi2007{
+	width:237px;
+	height:28px;
+	float:right;
+	padding-top:10px;
+	background-image:url(../images/images/dashiji_03.jpg);
+	background-repeat:no-repeat;}
+<!--[if IE 5]>
+/* 将 IE 5* 的 css 方块模型修正放在这个条件注释中 */
+.twoColFixLtHdr #sidebar1 {float:left; margin-left:0px; width: 230px; height:100%;}
+</style>
+<![endif]--><!--[if IE]>
+<style type="text/css"> 
+/* 请将所有版本的 IE 的 css 修复放在这个条件注释中 */
+.twoColFixLtHdr #sidebar1 { padding-top: 30px; }
+.twoColFixLtHdr #mainContent { zoom: 1; }
+/* 上面的专用 zoom 属性为 IE 提供避免错误所需的 hasLayout */

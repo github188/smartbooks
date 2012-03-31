@@ -1,0 +1,24 @@
+@charset "gb2312";
+/* CSS Document */
+
+#focus_change { position:relative; width:640px; height:306px; overflow:hidden; margin-top:15px; margin-left:13px;}
+#focus_change_list { position:absolute; width:2560px; height:306px; }
+#focus_change_list ul{ width:2560px; margin:0px; padding:0px;}
+#focus_change_list li { float:left; }
+#focus_change_list li img { width:640px; height:306px; }
+.focus_change_opacity { position:absolute; width:640px; height:70px; top:235px; left:0; background:#000; filter:alpha(opacity=50); -moz-opacity:0.5; opacity: 0.5; }
+#focus_change_btn { position:absolute; width:640px; height:65px; top:233px; left:0; }
+#focus_change_btn ul { padding-left:125px; }
+#focus_change_btn li { display:inline; float:left; margin:0 10px; padding-top:10px; }
+#focus_change_btn li img { width:76px; height:50px; border:2px solid #888; }
+#focus_change_btn .current { background:url(/uploadfile/200901/1/6C164133877.gif) no-repeat 37px 8px;}
+#focus_change_btn .current img { border-color:#EEE; }
+
+
+
+.sh-main { margin:0; padding:0; word-break:break-all; }
+.sh-main { color:#333; font:12px/1.6em Helvetica, Arial, sans-serif; }
+a { color:#039; text-decoration:none; }
+.sh-main a:hover { text-decoration:underline; }
+.sh-main ul,.sh-main li { list-style:none; }
+.sh-main fieldset,.sh-main img { border:none; }

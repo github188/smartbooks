@@ -1,0 +1,622 @@
+@charset "gb2312";
+/* CSS Document */
+/*链接样式*/
+.list01-dh2 a:link{ color:#FFF; text-decoration:none;}
+.list01-dh2 a:hover{ color:#FFF; text-decoration:none;}
+.gonggao a:link{ font-size:14px;color:#345377;text-decoration:none;}
+.gonggao a:hover{color:#393a39; text-decoration:underline;}
+.gonggao1 a:link{ font-size:14px;color:#393a39;text-decoration:none;}
+.gonggao1 a:hover{color:#345377; text-decoration:underline;} 
+.project-dh a:link,.download-dh a:link{color:#345377; text-decoration:none;}
+.project-dh a:hover,.download-dh a:hover{color:#345377; text-decoration:underline;}
+	
+/*链接样式*/
+/*焦点图和今日关注 开始*/
+#focus{
+	width:960px;
+	height:325px;
+	clear:both;
+	}
+	
+/*焦点图 开始*/
+#focus-img{
+	width:566px;
+	height:297px;
+	float:left;
+	padding-top:3px;
+	padding-left:3px;
+	border:1px #f28c28 solid;}
+/*焦点图 结束*/
+
+
+/*今日关注 开始*/
+#today{
+	width:372px;
+	height:305px;
+	float:right;
+	padding-left:15px;
+	}
+.today-dh{
+	width:221px;
+	height:19px;
+	background-image:url(../images/img-home/j-bg.png);
+	background-repeat:no-repeat;
+	padding-left:150px;
+	padding-top:8px;
+	
+	color:#CCC;}
+.today-main{
+	width:371px;
+	height:268px;
+	padding-top:10px;}
+.today-main ul{color:#1d4a80; line-height:24px; overflow:hidden; float:left; padding:0px; margin:0px; width:371px;}
+.today-main li{  height:34px; width:371px;  background-image:url(../images/img-home/0_56.png); background-repeat:no-repeat;background-position:120px 27px;
+ list-style-image:url(../images/img-home/0_76.png); list-style-position:inside; margin:0px; padding-left:10px; line-height:24px;}
+
+/*今日关注 结束*/
+
+
+
+
+/*焦点图和今日关注 结束*/
+
+/*home left 开始*/
+#home-left{
+	width:725px;
+	float:left;}
+.home-left-left{
+	width:358px;
+	float:left;
+	border-right:1px #858585 solid;}
+/*政务信息 开始*/
+#home-list01{
+	width:346px;
+	height:245px;
+	float:left;}
+.list01-dh{
+	width:346px;
+	height:25px;}
+.list01-dh-bg1{
+	width:7px;
+	height:25px;
+	float:left;}
+.list01-dh-bg{
+	width:339px;
+	height:25px;
+	float:right;}
+
+.list01-dh-bg3{
+	width:7px;
+	height:25px;
+	float:right;
+	}
+.list01-dh2{
+	width:332px;
+	height:25px;
+	_height:20px;
+	float:left;
+	background-image:url(../images/img-home/zdh-mid.png);
+	background-repeat:repeat-x;
+	margin-bottom:-3px/*解决在ie6中多余字符bug*/
+	}
+
+.list01-dh2 ul{
+	width:330px;
+	margin:0px;
+	padding:0px;
+	color:#FFF;
+}
+.list01-dh2 li{
+	list-style:none;
+	width:330px;
+	height:25px;
+	color:#FFF;
+}
+.list01-dh2 span{
+	width:90px;
+	float:left;
+	display:block;
+	color:#FFF;
+}
+.list01-dh2 a{
+	width:28px;
+	height:16px;
+	padding-top:7px;
+	float:right;
+	display:block;
+	color:#FFF;
+	text-align:center;
+}
+.list01-dh2 a:hover{
+	text-decoration:underline;
+}
+.list01-main{
+	width:346px;
+	height:220px;
+	background-image:url(../images/img-home/0_71.png);
+	background-repeat:repeat-x;
+	background-position:top;}
+.list01-main-img{
+	width:346px;
+	height:88px;
+	background-image:url(../images/0_85.png);
+	background-position:bottom;
+	background-repeat:no-repeat;
+	padding-top:15px;
+	}
+.list01-main-img a{
+	margin-left:6px;
+	}
+.list01-main-main{
+	width:341px;
+	height:120px;
+	padding-left:5px;}
+
+.list01-main-main ul{
+	width:340px;
+	margin:0px;
+	padding:0px;}
+.list01-main-main li{
+	width:318px;
+	height:24px;
+	line-height:24px;
+	list-style:none;
+	background-image:url(../images/img-home/0_76.png);
+	background-repeat:no-repeat;
+	background-position:3px;
+	padding-left:15px;}
+.list01-main-main a{
+	width:260px;
+	height:24px;
+	overflow:hidden;
+	float:left;
+	display:block;}
+.list01-main-main span{
+	width:40px;
+	display:block;
+	float:right;}
+/*政务信息 结束*/
+
+
+/*政策文件 开始*/
+.list02-main-main{
+	width:341px;
+	height:205px;
+	padding-left:5px;
+	padding-top:15px;}
+
+.list02-main-main ul{
+	width:340px;
+	margin:0px;
+	padding:0px;}
+.list02-main-main li{
+	width:318px;
+	height:25px;
+	line-height:25px;
+	list-style:none;
+	background-image:url(../images/img-home/0_76.png);
+	background-repeat:no-repeat;
+	background-position:3px;
+	padding-left:15px;}
+.list02-main-main a{
+	width:260px;
+	height:25px;
+	overflow:hidden;
+	float:left;
+	display:block;}
+.list02-main-main span{
+	width:40px;
+	display:block;
+	float:right;}
+#home-list02{
+	width:346px;
+	height:246px;
+	float:left;
+	margin-top:20px;
+	/* display:inline;消除用float时在IE6浏览器下margin会加倍的问题*/}
+/*政策文件 结束*/
+
+/*工作动态 开始*/
+#home-list03{
+	width:346px;
+	height:247px;
+	float:left;
+	margin-left:13px;
+}
+
+
+/*工作动态 结束*/
+
+/*新闻聚焦 开始*/
+#home-list04{
+	width:346px;
+	height:245px;
+	float:left;
+	margin-top:20px;
+	margin-left:15px;
+		display:inline;/* 消除用float时在IE6浏览器下margin会加倍的问题*/}
+
+.list04-main-img{
+	width:346px;
+	height:88px;
+	background-image:url(../images/0_85.png);
+	background-position:bottom;
+	background-repeat:no-repeat;
+	padding-top:15px;
+	}
+.list04-img{
+	width:116px;
+	height:81px;
+	float:left;
+	margin-left:10px;
+	display:inline;/* 消除用float时在IE6浏览器下margin会加倍的问题*/}
+.list01-text{
+	width:199px;
+	height:81px;
+	float:right;
+	margin-right:5px;
+	text-indent:24px;
+	padding-left:9px;
+	padding-right:1px;
+	line-height:19px;
+	}
+/*新闻聚焦 结束*/
+
+/*banner  开始*/
+#banner-img{
+	width:725px;
+	height:116px;
+	clear:both;
+	padding-top:20px;
+	
+	}
+.ba-bg{
+	width:720px;
+	height:100px;
+	border:1px #f18517 solid;
+	padding-top:2px;
+	padding-left:2px;}
+/*banner  结束*/
+/*高速百科、高速风采  开始*/
+#home-fengcai{
+	width:725px;
+	height:259px;}
+	
+/*导航*/	
+.home-fengcai-dh{
+	width:725px;
+	height:49px;}
+.home-fengcai-dh-left{
+	width:6px;
+	height:49px;
+	float:left;}
+.home-fengcai-dh-right{
+	width:719px;
+	height:49px;
+	float:left;
+	}
+.fc-batton{
+	width:150px;
+	float:left;
+	margin-left:35px;
+	display:inline;/*消除ie6中的margin问题*/}
+.fc-batton1{
+	width:350px;
+	float:right;}
+.home-fengcai-dh-right-left{
+	width:713px;
+	height:34px;
+	float:left;
+	background-image:url(../images/img-home/fc-dh2.png);
+	background-repeat:repeat-x;
+	padding-top:15px;
+	}
+.home-fengcai-dh-right-right{
+	width:6px;
+	height:49px;
+	float:right;}
+	
+	
+/*高速风采*/	
+	
+.fengcai-bott{
+	width:725px;
+	height:210px;}
+	
+.gsfengcai{
+	width:358px;
+	height:210px;
+	float:left;
+	background-image:url(../images/img-home/fc-line.png);
+	background-repeat:no-repeat;
+	background-position:right;}
+.fc-prose{
+	width:335px;
+	height:61px;
+	border-bottom:1px #CCC solid;
+	margin-left:10px;
+	margin-top:5px;}
+.fc-prose3{
+	width:335px;
+	height:61px;
+	margin-left:10px;
+	margin-top:5px;}
+.fc-prose-img{
+	width:128px;
+	height:52px;
+	float:left;}
+.fc-prose-text{
+	width:197px;
+	height:52px;
+	float:right;
+	padding-left:10px!important;/*ie6 消除padding使用*/
+	padding-left:5px;
+}
+.fc-prose-text ul{
+	width:200px;
+	margin:0px;
+	padding:0px;}
+.fc-prose-text li{
+	width:200px;
+	line-height:18px;
+	list-style:none;}
+
+
+/*高速百科*/
+.gsbaike{
+	width:352px;
+	height:210px;
+	float:right;
+	padding-left:15px;}
+	.l-line{ width:352px; height:167px;}
+.l-line ul{
+	width:350px;
+	margin:0px;
+	padding:0px;}	
+.l-line li{
+	width:330px;
+	line-height:32px;
+	height:32px;
+	list-style:none;
+	border-bottom:1px #ccc solid;;
+	background-image:url(../images/0_107.png);
+	background-repeat:no-repeat;
+	background-position:3px;
+	padding-left:20px;
+	overflow:hidden;}
+.none-line { width:352px; height:30px;}
+.none-line ul{
+	width:350px;
+	margin:0px;
+	padding:0px;}	
+.none-line li{ 	width:330px;
+	line-height:32px;
+	height:32px;
+	list-style:none;
+	background-image:url(../images/0_107.png);
+	background-repeat:no-repeat;
+	background-position:3px;
+	padding-left:20px;
+	overflow:hidden;}
+/*高速百科、高速风采  结束*/
+
+
+
+/*home left 结束*/
+
+/*home right 开始*/
+#home-right{
+	width:222px;
+	float:right;
+	background:#f2f2f2;
+	padding-left:}
+	
+/*公示公告*/
+#home-notice{
+	width:222px;
+	height:235px;
+	}
+.notice-left{
+	width:5px;
+	height:235px;
+	float:left;}
+.notice-right{
+	width:217px;
+	height:235px;
+	float:right;}
+.notice-right-left{
+	width:213px;
+	height:235px;
+	float:left;}
+.notice-dh{
+	width:140px;
+	height:22px;
+	background-image:url(../images/img-home/gg-1_05.png);
+	background-repeat:repeat-x;
+	padding-left:73px;}
+.notice-main{
+	width:213px;
+	height:213px;
+	background:#fdfdfd;
+	}
+.notice-main ul{
+	width:170px;
+	margin:0px;
+	padding:0px;
+	padding-left:30px;
+}
+.notice-main li{
+	width:170px;
+	height:40px;
+	list-style:url(../images/ui.jpg);
+	background-image:url(../images/0_86.png);
+	background-repeat:no-repeat;
+	background-position:bottom;
+	margin-top:10px;
+	}
+.notice-main a{ width:170px; height:18px; line-height:14px;overflow:hidden;}
+.notice-right-right{
+	width:4px;
+	height:235px;
+	float:right;}
+/*按钮*/
+#batton-01{
+	width:211px;
+	height:96px;
+	margin-left:6px;
+	}
+
+#batton-02{
+	width:21opx;
+	height:59px;
+	margin-left:6px;
+	margin-top:12px;
+	}
+
+#batton-04{
+	width:21opx;
+	height:60px;
+	margin-left:6px;
+	margin-top:12px;
+	}
+/*专题专栏*/
+#project{
+	width:222px;
+	height:154px;
+	margin-top:15px;}
+.project-dh,.download-dh{
+	width:214px;
+	height:22px;
+	background-image:url(../images/images/services_25.png);
+	background-repeat:repeat-x;
+	padding-left:8px;
+	padding-top:4px;}
+.project-dh ul,.download-dh ul{
+	width:202px;
+	margin:0px;
+	padding:0px;
+	}
+.project-dh li,.download-dh li{
+	width:202px;
+	height:25px;
+	list-style:none;}
+.project-dh span,.download-dh span{
+	width:150px;
+	float:left;
+}
+.project-dh a,.download-dh a{
+	width:30px;
+	margin-top:4px;
+	float:right;
+	display:block;
+	}
+
+.project-main{
+	width:222px;
+	height:128px;
+	}
+.project-main ul{
+	width:95px;
+	margin:0px;
+	padding:0px;
+	padding-left:5px;
+	}
+.project-main li{
+	width:90px;
+	height:16px;
+	list-style:none;
+	background-image:url(../images/0_96.png);
+	background-repeat:no-repeat;
+	background-position:1px;
+	padding-top:4px;
+	padding-left:10px;}
+.p-main-left{
+	width:103px;
+	height:118px;
+	float:left;
+	padding-top:10px;}
+.p-main-right{
+	width:109px;
+	height:128px;
+	float:right;
+	
+	padding-left:10px!important;/*ie6 消除padding使用*/
+	padding-left:5px;
+	}
+/*相关下载*/
+#download{
+	width:222px;
+	height:163px;
+	clear:both;
+	padding-top:15px;
+	}
+
+.download-main{
+	width:215px;
+	height:137px;
+	padding-left:7px;
+	padding-top:10px;
+	}
+.download-main ul{
+	width:210px;
+	margin:0px;
+	padding:0px;
+	}
+.download-main li{
+	width:200px;
+	height:20px;
+	list-style:none;
+	line-height:20px;
+	background-image:url(../images/0_96.png);
+	background-repeat:no-repeat;
+	background-position:3px;
+	padding-left:15px;
+	}
+/*友情链接*/
+#link{
+	width:222px;
+	height:190px;}
+.link-main{
+	width:211px;
+	height:164px;
+	padding-left:11px;}
+
+.link-main  select{display:block;font-family:Verdana,Arial; font-size: 12px; color: #393a39; margin-top:15px;}
+
+
+
+
+
+
+
+
+/*home right 结束*/
+
+/*手风琴元素*/
+span.accordion{
+	width:19px; 
+	height:78px;
+	padding-top:20px;
+	text-align:center;
+	background-image:url('../images/sfq-bg1.png'); 
+	float:left;
+	color:#1d4a80;
+}
+span.accordionhover{
+	width:19px; 
+	height:78px;
+	padding-top:20px;
+	text-align:center;
+	background-image:url('../images/sfq-bg.png'); 
+	float:left;
+	color:#1d4a80;
+}
+
+/*选择框*/
+select{
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	border-width:0px 21px 0px 5px;
+     -webkit-border-image:url("../images/selectDemo.png") 0 21 0 5; 
+	 -moz-border-image:url("../images/selectDemo.png") 0 21 0 5px;
+}

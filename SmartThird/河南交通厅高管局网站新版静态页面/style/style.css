@@ -1,0 +1,154 @@
+@charset "gb2312";
+/* CSS Document */
+body,html{
+	margin:0px; padding:0px; 
+	background-image:url(../images/bg_01.png); background-repeat:repeat-x;
+	font-size:12px;
+	margin-right:10px;
+	height:100%;
+	color:#393a39;}
+
+a:link{ color:#393a39;  text-decoration:none; }
+a:hover{ color:#345377; text-decoration:underline;}
+/*a:visited {text-decoration : none ;color : #393a39 ;}
+a:active {text-decoration : none ;color : #393a39 ;} */
+
+.clear {clear:both; *display:inline;/*IE only*/}
+
+
+#maincontainer{width:996px;height:1721px;margin:auto;  background-color:#FFFFFF;}
+#secondcontainer{
+	width:960px;
+	height:100%;
+	position:absolute;
+	margin-left:18px;
+}
+/*政务公开 容器*/
+#maincontainer-1{width:996px;height:1000px;margin:auto;  background-color:#FFFFFF;}
+#secondcontainer-1{ width:960px;height:1000px;margin-left:18px;}
+/*政务公开 容器*/
+#header{ height:211px; padding-top:15px;}
+#logo_flash{ height:155px; width:100%;}
+
+/*menu*/
+#menu{ width:600px; height:38px; float:left; }
+#nav {
+	padding:0;
+	margin:0;
+	list-style:none;
+	height:38px;
+	background:#fff url(../images/three_0.gif) repeat-x;
+	z-index:1000;
+	width:960px;
+	font-family:"微软雅黑";
+	float:left;
+
+}
+#nav li.top {display:block; float:left; height:38px;}
+#nav li a.top_link {
+	display:block;
+	float:left;
+	height:35px;
+	line-height:35px;
+	color:#FFF;
+	text-decoration:none;
+	font-size:13px;
+	font-weight:bold;
+	padding:0 0 0 12px;
+	cursor:pointer;
+	background: url(../images/three_0.gif);
+}
+#nav li a.top_link span {float:left; display:block; padding:0 24px 0 12px; height:35px; background: url(../images/three_0.gif) right top no-repeat;}
+#nav li a.top_link span.down {
+	float:left;
+	display:block;
+	padding:0px 36px 0 12px;
+	height:35px;
+	background: url(../images/three_0a.gif) no-repeat right top;
+}
+
+#nav li:hover a.top_link {color:#fff; background: url(../images/three_1.gif) no-repeat; height:38px;}
+#nav li:hover a.top_link span {background:url(../images/three_1.gif) no-repeat right top; height:38px;}
+#nav li:hover a.top_link span.down {background:url(../images/three_1a.gif) no-repeat right top;}
+
+/* Default list styling */
+#menu{float:left;}
+#nav li:hover {position:relative; z-index:750;}
+#nav li:hover ul.sub
+{
+	display:block;
+	left:-1px; 
+	top:38px;
+	background-color: #ebebeb;  
+	border-bottom:2px solid #97a8c2; 
+	border-left:2px solid #97a8c2;
+	border-right:2px solid #97a8c2;
+	width:110px; 
+	height:auto; 
+	word-wrap: break-word;
+}/* controls drop down box */
+#nav li:hover ul.sub li
+{display:block; height:auto; position:relative; float:left; width:107px; font-weight:normal; word-wrap: break-word; }
+#nav li:hover ul.sub li span{
+	padding-left:14px;
+}
+#nav li:hover ul.sub li a
+{ display:block; font-size:12px;  width:100px; line-height:18px;  color:#333; text-decoration:none;border-bottom:1px solid #fff; padding:3px 0px 3px 10px;}
+/* controls text in drop down and hover width*/
+#nav li ul.sub li a.fly 
+{background: url(../images/arrow.gif) 150px 6px no-repeat;}
+#nav li:hover ul.sub li a:hover 
+{background:url(../images/bg_sub_hover.png);color:#FFF; }
+#nav li:hover ul.sub li a.fly:hover
+{background:#F28C28 url(../images/arrow_over.gif) 107px 6px no-repeat; color:#fff;}
+
+#nav li:hover li:hover ul,
+#nav li:hover li:hover li:hover ul,
+#nav li:hover li:hover li:hover li:hover ul,
+#nav li:hover li:hover li:hover li:hover li:hover ul
+{left:125px; top:-4px; background: #FFF; padding:3px; border:1px solid #d4e4f9; white-space:wrap; width:140px; z-index:800; height:auto;}
+
+#nav ul, 
+#nav li:hover ul ul,
+#nav li:hover li:hover ul ul,
+#nav li:hover li:hover li:hover ul ul,
+#nav li:hover li:hover li:hover li:hover ul ul
+{position:absolute; left:-9999px; top:-9999px; width:0; height:0; margin:0; padding:0; list-style:none; }
+
+#nav li:hover li:hover a.fly,
+#nav li:hover li:hover li:hover a.fly,
+#nav li:hover li:hover li:hover li:hover a.fly,
+#nav li:hover li:hover li:hover li:hover li:hover a.fly
+{background:#F28C28 url(../images/arrow_over.gif) 130px 6px no-repeat; color:#fff; border-color:#fff;} 
+
+#nav li:hover li:hover li a.fly,
+#nav li:hover li:hover li:hover li a.fly,
+#nav li:hover li:hover li:hover li:hover li a.fly
+{background: url(../images/arrow.gif) 130px 6px no-repeat; color:#000; border-color:#bbd37e;} 
+
+/*全局搜索*/
+#global_search{ 
+	background-color:#FFF;
+	float:right;
+	width:250px;
+	height:38px;
+	line-height:38px;
+	background-image:url(../images/searchbg.png);
+	background-repeat:no-repeat;
+	background-position:left top;
+}
+#search_text{
+	height:36px;
+	width:auto;
+	margin-left:40px;
+	margin-top:13px;
+	line-height:36px;
+	float:left;
+	display:inline;/* 消除用float时在IE6浏览器下margin会加倍的问题*/
+}
+#search_text input{background:none;border:none;}
+#search_btn{float:left;	margin-top:9px; margin-left:2px; display:block;}
+
+/*网站主题*/
+#content{width:960px; height:329px;}
+/*焦点新闻*/
