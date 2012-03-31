@@ -50,9 +50,6 @@ body, html {
 }
 #s-nav li {
 	list-style:none;
-	background-image:url(../images/zhengwugongkai-ui0.png);
-	background-repeat:no-repeat;
-	background-position:42px 9px;
 }
 #s-nav li a {
 	width:100px;
@@ -65,16 +62,24 @@ body, html {
 	font-weight:bold;
 
 }
-#s-nav li a:link {
+#s-nav li a:link,#s-nav li a:visited{
 	font-family:"黑体";
+	background-image:url(../images/zhengwugongkai-ui1.png);
+	background-repeat:no-repeat;
+	background-position:42px 9px;
 	color:#3f6187;
 }
-#s-nav li a:hover {
+#s-nav li a:hover,#s-nav li a:active{
 	font-size:14px;
 	font-family:"黑体";
 	color:#3f6187;
+	background-image:url(../images/zhengwugongkai-ui0.png);
+	background-repeat:no-repeat;
+	background-position:41px 9px;
+
 }
 .active {
+
 	background:#FFF;
 	width:167px;
 	height:34px;
@@ -85,9 +90,6 @@ body, html {
 	font-family:"黑体";
 	color:#3f6187;
 	font-weight:bold;
-	background-image:url(../images/zhengwugongkai-ui1.png);
-	background-repeat:no-repeat;
-	background-position:41px 9px;
 }
 /*选项卡能容部分 end*/
 #mainContent {
@@ -114,27 +116,29 @@ body, html {
 	display:none;}*/
 #d2 {
 	width:708px;
-	height:1218px;
+	
 	background:#FFF;
 	margin-left:27px;
 
 }
 /*政务信息、工作动态、政策文件、领导讲话  开始*/
 #d8 {
+	width:728px;
+	margin-left:23px;
 	_margin-top:13px;
+	;
 }
-#d3{ width:708px;
+#d3,#d4,#d6,{ width:708px;
 margin-left:27px;}
 #d3 ul, #d4 ul {
 	width:708px;
-	height:135px\9;
+	height:145px\9;
 	margin:0px;
 	padding:0px;
 	border-bottom:1px #3f6187 dashed;
-	margin-top:15px;
 	clear:both;
-	line-height:20px;
-	border:1px #F00 solid;
+	margin-top:10px;
+	margin-bottom:10px;
 }
 #d6 ul, #d7 ul {
 	width:700px;
@@ -189,8 +193,10 @@ margin-left:27px;}
 
 /*法律法规  开始*/
 .d5-1, .d5-2, .d5-3 {
+	width:728px;
 	background:#f4f4f4;
 	margin-top:15px;
+	margin-left:22px;
 }
 .d5-dh {
 	width:718px;
@@ -273,23 +279,22 @@ margin-left:27px;}
 /*选项卡能容部分 开始*/
 .banner-01 {
 	width:728px;
-	height:128px;
+	height:118px;
 	margin-top:15px;
 	_margin-top:7px;
 }
 .lianzheng-main {
 	width:723px;
-	height:551px;
+	height:501px;
 	background:#f3f3f3;
-	margin-top:15px;
+	margin-top:10px;
 	_margin-top:7px;
 }
 .lianzheng01 {
 	width:348px;
-	height:173px;
+	height:163px;
 	float:left;
-	margin:6px;
-	_margin:3px
+	margin-left:10px;
 }
 .lianzheng01-dh {
 	width:348px;
@@ -346,7 +351,7 @@ margin-left:27px;}
 	margin:0px;
 }
 .lianzheng01-list ul li {
-	width:325px;
+	width:305px;
 	height:24px;
 	line-height:24px;
 	list-style:none;
@@ -361,7 +366,8 @@ margin-left:27px;}
 	width:728px;
 	clear:both;
 	height:300px;
-	padding-top:15px;/*	_padding-top:7px;
+	padding-top:15px;
+	margin-left:19px;/*	_padding-top:7px;
 */	
 	}
 .dajishi {
