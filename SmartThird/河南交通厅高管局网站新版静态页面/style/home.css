@@ -614,9 +614,14 @@ span.accordionhover{
 
 /*Ñ¡Ôñ¿ò*/
 select{
+	height:24px;
 	-webkit-border-radius:5px;
 	-moz-border-radius:5px;
 	border-width:0px 21px 0px 5px;
      -webkit-border-image:url("../images/selectDemo.png") 0 21 0 5; 
 	 -moz-border-image:url("../images/selectDemo.png") 0 21 0 5px;
+	 padding:0px;
+	 margin:0px;
+	 width:198px;
+	 cursor:pointer;
 }
