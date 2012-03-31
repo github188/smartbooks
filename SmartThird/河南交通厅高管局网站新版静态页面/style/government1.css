@@ -123,14 +123,18 @@ body, html {
 #d8 {
 	_margin-top:13px;
 }
+#d3{ width:708px;
+margin-left:27px;}
 #d3 ul, #d4 ul {
 	width:708px;
-	height:135px;
+	height:135px\9;
 	margin:0px;
 	padding:0px;
 	border-bottom:1px #3f6187 dashed;
-	padding-top:15px;
+	margin-top:15px;
 	clear:both;
+	line-height:20px;
+	border:1px #F00 solid;
 }
 #d6 ul, #d7 ul {
 	width:700px;
