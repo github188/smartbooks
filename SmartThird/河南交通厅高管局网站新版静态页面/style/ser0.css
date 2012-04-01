@@ -50,18 +50,16 @@
 	}
 
 .ui{
-	width:80px; height:30px;
+	width:80px; height:24px;
+	padding-top:6px;
 	float:left;
 	border-bottom:#375577 3px solid;}
 .ui ul{
 	margin:0px;
 	padding:0px;
 	list-style:none;
-	font-size:14px;
-	font-weight:bold;
-	color:#2e4967;}
-.ui li{
-	margin-top:6px;}
+	}
+
 .ui-text{
 	width:40px; height:22px;
 	float:right;
@@ -519,7 +517,7 @@
 /*季度排名 end*/
 /*行业报刊 start*/
 #baokan{
-	width:293px; height:420px;
+	width:293px; height:435px;
 	margin-bottom:10px;
 	}
 
@@ -665,16 +663,13 @@
 	width:298px; height:221px;
 	padding-top:5px;}
 .main-list-top-left{
-	width:98px; height:31px;
+	width:98px; height:28px;
+	padding-top:3px;
 	float:left;
 	background-image:url(../images/images/services_28.png);
 	background-repeat:no-repeat;}
 
-.main-list-top-left{
-	font-size:14px;
-	font-weight:bold;
-	color:#FFF;
-	}
+
 .main-list-top-right{
 	width:198px; height:23px;
 	float:right;
@@ -682,9 +677,9 @@
 
 	}
 .main-list-top-left-ui{
-	width:20px; height:26px;
+	width:50px; height:31px;
 	float:left;
-	padding-top:5px;}
+	}
 .main-list-top-left-text{
 	width:73px; height:23px;
 	float:right;
@@ -795,9 +790,7 @@
 	background-image:url(../images/images/services_25.png);
 	background-repeat:repeat-x;
 	padding-left:10px;
-	font-size:14px;
-	font-weight:bold;
-	color:#2a3f5a;}
+}
 .stars-dh ul{
 	width:283px;
 	height:26px;
@@ -814,10 +807,12 @@
 }
 .stars-dh li a{
 	width:50px;
+	display:block;
 	float:right;
 	}
 .stars-dh span{
 	width:200px;
+	display:block;
 	float:left;
 	}
 .stars-dh a:link{
@@ -968,8 +963,9 @@
 	background-image:url(../images/images/services_29.png);
 	background-repeat:repeat-x;}
 .culture-dh-left{
-	width:118px; height:31px;
+	width:118px; height:26px;
 	float:left;
+	padding-top:5px;
 	background-image:url(../images/images/shoufei-09.png);
 	background-repeat:no-repeat;}
 .culture-ui{
@@ -1032,7 +1028,6 @@
 	background-image:url(../images/x-bg03.png);
 	background-repeat:repeat-x;
 	border:1px #d4d4d4 solid;
-
 	margin-bottom:20px;
 	}
 .fc-bg-left{
@@ -1061,22 +1056,16 @@
 	width:925px;
 	height:31px;
 	list-style:none;
-	background-image:url(../images/images/services_12.jpg);
-	background-repeat:no-repeat;
 	padding-left:15px;
 	border-bottom:2px #666 solid;
-	background-position:1px;}
+	}
 .fc-dh span{
-	width:80px;
-	height:26px;
+	width:90px;
+	height:31px;
 	border-bottom:2px #2a3e57 solid;
 	float:left;
 	display:block;
-	font-family:"微软雅黑";
-	font-size:14px;
-	font-weight:bold;
-	color:#2a3e57;
-	padding-top:5px;}
+	}
 .fc-dh a{
 	width:40px;
 	height:21px;
@@ -1141,12 +1130,10 @@
 	width:275px;
 	}
 .traffic-dh span{
-	width:60px;
+	width:65px;
 	display:block;
 	float:left;
-	font-size:14px;
-	font-weight:bold;
-	color:#293f5b;}
+}
 .traffic-dh a{
 	width:40px;
 	display:block;
@@ -1468,19 +1455,13 @@
 	width:646px;
 	height:26px;
 	list-style:none;
-	background-image:url(../images/renwen/renwen_40.png);
-	background-repeat:no-repeat;
-	background-position:3px;}
+}
 .sh-dh-top span{
 	width:70px;
-	height:22px;
-	padding-top:4px;
+	height:26px;
 	display:block;
 	float:left;
-	font-size:14px;
-	font-weight:bold;
-	padding-left:13px;
-	color:#314b6b;}
+}
 .sh-dh-top a{
 	height:20px;
 	padding-top:6px;
@@ -1488,9 +1469,10 @@
 	float:right;
 	display:block;}
 .sh-dh-bott{
-	width:653px;
+	width:644px;
+	padding-left:9px;
 	height:2px;
-	padding-left:10px;}
+	}
 .sh-main{
 	width:653px;
 	height:327px;
@@ -1854,8 +1836,8 @@ margin-top:15px;
 	margin-bottom:20px;}
 .tuxing-dh{
 	width:672px;
-	height:20px;
-	padding-top:10px;
+	height:30px;
+	
 	border-bottom:3px #355275 solid;}
 .tuxing-dh ul{
 	width:150px;
@@ -1865,12 +1847,7 @@ margin-top:15px;
 	width:130px;
 	height:30px;
 	list-style:none;
-	background-image:url(../images/images/ui-01.gif);
-	background-repeat:no-repeat;
-	padding-left:20px;
-	font:14px;
 	color:#355275;
-	font-weight:bold;
 	}
 .tuxing-main{
 	width:672px;
