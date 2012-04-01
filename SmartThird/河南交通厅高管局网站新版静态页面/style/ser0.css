@@ -1316,11 +1316,11 @@
 #recommend{
 	width:277px;
 	height:384px;
+	float:left;
 	margin-top:13px;}
 .recommend-top{
-	width:277px; height:8px; overflow:hidden;
-	background-image:url(../images/renwen/renwen_03.png);
-	background-repeat:no-repeat;}
+	width:274px; height:8px; overflow:hidden;
+}
 	
 .recommend-bott{
 	width:274px; height:366px;}	
@@ -1380,17 +1380,34 @@
 	padding-left:20px;}	
 .recommend-bott-bott{
 	width:277px; height:10px;
-	background-image:url(../images/renwen/renwen_14.png);
-	background-repeat:no-repeat;}
+}
 /*最新推荐 end*/
+#ren-bott{
+	clear:both;
+	width:960px;}
 /*散文 start*/
 #prose{
-	width:277px;
-	height:310px;
+	width:316px;
+	height:326px;
+	float:left;
 	margin-top:8px;
 }
+.prose-top{
+	width:316px;
+	height:8px;}
+.prose-bott1{
+	width:316px;
+	height:316px;
+	}
+
+	
+	
+	
+	
 .recommend-bott1{
-	width:277px; height:306px;}	
+	width:277px; height:306px;
+}
+
 .recommend-text1{
 	width:264px; height:275px;
 	padding-left:10px;
@@ -1424,8 +1441,10 @@
 	margin-top:13px;}
 #shuhua{
 	width:668px; height:365px;
+	float:right;
 	padding-left:15px!important;
-	padding-left:8px}
+	padding-left:8px;
+	margin-top:12px;}
 .sh-top{
 	width:670px;
 	height:8px;
@@ -1487,30 +1506,32 @@
 	height:10px;}
 /*诗歌 start*/
 #poetry{
-	width:331px; height:326px;
+	width:311px; height:326px;
 	float:left;
 	display:inline;
-	margin-top:27px;
-	_margin-top:14px;
-	margin-left:10px;
-	_margin-left:5px;}
+}
+#poetry1{
+	width:311px; height:326px;
+	float:left;
+	display:inline;
+	margin-left:13px;
+}
 .poetry-top{
-	width:331px;
+	width:311px;
 	height:8px;
 	overflow:hidden;
-	background-image:url(../images/renwen/renwen_38.png);
-	background-repeat:no-repeat;
+
 	}
 .poetry-bott{
-	width:331px; height:308px;}
+	width:311px; height:308px;}
 .poetry-bott-top{
-	width:331px; height:297px;
+	width:311px; height:297px;
 	background-image:url(../images/renwen/renwen_08.png);
 	background-repeat:repeat-x;
 	background-position:top;
 	background-color:#f3f3f3;}
 .poetry-dh{
-	width:301px; height:25px;
+	width:286px; height:25px;
 	margin-left:15px;}
 .po-ui{ width:50px; height:25px;
 float:left;
@@ -1528,7 +1549,7 @@ border-bottom:2px #3d5e83 solid;}
 	color:#3d5e83;
 }
 .po-t{
-	width:251px; height:20px; 
+	width:236px; height:20px; 
 	float:right;
 	padding-top:5px;
 	border-bottom:2px #666 solid;}
@@ -1537,9 +1558,9 @@ border-bottom:2px #3d5e83 solid;}
 	display:block;
 	float:right;}
 .poetry-text{
-	width:305px; height:265px;
+	width:295px; height:265px;
 	clear:both;
-	padding-left:27px;}
+	padding-left:15px;}
 .poetry-text ul{
 	width:270px;
 	margin:0px;
@@ -1555,9 +1576,11 @@ border-bottom:2px #3d5e83 solid;}
 	padding-left:20px;}	
 
 .poetry-bott-bott{
-	width:331px; height:8px;
-	background-image:url(../images/renwen/renwen_39.png);
-	background-repeat:no-repeat;}
+	width:311px; height:8px;
+}
+#ren-right{
+	width:637px;
+	float:right;}
 
 /*诗歌 end*/
 

@@ -575,13 +575,13 @@
 /*友情链接*/
 #link{
 	width:222px;
-	height:190px;
-	}
+	height:190px;}
 .link-main{
 	width:211px;
 	height:164px;
-	;
-	}
+	padding-left:11px;}
+
+.link-main  select{display:block;font-family:Verdana,Arial; font-size: 12px; color: #393a39; margin-top:15px;}
 
 
 
@@ -792,4 +792,6 @@ ol{
 	margin: 0;
 	padding: 0;
 }
+#sel{
+	margin-top:20px;}
 /*单选下拉框样式*/
