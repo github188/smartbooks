@@ -60,13 +60,8 @@
 	font-size:14px;
 	font-weight:bold;
 	color:#2e4967;}
-.ui ul li{
-	background-image:url(../images/images/services_12.jpg);
-	background-repeat:no-repeat;
-	padding-left:15px;
-	margin-top:10px;
-	padding-top:3px;
-	}
+.ui li{
+	margin-top:6px;}
 .ui-text{
 	width:40px; height:22px;
 	float:right;
