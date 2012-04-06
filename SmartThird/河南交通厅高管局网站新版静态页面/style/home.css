@@ -467,7 +467,7 @@
 	margin-left:6px;
 	}
 
-#batton-02{
+.batton-02{
 	width:21opx;
 	height:59px;
 	margin-left:6px;
@@ -574,22 +574,22 @@
 	padding-left:15px;
 	}
 /*”—«È¡¥Ω”*/
-#link{
+.link{
 	width:222px;
 	height:199px;}
 .link-main{
 	width:211px;
 	height:150px;
-	padding-left:11px;}
+	padding-left:11px;
+}
 
-
-
-
-
-
-
-
-
+*{ margin:0; padding:0;}
+ul,li { list-style: none;}
+.dropdownbox{ float:left; margin-top:17px;  position:relative;}
+.select { float:left; width:196px;height:22px;line-height:22px;color:#393a39;background:url(../images/bg.png) no-repeat;font-size:12px;cursor:pointer;text-align:center; position:relative; z-index:1;}
+.option { float:left; width:194px; display:none; text-align:center; background:#FFF; border:solid 1px #5a789c; position:absolute; left:0px; top:22px; z-index:3;}
+.option li { float:left;  width:194px; height:22px; color:#393a39;  line-height:22px; font-size:12px; text-align:center; cursor:pointer;}
+.option li.hover {background:#316AC5; color:#393a39;}
 
 
 /*home right Ω· ¯*/
@@ -613,11 +613,3 @@ span.accordionhover{
 	float:left;
 	color:#1d4a80;
 }
-
-
-
-
-
-
-
-
