@@ -83,6 +83,7 @@
     <Content Include="App_Themes\Green\Images\button.png" />
     <Content Include="App_Themes\Green\Images\icotable.png" />
     <Content Include="App_Themes\Green\Images\textbox.png" />
+    <Content Include="App_Themes\Green\Images\th.png" />
     <Content Include="Ascx\AdminError.ascx" />
     <Content Include="Ascx\AdminHander.ascx" />
     <Content Include="Ascx\AdminMenu.ascx" />
