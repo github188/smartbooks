@@ -12,7 +12,7 @@ namespace SmartPoms.Ascx {
         }
 
         protected void btnQuit_Click(object sender, EventArgs e) {
-            SmartPoms.Code.SessionBox.RemoveUserSession();
+            Code.SessionBox.RemoveUserSession();
             this.Response.Redirect("~/AdminLogin.aspx");
         }
 

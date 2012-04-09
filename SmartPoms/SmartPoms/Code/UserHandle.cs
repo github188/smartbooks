@@ -20,7 +20,7 @@ namespace SmartPoms.Code {
 
             //判断模块是否启用
             if (bll.IsModule(ModuleTag)) {
-                if (!SessionBox.GetUserSession().IsLimit) {
+                if (!Code.SessionBox.GetUserSession().IsLimit) {
                     ArrayList Mlists = new ArrayList();//模块权限
                     ArrayList Ulists = new ArrayList();//用户的模块权限
 
@@ -31,14 +31,14 @@ namespace SmartPoms.Code {
                     for (int i = 0; i < MALds.Tables[0].Rows.Count; i++) {
                         Mlists.Add(MALds.Tables[0].Rows[i]["AuthorityTag"].ToString());
                     }
-                    SessionBox.RemoveModuleList();              //先清空Session中的列表
-                    SessionBox.CreateModuleList(Mlists);        //登记新的列表
+                    Code.SessionBox.RemoveModuleList();              //先清空Session中的列表
+                    Code.SessionBox.CreateModuleList(Mlists);        //登记新的列表
 
                     #region 读取用户的所有权限
 
                     //读取用户角色拥有的该模块权限
                     if (ConfigurationManager.AppSettings["RoleGrant"].ToString().ToLower() == "true") {
-                        ArrayList rid = SessionBox.GetUserSession().RoleID;
+                        ArrayList rid = Code.SessionBox.GetUserSession().RoleID;
                         for (int ri = 0; ri < rid.Count; ri++) {
                             DataSet RALds = Rolebll.GetRoleAuthorityList(int.Parse(rid[ri].ToString().Split(',')[0]), id);
                             for (int i = 0; i < RALds.Tables[0].Rows.Count; i++) {
@@ -51,7 +51,7 @@ namespace SmartPoms.Code {
                     //读取用户分组拥有的该模块权限
                     //if (ConfigurationManager.AppSettings["GroupGrant"].ToString().ToLower() == "true")
                     //{
-                    //    DataSet RALds = Rolebll.GetGroupAuthorityList(SessionBox.GetUserSession().GroupID, id);
+                    //    DataSet RALds = Rolebll.GetGroupAuthorityList(Code.SessionBox.GetUserSession().GroupID, id);
                     //    for (int i = 0; i < RALds.Tables[0].Rows.Count; i++)
                     //    {
                     //        if (!ModuleTagExists(Ulists, RALds.Tables[0].Rows[i]["AuthorityTag"].ToString()))
@@ -61,7 +61,7 @@ namespace SmartPoms.Code {
 
                     //读取用户拥有的该模块权限
                     if (ConfigurationManager.AppSettings["UserGrant"].ToString().ToLower() == "true") {
-                        DataSet RALds = Rolebll.GetUserAuthorityList(SessionBox.GetUserSession().LoginId, id);
+                        DataSet RALds = Rolebll.GetUserAuthorityList(Code.SessionBox.GetUserSession().LoginId, id);
                         for (int i = 0; i < RALds.Tables[0].Rows.Count; i++) {
                             if (!ModuleTagExists(Ulists, RALds.Tables[0].Rows[i]["AuthorityTag"].ToString())) {
                                 if (RALds.Tables[0].Rows[i]["Flag"].ToString().ToLower() == "true") {
@@ -77,8 +77,8 @@ namespace SmartPoms.Code {
 
                     #endregion
 
-                    SessionBox.RemoveAuthority();
-                    SessionBox.CreateAuthority(Ulists);
+                    Code.SessionBox.RemoveAuthority();
+                    Code.SessionBox.CreateAuthority(Ulists);
                 }
             } else {
                 throw new Exception("此功能不存在");
@@ -93,10 +93,10 @@ namespace SmartPoms.Code {
         /// <returns></returns>
         public static bool ValidationHandle(string ModuleTag) {
             bool ret = false;
-            if (!SessionBox.GetUserSession().IsLimit) //判断用户是否授权限限制
+            if (!Code.SessionBox.GetUserSession().IsLimit) //判断用户是否授权限限制
             {
-                ArrayList Mlist = SessionBox.GetModuleList();
-                ArrayList Ulist = SessionBox.GetAuthority();
+                ArrayList Mlist = Code.SessionBox.GetModuleList();
+                ArrayList Ulist = Code.SessionBox.GetAuthority();
 
                 for (int i = 0; i < Mlist.Count; i++) {
                     if (Mlist[i].ToString().ToLower() == ModuleTag.ToLower())//是否在模块存在
@@ -125,7 +125,7 @@ namespace SmartPoms.Code {
             bool ret = false;
             SQLServerDAL.BASE_ROLE bll = new SQLServerDAL.BASE_ROLE();
             Entity.BASE_ROLEAUTHORITYLIST model = new Entity.BASE_ROLEAUTHORITYLIST();
-            ArrayList rid = SessionBox.GetUserSession().RoleID;
+            ArrayList rid = Code.SessionBox.GetUserSession().RoleID;
             for (int ri = 0; ri < rid.Count; ri++) {
                 model.UserID = 0;
                 model.RoleID = int.Parse(rid[ri].ToString().Split(',')[0]);
@@ -140,7 +140,7 @@ namespace SmartPoms.Code {
 
             //读取用户拥有的该模块权限
             if (ConfigurationManager.AppSettings["UserGrant"].ToString().ToLower() == "true") {
-                DataSet RALds = bll.GetUserAuthorityList(SessionBox.GetUserSession().LoginId, ModuleID);
+                DataSet RALds = bll.GetUserAuthorityList(Code.SessionBox.GetUserSession().LoginId, ModuleID);
                 for (int i = 0; i < RALds.Tables[0].Rows.Count; i++) {
                     //判断模块的浏览权限
                     if (RALds.Tables[0].Rows[i]["AuthorityTag"].ToString().ToUpper() == "BROWSE") {

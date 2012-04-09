@@ -10,7 +10,7 @@ namespace SmartPoms {
     public partial class AdminMaster : System.Web.UI.MasterPage {
         protected void Page_Load(object sender, EventArgs e) {
             /*监测用户登录状态*/
-            if (!SmartPoms.Code.SessionBox.CheckUserSession()) {
+            if (!Code.SessionBox.CheckUserSession()) {
                 Response.Redirect("~/AdminLogin.aspx", true);
             } else {
                 if (!IsPostBack) {

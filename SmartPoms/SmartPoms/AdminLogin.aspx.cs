@@ -67,7 +67,7 @@ namespace SmartPoms {
 
         private bool CheckInput() {
             if (Request.Cookies["captche"] == null) {
-                JScript.Alert("您的浏览器设置已被禁用 Cookies，您必须设置浏览器允许使用 Cookies 选项后才能使用本系统");
+                Smart.Utility.JScript.Alert("您的浏览器设置已被禁用 Cookies，您必须设置浏览器允许使用 Cookies 选项后才能使用本系统");
                 return false;
             }
             if (string.IsNullOrEmpty(this.txtUserName.Text)) {
