@@ -11,12 +11,12 @@
     [Serializable]
     public enum ScheduleMode {
         /// <summary>
-        /// 时间段
+        /// 每间隔X时间段
         /// </summary>
         [XmlEnum("Time")]
         Time = 0,
         /// <summary>
-        /// 天
+        /// 每间隔X天
         /// </summary>
         [XmlEnum("Day")]
         Day = 1,

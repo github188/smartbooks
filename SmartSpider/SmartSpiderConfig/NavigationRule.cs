@@ -12,7 +12,7 @@
     /// </summary>
     [Serializable]
     [XmlRoot("NavigationRule")]
-    public class NavigationRule {
+    public class  NavigationRule {
 
         #region 私有变量定义
         private string _ContentEncoding;

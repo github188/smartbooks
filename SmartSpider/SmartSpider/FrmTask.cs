@@ -12,9 +12,6 @@
     using System.IO;
 
     public partial class FrmTask : Form {
-        /// <summary>
-        /// 任务单元
-        /// </summary>
         private TaskUnit _TaskUnit = new TaskUnit();
         private List<Replacement> _Replacement = new List<Replacement>();
         private List<HtmlMark> _htmlMakes = new List<HtmlMark>();
@@ -23,26 +20,19 @@
             InitializeComponent();
             this._TaskUnit = taskUnit;
 
+            //保存任务配置信息
+            taskUnit.SaveTaskConfiguration(@"c:\01.xml");
+
             this.SetUnitToUI();
         }
 
-        /// <summary>
-        /// 保存任务配置
-        /// </summary>
-        /// <param name="task">任务配置文件</param>
-        /// <param name="path">文件保存路径</param>
-        private void SaveTaskConfig(Task task, string path) {
-            XmlSerializer xs = new XmlSerializer(typeof(Task));
-            Stream writeStream = new FileStream(path, FileMode.Create, FileAccess.Write, FileShare.Write);
-            xs.Serialize(writeStream, task);
-            writeStream.Close();
-            writeStream.Dispose();
-        }
+        #region 初始化、获取、保存任务配置信息
 
         /// <summary>
         /// 绑定任务单元到UI界面,用于新建/修改任务
         /// </summary>
         private void SetUnitToUI() {
+            #region 常规选项设置
             this.txtName.Text = this._TaskUnit.TaskConfig.Name;                                                         //任务名称
             this.txtDescription.Text = this._TaskUnit.TaskConfig.Description;                                           //任务描述
             this.txtCookie.Text = this._TaskUnit.TaskConfig.Cookie;                                                     //Cookie
@@ -68,6 +58,37 @@
             this.chbUsePluginOfProcessSingleFile.Checked = this._TaskUnit.TaskConfig.UsePluginOfProcessSingleFile;      //使用插件处理单个文件
             this.cbxUrlEncoding.Text = this._TaskUnit.TaskConfig.UrlListManager.UrlEncoding;                            //网址编码
             this.nudHistoryCount.Value = this._TaskUnit.TaskConfig.UrlListManager.HistoryUrlCapacity;                   //历史记录网址最大容量
+            this.chbStartingUrlEncoded.Checked = this._TaskUnit.TaskConfig.UrlListManager.StartingUrlEncoded;           //起始地址已编码
+            this.lblUrlAddressCount.Text = "地址总数 " + this._TaskUnit.TaskConfig.UrlListManager.StartingUrlList.Count.ToString(); //地址总数
+            //未设置(使用插件对采集结果进行筛选,将在软件内置筛选之后进行)
+            #endregion
+
+            #region 定时采集（任务调度）
+            //调度模式
+            if (this._TaskUnit.TaskConfig.ScheduleMode == ScheduleMode.Time) {
+                //每隔时间段
+                rdoScheduleModeTime.Checked = true;
+                rdoScheduleModeDay.Checked = false;
+
+                this.nudScheduleDays.Value = this._TaskUnit.TaskConfig.ScheduleDays;    //天
+                this.nudScheduleHours.Value = this._TaskUnit.TaskConfig.ScheduleHours;  //时
+                this.nudScheduleMinutes.Value = this._TaskUnit.TaskConfig.ScheduleMinutes;  //分
+            } else {
+                //（每当模式）
+                rdoScheduleModeTime.Checked = false;
+                rdoScheduleModeDay.Checked = true;
+
+                //每当时间
+                //this._TaskUnit.TaskConfig.ScheduleFromDayOfWeek; //每当星期几开始
+                //this._TaskUnit.TaskConfig.ScheduleFromDay; //每当星期几开始
+                //this._TaskUnit.TaskConfig.ScheduleFromHour; //每当X小时调度
+
+                //预定时间
+                //this._TaskUnit.TaskConfig.ScheduleFromDayOfWeek; //预定星期几结束
+                //this._TaskUnit.TaskConfig.ScheduleToDay; //预定天
+                //this._TaskUnit.TaskConfig.ScheduleToHour; //预定小时
+            }
+            #endregion
 
             #region 数据库类型
             switch (this._TaskUnit.TaskConfig.DatabaseType) {
@@ -152,7 +173,7 @@
             t.PublicationTarget = this.cbxPublicationTarget.Text;
             t.ConnectionString = this.txtConnectionString.Text;
             t.DeleteResultAfterPublication = this.chbDeleteResultAfterPublication.Checked;
-            t.ElapsedTime = 0;
+            t.ElapsedTime = this._TaskUnit.TaskConfig.ElapsedTime;    /*运行时间等于原任务时间*/
             t.IgnoreDataColumnNotFound = this.chbIgnoreDataColumnNotFound.Checked;
             t.SaveRepeatedRows = this.chbSaveRepeatedRows.Checked;
             t.SaveErrorRows = this.chbSaveErrorRows.Checked;
@@ -163,6 +184,32 @@
             t.UsePluginOfDownloadSingleFile = this.chbUsePluginOfDownloadSingleFile.Checked;
             t.UsePluginOfProcessResultRow = this.chbUsePluginOfProcessResultRow.Checked;
             t.UsePluginOfGetWebProxy = this.chbUsePluginOfGetWebProxy.Checked;
+            #endregion
+
+            #region 获取定时采集调度设置
+
+            //每隔时间段
+            if (rdoScheduleModeTime.Checked) {
+                t.ScheduleMode = ScheduleMode.Time;
+                t.ScheduleDays = (int)this.nudScheduleDays.Value;
+                t.ScheduleHours = (int)this.nudScheduleHours.Value;
+                t.ScheduleMinutes = (int)this.nudScheduleMinutes.Value;
+            }
+
+            //（每当模式/*该功能留在V2.0实现*/）
+            if (rdoScheduleModeDay.Checked) {
+                t.ScheduleMode = ScheduleMode.Day;
+                //每当时间
+                t.ScheduleFromDayOfWeek = this._TaskUnit.TaskConfig.ScheduleFromDayOfWeek; //每当星期几开始
+                t.ScheduleFromDay = this._TaskUnit.TaskConfig.ScheduleFromDay; //每当星期几开始
+                t.ScheduleFromHour = this._TaskUnit.TaskConfig.ScheduleFromHour; //每当X小时调度
+
+                //预定时间
+                t.ScheduleFromDayOfWeek = this._TaskUnit.TaskConfig.ScheduleFromDayOfWeek; //预定星期几结束
+                t.ScheduleToDay = this._TaskUnit.TaskConfig.ScheduleToDay; //预定天
+                t.ScheduleToHour = this._TaskUnit.TaskConfig.ScheduleToHour; //预定小时
+            }
+
             #endregion
 
             #region 发布结果选项
@@ -225,6 +272,21 @@
             return t;
         }
 
+        /// <summary>
+        /// 保存任务配置
+        /// </summary>
+        /// <param name="task">任务配置文件</param>
+        /// <param name="path">文件保存路径</param>
+        private void SaveTaskConfig(Task task, string path) {
+            XmlSerializer xs = new XmlSerializer(typeof(Task));
+            Stream writeStream = new FileStream(path, FileMode.Create, FileAccess.Write, FileShare.Write);
+            xs.Serialize(writeStream, task);
+            writeStream.Close();
+            writeStream.Dispose();
+        }
+
+        #endregion
+
         #region 导航规则选项卡方法定义
         /// <summary>
         /// 重置导航规则选项卡
@@ -238,7 +300,7 @@
             this.chbHistoryUrlEnabled.Checked = false;
             this.chbHistoryUrlOptimization.Checked = false;
             this.txtProccessScripts.Clear();
-            this.chbPickNextPageUrl.Checked = false;
+            this.chbProccessScripts.Checked = false;
             this.nudNextPageLargest.Value = 1;
             this.txtPickingStartFlag.Clear();
             this.txtPickingEndFlag.Clear();
@@ -278,7 +340,7 @@
             n.PickingStartFlag = txtPickingStartFlag.Text;    //网址提取范围开始标志
             n.PickNextLayerUrls = false;    //是否提取下一层的网址
             n.PickNextPageUrl = false;  //是否提取下一页的网址
-            n.ProccessScripts = chbPickNextPageUrl.Checked;  //是否开启下一页网址提取标记            
+            n.ProccessScripts = chbProccessScripts.Checked;  //是否开启下一页网址提取标记            
             n.RestInterval = Convert.ToInt32(nudRestInterval.Value); //访问休息间隔(秒)
             n.SkipToIfPickingFailed = cbxSkipToIfPickingFailed.Text;   //下一层网址提取失败跳转到层？
             n.Terminal = rdoTerminal.Checked; //终端页面
@@ -387,10 +449,14 @@
         }
         #endregion
 
-        #region 提交操作
+        #region 全局提交操作
         //应用
         private void btnAccept_Click(object sender, EventArgs e) {
             Task t = GetUiConfig();
+
+            //保存任务配置信息
+            _TaskUnit.SaveTaskConfiguration(@"c:\02.xml", true, t);
+
             if (!this._TaskUnit.TaskConfig.Equals(t)) {
                 if (MessageBox.Show("配置文件已更改，是否保存配置文件？", "保存提示",
                     MessageBoxButtons.YesNo, MessageBoxIcon.Information) ==
@@ -422,48 +488,61 @@
         #endregion
 
         #region 起始地址选项卡
+        //插入
         private void btnInsert_Click(object sender, EventArgs e) {
 
         }
-
+        //捕获
         private void btnCapture_Click(object sender, EventArgs e) {
 
         }
-
+        //添加
         private void btnAdd_Click(object sender, EventArgs e) {
-
+            this.libStartingUrlList.Items.Add(this.txtStartingUrlTemplate.Text);
         }
-
+        //修改
         private void btnModify_Click(object sender, EventArgs e) {
-
+            int index = this.libStartingUrlList.SelectedIndex;
+            this.libStartingUrlList.Items[index] = this.txtStartingUrlTemplate.Text;
         }
-
+        //浏览
         private void btnBrowse_Click(object sender, EventArgs e) {
 
         }
-
+        //删除
         private void btnDelete_Click(object sender, EventArgs e) {
-
+            foreach (ListBox.SelectedObjectCollection cell in libStartingUrlList.SelectedItems) {
+                libStartingUrlList.Items.Remove(cell);
+            }
         }
-
+        //清除
         private void btnClear_Click(object sender, EventArgs e) {
-
+            this.libStartingUrlList.Items.Clear();
         }
-
+        //上移
         private void btnMoveUP_Click(object sender, EventArgs e) {
-
+            int index = libStartingUrlList.SelectedIndex;
+            libStartingUrlList.Items.Remove(libStartingUrlList.Items[index]);
+            libStartingUrlList.Items.Insert(index - 1, libStartingUrlList.Items[index]);
         }
-
+        //下移
         private void btnMoveDown_Click(object sender, EventArgs e) {
-
+            int index = libStartingUrlList.SelectedIndex;
+            libStartingUrlList.Items.Remove(libStartingUrlList.Items[index]);
+            libStartingUrlList.Items.Insert(index + 1, libStartingUrlList.Items[index]);
         }
-
+        //导入
         private void btnImport_Click(object sender, EventArgs e) {
 
         }
-
+        //导出
         private void btnExport_Click(object sender, EventArgs e) {
 
+        }
+        //双击起始地址列表选项卡
+        private void libStartingUrlList_MouseDoubleClick(object sender, MouseEventArgs e) {
+            int index = libStartingUrlList.SelectedIndex;
+            this.txtStartingUrlTemplate.Text = libStartingUrlList.Items[index].ToString();
         }
         #endregion
 
@@ -497,7 +576,7 @@
         }
         //提取下一页选项卡
         private void chbPickNextPageUrl_CheckedChanged(object sender, EventArgs e) {
-            if (this.chbPickNextPageUrl.Checked) {
+            if (this.chbProccessScripts.Checked) {
                 this.txtProccessScripts.Enabled = true;
                 this.btnProccessScripts.Enabled = true;
                 this.nudNextPageLargest.Enabled = true;
@@ -514,6 +593,56 @@
                 FrmReplace r = new FrmReplace();
                 r.Text = "源文件替换";
                 r.ShowDialog();
+            }
+        }
+        //双击导航规则
+        private void livNavigationRule_MouseDoubleClick(object sender, MouseEventArgs e) {
+            foreach (Utility.NavigationRuleItem item in livNavigationRule.SelectedItems) {
+                #region 初始化
+                cbxLayerName.Text = item.rule.Name; //层次名称
+                txtNextLayerUrlPattern.Text = item.rule.NextLayerUrlPattern;    //下一层网址模板
+                chbUseRegularExpression.Checked = item.rule.UseRegularExpression;   //使用正则表达式
+                chbHistoryUrlEnabled.Checked = item.rule.HistoryUrlEnabled;     //是否允许历史网址重复
+                chbHistoryUrlOptimization.Checked = item.rule.HistoryUrlOptimization;   //是否优化历史网址记录
+                chbPickNextPageUrl.Checked = item.rule.PickNextPageUrl; //是否提取下一页的网址
+                chbProccessScripts.Checked = item.rule.ProccessScripts; //提取下一页网址-是否提取（下一页标志）
+                txtProccessScripts.Text = item.rule.NextPageUrlPattern; //下一页网址模板
+                nudNextPageLargest.Value = item.rule.NextPageLargest;   //最大页数
+                txtPickingStartFlag.Text = item.rule.PickingStartFlag;  //网址提取范围-开始标志
+                txtPickingEndFlag.Text = item.rule.PickingEndFlag;  //网址提取范围-结束标志
+                txtExtractionStartFlag.Text = item.rule.ExtractionStartFlag;    //内容采集范围-开始标志
+                txtExtractionEndFlag.Text = item.rule.ExtractionEndFlag;    //内容采集范围-结束标志
+                txtIterationFlag.Text = item.rule.IterationFlag;    //循环标志
+                nudRestInterval.Value = item.rule.RestInterval;     //访问休息间隔（秒）
+                cbxContentEncoding.Text = item.rule.ContentEncoding;    //内容编码
+                txtNextLayerUrlReferer.Text = item.rule.NextLayerUrlReferer;    //下一层网址的Referer
+                chbNextLayerUrlEncoded.Checked = item.rule.NextLayerUrlEncoded; //下一层网址已编码
+                chbJsDecoding.Checked = item.rule.JsDecoding;   //对源文件进行JS解密
+                cbxSkipToIfPickingFailed.Text = item.rule.SkipToIfPickingFailed;    //如果下一层网址提取失败则跳转到层？
+                chbUsePluginOfVisit.Checked = item.rule.UsePluginOfVisit;   //使用插件请求本层URL
+                chbUsePluginOfPickNextLayerUrls.Checked = item.rule.UsePluginOfPickNextLayerUrls;   //使用插件提取下一层网址]
+                chbUsePluginOfPickNextPageUrl.Checked = item.rule.UsePluginOfPickNextPageUrl;   //使用插件提取下一页网址
+                #endregion
+
+                #region 是否终端页面
+                if (item.rule.Terminal) {
+                    rdoTerminal.Checked = true;
+                    rdoCenterPage.Checked = false;
+                } else {
+                    rdoTerminal.Checked = false;
+                    rdoCenterPage.Checked = true;
+                }
+                #endregion
+            }
+        }
+        //监测源文件替换选项卡
+        private void tabControl3_SelectedIndexChanged(object sender, EventArgs e) {
+            if (tabControl3.SelectedTab.Text.Equals("源文件替换")) {
+                foreach (Utility.NavigationRuleItem item in livNavigationRule.SelectedItems) {
+                    FrmReplace rp = new FrmReplace(item.rule.Replacements);
+                    rp.ShowDialog();
+                    item.rule.Replacements = rp.Replace;
+                }
             }
         }
         #endregion

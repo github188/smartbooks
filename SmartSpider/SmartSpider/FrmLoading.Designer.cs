@@ -44,7 +44,7 @@
             this.MaximumSize = new System.Drawing.Size(350, 220);
             this.MinimumSize = new System.Drawing.Size(350, 220);
             this.Name = "FrmLoading";
-            this.Opacity = 0.5D;
+            this.Opacity = 0.8D;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmLoading";

@@ -8,6 +8,7 @@
     using System.IO;
     using System.Threading;
     using System.Text.RegularExpressions;
+    using System.Xml.Serialization;
 
     public delegate void OnTaskStatusChanges(object sender, Action action);
     public delegate void LogEventHanlder(LogEventArgs e);
@@ -46,7 +47,7 @@
         private string _ConfigPath = "";
         private string _ConfigDir = "";
         private LogEventArgs eventArgs = new LogEventArgs("", 0, true);
-        private StringCollection NavigationUrls = new StringCollection();        
+        private StringCollection NavigationUrls = new StringCollection();
         public Timer time;
         #endregion
 
@@ -165,7 +166,7 @@
 
                 //判断是否为最终页面导航规则，如果为最终页面导航规则，则直接提取页面内容。
                 if (navigationRole.Terminal) {
-                    ThreadPool.QueueUserWorkItem(new WaitCallback(ExtractTheContents), startUrl);                    
+                    ThreadPool.QueueUserWorkItem(new WaitCallback(ExtractTheContents), startUrl);
                 } else {
                     StringCollection navUrls = this.LoadingNavigationRule(navigationRole, htmlText);
                     foreach (string url in navUrls) {
@@ -472,6 +473,53 @@
                 sqlConn.Dispose();
             }
             return publishResultCount;
+        }
+        #endregion
+
+        #region 保存配置文件
+        /// <summary>
+        /// 保存任务配置到Xml文件(默认路径)
+        /// </summary>
+        public void SaveTaskConfiguration() {
+            SaveTaskConfiguration(this.ConfigPath, true);
+        }
+
+        /// <summary>
+        /// 保存任务配置文件(xml)到 filePath 路径
+        /// </summary>
+        /// <param name="filePath">xml文件路径</param>
+        public void SaveTaskConfiguration(string filePath) {
+            SaveTaskConfiguration(filePath, true);
+        }
+
+        /// <summary>
+        /// 保存任务配置文件(xml)到 filePath 路径,允许指定一个选项 isCover 指示是否覆盖现有的文件
+        /// </summary>
+        /// <param name="filePath">xml保存路径</param>
+        /// <param name="isCover">是否覆盖现有的文件(如果存在)</param>
+        public void SaveTaskConfiguration(string filePath, bool isCover) {
+            SaveTaskConfiguration(filePath, isCover, TaskConfig);
+        }
+
+        /// <summary>
+        /// 保存任务配置文件(xml)到 filePath 路径,允许指定一个选项 isCover 指示是否覆盖现有的文件
+        /// </summary>
+        /// <param name="filePath">xml保存路径</param>
+        /// <param name="isCover">是否覆盖现有的文件(如果存在)</param>
+        /// <param name="task">task任务配置信息对象</param>
+        public void SaveTaskConfiguration(string filePath, bool isCover, Task task) {
+            //以覆盖方式保存配置文件
+            if (isCover) {
+                try {
+                    XmlSerializer xs = new XmlSerializer(typeof(Task));
+                    Stream writeStream = new FileStream(filePath, FileMode.Create, FileAccess.Write, FileShare.Write);
+                    xs.Serialize(writeStream, task);
+                    writeStream.Close();
+                    writeStream.Dispose();
+                } catch (Exception e) {
+                    throw e;
+                }
+            }
         }
         #endregion
 

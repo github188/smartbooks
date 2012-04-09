@@ -345,21 +345,23 @@
         //工具栏：编辑任务
         private void tolEditTask_Click(object sender, EventArgs e) {
             if (livTaskView.SelectedItems.Count != 0) {
-                TaskUnit unit = (TaskUnit)livTaskView.SelectedItems[0].Tag;
-                FrmTask taskEdit = new FrmTask(ref unit);
+                int selectIndex = (int)livTaskView.SelectedItems[0].Tag;    //当前任务索引
+                FrmTask taskEdit = new FrmTask(ref taskItem[selectIndex]);
                 taskEdit.ShowDialog();
             }
         }
         //工具栏：删除任务
         private void tolDeleteTask_Click(object sender, EventArgs e) {
-            //foreach (ListViewItem item in this.livTaskView.SelectedItems) {
-            //    TaskUnit unit = (TaskUnit)item.Tag;
-            //    unit.DeleteTask();                
-            //    unit.Dispose();
-            //    item.Remove();
-            //    this.livTaskView.Refresh();
-            //}
-            //this.trwTaskFolder.ReLoad();
+            if (MessageBox.Show("确定要删除选定的任务吗？", "消息提示", MessageBoxButtons.YesNo,
+                MessageBoxIcon.Information)
+                == System.Windows.Forms.DialogResult.Yes) {
+                foreach (ListViewItem item in this.livTaskView.SelectedItems) {
+                    int selectIndex = (int)item.Tag;    //当前任务索引
+                    taskItem[selectIndex].DeleteTask(); //删除任务
+                    taskItem[selectIndex] = null;       //任务对象置为Null
+                }
+                this.livTaskView.Refresh(); //刷新控件
+            }
         }
         //工具栏：所有任务完成后关机
         private void tolAllTaskSuccessShutdown_Click(object sender, EventArgs e) {

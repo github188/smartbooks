@@ -37,8 +37,8 @@
             this.nudScheduleHours = new System.Windows.Forms.NumericUpDown();
             this.label8 = new System.Windows.Forms.Label();
             this.nudScheduleDays = new System.Windows.Forms.NumericUpDown();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.rdoScheduleModeTime = new System.Windows.Forms.RadioButton();
+            this.rdoScheduleModeDay = new System.Windows.Forms.RadioButton();
             this.chbScheduleEnabled = new System.Windows.Forms.CheckBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.linkSetAutoLogin = new System.Windows.Forms.LinkLabel();
@@ -67,7 +67,7 @@
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.chbStartingUrlEncoded = new System.Windows.Forms.CheckBox();
-            this.label11 = new System.Windows.Forms.Label();
+            this.lblUrlAddressCount = new System.Windows.Forms.Label();
             this.btnExport = new System.Windows.Forms.Button();
             this.btnImport = new System.Windows.Forms.Button();
             this.btnMoveDown = new System.Windows.Forms.Button();
@@ -110,7 +110,7 @@
             this.btnProccessScripts = new System.Windows.Forms.Button();
             this.txtProccessScripts = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.chbPickNextPageUrl = new System.Windows.Forms.CheckBox();
+            this.chbProccessScripts = new System.Windows.Forms.CheckBox();
             this.tabPage10 = new System.Windows.Forms.TabPage();
             this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
@@ -143,7 +143,7 @@
             this.chbHistoryUrlOptimization = new System.Windows.Forms.CheckBox();
             this.chbHistoryUrlEnabled = new System.Windows.Forms.CheckBox();
             this.chbUseRegularExpression = new System.Windows.Forms.CheckBox();
-            this.checkBox7 = new System.Windows.Forms.CheckBox();
+            this.chbPickNextPageUrl = new System.Windows.Forms.CheckBox();
             this.button14 = new System.Windows.Forms.Button();
             this.txtNextLayerUrlPattern = new System.Windows.Forms.TextBox();
             this.rdoTerminal = new System.Windows.Forms.RadioButton();
@@ -371,8 +371,8 @@
             this.groupBox4.Controls.Add(this.nudScheduleHours);
             this.groupBox4.Controls.Add(this.label8);
             this.groupBox4.Controls.Add(this.nudScheduleDays);
-            this.groupBox4.Controls.Add(this.radioButton4);
-            this.groupBox4.Controls.Add(this.radioButton3);
+            this.groupBox4.Controls.Add(this.rdoScheduleModeTime);
+            this.groupBox4.Controls.Add(this.rdoScheduleModeDay);
             this.groupBox4.Controls.Add(this.chbScheduleEnabled);
             this.groupBox4.Location = new System.Drawing.Point(6, 324);
             this.groupBox4.Name = "groupBox4";
@@ -464,29 +464,29 @@
             this.nudScheduleDays.Size = new System.Drawing.Size(70, 21);
             this.nudScheduleDays.TabIndex = 6;
             // 
-            // radioButton4
+            // rdoScheduleModeTime
             // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.radioButton4.Location = new System.Drawing.Point(270, 20);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(46, 16);
-            this.radioButton4.TabIndex = 2;
-            this.radioButton4.Text = "每隔";
-            this.radioButton4.UseVisualStyleBackColor = true;
+            this.rdoScheduleModeTime.AutoSize = true;
+            this.rdoScheduleModeTime.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.rdoScheduleModeTime.Location = new System.Drawing.Point(270, 20);
+            this.rdoScheduleModeTime.Name = "rdoScheduleModeTime";
+            this.rdoScheduleModeTime.Size = new System.Drawing.Size(46, 16);
+            this.rdoScheduleModeTime.TabIndex = 2;
+            this.rdoScheduleModeTime.Text = "每隔";
+            this.rdoScheduleModeTime.UseVisualStyleBackColor = true;
             // 
-            // radioButton3
+            // rdoScheduleModeDay
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Checked = true;
-            this.radioButton3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.radioButton3.Location = new System.Drawing.Point(209, 20);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(46, 16);
-            this.radioButton3.TabIndex = 1;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "每当";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.rdoScheduleModeDay.AutoSize = true;
+            this.rdoScheduleModeDay.Checked = true;
+            this.rdoScheduleModeDay.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.rdoScheduleModeDay.Location = new System.Drawing.Point(209, 20);
+            this.rdoScheduleModeDay.Name = "rdoScheduleModeDay";
+            this.rdoScheduleModeDay.Size = new System.Drawing.Size(46, 16);
+            this.rdoScheduleModeDay.TabIndex = 1;
+            this.rdoScheduleModeDay.TabStop = true;
+            this.rdoScheduleModeDay.Text = "每当";
+            this.rdoScheduleModeDay.UseVisualStyleBackColor = true;
             // 
             // chbScheduleEnabled
             // 
@@ -785,7 +785,7 @@
             // tabPage7
             // 
             this.tabPage7.Controls.Add(this.chbStartingUrlEncoded);
-            this.tabPage7.Controls.Add(this.label11);
+            this.tabPage7.Controls.Add(this.lblUrlAddressCount);
             this.tabPage7.Controls.Add(this.btnExport);
             this.tabPage7.Controls.Add(this.btnImport);
             this.tabPage7.Controls.Add(this.btnMoveDown);
@@ -817,17 +817,18 @@
             this.chbStartingUrlEncoded.Text = "起始地址已编码";
             this.chbStartingUrlEncoded.UseVisualStyleBackColor = true;
             // 
-            // label11
+            // lblUrlAddressCount
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(6, 351);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(65, 12);
-            this.label11.TabIndex = 13;
-            this.label11.Text = "地址总数 0";
+            this.lblUrlAddressCount.AutoSize = true;
+            this.lblUrlAddressCount.Location = new System.Drawing.Point(6, 351);
+            this.lblUrlAddressCount.Name = "lblUrlAddressCount";
+            this.lblUrlAddressCount.Size = new System.Drawing.Size(65, 12);
+            this.lblUrlAddressCount.TabIndex = 13;
+            this.lblUrlAddressCount.Text = "地址总数 0";
             // 
             // btnExport
             // 
+            this.btnExport.Enabled = false;
             this.btnExport.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnExport.Location = new System.Drawing.Point(622, 336);
             this.btnExport.Name = "btnExport";
@@ -839,6 +840,7 @@
             // 
             // btnImport
             // 
+            this.btnImport.Enabled = false;
             this.btnImport.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnImport.Location = new System.Drawing.Point(622, 303);
             this.btnImport.Name = "btnImport";
@@ -894,6 +896,7 @@
             // 
             // btnBrowse
             // 
+            this.btnBrowse.Enabled = false;
             this.btnBrowse.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnBrowse.Location = new System.Drawing.Point(622, 138);
             this.btnBrowse.Name = "btnBrowse";
@@ -927,6 +930,7 @@
             // 
             // btnCapture
             // 
+            this.btnCapture.Enabled = false;
             this.btnCapture.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCapture.Location = new System.Drawing.Point(622, 39);
             this.btnCapture.Name = "btnCapture";
@@ -938,6 +942,7 @@
             // 
             // btnInsert
             // 
+            this.btnInsert.Enabled = false;
             this.btnInsert.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnInsert.Location = new System.Drawing.Point(622, 6);
             this.btnInsert.Name = "btnInsert";
@@ -958,6 +963,7 @@
             this.libStartingUrlList.Name = "libStartingUrlList";
             this.libStartingUrlList.Size = new System.Drawing.Size(610, 218);
             this.libStartingUrlList.TabIndex = 1;
+            this.libStartingUrlList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.libStartingUrlList_MouseDoubleClick);
             // 
             // groupBox6
             // 
@@ -1222,6 +1228,7 @@
             this.tabControl3.SelectedIndex = 0;
             this.tabControl3.Size = new System.Drawing.Size(722, 144);
             this.tabControl3.TabIndex = 7;
+            this.tabControl3.SelectedIndexChanged += new System.EventHandler(this.tabControl3_SelectedIndexChanged);
             this.tabControl3.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tabControl3_Selecting);
             // 
             // tabPage9
@@ -1232,7 +1239,7 @@
             this.tabPage9.Controls.Add(this.btnProccessScripts);
             this.tabPage9.Controls.Add(this.txtProccessScripts);
             this.tabPage9.Controls.Add(this.label18);
-            this.tabPage9.Controls.Add(this.chbPickNextPageUrl);
+            this.tabPage9.Controls.Add(this.chbProccessScripts);
             this.tabPage9.Location = new System.Drawing.Point(4, 24);
             this.tabPage9.Name = "tabPage9";
             this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
@@ -1245,19 +1252,9 @@
             // 
             this.nudNextPageLargest.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.nudNextPageLargest.Location = new System.Drawing.Point(571, 41);
-            this.nudNextPageLargest.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             this.nudNextPageLargest.Name = "nudNextPageLargest";
             this.nudNextPageLargest.Size = new System.Drawing.Size(51, 21);
             this.nudNextPageLargest.TabIndex = 14;
-            this.nudNextPageLargest.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             // 
             // label19
             // 
@@ -1296,17 +1293,17 @@
             this.label18.TabIndex = 1;
             this.label18.Text = "“下一页”标记";
             // 
-            // chbPickNextPageUrl
+            // chbProccessScripts
             // 
-            this.chbPickNextPageUrl.AutoSize = true;
-            this.chbPickNextPageUrl.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.chbPickNextPageUrl.Location = new System.Drawing.Point(6, 46);
-            this.chbPickNextPageUrl.Name = "chbPickNextPageUrl";
-            this.chbPickNextPageUrl.Size = new System.Drawing.Size(70, 16);
-            this.chbPickNextPageUrl.TabIndex = 0;
-            this.chbPickNextPageUrl.Text = "需要提取";
-            this.chbPickNextPageUrl.UseVisualStyleBackColor = true;
-            this.chbPickNextPageUrl.CheckedChanged += new System.EventHandler(this.chbPickNextPageUrl_CheckedChanged);
+            this.chbProccessScripts.AutoSize = true;
+            this.chbProccessScripts.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.chbProccessScripts.Location = new System.Drawing.Point(6, 46);
+            this.chbProccessScripts.Name = "chbProccessScripts";
+            this.chbProccessScripts.Size = new System.Drawing.Size(70, 16);
+            this.chbProccessScripts.TabIndex = 0;
+            this.chbProccessScripts.Text = "需要提取";
+            this.chbProccessScripts.UseVisualStyleBackColor = true;
+            this.chbProccessScripts.CheckedChanged += new System.EventHandler(this.chbPickNextPageUrl_CheckedChanged);
             // 
             // tabPage10
             // 
@@ -1582,19 +1579,9 @@
             // 
             this.nudRestInterval.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.nudRestInterval.Location = new System.Drawing.Point(125, 12);
-            this.nudRestInterval.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             this.nudRestInterval.Name = "nudRestInterval";
             this.nudRestInterval.Size = new System.Drawing.Size(51, 21);
             this.nudRestInterval.TabIndex = 15;
-            this.nudRestInterval.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             // 
             // label25
             // 
@@ -1620,7 +1607,7 @@
             this.groupBox11.Controls.Add(this.chbHistoryUrlOptimization);
             this.groupBox11.Controls.Add(this.chbHistoryUrlEnabled);
             this.groupBox11.Controls.Add(this.chbUseRegularExpression);
-            this.groupBox11.Controls.Add(this.checkBox7);
+            this.groupBox11.Controls.Add(this.chbPickNextPageUrl);
             this.groupBox11.Controls.Add(this.button14);
             this.groupBox11.Controls.Add(this.txtNextLayerUrlPattern);
             this.groupBox11.Location = new System.Drawing.Point(6, 179);
@@ -1663,16 +1650,16 @@
             this.chbUseRegularExpression.Text = "使用正则表达式";
             this.chbUseRegularExpression.UseVisualStyleBackColor = true;
             // 
-            // checkBox7
+            // chbPickNextPageUrl
             // 
-            this.checkBox7.AutoSize = true;
-            this.checkBox7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.checkBox7.Location = new System.Drawing.Point(13, 47);
-            this.checkBox7.Name = "checkBox7";
-            this.checkBox7.Size = new System.Drawing.Size(70, 16);
-            this.checkBox7.TabIndex = 4;
-            this.checkBox7.Text = "需要提取";
-            this.checkBox7.UseVisualStyleBackColor = true;
+            this.chbPickNextPageUrl.AutoSize = true;
+            this.chbPickNextPageUrl.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.chbPickNextPageUrl.Location = new System.Drawing.Point(13, 47);
+            this.chbPickNextPageUrl.Name = "chbPickNextPageUrl";
+            this.chbPickNextPageUrl.Size = new System.Drawing.Size(70, 16);
+            this.chbPickNextPageUrl.TabIndex = 4;
+            this.chbPickNextPageUrl.Text = "需要提取";
+            this.chbPickNextPageUrl.UseVisualStyleBackColor = true;
             // 
             // button14
             // 
@@ -1763,6 +1750,7 @@
             this.livNavigationRule.TabIndex = 0;
             this.livNavigationRule.UseCompatibleStateImageBehavior = false;
             this.livNavigationRule.View = System.Windows.Forms.View.Details;
+            this.livNavigationRule.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.livNavigationRule_MouseDoubleClick);
             // 
             // LayerNumber
             // 
@@ -2957,6 +2945,7 @@
             // checkBox47
             // 
             this.checkBox47.AutoSize = true;
+            this.checkBox47.Enabled = false;
             this.checkBox47.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.checkBox47.Location = new System.Drawing.Point(16, 42);
             this.checkBox47.Name = "checkBox47";
@@ -3263,8 +3252,8 @@
         private System.Windows.Forms.LinkLabel linkManualLogin;
         private System.Windows.Forms.LinkLabel linkSetAutoLogin;
         private System.Windows.Forms.CheckBox chbScheduleEnabled;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton4;
+        private System.Windows.Forms.RadioButton rdoScheduleModeDay;
+        private System.Windows.Forms.RadioButton rdoScheduleModeTime;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.NumericUpDown nudScheduleDays;
         private System.Windows.Forms.Label label9;
@@ -3292,7 +3281,7 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnCapture;
         private System.Windows.Forms.Button btnInsert;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lblUrlAddressCount;
         private System.Windows.Forms.CheckBox chbStartingUrlEncoded;
         private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.Label label13;
@@ -3318,7 +3307,7 @@
         private System.Windows.Forms.GroupBox groupBox11;
         private System.Windows.Forms.TextBox txtNextLayerUrlPattern;
         private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.CheckBox checkBox7;
+        private System.Windows.Forms.CheckBox chbPickNextPageUrl;
         private System.Windows.Forms.CheckBox chbUseRegularExpression;
         private System.Windows.Forms.CheckBox chbHistoryUrlEnabled;
         private System.Windows.Forms.CheckBox chbHistoryUrlOptimization;
@@ -3334,7 +3323,7 @@
         private System.Windows.Forms.Button btnNavDelete;
         private System.Windows.Forms.Button btnNavMoveUp;
         private System.Windows.Forms.Button btnNavMoveDown;
-        private System.Windows.Forms.CheckBox chbPickNextPageUrl;
+        private System.Windows.Forms.CheckBox chbProccessScripts;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox txtProccessScripts;
         private System.Windows.Forms.Button btnProccessScripts;
