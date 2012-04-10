@@ -14,6 +14,11 @@
         /// 最终页面
         /// </summary>
         [XmlEnum("Terminator")]
-        Terminator = 0
+        Terminator = 0,
+        /// <summary>
+        /// 中间页面
+        /// </summary>
+        [XmlEnum("Center")]
+        Center = 1
     }
 }

@@ -30,14 +30,6 @@
             /*加载DBTaskList*/
             //LoadDBTaskItem();
 
-            //测试选项卡
-            //Utility.TaskResultLog log = new Utility.TaskResultLog("测试选项卡", new DataTable());
-            //this.tabContent.TabPages.Add(log);
-            //for (int i = 0; i < 100; i++) {
-            //    log.AppendLog("追加的测试日志", 4);
-            //}
-            //log.AppendRow(new DataGridViewRow());
-
             this.Text = "网络信息智能采集系统 V1.0.0.0 内部测试版 - 郑州豫图信息技术有限公司";
             this.Icon = new System.Drawing.Icon("mainProgram.ico");
         }
@@ -47,7 +39,10 @@
         #region 文件菜单
         //文件菜单：发布结果
         private void FileItemPublishResults_Click(object sender, EventArgs e) {
-
+            if (livTaskView.SelectedItems.Count != 0) {
+                int index = (int)livTaskView.SelectedItems[0].Tag;    //当前任务索引
+                taskItem[index].PublishResultToAccess();
+            }
         }
         //文件菜单：结果另存为Excel
         private void FileItemSaveAsExcel_Click(object sender, EventArgs e) {
@@ -147,7 +142,8 @@
         }
         //文件夹菜单：刷新
         private void FolderItemRefresh_Click(object sender, EventArgs e) {
-
+            LoadLocationTaskItem(); //刷新任务
+            trwTaskFolder.ReLoad(); //刷新树节点
         }
         //文件夹菜单：导出
         private void FolderItemExport_Click(object sender, EventArgs e) {
@@ -342,6 +338,9 @@
             unit.ConfigDir = (string)trwTaskFolder.SelectedNode.Tag;
             FrmTask newTask = new FrmTask(ref unit);
             newTask.ShowDialog();
+
+            LoadLocationTaskItem(); //刷新任务
+            trwTaskFolder.ReLoad(); //刷新树节点
         }
         //工具栏：编辑任务
         private void tolEditTask_Click(object sender, EventArgs e) {
@@ -360,8 +359,9 @@
                     int selectIndex = (int)item.Tag;    //当前任务索引
                     taskItem[selectIndex].DeleteTask(); //删除任务
                     taskItem[selectIndex] = null;       //任务对象置为Null
+                    this.livTaskView.Items.Remove(item);
+                    break;
                 }
-                this.livTaskView.Refresh(); //刷新控件
             }
         }
         //工具栏：所有任务完成后关机
@@ -448,7 +448,7 @@
             if (livTaskView.SelectedItems.Count != 0) {
                 int taskIndex = (int)livTaskView.SelectedItems[0].Tag;
                 FrmTask edit = new FrmTask(ref taskItem[taskIndex]);
-                if (taskItem[taskIndex].Action != Action.Stop) {
+                if (taskItem[taskIndex].Action == Action.Start) {
                     if (MessageBox.Show("任务处于非停止状态，单击YES按钮暂停任务已进行编辑，单击No按钮取消编辑操作!", "提示",
                         MessageBoxButtons.YesNo, MessageBoxIcon.Question) ==
                         System.Windows.Forms.DialogResult.Yes) {

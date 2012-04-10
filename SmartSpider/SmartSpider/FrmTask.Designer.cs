@@ -209,8 +209,8 @@
             this.tabPage17 = new System.Windows.Forms.TabPage();
             this.rdoReserveAllHtmlMarks = new System.Windows.Forms.RadioButton();
             this.rdoSaveSingleHtmlMake = new System.Windows.Forms.RadioButton();
-            this.button32 = new System.Windows.Forms.Button();
-            this.button31 = new System.Windows.Forms.Button();
+            this.btnNoSelectAllHtmlMark = new System.Windows.Forms.Button();
+            this.btnSelectAllHtmlMark = new System.Windows.Forms.Button();
             this.chkHtmlMakeList = new System.Windows.Forms.CheckedListBox();
             this.tabPage18 = new System.Windows.Forms.TabPage();
             this.txtFixeValue = new System.Windows.Forms.TextBox();
@@ -2231,11 +2231,6 @@
             // 
             this.nudFilesPerSubDirectory.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.nudFilesPerSubDirectory.Location = new System.Drawing.Point(272, 65);
-            this.nudFilesPerSubDirectory.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             this.nudFilesPerSubDirectory.Name = "nudFilesPerSubDirectory";
             this.nudFilesPerSubDirectory.Size = new System.Drawing.Size(51, 21);
             this.nudFilesPerSubDirectory.TabIndex = 34;
@@ -2354,8 +2349,8 @@
             this.tabPage17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tabPage17.Controls.Add(this.rdoReserveAllHtmlMarks);
             this.tabPage17.Controls.Add(this.rdoSaveSingleHtmlMake);
-            this.tabPage17.Controls.Add(this.button32);
-            this.tabPage17.Controls.Add(this.button31);
+            this.tabPage17.Controls.Add(this.btnNoSelectAllHtmlMark);
+            this.tabPage17.Controls.Add(this.btnSelectAllHtmlMark);
             this.tabPage17.Controls.Add(this.chkHtmlMakeList);
             this.tabPage17.Location = new System.Drawing.Point(4, 24);
             this.tabPage17.Name = "tabPage17";
@@ -2367,54 +2362,58 @@
             // rdoReserveAllHtmlMarks
             // 
             this.rdoReserveAllHtmlMarks.AutoSize = true;
+            this.rdoReserveAllHtmlMarks.Checked = true;
             this.rdoReserveAllHtmlMarks.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.rdoReserveAllHtmlMarks.Location = new System.Drawing.Point(175, 96);
             this.rdoReserveAllHtmlMarks.Name = "rdoReserveAllHtmlMarks";
             this.rdoReserveAllHtmlMarks.Size = new System.Drawing.Size(118, 16);
             this.rdoReserveAllHtmlMarks.TabIndex = 28;
+            this.rdoReserveAllHtmlMarks.TabStop = true;
             this.rdoReserveAllHtmlMarks.Text = "保留所有HTML标记";
             this.rdoReserveAllHtmlMarks.UseVisualStyleBackColor = true;
             // 
             // rdoSaveSingleHtmlMake
             // 
             this.rdoSaveSingleHtmlMake.AutoSize = true;
-            this.rdoSaveSingleHtmlMake.Checked = true;
             this.rdoSaveSingleHtmlMake.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.rdoSaveSingleHtmlMake.Location = new System.Drawing.Point(37, 96);
             this.rdoSaveSingleHtmlMake.Name = "rdoSaveSingleHtmlMake";
             this.rdoSaveSingleHtmlMake.Size = new System.Drawing.Size(118, 16);
             this.rdoSaveSingleHtmlMake.TabIndex = 27;
-            this.rdoSaveSingleHtmlMake.TabStop = true;
             this.rdoSaveSingleHtmlMake.Text = "保留部分HTML标记";
             this.rdoSaveSingleHtmlMake.UseVisualStyleBackColor = true;
             // 
-            // button32
+            // btnNoSelectAllHtmlMark
             // 
-            this.button32.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button32.Location = new System.Drawing.Point(605, 53);
-            this.button32.Name = "button32";
-            this.button32.Size = new System.Drawing.Size(75, 23);
-            this.button32.TabIndex = 26;
-            this.button32.Text = "全不选(&N)";
-            this.button32.UseVisualStyleBackColor = true;
+            this.btnNoSelectAllHtmlMark.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnNoSelectAllHtmlMark.Location = new System.Drawing.Point(605, 53);
+            this.btnNoSelectAllHtmlMark.Name = "btnNoSelectAllHtmlMark";
+            this.btnNoSelectAllHtmlMark.Size = new System.Drawing.Size(75, 23);
+            this.btnNoSelectAllHtmlMark.TabIndex = 26;
+            this.btnNoSelectAllHtmlMark.Text = "全不选(&N)";
+            this.btnNoSelectAllHtmlMark.UseVisualStyleBackColor = true;
+            this.btnNoSelectAllHtmlMark.Click += new System.EventHandler(this.btnNoSelectAllHtmlMark_Click);
             // 
-            // button31
+            // btnSelectAllHtmlMark
             // 
-            this.button31.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button31.Location = new System.Drawing.Point(605, 24);
-            this.button31.Name = "button31";
-            this.button31.Size = new System.Drawing.Size(75, 23);
-            this.button31.TabIndex = 25;
-            this.button31.Text = "全选(&A)";
-            this.button31.UseVisualStyleBackColor = true;
+            this.btnSelectAllHtmlMark.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSelectAllHtmlMark.Location = new System.Drawing.Point(605, 24);
+            this.btnSelectAllHtmlMark.Name = "btnSelectAllHtmlMark";
+            this.btnSelectAllHtmlMark.Size = new System.Drawing.Size(75, 23);
+            this.btnSelectAllHtmlMark.TabIndex = 25;
+            this.btnSelectAllHtmlMark.Text = "全选(&A)";
+            this.btnSelectAllHtmlMark.UseVisualStyleBackColor = true;
+            this.btnSelectAllHtmlMark.Click += new System.EventHandler(this.btnSelectAllHtmlMark_Click);
             // 
             // chkHtmlMakeList
             // 
             this.chkHtmlMakeList.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.chkHtmlMakeList.FormattingEnabled = true;
             this.chkHtmlMakeList.Location = new System.Drawing.Point(8, 10);
+            this.chkHtmlMakeList.MultiColumn = true;
             this.chkHtmlMakeList.Name = "chkHtmlMakeList";
             this.chkHtmlMakeList.Size = new System.Drawing.Size(582, 82);
+            this.chkHtmlMakeList.Sorted = true;
             this.chkHtmlMakeList.TabIndex = 0;
             // 
             // tabPage18
@@ -2633,6 +2632,8 @@
             this.LivExtractionRule.TabIndex = 0;
             this.LivExtractionRule.UseCompatibleStateImageBehavior = false;
             this.LivExtractionRule.View = System.Windows.Forms.View.Details;
+            this.LivExtractionRule.SelectedIndexChanged += new System.EventHandler(this.LivExtractionRule_SelectedIndexChanged);
+            this.LivExtractionRule.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.LivExtractionRule_MouseDoubleClick);
             // 
             // columnHeader1
             // 
@@ -3436,8 +3437,8 @@
         private System.Windows.Forms.ComboBox cbxClassDirectory;
         private System.Windows.Forms.CheckBox chbSkipIfFileExisted;
         private System.Windows.Forms.CheckedListBox chkHtmlMakeList;
-        private System.Windows.Forms.Button button32;
-        private System.Windows.Forms.Button button31;
+        private System.Windows.Forms.Button btnNoSelectAllHtmlMark;
+        private System.Windows.Forms.Button btnSelectAllHtmlMark;
         private System.Windows.Forms.RadioButton rdoSaveSingleHtmlMake;
         private System.Windows.Forms.RadioButton rdoReserveAllHtmlMarks;
         private System.Windows.Forms.CheckBox chbUrlAsResult;

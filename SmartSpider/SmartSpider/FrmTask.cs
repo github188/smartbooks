@@ -20,10 +20,12 @@
 
         public FrmTask(ref TaskUnit taskUnit) {
             InitializeComponent();
+            SerializerHtmlMaker();
+
             this._TaskUnit = taskUnit;
 
             //保存任务配置信息
-            taskUnit.SaveTaskConfiguration(@"c:\01.xml");
+            //taskUnit.SaveTaskConfiguration(@"c:\01.xml");
 
             this.SetUnitToUI();
         }
@@ -287,6 +289,25 @@
             writeStream.Dispose();
         }
 
+        /// <summary>
+        /// 反序列化Html标记
+        /// </summary>
+        private void SerializerHtmlMaker() {
+            List<HtmlMark> htmlMark = new List<HtmlMark>();
+            string path = AppDomain.CurrentDomain.BaseDirectory + "HtmlMark.xml";
+
+            //反序列化
+            XmlSerializer xd = new XmlSerializer(typeof(List<HtmlMark>));
+            Stream readStream = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.Read);
+            htmlMark = (List<HtmlMark>)xd.Deserialize(readStream);
+            readStream.Close();
+            readStream.Dispose();
+
+            foreach (HtmlMark h in htmlMark) {
+                chkHtmlMakeList.Items.Add(h.DisplayName);
+            }
+        }
+
         #endregion
 
         #region 导航规则选项卡方法定义
@@ -454,7 +475,7 @@
 
             //保留的Html标志
             //e.ReservedHtmlMarks = this._htmlMakes; 
-            
+
             return e;
         }
         #endregion
@@ -462,8 +483,9 @@
         #region 全局提交操作
         //应用
         private void btnAccept_Click(object sender, EventArgs e) {
-            Save();
-            this.btnAccept.Enabled = false;
+            if (Save()) {
+                this.btnAccept.Enabled = false;
+            }
         }
         //取消
         private void btnCancel_Click(object sender, EventArgs e) {
@@ -472,29 +494,12 @@
         }
         //确定
         private void btnSubmit_Click(object sender, EventArgs e) {
-            Save();
-            
-            this.Close();
-            this.Dispose();
-        }
-        //保存当前任务配置文件
-        private void Save() {
-            //获取配置
-            Task t = GetUiConfig();
-
-            //初始化路径
-            string filePath = "";
-            if (string.IsNullOrEmpty(_TaskUnit.ConfigPath)) {
-                //新建
-                filePath = string.Format("{0}\\{1}.xml", _TaskUnit.ConfigDir, t.Name);
-            } else {
-                //编辑
-                filePath = _TaskUnit.ConfigPath;
+            if (Save()) {
+                this.Close();
+                this.Dispose();
             }
-            
-            //保存
-            this.SaveTaskConfig(t, filePath);
         }
+
         #endregion
 
         #region 起始地址选项卡
@@ -508,12 +513,19 @@
         }
         //添加
         private void btnAdd_Click(object sender, EventArgs e) {
-            this.libStartingUrlList.Items.Add(this.txtStartingUrlTemplate.Text);
+            if (!string.IsNullOrEmpty(this.txtStartingUrlTemplate.Text)) {
+                this.libStartingUrlList.Items.Add(this.txtStartingUrlTemplate.Text);
+            } else {
+                MessageBox.Show("起始地址不能为空.", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.txtStartingUrlTemplate.Focus();
+            }
         }
         //修改
         private void btnModify_Click(object sender, EventArgs e) {
             int index = this.libStartingUrlList.SelectedIndex;
-            this.libStartingUrlList.Items[index] = this.txtStartingUrlTemplate.Text;
+            if (index >= 0) {
+                this.libStartingUrlList.Items[index] = this.txtStartingUrlTemplate.Text;
+            }
         }
         //浏览
         private void btnBrowse_Click(object sender, EventArgs e) {
@@ -521,9 +533,7 @@
         }
         //删除
         private void btnDelete_Click(object sender, EventArgs e) {
-            foreach (ListBox.SelectedObjectCollection cell in libStartingUrlList.SelectedItems) {
-                libStartingUrlList.Items.Remove(cell);
-            }
+            libStartingUrlList.Items.Remove(libStartingUrlList.SelectedItem);
         }
         //清除
         private void btnClear_Click(object sender, EventArgs e) {
@@ -600,11 +610,11 @@
         //源文件替换选项卡
         private void tabControl3_Selecting(object sender, TabControlCancelEventArgs e) {
             //源文件替换 选项卡
-            if (e.TabPageIndex == 5) {                
+            if (e.TabPageIndex == 5) {
                 foreach (Utility.NavigationRuleItem item in livNavigationRule.SelectedItems) {
                     FrmReplace r = new FrmReplace(item.rule.Replacements);
                     r.Text = "源文件替换";
-                    r.ShowDialog();                    
+                    r.ShowDialog();
                     item.rule.Replacements = r.Replace;
                 }
                 this.tabControl3.SelectedIndex = this.tabControl3.SelectedIndex - 1;
@@ -700,10 +710,77 @@
                 foreach (Utility.ExtractionRulesItem item in LivExtractionRule.SelectedItems) {
                     FrmReplace r = new FrmReplace(item.rule.Replacements);
                     r.Text = "采集结果替换";
-                    r.ShowDialog();                    
+                    r.ShowDialog();
                     item.rule.Replacements = r.Replace;
                 }
                 this.tabControl4.SelectedIndex = this.tabControl4.SelectedIndex - 1;
+            }
+        }
+        //双击采集规则
+        private void LivExtractionRule_MouseDoubleClick(object sender, MouseEventArgs e) {
+            foreach (Utility.ExtractionRulesItem item in LivExtractionRule.SelectedItems) {
+                #region 初始化控件值
+                cbxName.Text = item.rule.Name;  //规则名称
+                cbxDataColumn.Text = item.rule.DataColumn;  //数据库字段
+                chbDataUnique.Checked = item.rule.DataUnique;   //唯一数据
+                cbxLayer.Text = item.rule.Layer.ToString();    //页面层次
+                txtPreviousFlag.Text = item.rule.PreviousFlag;  //信息前标志
+                txtFollowingFlag.Text = item.rule.FollowingFlag;    //信息后标志
+                chbGlobal.Checked = item.rule.Global;   //全局规则
+                chbStatic.Checked = item.rule.Static;   //静态规则
+                chkKeyRule.Checked = item.rule.Essential;   //关键规则
+                chbUsePlugin.Checked = item.rule.UsePlugin; //使用插件采集数据
+                //IsDownloadUrl //下载网址
+                chbDetectRealUrl.Checked = item.rule.DetectRealUrl; //探测真实的Url地址
+                chbDownloadImages.Checked = item.rule.DownloadImages;   //下载图片
+                chbDownloadFlashes.Checked = item.rule.DownloadFlashes; //下载Flash
+                chbDownloadAttachments.Checked = item.rule.DownloadAttachments; //下载附件
+                cbxAttachmentUrlIdentifier.Text = item.rule.AttachmentUrlIdentifier;    //附件网址标志
+                txtDownloadDirectory.Text = item.rule.DownloadDirectory;    //下载目录
+                txtVirtualPath.Text = item.rule.VirtualPath;    //虚拟路径
+                chbUseRandomFileName.Checked = item.rule.UseRandomFileName; //使用随机文件名
+                cbxFileNameExtension.Text = item.rule.FileNameExtension;    //文件扩展名
+                chbCreateSubDirectories.Checked = item.rule.CreateSubDirectories;   //创建子目录
+                //CurrentSubDirectory当前子目录
+                nudFilesPerSubDirectory.Value = item.rule.FilesPerSubDirectory; //子目录文件数量
+                chbUseClassDirectory.Checked = item.rule.UseClassDirectory; //使用分类子目录
+                cbxClassDirectory.Text = item.rule.ClassDirectoryField; //分类子目录
+                chbSkipIfFileExisted.Checked = item.rule.SkipIfFileExisted; //文件存在则跳过
+                chbUrlAsResult.Checked = item.rule.UrlAsResult; //记录当前网址
+                chbPostParametersAsResult.Checked = item.rule.PostParametersAsResult;   //post参数作为结果
+                chbTimeAsResult.Checked = item.rule.TimeAsResult;   //记录采集时间
+                chkLinkTextAsResult.Checked = item.rule.LinkTextAsResult;   //链接文本作为结果
+                chbResponseHeaderAsResult.Checked = item.rule.ResponseHeaderAsResult;   //http头做为结果
+                cbxResponseHeaderName.Text = item.rule.ResponseHeaderName;  //hender头名
+                chbFixedAsResult.Checked = item.rule.ConstantAsResult;  //固定值作为结果
+                txtFixeValue.Text = item.rule.ConstantValue;    //固定值作为结果[值]
+                chbMergePages.Checked = item.rule.MergePages;   //合并分页
+                txtMergenceSeparator.Text = item.rule.MergenceSeparator;    //合并后的页面分隔符
+                rdoReserveAllHtmlMarks.Checked = item.rule.ReserveAllHtmlMarks; //保留全部Html标记
+
+                //初始化Html标记
+                foreach (HtmlMark h in item.rule.ReservedHtmlMarks) {
+                    int index = chkHtmlMakeList.Items.IndexOf(h.DisplayName);
+                    chkHtmlMakeList.SetSelected(index, true);
+                }
+
+                #endregion
+            }
+        }
+        //采集规则选择项改变
+        private void LivExtractionRule_SelectedIndexChanged(object sender, EventArgs e) {
+            ResetExtractionTabElement();
+        }
+        //全选Html标记
+        private void btnSelectAllHtmlMark_Click(object sender, EventArgs e) {
+            for (int i = 0; i < chkHtmlMakeList.Items.Count; i++) {
+                chkHtmlMakeList.SetItemChecked(i, true);
+            }
+        }
+        //全不选Html标记
+        private void btnNoSelectAllHtmlMark_Click(object sender, EventArgs e) {
+            for (int i = 0; i < chkHtmlMakeList.Items.Count; i++) {
+                chkHtmlMakeList.SetItemChecked(i, false);
             }
         }
         #endregion
@@ -721,6 +798,73 @@
 
         private void btnPluginSeting_Click(object sender, EventArgs e) {
 
+        }
+        #endregion
+
+        #region 实用方法
+        /// <summary>
+        /// 校验任务配置文件的合法性
+        /// </summary>
+        /// <param name="t">任务配置文件</param>
+        /// <returns>校验结果true通过,否则false</returns>
+        private bool CheckTaskConfigFile(Task t) {
+            if (string.IsNullOrEmpty(t.Name)) {
+                MessageBox.Show("任务名称不能为空。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.txtName.Focus();
+                return false;
+            }
+
+            if (string.IsNullOrEmpty(t.Description)) {
+                MessageBox.Show("任务描述不能为空。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.txtDescription.Focus();
+                return false;
+            }
+
+            if (t.UrlListManager.StartingUrlList.Count == 0) {
+                MessageBox.Show("起始地址不能为空。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                tabControl1.SelectedIndex = 1;
+                txtStartingUrlTemplate.Focus();
+                return false;
+            }
+
+            if (t.UrlListManager.NavigationRules.Count == 0) {
+                MessageBox.Show("导航规则不能为空。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                tabControl1.SelectedIndex = 2;
+                return false;
+            }
+
+            if (t.ExtractionRules.Count == 0) {
+                MessageBox.Show("采集规则不能为空。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                tabControl1.SelectedIndex = 3;
+                return false;
+            }
+
+            return true;
+        }
+
+        /// <summary>
+        /// 保存任务配置文件
+        /// </summary>
+        /// <returns>保存结果</returns>
+        private bool Save() {
+            Task t = GetUiConfig(); //获取配置
+
+            //校验配置文件
+            if (CheckTaskConfigFile(t)) {
+                try {
+                    string filePath = "";   //初始化路径
+                    if (string.IsNullOrEmpty(_TaskUnit.ConfigPath)) {
+                        filePath = string.Format("{0}\\{1}.xml", _TaskUnit.ConfigDir, t.Name);  //新建
+                    } else {
+                        filePath = _TaskUnit.ConfigPath;    //编辑
+                    }
+                    this.SaveTaskConfig(t, filePath);   //保存
+                    return true;
+                } catch (Exception e) {
+                    throw e;
+                }
+            }
+            return false;
         }
         #endregion
     }

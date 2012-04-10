@@ -3,6 +3,7 @@
     using System.Collections.Generic;
     using System.Text;
     using System.Data;
+    using System.Data.OleDb;
     using System.Data.SqlClient;
     using System.Collections.Specialized;
     using System.IO;
@@ -381,7 +382,51 @@
         /// 发布结果到Access数据库
         /// </summary>
         /// <returns>发布成功记录数</returns>
-        private int PublishResultToAccess() {
+        public int PublishResultToAccess() {
+            //string cnStr = "Provider = Microsoft.Jet.OLEDB.4.0;Data Source = " + "c:\\data.mdb";
+            
+            //ADOX.Catalog catalog = new Catalog();
+            //try{
+            //    //创建数据库
+            //    catalog.Create(cnStr);
+
+            //    //链接数据库
+            //    ADODB.Connection adodbcn = new ADODB.Connection();
+            //    adodbcn.Open(cnStr, null, null, -1);
+            //    catalog.ActiveConnection = adodbcn;
+
+            //    //新建表
+            //    ADOX.Table table = new ADOX.Table();
+            //    table.Name = "Results";
+
+            //    ADOX.Column column = new ADOX.Column();
+            //    column.ParentCatalog = catalog;
+            //    column.Type = ADOX.DataTypeEnum.adInteger;
+            //    column.Name = "GID";
+            //    column.DefinedSize = 9;
+            //    column.Properties["AutoIncrement"].Value = true;
+
+            //    //设置主键
+            //    table.Keys.Append("PrimaryKey", ADOX.KeyTypeEnum.adKeyPrimary, "GID", "", "");
+            //    foreach (DataColumn col in this.Results.Columns) {
+            //        table.Columns.Append(col.ColumnName, DataTypeEnum.adVarChar, 8000);
+            //    }
+
+            //    catalog.Tables.Append(table);
+            //    adodbcn.Close();
+            //    table = null;
+            //    catalog = null;
+            //}
+            //catch{
+            //}
+
+            //OleDbConnection cn = new OleDbConnection(cnStr);
+            //OleDbDataAdapter da = new OleDbDataAdapter("select * from Results", cn);
+            //OleDbCommandBuilder cmb = new OleDbCommandBuilder(da);
+            //int res = da.Update(Results);
+            //cn.Close();
+            //cn.Dispose();
+            //return res;
             return 0;
         }
 
@@ -389,7 +434,7 @@
         /// 发布结果到MySql数据库
         /// </summary>
         /// <returns>发布成功记录数</returns>
-        private int PublishResultToMySql() {
+        public int PublishResultToMySql() {
             return 0;
         }
 
@@ -397,7 +442,7 @@
         /// 发布结果到Oracle数据库
         /// </summary>
         /// <returns>发布成功记录数</returns>
-        private int PublishResultToOracle() {
+        public int PublishResultToOracle() {
             return 0;
         }
 
@@ -405,7 +450,7 @@
         /// 发布结果到SqlLite数据库
         /// </summary>
         /// <returns>发布成功记录数</returns>
-        private int PublishResultToSqlLite() {
+        public int PublishResultToSqlLite() {
             return 0;
         }
 
@@ -413,7 +458,7 @@
         /// 发布结果到SqlServer数据库
         /// </summary>
         /// <returns>发布成功记录数</returns>
-        private int PublishResultToSqlServer() {
+        public int PublishResultToSqlServer() {
             int publishResultCount = 0;
             SqlConnection sqlConn = new SqlConnection(this.TaskConfig.ConnectionString);
             try {
