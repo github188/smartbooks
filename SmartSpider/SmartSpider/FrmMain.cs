@@ -339,6 +339,7 @@
         //工具栏：新建任务
         private void tolAddTask_Click(object sender, EventArgs e) {
             TaskUnit unit = new TaskUnit();
+            unit.ConfigDir = (string)trwTaskFolder.SelectedNode.Tag;
             FrmTask newTask = new FrmTask(ref unit);
             newTask.ShowDialog();
         }

@@ -12,9 +12,11 @@
     using System.IO;
 
     public partial class FrmTask : Form {
+        #region 私有变量定义
         private TaskUnit _TaskUnit = new TaskUnit();
-        private List<Replacement> _Replacement = new List<Replacement>();
-        private List<HtmlMark> _htmlMakes = new List<HtmlMark>();
+        //private List<Replacement> _Replacement = new List<Replacement>();
+        //private List<HtmlMark> _htmlMakes = new List<HtmlMark>();
+        #endregion
 
         public FrmTask(ref TaskUnit taskUnit) {
             InitializeComponent();
@@ -348,8 +350,10 @@
             n.UsePluginOfPickNextPageUrl = chbUsePluginOfPickNextPageUrl.Checked;   //使用插件提取下一页网址
             n.UsePluginOfVisit = chbUsePluginOfVisit.Checked; //使用插件访问本层Url
             n.UseRegularExpression = chbUseRegularExpression.Checked; //使用正则表达式
-            n.Replacements = this._Replacement;  //源文件替换
-            this._Replacement.Clear();
+            //源文件替换
+            foreach (Utility.NavigationRuleItem item in livNavigationRule.SelectedItems) {
+                n.Replacements = item.rule.Replacements;
+            }
             return n;
         }
         #endregion
@@ -431,9 +435,7 @@
             e.Name = cbxName.Text;    //规则名称
             e.PostParametersAsResult = chbPostParametersAsResult.Checked;   //POST参数作为结果
             e.PreviousFlag = txtPreviousFlag.Text; //信息前标志
-            e.Replacements = this._Replacement; //采集结果替换
-            e.ReserveAllHtmlMarks = rdoReserveAllHtmlMarks.Checked;  //保留所有Html标记
-            e.ReservedHtmlMarks = this._htmlMakes; //保留的Html标志
+            e.ReserveAllHtmlMarks = rdoReserveAllHtmlMarks.Checked;  //保留所有Html标记            
             e.ResponseHeaderAsResult = chbResponseHeaderAsResult.Checked;   //http头作为响应结果
             e.ResponseHeaderName = cbxResponseHeaderName.Text;  //响应头名
             e.SkipIfFileExisted = chbSkipIfFileExisted.Checked;    //文件存在则跳过
@@ -445,6 +447,14 @@
             e.UseRandomFileName = chbUseRandomFileName.Checked;    //使用随机文件名
             e.VirtualPath = txtVirtualPath.Text; //虚拟路径
 
+            //采集结果替换
+            foreach (Utility.ExtractionRulesItem item in LivExtractionRule.SelectedItems) {
+                e.Replacements = item.rule.Replacements;
+            }
+
+            //保留的Html标志
+            //e.ReservedHtmlMarks = this._htmlMakes; 
+            
             return e;
         }
         #endregion
@@ -452,20 +462,8 @@
         #region 全局提交操作
         //应用
         private void btnAccept_Click(object sender, EventArgs e) {
-            Task t = GetUiConfig();
-
-            //保存任务配置信息
-            _TaskUnit.SaveTaskConfiguration(@"c:\02.xml", true, t);
-
-            if (!this._TaskUnit.TaskConfig.Equals(t)) {
-                if (MessageBox.Show("配置文件已更改，是否保存配置文件？", "保存提示",
-                    MessageBoxButtons.YesNo, MessageBoxIcon.Information) ==
-                    System.Windows.Forms.DialogResult.Yes) {
-                    this.SaveTaskConfig(t, this._TaskUnit.ConfigPath);
-                }
-            }
-            this.Close();
-            this.Dispose();
+            Save();
+            this.btnAccept.Enabled = false;
         }
         //取消
         private void btnCancel_Click(object sender, EventArgs e) {
@@ -474,16 +472,28 @@
         }
         //确定
         private void btnSubmit_Click(object sender, EventArgs e) {
-            Task t = GetUiConfig();
-            if (!this._TaskUnit.TaskConfig.Equals(t)) {
-                string filePath = _TaskUnit.ConfigPath;
-                if (string.IsNullOrEmpty(t.Name) || string.IsNullOrEmpty(_TaskUnit.ConfigPath)) {
-                    filePath = string.Format("{0}task\\{1}.xml", AppDomain.CurrentDomain.BaseDirectory, t.Name);
-                }
-                this.SaveTaskConfig(t, filePath);
-            }
+            Save();
+            
             this.Close();
             this.Dispose();
+        }
+        //保存当前任务配置文件
+        private void Save() {
+            //获取配置
+            Task t = GetUiConfig();
+
+            //初始化路径
+            string filePath = "";
+            if (string.IsNullOrEmpty(_TaskUnit.ConfigPath)) {
+                //新建
+                filePath = string.Format("{0}\\{1}.xml", _TaskUnit.ConfigDir, t.Name);
+            } else {
+                //编辑
+                filePath = _TaskUnit.ConfigPath;
+            }
+            
+            //保存
+            this.SaveTaskConfig(t, filePath);
         }
         #endregion
 
@@ -560,6 +570,7 @@
         private void btnNavDelete_Click(object sender, EventArgs e) {
             foreach (Utility.NavigationRuleItem item in this.livNavigationRule.SelectedItems) {
                 this.livNavigationRule.Items.Remove(item);
+                break;
             }
         }
         //上移
@@ -588,11 +599,15 @@
         }
         //源文件替换选项卡
         private void tabControl3_Selecting(object sender, TabControlCancelEventArgs e) {
-            if (e.TabPageIndex == 5) {
-                this._Replacement.Clear();
-                FrmReplace r = new FrmReplace();
-                r.Text = "源文件替换";
-                r.ShowDialog();
+            //源文件替换 选项卡
+            if (e.TabPageIndex == 5) {                
+                foreach (Utility.NavigationRuleItem item in livNavigationRule.SelectedItems) {
+                    FrmReplace r = new FrmReplace(item.rule.Replacements);
+                    r.Text = "源文件替换";
+                    r.ShowDialog();                    
+                    item.rule.Replacements = r.Replace;
+                }
+                this.tabControl3.SelectedIndex = this.tabControl3.SelectedIndex - 1;
             }
         }
         //双击导航规则
@@ -635,15 +650,9 @@
                 #endregion
             }
         }
-        //监测源文件替换选项卡
-        private void tabControl3_SelectedIndexChanged(object sender, EventArgs e) {
-            if (tabControl3.SelectedTab.Text.Equals("源文件替换")) {
-                foreach (Utility.NavigationRuleItem item in livNavigationRule.SelectedItems) {
-                    FrmReplace rp = new FrmReplace(item.rule.Replacements);
-                    rp.ShowDialog();
-                    item.rule.Replacements = rp.Replace;
-                }
-            }
+        //导航规则选项卡“项”选择状态更改
+        private void livNavigationRule_SelectedIndexChanged(object sender, EventArgs e) {
+            ResetNavigationTabElement();    //重置
         }
         #endregion
 
@@ -685,11 +694,16 @@
         }
         //采集结果替换
         private void tabControl4_Selecting(object sender, TabControlCancelEventArgs e) {
+            //采集结果替换
             if (e.TabPageIndex == 4) {
-                this._Replacement.Clear();
-                FrmReplace r = new FrmReplace();
-                r.Text = "采集结果替换";
-                r.ShowDialog();
+                //"采集结果替换"
+                foreach (Utility.ExtractionRulesItem item in LivExtractionRule.SelectedItems) {
+                    FrmReplace r = new FrmReplace(item.rule.Replacements);
+                    r.Text = "采集结果替换";
+                    r.ShowDialog();                    
+                    item.rule.Replacements = r.Replace;
+                }
+                this.tabControl4.SelectedIndex = this.tabControl4.SelectedIndex - 1;
             }
         }
         #endregion

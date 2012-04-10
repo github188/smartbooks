@@ -1160,6 +1160,7 @@
             this.trwTaskFolder.SelectedImageIndex = 8;
             this.trwTaskFolder.Size = new System.Drawing.Size(200, 288);
             this.trwTaskFolder.TabIndex = 0;
+            this.trwTaskFolder.HideSelection = false;
             this.trwTaskFolder.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.trwTaskFolder_AfterSelect);
             // 
             // imageListMax

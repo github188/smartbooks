@@ -1228,7 +1228,6 @@
             this.tabControl3.SelectedIndex = 0;
             this.tabControl3.Size = new System.Drawing.Size(722, 144);
             this.tabControl3.TabIndex = 7;
-            this.tabControl3.SelectedIndexChanged += new System.EventHandler(this.tabControl3_SelectedIndexChanged);
             this.tabControl3.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tabControl3_Selecting);
             // 
             // tabPage9
@@ -1560,6 +1559,9 @@
             // 
             this.cbxContentEncoding.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbxContentEncoding.FormattingEnabled = true;
+            this.cbxContentEncoding.Items.AddRange(new object[] {
+            "utf-8",
+            "gbk2312"});
             this.cbxContentEncoding.Location = new System.Drawing.Point(257, 11);
             this.cbxContentEncoding.Name = "cbxContentEncoding";
             this.cbxContentEncoding.Size = new System.Drawing.Size(121, 20);
@@ -1716,10 +1718,17 @@
             // 
             this.cbxLayerName.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbxLayerName.FormattingEnabled = true;
+            this.cbxLayerName.Items.AddRange(new object[] {
+            "列表",
+            "内容",
+            "大类",
+            "小类",
+            "公司信息"});
             this.cbxLayerName.Location = new System.Drawing.Point(76, 153);
             this.cbxLayerName.Name = "cbxLayerName";
             this.cbxLayerName.Size = new System.Drawing.Size(121, 20);
             this.cbxLayerName.TabIndex = 2;
+            this.cbxLayerName.Text = "列表";
             // 
             // label16
             // 
@@ -1750,6 +1759,7 @@
             this.livNavigationRule.TabIndex = 0;
             this.livNavigationRule.UseCompatibleStateImageBehavior = false;
             this.livNavigationRule.View = System.Windows.Forms.View.Details;
+            this.livNavigationRule.SelectedIndexChanged += new System.EventHandler(this.livNavigationRule_SelectedIndexChanged);
             this.livNavigationRule.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.livNavigationRule_MouseDoubleClick);
             // 
             // LayerNumber
@@ -1882,10 +1892,18 @@
             // 
             this.cbxDataColumn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbxDataColumn.FormattingEnabled = true;
+            this.cbxDataColumn.Items.AddRange(new object[] {
+            "ID",
+            "Title",
+            "Content",
+            "Author",
+            "PublishDate",
+            "Referer"});
             this.cbxDataColumn.Location = new System.Drawing.Point(97, 183);
             this.cbxDataColumn.Name = "cbxDataColumn";
             this.cbxDataColumn.Size = new System.Drawing.Size(165, 20);
             this.cbxDataColumn.TabIndex = 17;
+            this.cbxDataColumn.Text = "TITLE";
             // 
             // label42
             // 
@@ -1900,6 +1918,9 @@
             // 
             this.cbxLayer.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbxLayer.FormattingEnabled = true;
+            this.cbxLayer.Items.AddRange(new object[] {
+            "最终页面",
+            "中间页面"});
             this.cbxLayer.Location = new System.Drawing.Point(466, 153);
             this.cbxLayer.Name = "cbxLayer";
             this.cbxLayer.Size = new System.Drawing.Size(165, 20);
@@ -2566,10 +2587,19 @@
             // 
             this.cbxName.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbxName.FormattingEnabled = true;
+            this.cbxName.Items.AddRange(new object[] {
+            "文章编号",
+            "文章标题",
+            "文章内容",
+            "文章作者",
+            "发布时间",
+            "采集时间",
+            "文章来源"});
             this.cbxName.Location = new System.Drawing.Point(97, 153);
             this.cbxName.Name = "cbxName";
             this.cbxName.Size = new System.Drawing.Size(165, 20);
             this.cbxName.TabIndex = 2;
+            this.cbxName.Text = "文章标题";
             // 
             // label41
             // 
