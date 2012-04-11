@@ -41,7 +41,7 @@
         private void FileItemPublishResults_Click(object sender, EventArgs e) {
             if (livTaskView.SelectedItems.Count != 0) {
                 int index = (int)livTaskView.SelectedItems[0].Tag;    //当前任务索引
-                taskItem[index].PublishResultToAccess();
+                taskItem[index].PublishResult();    //发布采集结果
             }
         }
         //文件菜单：结果另存为Excel
@@ -62,7 +62,10 @@
         }
         //文件菜单：清空结果
         private void FileItemClearResult_Click(object sender, EventArgs e) {
-
+            if (livTaskView.SelectedItems.Count != 0) {
+                int index = (int)livTaskView.SelectedItems[0].Tag;    //当前任务索引
+                taskItem[index].Results.Rows.Clear();    //清除所有行
+            }
         }
         //文件菜单：发布时重复行-查看
         private void FileItemPublishResultRepeatView_Click(object sender, EventArgs e) {

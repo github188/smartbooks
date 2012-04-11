@@ -1233,6 +1233,7 @@
             this.livTaskView.Size = new System.Drawing.Size(389, 150);
             this.livTaskView.SmallImageList = this.imageListMax;
             this.livTaskView.TabIndex = 0;
+            this.livTaskView.HideSelection = false;
             this.livTaskView.UseCompatibleStateImageBehavior = false;
             this.livTaskView.View = System.Windows.Forms.View.Details;
             this.livTaskView.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.livTaskView_MouseDoubleClick);

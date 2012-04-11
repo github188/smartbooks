@@ -1684,24 +1684,25 @@
             // rdoTerminal
             // 
             this.rdoTerminal.AutoSize = true;
-            this.rdoTerminal.Checked = true;
             this.rdoTerminal.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.rdoTerminal.Location = new System.Drawing.Point(473, 154);
             this.rdoTerminal.Name = "rdoTerminal";
             this.rdoTerminal.Size = new System.Drawing.Size(70, 16);
             this.rdoTerminal.TabIndex = 5;
-            this.rdoTerminal.TabStop = true;
             this.rdoTerminal.Text = "最终页面";
             this.rdoTerminal.UseVisualStyleBackColor = true;
+            this.rdoTerminal.CheckedChanged += new System.EventHandler(this.rdoTerminal_CheckedChanged);
             // 
             // rdoCenterPage
             // 
             this.rdoCenterPage.AutoSize = true;
+            this.rdoCenterPage.Checked = true;
             this.rdoCenterPage.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.rdoCenterPage.Location = new System.Drawing.Point(381, 154);
             this.rdoCenterPage.Name = "rdoCenterPage";
             this.rdoCenterPage.Size = new System.Drawing.Size(58, 16);
             this.rdoCenterPage.TabIndex = 4;
+            this.rdoCenterPage.TabStop = true;
             this.rdoCenterPage.Text = "中间层";
             this.rdoCenterPage.UseVisualStyleBackColor = true;
             // 
@@ -1723,7 +1724,8 @@
             "内容",
             "大类",
             "小类",
-            "公司信息"});
+            "公司信息",
+            "最终页面"});
             this.cbxLayerName.Location = new System.Drawing.Point(76, 153);
             this.cbxLayerName.Name = "cbxLayerName";
             this.cbxLayerName.Size = new System.Drawing.Size(121, 20);
@@ -1752,6 +1754,8 @@
             this.livNavigationRule.FullRowSelect = true;
             this.livNavigationRule.HideSelection = false;
             this.livNavigationRule.Location = new System.Drawing.Point(6, 20);
+            this.livNavigationRule.MaximumSize = new System.Drawing.Size(722, 124);
+            this.livNavigationRule.MinimumSize = new System.Drawing.Size(722, 124);
             this.livNavigationRule.MultiSelect = false;
             this.livNavigationRule.Name = "livNavigationRule";
             this.livNavigationRule.Size = new System.Drawing.Size(722, 124);
@@ -1784,7 +1788,7 @@
             // NextLayerUrlTemplate
             // 
             this.NextLayerUrlTemplate.Text = "下一层网址模板";
-            this.NextLayerUrlTemplate.Width = 300;
+            this.NextLayerUrlTemplate.Width = 280;
             // 
             // ExtractNextPage
             // 
@@ -2624,6 +2628,8 @@
             this.LivExtractionRule.FullRowSelect = true;
             this.LivExtractionRule.HideSelection = false;
             this.LivExtractionRule.Location = new System.Drawing.Point(6, 20);
+            this.LivExtractionRule.MaximumSize = new System.Drawing.Size(722, 124);
+            this.LivExtractionRule.MinimumSize = new System.Drawing.Size(722, 124);
             this.LivExtractionRule.MultiSelect = false;
             this.LivExtractionRule.Name = "LivExtractionRule";
             this.LivExtractionRule.ShowItemToolTips = true;
@@ -2662,12 +2668,12 @@
             // columnHeader6
             // 
             this.columnHeader6.Text = "信息前标志";
-            this.columnHeader6.Width = 150;
+            this.columnHeader6.Width = 140;
             // 
             // columnHeader7
             // 
             this.columnHeader7.Text = "信息后标志";
-            this.columnHeader7.Width = 150;
+            this.columnHeader7.Width = 140;
             // 
             // tabPage5
             // 

@@ -14,7 +14,8 @@
     [XmlRoot("ExtractionRule")]
     public class ExtractionRule {
 
-        public ExtractionRule() { 
+        public ExtractionRule() {
+            _ReservedHtmlMarks = new List<HtmlMark>();
         }
 
         #region 私有变量定义

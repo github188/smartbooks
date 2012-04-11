@@ -44,6 +44,8 @@
         private Task _TaskConfig = new Task();
         private Action _Action = new Action();
         private DataTable _Results = new DataTable();
+        private DataTable _ErrorRow;  //错误行
+        private DataTable _RepeatedRow;   //重复行
         private HttpHelper _HttpHelper;
         private string _ConfigPath = "";
         private string _ConfigDir = "";
@@ -68,9 +70,6 @@
         /// 开始
         /// </summary>
         public void Start(object sender) {
-            /*启动计时器*/
-            //time.Change(0, 60000);
-
             this.Action = Config.Action.Start;
             this._TaskConfig.StartingTime = DateTime.Now;
             eventArgs.Message = string.Format("{0}\r\n开始任务 {1}\r\n", DateTime.Now.ToString(), this._TaskConfig.Name);
@@ -83,7 +82,7 @@
                 colume.DataType = typeof(string);
                 colume.ColumnName = rule.Name;
                 colume.Caption = rule.DataColumn;
-                colume.Unique = rule.DataUnique;
+                //colume.Unique = rule.DataUnique;
                 this._Results.Columns.Add(colume);
             }
             #endregion
@@ -209,17 +208,20 @@
                 row[_TaskConfig.ExtractionRules[i].Name] = result;
                 r[i] = result;
             }
+
             //内容提取结果加入采集结果
             this._Results.Rows.Add(row);
             if (this.onAppendResult != null) {
                 this.onAppendResult(r);
             }
 
-            //发布结果
+            //发布结果选项：直接发布到数据库
             if (this.TaskConfig.PublishResultDircetly) {
                 PublishResult();
+                Results.Rows.Clear();   //清除现有的采集结果
             }
 
+            //当任务完成时产生的事件
             if (this.OnTaskComplete != null) {
                 this.OnTaskComplete();
             }
@@ -360,18 +362,28 @@
         /// </summary>
         /// <returns>发布成功记录条数</returns>
         public int PublishResult() {
-            eventArgs.Message = "开始发布结果";
+            eventArgs.Message = "开始发布采集结果";
             this.AppendLog();
 
             if (this.TaskConfig.DatabaseType == DatabaseType.Access) {
+                eventArgs.Message = "发布到Access数据库...";
+                this.AppendLog();
                 return PublishResultToAccess();
             } else if (this.TaskConfig.DatabaseType == DatabaseType.MySql) {
+                eventArgs.Message = "发布到MySql数据库...";
+                this.AppendLog();
                 return PublishResultToMySql();
             } else if (this.TaskConfig.DatabaseType == DatabaseType.Oracle) {
+                eventArgs.Message = "发布到Oracle数据库...";
+                this.AppendLog();
                 return PublishResultToOracle();
             } else if (this.TaskConfig.DatabaseType == DatabaseType.SqlLite) {
+                eventArgs.Message = "发布到SqlLite数据库...";
+                this.AppendLog();
                 return PublishResultToSqlLite();
             } else if (this.TaskConfig.DatabaseType == DatabaseType.SqlServer) {
+                eventArgs.Message = "发布到SqlServer数据库...";
+                this.AppendLog();
                 return PublishResultToSqlServer();
             }
 
@@ -384,7 +396,7 @@
         /// <returns>发布成功记录数</returns>
         public int PublishResultToAccess() {
             //string cnStr = "Provider = Microsoft.Jet.OLEDB.4.0;Data Source = " + "c:\\data.mdb";
-            
+
             //ADOX.Catalog catalog = new Catalog();
             //try{
             //    //创建数据库
@@ -465,58 +477,120 @@
                 sqlConn.Open();
                 if (this.TaskConfig.UseProcedure) {
                     #region 使用存储过程发布结果
-                    SqlCommand cmd = new SqlCommand();
+                    eventArgs.Message = "使用存储过程发布...";
+                    this.AppendLog();
+                    
                     foreach (DataRow row in this.Results.Rows) {
-                        foreach (DataColumn col in this.Results.Columns) {
-                            SqlParameter colParam = new SqlParameter(col.Caption, row[col.ColumnName].ToString().Replace('\'', '\"'));
-                            cmd.Parameters.Add(colParam);
+                        #region 忽略不存在的参数
+                        try {
+                            SqlCommand cmd = new SqlCommand();
+                            foreach (DataColumn col in this.Results.Columns) {
+                                SqlParameter colParam = new SqlParameter("@" + col.Caption, row[col.ColumnName].ToString().Replace('\'', '\"'));
+                                cmd.Parameters.Add(colParam);
+                            }
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Connection = sqlConn;
+                            cmd.CommandTimeout = 10;
+                            cmd.CommandText = this.TaskConfig.PublicationTarget;
+                            publishResultCount = cmd.ExecuteNonQuery();
+
+                            #region 保存重复行
+                            if (publishResultCount == -1 && TaskConfig.SaveRepeatedRows) {
+                                if (RepeatedRow == null) {
+                                    RepeatedRow = Results.Clone();
+                                }
+                                RepeatedRow.Rows.Add(row);
+                            }
+                            #endregion
+                        } catch (Exception ex) {
+                            #region 保存出错行
+                            if (TaskConfig.SaveErrorRows) {
+                                if (ErrorRow == null) {
+                                    ErrorRow = Results.Clone();
+                                }
+                                ErrorRow.Rows.Add(row);
+                            }
+                            #endregion
                         }
+                        #endregion
                     }
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Connection = sqlConn;
-                    cmd.CommandTimeout = 10;
-                    cmd.CommandText = this.TaskConfig.PublicationTarget;
-                    publishResultCount = cmd.ExecuteNonQuery();
                     #endregion
                 } else {
-                    #region 发布到数据库表
-                    List<string> inserts = new List<string>();
-                    #region 构造Insert语句
-                    foreach (DataRow row in this.Results.Rows) {
-                        string into = "";
-                        string values = "";
-                        for (int i = 0; i < this.Results.Columns.Count; i++) {
-                            if (i < this.Results.Columns.Count - 1) {
-                                into += string.Format("{0}", this.Results.Columns[i].Caption);
-                                values += string.Format("'{0}'", row[this.Results.Columns[i].ColumnName].ToString().Replace('\'', '\"'));
-                            } else {
-                                into += string.Format("{0},", this.Results.Columns[i].Caption);
-                                values += string.Format("'{0}',", row[this.Results.Columns[i].ColumnName].ToString().Replace('\'', '\"'));
+                    #region 初始化发布结果数据库连接对象
+                    eventArgs.Message = "发布到数据库表...";
+                    this.AppendLog();
+                    DataTable dt = new DataTable();
+                    string selectCommand = string.Format("SELECT top 0 * FROM {0}", this.TaskConfig.PublicationTarget);
+                    SqlDataAdapter da = new SqlDataAdapter(selectCommand, sqlConn);
+                    da.Fill(dt);
+                    SqlCommandBuilder builder = new SqlCommandBuilder(da);
+                    #endregion
+
+                    #region 处理重复行(暂未实现)
+                    //过滤掉重复行,监测是否有唯一的列
+                    //List<string> uniqeColumn = new List<string>();
+                    //foreach (DataColumn col in Results.Columns) {
+                    //    uniqeColumn.Add(col.ColumnName);
+                    //}
+                    //Results = Results.DefaultView.ToTable(true, uniqeColumn.ToArray());
+                    ///*保存重复的行*/
+                    //if (TaskConfig.SaveRepeatedRows) {
+                    //    if (RepeatedRow == null) {
+                    //        RepeatedRow = Results.Clone();
+                    //    }
+                    //}
+                    #endregion
+
+                    #region 忽略不存在的字段&保存出错行
+                    foreach (DataRow row in Results.Rows) {
+                        DataRow newRow = dt.NewRow();   //新行对象
+                        bool errorIdentity = false;     //错误标示
+                        foreach (DataColumn col in Results.Columns) {
+                            #region 忽略不存在的数据列选项,找不到对应的字段则忽略
+                            try {
+                                newRow[col.Caption] = row[col.ColumnName];
+                            } catch (Exception ex) {
+                                errorIdentity = true;   //设定当前行错误标志
+                                if (TaskConfig.IgnoreDataColumnNotFound) {
+                                    continue;
+                                } else {
+                                    throw ex;
+                                }
                             }
+                            #endregion
                         }
-                        inserts.Add(string.Format("insert into {0}({1})values({2})",
-                                this.TaskConfig.PublicationTarget, into, values));
+                        dt.Rows.Add(newRow);
+
+                        /*保存出错行*/
+                        if (errorIdentity && TaskConfig.SaveErrorRows) {
+                            if (ErrorRow == null) {
+                                ErrorRow = Results.Clone();
+                            }
+                            ErrorRow.Rows.Add(row);
+                        }
                     }
                     #endregion
 
-                    SqlCommand cmd = new SqlCommand();
-                    foreach (string item in inserts) {
-                        cmd.CommandType = CommandType.Text;
-                        cmd.Connection = sqlConn;
-                        cmd.CommandTimeout = 10;
-                        cmd.CommandText = item;
-                        publishResultCount += cmd.ExecuteNonQuery();
-                    }
-                    cmd.Dispose();
+                    #region 发布采集结果到数据库
+                    publishResultCount = da.Update(dt);
                     #endregion
                 }
             } catch (Exception e) {
-                eventArgs.Message = string.Format("发布结果到 {0} 数据库时出现错误，错误详细信息：", DatabaseType.SqlServer, e.Message);
+                eventArgs.Message = string.Format("发布出错:{0}", e.Message);
                 this.AppendLog();
             } finally {
                 sqlConn.Close();
                 sqlConn.Dispose();
+                eventArgs.Message = string.Format("操作完成: 共 {0} 条记录。", publishResultCount.ToString());
+                this.AppendLog();
             }
+
+            #region 结果文件发布到数据库后，删除结果文件数据
+            if (TaskConfig.DeleteResultAfterPublication) {
+                Results.Rows.Clear();
+            }
+            #endregion
+
             return publishResultCount;
         }
         #endregion
@@ -636,6 +710,22 @@
         public string ConfigDir {
             get { return _ConfigDir; }
             set { _ConfigDir = value; }
+        }
+
+        /// <summary>
+        /// 采集结果出错行
+        /// </summary>
+        public DataTable ErrorRow {
+            get { return _ErrorRow; }
+            set { _ErrorRow = value; }
+        }
+
+        /// <summary>
+        /// 采集结果重复行
+        /// </summary>
+        public DataTable RepeatedRow {
+            get { return _RepeatedRow; }
+            set { _RepeatedRow = value;}
         }
         #endregion
     }

@@ -14,6 +14,7 @@
     public partial class FrmTask : Form {
         #region 私有变量定义
         private TaskUnit _TaskUnit = new TaskUnit();
+        private List<HtmlMark> htmlMarks = new List<HtmlMark>();
         //private List<Replacement> _Replacement = new List<Replacement>();
         //private List<HtmlMark> _htmlMakes = new List<HtmlMark>();
         #endregion
@@ -292,18 +293,17 @@
         /// <summary>
         /// 反序列化Html标记
         /// </summary>
-        private void SerializerHtmlMaker() {
-            List<HtmlMark> htmlMark = new List<HtmlMark>();
+        private void SerializerHtmlMaker() {            
             string path = AppDomain.CurrentDomain.BaseDirectory + "HtmlMark.xml";
 
             //反序列化
             XmlSerializer xd = new XmlSerializer(typeof(List<HtmlMark>));
             Stream readStream = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.Read);
-            htmlMark = (List<HtmlMark>)xd.Deserialize(readStream);
+            htmlMarks = (List<HtmlMark>)xd.Deserialize(readStream);
             readStream.Close();
             readStream.Dispose();
 
-            foreach (HtmlMark h in htmlMark) {
+            foreach (HtmlMark h in htmlMarks) {
                 chkHtmlMakeList.Items.Add(h.DisplayName);
             }
         }
@@ -317,7 +317,8 @@
         private void ResetNavigationTabElement() {
             this.cbxLayerName.Text = "";
             this.cbxLayerName.Focus();
-            this.rdoTerminal.Checked = true;
+            this.rdoTerminal.Checked = false;
+            this.rdoCenterPage.Checked = true;
             this.txtNextLayerUrlPattern.Clear();
             this.chbUseRegularExpression.Checked = false;
             this.chbHistoryUrlEnabled.Checked = false;
@@ -474,7 +475,15 @@
             }
 
             //保留的Html标志
-            //e.ReservedHtmlMarks = this._htmlMakes; 
+            for (int i = 0; i < chkHtmlMakeList.Items.Count; i++) {
+                if (chkHtmlMakeList.GetSelected(i)) {
+                    foreach (HtmlMark h in htmlMarks) {
+                        if (((string)chkHtmlMakeList.Items[i]).Equals(h.DisplayName)) {
+                            e.ReservedHtmlMarks.Add(h);
+                        }
+                    }
+                }
+            }
 
             return e;
         }
@@ -483,9 +492,7 @@
         #region 全局提交操作
         //应用
         private void btnAccept_Click(object sender, EventArgs e) {
-            if (Save()) {
-                this.btnAccept.Enabled = false;
-            }
+            Save();
         }
         //取消
         private void btnCancel_Click(object sender, EventArgs e) {
@@ -499,7 +506,6 @@
                 this.Dispose();
             }
         }
-
         #endregion
 
         #region 起始地址选项卡
@@ -570,11 +576,23 @@
         //新建
         private void btnNavCreate_Click(object sender, EventArgs e) {
             ResetNavigationTabElement();
+            livNavigationRule.SelectedItems.Clear();
         }
         //保存
-        private void btnNavSave_Click(object sender, EventArgs e) {
-            this.livNavigationRule.Items.Add(new Utility.NavigationRuleItem(GetNavigation(),
-                this.livNavigationRule.Items.Count + 1));
+        private void btnNavSave_Click(object sender, EventArgs e) {            
+            if (livNavigationRule.SelectedItems.Count == 0) {
+                //新建模式
+                this.livNavigationRule.Items.Add(new Utility.NavigationRuleItem(GetNavigation(),
+                    this.livNavigationRule.Items.Count + 1));
+            } else {
+                //编辑模式
+                foreach (Utility.NavigationRuleItem item in livNavigationRule.SelectedItems) {
+                    item.rule = GetNavigation();
+                    item.Referer();
+                }
+            }
+            livNavigationRule.Refresh();
+            ResetNavigationTabElement();
         }
         //删除
         private void btnNavDelete_Click(object sender, EventArgs e) {
@@ -664,22 +682,57 @@
         private void livNavigationRule_SelectedIndexChanged(object sender, EventArgs e) {
             ResetNavigationTabElement();    //重置
         }
+        //是否为最终页面导航规则
+        private void rdoTerminal_CheckedChanged(object sender, EventArgs e) {
+            if (rdoTerminal.Checked) {
+                //最终页面规则
+                cbxLayerName.Text = "最终页面";
+                groupBox11.Enabled = false;
+                tabControl3.Enabled = false;
+                btnNavCreate.Enabled = false;
+                btnNavDelete.Enabled = false;
+                btnNavMoveUp.Enabled = false;
+                btnNavMoveDown.Enabled = false;
+            } else {
+                //中间页面
+                cbxLayerName.Text = "列表页";
+                groupBox11.Enabled = true;
+                tabControl3.Enabled = true;
+                btnNavCreate.Enabled = true;
+                btnNavDelete.Enabled = true;
+                btnNavMoveUp.Enabled = true;
+                btnNavMoveDown.Enabled = true;
+            }
+        }
         #endregion
 
         #region 采集规则选项卡
         //新建
         private void btnExtrcCreate_Click(object sender, EventArgs e) {
             ResetExtractionTabElement();
+            LivExtractionRule.SelectedItems.Clear();
         }
         //保存
         private void btnExtrcSave_Click(object sender, EventArgs e) {
-            this.LivExtractionRule.Items.Add(new Utility.ExtractionRulesItem(GetExtraction(),
-                this.LivExtractionRule.Items.Count + 1));
+            if (LivExtractionRule.SelectedItems.Count == 0) {
+                //新建模式
+                this.LivExtractionRule.Items.Add(new Utility.ExtractionRulesItem(GetExtraction(),
+                    this.LivExtractionRule.Items.Count + 1));
+            } else {
+                //修改模式
+                foreach (Utility.ExtractionRulesItem item in LivExtractionRule.SelectedItems) {
+                    item.rule = GetExtraction();
+                    item.Referer();
+                }                
+            }
+            LivExtractionRule.Refresh();
+            ResetExtractionTabElement();
         }
         //删除
         private void btnExtrcDelete_Click(object sender, EventArgs e) {
             foreach (Utility.ExtractionRulesItem item in this.LivExtractionRule.SelectedItems) {
                 this.LivExtractionRule.Items.Remove(item);
+                break;
             }
         }
         //上移
@@ -819,8 +872,9 @@
                 this.txtDescription.Focus();
                 return false;
             }
-
-            if (t.UrlListManager.StartingUrlList.Count == 0) {
+            /*普通起始Url地址和分页模式Url地址*/
+            if (t.UrlListManager.StartingUrlList.Count == 0 
+                && t.UrlListManager.PagedUrlPattern.Count == 0) {
                 MessageBox.Show("起始地址不能为空。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 tabControl1.SelectedIndex = 1;
                 txtStartingUrlTemplate.Focus();
@@ -848,17 +902,21 @@
         /// <returns>保存结果</returns>
         private bool Save() {
             Task t = GetUiConfig(); //获取配置
+            string filePath = "";   //初始化路径
 
             //校验配置文件
             if (CheckTaskConfigFile(t)) {
                 try {
-                    string filePath = "";   //初始化路径
                     if (string.IsNullOrEmpty(_TaskUnit.ConfigPath)) {
-                        filePath = string.Format("{0}\\{1}.xml", _TaskUnit.ConfigDir, t.Name);  //新建
+                        //新建
+                        filePath = string.Format("{0}\\{1}.xml", _TaskUnit.ConfigDir, t.Name);
                     } else {
-                        filePath = _TaskUnit.ConfigPath;    //编辑
+                        //编辑
+                        filePath = _TaskUnit.ConfigPath;    
                     }
-                    this.SaveTaskConfig(t, filePath);   //保存
+                    this.SaveTaskConfig(t, filePath);   //保存(本地)
+                    _TaskUnit.TaskConfig = t;           //保存(内存)
+
                     return true;
                 } catch (Exception e) {
                     throw e;
