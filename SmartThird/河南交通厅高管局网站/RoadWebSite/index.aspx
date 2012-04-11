@@ -99,14 +99,14 @@
                </table>
              </div>
 				 <script type="text/javascript"> 
-                        var speed=50 
-                        marquePic2.innerHTML=marquePic1.innerHTML 
+                        var speed=50
+                        marquePic2.innerHTML = marquePic1.innerHTML 
                         function Marquee(){ 
-                        if(demo.scrollLeft>=marquePic1.scrollWidth){ 
-                        demo.scrollLeft=0 
-                        }else{ 
-                        demo.scrollLeft++ 
-                        } 
+                            if(demo.scrollLeft>=marquePic1.scrollWidth-1){ 
+                                demo.scrollLeft=0
+                            }else{ 
+                                demo.scrollLeft++ 
+                            }
                         } 
                         var MyMar=setInterval(Marquee,speed) 
                         demo.onmouseover=function() {clearInterval(MyMar)} 

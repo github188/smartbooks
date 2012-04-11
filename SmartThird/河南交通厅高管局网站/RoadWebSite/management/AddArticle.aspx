@@ -7,7 +7,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
     <title>编辑<%=((DataTable)ViewState["dtType"]).Rows[0]["T_Name"]%>信息-路政网站后台管理系统</title>
     <link href="style/default.css" rel="stylesheet" type="text/css" />
-    <script language="javascript" type="text/javascript" src="My97DatePicker/WdatePicker.js"></script>
+    <%--<script language="javascript" type="text/javascript" src="My97DatePicker/WdatePicker.js"></script>--%>
       <script type="text/javascript" language="javascript" src="../js/jquery-1.3.2.js"></script>
       <script type="text/javascript" language="javascript">
         function ValidateForm(){
@@ -23,6 +23,33 @@
             }
             return true;
          }
+    </script>
+
+    <script type="text/javascript" src="../Script/jquery-1.6.2.js"></script>
+    <script type="text/javascript" src="../Script/kindeditor-4.0.5/kindeditor-min.js"></script>
+    <script type="text/javascript" src="../Script/kindeditor-4.0.5/lang/zh_CN.js"></script>    
+    <script type="text/javascript" language="javascript">
+        $(document).ready(function () {
+            var editor;
+            KindEditor.ready(function (K) {
+                editor = K.create('textarea[name="t_contents"]', {
+                    items: ['source', '|', 'undo', 'redo', '|', 'preview', 'print', 'template', 'cut', 'copy',
+                            'paste', 'plainpaste', 'wordpaste', '|', 'justifyleft', 'justifycenter', 'justifyright',
+                            'justifyfull', 'insertorderedlist', 'insertunorderedlist', 'indent', 'outdent',
+                            'subscript', 'superscript', 'clearhtml', 'quickformat', 'selectall', '|', 'fullscreen', '/',
+                            'formatblock', 'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold',
+                            'italic', 'underline', 'strikethrough', 'lineheight', 'removeformat', '|', 'image',
+                            'flash', 'media', 'insertfile', 'table', 'hr', 'emoticons', 'map', 'code', 'pagebreak',
+                            'link', 'unlink', '|'],
+                    width: "100%",
+                    height: "350px",
+                    resizeMode: 1,
+                    uploadJson : '../api/upload_json.ashx',
+				    fileManagerJson : '../api/file_manager_json.ashx',
+				    allowFileManager : true
+                });
+            });
+        });
     </script>
 </head>
 <body>
@@ -52,10 +79,7 @@
   <tr>
     <td height="30" align="right" valign="top">文章内容：</td>
     <td colspan="3">
-    <textarea name="t_contents" style="display:none"><%=ViewState["strContent"]%></textarea>
-      <iframe name="eWEditor" src="edithtml/ewebeditor.htm?id=t_contents&style=blue"
-          frameborder="0" scrolling="no" width="100%"  id="IFRAME1" style="height: 400px" >
-        </iframe>
+    <textarea name="t_contents" style="display:none"><%=ViewState["strContent"]%></textarea>      
     </td>
     </tr>
   <tr>
