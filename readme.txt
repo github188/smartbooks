@@ -1,5 +1,5 @@
 
-项目文件夹说明:
+项目文件夹说明: 
 Smart		公共组件
 SmartBooks	翻译工具组件
 SmartCampus	智慧校园项目
