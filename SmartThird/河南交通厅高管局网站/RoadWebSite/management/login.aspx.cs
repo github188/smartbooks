@@ -27,6 +27,7 @@ public partial class management_login : System.Web.UI.Page
         }
         UserInfo info = null;
         info = UserInfoService.Get_UserInfoEntity(txtName.Text.Trim());
+        //txtName.Text = CommonFunction.Decrypt(info.U_LoginPwd, "roadkey");
         if (info != null && CommonFunction.Decrypt(info.U_LoginPwd, "roadkey") == txtPwd.Text)
         {
             Session["RoadUser"] = info;
