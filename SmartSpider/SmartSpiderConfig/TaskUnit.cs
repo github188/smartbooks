@@ -75,6 +75,13 @@
             eventArgs.Message = string.Format("{0}\r\n开始任务 {1}\r\n", DateTime.Now.ToString(), this._TaskConfig.Name);
             this.AppendLog();
 
+            #region 监测定时采集功能
+            /*启用定时采集*/
+            if (TaskConfig.ScheduleEnabled) {
+                /*实现代码*/
+            }
+            #endregion
+
             #region 构造采集结果数据表结构
             this._Results = new DataTable();
             foreach (ExtractionRule rule in this._TaskConfig.ExtractionRules) {
