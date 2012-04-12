@@ -35,5 +35,10 @@
         /// </summary>
         [XmlEnum("Finish")]
         Finish = 4,
+        /// <summary>
+        /// 运行中
+        /// </summary>
+        [XmlEnum("Running")]
+        Running = 5,
     }
 }

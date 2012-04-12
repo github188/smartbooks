@@ -70,6 +70,7 @@
 
             #region 定时采集（任务调度）
             //调度模式
+            this.chbScheduleEnabled.Checked = this._TaskUnit.TaskConfig.ScheduleEnabled;
             if (this._TaskUnit.TaskConfig.ScheduleMode == ScheduleMode.Time) {
                 //每隔时间段
                 rdoScheduleModeTime.Checked = true;
@@ -167,8 +168,7 @@
             t.OutputDetailedLog = this.chbOutputDetailedLog.Checked;
             t.SaveLogToFile = this.chbSaveLogToFile.Checked;
             t.LoginAutomatically = this.rdbAutoLogin.Checked;
-            t.Cookie = this.txtCookie.Text;
-            t.ScheduleEnabled = this.chbScheduleEnabled.Checked;
+            t.Cookie = this.txtCookie.Text;            
             t.ScheduleLimitTimeRange = this.chbScheduleLimitTimeRange.Checked;
             t.DisableScheduleAfterFinish = this.chbDisableScheduleAfterFinish.Checked;
             t.ScheduleDays = Convert.ToInt32(this.nudScheduleDays.Value);
@@ -193,6 +193,7 @@
 
             #region 获取定时采集调度设置
 
+            t.ScheduleEnabled = this.chbScheduleEnabled.Checked;
             //每隔时间段
             if (rdoScheduleModeTime.Checked) {
                 t.ScheduleMode = ScheduleMode.Time;
@@ -255,8 +256,10 @@
                     if (p.StartPage > p.EndPage) {
                         p.Format = PagedUrlPatternsMode.Decreasing;
                     }
+                    /*模板网址*/
                     t.UrlListManager.PagedUrlPattern.Add(p);
                 } else {
+                    /*普通网址*/
                     t.UrlListManager.StartingUrlList.Add(url);
                 }
             }

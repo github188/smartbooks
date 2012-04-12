@@ -69,18 +69,18 @@
         /// <summary>
         /// 开始
         /// </summary>
-        public void Start(object sender) {
-            this.Action = Config.Action.Start;
-            this._TaskConfig.StartingTime = DateTime.Now;
-            eventArgs.Message = string.Format("{0}\r\n开始任务 {1}\r\n", DateTime.Now.ToString(), this._TaskConfig.Name);
+        private void Start(object sender) {
+            string timeTick = DateTime.Now.ToLongDateString() + " " + DateTime.Now.ToLongTimeString();
+            if (this.Action == Config.Action.Running) {
+                eventArgs.Message = string.Format("{0} 任务正在运行中,启动任务失败...", timeTick);
+                this.AppendLog();
+                return;
+            }
+            eventArgs.Message = string.Format("{0} 开始任务", timeTick);
             this.AppendLog();
 
-            #region 监测定时采集功能
-            /*启用定时采集*/
-            if (TaskConfig.ScheduleEnabled) {
-                /*实现代码*/
-            }
-            #endregion
+            this._TaskConfig.StartingTime = DateTime.Now;
+            this.Action = Config.Action.Running;
 
             #region 构造采集结果数据表结构
             this._Results = new DataTable();
@@ -102,30 +102,9 @@
                 //ThreadPool.QueueUserWorkItem(new WaitCallback(ExtractTheNavigationAddress), startUrl);
             }
             #endregion
-        }
 
-        /// <summary>
-        /// 停止
-        /// </summary>
-        public void Stop() {
-            /*停止任务*/
-            //time.Change(Timeout.Infinite, Timeout.Infinite);
-
-            this.Action = Config.Action.Stop;
-            eventArgs.Message = "停止任务";
-            this.AppendLog();
-        }
-
-        /// <summary>
-        /// 暂停
-        /// </summary>
-        public void Pause() {
-            /*停止任务(之后选择合适的方式暂停)*/
-            //time.Change(Timeout.Infinite, Timeout.Infinite);
-
-            this.Action = Config.Action.Pause;
-            eventArgs.Message = "暂停任务";
-            this.AppendLog();
+            //设置任务状态为完成
+            this.Action = Config.Action.Finish;
         }
 
         /// <summary>
@@ -173,7 +152,8 @@
 
                 //判断是否为最终页面导航规则，如果为最终页面导航规则，则直接提取页面内容。
                 if (navigationRole.Terminal) {
-                    ThreadPool.QueueUserWorkItem(new WaitCallback(ExtractTheContents), startUrl);
+                    //ThreadPool.QueueUserWorkItem(new WaitCallback(ExtractTheContents), startUrl);
+                    ExtractTheContents(startUrl);
                 } else {
                     StringCollection navUrls = this.LoadingNavigationRule(navigationRole, htmlText);
                     foreach (string url in navUrls) {
@@ -196,7 +176,7 @@
             string contentUrl = (string)param;
             DataRow row = this._Results.NewRow();
             string htmlText = "";
-            eventArgs.Message = string.Format("采集内容 {0}\r\n", contentUrl);
+            eventArgs.Message = string.Format("采集内容 {0}", contentUrl);
             this.AppendLog();
             try {
                 //请求Web服务器返回Html文本
@@ -228,7 +208,7 @@
                 Results.Rows.Clear();   //清除现有的采集结果
             }
 
-            //当任务完成时产生的事件
+            //当完成一条采集结果时
             if (this.OnTaskComplete != null) {
                 this.OnTaskComplete();
             }
@@ -486,7 +466,7 @@
                     #region 使用存储过程发布结果
                     eventArgs.Message = "使用存储过程发布...";
                     this.AppendLog();
-                    
+
                     foreach (DataRow row in this.Results.Rows) {
                         #region 忽略不存在的参数
                         try {
@@ -676,7 +656,68 @@
                 if (OnTaskStatusChanges != null) {
                     this.OnTaskStatusChanges(this, value);
                 }
+
+                string timeTick = DateTime.Now.ToLongDateString() + " " + DateTime.Now.ToLongTimeString();
+
+                /*监测是否满足任务启动条件*/
+                switch (this.Action) {
+                    case Config.Action.Ready:   //准备
+                        time.Change(Timeout.Infinite, Timeout.Infinite);   //停止
+                        eventArgs.Message = string.Format("{0} 任务准备就绪...", timeTick);
+                        break;
+                    case Config.Action.Start:   //开始
+                        StartTask();
+                        break;
+                    case Config.Action.Pause:   //暂停
+                        time.Change(Timeout.Infinite, Timeout.Infinite);   //停止,暂时没有好的办法来停止任务的执行
+                        eventArgs.Message = string.Format("{0} 暂停任务...", timeTick);
+                        break;
+                    case Config.Action.Stop:    //停止
+                        time.Change(Timeout.Infinite, Timeout.Infinite);   //停止
+                        eventArgs.Message = string.Format("{0} 停止任务...", timeTick);
+                        break;
+                    case Config.Action.Finish:  //完成
+                        //time.Change(Timeout.Infinite, Timeout.Infinite);   //停止
+                        eventArgs.Message = string.Format("{0} 任务完成...", timeTick);
+                        break;
+                    case Config.Action.Running: //运行中
+                        eventArgs.Message = string.Format("{0} 任务运行中...", timeTick);
+                        break;
+                }
+                this.AppendLog();
             }
+        }
+
+        /// <summary>
+        /// 启动任务
+        /// </summary>
+        private void StartTask() {
+            if (TaskConfig.ScheduleEnabled) {
+                /*调度模式:每间隔时间段*/
+                if (TaskConfig.ScheduleMode == ScheduleMode.Time) {
+                    long tick = TaskConfig.ScheduleDays * 86400000;
+                    tick += TaskConfig.ScheduleHours * 3600000;
+                    tick += TaskConfig.ScheduleMinutes * 60000;
+                    time.Change(0, tick);
+
+                    eventArgs.Message = string.Format("{0} {1} 定时采集将于 {2} 秒后再次启动任务...",
+                        DateTime.Now.ToLongDateString(),
+                        DateTime.Now.ToLongTimeString(),
+                        (tick / 1000).ToString());
+                    this.AppendLog();
+                }
+
+                /*调度模式:每当经过每星期几中的时间范围*/
+                if (TaskConfig.ScheduleMode == ScheduleMode.Day) {
+                    /*
+                     * 1.获取当前时间
+                     * 2.判断当前时间是否位于指定的时间段内(开始时间、结束时间)区间
+                     * 3.开始任务
+                     */
+                }
+            } else {                
+                time.Change(0, Timeout.Infinite);   //普通方式启动任务,紧执行一次
+            }            
         }
 
         /// <summary>
@@ -732,7 +773,7 @@
         /// </summary>
         public DataTable RepeatedRow {
             get { return _RepeatedRow; }
-            set { _RepeatedRow = value;}
+            set { _RepeatedRow = value; }
         }
         #endregion
     }

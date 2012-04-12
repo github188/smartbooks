@@ -56,25 +56,23 @@
         /// 更新任务ICO图标
         /// </summary>
         private void UpItemIcon() {
-            try {
-                switch (TaskUnit.Action) {
-                    case Config.Action.Finish:
-                        ImageKey = "editmin.png";
-                        break;
-                    case Config.Action.Ready:
-                        ImageKey = "taskmin.png";
-                        break;
-                    case Config.Action.Start:
-                        ImageKey = "startmin.png";
-                        break;
-                    case Config.Action.Pause:
-                        ImageKey = "pausemin.png";
-                        break;
-                    case Config.Action.Stop:
-                        ImageKey = "stopmin.png";
-                        break;
-                }
-            } catch { }
+            switch (TaskUnit.Action) {
+                case Config.Action.Finish:
+                    ImageKey = "editmin.png";
+                    break;
+                case Config.Action.Ready:
+                    ImageKey = "taskmin.png";
+                    break;
+                case Config.Action.Start:
+                    ImageKey = "startmin.png";
+                    break;
+                case Config.Action.Pause:
+                    ImageKey = "pausemin.png";
+                    break;
+                case Config.Action.Stop:
+                    ImageKey = "stopmin.png";
+                    break;
+            }
         }
 
         /// <summary>
@@ -82,9 +80,7 @@
         /// </summary>
         private void UpDateTaskStatus() {
             try {
-                UpItemIcon();
                 TaskUnit.TaskConfig.ElapsedTime = DateTime.Now.Subtract(TaskUnit.TaskConfig.StartingTime).Seconds;
-
                 this.SubItems[1].Text = TaskUnit.TaskConfig.UrlListManager.PickedUrlsPosition.ToString();
                 this.SubItems[2].Text = TaskUnit.TaskConfig.UrlListManager.PickedUrlsCount.ToString();
                 this.SubItems[3].Text = TaskUnit.TaskConfig.UrlListManager.StartingUrlListPosition.ToString();
@@ -95,7 +91,9 @@
                 this.SubItems[8].Text = TaskUnit.TaskConfig.RepeatedRowsCount.ToString();
                 this.SubItems[9].Text = TaskUnit.TaskConfig.ErrorRowsCount.ToString();
                 this.SubItems[10].Text = TaskUnit.TaskConfig.ElapsedTime + " 秒";
-                this.SubItems[11].Text = TaskUnit.TaskConfig.StartingTime.ToString("yyyy-MM-dd HH:mm:ss");    //开始时间                
+                this.SubItems[11].Text = TaskUnit.TaskConfig.StartingTime.ToString("yyyy-MM-dd HH:mm:ss");    //开始时间
+
+                UpItemIcon();
             } catch { }
         }
 

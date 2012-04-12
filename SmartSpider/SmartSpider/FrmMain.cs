@@ -287,11 +287,11 @@
                     if (MessageBox.Show("该任务已经采集完毕，确定重新采集吗？", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Information) ==
                         System.Windows.Forms.DialogResult.Yes) {
                         ShowTaskRuntimesInfo(ref taskItem[taskIndex]);  //显示任务运行日志信息窗口
-                        taskItem[taskIndex].Start("");
+                        taskItem[taskIndex].Action = Action.Start;
                     }
                 } else {
                     ShowTaskRuntimesInfo(ref taskItem[taskIndex]);      //显示任务运行日志信息窗口
-                    taskItem[taskIndex].time.Change(0, 60000);
+                    taskItem[taskIndex].Action = Action.Start;
                 }
             }
 
@@ -307,8 +307,7 @@
         private void tolPauseTask_Click(object sender, EventArgs e) {
             foreach (ListViewItem item in this.livTaskView.SelectedItems) {
                 int taskIndex = (int)item.Tag;
-                taskItem[taskIndex].time.Change(System.Threading.Timeout.Infinite, System.Threading.Timeout.Infinite);
-                taskItem[taskIndex].Pause();
+                taskItem[taskIndex].Action = Action.Pause;
 
                 this.tolPauseTask.Enabled = false;
                 this.tolStartTask.Enabled = true;
@@ -323,8 +322,7 @@
         private void tolStopTask_Click(object sender, EventArgs e) {
             foreach (ListViewItem item in this.livTaskView.SelectedItems) {
                 int taskIndex = (int)item.Tag;
-                taskItem[taskIndex].time.Change(System.Threading.Timeout.Infinite, System.Threading.Timeout.Infinite);
-                taskItem[taskIndex].Stop();
+                taskItem[taskIndex].Action = Action.Stop;
 
                 this.tolPauseTask.Enabled = false;
                 this.tolStartTask.Enabled = true;
