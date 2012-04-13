@@ -20,7 +20,7 @@ $(document).ready(function(){
 	/*首页鼠标移动到选项卡特效*/
 	mouseovertabpage();
 	
-	/*手表经过手风琴改变背景图片*/
+	/*手表经过手风琴改变背景图片
 	mouseOverAccordion();
 	
 	/*初始化友情链接特效*/
@@ -88,12 +88,12 @@ function mouseovertabpage()
 }
 
 /*鼠标点击手风琴改变背景图片*/
-function mouseOverAccordion()
+/*function mouseOverAccordion()
 {
 	/*鼠标经过改变背景*/
-	$(".accordion").click(function(){
+	/*$(".accordion").click(function(){
 		/*改变当前元素背景*/
-		$(this).attr("class", "accordionhover");
+		/*$(this).attr("class", "accordionhover");
 		var text = $(this).text();	
 		$("#accordion1 span").each(function(i){
 			if($(this).text() != text){
