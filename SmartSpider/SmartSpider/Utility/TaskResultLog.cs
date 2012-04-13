@@ -75,7 +75,7 @@
             this.splitContainerMain.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvResult)).EndInit();
             this.ResumeLayout(false);
-
+            this.dgvResult.RowsAdded +=new DataGridViewRowsAddedEventHandler(dgvResult_RowsAdded);
         }
 
         private void BindController() {
@@ -133,6 +133,12 @@
         private void rtxLogEvent_TextChanged(object sender, EventArgs e) {
             if (this.rtxLogEvent.TextLength > 5000) {
                 this.rtxLogEvent.Clear();
+            }
+        }
+
+        private void dgvResult_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e) {
+            if (dgvResult.Rows.Count >= 100) {
+                dgvResult.Rows.Clear();
             }
         }
     }
