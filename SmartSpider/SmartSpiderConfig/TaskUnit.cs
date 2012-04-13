@@ -235,7 +235,7 @@
             int indexPreviousFlag = htmlText.IndexOf(extractionRule.PreviousFlag);//信息前标志
             int indexFollowingFlag = htmlText.IndexOf(extractionRule.FollowingFlag);//信息后标志
             int indexLength = indexFollowingFlag - indexPreviousFlag;
-            if (indexLength > 1) {
+            if (indexLength > 1 && indexLength >= extractionRule.FollowingFlag.Length) {
                 result = htmlText.Substring(indexPreviousFlag + extractionRule.PreviousFlag.Length,
                     indexLength - extractionRule.FollowingFlag.Length);
             }
