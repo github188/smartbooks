@@ -516,13 +516,13 @@
 	width:222px;
 	height:128px;
 	}
-.project-main ul{
+.p-text ul,.p-main-left ul{
 	width:95px;
 	margin:0px;
 	padding:0px;
 	padding-left:5px;
 	}
-.project-main li{
+.p-text li,.p-main-left li{
 	width:90px;
 	height:16px;
 	list-style:none;
@@ -532,18 +532,30 @@
 	padding-top:4px;
 	padding-left:10px;}
 .p-main-left{
-	width:103px;
+	width:100px;
 	height:118px;
 	float:left;
-	padding-top:10px;}
+	padding-top:10px;
+	padding-left:3px;}
 .p-main-right{
 	width:109px;
 	height:128px;
 	float:right;
-	
 	padding-left:10px!important;/*ie6 消除padding使用*/
 	padding-left:5px;
 	}
+.p-img{
+	width:106px;
+	height:73px;
+	padding-top:15px;
+	padding-left:3px;
+	}
+.p-text{
+	width:109px;
+	height:38px;
+	padding-top:2px;}
+
+
 /*相关下载*/
 #download{
 	width:222px;
