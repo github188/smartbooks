@@ -40,6 +40,7 @@
   <ItemGroup>
     <Compile Include="Configuration.cs" />
     <Compile Include="DatabaseType.cs" />
+    <Compile Include="ParseExtractRoles.cs" />
     <Compile Include="ExtractionRule.cs" />
     <Compile Include="Filter.cs" />
     <Compile Include="HtmlMark.cs" />
@@ -55,6 +56,7 @@
     <Compile Include="PagedUrlPattern.cs" />
     <Compile Include="PagedUrlPatternsMode.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ParseNavigationRules.cs" />
     <Compile Include="RegularExpression.cs" />
     <Compile Include="Replacement.cs" />
     <Compile Include="RequestHeader.cs" />

@@ -174,32 +174,25 @@
             if (this.Action == Config.Action.Stop) return;
 
             string contentUrl = (string)param;
-            DataRow row = this._Results.NewRow();
             string htmlText = "";
-            eventArgs.Message = string.Format("采集内容 {0}", contentUrl);
-            this.AppendLog();
             try {
                 //请求Web服务器返回Html文本
                 htmlText = this._HttpHelper.RequestResult(contentUrl);
             } catch (Exception e) {
-                eventArgs.Message = string.Format("请求失败 {0} ", contentUrl);
-                this.AppendLog();
-                eventArgs.Message = string.Format("原因 {0}\r\n", e.Message);
+                eventArgs.Message = string.Format("请求失败:{0} 原因:{1}", contentUrl,e.Message);
                 this.AppendLog();
             }
 
-            //循环内容采集规则
-            string[] r = new string[this._TaskConfig.ExtractionRules.Count];
-            for (int i = 0; i < this._TaskConfig.ExtractionRules.Count; i++) {
-                string result = this.LoadingExtractionRule(_TaskConfig.ExtractionRules[i], htmlText);
-                row[_TaskConfig.ExtractionRules[i].Name] = result;
-                r[i] = result;
-            }
+            //提取内容
+            ParseExtractRoles parseHtml = new ParseExtractRoles(
+                _TaskConfig.ExtractionRules,
+                htmlText,
+                _HttpHelper.WebResponse);
+            string[] res = parseHtml.Exec();
+            this._Results.Rows.Add(res);
 
-            //内容提取结果加入采集结果
-            this._Results.Rows.Add(row);
             if (this.onAppendResult != null) {
-                this.onAppendResult(r);
+                this.onAppendResult(res);
             }
 
             //发布结果选项：直接发布到数据库
@@ -212,72 +205,6 @@
             if (this.OnTaskComplete != null) {
                 this.OnTaskComplete();
             }
-        }
-
-        /// <summary>
-        /// 加载提取规则
-        /// </summary>
-        /// <param name="extractionRule">内容提取规则</param>
-        /// <param name="htmlText">Html文本</param>
-        private string LoadingExtractionRule(SmartSpider.Config.ExtractionRule extractionRule, string htmlText) {
-            string result = string.Empty;
-
-            //特殊结果
-            if (extractionRule.TimeAsResult) return DateTime.Now.ToString();  //记录采集时间
-            if (extractionRule.UrlAsResult) return this.HttpHelper.WebRequest.RequestUri.ToString();  //记录当前网址
-            if (extractionRule.ResponseHeaderAsResult) return this.HttpHelper.WebResponse.Headers[extractionRule.ResponseHeaderName];   //响应头作为结果  
-            if (extractionRule.ConstantAsResult) return extractionRule.ConstantValue;   //将固定值最为结果
-            //if(extractionRule.PostParametersAsResult) return this.HttpHelper.WebRequest.GetRequestStream();   //POST参数作为结果
-            //if (extractionRule.LinkTextAsResult) return ""; //链接文本作为结果
-
-
-            //截取内容
-            int indexPreviousFlag = htmlText.IndexOf(extractionRule.PreviousFlag);//信息前标志
-            int indexFollowingFlag = htmlText.IndexOf(extractionRule.FollowingFlag);//信息后标志
-            int indexLength = indexFollowingFlag - indexPreviousFlag;
-            if (indexLength > 1 && indexLength >= extractionRule.FollowingFlag.Length) {
-                result = htmlText.Substring(indexPreviousFlag + extractionRule.PreviousFlag.Length,
-                    indexLength - extractionRule.FollowingFlag.Length);
-            }
-
-            //过滤信息
-            if (result.Length != 0) {
-                #region 采集结果替换
-                foreach (Replacement replacement in extractionRule.Replacements) {
-                    // 使用正则表达式替换结果
-                    if (replacement.UseRegex) {
-                        MatchCollection matchs = Regex.Matches(result, replacement.OldValue);
-                        foreach (Match match in matchs) {
-                            result = result.Replace(match.Value, replacement.NewValue);
-                        }
-                    } else {
-                        result = result.Replace(replacement.OldValue, replacement.NewValue);
-                    }
-                }
-                #endregion
-
-                #region 保留HTML标记
-                //<p ([^>]+)>([^<]+)</p>
-                List<HtmlMarkDictionary> element = new List<HtmlMarkDictionary>();
-                foreach (HtmlMark htmlMark in extractionRule.ReservedHtmlMarks) {
-                    MatchCollection matchs = Regex.Matches(result, htmlMark.RegexText, RegexOptions.IgnoreCase);
-                    foreach (Match match in matchs) {
-                        HtmlMarkDictionary directory = new HtmlMarkDictionary();
-                        directory.Index = match.Index;
-                        directory.Text = match.Value;
-                        element.Add(directory);
-                    }
-                }
-                if (element.Count != 0) {
-                    element.Sort();
-                    result = "";
-                    foreach (HtmlMarkDictionary elm in element) {
-                        result += elm.Text;
-                    }
-                }
-                #endregion
-            }
-            return result;
         }
 
         /// <summary>
