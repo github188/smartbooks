@@ -27,12 +27,12 @@ a:active {text-decoration : none ;color : #393a39 ;} */
 #maincontainer-1{width:996px;height:1000px;margin:auto;  background-color:#FFFFFF;}
 #secondcontainer-1{ width:960px;height:1000px;margin-left:18px;}
 /*政务公开 容器*/
-#header{ height:211px; padding-top:13px;}
-#logo_flash{ height:155px; width:100%;}
+#header{ height:264px; padding-top:13px;}
+#logo_flash{ height:208px; width:100%;}
 
 /*menu*/
 /*#menu{ width:600px; height:38px; float:left; }*/
-#menu{ width:960px; height:40px; float:left;background:#fff url(../images/three_0.gif) repeat-x;}
+#menu{ width:960px; height:40px; float:left;background:#fff url(../images/three_0.gif) repeat-x; clear:both;}
 #nav {
 	padding:0;
 	margin:0;
