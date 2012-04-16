@@ -76,6 +76,12 @@
   <ItemGroup>
     <None Include="ClassDiagram1.cd" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Smart\SmartUtility\SmartUtility.csproj">
+      <Project>{B7456CA5-DDD6-47D7-9618-9C4A5F7C8D6B}</Project>
+      <Name>SmartUtility</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

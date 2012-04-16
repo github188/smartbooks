@@ -57,7 +57,7 @@ namespace SmartSpider.Config {
             //if (extractionRule.LinkTextAsResult) return ""; //链接文本作为结果
 
             //截取内容
-            result = SubString(result, r.PreviousFlag, r.FollowingFlag);
+            result = Smart.Utility.StringHelper.SubString(result, r.PreviousFlag, r.FollowingFlag);
 
             //采集结果替换
             result = ResultReplace(result, r.Replacements);
@@ -65,26 +65,6 @@ namespace SmartSpider.Config {
             //过滤Html标记
             result = FilterHtmlMark(result, r.ReservedHtmlMarks);
 
-            return result;
-        }
-
-        /// <summary>
-        /// 截取字符串
-        /// </summary>
-        /// <param name="htmlText">源字符串</param>
-        /// <param name="PreviousFlag">信息前标志</param>
-        /// <param name="FollowingFlag">信息后标志</param>
-        /// <returns>截取结果</returns>
-        private string SubString(string htmlText, string PreviousFlag, string FollowingFlag) {
-            string result = htmlText;
-            int indexPreviousFlag = result.IndexOf(PreviousFlag);    //信息前标志
-            int indexFollowingFlag = result.IndexOf(FollowingFlag);  //信息后标志
-            int indexLength = indexFollowingFlag - indexPreviousFlag;
-            if (indexLength > 1 && indexLength >= FollowingFlag.Length) {
-                result = result.Substring(
-                    indexPreviousFlag + PreviousFlag.Length,
-                    indexLength - FollowingFlag.Length);
-            }
             return result;
         }
 

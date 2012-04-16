@@ -21,7 +21,7 @@
 
         #region 公共方法定义
         public HttpHelper() {
-            this._WebRequest.Timeout = 5000;   //默认超时5秒钟
+            //this._WebRequest.Timeout = 5000;   //默认超时5秒钟
         }
 
         /// <param name="handers">Hander集合</param>
@@ -87,6 +87,17 @@
             read.Close();
             read.Dispose();
             return htmlText;
+        }
+
+        public Stream GetResponse(string url)
+        {
+            this._WebRequest = (HttpWebRequest)System.Net.WebRequest.Create(url);
+            this._WebRequest.CookieContainer = this._Cookie;
+            this._WebRequest.Method = "GET";
+            this._WebRequest.Accept = "*/*";
+            this._WebRequest.ContentType = "application/x-www-form-urlencoded";
+            this._WebResponse = (HttpWebResponse)this._WebRequest.GetResponse();
+            return _WebResponse.GetResponseStream();
         }
 
         #endregion

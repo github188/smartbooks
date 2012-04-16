@@ -36,6 +36,28 @@ namespace Smart.Utility
 
             return Encoding.Default.GetString(str).TrimEnd('\0');
         }
+
+        /// <summary>
+        /// 截取字符串
+        /// </summary>
+        /// <param name="htmlText">源字符串</param>
+        /// <param name="PreviousFlag">信息前标志</param>
+        /// <param name="FollowingFlag">信息后标志</param>
+        /// <returns>截取结果</returns>
+        public static string SubString(string htmlText, string PreviousFlag, string FollowingFlag)
+        {
+            string result = htmlText;
+            int indexPreviousFlag = result.IndexOf(PreviousFlag);    //信息前标志
+            int indexFollowingFlag = result.IndexOf(FollowingFlag);  //信息后标志
+            int indexLength = indexFollowingFlag - indexPreviousFlag;
+            if (indexLength > 1 && indexLength >= FollowingFlag.Length)
+            {
+                result = result.Substring(
+                    indexPreviousFlag + PreviousFlag.Length,
+                    indexLength - FollowingFlag.Length);
+            }
+            return result;
+        }
         #endregion
 
 

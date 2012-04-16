@@ -35,7 +35,60 @@ namespace SmartSpider.Config {
             }
         }
 
-        //private
+        /// <summary>
+        /// 根据导航规则和Html字符串解析出导航Url地址
+        /// </summary>
+        /// <param name="rule">导航规则</param>
+        /// <param name="htmlText">Html文本</param>
+        /// <returns>导航地址</returns>
+        private StringCollection ParseNavigationRuleHtmlText(NavigationRule rule,string htmlText)
+        {
+            StringCollection urls = new StringCollection();
+
+            //内容提取范围
+            if (string.IsNullOrEmpty(rule.ExtractionStartFlag) && string.IsNullOrEmpty(rule.ExtractionEndFlag))
+            {
+                htmlText = Smart.Utility.StringHelper.SubString(htmlText, rule.ExtractionStartFlag, rule.ExtractionEndFlag);
+            }
+
+            //网址提取范围
+            if (string.IsNullOrEmpty(rule.PickingStartFlag) && string.IsNullOrEmpty(rule.PickingEndFlag))
+            {
+                htmlText = Smart.Utility.StringHelper.SubString(htmlText, rule.PickingStartFlag, rule.PickingEndFlag);
+            }
+
+            //源文件替换
+            foreach (Replacement r in rule.Replacements)
+            {
+                if (r.UseRegex)
+                {
+                    htmlText = Regex.Replace(htmlText, r.OldValue, r.NewValue);
+                }
+                else
+                {
+                    htmlText = htmlText.Replace(r.OldValue, r.NewValue);
+                }
+            }
+
+            //使用正则表达式
+            if (rule.UseRegularExpression)
+            {
+                //下一页网址模板
+                MatchCollection coll = Regex.Matches(htmlText, rule.NextPageUrlPattern);
+                foreach (Match m in coll)
+                {
+                    urls.Add(m.Value);
+                }
+            }
+
+            //提取下一页网址
+            //循环采集
+            //高级选项
+            //不能与历史记录重复
+            //优化历史记录
+
+            return urls;
+        }
         
         /// <summary>
         /// 解析导航规则
@@ -52,6 +105,13 @@ namespace SmartSpider.Config {
                         urls.Add(u);
                     } else {
                         //发送Http请求获取导航地址
+                        HttpHelper http = new HttpHelper();
+                        string htmlText = http.RequestResult(u);
+                        StringCollection navUrlItem = ParseNavigationRuleHtmlText(rule, htmlText);
+                        foreach (string r in navUrlItem)
+                        {
+                            urls.Add(r);
+                        }
                     }
                 }
             }
