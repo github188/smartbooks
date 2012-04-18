@@ -237,7 +237,7 @@
 	float:left;	
 	border:solid 1px #F00;
 	margin-left:15px;
-	list-style-image:url(../images/0_96.png);
+	list-style-image:url(../images/0_96.jpg);
 	overflow:hidden;
 }
 .list3 a{
@@ -319,7 +319,7 @@
 	overflow:hidden;
 	display:block;
 	line-height:24px;
-	background-image:url(../images/0_96.png);
+	background-image:url(../images/0_96.jpg);
 	background-repeat:no-repeat;
 	background-position:3px;
 	padding-left:15px;}
@@ -391,7 +391,7 @@
 	overflow:hidden;
 	display:block;
 	line-height:24px;
-	background-image:url(../images/0_96.png);
+	background-image:url(../images/0_96.jpg);
 	background-repeat:no-repeat;
 	background-position:3px;
 	padding-left:15px;}

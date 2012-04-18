@@ -267,7 +267,7 @@
 	overflow:hidden;
 	display:block;
 	line-height:24px;
-	background-image:url(../images/0_96.png);
+	background-image:url(../images/0_96.jpg);
 	background-repeat:no-repeat;
 	background-position:3px;
 	padding-left:15px;}
@@ -340,7 +340,7 @@
 	overflow:hidden;
 	display:block;
 	line-height:24px;
-	background-image:url(../images/0_96.png);
+	background-image:url(../images/0_96.jpg);
 	background-repeat:no-repeat;
 	background-position:3px;
 	padding-left:15px;}
@@ -484,7 +484,7 @@
 	padding-left:10px;
 }
 .paiming-text1 li{
-	background-image:url(../images/0_96.png);
+	background-image:url(../images/0_96.jpg);
 	background-repeat:no-repeat;
 	background-position:3px;
 	padding-left:15px;
@@ -1152,7 +1152,7 @@
 	height:23px;
 	line-height:23px;
 	list-style:none;
-	background-image:url(../images/0_96.png);
+	background-image:url(../images/0_96.jpg);
 	background-repeat:no-repeat;
 	background-position:2px;
 	padding-left:15px;
@@ -1356,7 +1356,7 @@
 	line-height:28px;
 	width:250px;
 	height:28px;
-	background-image:url(../images/renwen/renwen_30.png);
+	background-image:url(../images/renwen/renwen_30.jpg);
 	background-repeat:no-repeat;
 	background-position:3px;
 	padding-left:20px;}	
@@ -1404,7 +1404,7 @@
 	line-height:31px;
 	width:250px;
 	height:31px;
-	background-image:url(../images/renwen/renwen_30.png);
+	background-image:url(../images/renwen/renwen_30.jpg);
 	background-repeat:no-repeat;
 	background-position:3px;
 	padding-left:20px;}	
@@ -1547,7 +1547,7 @@ border-bottom:2px #3d5e83 solid;}
 	line-height:31px;
 	width:250px;
 	height:31px;
-	background-image:url(../images/renwen/renwen_27.png);
+	background-image:url(../images/renwen/renwen_27.jpg);
 	background-repeat:no-repeat;
 	background-position:3px;
 	padding-left:20px;}	
@@ -1584,7 +1584,7 @@ border-bottom:2px #3d5e83 solid;}
 .road-dh{ width:247px; height:23px; background-image:url(../images/likuang-3.gif);background-repeat:repeat-x; padding-top:5px; font-weight:bold; font-size:14px; color:#FFF; text-align:center; }
 .road-main{ width:237px; height:155px; font-size:12px; padding-left:10px; background:#FFF;}
 .road-main ul{ width:232px; margin:0px; padding:0px;}
-.road-main li{ width:217px; line-height:20px; background-image:url(../images/0_96.png); background-repeat:no-repeat; padding-left:15px; list-style:none; background-position:2px 8px;}
+.road-main li{ width:217px; line-height:20px; background-image:url(../images/0_96.jpg); background-repeat:no-repeat; padding-left:15px; list-style:none; background-position:2px 8px;}
 .road-main a{ color:#393a39;  text-decoration:none; }
 .road-main a:hover{color:#345377; text-decoration:underline;}
 /*实时路况 end*/
@@ -1660,7 +1660,7 @@ margin-top:15px;
 	line-height:26px;
 	height:26px;
 	list-style:none;
-	background-image:url(../images/0_96.png);
+	background-image:url(../images/0_96.jpg);
 	background-repeat:no-repeat;
 	background-position:3px;
 	padding-left:15px;
