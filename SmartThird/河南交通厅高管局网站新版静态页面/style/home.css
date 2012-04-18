@@ -4,9 +4,13 @@
 .list01-dh2 a:link{ color:#FFF; text-decoration:none;}
 .list01-dh2 a:hover{ color:#FFF; text-decoration:none;}
 .gonggao a:link{ font-size:14px;color:#345377;text-decoration:none;}
+.gonggao a:visited{ font-size:14px;color:#345377;text-decoration:none;}
 .gonggao a:hover{color:#393a39; text-decoration:underline;}
+.gonggao a:active{ font-size:14px;color:#345377;text-decoration:none;}
 .gonggao1 a:link{ font-size:14px;color:#393a39;text-decoration:none;}
-.gonggao1 a:hover{color:#345377; text-decoration:underline;} 
+.gonggao1 a:visited{ font-size:14px;color:#393a39;text-decoration:none;}
+.gonggao1 a:hover{color:#345377; text-decoration:underline;}
+.gonggao1 a:active{ font-size:14px;color:#393a39;text-decoration:none;}
 .project-dh a:link,.download-dh a:link{color:#345377; text-decoration:none;}
 .project-dh a:hover,.download-dh a:hover{color:#345377; text-decoration:underline;}
 	
@@ -37,13 +41,13 @@
 	padding-left:15px;
 	}
 .today-dh{
-	width:221px;
-	height:19px;
+	width:241px;
+	height:20px;
 	background-image:url(../images/img-home/j-bg.png);
 	background-repeat:no-repeat;
-	padding-left:150px;
-	padding-top:8px;
-	
+	padding-left:110px;
+	padding-right:20px;
+	padding-top:7px;
 	color:#CCC;}
 .today-main{
 	width:371px;
