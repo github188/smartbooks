@@ -84,26 +84,81 @@
 |1.
 		
 		stereotype 	"Actor")
-	    (object UseCase "系统配置"
-		quid       	"4F8CFB23029F"
+	    (object Class "路政巡逻员"
+		quid       	"4F8E255E02CE"
 		documentation 	
-|系统配置功能（开发人员）：
-|1.系统菜单配置
-|2.运行参数控制
+|任务：
+|1.记录交接班日志
+|2.记录路产案件
+		
+		stereotype 	"Actor")
+	    (object UseCase "添加人员档案"
+		quid       	"4F8E27660000"
+		documentation 	
+|step:
+|1.输入人员基本信息
+|2.校验用户输入信息
+|3.。。。
 		)
-	    (object Association "$UNNAMED$0"
-		quid       	"4F8CFB5200FA"
-		roles      	(list role_list
-		    (object Role "$UNNAMED$1"
-			quid       	"4F8CFB53008C"
-			supplier   	"Use Case View::系统配置"
-			quidu      	"4F8CFB23029F"
-			is_navigable 	TRUE)
-		    (object Role "$UNNAMED$2"
-			quid       	"4F8CFB53008E"
-			supplier   	"Use Case View::超级管理员"
-			quidu      	"4F8CFAD8029F"
-			is_navigable 	TRUE))))
+	    (object UseCase "修改人员档案"
+		quid       	"4F8E27BE01D4"
+		documentation 	
+|step:
+|1.
+|2.
+		)
+	    (object UseCase "查看人员档案"
+		quid       	"4F8E27F3031C"
+		documentation 	
+|step:
+|1.
+		)
+	    (object UseCase "删除人员档案"
+		quid       	"4F8E281D03D8"
+		documentation 	
+|step:
+|1.
+		)
+	    (object UseCase "添加人员装备"
+		quid       	"4F8E286002AF")
+	    (object UseCase "修改人员装备"
+		quid       	"4F8E288A0232")
+	    (object UseCase "查看人员装备"
+		quid       	"4F8E28980242")
+	    (object UseCase "删除人员装备"
+		quid       	"4F8E28A603B9")
+	    (object UseCase "添加巡逻日志"
+		quid       	"4F8E28ED031C")
+	    (object UseCase "修改巡逻日志"
+		quid       	"4F8E29110232")
+	    (object UseCase "查看巡逻日志"
+		quid       	"4F8E29200399")
+	    (object UseCase "删除巡逻日志"
+		quid       	"4F8E292E0203")
+	    (object UseCase "添加路产设备"
+		quid       	"4F8E294A0251")
+	    (object UseCase "修改路产设备"
+		quid       	"4F8E295C029F")
+	    (object UseCase "查看路产设备"
+		quid       	"4F8E296D008C")
+	    (object UseCase "删除路产设备"
+		quid       	"4F8E297E02EE")
+	    (object UseCase "添加路产案件"
+		quid       	"4F8E29A0005D")
+	    (object UseCase "查看路产案件"
+		quid       	"4F8E29B803A9")
+	    (object UseCase "修改路产案件"
+		quid       	"4F8E29CC02CE")
+	    (object UseCase "删除路产案件"
+		quid       	"4F8E29DC0290")
+	    (object UseCase "添加路况信息"
+		quid       	"4F8E2A0A002E")
+	    (object UseCase "查看路况信息"
+		quid       	"4F8E2A1C02AF")
+	    (object UseCase "修改路况信息"
+		quid       	"4F8E2A28000F")
+	    (object UseCase "删除路况信息"
+		quid       	"4F8E2A33003E"))
 	logical_presentations 	(list unit_reference_list
 	    (object UseCaseDiagram "Main"
 		quid       	"4F8CF7EF002F"
@@ -111,11 +166,14 @@
 		zoom       	100
 		max_height 	28350
 		max_width  	21600
-		origin_x   	-6
-		origin_y   	0
+		origin_x   	-9
+		origin_y   	1081
 		items      	(list diagram_item_list
-		    (object UseCaseView "Use Case View::系统配置" @1
-			location   	(1306, 162)
+		    (object ClassView "Class" "Use Case View::路政巡逻员" @1
+			ShowCompartmentStereotypes 	TRUE
+			IncludeAttribute 	TRUE
+			IncludeOperation 	TRUE
+			location   	(1382, 346)
 			font       	(object Font
 			    size       	12
 			    face       	"Arial"
@@ -127,22 +185,23 @@
 			    default_color 	TRUE)
 			label      	(object ItemLabel
 			    Parent_View 	@1
-			    location   	(1306, 300)
+			    location   	(1382, 506)
 			    anchor_loc 	1
 			    nlines     	2
-			    max_width  	630
+			    max_width  	325
 			    justify    	0
-			    label      	"系统配置")
+			    label      	"路政巡逻员")
+			icon       	"Actor"
 			icon_style 	"Icon"
 			line_color 	3342489
-			fill_color 	13434879
-			quidu      	"4F8CFB23029F"
-			height     	118)
+			quidu      	"4F8E255E02CE"
+			annotation 	8
+			autoResize 	TRUE)
 		    (object ClassView "Class" "Use Case View::超级管理员" @2
 			ShowCompartmentStereotypes 	TRUE
 			IncludeAttribute 	TRUE
 			IncludeOperation 	TRUE
-			location   	(1308, 568)
+			location   	(970, 346)
 			font       	(object Font
 			    size       	12
 			    face       	"Arial"
@@ -154,7 +213,7 @@
 			    default_color 	TRUE)
 			label      	(object ItemLabel
 			    Parent_View 	@2
-			    location   	(1308, 728)
+			    location   	(970, 506)
 			    anchor_loc 	1
 			    nlines     	2
 			    max_width  	325
@@ -166,30 +225,607 @@
 			quidu      	"4F8CFAD8029F"
 			annotation 	8
 			autoResize 	TRUE)
-		    (object AssociationViewNew "$UNNAMED$0" @3
-			location   	(1305, 407)
-			stereotype 	TRUE
+		    (object UseCaseView "Use Case View::添加人员档案" @3
+			location   	(1947, 1029)
+			font       	(object Font
+			    size       	12
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@3
+			    location   	(1947, 1167)
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	630
+			    justify    	0
+			    label      	"添加人员档案")
+			icon_style 	"Icon"
 			line_color 	3342489
-			quidu      	"4F8CFB5200FA"
-			roleview_list 	(list RoleViews
-			    (object RoleView "$UNNAMED$1" @4
-				Parent_View 	@3
-				location   	(-62, -165)
-				stereotype 	TRUE
-				line_color 	3342489
-				quidu      	"4F8CFB53008C"
-				client     	@3
-				supplier   	@1
-				line_style 	0)
-			    (object RoleView "$UNNAMED$2" @5
-				Parent_View 	@3
-				location   	(-62, -165)
-				stereotype 	TRUE
-				line_color 	3342489
-				quidu      	"4F8CFB53008E"
-				client     	@3
-				supplier   	@2
-				line_style 	0)))))))
+			fill_color 	13434879
+			quidu      	"4F8E27660000"
+			height     	118)
+		    (object UseCaseView "Use Case View::修改人员档案" @4
+			location   	(1950, 1263)
+			font       	(object Font
+			    size       	12
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@4
+			    location   	(1950, 1401)
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	630
+			    justify    	0
+			    label      	"修改人员档案")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"4F8E27BE01D4"
+			height     	118)
+		    (object UseCaseView "Use Case View::查看人员档案" @5
+			location   	(1938, 1516)
+			font       	(object Font
+			    size       	12
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@5
+			    location   	(1938, 1654)
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	630
+			    justify    	0
+			    label      	"查看人员档案")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"4F8E27F3031C"
+			height     	118)
+		    (object UseCaseView "Use Case View::删除人员档案" @6
+			location   	(1957, 1751)
+			font       	(object Font
+			    size       	12
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@6
+			    location   	(1957, 1889)
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	630
+			    justify    	0
+			    label      	"删除人员档案")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"4F8E281D03D8"
+			height     	118)
+		    (object UseCaseView "Use Case View::添加人员装备" @7
+			location   	(251, 1014)
+			font       	(object Font
+			    size       	12
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@7
+			    location   	(251, 1152)
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	630
+			    justify    	0
+			    label      	"添加人员装备")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"4F8E286002AF"
+			height     	118)
+		    (object UseCaseView "Use Case View::修改人员装备" @8
+			location   	(242, 1256)
+			font       	(object Font
+			    size       	12
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@8
+			    location   	(242, 1394)
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	630
+			    justify    	0
+			    label      	"修改人员装备")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"4F8E288A0232"
+			height     	118)
+		    (object UseCaseView "Use Case View::查看人员装备" @9
+			location   	(238, 1505)
+			font       	(object Font
+			    size       	12
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@9
+			    location   	(238, 1643)
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	630
+			    justify    	0
+			    label      	"查看人员装备")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"4F8E28980242"
+			height     	118)
+		    (object UseCaseView "Use Case View::删除人员装备" @10
+			location   	(235, 1750)
+			font       	(object Font
+			    size       	12
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@10
+			    location   	(235, 1888)
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	630
+			    justify    	0
+			    label      	"删除人员装备")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"4F8E28A603B9"
+			height     	118)
+		    (object UseCaseView "Use Case View::添加巡逻日志" @11
+			location   	(586, 1005)
+			font       	(object Font
+			    size       	12
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@11
+			    location   	(586, 1143)
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	630
+			    justify    	0
+			    label      	"添加巡逻日志")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"4F8E28ED031C"
+			height     	118)
+		    (object UseCaseView "Use Case View::修改巡逻日志" @12
+			location   	(586, 1236)
+			font       	(object Font
+			    size       	12
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@12
+			    location   	(586, 1374)
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	630
+			    justify    	0
+			    label      	"修改巡逻日志")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"4F8E29110232"
+			height     	118)
+		    (object UseCaseView "Use Case View::查看巡逻日志" @13
+			location   	(577, 1490)
+			font       	(object Font
+			    size       	12
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@13
+			    location   	(577, 1628)
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	630
+			    justify    	0
+			    label      	"查看巡逻日志")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"4F8E29200399"
+			height     	118)
+		    (object UseCaseView "Use Case View::删除巡逻日志" @14
+			location   	(569, 1741)
+			font       	(object Font
+			    size       	12
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@14
+			    location   	(569, 1879)
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	630
+			    justify    	0
+			    label      	"删除巡逻日志")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"4F8E292E0203"
+			height     	118)
+		    (object UseCaseView "Use Case View::添加路产设备" @15
+			location   	(910, 1004)
+			font       	(object Font
+			    size       	12
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@15
+			    location   	(910, 1142)
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	630
+			    justify    	0
+			    label      	"添加路产设备")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"4F8E294A0251"
+			height     	118)
+		    (object UseCaseView "Use Case View::修改路产设备" @16
+			location   	(915, 1256)
+			font       	(object Font
+			    size       	12
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@16
+			    location   	(915, 1394)
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	630
+			    justify    	0
+			    label      	"修改路产设备")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"4F8E295C029F"
+			height     	118)
+		    (object UseCaseView "Use Case View::查看路产设备" @17
+			location   	(928, 1509)
+			font       	(object Font
+			    size       	12
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@17
+			    location   	(928, 1647)
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	630
+			    justify    	0
+			    label      	"查看路产设备")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"4F8E296D008C"
+			height     	118)
+		    (object UseCaseView "Use Case View::删除路产设备" @18
+			location   	(927, 1742)
+			font       	(object Font
+			    size       	12
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@18
+			    location   	(927, 1880)
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	630
+			    justify    	0
+			    label      	"删除路产设备")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"4F8E297E02EE"
+			height     	118)
+		    (object UseCaseView "Use Case View::添加路产案件" @19
+			location   	(1252, 1015)
+			font       	(object Font
+			    size       	12
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@19
+			    location   	(1252, 1153)
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	630
+			    justify    	0
+			    label      	"添加路产案件")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"4F8E29A0005D"
+			height     	118)
+		    (object UseCaseView "Use Case View::查看路产案件" @20
+			location   	(1260, 1275)
+			font       	(object Font
+			    size       	12
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@20
+			    location   	(1260, 1413)
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	630
+			    justify    	0
+			    label      	"查看路产案件")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"4F8E29B803A9"
+			height     	118)
+		    (object UseCaseView "Use Case View::修改路产案件" @21
+			location   	(1264, 1516)
+			font       	(object Font
+			    size       	12
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@21
+			    location   	(1264, 1654)
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	630
+			    justify    	0
+			    label      	"修改路产案件")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"4F8E29CC02CE"
+			height     	118)
+		    (object UseCaseView "Use Case View::删除路产案件" @22
+			location   	(1265, 1756)
+			font       	(object Font
+			    size       	12
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@22
+			    location   	(1265, 1894)
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	630
+			    justify    	0
+			    label      	"删除路产案件")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"4F8E29DC0290"
+			height     	118)
+		    (object UseCaseView "Use Case View::添加路况信息" @23
+			location   	(1586, 1019)
+			font       	(object Font
+			    size       	12
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@23
+			    location   	(1586, 1157)
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	630
+			    justify    	0
+			    label      	"添加路况信息")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"4F8E2A0A002E"
+			height     	118)
+		    (object UseCaseView "Use Case View::查看路况信息" @24
+			location   	(1593, 1257)
+			font       	(object Font
+			    size       	12
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@24
+			    location   	(1593, 1395)
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	630
+			    justify    	0
+			    label      	"查看路况信息")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"4F8E2A1C02AF"
+			height     	118)
+		    (object UseCaseView "Use Case View::修改路况信息" @25
+			location   	(1600, 1507)
+			font       	(object Font
+			    size       	12
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@25
+			    location   	(1600, 1645)
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	630
+			    justify    	0
+			    label      	"修改路况信息")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"4F8E2A28000F"
+			height     	118)
+		    (object UseCaseView "Use Case View::删除路况信息" @26
+			location   	(1593, 1741)
+			font       	(object Font
+			    size       	12
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@26
+			    location   	(1593, 1879)
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	630
+			    justify    	0
+			    label      	"删除路况信息")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"4F8E2A33003E"
+			height     	118)
+		    (object NoteView @27
+			location   	(397, 791)
+			font       	(object Font
+			    size       	12
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@27
+			    location   	(125, 710)
+			    fill_color 	13434879
+			    nlines     	2
+			    max_width  	508
+			    label      	
+|1.这些功能让谁使用？
+|2.如何分配？
+			    )
+			line_color 	3342489
+			fill_color 	13434879
+			width      	568
+			height     	175)))))
     root_category 	(object Class_Category "Logical View"
 	quid       	"4F8CF7E9010A"
 	exportControl 	"Public"
