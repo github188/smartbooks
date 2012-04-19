@@ -23,6 +23,15 @@ a:active {text-decoration : none ;color : #393a39 ;} */
 	position:absolute;
 	margin-left:18px;
 }
+/*首页  容器*/
+#maincontainer-home{width:996px;height:1781px;margin:auto;  background-color:#FFFFFF;}
+#secondcontainer-home{
+	width:960px;
+	height:100%;
+	position:absolute;
+	margin-left:18px;
+}
+/*首页  容器*/
 /*政务公开 容器*/
 #maincontainer-1{width:996px;height:1000px;margin:auto;  background-color:#FFFFFF;}
 #secondcontainer-1{ width:960px;height:1000px;margin-left:18px;}
