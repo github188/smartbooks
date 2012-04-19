@@ -23,7 +23,7 @@ a:active {text-decoration : none ;color : #393a39 ;} */
 	position:absolute;
 	margin-left:18px;
 }
-/*首页  容器*/
+/*首页  容器开始*/
 #maincontainer-home{width:996px;height:1781px;margin:auto;  background-color:#FFFFFF;}
 #secondcontainer-home{
 	width:960px;
@@ -31,12 +31,28 @@ a:active {text-decoration : none ;color : #393a39 ;} */
 	position:absolute;
 	margin-left:18px;
 }
-/*首页  容器*/
+/*首页  容器结束*/
+
+
 /*政务公开 容器*/
 #maincontainer-1{width:996px;height:1000px;margin:auto;  background-color:#FFFFFF;}
 #secondcontainer-1{ width:960px;height:1000px;margin-left:18px;}
 /*政务公开 容器*/
-#header{ height:264px; padding-top:13px;}
+
+
+/*公告公示列表页面  容器开始*/
+#maincontainer-list{width:996px;height:100%;margin:auto;  background-color:#FFFFFF;}
+#secondcontainer-list{
+	width:960px;
+	height:100%;
+	position:absolute;
+	margin-left:18px;
+}
+/*公告公示列表页面  容器结束*/
+
+
+
+#header{ height:264px; padding-top:13px;/* border:1px #F00 solid;*/}
 #logo_flash{ height:208px; width:100%;}
 
 /*menu*/
@@ -158,4 +174,27 @@ a:active {text-decoration : none ;color : #393a39 ;} */
 
 /*网站主题*/
 #content{width:960px; height:329px;}
-/*焦点新闻*/
+
+
+/*位置 start*/
+#weizhi0{
+	width:960px; height:32px;
+	clear:both;}
+.weizhi0-top{
+	width:960px; height:7px; overflow:hidden;
+	background-image:url(../images/renwen/renwen_35.png);
+	background-repeat:no-repeat;}
+.weizhi0-bott{
+	width:960px; height:25px;}
+.weizhi0-bott-top{
+	width:950px; height:18px;
+	background-color:#e3e3e3;
+	padding-left:10px;
+	}
+.weizhi0-bott-bott{
+	width:960px; height:7px;
+	background-image:url(../images/renwen/renwen_36.png);
+	background-repeat:no-repeat;}
+
+/*位置 end*/
+
