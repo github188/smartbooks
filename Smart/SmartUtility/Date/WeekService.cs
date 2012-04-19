@@ -6,7 +6,7 @@ using System.Globalization;
 namespace Smart.Utility.Date {
     public static class WeekService {
 
-        // <summary>
+        /// <summary>
         /// 获取一年中指定的一周的开始日期和结束日期。开始日期遵循ISO 8601即星期一。
         /// </summary>
         /// <remarks>Write by vrhero</remarks>
