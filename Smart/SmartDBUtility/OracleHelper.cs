@@ -1050,7 +1050,7 @@ namespace Smart.DBUtility
         /// </summary>
         /// <param name="storedProcName">存储过程名称</param>
         /// <param name="parameters">参数集</param>
-        /// <param name="out_back">decimal型输出数值<</param>
+        /// <param name="out_back">decimal型输出数值</param>
         /// <param name="out_result">decimal型输出数值</param>
         /// <param name="out_msg">输出信息</param>
         public static void RunProcedure(string storedProcName, OracleParameter[] parameters, ref int out_back, ref int out_result, ref string out_msg)
