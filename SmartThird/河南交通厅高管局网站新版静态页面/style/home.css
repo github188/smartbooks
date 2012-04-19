@@ -41,13 +41,13 @@
 	padding-left:15px;
 	}
 .today-dh{
-	width:241px;
-	height:20px;
+	width:261px;
+	height:27px;
 	background-image:url(../images/img-home/j-bg.png);
 	background-repeat:no-repeat;
 	padding-left:110px;
-	padding-right:20px;
-	padding-top:7px;
+/*	padding-right:20px*/;
+	padding-top:3px;
 	color:#CCC;}
 .today-main{
 	width:371px;
