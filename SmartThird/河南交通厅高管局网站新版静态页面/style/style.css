@@ -1,82 +1,46 @@
 @charset "gb2312";
 /* CSS Document */
+
+/* 公共样式*/
 body,html{
 	margin:0px; padding:0px; 
-	background-image:url(../images/bg_01.png); background-repeat:repeat-x;
+	background-image:url(../images/bg_01.png); 
+	background-repeat:repeat-x;
 	font-size:12px;
 	margin-right:10px;
 	height:100%;
 	color:#393a39;}
-	img{ border:0px;}
-a:link{ color:#393a39;  text-decoration:none; }
-a:hover{ color:#345377; text-decoration:underline;}
-/*a:visited {text-decoration : none ;color : #393a39 ;}
-a:active {text-decoration : none ;color : #393a39 ;} */
+	
+img{ border:0px;}
+a:link{ color:#393a39; 
+text-decoration:none; 
+}
+a:hover{ color:#345377;
+text-decoration:underline;
+}
 
-.clear {clear:both; *display:inline;/*IE only*/}
 
+.clear {clear:both; 
+*display:inline;/*IE only*/
+}
 
-#maincontainer{width:996px;height:1721px;margin:auto;  background-color:#FFFFFF;}
+#maincontainer{width:996px;
+height:1721px;
+margin:auto;  
+background-color:#FFFFFF;
+}
 #secondcontainer{
 	width:960px;
 	height:100%;
 	position:absolute;
 	margin-left:18px;
 }
-/*首页  容器开始*/
-#maincontainer-home{
-	width:996px;
-	height:1781px;
-	margin:auto; 
-	background-color:#FFFFFF;}
-#secondcontainer-home{
-	width:960px;
-	height:100%;
-	position:absolute;
-	margin-left:18px;
-}
-/*首页  容器结束*/
-
-
-/*政务公开 容器*/
-#maincontainer-1{width:996px;height:1000px;margin:auto;  background-color:#FFFFFF;}
-#secondcontainer-1{ width:960px;height:1000px;margin-left:18px;}
-/*政务公开 容器*/
-
-/*子页面  样式*/
-#ziyemian{
-	width:100%;
-	height:auto;
-	}
-/*公告公示列表页面  容器开始*/
-#ziyemian .maincontainer-list{
-	width:996px;
-/*	height:auto !important;*/
-	/*height:80%; /*假定最低高度是200px*/
-	height:100%;
-	margin:auto;  
-	background-color:#FFFFFF;
-
-	}
- .secondcontainer-list{
-	width:960px;
-	height:100%;
-
-	margin-left:18px;
-
-}
-
-
-/*公告公示列表页面  容器结束*/
-
-/*子页面样式*/
-
 
 #header{ height:264px; padding-top:13px; width:960px;/* border:1px #F00 solid;*/}
 #logo_flash{ height:208px; width:100%;}
 
 /*menu*/
-/*#menu{ width:600px; height:38px; float:left; }*/
+
 #menu{ width:960px; height:40px; float:left;background:#fff url(../images/three_0.gif) repeat-x; clear:both;}
 #nav {
 	padding:0;
@@ -212,7 +176,8 @@ a:active {text-decoration : none ;color : #393a39 ;} */
 	padding-left:10px;
 	}
 .weizhi0-bott-bott{
-	width:960px; height:7px;
+	width:960px;
+	height:7px;
 	background-image:url(../images/renwen/renwen_36.png);
 	background-repeat:no-repeat;}
 
@@ -237,3 +202,62 @@ a:active {text-decoration : none ;color : #393a39 ;} */
 #bottom-01{
 	margin-top:15px;}
 /*底部*/
+
+/*公共样式  结束*/
+
+
+
+
+
+
+
+/*首页  容器开始*/
+#maincontainer-home{
+	width:996px;
+	height:1781px;
+	margin:auto; 
+	background-color:#FFFFFF;}
+#secondcontainer-home{
+	width:960px;
+	height:100%;
+	position:absolute;
+	margin-left:18px;
+}
+/*首页  容器结束*/
+
+
+/*政务公开 容器*/
+#maincontainer-1{width:996px;height:1000px;margin:auto;  background-color:#FFFFFF;}
+#secondcontainer-1{ width:960px;height:1000px;margin-left:18px;}
+/*政务公开 容器*/
+
+
+
+
+
+/*子页面  样式*/
+#ziyemian{
+	width:100%;
+	height:auto;
+	}
+/*公告公示列表页面  容器开始*/
+#ziyemian .maincontainer-list{
+	width:996px;
+/*	height:auto !important;*/
+	/*height:80%; /*假定最低高度是200px*/
+	height:100%;
+	margin:auto;  
+	background-color:#FFFFFF;
+
+	}
+ .secondcontainer-list{
+	width:960px;
+	height:100%;
+
+	margin-left:18px;
+
+}
+
+/*公告公示列表页面  容器结束*/
+
+/*子页面样式*/
