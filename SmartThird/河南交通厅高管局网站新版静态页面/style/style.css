@@ -24,7 +24,11 @@ a:active {text-decoration : none ;color : #393a39 ;} */
 	margin-left:18px;
 }
 /*首页  容器开始*/
-#maincontainer-home{width:996px;height:1781px;margin:auto;  background-color:#FFFFFF;}
+#maincontainer-home{
+	width:996px;
+	height:1781px;
+	margin:auto; 
+	background-color:#FFFFFF;}
 #secondcontainer-home{
 	width:960px;
 	height:100%;
@@ -39,20 +43,36 @@ a:active {text-decoration : none ;color : #393a39 ;} */
 #secondcontainer-1{ width:960px;height:1000px;margin-left:18px;}
 /*政务公开 容器*/
 
-
+/*子页面  样式*/
+#ziyemian{
+	width:100%;
+	height:auto;
+	}
 /*公告公示列表页面  容器开始*/
-#maincontainer-list{width:996px;height:100%;margin:auto;  background-color:#FFFFFF;}
-#secondcontainer-list{
+#ziyemian .maincontainer-list{
+	width:996px;
+/*	height:auto !important;*/
+	/*height:80%; /*假定最低高度是200px*/
+	height:100%;
+	margin:auto;  
+	background-color:#FFFFFF;
+
+	}
+ .secondcontainer-list{
 	width:960px;
 	height:100%;
-	position:absolute;
+
 	margin-left:18px;
+
 }
+
+
 /*公告公示列表页面  容器结束*/
 
+/*子页面样式*/
 
 
-#header{ height:264px; padding-top:13px;/* border:1px #F00 solid;*/}
+#header{ height:264px; padding-top:13px; width:960px;/* border:1px #F00 solid;*/}
 #logo_flash{ height:208px; width:100%;}
 
 /*menu*/
@@ -198,3 +218,22 @@ a:active {text-decoration : none ;color : #393a39 ;} */
 
 /*位置 end*/
 
+/*页码*/
+#page{
+	width:960px;
+	height:30px;
+	text-align:center;
+	margin-top:10px;}
+#page-zw{
+	width:708px;
+	height:30px;
+	text-align:center;
+	margin-top:10px;
+	margin-left:27px;}
+	
+/*页码*/
+	
+/*底部*/
+#bottom-01{
+	margin-top:15px;}
+/*底部*/

@@ -94,22 +94,7 @@ body, html {
 	background-position:41px 9px;
 }
 
-/*#s-nav li a:link,#s-nav li a:visited{
-	font-family:"黑体";
-	background-image:url(../images/zhengwugongkai-ui1.png);
-	background-repeat:no-repeat;
-	background-position:42px 9px;
-	color:#3f6187;
-}
-#s-nav li a:hover,#s-nav li a:active{
-	font-size:14px;
-	font-family:"黑体";
-	color:#3f6187;
-	background-image:url(../images/zhengwugongkai-ui0.png);
-	background-repeat:no-repeat;
-	background-position:41px 9px;
 
-}*/
 
 
 /*选项卡能容部分 end*/
@@ -132,12 +117,10 @@ body, html {
 /*机构简介  开始*/
 
 
-/*
-#d2,#d4,#d5,#d6,#d7,#d8,#d9{
-	display:none;}*/
+
+
 #d2 {
 	width:708px;
-	
 	background:#FFF;
 	margin-left:27px;
 

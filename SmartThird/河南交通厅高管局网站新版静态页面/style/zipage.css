@@ -1,0 +1,148 @@
+@charset "gb2312";
+/* CSS Document */
+
+/*公告公示列表页面*/
+.gg-list{
+	width:960px;
+	height:auto;
+	}
+.gg-list .list one{
+	width:960px;
+	height:170px;
+	}
+.list-one ul{
+	width:865px;
+	height:170px;
+	margin:0px;
+	padding:0px;
+	margin-left:40px;
+	border-bottom:1px #666 dashed;
+	margin-top:15px;
+	}
+
+.list-one ul li{
+	width:847px;
+	height:30px;
+	line-height:30px;
+	list-style:none;
+	display:block;
+	background-image:url(../images/img-home/0_76.jpg);
+	background-repeat:no-repeat;
+	background-position:3px;
+	padding-left:18px;}
+.list-one ul li a{
+	width:600px;
+	height:30px;
+	display:block;
+	float:left;
+	overflow:hidden;
+	}
+.list-one ul li span{
+	width:70px;
+	height:30px;
+	float:right;
+	display:block;}
+	
+/*last  list*/	
+.gg-list .list last{
+	width:960px;
+	height:170px;
+	}
+.list-last ul{
+	width:865px;
+	height:170px;
+	margin:0px;
+	padding:0px;
+	margin-left:40px;
+/*	border-bottom:1px #666 dashed;
+*/	margin-top:15px;
+	}
+
+.list-last ul li{
+	width:847px;
+	height:30px;
+	line-height:30px;
+	list-style:none;
+	display:block;
+	background-image:url(../images/img-home/0_76.jpg);
+	background-repeat:no-repeat;
+	background-position:3px;
+	padding-left:18px;}
+.list-last ul li a{
+	width:600px;
+	height:30px;
+	display:block;
+	float:left;
+	overflow:hidden;
+	}
+.list-last ul li span{
+	width:70px;
+	height:30px;
+	float:right;
+	display:block;}
+
+/*last  list*/
+/*公告公示列表 页面*/
+
+/*内容页面*/
+.content-p{
+	width:945px;
+	height:auto;
+	background-image:url(../images/content-bg.jpg);
+	background-repeat:repeat-x;
+	background-position:top;
+	margin-top:13px;
+	margin-left:7px;
+	}
+.biaoti-o{
+	width:945px;
+	height:50px;
+	font-size:30px;
+	font-family:"微软雅黑";
+	color:#355275;
+	text-align:center;
+	margin-top:10px;
+	background-image:url(../images/content-line.png);
+	background-repeat:no-repeat;
+	background-position:bottom;
+	}
+.time-r{
+	width:945px;
+	height:15px;
+	font-size:12px;
+	color:#355275;
+	text-align:center;
+	padding-top:5px;
+	}
+.l-mian{
+	width:935px;
+	margin-left:5px;
+	margin-top:15px;
+	text-indent:20px;
+	line-height:30px;}
+	
+/*内容页面*/
+
+.j-dh{
+	width:935px;
+	height:28px;
+	border-bottom:2px #355275 solid;
+	margin-left:5px;
+	padding-top:20px;}
+.j-mian{
+	width:935px;
+	margin-left:5px;
+	}
+.x-biaoti{
+	width:935px;
+	height:20px;
+	font-size:14px;
+	}
+.x-biaoti a{
+	text-decoration:underline;}
+.x-main{
+	width:935px;
+	font-size:12px;
+	line-height:22px;}
+.main-one{
+	margin-top:15px;}
