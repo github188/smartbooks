@@ -1,4 +1,5 @@
-﻿namespace SmartSpider.Config {
+﻿namespace SmartSpider.Config
+{
     using System;
     using System.Collections.Generic;
     using System.Text;
@@ -20,7 +21,8 @@
     public delegate void OnAppendSingleResult(params object[] values);
     public delegate void OnPublishResult();
 
-    public class TaskUnit : IDisposable {
+    public class TaskUnit : IDisposable
+    {
         #region 公共事件定义
         /// <summary>
         /// 日志记录事件
@@ -49,7 +51,6 @@
         private HttpHelper _HttpHelper;
         private string _ConfigPath = "";
         private string _ConfigDir = "";
-        private LogEventArgs eventArgs = new LogEventArgs("", 0, true);
         private StringCollection NavigationUrls = new StringCollection();
         public Timer time;
         #endregion
@@ -61,7 +62,8 @@
         /// <summary>
         /// 构造函数
         /// </summary>
-        public TaskUnit() {
+        public TaskUnit()
+        {
             this._HttpHelper = new HttpHelper(Encoding.GetEncoding(this._TaskConfig.UrlListManager.UrlEncoding));
             time = new Timer(new TimerCallback(Start), "", Timeout.Infinite, Timeout.Infinite);
         }
@@ -69,22 +71,26 @@
         /// <summary>
         /// 开始
         /// </summary>
-        private void Start(object sender) {
+        private void Start(object sender)
+        {
             string timeTick = DateTime.Now.ToLongDateString() + " " + DateTime.Now.ToLongTimeString();
-            if (this.Action == Config.Action.Running) {
-                eventArgs.Message = string.Format("{0} 任务正在运行中,启动任务失败...", timeTick);
-                this.AppendLog();
+            if (this.Action == Config.Action.Running)
+            {
+                this.AppendLog(string.Format("{0} 任务正在运行中,启动任务失败...",timeTick));
                 return;
             }
-            eventArgs.Message = string.Format("{0} 开始任务", timeTick);
-            this.AppendLog();
+            this.AppendLog(string.Format("{0} 开始任务", timeTick));
 
+            /*
+             * 设定任务开始时间和状态
+             */
             this._TaskConfig.StartingTime = DateTime.Now;
             this.Action = Config.Action.Running;
 
             #region 构造采集结果数据表结构
             this._Results = new DataTable();
-            foreach (ExtractionRule rule in this._TaskConfig.ExtractionRules) {
+            foreach (ExtractionRule rule in this._TaskConfig.ExtractionRules)
+            {
                 DataColumn colume = new DataColumn();
                 colume.DataType = typeof(string);
                 colume.ColumnName = rule.Name;
@@ -94,14 +100,20 @@
             }
             #endregion
 
-            #region 根据起始页面规则，加载导航地址采集规则
-            StringCollection startUrls = this.LoadingStartingUrl();
-            foreach (string startUrl in startUrls) {
-                if (this.Action == Config.Action.Stop || this.Action == Config.Action.Pause) return;
-                ExtractTheNavigationAddress(startUrl);
-                //ThreadPool.QueueUserWorkItem(new WaitCallback(ExtractTheNavigationAddress), startUrl);
-            }
-            #endregion
+            /*
+             * 功能:
+             * 以下代码完成解析导航地址功能。
+             * 
+             * 步骤：
+             * 1.根据UrlListManager配置创建ParseNavigationRules导航地址解析对象.
+             * 2.注册一个每增加导航地址时相应的事件.
+             * 3.Exec开始解析导航地址.
+             * 
+             * 修改标志：王亚 20120424
+             */
+            ParseNavigationRules parseNav = new ParseNavigationRules(this._TaskConfig.UrlListManager);
+            parseNav.onSingleComplete += new onSingleComplete(parseNav_onSingleComplete);
+            parseNav.Exec();
 
             //设置任务状态为完成
             this.Action = Config.Action.Finish;
@@ -110,9 +122,9 @@
         /// <summary>
         /// 删除任务
         /// </summary>
-        public void DeleteTask() {
-            eventArgs.Message = "删除任务配置文件" + _ConfigPath;
-            this.AppendLog();
+        public void DeleteTask()
+        {
+            this.AppendLog("删除任务配置文件" + _ConfigPath);
 
             //删除任务配置文件，并销毁对象自身。
             File.Delete(this._ConfigPath);
@@ -122,7 +134,8 @@
         /// <summary>
         /// 销毁资源
         /// </summary>
-        public void Dispose() {
+        public void Dispose()
+        {
             this._HttpHelper = null;
             this._Results = null;
             this._TaskConfig = null;
@@ -130,141 +143,82 @@
         #endregion
 
         #region 采集结果处理
-        /// <summary>
-        /// 提取导航地址
-        /// </summary>
-        /// <param name="start">起始地址Url</param>
-        private void ExtractTheNavigationAddress(object start) {
-            string startUrl = (string)start;
-            eventArgs.Message = string.Format("提取导航地址 {0}", start);
-            this.AppendLog();
-
-            foreach (NavigationRule navigationRole in this._TaskConfig.UrlListManager.NavigationRules) {
-                if (this.Action == Config.Action.Stop || this.Action == Config.Action.Pause) return;
-                // 采用深度优先模式提取内容采集结果
-                string htmlText = "";
-                try {
-                    htmlText = this._HttpHelper.RequestResult(startUrl);
-                } catch (Exception e) {
-                    eventArgs.Message = string.Format("请求网址失败 {0},原因 {1}\r\n", start, e.Message);
-                    this.AppendLog();
-                }
-
-                //判断是否为最终页面导航规则，如果为最终页面导航规则，则直接提取页面内容。
-                if (navigationRole.Terminal) {
-                    //ThreadPool.QueueUserWorkItem(new WaitCallback(ExtractTheContents), startUrl);
-                    ExtractTheContents(startUrl);
-                } else {
-                    StringCollection navUrls = this.LoadingNavigationRule(navigationRole, htmlText);
-                    foreach (string url in navUrls) {
-                        if (this.Action == Config.Action.Stop || this.Action == Config.Action.Pause) return;
-                        //根据导航地址提取内容结果
-                        ExtractTheContents(url);
-                        //ThreadPool.QueueUserWorkItem(new WaitCallback(ExtractTheContents), url);
-                    }
-                }
-            }
+        //当增加一条导航地址时触发的事件
+        private void parseNav_onSingleComplete(object sender, string url)
+        {
+            //提取页面内容
+            ExtractContents(url);
         }
 
         /// <summary>
         /// 提取请求结果内容
         /// </summary>
         /// <param name="param">导航地址Url</param>
-        private void ExtractTheContents(object param) {
-            if (this.Action == Config.Action.Stop) return;
+        private void ExtractContents(string contentUrl)
+        {
+            try
+            {
+                if (this.Action == Config.Action.Stop) return;
+                string htmlText = string.Empty;
+                string[] resultRow;
 
-            string contentUrl = (string)param;
-            string htmlText = "";
-            try {
-                //请求Web服务器返回Html文本
+                /*
+                 * 描述:
+                 * 根据Url地址请求Web服务器并返回一段Html文本，然后根据返回的文本和提取参数构造内容解析对象。
+                 * 
+                 * 步骤:
+                 * 1.请求web服务器并返回一段html文本
+                 * 2.根据html文本和提取规则实例化一个内容解析对象.
+                 * 3.执行Exec方法并返回解析结果。
+                 * 
+                 * 修改标志:王亚 20120424
+                 */
+
                 htmlText = this._HttpHelper.RequestResult(contentUrl);
-            } catch (Exception e) {
-                eventArgs.Message = string.Format("请求失败:{0} 原因:{1}", contentUrl,e.Message);
-                this.AppendLog();
-            }
+                ParseExtractRoles parseHtml = new ParseExtractRoles(
+                    _TaskConfig.ExtractionRules,    //提取规则
+                    htmlText,                       //html文本
+                    _HttpHelper.WebResponse);       //response对象
+                resultRow = parseHtml.Exec();       //提取内容
 
-            //提取内容
-            ParseExtractRoles parseHtml = new ParseExtractRoles(
-                _TaskConfig.ExtractionRules,
-                htmlText,
-                _HttpHelper.WebResponse);
-            string[] res = parseHtml.Exec();
-            this._Results.Rows.Add(res);
 
-            if (this.onAppendResult != null) {
-                this.onAppendResult(res);
-            }
-
-            //发布结果选项：直接发布到数据库
-            if (this.TaskConfig.PublishResultDircetly) {
-                PublishResult();
-                Results.Rows.Clear();   //清除现有的采集结果
-            }
-
-            //当完成一条采集结果时
-            if (this.OnTaskComplete != null) {
-                this.OnTaskComplete();
-            }
-        }
-
-        /// <summary>
-        /// 加载导航规则
-        /// </summary>
-        /// <param name="navigationRule">导航Url提取规则</param>
-        /// <param name="htmlText">Html文本</param>
-        private StringCollection LoadingNavigationRule(SmartSpider.Config.NavigationRule navigationRule, string htmlText) {
-            StringCollection navigationUrls = new StringCollection();
-            MatchCollection matchColl = Regex.Matches(htmlText, navigationRule.NextLayerUrlPattern);
-            foreach (Match match in matchColl) {
-                navigationUrls.Add(match.Value);
-            }
-            return navigationUrls;
-        }
-
-        /// <summary>
-        /// 加载起始地址
-        /// </summary>
-        private StringCollection LoadingStartingUrl() {
-            eventArgs.Message = "加载起始地址";
-            this.AppendLog();
-
-            StringCollection startingUrls = new StringCollection();
-            //先加载列表地址
-            foreach (string url in this._TaskConfig.UrlListManager.StartingUrlList) {
-                startingUrls.Add(url);
-            }
-
-            //加载模板网址
-            //匹配：{[0-9,-]*} {100,1,-1}            
-            foreach (PagedUrlPatterns pageUrl in this._TaskConfig.UrlListManager.PagedUrlPattern) {
-                MatchCollection regexMatch = Regex.Matches(pageUrl.PagedUrlPattern, "{[0-9,-]*}");
-                if (pageUrl.Format == PagedUrlPatternsMode.Increment) { //递增模式
-                    for (double i = pageUrl.StartPage; i <= pageUrl.EndPage; i += pageUrl.Step) {
-                        string url = pageUrl.PagedUrlPattern;
-                        if (regexMatch.Count != 0) {
-                            url = url.Replace(regexMatch[0].Value, i.ToString());
-                        }
-                        startingUrls.Add(url);
-                    }
-                } else if (pageUrl.Format == PagedUrlPatternsMode.Decreasing) { //递减模式
-                    for (double i = pageUrl.EndPage; i >= pageUrl.StartPage; i -= pageUrl.Step) {
-                        string url = pageUrl.PagedUrlPattern;
-                        if (regexMatch.Count != 0) {
-                            url = url.Replace(regexMatch[0].Value, i.ToString());
-                        }
-                        startingUrls.Add(url);
-                    }
+                /*
+                 * 描述:
+                 * 采集结果处理。
+                 * 
+                 * 步骤:
+                 * 1.将采集结果追加
+                 * 2.否直接发布采集结果
+                 * 3.引发完成一条采集结果事件
+                 * 
+                 * 修改标志: 王亚 20120424
+                 */
+                this._Results.Rows.Add(resultRow);              //追加采集结果
+                if (this.TaskConfig.PublishResultDircetly)
+                {
+                    PublishResult();                            //发布采集结果
+                    Results.Rows.Clear();                       //清除现有的采集结果
+                }
+                if (this.onAppendResult != null)
+                {
+                    this.onAppendResult(resultRow);             //引发完成一条采集结果事件
                 }
             }
-            return startingUrls;
+            catch (Exception e)
+            {
+                this.AppendLog(string.Format("请求失败:{0} 原因:{1}", contentUrl, e.Message));
+            }
         }
 
         /// <summary>
         /// 追加日志记录信息
         /// </summary>
-        private void AppendLog() {
-            if (this.Log != null) {
-                this.Log(eventArgs);
+        private void AppendLog(string loginfo)
+        {
+            if (this.Log != null)
+            {
+                LogEventArgs logevent = new LogEventArgs(loginfo);
+                this.Log(logevent);
             }
         }
         #endregion
@@ -275,29 +229,33 @@
         /// 发布采集结果
         /// </summary>
         /// <returns>发布成功记录条数</returns>
-        public int PublishResult() {
-            eventArgs.Message = "开始发布采集结果";
-            this.AppendLog();
+        public int PublishResult()
+        {
+            this.AppendLog("开始发布采集结果");
 
-            if (this.TaskConfig.DatabaseType == DatabaseType.Access) {
-                eventArgs.Message = "发布到Access数据库...";
-                this.AppendLog();
+            if (this.TaskConfig.DatabaseType == DatabaseType.Access)
+            {
+                this.AppendLog("发布到Access数据库...");
                 return PublishResultToAccess();
-            } else if (this.TaskConfig.DatabaseType == DatabaseType.MySql) {
-                eventArgs.Message = "发布到MySql数据库...";
-                this.AppendLog();
+            }
+            else if (this.TaskConfig.DatabaseType == DatabaseType.MySql)
+            {
+                this.AppendLog("发布到MySql数据库...");
                 return PublishResultToMySql();
-            } else if (this.TaskConfig.DatabaseType == DatabaseType.Oracle) {
-                eventArgs.Message = "发布到Oracle数据库...";
-                this.AppendLog();
+            }
+            else if (this.TaskConfig.DatabaseType == DatabaseType.Oracle)
+            {
+                this.AppendLog("发布到Oracle数据库...");
                 return PublishResultToOracle();
-            } else if (this.TaskConfig.DatabaseType == DatabaseType.SqlLite) {
-                eventArgs.Message = "发布到SqlLite数据库...";
-                this.AppendLog();
+            }
+            else if (this.TaskConfig.DatabaseType == DatabaseType.SqlLite)
+            {
+                this.AppendLog("发布到SqlLite数据库...");
                 return PublishResultToSqlLite();
-            } else if (this.TaskConfig.DatabaseType == DatabaseType.SqlServer) {
-                eventArgs.Message = "发布到SqlServer数据库...";
-                this.AppendLog();
+            }
+            else if (this.TaskConfig.DatabaseType == DatabaseType.SqlServer)
+            {
+                this.AppendLog("发布到SqlServer数据库...");
                 return PublishResultToSqlServer();
             }
 
@@ -308,7 +266,8 @@
         /// 发布结果到Access数据库
         /// </summary>
         /// <returns>发布成功记录数</returns>
-        public int PublishResultToAccess() {
+        public int PublishResultToAccess()
+        {
             //string cnStr = "Provider = Microsoft.Jet.OLEDB.4.0;Data Source = " + "c:\\data.mdb";
 
             //ADOX.Catalog catalog = new Catalog();
@@ -360,7 +319,8 @@
         /// 发布结果到MySql数据库
         /// </summary>
         /// <returns>发布成功记录数</returns>
-        public int PublishResultToMySql() {
+        public int PublishResultToMySql()
+        {
             return 0;
         }
 
@@ -368,7 +328,8 @@
         /// 发布结果到Oracle数据库
         /// </summary>
         /// <returns>发布成功记录数</returns>
-        public int PublishResultToOracle() {
+        public int PublishResultToOracle()
+        {
             return 0;
         }
 
@@ -376,7 +337,8 @@
         /// 发布结果到SqlLite数据库
         /// </summary>
         /// <returns>发布成功记录数</returns>
-        public int PublishResultToSqlLite() {
+        public int PublishResultToSqlLite()
+        {
             return 0;
         }
 
@@ -384,21 +346,26 @@
         /// 发布结果到SqlServer数据库
         /// </summary>
         /// <returns>发布成功记录数</returns>
-        public int PublishResultToSqlServer() {
+        public int PublishResultToSqlServer()
+        {
             int publishResultCount = 0;
             SqlConnection sqlConn = new SqlConnection(this.TaskConfig.ConnectionString);
-            try {
+            try
+            {
                 sqlConn.Open();
-                if (this.TaskConfig.UseProcedure) {
+                if (this.TaskConfig.UseProcedure)
+                {
                     #region 使用存储过程发布结果
-                    eventArgs.Message = "使用存储过程发布...";
-                    this.AppendLog();
+                    this.AppendLog("使用存储过程发布...");
 
-                    foreach (DataRow row in this.Results.Rows) {
+                    foreach (DataRow row in this.Results.Rows)
+                    {
                         #region 忽略不存在的参数
-                        try {
+                        try
+                        {
                             SqlCommand cmd = new SqlCommand();
-                            foreach (DataColumn col in this.Results.Columns) {
+                            foreach (DataColumn col in this.Results.Columns)
+                            {
                                 SqlParameter colParam = new SqlParameter("@" + col.Caption, row[col.ColumnName].ToString().Replace('\'', '\"'));
                                 cmd.Parameters.Add(colParam);
                             }
@@ -409,17 +376,23 @@
                             publishResultCount = cmd.ExecuteNonQuery();
 
                             #region 保存重复行
-                            if (publishResultCount == -1 && TaskConfig.SaveRepeatedRows) {
-                                if (RepeatedRow == null) {
+                            if (publishResultCount == -1 && TaskConfig.SaveRepeatedRows)
+                            {
+                                if (RepeatedRow == null)
+                                {
                                     RepeatedRow = Results.Clone();
                                 }
                                 RepeatedRow.Rows.Add(row);
                             }
                             #endregion
-                        } catch (Exception ex) {
+                        }
+                        catch (Exception ex)
+                        {
                             #region 保存出错行
-                            if (TaskConfig.SaveErrorRows) {
-                                if (ErrorRow == null) {
+                            if (TaskConfig.SaveErrorRows)
+                            {
+                                if (ErrorRow == null)
+                                {
                                     ErrorRow = Results.Clone();
                                 }
                                 ErrorRow.Rows.Add(row);
@@ -429,10 +402,11 @@
                         #endregion
                     }
                     #endregion
-                } else {
+                }
+                else
+                {
                     #region 初始化发布结果数据库连接对象
-                    eventArgs.Message = "发布到数据库表...";
-                    this.AppendLog();
+                    this.AppendLog("发布到数据库表...");
                     DataTable dt = new DataTable();
                     string selectCommand = string.Format("SELECT top 0 * FROM {0}", this.TaskConfig.PublicationTarget);
                     SqlDataAdapter da = new SqlDataAdapter(selectCommand, sqlConn);
@@ -456,18 +430,26 @@
                     #endregion
 
                     #region 忽略不存在的字段&保存出错行
-                    foreach (DataRow row in Results.Rows) {
+                    foreach (DataRow row in Results.Rows)
+                    {
                         DataRow newRow = dt.NewRow();   //新行对象
                         bool errorIdentity = false;     //错误标示
-                        foreach (DataColumn col in Results.Columns) {
+                        foreach (DataColumn col in Results.Columns)
+                        {
                             #region 忽略不存在的数据列选项,找不到对应的字段则忽略
-                            try {
+                            try
+                            {
                                 newRow[col.Caption] = row[col.ColumnName];
-                            } catch (Exception ex) {
+                            }
+                            catch (Exception ex)
+                            {
                                 errorIdentity = true;   //设定当前行错误标志
-                                if (TaskConfig.IgnoreDataColumnNotFound) {
+                                if (TaskConfig.IgnoreDataColumnNotFound)
+                                {
                                     continue;
-                                } else {
+                                }
+                                else
+                                {
                                     throw ex;
                                 }
                             }
@@ -476,8 +458,10 @@
                         dt.Rows.Add(newRow);
 
                         /*保存出错行*/
-                        if (errorIdentity && TaskConfig.SaveErrorRows) {
-                            if (ErrorRow == null) {
+                        if (errorIdentity && TaskConfig.SaveErrorRows)
+                        {
+                            if (ErrorRow == null)
+                            {
                                 ErrorRow = Results.Clone();
                             }
                             ErrorRow.Rows.Add(row);
@@ -489,18 +473,21 @@
                     publishResultCount = da.Update(dt);
                     #endregion
                 }
-            } catch (Exception e) {
-                eventArgs.Message = string.Format("发布出错:{0}", e.Message);
-                this.AppendLog();
-            } finally {
+            }
+            catch (Exception e)
+            {
+                this.AppendLog(string.Format("发布出错:{0}", e.Message));
+            }
+            finally
+            {
                 sqlConn.Close();
                 sqlConn.Dispose();
-                eventArgs.Message = string.Format("操作完成: 共 {0} 条记录。", publishResultCount.ToString());
-                this.AppendLog();
+                this.AppendLog(string.Format("操作完成: 共 {0} 条记录。", publishResultCount.ToString()));
             }
 
             #region 结果文件发布到数据库后，删除结果文件数据
-            if (TaskConfig.DeleteResultAfterPublication) {
+            if (TaskConfig.DeleteResultAfterPublication)
+            {
                 Results.Rows.Clear();
             }
             #endregion
@@ -513,7 +500,8 @@
         /// <summary>
         /// 保存任务配置到Xml文件(默认路径)
         /// </summary>
-        public void SaveTaskConfiguration() {
+        public void SaveTaskConfiguration()
+        {
             SaveTaskConfiguration(this.ConfigPath, true);
         }
 
@@ -521,7 +509,8 @@
         /// 保存任务配置文件(xml)到 filePath 路径
         /// </summary>
         /// <param name="filePath">xml文件路径</param>
-        public void SaveTaskConfiguration(string filePath) {
+        public void SaveTaskConfiguration(string filePath)
+        {
             SaveTaskConfiguration(filePath, true);
         }
 
@@ -530,7 +519,8 @@
         /// </summary>
         /// <param name="filePath">xml保存路径</param>
         /// <param name="isCover">是否覆盖现有的文件(如果存在)</param>
-        public void SaveTaskConfiguration(string filePath, bool isCover) {
+        public void SaveTaskConfiguration(string filePath, bool isCover)
+        {
             SaveTaskConfiguration(filePath, isCover, TaskConfig);
         }
 
@@ -540,16 +530,21 @@
         /// <param name="filePath">xml保存路径</param>
         /// <param name="isCover">是否覆盖现有的文件(如果存在)</param>
         /// <param name="task">task任务配置信息对象</param>
-        public void SaveTaskConfiguration(string filePath, bool isCover, Task task) {
+        public void SaveTaskConfiguration(string filePath, bool isCover, Task task)
+        {
             //以覆盖方式保存配置文件
-            if (isCover) {
-                try {
+            if (isCover)
+            {
+                try
+                {
                     XmlSerializer xs = new XmlSerializer(typeof(Task));
                     Stream writeStream = new FileStream(filePath, FileMode.Create, FileAccess.Write, FileShare.Write);
                     xs.Serialize(writeStream, task);
                     writeStream.Close();
                     writeStream.Dispose();
-                } catch (Exception e) {
+                }
+                catch (Exception e)
+                {
                     throw e;
                 }
             }
@@ -562,11 +557,14 @@
         /// <summary>
         /// 任务配置
         /// </summary>
-        public Task TaskConfig {
-            get {
+        public Task TaskConfig
+        {
+            get
+            {
                 return _TaskConfig;
             }
-            set {
+            set
+            {
                 _TaskConfig = value;
             }
         }
@@ -574,87 +572,102 @@
         /// <summary>
         /// 任务状态
         /// </summary>
-        public Action Action {
-            get {
+        public Action Action
+        {
+            get
+            {
                 return _Action;
             }
-            set {
+            set
+            {
                 _Action = value;
-                if (OnTaskStatusChanges != null) {
+                if (OnTaskStatusChanges != null)
+                {
                     this.OnTaskStatusChanges(this, value);
                 }
 
                 string timeTick = DateTime.Now.ToLongDateString() + " " + DateTime.Now.ToLongTimeString();
 
                 /*监测是否满足任务启动条件*/
-                switch (this.Action) {
+                string loginfo = string.Empty;
+                switch (this.Action)
+                {
                     case Config.Action.Ready:   //准备
                         time.Change(Timeout.Infinite, Timeout.Infinite);   //停止
-                        eventArgs.Message = string.Format("{0} 任务准备就绪...", timeTick);
+                        loginfo = string.Format("{0} 任务准备就绪...", timeTick);
                         break;
                     case Config.Action.Start:   //开始
                         StartTask();
                         break;
                     case Config.Action.Pause:   //暂停
                         time.Change(Timeout.Infinite, Timeout.Infinite);   //停止,暂时没有好的办法来停止任务的执行
-                        eventArgs.Message = string.Format("{0} 暂停任务...", timeTick);
+                        loginfo = string.Format("{0} 暂停任务...", timeTick);
                         break;
                     case Config.Action.Stop:    //停止
                         time.Change(Timeout.Infinite, Timeout.Infinite);   //停止
-                        eventArgs.Message = string.Format("{0} 停止任务...", timeTick);
+                        loginfo = string.Format("{0} 停止任务...", timeTick);
                         break;
                     case Config.Action.Finish:  //完成
                         //time.Change(Timeout.Infinite, Timeout.Infinite);   //停止
-                        eventArgs.Message = string.Format("{0} 任务完成...", timeTick);
+                        loginfo = string.Format("{0} 任务完成...", timeTick);
                         break;
                     case Config.Action.Running: //运行中
-                        eventArgs.Message = string.Format("{0} 任务运行中...", timeTick);
+                        loginfo = string.Format("{0} 任务运行中...", timeTick);
                         break;
                 }
-                this.AppendLog();
+                this.AppendLog(loginfo);
             }
         }
 
         /// <summary>
         /// 启动任务
         /// </summary>
-        private void StartTask() {
-            if (TaskConfig.ScheduleEnabled) {
+        private void StartTask()
+        {
+            if (TaskConfig.ScheduleEnabled)
+            {
                 /*调度模式:每间隔时间段*/
-                if (TaskConfig.ScheduleMode == ScheduleMode.Time) {
+                if (TaskConfig.ScheduleMode == ScheduleMode.Time)
+                {
                     long tick = TaskConfig.ScheduleDays * 86400000;
                     tick += TaskConfig.ScheduleHours * 3600000;
                     tick += TaskConfig.ScheduleMinutes * 60000;
                     time.Change(0, tick);
 
-                    eventArgs.Message = string.Format("{0} {1} 定时采集将于 {2} 秒后再次启动任务...",
+                    string loginfo = string.Format("{0} {1} 定时采集将于 {2} 秒后再次启动任务...",
                         DateTime.Now.ToLongDateString(),
                         DateTime.Now.ToLongTimeString(),
                         (tick / 1000).ToString());
-                    this.AppendLog();
+                    this.AppendLog(loginfo);
                 }
 
                 /*调度模式:每当经过每星期几中的时间范围*/
-                if (TaskConfig.ScheduleMode == ScheduleMode.Day) {
+                if (TaskConfig.ScheduleMode == ScheduleMode.Day)
+                {
                     /*
                      * 1.获取当前时间
                      * 2.判断当前时间是否位于指定的时间段内(开始时间、结束时间)区间
                      * 3.开始任务
                      */
                 }
-            } else {                
+            }
+            else
+            {
                 time.Change(0, Timeout.Infinite);   //普通方式启动任务,紧执行一次
-            }            
+            }
         }
 
         /// <summary>
         /// 采集结果
         /// </summary>
-        public DataTable Results {
-            get {
+        public DataTable Results
+        {
+            get
+            {
                 return _Results;
             }
-            set {
+            set
+            {
                 _Results = value;
             }
         }
@@ -662,11 +675,14 @@
         /// <summary>
         /// Http助手
         /// </summary>
-        public HttpHelper HttpHelper {
-            get {
+        public HttpHelper HttpHelper
+        {
+            get
+            {
                 return _HttpHelper;
             }
-            set {
+            set
+            {
                 _HttpHelper = value;
             }
         }
@@ -674,7 +690,8 @@
         /// <summary>
         /// Task配置文件路径
         /// </summary>
-        public string ConfigPath {
+        public string ConfigPath
+        {
             get { return _ConfigPath; }
             set { _ConfigPath = value; }
         }
@@ -682,7 +699,8 @@
         /// <summary>
         /// 配置文件目录
         /// </summary>
-        public string ConfigDir {
+        public string ConfigDir
+        {
             get { return _ConfigDir; }
             set { _ConfigDir = value; }
         }
@@ -690,7 +708,8 @@
         /// <summary>
         /// 采集结果出错行
         /// </summary>
-        public DataTable ErrorRow {
+        public DataTable ErrorRow
+        {
             get { return _ErrorRow; }
             set { _ErrorRow = value; }
         }
@@ -698,7 +717,8 @@
         /// <summary>
         /// 采集结果重复行
         /// </summary>
-        public DataTable RepeatedRow {
+        public DataTable RepeatedRow
+        {
             get { return _RepeatedRow; }
             set { _RepeatedRow = value; }
         }
