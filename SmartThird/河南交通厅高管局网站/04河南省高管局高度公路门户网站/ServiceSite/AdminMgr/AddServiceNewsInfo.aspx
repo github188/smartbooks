@@ -29,8 +29,8 @@
                     width: "100%",
                     height: "350px",
                     resizeMode: 1,
-                    uploadJson: './RoadWebSite/api/upload_json.ashx',
-                    fileManagerJson: './RoadWebSite/api/file_manager_json.ashx',
+                    uploadJson: '~/RoadWebSite/api/upload_json.ashx',
+                    fileManagerJson: '~/RoadWebSite/api/file_manager_json.ashx',
                     allowFileManager: true
                 });
             });
