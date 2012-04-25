@@ -1,0 +1,900 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40"
+xmlns:ns0="urn:schemas-microsoft-com:office:smarttags">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=gb2312">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<link rel=File-List href="200808010014_RWS.files/filelist.xml">
+<title>周口师范学院本科毕业论文（设计）任务书</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>User</o:Author>
+  <o:LastAuthor>User</o:LastAuthor>
+  <o:Revision>18</o:Revision>
+  <o:TotalTime>17</o:TotalTime>
+  <o:Created>2011-04-23T14:19:00Z</o:Created>
+  <o:LastSaved>2011-04-25T06:59:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>254</o:Words>
+  <o:Characters>1450</o:Characters>
+  <o:Company>China</o:Company>
+  <o:Lines>12</o:Lines>
+  <o:Paragraphs>3</o:Paragraphs>
+  <o:CharactersWithSpaces>1701</o:CharactersWithSpaces>
+  <o:Version>11.9999</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:View>Print</w:View>
+  <w:Zoom>110</w:Zoom>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:Compatibility>
+   <w:UseFELayout/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--p.BODYA4
+	{mso-style-李筱菲       :bodya4;}
+li.BODYA4
+	{mso-style-李筱菲       :bodya4;}
+div.BODYA4
+	{mso-style-李筱菲       :bodya4;}
+p.TOP
+	{mso-style-李筱菲       :top;}
+li.TOP
+	{mso-style-李筱菲       :top;}
+div.TOP
+	{mso-style-李筱菲       :top;}
+p.INFO
+	{mso-style-李筱菲       :info;}
+li.INFO
+	{mso-style-李筱菲       :info;}
+div.INFO
+	{mso-style-李筱菲       :info;}
+p.CONTENT
+	{mso-style-李筱菲       :content;}
+li.CONTENT
+	{mso-style-李筱菲       :content;}
+div.CONTENT
+	{mso-style-李筱菲       :content;}
+p.LEFTBOX
+	{mso-style-李筱菲       :leftbox;}
+li.LEFTBOX
+	{mso-style-李筱菲       :leftbox;}
+div.LEFTBOX
+	{mso-style-李筱菲       :leftbox;}
+p.LINKBUTTON
+	{mso-style-李筱菲       :linkbutton;}
+li.LINKBUTTON
+	{mso-style-李筱菲       :linkbutton;}
+div.LINKBUTTON
+	{mso-style-李筱菲       :linkbutton;}
+p.DROPDOWNLIST
+	{mso-style-李筱菲       :dropdownlist;}
+li.DROPDOWNLIST
+	{mso-style-李筱菲       :dropdownlist;}
+div.DROPDOWNLIST
+	{mso-style-李筱菲       :dropdownlist;}
+p.MENUSHOW
+	{mso-style-李筱菲       :menu_show;}
+li.MENUSHOW
+	{mso-style-李筱菲       :menu_show;}
+div.MENUSHOW
+	{mso-style-李筱菲       :menu_show;}
+p.MENUSHOW2
+	{mso-style-李筱菲       :menu_show2;}
+li.MENUSHOW2
+	{mso-style-李筱菲       :menu_show2;}
+div.MENUSHOW2
+	{mso-style-李筱菲       :menu_show2;}
+p.RIGHTBOX
+	{mso-style-李筱菲       :rightbox;}
+li.RIGHTBOX
+	{mso-style-李筱菲       :rightbox;}
+div.RIGHTBOX
+	{mso-style-李筱菲       :rightbox;}
+p.FOOT
+	{mso-style-李筱菲       :foot;}
+li.FOOT
+	{mso-style-李筱菲       :foot;}
+div.FOOT
+	{mso-style-李筱菲       :foot;}
+p.NAVIGATEBOTTOM
+	{mso-style-李筱菲       :navigate_bottom;}
+li.NAVIGATEBOTTOM
+	{mso-style-李筱菲       :navigate_bottom;}
+div.NAVIGATEBOTTOM
+	{mso-style-李筱菲       :navigate_bottom;}
+p.RIGHTBOXCOLOR
+	{mso-style-李筱菲       :rightbox_color;}
+li.RIGHTBOXCOLOR
+	{mso-style-李筱菲       :rightbox_color;}
+div.RIGHTBOXCOLOR
+	{mso-style-李筱菲       :rightbox_color;}
+p.TXT
+	{mso-style-李筱菲       :txt;}
+li.TXT
+	{mso-style-李筱菲       :txt;}
+div.TXT
+	{mso-style-李筱菲       :txt;}
+p.BTN
+	{mso-style-李筱菲       :btn;}
+li.BTN
+	{mso-style-李筱菲       :btn;}
+div.BTN
+	{mso-style-李筱菲       :btn;}
+p.LINE
+	{mso-style-李筱菲       :line;}
+li.LINE
+	{mso-style-李筱菲       :line;}
+div.LINE
+	{mso-style-李筱菲       :line;}
+span.SPELLE
+	{mso-style-李筱菲       :"";}
+table.MSONORMALTABLE
+	{mso-style-李筱菲       :普通表格;}
+table.MSOTABLEGRID
+	{mso-style-李筱菲       :网格型;}
+
+ /* Font Definitions */
+ @font-face
+	{font-family:宋体;
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-alt:SimSun;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 135135232 16 0 262145 0;}
+@font-face
+	{font-family:黑体;
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-alt:SimHei;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:1 135135232 16 0 262144 0;}
+@font-face
+	{font-family:"\@宋体";
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 135135232 16 0 262145 0;}
+@font-face
+	{font-family:"\@黑体";
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:1 135135232 16 0 262144 0;}
+@font-face
+	{font-family:方正宋黑简体;
+	mso-font-alt:黑体;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:1 135135232 16 0 262144 0;}
+@font-face
+	{font-family:"\@方正宋黑简体";
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:1 135135232 16 0 262144 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	mso-pagination:none;
+	font-size:10.5pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:宋体;
+	mso-font-kerning:1.0pt;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:center;
+	mso-pagination:none;
+	tab-stops:center 207.65pt right 415.3pt;
+	layout-grid-mode:char;
+	border:none;
+	mso-border-bottom-alt:solid windowtext .75pt;
+	padding:0cm;
+	mso-padding-alt:0cm 0cm 1.0pt 0cm;
+	font-size:9.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:宋体;
+	mso-font-kerning:1.0pt;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	tab-stops:center 207.65pt right 415.3pt;
+	layout-grid-mode:char;
+	font-size:9.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:宋体;
+	mso-font-kerning:1.0pt;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+p
+	{mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:宋体;
+	mso-bidi-font-family:宋体;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-noshow:yes;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	mso-pagination:none;
+	font-size:9.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:宋体;
+	mso-font-kerning:1.0pt;}
+p.bodya4, li.bodya4, div.bodya4
+	{mso-style-name:bodya4;
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:宋体;
+	mso-bidi-font-family:宋体;}
+p.top, li.top, div.top
+	{mso-style-name:top;
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:宋体;
+	mso-bidi-font-family:宋体;}
+p.info, li.info, div.info
+	{mso-style-name:info;
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	line-height:26.25pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:宋体;
+	mso-bidi-font-family:宋体;}
+p.content, li.content, div.content
+	{mso-style-name:content;
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:宋体;
+	mso-bidi-font-family:宋体;}
+p.leftbox, li.leftbox, div.leftbox
+	{mso-style-name:leftbox;
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	border:none;
+	mso-border-right-alt:solid #9BDF70 .75pt;
+	padding:0cm;
+	mso-padding-alt:0cm 0cm 0cm 0cm;
+	font-size:12.0pt;
+	font-family:宋体;
+	mso-bidi-font-family:宋体;}
+p.linkbutton, li.linkbutton, div.linkbutton
+	{mso-style-name:linkbutton;
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	font-size:11.5pt;
+	font-family:宋体;
+	mso-bidi-font-family:宋体;}
+p.dropdownlist, li.dropdownlist, div.dropdownlist
+	{mso-style-name:dropdownlist;
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:13.5pt;
+	font-family:宋体;
+	mso-bidi-font-family:宋体;}
+p.menushow, li.menushow, div.menushow
+	{mso-style-name:menushow;
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	text-align:center;
+	line-height:22.5pt;
+	mso-pagination:widow-orphan;
+	font-size:10.5pt;
+	font-family:宋体;
+	mso-bidi-font-family:宋体;}
+p.menushow2, li.menushow2, div.menushow2
+	{mso-style-name:menushow2;
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	text-align:center;
+	line-height:22.5pt;
+	mso-pagination:widow-orphan;
+	font-size:10.5pt;
+	font-family:宋体;
+	mso-bidi-font-family:宋体;}
+p.rightbox, li.rightbox, div.rightbox
+	{mso-style-name:rightbox;
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:7.5pt;
+	mso-pagination:widow-orphan;
+	border:none;
+	mso-border-right-alt:solid #9BDF70 .75pt;
+	padding:0cm;
+	mso-padding-alt:0cm 0cm 0cm 0cm;
+	font-size:12.0pt;
+	font-family:宋体;
+	mso-bidi-font-family:宋体;}
+p.foot, li.foot, div.foot
+	{mso-style-name:foot;
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	line-height:28.5pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:宋体;
+	mso-bidi-font-family:宋体;}
+p.navigatebottom, li.navigatebottom, div.navigatebottom
+	{mso-style-name:navigatebottom;
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	text-align:center;
+	line-height:22.5pt;
+	mso-pagination:widow-orphan;
+	font-size:10.5pt;
+	font-family:宋体;
+	mso-bidi-font-family:宋体;}
+p.rightboxcolor, li.rightboxcolor, div.rightboxcolor
+	{mso-style-name:rightboxcolor;
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:7.5pt;
+	mso-pagination:widow-orphan;
+	background:#F0FBEB;
+	border:none;
+	mso-border-right-alt:solid #9BDF70 .75pt;
+	padding:0cm;
+	mso-padding-alt:0cm 0cm 0cm 0cm;
+	font-size:12.0pt;
+	font-family:宋体;
+	mso-bidi-font-family:宋体;}
+p.txt, li.txt, div.txt
+	{mso-style-name:txt;
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	line-height:16.5pt;
+	mso-pagination:widow-orphan;
+	background:#F8FFE7;
+	border:none;
+	mso-border-alt:solid #ABDC8D .75pt;
+	padding:0cm;
+	mso-padding-alt:0cm 0cm 0cm 0cm;
+	font-size:12.0pt;
+	font-family:宋体;
+	mso-bidi-font-family:宋体;}
+p.btn, li.btn, div.btn
+	{mso-style-name:btn;
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:宋体;
+	mso-bidi-font-family:宋体;}
+p.line, li.line, div.line
+	{mso-style-name:line;
+	margin-top:3.75pt;
+	margin-right:0cm;
+	margin-bottom:3.75pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	background:#66FF66;
+	font-size:1.0pt;
+	font-family:宋体;
+	mso-bidi-font-family:宋体;}
+ /* Page Definitions */
+ @page
+	{mso-page-border-surround-header:no;
+	mso-page-border-surround-footer:no;}
+@page Section1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	mso-header-margin:42.55pt;
+	mso-footer-margin:49.6pt;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:普通表格;
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]-->
+<meta 李筱菲=ProgId content=Word.Document>
+<meta 李筱菲=Generator content="Microsoft Word 11">
+<meta 李筱菲=Originator content="Microsoft Word 11">
+<!--[if gte mso 9]><xml>
+ <u1:DocumentProperties>
+  <u1:Author>赵宇</u1:Author>
+  <u1:LastAuthor>雨林木风</u1:LastAuthor>
+  <u1:Revision>2</u1:Revision>
+  <u1:TotalTime>143</u1:TotalTime>
+  <u1:LastPrinted>2007-11-30T03:37:00Z</u1:LastPrinted>
+  <u1:Created>2011-01-11T03:32:00Z</u1:Created>
+  <u1:LastSaved>2011-01-11T03:32:00Z</u1:LastSaved>
+  <u1:Pages>1</u1:Pages>
+  <u1:Words>53</u1:Words>
+  <u1:Characters>303</u1:Characters>
+  <u1:Company>Legend (Beijing) Limited</u1:Company>
+  <u1:Lines>2</u1:Lines>
+  <u1:Paragraphs>1</u1:Paragraphs>
+  <u1:CharactersWithSpaces>355</u1:CharactersWithSpaces>
+  <u1:Version>11.9999</u1:Version>
+ </u1:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <u2:WordDocument>
+  <u2:PunctuationKerning/>
+  <u2:DrawingGridVerticalSpacing>7.8 磅</u2:DrawingGridVerticalSpacing>
+  <u2:DisplayHorizontalDrawingGridEvery>0</u2:DisplayHorizontalDrawingGridEvery>
+  <u2:DisplayVerticalDrawingGridEvery>2</u2:DisplayVerticalDrawingGridEvery>
+  <u2:ValidateAgainstSchemas/>
+  <u2:SaveIfXMLInvalid>false</u2:SaveIfXMLInvalid>
+  <u2:IgnoreMixedContent>false</u2:IgnoreMixedContent>
+  <u2:AlwaysShowPlaceholderText>false</u2:AlwaysShowPlaceholderText>
+  <u2:Compatibility>
+   <u2:SpaceForUL/>
+   <u2:BalanceSingleByteDoubleByteWidth/>
+   <u2:DoNotLeaveBackslashAlone/>
+   <u2:ULTrailSpace/>
+   <u2:DoNotExpandShiftReturn/>
+   <u2:AdjustLineHeightInTable/>
+   <u2:BreakWrappedTables/>
+   <u2:SnapToGridInCell/>
+   <u2:WrapTextWithPunct/>
+   <u2:UseAsianBreakRules/>
+   <u2:UseWord2002TableStyleRules/>
+   <u2:UseFELayout/>
+  </u2:Compatibility>
+  <u2:BrowserLevel>MicrosoftInternetExplorer4</u2:BrowserLevel>
+ </u2:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <u3:LatentStyles DefLockedState="false" LatentStyleCount="156">  </u3:LatentStyles>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <u4:shapedefaults u5:ext="edit" spidmax="3074"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <u6:shapelayout u7:ext="edit">
+  <u6:idmap u7:ext="edit" data="1"/>
+ </u6:shapelayout>
+</xml><![endif]-->
+</head>
+
+<body lang=ZH-CN link=blue vlink=blue style='tab-interval:21.0pt;text-justify-trim:
+punctuation'>
+
+<div class=Section1>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:15.0pt;font-family:黑体'>周口师范学院<span lang=EN-US>2012</span>届本科毕业生毕业论文（设计）任务书</span><span
+lang=EN-US><u8:p></u8:p></span></p>
+
+<div align=center>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width=612
+ style='width:459.0pt;margin-left:14.2pt;border-collapse:collapse;border:none;
+ mso-border-alt:solid windowtext .5pt;mso-yfti-tbllook:480;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt;mso-border-insideh:.5pt solid windowtext;mso-border-insidev:
+ .5pt solid windowtext'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;height:22.95pt'>
+  <td width=144 colspan=2 style='width:108.0pt;border:solid windowtext 1.0pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:22.95pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b
+  style='mso-bidi-font-weight:normal'><span style='mso-bidi-font-size:10.5pt;
+  font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>论文（设计）题目</span></b><span lang=EN-US><u8:p></u8:p></span></p>
+  </td>
+  <td width=468 colspan=6 style='width:351.0pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:22.95pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+  style='mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>《数据结构》网络教学平台的前台设计与实现</span><span
+  lang=EN-US><o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;height:22.9pt'>
+  <td width=60 style='width:44.85pt;border:solid windowtext 1.0pt;border-top:
+  none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:22.9pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b
+  style='mso-bidi-font-weight:normal'><span style='mso-bidi-font-size:10.5pt;
+  font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>姓名</span></b><span lang=EN-US><u8:p></u8:p><o:p></o:p></span></p>
+  </td>
+  <td width=84 style='width:63.15pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:22.9pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b
+  style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-bidi-font-size:
+  10.5pt'><u8:p>&nbsp;</u8:p> </span></b><b style='mso-bidi-font-weight:normal'><span
+  style='mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>李筱菲</span></b><b style='mso-bidi-font-weight:
+  normal'><span style='mso-bidi-font-size:10.5pt'> </span></b><span lang=EN-US>&nbsp;</span></p>
+  </td>
+  <td width=72 style='width:54.0pt;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top-alt:
+  solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:22.9pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b
+  style='mso-bidi-font-weight:normal'><span style='mso-bidi-font-size:10.5pt;
+  font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>专</span></b><b style='mso-bidi-font-weight:normal'><span
+  lang=EN-US style='mso-bidi-font-size:10.5pt'><span
+  style='mso-spacerun:yes'>&nbsp; </span></span></b><b style='mso-bidi-font-weight:
+  normal'><span style='mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>业</span></b><span
+  lang=EN-US><u8:p></u8:p><o:p></o:p></span></p>
+  </td>
+  <td width=72 style='width:54.0pt;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top-alt:
+  solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:22.9pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b
+  style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-bidi-font-size:
+  10.5pt'><u8:p>&nbsp;</u8:p> </span></b><b style='mso-bidi-font-weight:normal'><span
+  style='font-size:9.0pt;font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>科学与技术</span></b><b style='mso-bidi-font-weight:
+  normal'><span style='font-size:9.0pt'> </span></b><span lang=EN-US
+  style='font-size:9.0pt'>&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td width=72 style='width:54.0pt;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top-alt:
+  solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:22.9pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b
+  style='mso-bidi-font-weight:normal'><span style='mso-bidi-font-size:10.5pt;
+  font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>班</span></b><b style='mso-bidi-font-weight:normal'><span
+  lang=EN-US style='mso-bidi-font-size:10.5pt'><span
+  style='mso-spacerun:yes'>&nbsp; </span></span></b><b style='mso-bidi-font-weight:
+  normal'><span style='mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>级</span></b><span
+  lang=EN-US><u8:p></u8:p><o:p></o:p></span></p>
+  </td>
+  <td width=72 style='width:54.0pt;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top-alt:
+  solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:22.9pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b
+  style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-bidi-font-size:
+  10.5pt'><u8:p>&nbsp;</u8:p> </span></b><b style='mso-bidi-font-weight:normal'><span
+  lang=EN-US style='font-size:9.0pt'>&nbsp;08</span></b><b style='mso-bidi-font-weight:
+  normal'><span style='font-size:9.0pt;font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>科学与技术</span></b><b
+  style='mso-bidi-font-weight:normal'><span style='font-size:9.0pt'> </span></b><span
+  lang=EN-US style='font-size:9.0pt'>&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td width=72 style='width:53.8pt;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top-alt:
+  solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:22.9pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b
+  style='mso-bidi-font-weight:normal'><span style='mso-bidi-font-size:10.5pt;
+  font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>学</span></b><b style='mso-bidi-font-weight:normal'><span
+  lang=EN-US style='mso-bidi-font-size:10.5pt'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp; </span></span></b><b style='mso-bidi-font-weight:
+  normal'><span style='mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>号</span></b><span
+  lang=EN-US><u8:p></u8:p><o:p></o:p></span></p>
+  </td>
+  <td width=108 style='width:81.2pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:22.9pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b
+  style='mso-bidi-font-weight:normal'><span lang=EN-US><u8:p>&nbsp;</u8:p>
+  200808010014&nbsp;<o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2;mso-yfti-lastrow:yes;height:575.0pt'>
+  <td width=612 colspan=8 valign=top style='width:459.0pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:575.0pt'>
+  <p class=MsoNormal style='line-height:17.0pt;mso-line-height-rule:exactly'><b
+  style='mso-bidi-font-weight:normal'><span style='font-size:12.0pt;font-family:
+  宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>课题的目的与要求：</span></b><b
+  style='mso-bidi-font-weight:normal'><span lang=EN-US style='font-size:12.0pt'><o:p></o:p></span></b></p>
+  <p class=MsoNormal style='text-indent:21.0pt;mso-char-indent-count:2.0'><span
+  lang=EN-US>&nbsp;1.</span><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>要求选题学生具有一定的编程能力和网站构建能力。</span></p>
+  <p class=MsoNormal style='text-indent:24.0pt'><span lang=EN-US>2.</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>本研究需要与作后台管理设计与实现的学生合作完成。</span></p>
+  <p class=MsoNormal style='line-height:17.0pt;mso-line-height-rule:exactly'><b
+  style='mso-bidi-font-weight:normal'><span lang=EN-US style='font-size:12.0pt'>&nbsp;</span></b><b
+  style='mso-bidi-font-weight:normal'><span style='font-size:12.0pt;font-family:
+  宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>论文的主要内容（或设计的技术要求与数据）：</span></b><b
+  style='mso-bidi-font-weight:normal'><span lang=EN-US style='font-size:12.0pt'><u8:p></u8:p><o:p></o:p></span></b></p>
+  <p class=MsoNormal style='text-indent:21.0pt;mso-char-indent-count:2.0'><span
+  lang=EN-US>&nbsp; 1.</span><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>研究课题的具体内容</span></p>
+  <p class=MsoNormal style='text-indent:24.0pt'><span style='font-family:宋体;
+  mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>（</span><span
+  lang=EN-US>1</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>）网站首页；</span></p>
+  <p class=MsoNormal style='text-indent:24.0pt'><span style='font-family:宋体;
+  mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>（</span><span
+  lang=EN-US>2</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>）教学描述，包含了教学介绍、教学定位、历史沿革、教学内容、教学设计以及教学方法与手段等二级内容；</span></p>
+  <p class=MsoNormal style='text-indent:24.0pt'><span style='font-family:宋体;
+  mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>（</span><span
+  lang=EN-US>3</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>）教学团队，包含了教学负责人、师资队伍、师资培养、科研项目以及学术论文等二级内容；</span>
+  </p>
+  <p class=MsoNormal style='text-indent:24.0pt'><span style='font-family:宋体;
+  mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>（</span><span
+  lang=EN-US>4</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>）教学大纲，包含了课程大纲、实验大纲、考试大纲以及考核标准等内容；</span></p>
+  <p class=MsoNormal style='text-indent:24.0pt'><span style='font-family:宋体;
+  mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>（</span><span
+  lang=EN-US>5</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>）教学教案，里面包含各章教学内容的教案；</span></p>
+  <p class=MsoNormal style='text-indent:24.0pt'><span style='font-family:宋体;
+  mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>（</span><span
+  lang=EN-US>6</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>）多媒体课件，里面包含各章教学内容的电子课件；</span></p>
+  <p class=MsoNormal style='text-indent:24.0pt'><span style='font-family:宋体;
+  mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>（</span><span
+  lang=EN-US>7</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>）实验内容，包含了线性表、堆栈、队列、串、稀疏矩阵、递归、二叉树以及图的实验；</span></p>
+  <p class=MsoNormal style='text-indent:24.0pt'><span style='font-family:宋体;
+  mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>（</span><span
+  lang=EN-US>8</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>）学习园地，包含了练习自测、试题库、样卷与答案以及编程实战等；</span></p>
+  <p class=MsoNormal style='text-indent:24.0pt'><span style='font-family:宋体;
+  mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman";
+  color:black'>（</span><span lang=EN-US style='color:black'>9</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman";color:black'>）教学互动，里面包含了作业布置、交流讨论以及常见问题等内容。</span><span
+  lang=EN-US style='color:black'><o:p></o:p></span></p>
+  <p class=MsoNormal style='text-indent:24.0pt'><span lang=EN-US
+  style='color:black'>2. </span><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman";color:black'>网络教学用户分为网络管理员（教师）、注册用户（注册学生）、非注册用户（普通学生）。根据以上用户划分，每个用户具有以下操作权限：</span><span
+  lang=EN-US style='color:black'><o:p></o:p></span></p>
+  <p class=MsoNormal style='text-indent:24.0pt'><span style='font-family:宋体;
+  mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>（</span><span
+  lang=EN-US>1</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>）网络管理员（教师）</span></p>
+  <p class=MsoNormal style='text-indent:24.0pt'><span lang=EN-US><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>a.</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>能够编辑和修改【教学描述】、【教学团队】里的内容；</span></p>
+  <p class=MsoNormal style='text-indent:24.0pt'><span lang=EN-US><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>b.</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>能够更新【教学大纲】里的内容；</span></p>
+  <p class=MsoNormal style='text-indent:24.0pt'><span lang=EN-US><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>c.</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>能够发布【教学教案】、【多媒体课件】以及【实验内容】里相关课程教学的信息；</span></p>
+  <p class=MsoNormal style='text-indent:24.0pt'><span lang=EN-US><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>d.</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>能够针对学生的状况在【学习园地】中发布练习自测、试题库、样卷与答案以及编程实战等练习。</span></p>
+  <p class=MsoNormal style='text-indent:24.0pt'><span lang=EN-US><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>e.</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>在【教学互动】中，根据学生学习的情况发布作业，及与学生进行交流讨论。</span></p>
+  <p class=MsoNormal style='text-indent:24.0pt'><span lang=EN-US><span
+  style='mso-spacerun:yes'>&nbsp; </span></span><span style='font-family:宋体;
+  mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>（</span><span
+  lang=EN-US>2</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>）注册用户（注册学生）</span></p>
+  <p class=MsoNormal style='text-indent:24.0pt'><span lang=EN-US><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>a.</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>能够了解【教学描述】、【教学团队】里的所有内容；</span></p>
+  <p class=MsoNormal style='text-indent:24.0pt'><span lang=EN-US><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>b.</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>可以查阅【教学大纲】内的内容；</span></p>
+  <p class=MsoNormal style='text-indent:24.0pt'><span lang=EN-US><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>c.</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>可以查询【教学教案】、【多媒体课件】以及【实验内容】里相关课程教学信息的资料；</span></p>
+  <p class=MsoNormal style='text-indent:24.0pt'><span lang=EN-US><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>d.</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>能够看到【学习园地】中的练习，可以有针对地进行测试和知识点的巩固；</span></p>
+  <p class=MsoNormal style='text-indent:24.0pt'><span lang=EN-US><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>e.</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>可以加入【教学互动】，不但可以看到老师布置的作业和显示常见的问题，而且能够直接和教师或者其他学者进行交流和讨论。</span></p>
+  <p class=MsoNormal style='text-indent:24.0pt'><span lang=EN-US><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp; </span></span><span style='font-family:
+  宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>（</span><span
+  lang=EN-US>3</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>）非注册用户（普通学生）</span></p>
+  <p class=MsoNormal style='text-indent:24.0pt'><span lang=EN-US><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>a.</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>能够了解【教学描述】、【教学团队】里的所有内容；</span></p>
+  <p class=MsoNormal style='text-indent:24.0pt'><span lang=EN-US><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span><span style='mso-spacerun:yes'>&nbsp;</span>b.</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>可以查阅【教学大纲】内的内容；</span></p>
+  <p class=MsoNormal style='text-indent:24.0pt'><span lang=EN-US><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>c.</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>可以查询【教学教案】、【多媒体课件】以及【实验内容】里相关课程教学信息的资料。</span></p>
+  <p class=MsoNormal style='text-indent:24.0pt'><span lang=EN-US><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>d.</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>能够看到【教学互动】里提示课程网站出现的常见问题。</span></p>
+  <p class=MsoNormal style='text-indent:26.25pt;mso-char-indent-count:2.5'><span
+  lang=EN-US>3.</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>研究方法</span></p>
+  <p class=MsoNormal style='text-indent:21.0pt;mso-char-indent-count:2.0'><span
+  lang=EN-US><span style='mso-spacerun:yes'>&nbsp; </span></span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>本设计主要包括网络教学的需求分析、系统设计和实现。网站建设主要采用</span><span lang=EN-US>ASP</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>语言，采用</span><span lang=EN-US>Visual Studio2005</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>平台，后台使用</span><span lang=EN-US>SQL Seaver2005</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>数据库。</span></p>
+  <p class=MsoNormal style='text-indent:24.0pt'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+  <p class=MsoNormal style='line-height:17.0pt;mso-line-height-rule:exactly'><b
+  style='mso-bidi-font-weight:normal'><span style='font-size:12.0pt;font-family:
+  宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>查阅参考文献、资料要求：</span></b><b
+  style='mso-bidi-font-weight:normal'><span lang=EN-US style='font-size:12.0pt'><u8:p></u8:p><o:p></o:p></span></b></p>
+  <p class=MsoNormal style='text-indent:21.0pt;mso-char-indent-count:2.0'><span
+  lang=EN-US>&nbsp;</span><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>主要参考文献（指导教师指定部分）：</span></p>
+  <p class=MsoNormal style='text-indent:24.0pt'><span lang=EN-US>[1]</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>耿国华编著，数据结构，</span> <span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>高等教育出版社</span></p>
+  <p class=MsoNormal style='text-indent:24.0pt'><span lang=EN-US>[2]</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>严蔚敏</span><span lang=EN-US>, </span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>吴伟民编著</span> <span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>数据结构</span> <span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>清华大学出版社</span></p>
+  <p class=MsoNormal style='text-indent:24.0pt'><span lang=EN-US>[3]]</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>《</span><span lang=EN-US>ASP.NET</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>程序设计教程</span><span lang=EN-US>/21</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>世纪计算机系列教材》作者</span><span lang=EN-US>: </span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>闫洪亮</span> <span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>上海交通大学出版社</span></p>
+  <p class=MsoNormal style='text-indent:24.0pt'><span lang=EN-US>[4]</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>王为青编著</span><span lang=EN-US> C</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>语言高级编程及实例剖析</span> <span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>人民邮电出版社</span><span
+  lang=EN-US>, 2007</span></p>
+  <p class=MsoNormal style='text-indent:24.0pt'><span lang=EN-US>[5]C</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>＃网络编程及应用</span> <span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>机械工业出版社</span> <span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>刘瑞新</span> <span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>主编</span></p>
+  <p class=MsoNormal style='text-indent:24.0pt'><span lang=EN-US>[6]</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>网络资源：相关网站和论坛有丰富的电子书，源代码示例等免费的宝贵资源，请充分利用。</span></p>
+  <p class=MsoNormal style='line-height:17.0pt;mso-line-height-rule:exactly'><span
+  lang=EN-US>&nbsp;</span></p>
+  </td>
+ </tr>
+ <![if !supportMisalignedColumns]>
+ <tr height=0>
+  <td width=60 style='border:none'></td>
+  <td width=84 style='border:none'></td>
+  <td width=72 style='border:none'></td>
+  <td width=72 style='border:none'></td>
+  <td width=72 style='border:none'></td>
+  <td width=72 style='border:none'></td>
+  <td width=71 style='border:none'></td>
+  <td width=110 style='border:none'></td>
+ </tr>
+ <![endif]>
+</table>
+
+</div>
+
+<p class=MsoNormal align=center style='margin-right:-25.6pt;mso-para-margin-right:
+-2.44gd;text-align:center'><span style='font-family:方正宋黑简体'>注：此任务书由指导教师填写，任务下达人为指导教师，指导教师和接受任务的学生均应签字。</span><span
+lang=EN-US><u8:p></u8:p></span></p>
+
+</div>
+
+</body>
+
+</html>
