@@ -10,6 +10,13 @@
 		<link rel="stylesheet" type="text/css" href="scripts/jquery-ui-1.8.18.custom/css/redmond/jquery-ui-1.8.18.custom.css" />
 		<script type="text/javascript" src="scripts/jquery-ui-1.8.18.custom/js/jquery-1.7.1.min.js" ></script>
 		<script type="text/javascript" src="scripts/jquery-ui-1.8.18.custom/js/jquery-ui-1.8.18.custom.min.js" ></script>
+
+		<script type="text/javascript" src="scripts/jqueryslidemenu.js"></script>
+		<script type="text/javascript" language="JavaScript">
+			$(function() {
+				jqueryslidemenu.buildmenu("menu", arrowimages);
+			});
+		</script>
 	</head>
 	<body class="ul-left-content">
 		<!--常用功能开始-->
@@ -19,19 +26,58 @@
 			<a>联系人</a>
 		</div>
 		<!--常用功能结束-->
-		
+
 		<!--系统菜单开始-->
-		<div class="ui-left-menublock">
-			<a>收件箱</a>
-			<a>收件箱</a>
-			<a>收件箱</a>
-			<a>收件箱</a>
-			<a>收件箱</a>
-			<a>收件箱</a>
-			<a>收件箱</a>
+		<div id="menu" class="ui-left-menublock">
+			<ul>
+				<li><a href="#">路政管理</a>
+					<ul>
+						<li><a href="#">路政巡逻</a></li>
+						<li><a href="#">人员档案管理</a></li>
+						<li><a href="#">装备管理</a></li>
+						<li><a href="#">路产管理</a></li>
+						<li><a href="#">建筑控制区管理</a></li>
+						<li><a href="#">路产案件管理</a></li>
+						<li><a href="#">路政案件管理</a></li>
+					</ul>
+				</li>
+				<li><a href="#">超限治理</a>
+					<ul>
+						<li><a href="#">超限查询</a></li>
+						<li><a href="#">车辆通行次数统计</a></li>
+						<li><a href="#">超限车辆汇总</a></li>
+					</ul>
+				</li>
+				<li><a href="#">安全应急</a>
+				</li>
+				<li><a href="#">路况信息</a>
+				</li>
+				<li><a href="#">行政许可</a>
+					<ul>
+						<li><a href="#">涉路工程</a></li>
+						<li><a href="#">超限车辆</a></li>
+						<li><a href="#">非公路标志</a></li>
+					</ul>
+				</li>
+				<li><a href="#">考核系统</a>
+				</li>
+				<li><a href="#">网络办公</a>
+					<ul>
+						<li><a href="#">即时通讯</a></li>
+						<li><a href="#">事务提醒</a></li>
+						<li><a href="#">电子公告</a></li>
+						<li><a href="#">档案管理</a>
+							<ul>
+								<li><a href="#">发文管理</a></li>
+								<li><a href="#">收文管理</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+			</ul>
 		</div>
 		<!--系统菜单结束-->
-		
+
 		<!--其他应用开始-->
 		<div class="ui-left-menublock">
 			<a>收件箱</a>

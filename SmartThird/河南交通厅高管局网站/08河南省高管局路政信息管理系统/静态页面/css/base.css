@@ -6,6 +6,9 @@ body {
 	font-family: "lucida Grande", Verdana;
 	font-size: 12px;
 }
+a{
+	color:#000000;
+}
 
 /*
  *顶部内容
@@ -66,11 +69,11 @@ body {
 /*
  * 反馈信息
  */
-.ui-hander-feedback{
-	height:30px;
-	line-height:30px;
-	float:right;
-	padding-right:11px;
+.ui-hander-feedback {
+	height: 30px;
+	line-height: 30px;
+	float: right;
+	padding-right: 11px;
 	position: absolute;
 	top: 0px;
 	right: 0px;
@@ -89,33 +92,41 @@ body {
 /*
  * 菜单块内容区域
  */
-.ui-left-menublock{
+.ui-left-menublock {
 	float: left;
 	overflow: hidden;
 	padding: 8px 0px 8px 0px;
 	width: 189px;
 	border-bottom: solid 1px #ffffff;
 }
-.ui-left-menublock a{
-	height:25px;
+.ui-left-menublock a {
+	height: 25px;
 	line-height: 25px;
-	width:189px;
-	padding-left:25px;
-	float:left;
+	width: 189px;
+	padding-left: 25px;
+	float: left;
 	font-weight: bold;
-	font-size: 15px;	
+	font-size: 15px;
 	cursor: pointer;
+	text-decoration: none;
 }
-.ui-left-menublock a:hover{
+.ui-left-menublock a:hover {
 	background-color: #c9ced3;
+}
+.ui-left-menublock ul {
+	list-style: none;
+	padding: 0px;
+	margin: 0px;
+}
+.ui-left-menublock li {
+	padding: 10px;
 }
 
 /*
  * 右侧内容
  */
 .ul-right-content {
-
 	float: left;
 	overflow: hidden;
-	background-color: #381589;
+	margin: 10px;
 }
