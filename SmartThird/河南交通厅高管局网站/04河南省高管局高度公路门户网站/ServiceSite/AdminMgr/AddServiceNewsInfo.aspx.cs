@@ -17,7 +17,7 @@ public partial class AdminMgr_AddServiceNewsInfo : System.Web.UI.Page
     {
         if (!IsPostBack)
         {
-            //CommonFunction.isLoginCheck();
+            CommonFunction.isLoginCheck();
            int tid = Convert.ToInt32(Request.QueryString["tid"]);
            int nid = Convert.ToInt32(Request.QueryString["nid"]);
            string strAction = Request.QueryString["action"];
