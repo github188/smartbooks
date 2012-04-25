@@ -28,7 +28,10 @@
                             'link', 'unlink', '|'],
                     width: "100%",
                     height: "350px",
-                    resizeMode: 1
+                    resizeMode: 1,
+                    uploadJson: '../api/upload_json.ashx',
+                    fileManagerJson: '../api/file_manager_json.ashx',
+                    allowFileManager: true
                 });
             });
         });
