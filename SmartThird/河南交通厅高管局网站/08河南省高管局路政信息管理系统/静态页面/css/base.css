@@ -1,0 +1,121 @@
+body, div {
+	padding: 0px;
+	margin: 0px;
+}
+body {
+	font-family: "lucida Grande", Verdana;
+	font-size: 12px;
+}
+
+/*
+ *顶部内容
+ */
+.ui-hander-content {
+	height: 68px;
+	width: 100%;
+	float: left;
+	overflow: hidden;
+}
+/*
+ * 系统Logo
+ */
+.ui-hander-logo {
+	width: 220px;
+	height: 68px;
+	float: left;
+}
+/*
+ * 用户信息区域
+ */
+.ui-hander-userinfo {
+	width: 188px;
+	height: 68px;
+	float: left;
+}
+/*
+ * 用户Logo
+ */
+.ui-hander-userlogo {
+	width: 58px;
+	height: 58px;
+	float: left;
+	margin: 5px;
+	cursor: pointer;
+}
+/*
+ * 用户昵称
+ */
+.ui-hander-nick {
+	float: left;
+	width: 120px;
+	height: 30px;
+	line-height: 30px;
+	font-size: 20px;
+	margin-top: 5px 0px 0px 0px;
+	font-weight: bold;
+}
+/*应用图标*/
+.ui-hander-application {
+	width: 24px;
+	height: 24px;
+	margin: 8px 4px 0px 0px;
+	border: none;
+	float: left;
+	cursor: pointer;
+}
+/*
+ * 反馈信息
+ */
+.ui-hander-feedback{
+	height:30px;
+	line-height:30px;
+	float:right;
+	padding-right:11px;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+}
+
+/*
+ * 左侧内容
+ */
+.ul-left-content {
+	width: 189px;
+	float: left;
+	overflow: hidden;
+	background-color: #dfe1e3;
+}
+
+/*
+ * 菜单块内容区域
+ */
+.ui-left-menublock{
+	float: left;
+	overflow: hidden;
+	padding: 8px 0px 8px 0px;
+	width: 189px;
+	border-bottom: solid 1px #ffffff;
+}
+.ui-left-menublock a{
+	height:25px;
+	line-height: 25px;
+	width:189px;
+	padding-left:25px;
+	float:left;
+	font-weight: bold;
+	font-size: 15px;	
+	cursor: pointer;
+}
+.ui-left-menublock a:hover{
+	background-color: #c9ced3;
+}
+
+/*
+ * 右侧内容
+ */
+.ul-right-content {
+
+	float: left;
+	overflow: hidden;
+	background-color: #381589;
+}
