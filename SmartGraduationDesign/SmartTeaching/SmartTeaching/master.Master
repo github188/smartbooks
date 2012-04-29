@@ -1,0 +1,149 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="master.master.cs" Inherits="SmartTeaching.master" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>网络教学平台</title>
+    <link href="css/base.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="All">
+        <div class="left">
+            <img src="images/head.jpg" /></div>
+        <div class="left">
+            <div id="nav">
+                <div class="left">
+                    <img src="images/navl.jpg" /></div>
+                <div id="nav_center">
+                    <ul>
+                        <li><a href="Default.aspx">网站首页</a></li>
+                        <li><a href="jiaoxuemiaoshu.aspx">教学描述</a></li>
+                        <li><a href="jiaoxuetuandui.aspx">教学团队</a></li>
+                        <li><a href="jiaoxuedagang.aspx">教学大纲</a></li>
+                        <li><a href="jiaoxuejiaoan.aspx">教学教案</a></li>
+                        <li><a href="mediakejian.aspx">多媒体课件</a></li>
+                        <li><a href="shiyanneirong.aspx">实验内容</a></li>
+                        <li><a href="xuexiyuandi.aspx">学习园地</a></li>
+                        <li><a href="jiaoxuehudong.aspx">教学互动</a></li>
+                    </ul>
+                </div>
+                <div class="right">
+                    <img src="images/navr.jpg" width="12" height="41" /></div>
+            </div>
+            <div id="search">
+            </div>
+        </div>
+        <div id="Center">
+            <div id="Cen_left">
+                <div class="left">
+                    <img src="images/vi.jpg" /></div>
+                <div id="Cen_cen">
+                    <div class="cen_item">
+                        用户登录</div>
+                    <div class="tu_item">
+                        <img src="images/vei.jpg" /></div>
+                    <div class="tu_item">
+                        <div class="cen_more">
+                            用户名： 密码：
+                        </div>
+                    </div>
+                    <div class="tu_item">
+                        <img src="images/xie.jpg" /></div>
+                    <div class="cen_item">
+                        最新通知</div>
+                    <div class="tu_item">
+                        <img src="images/vei.jpg" /></div>
+                    <div class="cen_more">
+                        <ul>
+                            <li><a>期末考试通知</a></li>
+                            <li><a>上机实现考试通知</a></li>
+                            <li><a>笔试时间安排通知</a></li>
+                        </ul>
+                    </div>
+                    <div class="tu_item">
+                        <img src="images/xie.jpg" /></div>
+                    <div class="cen_item" style="margin-top: 8px;">
+                        教学大纲</div>
+                    <div class="tu_item">
+                        <img src="images/vei.jpg" /></div>
+                    <div class="cen_more">
+                        <ul>
+                            <li><a>教学教案</a></li>
+                            <li><a>多媒体课件</a></li>
+                            <li><a>融资担保</a></li>
+                        </ul>
+                    </div>
+                    <div class="tu_item">
+                        <img src="images/xie.jpg" /></div>
+                    <div class="cen_item" style="margin-top: 8px;">
+                        教学教案</div>
+                    <div class="tu_item">
+                        <img src="images/vei.jpg" /></div>
+                    <div class="cen_more">
+                        <ul>
+                            <li>在线调查</li>
+                            <li>在线调查</li>
+                            <li>在线调查</li>
+                        </ul>
+                    </div>
+                    <div class="tu_item">
+                        <img src="images/xie.jpg" /></div>
+                    <div class="cen_item" style="margin-top: 8px;">
+                        多媒体课件</div>
+                    <div class="cen_more">
+                        <ul>
+                            <li><a>如何注册成为学生用户？</a></li>
+                            <li><a>忘记密码怎么办？</a></li>
+                            <li><a>期末考试复习大纲？</a></li>
+                        </ul>
+                    </div>
+                    <div class="tu_item">
+                        <img src="images/xie.jpg" /></div>
+                    <div class="cen_item" style="margin-top: 8px;">
+                        实验内容</div>
+                    <div class="cen_more">
+                        <ul>
+                            <li><a>如何注册成为学生用户？</a></li>
+                            <li><a>忘记密码怎么办？</a></li>
+                            <li><a>期末考试复习大纲？</a></li>
+                        </ul>
+                    </div>
+                    <div class="tu_item">
+                        <img src="images/xie.jpg" /></div>
+                    <div class="cen_item" style="margin-top: 8px;">
+                        学习园地</div>
+                    <div class="cen_more">
+                        <ul>
+                            <li><a>如何注册成为学生用户？</a></li>
+                            <li><a>忘记密码怎么办？</a></li>
+                            <li><a>期末考试复习大纲？</a></li>
+                        </ul>
+                    </div>
+                    <div class="tu_item">
+                        <img src="images/xie.jpg" /></div>
+                </div>
+                <div class="left">
+                    <img src="images/viqz.jpg" /></div>
+            </div>
+            <div id="Cen_right">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+        <div id="lin">
+            <a href="Default.aspx">网站首页</a> <a href="jiaoxuemiaoshu.aspx">教学描述</a> <a href="jiaoxuetuandui.aspx">
+                教学团队</a> <a href="jiaoxuedagang.aspx">教学大纲</a> <a href="jiaoxuejiaoan.aspx">教学教案</a>
+            <a href="mediakejian.aspx">多媒体课件</a> <a href="shiyanneirong.aspx">实验内容</a> <a href="xuexiyuandi.aspx">
+                学习园地</a> <a href="jiaoxuehudong.aspx">教学互动</a>
+        </div>
+        <div style="text-align: center; text-decoration: none; float: left; width: 100%;
+            line-height: 1.5; margin-top: 5px;">
+            版权所有
+        </div>
+    </div>
+    </form>
+</body>
+</html>
