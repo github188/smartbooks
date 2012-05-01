@@ -3,6 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartTeaching", "SmartTeaching\SmartTeaching.csproj", "{1F54901B-910E-4609-B7DB-E9A38947DEC9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartTeachingBLL", "SmartTeachingBLL\SmartTeachingBLL.csproj", "{C3813B4F-8597-4764-917B-70916F53588A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartTeachingDAL", "SmartTeachingDAL\SmartTeachingDAL.csproj", "{DF530ACE-906A-4ED4-8AAB-6F7E31E0DD37}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartTeachingEntity", "SmartTeachingEntity\SmartTeachingEntity.csproj", "{AE146698-BCD6-4753-AFFF-CAB39DC2A185}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +19,18 @@ Global
 		{1F54901B-910E-4609-B7DB-E9A38947DEC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1F54901B-910E-4609-B7DB-E9A38947DEC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1F54901B-910E-4609-B7DB-E9A38947DEC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3813B4F-8597-4764-917B-70916F53588A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3813B4F-8597-4764-917B-70916F53588A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3813B4F-8597-4764-917B-70916F53588A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3813B4F-8597-4764-917B-70916F53588A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF530ACE-906A-4ED4-8AAB-6F7E31E0DD37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF530ACE-906A-4ED4-8AAB-6F7E31E0DD37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF530ACE-906A-4ED4-8AAB-6F7E31E0DD37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF530ACE-906A-4ED4-8AAB-6F7E31E0DD37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE146698-BCD6-4753-AFFF-CAB39DC2A185}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE146698-BCD6-4753-AFFF-CAB39DC2A185}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE146698-BCD6-4753-AFFF-CAB39DC2A185}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE146698-BCD6-4753-AFFF-CAB39DC2A185}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
