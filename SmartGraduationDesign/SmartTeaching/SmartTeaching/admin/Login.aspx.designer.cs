@@ -22,22 +22,31 @@ namespace SmartTeaching.admin {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// txtU_Name 控件。
+        /// txtUserName 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtU_Name;
+        protected global::System.Web.UI.WebControls.TextBox txtUserName;
         
         /// <summary>
-        /// txtU_Pass 控件。
+        /// txtPwd 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputPassword txtU_Pass;
+        protected global::System.Web.UI.WebControls.TextBox txtPwd;
+        
+        /// <summary>
+        /// lblmsg 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblmsg;
         
         /// <summary>
         /// BtnLogin 控件。
@@ -47,5 +56,14 @@ namespace SmartTeaching.admin {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button BtnLogin;
+        
+        /// <summary>
+        /// btnCancel 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCancel;
     }
 }

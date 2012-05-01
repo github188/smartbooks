@@ -2,15 +2,23 @@
 {
     font-family: Verdana, Arial, Helvetica, sans-serif;
     font-size: 12px;
-    color: #000000;
 }
 body
 {
-    background-color: #FFFFFF;
+    background-color: white;
     margin-left: 0px;
     margin-top: 0px;
     margin-right: 0px;
     margin-bottom: 0px;
+    color: #3D464B;
+    font-size: 14px;
+    font-family: "宋体","Arial Narrow",HELVETICA;
+}
+a:hover
+{
+    color: #BD0A01;
+    text-decoration: underline;
+    cursor:pointer;
 }
 #All
 {
@@ -76,6 +84,7 @@ img
     float: left;
     background-repeat: repeat-x;
     line-height: 28px;
+    border: 1px solid #E6C48F;
 }
 #Center
 {
@@ -115,11 +124,32 @@ img
     width: 209px;
     float: left;
 }
+.cen_more ul
+{
+    float:left;
+}
+#navmenu
+{
+    float:left;
+}
+#navmenu div a
+{
+    float:left;
+    height:20px;
+    width:100%;
+    text-align:left;
+    line-height:20px;
+}
+#navmenu div a:hover
+{
+    background-color:#CCC;
+}
 .cen_more li
 {
     height: auto;
     text-align: left;
     text-indent: 3em;
+    float:left;
 }
 #Cen_right
 {
@@ -223,7 +253,7 @@ img
 }
 .All_news li
 {
-    height: 25px;
+    height: 27px;
     border-bottom-width: 1px;
     border-bottom-style: dashed;
     border-bottom-color: #CCCCCC;
@@ -233,6 +263,17 @@ img
     background-image: url(../images/ping.jpg);
     background-repeat: no-repeat;
     background-position: left center;
+    float:left;
+    width:100%;
+}
+.All_news li:hover
+{
+    background-color:#CCCCCC;
+}
+.All_news a
+{
+    height:27px;
+    line-height:27px;
 }
 
 #help_link
@@ -274,7 +315,7 @@ img
 {
     padding: 10px;
     text-decoration: none;
-    color: #666666;
+    color: #3D464B;
 }
 
 .All_news, .All_about
@@ -350,27 +391,16 @@ td
 }
 a:link
 {
-    color: #000000;
+    color: #3D464B;
     text-decoration: none;
 }
 a:visited
 {
     text-decoration: none;
-    color: #000000;
-}
-a:hover
-{
-    text-decoration: none;
-    color: #CCCCCC;
-    cursor:pointer;
+    color: #3D464B;
 }
 a:active
 {
     text-decoration: none;
-    color: #CCCCCC;
-}
-#nav_center a
-{
-    color: #000000;
-    text-decoration: none;
+    color: #3D464B;
 }

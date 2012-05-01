@@ -11,7 +11,30 @@ namespace SmartTeaching.admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                CheckLogin();
+            }
+        }
 
+        public void CheckLogin()
+        {
+            try
+            {
+                //CheckSession
+                string u = Session["username"].ToString();
+                string p = Session["pwd"].ToString();
+                string ssid = Session["ssid"].ToString();
+
+                if (string.IsNullOrEmpty(u) || string.IsNullOrEmpty(p) || string.IsNullOrEmpty(ssid))
+                {
+                    Response.Redirect("Login.aspx", true);
+                }
+            }
+            catch
+            {
+                Response.Redirect("Login.aspx", true);
+            }
         }
     }
 }

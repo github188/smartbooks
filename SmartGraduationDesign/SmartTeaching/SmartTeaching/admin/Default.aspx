@@ -10,7 +10,7 @@
 	<frame src="top.aspx" noresize="noresize" frameborder="1" name="topFrame" scrolling="no" marginwidth="0" marginheight="0" target="tops" />
   <frameset cols="184,*"   id="frame">
 	<frame src="left.aspx" name="leftFrame" noresize="noresize" marginwidth="0" marginheight="0" frameborder="1" scrolling="no" target="lefts" />
-	<frame src="right.aspx" name="main" marginwidth="0" marginheight="0" frameborder="1" scrolling="auto" target="main" />
+	<frame src="bbsDiscuss.aspx" name="main" marginwidth="0" marginheight="0" frameborder="1" scrolling="auto" target="main" />
   </frameset>
 <noframes>
   <body></body>

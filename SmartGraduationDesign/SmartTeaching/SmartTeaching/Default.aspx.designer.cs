@@ -11,5 +11,41 @@ namespace SmartTeaching {
     
     
     public partial class Default {
+        
+        /// <summary>
+        /// jiaoxuetuandui 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater jiaoxuetuandui;
+        
+        /// <summary>
+        /// jiaoxuedagang 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater jiaoxuedagang;
+        
+        /// <summary>
+        /// jiaoxuejiaoan 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater jiaoxuejiaoan;
+        
+        /// <summary>
+        /// xuexiyuandi 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater xuexiyuandi;
     }
 }

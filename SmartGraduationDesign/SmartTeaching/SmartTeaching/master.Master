@@ -5,14 +5,53 @@
 <head runat="server">
     <title>网络教学平台</title>
     <link href="css/base.css" rel="stylesheet" type="text/css" />
+    <link href="Scripts/jquery-ui-1.8.18.custom/css/redmond/jquery-ui-1.8.18.custom.css"
+        rel="stylesheet" type="text/css" />
+    <script type="text/jscript" src="Scripts/jquery-ui-1.8.18.custom/js/jquery-1.7.1.min.js"></script>
+    <script type="text/jscript" src="Scripts/jquery-ui-1.8.18.custom/js/jquery-ui-1.8.18.custom.min.js"></script>
+    <script type="text/javascript" src="Scripts/kindeditor-4.0.5/kindeditor-min.js"></script>
+    <script type="text/javascript" src="Scripts/kindeditor-4.0.5/lang/zh_CN.js"></script>
+    <script type="text/javascript" src="Scripts/jquery.cookie.js"></script>
+    <script type="text/jscript" src="Scripts/base.js"></script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .pages
+        {
+            color: #999;
+        }
+        .pages a, .pages .cpb
+        {
+            text-decoration: none;
+            float: left;
+            padding: 0 5px;
+            border: 1px solid #ddd;
+            background: #ffff;
+            margin: 0 2px;
+            font-size: 11px;
+            color: #000;
+        }
+        .pages a:hover
+        {
+            background-color: #E61636;
+            color: #fff;
+            border: 1px solid #E61636;
+            text-decoration: none;
+        }
+        .pages .cpb
+        {
+            font-weight: bold;
+            color: #fff;
+            background: #E61636;
+            border: 1px solid #E61636;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
     <div id="All">
         <div class="left">
-            <img src="images/head.jpg" /></div>
+            
         <div class="left">
             <div id="nav">
                 <div class="left">
@@ -38,92 +77,73 @@
         </div>
         <div id="Center">
             <div id="Cen_left">
-                <div class="left">
-                    <img src="images/vi.jpg" /></div>
                 <div id="Cen_cen">
-                    <div class="cen_item">
-                        用户登录</div>
-                    <div class="tu_item">
-                        <img src="images/vei.jpg" /></div>
-                    <div class="tu_item">
-                        <div class="cen_more">
-                            用户名： 密码：
+                    
+                    <div class="tu_item" id="userinfopanel">
+                        <h3>
+                            <a href="#">用户信息</a></h3>
+                        <div>
+                            <div id="loginpanel">
+                                <asp:Label ID="Label1" runat="server" Text="账号：" Width="50"></asp:Label>
+                                <asp:TextBox ID="txtusername" runat="server" Width="120"></asp:TextBox>
+                                <asp:Label ID="Label2" runat="server" Text="密码：" Width="50"></asp:Label>
+                                <asp:TextBox ID="txtpwd" runat="server" Width="120"></asp:TextBox>
+                                <asp:Button ID="btnSubmit" runat="server" Text="登录" OnClick="btnSubmit_Click" />
+                                <asp:Button ID="btnCancel" runat="server" Text="重置" />
+                                <div id="dialog" style="display: none;">
+                                </div>
+                            </div>
+                            <div id="userpanel" style="display: none;">
+                                欢迎登录：<a id="username"></a> 最新消息：<a id="usermsg"></a>
+                                <input id="loginout" type="submit" value="退出登录" />
+                            </div>
                         </div>
                     </div>
+
+                        
+                    <div class="cen_item">
+                        导航菜单</div>
+                    <div class="tu_item">
+                        <img src="images/xie.jpg" /></div>
+
+                    <!--导航菜单开始-->
+                    <div id="navmenu">
+                        <asp:Repeater ID="repRootTree" runat="server" OnItemDataBound="repRootTree_ItemDataBound1">
+                            <ItemTemplate>
+                                <h3>
+                                    <a href="#">
+                                        <%#Eval("NewsTypeName")%></a></h3>
+                                <div>
+                                    <asp:Repeater ID="repSubTree" runat="server">
+                                        <ItemTemplate>
+                                            <a href='newsTypeList.aspx?id=<%#Eval("NewsTypeId")%>'>
+                                                <%#Eval("NewsTypeName")%></a>
+                                        </ItemTemplate>
+                                    </asp:Repeater>
+                                </div>
+                            </ItemTemplate>
+                        </asp:Repeater>
+                    </div>
+                    <!--导航菜单结束
                     <div class="tu_item">
                         <img src="images/xie.jpg" /></div>
                     <div class="cen_item">
-                        最新通知</div>
+                        常见问题</div>
                     <div class="tu_item">
                         <img src="images/vei.jpg" /></div>
                     <div class="cen_more">
                         <ul>
-                            <li><a>期末考试通知</a></li>
-                            <li><a>上机实现考试通知</a></li>
-                            <li><a>笔试时间安排通知</a></li>
+                            <asp:Repeater ID="topMessage" runat="server">
+                                <ItemTemplate>
+                                    <li><a href='newsDetail.aspx?id=<%#Eval("NewsId")%>'>
+                                        <%#Eval("NewsTitle")%>
+                                    </a></li>
+                                </ItemTemplate>
+                            </asp:Repeater>
                         </ul>
                     </div>
                     <div class="tu_item">
-                        <img src="images/xie.jpg" /></div>
-                    <div class="cen_item" style="margin-top: 8px;">
-                        教学大纲</div>
-                    <div class="tu_item">
-                        <img src="images/vei.jpg" /></div>
-                    <div class="cen_more">
-                        <ul>
-                            <li><a>教学教案</a></li>
-                            <li><a>多媒体课件</a></li>
-                            <li><a>融资担保</a></li>
-                        </ul>
-                    </div>
-                    <div class="tu_item">
-                        <img src="images/xie.jpg" /></div>
-                    <div class="cen_item" style="margin-top: 8px;">
-                        教学教案</div>
-                    <div class="tu_item">
-                        <img src="images/vei.jpg" /></div>
-                    <div class="cen_more">
-                        <ul>
-                            <li>在线调查</li>
-                            <li>在线调查</li>
-                            <li>在线调查</li>
-                        </ul>
-                    </div>
-                    <div class="tu_item">
-                        <img src="images/xie.jpg" /></div>
-                    <div class="cen_item" style="margin-top: 8px;">
-                        多媒体课件</div>
-                    <div class="cen_more">
-                        <ul>
-                            <li><a>如何注册成为学生用户？</a></li>
-                            <li><a>忘记密码怎么办？</a></li>
-                            <li><a>期末考试复习大纲？</a></li>
-                        </ul>
-                    </div>
-                    <div class="tu_item">
-                        <img src="images/xie.jpg" /></div>
-                    <div class="cen_item" style="margin-top: 8px;">
-                        实验内容</div>
-                    <div class="cen_more">
-                        <ul>
-                            <li><a>如何注册成为学生用户？</a></li>
-                            <li><a>忘记密码怎么办？</a></li>
-                            <li><a>期末考试复习大纲？</a></li>
-                        </ul>
-                    </div>
-                    <div class="tu_item">
-                        <img src="images/xie.jpg" /></div>
-                    <div class="cen_item" style="margin-top: 8px;">
-                        学习园地</div>
-                    <div class="cen_more">
-                        <ul>
-                            <li><a>如何注册成为学生用户？</a></li>
-                            <li><a>忘记密码怎么办？</a></li>
-                            <li><a>期末考试复习大纲？</a></li>
-                        </ul>
-                    </div>
-                    <div class="tu_item">
-                        <img src="images/xie.jpg" /></div>
+                        <img src="images/xie.jpg" /></div>-->
                 </div>
                 <div class="left">
                     <img src="images/viqz.jpg" /></div>

@@ -5,62 +5,41 @@
 <head runat="server">
     <title>导航菜单</title>
     <link href="../css/Manage.css" rel="stylesheet" type="text/css" />
-    <script type="text/javascript" src="../Scripts/jquery-1.4.1.min.js"></script>
+    <link href="../Scripts/jquery-ui-1.8.18.custom/css/redmond/jquery-ui-1.8.18.custom.css"
+        rel="stylesheet" type="text/css" />
+    <script type="text/jscript" src="../Scripts/jquery-ui-1.8.18.custom/js/jquery-1.7.1.min.js"></script>
+    <script type="text/jscript" src="../Scripts/jquery-ui-1.8.18.custom/js/jquery-ui-1.8.18.custom.min.js"></script>
     <script type="text/javascript" src="../Scripts/admin.js"></script>
 </head>
-<body>
+<body style="width: 100%; padding:0px; margin:0px;">
     <form id="form1" runat="server">
-    <div class="LeftNote">
-        <img src="../Images/MenuTop.jpg" /><br />
-        <img src="../images/menu_topline.gif"/>
+    <img src="../Images/MenuTop.jpg" width="100%" />
+    <img src="../images/menu_topline.gif" width="100%"/>
 
-        <div class="Menu">文章信息管理</div>
-        <div class="MenuNote" style="display: block;">
-            <img src="../images/menu_topline.gif" />
-            <ul class="MenuUL">
-                <li><a href="newsAdd.aspx" target="main">添加文章</a></li>
-                <li><a href="newsList.aspx" target="main">文章管理</a></li>
-                <li><a href="newsType.aspx" target="main">文章分类管理</a></li>
-            </ul>
+    <div id="navmenu">
+        <h3>
+            <a>文章信息管理</a></h3>
+        <div>
+            <a href="newsAdd.aspx" target="main">添加文章</a> <a href="newsList.aspx" target="main">
+                文章管理</a> <a href="docsType.aspx" target="main">文章分类管理</a>
         </div>
-
-        <div class="Menu">教学资料管理</div>
-        <div class="MenuNote" style="display: block;">
-            <img src="../images/menu_topline.gif" />
-            <ul class="MenuUL">
-                <li><a href="docsAdd.aspx" target="main">添加资料</a></li>
-                <li><a href="docsList.aspx" target="main">资料管理</a></li>
-                <li><a href="docsType.aspx" target="main">资料分类管理</a></li>
-            </ul>
+        <h3>
+            <a>教学互动管理</a></h3>
+        <div>
+            <a href="bbsDiscuss.aspx" target="main">我的消息</a>
         </div>
-
-        <div class="Menu">教学互动管理</div>
-        <div class="MenuNote" style="display: block;">
-            <img src="../images/menu_topline.gif" />
-            <ul class="MenuUL">
-                <li><a href="bbsDiscuss.aspx" target="main">交流讨论</a></li>
-                <li><a href="bbsFq.aspx" target="main">常见问题</a></li>
-            </ul>
+        <h3>
+            <a>角色信息管理</a></h3>
+        <div>
+            <a href="roleAdd.aspx" target="main">添加角色</a> <a href="roleList.aspx" target="main">
+                角色管理</a>
         </div>
-
-        <div class="Menu">角色信息管理</div>
-        <div class="MenuNote" style="display: block;">
-            <img src="../images/menu_topline.gif" />
-            <ul class="MenuUL">
-                <li><a href="roleAdd.aspx" target="main">添加角色</a></li>
-                <li><a href="roleList.aspx" target="main">添加角色</a></li>
-            </ul>
+        <h3>
+            <a>用户信息管理</a></h3>
+        <div>
+            <a href="userAdd.aspx" target="main">添加用户</a> <a href="userList.aspx" target="main">
+                用户管理</a>
         </div>
-
-        <div class="Menu">用户信息管理</div>
-        <div class="MenuNote" style="display: block;">
-            <img src="../images/menu_topline.gif" />
-            <ul class="MenuUL">
-                <li><a href="userAdd.aspx" target="main">添加用户</a></li>
-                <li><a href="userList.aspx" target="main">用户管理</a></li>
-            </ul>
-        </div>
-
     </div>
     </form>
 </body>
