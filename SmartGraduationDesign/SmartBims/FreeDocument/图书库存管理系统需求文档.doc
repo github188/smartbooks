@@ -1,23 +1,37 @@
-<html xmlns:o="urn:schemas-microsoft-com:office:office"
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
 xmlns:w="urn:schemas-microsoft-com:office:word"
-xmlns:st1="urn:schemas-microsoft-com:office:smarttags"
-xmlns="http://www.w3.org/TR/REC-html40">
+xmlns="http://www.w3.org/TR/REC-html40"
+xmlns:ns0="urn:schemas-microsoft-com:office:smarttags">
 
 <head>
 <meta http-equiv=Content-Type content="text/html; charset=gb2312">
-<meta 张美红       =ProgId content=Word.Document>
-<meta 张美红       =Generator content="Microsoft Word 11">
-<meta 张美红       =Originator content="Microsoft Word 11">
-<link rel=File-List href="Task.files/filelist.xml">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<link rel=File-List href="图书库存管理系统需求文档.files/filelist.xml">
 <title>周口师范学院本科毕业论文（设计）任务书</title>
-<o:SmartTagType 张美红       spaceuri="urn:schemas-microsoft-com:office:smarttags"
- 张美红       ="chsdate"/>
 <!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>徐财务</o:Author>
+  <o:LastAuthor>徐财务</o:LastAuthor>
+  <o:Revision>7</o:Revision>
+  <o:TotalTime>4</o:TotalTime>
+  <o:Created>2012-04-30T05:09:00Z</o:Created>
+  <o:LastSaved>2012-04-30T05:13:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>106</o:Words>
+  <o:Characters>606</o:Characters>
+  <o:Company>微软中国</o:Company>
+  <o:Lines>5</o:Lines>
+  <o:Paragraphs>1</o:Paragraphs>
+  <o:CharactersWithSpaces>711</o:CharactersWithSpaces>
+  <o:Version>11.9999</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
  <w:WordDocument>
   <w:View>Print</w:View>
   <w:Zoom>110</w:Zoom>
-  <w:SpellingState>Clean</w:SpellingState>
-  <w:GrammarState>Clean</w:GrammarState>
   <w:ValidateAgainstSchemas/>
   <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
   <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
@@ -30,14 +44,111 @@ xmlns="http://www.w3.org/TR/REC-html40">
 </xml><![endif]--><!--[if gte mso 9]><xml>
  <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
  </w:LatentStyles>
-</xml><![endif]--><!--[if !mso]><object
- classid="clsid:38481807-CA0E-42D2-BF39-B33AF135CC4D" id=ieooui></object>
+</xml><![endif]-->
 <style>
-st1\:*{behavior:url(#ieooui) }
-</style>
-<![endif]-->
-<style>
-<!--
+<!--p.BODYA4
+	{mso-style-张美红       :bodya4;}
+li.BODYA4
+	{mso-style-张美红       :bodya4;}
+div.BODYA4
+	{mso-style-张美红       :bodya4;}
+p.TOP
+	{mso-style-张美红       :top;}
+li.TOP
+	{mso-style-张美红       :top;}
+div.TOP
+	{mso-style-张美红       :top;}
+p.INFO
+	{mso-style-张美红       :info;}
+li.INFO
+	{mso-style-张美红       :info;}
+div.INFO
+	{mso-style-张美红       :info;}
+p.CONTENT
+	{mso-style-张美红       :content;}
+li.CONTENT
+	{mso-style-张美红       :content;}
+div.CONTENT
+	{mso-style-张美红       :content;}
+p.LEFTBOX
+	{mso-style-张美红       :leftbox;}
+li.LEFTBOX
+	{mso-style-张美红       :leftbox;}
+div.LEFTBOX
+	{mso-style-张美红       :leftbox;}
+p.LINKBUTTON
+	{mso-style-张美红       :linkbutton;}
+li.LINKBUTTON
+	{mso-style-张美红       :linkbutton;}
+div.LINKBUTTON
+	{mso-style-张美红       :linkbutton;}
+p.DROPDOWNLIST
+	{mso-style-张美红       :dropdownlist;}
+li.DROPDOWNLIST
+	{mso-style-张美红       :dropdownlist;}
+div.DROPDOWNLIST
+	{mso-style-张美红       :dropdownlist;}
+p.MENUSHOW
+	{mso-style-张美红       :menu_show;}
+li.MENUSHOW
+	{mso-style-张美红       :menu_show;}
+div.MENUSHOW
+	{mso-style-张美红       :menu_show;}
+p.MENUSHOW2
+	{mso-style-张美红       :menu_show2;}
+li.MENUSHOW2
+	{mso-style-张美红       :menu_show2;}
+div.MENUSHOW2
+	{mso-style-张美红       :menu_show2;}
+p.RIGHTBOX
+	{mso-style-张美红       :rightbox;}
+li.RIGHTBOX
+	{mso-style-张美红       :rightbox;}
+div.RIGHTBOX
+	{mso-style-张美红       :rightbox;}
+p.FOOT
+	{mso-style-张美红       :foot;}
+li.FOOT
+	{mso-style-张美红       :foot;}
+div.FOOT
+	{mso-style-张美红       :foot;}
+p.NAVIGATEBOTTOM
+	{mso-style-张美红       :navigate_bottom;}
+li.NAVIGATEBOTTOM
+	{mso-style-张美红       :navigate_bottom;}
+div.NAVIGATEBOTTOM
+	{mso-style-张美红       :navigate_bottom;}
+p.RIGHTBOXCOLOR
+	{mso-style-张美红       :rightbox_color;}
+li.RIGHTBOXCOLOR
+	{mso-style-张美红       :rightbox_color;}
+div.RIGHTBOXCOLOR
+	{mso-style-张美红       :rightbox_color;}
+p.TXT
+	{mso-style-张美红       :txt;}
+li.TXT
+	{mso-style-张美红       :txt;}
+div.TXT
+	{mso-style-张美红       :txt;}
+p.BTN
+	{mso-style-张美红       :btn;}
+li.BTN
+	{mso-style-张美红       :btn;}
+div.BTN
+	{mso-style-张美红       :btn;}
+p.LINE
+	{mso-style-张美红       :line;}
+li.LINE
+	{mso-style-张美红       :line;}
+div.LINE
+	{mso-style-张美红       :line;}
+span.SPELLE
+	{mso-style-张美红       :"";}
+table.MSONORMALTABLE
+	{mso-style-张美红       :普通表格;}
+table.MSOTABLEGRID
+	{mso-style-张美红       :网格型;}
+
  /* Font Definitions */
  @font-face
 	{font-family:宋体;
@@ -149,7 +260,7 @@ p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
 	mso-fareast-font-family:宋体;
 	mso-font-kerning:1.0pt;}
 p.bodya4, li.bodya4, div.bodya4
-	{mso-style-张美红       :bodya4;
+	{mso-style-name:bodya4;
 	mso-margin-top-alt:auto;
 	margin-right:0cm;
 	mso-margin-bottom-alt:auto;
@@ -160,7 +271,7 @@ p.bodya4, li.bodya4, div.bodya4
 	font-family:宋体;
 	mso-bidi-font-family:宋体;}
 p.top, li.top, div.top
-	{mso-style-张美红       :top;
+	{mso-style-name:top;
 	mso-margin-top-alt:auto;
 	margin-right:0cm;
 	mso-margin-bottom-alt:auto;
@@ -170,7 +281,7 @@ p.top, li.top, div.top
 	font-family:宋体;
 	mso-bidi-font-family:宋体;}
 p.info, li.info, div.info
-	{mso-style-张美红       :info;
+	{mso-style-name:info;
 	mso-margin-top-alt:auto;
 	margin-right:0cm;
 	mso-margin-bottom-alt:auto;
@@ -181,7 +292,7 @@ p.info, li.info, div.info
 	font-family:宋体;
 	mso-bidi-font-family:宋体;}
 p.content, li.content, div.content
-	{mso-style-张美红       :content;
+	{mso-style-name:content;
 	mso-margin-top-alt:auto;
 	margin-right:0cm;
 	mso-margin-bottom-alt:auto;
@@ -191,7 +302,7 @@ p.content, li.content, div.content
 	font-family:宋体;
 	mso-bidi-font-family:宋体;}
 p.leftbox, li.leftbox, div.leftbox
-	{mso-style-张美红       :leftbox;
+	{mso-style-name:leftbox;
 	mso-margin-top-alt:auto;
 	margin-right:0cm;
 	mso-margin-bottom-alt:auto;
@@ -205,7 +316,7 @@ p.leftbox, li.leftbox, div.leftbox
 	font-family:宋体;
 	mso-bidi-font-family:宋体;}
 p.linkbutton, li.linkbutton, div.linkbutton
-	{mso-style-张美红       :linkbutton;
+	{mso-style-name:linkbutton;
 	mso-margin-top-alt:auto;
 	margin-right:0cm;
 	mso-margin-bottom-alt:auto;
@@ -216,7 +327,7 @@ p.linkbutton, li.linkbutton, div.linkbutton
 	font-family:宋体;
 	mso-bidi-font-family:宋体;}
 p.dropdownlist, li.dropdownlist, div.dropdownlist
-	{mso-style-张美红       :dropdownlist;
+	{mso-style-name:dropdownlist;
 	mso-margin-top-alt:auto;
 	margin-right:0cm;
 	mso-margin-bottom-alt:auto;
@@ -226,7 +337,7 @@ p.dropdownlist, li.dropdownlist, div.dropdownlist
 	font-family:宋体;
 	mso-bidi-font-family:宋体;}
 p.menushow, li.menushow, div.menushow
-	{mso-style-张美红       :menu_show;
+	{mso-style-name:menushow;
 	mso-margin-top-alt:auto;
 	margin-right:0cm;
 	mso-margin-bottom-alt:auto;
@@ -238,7 +349,7 @@ p.menushow, li.menushow, div.menushow
 	font-family:宋体;
 	mso-bidi-font-family:宋体;}
 p.menushow2, li.menushow2, div.menushow2
-	{mso-style-张美红       :menu_show2;
+	{mso-style-name:menushow2;
 	mso-margin-top-alt:auto;
 	margin-right:0cm;
 	mso-margin-bottom-alt:auto;
@@ -250,7 +361,7 @@ p.menushow2, li.menushow2, div.menushow2
 	font-family:宋体;
 	mso-bidi-font-family:宋体;}
 p.rightbox, li.rightbox, div.rightbox
-	{mso-style-张美红       :rightbox;
+	{mso-style-name:rightbox;
 	mso-margin-top-alt:auto;
 	margin-right:0cm;
 	mso-margin-bottom-alt:auto;
@@ -264,7 +375,7 @@ p.rightbox, li.rightbox, div.rightbox
 	font-family:宋体;
 	mso-bidi-font-family:宋体;}
 p.foot, li.foot, div.foot
-	{mso-style-张美红       :foot;
+	{mso-style-name:foot;
 	mso-margin-top-alt:auto;
 	margin-right:0cm;
 	mso-margin-bottom-alt:auto;
@@ -275,7 +386,7 @@ p.foot, li.foot, div.foot
 	font-family:宋体;
 	mso-bidi-font-family:宋体;}
 p.navigatebottom, li.navigatebottom, div.navigatebottom
-	{mso-style-张美红       :navigate_bottom;
+	{mso-style-name:navigatebottom;
 	mso-margin-top-alt:auto;
 	margin-right:0cm;
 	mso-margin-bottom-alt:auto;
@@ -287,7 +398,7 @@ p.navigatebottom, li.navigatebottom, div.navigatebottom
 	font-family:宋体;
 	mso-bidi-font-family:宋体;}
 p.rightboxcolor, li.rightboxcolor, div.rightboxcolor
-	{mso-style-张美红       :rightbox_color;
+	{mso-style-name:rightboxcolor;
 	mso-margin-top-alt:auto;
 	margin-right:0cm;
 	mso-margin-bottom-alt:auto;
@@ -302,7 +413,7 @@ p.rightboxcolor, li.rightboxcolor, div.rightboxcolor
 	font-family:宋体;
 	mso-bidi-font-family:宋体;}
 p.txt, li.txt, div.txt
-	{mso-style-张美红       :txt;
+	{mso-style-name:txt;
 	mso-margin-top-alt:auto;
 	margin-right:0cm;
 	mso-margin-bottom-alt:auto;
@@ -318,7 +429,7 @@ p.txt, li.txt, div.txt
 	font-family:宋体;
 	mso-bidi-font-family:宋体;}
 p.btn, li.btn, div.btn
-	{mso-style-张美红       :btn;
+	{mso-style-name:btn;
 	mso-margin-top-alt:auto;
 	margin-right:0cm;
 	mso-margin-bottom-alt:auto;
@@ -328,7 +439,7 @@ p.btn, li.btn, div.btn
 	font-family:宋体;
 	mso-bidi-font-family:宋体;}
 p.line, li.line, div.line
-	{mso-style-张美红       :line;
+	{mso-style-name:line;
 	margin-top:3.75pt;
 	margin-right:0cm;
 	margin-bottom:3.75pt;
@@ -338,28 +449,50 @@ p.line, li.line, div.line
 	font-size:1.0pt;
 	font-family:宋体;
 	mso-bidi-font-family:宋体;}
-span.SpellE
-	{mso-style-张美红       :"";
-	mso-spl-e:yes;}
  /* Page Definitions */
  @page
 	{mso-page-border-surround-header:no;
-	mso-page-border-surround-footer:no;}
+	mso-page-border-surround-footer:no;
+	mso-footnote-separator:url("图书库存管理系统需求文档.files/header.htm") fs;
+	mso-footnote-continuation-separator:url("图书库存管理系统需求文档.files/header.htm") fcs;
+	mso-endnote-separator:url("图书库存管理系统需求文档.files/header.htm") es;
+	mso-endnote-continuation-separator:url("图书库存管理系统需求文档.files/header.htm") ecs;}
 @page Section1
 	{size:595.3pt 841.9pt;
 	margin:72.0pt 90.0pt 72.0pt 90.0pt;
 	mso-header-margin:42.55pt;
 	mso-footer-margin:49.6pt;
+	mso-even-header:url("图书库存管理系统需求文档.files/header.htm") eh1;
+	mso-header:url("图书库存管理系统需求文档.files/header.htm") h1;
+	mso-even-footer:url("图书库存管理系统需求文档.files/header.htm") ef1;
+	mso-footer:url("图书库存管理系统需求文档.files/header.htm") f1;
+	mso-first-header:url("图书库存管理系统需求文档.files/header.htm") fh1;
+	mso-first-footer:url("图书库存管理系统需求文档.files/header.htm") ff1;
 	mso-paper-source:0;}
 div.Section1
 	{page:Section1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:2044861867;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1709371418 -1245705132 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l0:level1
+	{mso-level-text:%1、;
+	mso-level-tab-stop:42.0pt;
+	mso-level-number-position:left;
+	margin-left:42.0pt;
+	text-indent:-18.0pt;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
 -->
 </style>
 <!--[if gte mso 10]>
 <style>
  /* Style Definitions */
  table.MsoNormalTable
-	{mso-style-张美红       :普通表格;
+	{mso-style-name:普通表格;
 	mso-tstyle-rowband-size:0;
 	mso-tstyle-colband-size:0;
 	mso-style-noshow:yes;
@@ -374,27 +507,12 @@ div.Section1
 	mso-ansi-language:#0400;
 	mso-fareast-language:#0400;
 	mso-bidi-language:#0400;}
-table.MsoTableGrid
-	{mso-style-张美红       :网格型;
-	mso-tstyle-rowband-size:0;
-	mso-tstyle-colband-size:0;
-	border:solid windowtext 1.0pt;
-	mso-border-alt:solid windowtext .5pt;
-	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
-	mso-border-insideh:.5pt solid windowtext;
-	mso-border-insidev:.5pt solid windowtext;
-	mso-para-margin:0cm;
-	mso-para-margin-bottom:.0001pt;
-	text-align:justify;
-	text-justify:inter-ideograph;
-	mso-pagination:none;
-	font-size:10.0pt;
-	font-family:"Times New Roman";
-	mso-ansi-language:#0400;
-	mso-fareast-language:#0400;
-	mso-bidi-language:#0400;}
 </style>
-<![endif]--><!--[if gte mso 9]><xml>
+<![endif]-->
+<meta 张美红=ProgId content=Word.Document>
+<meta 张美红=Generator content="Microsoft Word 11">
+<meta 张美红=Originator content="Microsoft Word 11">
+<!--[if gte mso 9]><xml>
  <u1:DocumentProperties>
   <u1:Author>赵宇</u1:Author>
   <u1:LastAuthor>雨林木风</u1:LastAuthor>
@@ -446,7 +564,12 @@ table.MsoTableGrid
  <u6:shapelayout u7:ext="edit">
   <u6:idmap u7:ext="edit" data="1"/>
  </u6:shapelayout>
-</xml><![endif]-->
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="3074"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
 </head>
 
 <body lang=ZH-CN link=blue vlink=blue style='tab-interval:21.0pt;text-justify-trim:
@@ -460,7 +583,7 @@ lang=EN-US><u8:p></u8:p></span></p>
 
 <div align=center>
 
-<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0 width=612
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width=612
  style='width:459.0pt;margin-left:14.2pt;border-collapse:collapse;border:none;
  mso-border-alt:solid windowtext .5pt;mso-yfti-tbllook:480;mso-padding-alt:
  0cm 5.4pt 0cm 5.4pt;mso-border-insideh:.5pt solid windowtext;mso-border-insidev:
@@ -476,9 +599,9 @@ lang=EN-US><u8:p></u8:p></span></p>
   <td width=468 colspan=6 style='width:351.0pt;border:solid windowtext 1.0pt;
   border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
   solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:22.95pt'>
-  <p class=MsoNormal><span class=SpellE><b style='mso-bidi-font-weight:normal'><span
-  lang=EN-US style='mso-bidi-font-size:10.5pt'>图书库存管理系统</span></b></span><b
-  style='mso-bidi-font-weight:normal'><span lang=EN-US><o:p></o:p></span></b></p>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+  style='mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>图书库存管理系统</span><span lang=EN-US><o:p></o:p></span></b></p>
   </td>
  </tr>
  <tr style='mso-yfti-irow:1;height:22.9pt'>
@@ -496,7 +619,10 @@ lang=EN-US><u8:p></u8:p></span></p>
   mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:22.9pt'>
   <p class=MsoNormal align=center style='text-align:center'><b
   style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-bidi-font-size:
-  10.5pt'><u8:p>&nbsp;</u8:p> 张美红       </span></b><span lang=EN-US>&nbsp;</span></p>
+  10.5pt'><u8:p>&nbsp;</u8:p> </span></b><b style='mso-bidi-font-weight:normal'><span
+  style='mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>张美红</span></b><b style='mso-bidi-font-weight:
+  normal'><span style='mso-bidi-font-size:10.5pt'> </span></b><span lang=EN-US>&nbsp;</span></p>
   </td>
   <td width=72 style='width:54.0pt;border-top:none;border-left:none;border-bottom:
   solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top-alt:
@@ -519,8 +645,10 @@ lang=EN-US><u8:p></u8:p></span></p>
   <p class=MsoNormal align=center style='text-align:center'><b
   style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-bidi-font-size:
   10.5pt'><u8:p>&nbsp;</u8:p> </span></b><b style='mso-bidi-font-weight:normal'><span
-  lang=EN-US style='font-size:9.0pt'>计算机科学与技术    </span></b><span lang=EN-US
-  style='font-size:9.0pt'>&nbsp;<o:p></o:p></span></p>
+  style='font-size:9.0pt;font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>计算机科学与技术</span></b><b
+  style='mso-bidi-font-weight:normal'><span style='font-size:9.0pt'> </span></b><span
+  lang=EN-US style='font-size:9.0pt'>&nbsp;<o:p></o:p></span></p>
   </td>
   <td width=72 style='width:54.0pt;border-top:none;border-left:none;border-bottom:
   solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top-alt:
@@ -543,7 +671,10 @@ lang=EN-US><u8:p></u8:p></span></p>
   <p class=MsoNormal align=center style='text-align:center'><b
   style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-bidi-font-size:
   10.5pt'><u8:p>&nbsp;</u8:p> </span></b><b style='mso-bidi-font-weight:normal'><span
-  lang=EN-US style='font-size:9.0pt'>&nbsp;<span class=SpellE>08科技              </span></span></b><span
+  lang=EN-US style='font-size:9.0pt'>&nbsp;08</span></b><b style='mso-bidi-font-weight:
+  normal'><span style='font-size:9.0pt;font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>科技</span></b><b
+  style='mso-bidi-font-weight:normal'><span style='font-size:9.0pt'> </span></b><span
   lang=EN-US style='font-size:9.0pt'>&nbsp;<o:p></o:p></span></p>
   </td>
   <td width=72 style='width:53.8pt;border-top:none;border-left:none;border-bottom:
@@ -565,8 +696,8 @@ lang=EN-US><u8:p></u8:p></span></p>
   mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
   mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:22.9pt'>
   <p class=MsoNormal align=center style='text-align:center'><b
-  style='mso-bidi-font-weight:normal'><span lang=EN-US><u8:p>&nbsp;</u8:p> <span
-  class=SpellE>200808010048</span>&nbsp;<o:p></o:p></span></b></p>
+  style='mso-bidi-font-weight:normal'><span lang=EN-US><u8:p>&nbsp;</u8:p>
+  200808010048&nbsp;<o:p></o:p></span></b></p>
   </td>
  </tr>
  <tr style='mso-yfti-irow:2;mso-yfti-lastrow:yes;height:575.0pt'>
@@ -578,26 +709,106 @@ lang=EN-US><u8:p></u8:p></span></p>
   宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>课题的目的与要求：</span></b><b
   style='mso-bidi-font-weight:normal'><span lang=EN-US style='font-size:12.0pt'><o:p></o:p></span></b></p>
   <p class=MsoNormal style='text-indent:21.0pt;mso-char-indent-count:2.0'><span
-  lang=EN-US>&nbsp;<span class=SpellE>目的：无论是学校、出版社或其他一些单位，往往需要对图书库存和出库进行管理，而这些工作是一个繁杂的事情，如何用一个现代化的管理手段来代替复杂的手工劳动，这是一个重要的问题。本题结合图书库存与出库两方面的问题，设计一个比较科学的图书库存管理系统，可以提高效率。<p class=MsoNormal style="margin:0;text-indent:2em" >要求：</P><p class=MsoNormal style="margin:0;text-indent:2em" > 1.对图书出入库情况有一定了解；</P><p class=MsoNormal style="margin:0;text-indent:2em" > 2.具备VC程序设计能力；</P><p class=MsoNormal style="margin:0;text-indent:2em" > 3.熟悉SQL Server</P></span></span></p>
+  lang=EN-US>&nbsp;</span><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>目的：无论是学校、出版社或其他一些单位，往往需要对图书库存和出库进行管理，而这些工作是一个繁杂的事情，如何用一个现代化的管理手段来代替复杂的手工劳动，这是一个重要的问题。本题结合图书库存与出库两方面的问题，设计一个比较科学的图书库存管理系统，可以提高效率。</span></p>
+  <p class=MsoNormal style='text-indent:24.0pt'><span style='font-family:宋体;
+  mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>要求：</span></p>
+  <p class=MsoNormal style='text-indent:24.0pt'><span lang=EN-US>1.</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>对图书出入库情况有一定了解；</span></p>
+  <p class=MsoNormal style='text-indent:24.0pt'><span lang=EN-US>2.</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>具备</span><span lang=EN-US>VC</span><span style='font-family:
+  宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>程序设计能力；</span></p>
+  <p class=MsoNormal style='text-indent:24.0pt'><span lang=EN-US>3.</span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>熟悉</span><span lang=EN-US>SQL Server</span></p>
   <p class=MsoNormal style='line-height:17.0pt;mso-line-height-rule:exactly'><b
   style='mso-bidi-font-weight:normal'><span lang=EN-US style='font-size:12.0pt'>&nbsp;</span></b><b
   style='mso-bidi-font-weight:normal'><span style='font-size:12.0pt;font-family:
   宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>论文的主要内容（或设计的技术要求与数据）：</span></b><b
   style='mso-bidi-font-weight:normal'><span lang=EN-US style='font-size:12.0pt'><u8:p></u8:p><o:p></o:p></span></b></p>
   <p class=MsoNormal style='text-indent:21.0pt;mso-char-indent-count:2.0'><span
-  lang=EN-US>&nbsp;<span class=SpellE>要求实现以下功能：<p class=MsoNormal style="margin:0;text-indent:2em" >（1）	对图书入库的管理</P><p class=MsoNormal style="margin:0;text-indent:2em" >（2）	对图书出库的管理</P><p class=MsoNormal style="margin:0;text-indent:2em" >（3）	对图书进行入库统计</P><p class=MsoNormal style="margin:0;text-indent:2em" >（4）	对图书进行出库统计</P><p class=MsoNormal style="margin:0;text-indent:2em" >（5）	对图书入库结存报表的查询</P><p class=MsoNormal style="margin:0;text-indent:2em" >（6）	对图书出库结存报表的查询</P><p class=MsoNormal style="margin:0;text-indent:2em" >（7）	对用户权限的维护</P></span></span></p>
+  lang=EN-US>&nbsp;</span><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>要求实现以下功能：</span></p>
+  <p class=MsoNormal style='text-indent:24.0pt'><span style='font-family:宋体;
+  mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>（</span><span
+  lang=EN-US>1</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>）</span> <span style='font-family:
+  宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>对图书入库的管理</span></p>
+  <p class=MsoNormal style='text-indent:24.0pt'><span style='font-family:宋体;
+  mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>（</span><span
+  lang=EN-US>2</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>）</span> <span style='font-family:
+  宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>对图书出库的管理</span></p>
+  <p class=MsoNormal style='text-indent:24.0pt'><span style='font-family:宋体;
+  mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>（</span><span
+  lang=EN-US>3</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>）</span> <span style='font-family:
+  宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>对图书进行入库统计</span></p>
+  <p class=MsoNormal style='text-indent:24.0pt'><span style='font-family:宋体;
+  mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>（</span><span
+  lang=EN-US>4</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>）</span> <span style='font-family:
+  宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>对图书进行出库统计</span></p>
+  <p class=MsoNormal style='text-indent:24.0pt'><span style='font-family:宋体;
+  mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>（</span><span
+  lang=EN-US>5</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>）</span> <span style='font-family:
+  宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>对图书入库结存报表的查询</span></p>
+  <p class=MsoNormal style='text-indent:24.0pt'><span style='font-family:宋体;
+  mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>（</span><span
+  lang=EN-US>6</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>）</span> <span style='font-family:
+  宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>对图书出库结存报表的查询</span></p>
+  <p class=MsoNormal style='text-indent:24.0pt'><span style='font-family:宋体;
+  mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>（</span><span
+  lang=EN-US>7</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>）</span> <span style='font-family:
+  宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>对用户权限的维护</span></p>
+  <p class=MsoNormal style='text-indent:24.0pt'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+  <p class=MsoNormal style='text-indent:24.0pt'><span style='font-family:宋体;
+  mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>说明</span><span
+  lang=EN-US>:</span></p>
+  <p class=MsoNormal style='text-indent:24.0pt'><span style='font-family:宋体;
+  mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>实体：</span></p>
+  <p class=MsoNormal style='margin-left:42.0pt;text-indent:-18.0pt;mso-list:
+  l0 level1 lfo1;tab-stops:list 42.0pt'><![if !supportLists]><span lang=EN-US
+  style='mso-fareast-font-family:"Times New Roman"'><span style='mso-list:Ignore'>1、<span
+  style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span><![endif]><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>用户</span></p>
+  <p class=MsoNormal style='margin-left:24.0pt'><span lang=EN-US><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span></span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>操作：查询、登录、退出、修改、添加、删除、权限分配</span></p>
+  <p class=MsoNormal style='margin-left:42.0pt;text-indent:-18.0pt;mso-list:
+  l0 level1 lfo1;tab-stops:list 42.0pt'><![if !supportLists]><span lang=EN-US
+  style='mso-fareast-font-family:"Times New Roman"'><span style='mso-list:Ignore'>2、<span
+  style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span><![endif]><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>图书</span></p>
+  <p class=MsoNormal style='margin-left:24.0pt'><span lang=EN-US><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span></span><span
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>操作：入库、出库</span></p>
+  <p class=MsoNormal style='text-indent:24.0pt'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
   <p class=MsoNormal style='line-height:17.0pt;mso-line-height-rule:exactly'><b
   style='mso-bidi-font-weight:normal'><span style='font-size:12.0pt;font-family:
   宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>查阅参考文献、资料要求：</span></b><b
   style='mso-bidi-font-weight:normal'><span lang=EN-US style='font-size:12.0pt'><u8:p></u8:p><o:p></o:p></span></b></p>
   <p class=MsoNormal style='text-indent:21.0pt;mso-char-indent-count:2.0'><span
-  lang=EN-US>&nbsp;参考文献不少于10篇</span></p>
+  lang=EN-US>&nbsp;</span><span style='font-family:宋体;mso-ascii-font-family:
+  "Times New Roman";mso-hansi-font-family:"Times New Roman"'>参考文献不少于</span><span
+  lang=EN-US>10</span><span style='font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>篇</span></p>
   <p class=MsoNormal><span lang=EN-US>&nbsp;</span><b style='mso-bidi-font-weight:
   normal'><span style='font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
   "Times New Roman";mso-hansi-font-family:"Times New Roman"'>进度计划：</span></b><b
   style='mso-bidi-font-weight:normal'><span lang=EN-US style='font-size:12.0pt'><o:p></o:p></span></b></p>
   <p class=MsoNormal style='text-indent:21.0pt;mso-char-indent-count:2.0'><span
-  class=SpellE><span lang=EN-US>按学院要求</span></span></p>
+  style='font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>按学院要求</span></p>
   <p class=MsoNormal style='line-height:17.0pt;mso-line-height-rule:exactly'><span
   lang=EN-US style='font-size:12.0pt'><o:p>&nbsp;</o:p></span></p>
   <p class=MsoNormal style='line-height:17.0pt;mso-line-height-rule:exactly'><b
@@ -618,15 +829,14 @@ lang=EN-US><u8:p></u8:p></span></p>
   宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>月</span><span
   lang=EN-US style='font-size:12.0pt'>20 </span><span style='font-size:12.0pt;
   font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
-  "Times New Roman"'>日至</span><st1:chsdate Year="2012" Month="05" Day="20"
-  IsLunarDate="False" IsROCDate="False" w:st="on"><span lang=EN-US
-   style='font-size:12.0pt'>2012</span><span style='font-size:12.0pt;
-   font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
-   "Times New Roman"'>年</span><span lang=EN-US style='font-size:12.0pt'>05</span><span
-   style='font-size:12.0pt;font-family:宋体;mso-ascii-font-family:"Times New Roman";
-   mso-hansi-font-family:"Times New Roman"'>月</span><span lang=EN-US
-   style='font-size:12.0pt'>20</span><span style='font-size:12.0pt;font-family:
-   宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>日</span></st1:chsdate><span
+  "Times New Roman"'>日至</span><st1:chsdate Year="2012" Month="05" Day="20" IsLunarDate="False" IsROCDate="False" w:st="on"><span
+  lang=EN-US style='font-size:12.0pt'>2012</span><span style='font-size:12.0pt;
+  font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman"'>年</span><span lang=EN-US style='font-size:12.0pt'>05</span><span
+  style='font-size:12.0pt;font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman"'>月</span><span lang=EN-US
+  style='font-size:12.0pt'>20</span><span style='font-size:12.0pt;font-family:
+  宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman"'>日</span></st1:chsdate><span
   lang=EN-US style='font-size:12.0pt'><o:p></o:p></span></p>
   <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span lang=EN-US
   style='mso-bidi-font-size:10.5pt;font-family:黑体'><o:p>&nbsp;</o:p></span></b></p>
@@ -658,8 +868,9 @@ lang=EN-US><u8:p></u8:p></span></p>
   font-family:黑体'>任务接受人（签字）</span></b><b style='mso-bidi-font-weight:normal'><span
   style='font-size:12.0pt;font-family:黑体'>：</span></b><u><span lang=EN-US
   style='font-size:12.0pt'><span
-  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  </span></span></u><span lang=EN-US style='font-size:12.0pt'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span><span style='mso-spacerun:yes'>&nbsp;</span></span></u><span
+  lang=EN-US style='font-size:12.0pt'><span
   style='mso-spacerun:yes'>&nbsp;</span>2012</span><span style='font-size:12.0pt;
   font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
   "Times New Roman"'>年</span><span lang=EN-US style='font-size:12.0pt'>12</span><span
@@ -675,8 +886,8 @@ lang=EN-US><u8:p></u8:p></span></p>
   <td width=72 style='border:none'></td>
   <td width=72 style='border:none'></td>
   <td width=72 style='border:none'></td>
-  <td width=72 style='border:none'></td>
-  <td width=108 style='border:none'></td>
+  <td width=71 style='border:none'></td>
+  <td width=110 style='border:none'></td>
  </tr>
  <![endif]>
 </table>
