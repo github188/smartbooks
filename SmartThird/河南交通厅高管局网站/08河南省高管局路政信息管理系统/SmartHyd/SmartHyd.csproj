@@ -48,6 +48,8 @@
     <Reference Include="System.Web.Mobile" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ManageCenter\Ascx\UserManage.ascx" />
+    <Content Include="ManageCenter\UserManage.aspx" />
     <Content Include="Scripts\jquery-ui-1.8.18.custom\css\redmond\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Scripts\jquery-ui-1.8.18.custom\css\redmond\images\ui-bg_flat_55_fbec88_40x100.png" />
     <Content Include="Scripts\jquery-ui-1.8.18.custom\css\redmond\images\ui-bg_glass_75_d0e5f5_1x400.png" />
@@ -257,12 +259,26 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ManageCenter\Ascx\UserManage.ascx.cs">
+      <DependentUpon>UserManage.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\Ascx\UserManage.ascx.designer.cs">
+      <DependentUpon>UserManage.ascx</DependentUpon>
+    </Compile>
     <Compile Include="ManageCenter\ManageCenter.Master.cs">
       <DependentUpon>ManageCenter.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ManageCenter\ManageCenter.Master.designer.cs">
       <DependentUpon>ManageCenter.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\UserManage.aspx.cs">
+      <DependentUpon>UserManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\UserManage.aspx.designer.cs">
+      <DependentUpon>UserManage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -273,8 +289,13 @@
     <Folder Include="Document\" />
     <Folder Include="Images\" />
     <Folder Include="Log\" />
-    <Folder Include="ManageCenter\Ascx\" />
     <Folder Include="Scripts\kindeditor-4.0.5\attached\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SmartHydUI\SmartHydUI.csproj">
+      <Project>{7CCEDED4-CAA7-43B7-8C85-32DCFE71EB01}</Project>
+      <Name>SmartHydUI</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="ManageCenter\ManageCenter.Master" />

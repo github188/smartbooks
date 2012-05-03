@@ -8,5 +8,6 @@ using System.Configuration;
 
 namespace SmartHyd.UI {
     public class BaseUserPage : System.Web.UI.Page  {
+        
     }
 }
