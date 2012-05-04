@@ -1,10 +1,38 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="ManageCenter.master.cs" Inherits="SmartHyd.ManageCenter.ManageCenter" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="ManageCenter.master.cs"
+    Inherits="SmartHyd.ManageCenter.ManageCenter" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>后台功能模块模板页</title>
+    <link rel="stylesheet" type="text/css" href="../Scripts/jquery-ui-1.8.18.custom/css/redmond/jquery-ui-1.8.18.custom.css" />
+    <script type="text/javascript" src="../Scripts/jquery-ui-1.8.18.custom/js/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="../Scripts/jquery-ui-1.8.18.custom/js/jquery-ui-1.8.18.custom.min.js"></script>
+
+    <script type="text/javascript" src="../Scripts/kindeditor-4.0.5/kindeditor-min.js"></script>
+    <script type="text/javascript" src="../Scripts/kindeditor-4.0.5/lang/zh_CN.js"></script>
+    <script type="text/jscript">
+        $(function () {
+//            alert('hi');
+//            $('input:submit').button();
+//            var editor;
+//            KindEditor.ready(function (K) {
+//                editor = K.create('textarea[name="edit"]', {
+//                    items: ['source', '|', 'undo', 'redo', '|', 'preview', 'print', 'template', 'cut', 'copy',
+//                            'paste', 'plainpaste', 'wordpaste', '|', 'justifyleft', 'justifycenter', 'justifyright',
+//                            'justifyfull', 'insertorderedlist', 'insertunorderedlist', 'indent', 'outdent',
+//                            'subscript', 'superscript', 'clearhtml', 'quickformat', 'selectall', '|', 'fullscreen', '/',
+//                            'formatblock', 'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold',
+//                            'italic', 'underline', 'strikethrough', 'lineheight', 'removeformat', '|', 'image',
+//                            'flash', 'media', 'insertfile', 'table', 'hr', 'emoticons', 'map', 'code', 'pagebreak',
+//                            'link', 'unlink', '|'],
+//                    width: "100%",
+//                    height: "350px"
+//                });
+//            });
+        });
+    </script>
+     
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -12,7 +40,6 @@
     <form id="form1" runat="server">
     <div>
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-        
         </asp:ContentPlaceHolder>
     </div>
     </form>
