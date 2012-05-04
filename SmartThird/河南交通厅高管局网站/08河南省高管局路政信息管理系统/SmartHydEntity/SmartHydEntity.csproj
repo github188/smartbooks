@@ -39,6 +39,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BASE_ACTION.cs" />
+    <Compile Include="BASE_AREA.cs" />
+    <Compile Include="BASE_AREA_TYPE.cs" />
+    <Compile Include="BASE_BUS_OVERRUN.cs" />
+    <Compile Include="BASE_BUS_OVERRUN_SUBMIT.cs" />
+    <Compile Include="BASE_CASE.cs" />
+    <Compile Include="BASE_CASE_BUS.cs" />
+    <Compile Include="BASE_CASE_CLOSED.cs" />
+    <Compile Include="BASE_CASE_LOSS.cs" />
+    <Compile Include="BASE_COMPS.cs" />
+    <Compile Include="BASE_DEPT.cs" />
+    <Compile Include="BASE_MENU.cs" />
+    <Compile Include="BASE_OBSERVED.cs" />
+    <Compile Include="BASE_PATROL.cs" />
+    <Compile Include="BASE_PATROL_GOODS.cs" />
+    <Compile Include="BASE_ROAD_TERM.cs" />
+    <Compile Include="BASE_ROAD_TERM_TYPE.cs" />
+    <Compile Include="BASE_ROLE.cs" />
+    <Compile Include="BASE_TERM.cs" />
+    <Compile Include="BASE_TERM_TYPE.cs" />
+    <Compile Include="BASE_USER.cs" />
+    <Compile Include="BASE_USER_ROLE.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

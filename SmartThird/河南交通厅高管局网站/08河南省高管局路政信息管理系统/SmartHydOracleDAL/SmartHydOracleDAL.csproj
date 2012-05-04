@@ -12,6 +12,7 @@
     <AssemblyName>SmartHyd.OracleDAL</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -33,13 +34,50 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.OracleClient" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BASE_ACTION.cs" />
+    <Compile Include="BASE_AREA.cs" />
+    <Compile Include="BASE_AREA_TYPE.cs" />
+    <Compile Include="BASE_BUS_OVERRUN.cs" />
+    <Compile Include="BASE_BUS_OVERRUN_SUBMIT.cs" />
+    <Compile Include="BASE_CASE.cs" />
+    <Compile Include="BASE_CASE_BUS.cs" />
+    <Compile Include="BASE_CASE_CLOSED.cs" />
+    <Compile Include="BASE_CASE_LOSS.cs" />
+    <Compile Include="BASE_COMPS.cs" />
+    <Compile Include="BASE_DEPT.cs" />
+    <Compile Include="BASE_MENU.cs" />
+    <Compile Include="BASE_OBSERVED.cs" />
+    <Compile Include="BASE_PATROL.cs" />
+    <Compile Include="BASE_PATROL_GOODS.cs" />
+    <Compile Include="BASE_ROAD_TERM.cs" />
+    <Compile Include="BASE_ROAD_TERM_TYPE.cs" />
+    <Compile Include="BASE_ROLE.cs" />
+    <Compile Include="BASE_TERM.cs" />
+    <Compile Include="BASE_TERM_TYPE.cs" />
+    <Compile Include="BASE_USER.cs" />
+    <Compile Include="BASE_USER_ROLE.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Smart\SmartDBUtility\SmartDBUtility.csproj">
+      <Project>{40B79F71-57F3-4E04-8277-25A24CDCB7A5}</Project>
+      <Name>SmartDBUtility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SmartHydEntity\SmartHydEntity.csproj">
+      <Project>{084DC70E-F416-420D-AD6D-A74F004B3940}</Project>
+      <Name>SmartHydEntity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SmartHydIDAL\SmartHydIDAL.csproj">
+      <Project>{619C08C8-16F5-463E-9D18-8D080666377F}</Project>
+      <Name>SmartHydIDAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
