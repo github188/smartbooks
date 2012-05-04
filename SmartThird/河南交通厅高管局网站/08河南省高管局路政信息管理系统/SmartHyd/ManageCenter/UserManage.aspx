@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ManageCenter/ManageCenter.Master" AutoEventWireup="true" CodeBehind="UserManage.aspx.cs" Inherits="SmartHyd.ManageCenter.UserManage" %>
+﻿<%@ Page Title="用户管理" Language="C#" MasterPageFile="~/ManageCenter/ManageCenter.Master" AutoEventWireup="true" CodeBehind="UserManage.aspx.cs" Inherits="SmartHyd.ManageCenter.UserManage" %>
 <%@ Register src="Ascx/UserManage.ascx" tagname="UserManage" tagprefix="uc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>

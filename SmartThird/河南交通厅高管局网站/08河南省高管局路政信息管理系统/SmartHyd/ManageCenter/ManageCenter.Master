@@ -5,12 +5,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>后台功能模块模板页</title>
+    <link rel="stylesheet" type="text/css" href="../css/base.css" />
     <link rel="stylesheet" type="text/css" href="../Scripts/jquery-ui-1.8.18.custom/css/redmond/jquery-ui-1.8.18.custom.css" />
     <script type="text/javascript" src="../Scripts/jquery-ui-1.8.18.custom/js/jquery-1.7.1.min.js"></script>
     <script type="text/javascript" src="../Scripts/jquery-ui-1.8.18.custom/js/jquery-ui-1.8.18.custom.min.js"></script>
 
     <script type="text/javascript" src="../Scripts/kindeditor-4.0.5/kindeditor-min.js"></script>
     <script type="text/javascript" src="../Scripts/kindeditor-4.0.5/lang/zh_CN.js"></script>
+
+    <script type="text/javascript" src="../Scripts/base.js"></script>
     <script type="text/jscript">
         $(function () {
 //            alert('hi');

@@ -33,6 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AspNetPager, Version=7.3.2.0, Culture=neutral, PublicKeyToken=fb0a0fe055d40fd4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\AspNetPager.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
@@ -48,8 +52,12 @@
     <Reference Include="System.Web.Mobile" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Css\base.css" />
+    <Content Include="ManageCenter\Ascx\Patrol.ascx" />
     <Content Include="ManageCenter\Ascx\UserManage.ascx" />
+    <Content Include="ManageCenter\Patrol.aspx" />
     <Content Include="ManageCenter\UserManage.aspx" />
+    <Content Include="Scripts\base.js" />
     <Content Include="Scripts\jquery-ui-1.8.18.custom\css\redmond\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Scripts\jquery-ui-1.8.18.custom\css\redmond\images\ui-bg_flat_55_fbec88_40x100.png" />
     <Content Include="Scripts\jquery-ui-1.8.18.custom\css\redmond\images\ui-bg_glass_75_d0e5f5_1x400.png" />
@@ -259,6 +267,13 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ManageCenter\Ascx\Patrol.ascx.cs">
+      <DependentUpon>Patrol.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\Ascx\Patrol.ascx.designer.cs">
+      <DependentUpon>Patrol.ascx</DependentUpon>
+    </Compile>
     <Compile Include="ManageCenter\Ascx\UserManage.ascx.cs">
       <DependentUpon>UserManage.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -273,6 +288,13 @@
     <Compile Include="ManageCenter\ManageCenter.Master.designer.cs">
       <DependentUpon>ManageCenter.Master</DependentUpon>
     </Compile>
+    <Compile Include="ManageCenter\Patrol.aspx.cs">
+      <DependentUpon>Patrol.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\Patrol.aspx.designer.cs">
+      <DependentUpon>Patrol.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ManageCenter\UserManage.aspx.cs">
       <DependentUpon>UserManage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -285,7 +307,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Ascx\" />
-    <Folder Include="Css\" />
     <Folder Include="Document\" />
     <Folder Include="Images\" />
     <Folder Include="Log\" />
