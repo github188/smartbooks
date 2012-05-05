@@ -16,7 +16,7 @@
         /// <summary>
         /// Http请求内容编码
         /// </summary>
-        public Encoding _encoding;
+        public Encoding _encoding = Encoding.GetEncoding("gb2312");
         #endregion
 
         #region 公共方法定义
@@ -82,7 +82,7 @@
             }
             this._WebResponse = (HttpWebResponse)this._WebRequest.GetResponse();
             StreamReader read = new StreamReader(this._WebResponse.GetResponseStream(), this._encoding);
-            this._Cookie.Add(this._WebResponse.Cookies);
+            //this._Cookie.Add(this._WebResponse.Cookies);
             string htmlText = read.ReadToEnd();
             read.Close();
             read.Dispose();

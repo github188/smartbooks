@@ -427,6 +427,15 @@
             /*保存任务信息到本地Task目录下*/
             //SaveLoactionTaskItem();
 
+            //保存采集结果数据
+            for (int i = 0; i < taskItem.Length; i++)
+            {
+                if (taskItem[i] != null)
+                {
+                    taskItem[i].SaveResult();
+                }
+            }
+
             Application.ExitThread();
             Application.Exit();
         }

@@ -59,6 +59,18 @@ namespace SmartSpider.Config {
             //截取内容
             result = Smart.Utility.StringHelper.SubString(result, r.PreviousFlag, r.FollowingFlag);
 
+            //使用正则表达式采集结果
+            if (r.Static)
+            {
+                //如果静态规则选中，则固定值值作为结果为正则表达式。
+                MatchCollection coll = Regex.Matches(result, r.ConstantValue);
+                result = string.Empty;
+                foreach (Match m in coll)
+                {
+                    result += m.Value + "\n";
+                }
+            }
+
             //采集结果替换
             result = ResultReplace(result, r.Replacements);
 

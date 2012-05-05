@@ -53,7 +53,7 @@ namespace SmartSpider.Config
             }
 
             //网址提取范围
-            if (string.IsNullOrEmpty(rule.PickingStartFlag) && string.IsNullOrEmpty(rule.PickingEndFlag))
+            if (!string.IsNullOrEmpty(rule.PickingStartFlag) && !string.IsNullOrEmpty(rule.PickingEndFlag))
             {
                 htmlText = Smart.Utility.StringHelper.SubString(htmlText, rule.PickingStartFlag, rule.PickingEndFlag);
             }
@@ -75,7 +75,7 @@ namespace SmartSpider.Config
             if (rule.UseRegularExpression)
             {
                 //下一页网址模板
-                MatchCollection coll = Regex.Matches(htmlText, rule.NextPageUrlPattern);
+                MatchCollection coll = Regex.Matches(htmlText, rule.NextLayerUrlPattern);
                 foreach (Match m in coll)
                 {
                     urls.Add(m.Value);
@@ -128,10 +128,19 @@ namespace SmartSpider.Config
                         StringCollection navUrlItem = ParseNavigationRuleHtmlText(rule, htmlText);
                         foreach (string r in navUrlItem)
                         {
-                            urls.Add(r);
+                            /*
+                             * 处理相对路径网址问题如：/html/gndy/jddy/20120425/37418.html
+                             * 如果不包含http://选项，则在相对路径前边加上主机地址。
+                             */
+                            string path = r;
+                            if (!r.Contains("http://") && r.Length > 0)
+                            {
+                                path = r.Insert(0,  "http://" + http.WebResponse.ResponseUri.Authority);                                
+                            }
+                            urls.Add(path);                            
                             if (onSingleComplete != null)
                             {
-                                this.onSingleComplete(this, u);    //引发增加一条网址事件
+                                this.onSingleComplete(this, path);    //引发增加一条网址事件
                             }
                         }
                     }

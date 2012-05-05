@@ -136,6 +136,9 @@
         /// </summary>
         public void Dispose()
         {
+            //保存采集结果
+            SaveResult();
+
             this._HttpHelper = null;
             this._Results = null;
             this._TaskConfig = null;
@@ -146,6 +149,7 @@
         //当增加一条导航地址时触发的事件
         private void parseNav_onSingleComplete(object sender, string url)
         {
+            this.AppendLog(url);
             //提取页面内容
             ExtractContents(url);
         }
@@ -258,7 +262,6 @@
                 this.AppendLog("发布到SqlServer数据库...");
                 return PublishResultToSqlServer();
             }
-
             return 0;
         }
 
@@ -494,6 +497,36 @@
 
             return publishResultCount;
         }
+
+        /// <summary>
+        /// 保存采集结果
+        /// </summary>
+        public void SaveResult()
+        {
+            string resultFileName = this.ConfigPath + ".result.txt";
+            if (File.Exists(resultFileName))
+            {
+                File.Delete(resultFileName);
+            }
+
+            foreach (DataRow row in this.Results.Rows)
+            {
+                string rowData = string.Empty;
+                for (int i = 0; i < this.Results.Columns.Count; i++)
+                {
+                    if (i <= this.Results.Columns.Count - 2)
+                    {
+                        rowData += row[this.Results.Columns[i].ColumnName].ToString() + ",";
+                    }
+                    else
+                    {
+                        rowData += row[this.Results.Columns[i].ColumnName].ToString();
+                    }
+                }
+                rowData += "\r\n";
+                File.AppendAllText(resultFileName, rowData, Encoding.UTF8);
+            }
+        }
         #endregion
 
         #region 保存配置文件
@@ -537,6 +570,7 @@
             {
                 try
                 {
+                    //保存配置文件
                     XmlSerializer xs = new XmlSerializer(typeof(Task));
                     Stream writeStream = new FileStream(filePath, FileMode.Create, FileAccess.Write, FileShare.Write);
                     xs.Serialize(writeStream, task);
