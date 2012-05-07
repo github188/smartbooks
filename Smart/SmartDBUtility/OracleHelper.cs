@@ -6,13 +6,14 @@ namespace Smart.DBUtility
     using System.Text;
     using System.Data;
     using System.Data.OracleClient;
+    using System.Configuration;
 
     public abstract class OracleHelper
     {
         /// <summary>
         /// 数据库连接字符串
         /// </summary>
-        public static string ConnectionString = "";
+        public static string ConnectionString = ConfigurationManager.AppSettings["ConnectionStrings"];
 
         /// <summary>
         /// Execute a database query which does not include a select
