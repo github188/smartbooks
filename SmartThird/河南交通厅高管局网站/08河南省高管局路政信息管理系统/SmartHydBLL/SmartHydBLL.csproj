@@ -39,7 +39,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BASE_FAWEN.cs" />
+    <Compile Include="BASE_DEPT.cs" />
+    <Compile Include="BASE_PATROL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
