@@ -20,8 +20,8 @@
 //            alert('hi');
 //            $('input:submit').button();
 //            var editor;
-//            KindEditor.ready(function (K) {
-//                editor = K.create('textarea[name="edit"]', {
+//            kindeditor.ready(function (k) {
+//                editor = k.create('textarea[name="edit"]', {
 //                    items: ['source', '|', 'undo', 'redo', '|', 'preview', 'print', 'template', 'cut', 'copy',
 //                            'paste', 'plainpaste', 'wordpaste', '|', 'justifyleft', 'justifycenter', 'justifyright',
 //                            'justifyfull', 'insertorderedlist', 'insertunorderedlist', 'indent', 'outdent',
