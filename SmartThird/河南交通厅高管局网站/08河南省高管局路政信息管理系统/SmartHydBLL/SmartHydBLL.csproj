@@ -39,7 +39,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BASE_FAWEN.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SmartHydEntity\SmartHydEntity.csproj">
+      <Project>{084DC70E-F416-420D-AD6D-A74F004B3940}</Project>
+      <Name>SmartHydEntity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SmartHydIDAL\SmartHydIDAL.csproj">
+      <Project>{619C08C8-16F5-463E-9D18-8D080666377F}</Project>
+      <Name>SmartHydIDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SmartHydOracleDAL\SmartHydOracleDAL.csproj">
+      <Project>{22F152C9-47EB-42D5-A003-E0C0E741F5E1}</Project>
+      <Name>SmartHydOracleDAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
