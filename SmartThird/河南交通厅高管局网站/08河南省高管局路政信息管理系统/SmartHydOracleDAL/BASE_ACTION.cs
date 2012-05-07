@@ -30,9 +30,12 @@ namespace SmartHyd.OracleDAL {
 					new OracleParameter(":ACTIONID", OracleType.Number,4)			};
             parameters[0].Value = ACTIONID;
 
-            if (OracleHelper.ExecuteNonQuery(strSql.ToString(), parameters) > 0) {
+            if (OracleHelper.ExecuteNonQuery(strSql.ToString(), parameters) > 0)
+            {
                 return true;
-            } else {
+            }
+            else
+            {
                 return false;
             }
         }

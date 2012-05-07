@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BASE_ACTION.cs" />
+    <Compile Include="BASE_AFFICHE.cs" />
     <Compile Include="BASE_AREA.cs" />
     <Compile Include="BASE_AREA_TYPE.cs" />
     <Compile Include="BASE_BUS_OVERRUN.cs" />
@@ -52,13 +53,19 @@
     <Compile Include="BASE_CASE_LOSS.cs" />
     <Compile Include="BASE_COMPS.cs" />
     <Compile Include="BASE_DEPT.cs" />
+    <Compile Include="BASE_FAWEN.cs" />
+    <Compile Include="BASE_LICENSE_ACCEPT.cs" />
     <Compile Include="BASE_MENU.cs" />
+    <Compile Include="BASE_MESSAGE.cs" />
     <Compile Include="BASE_OBSERVED.cs" />
     <Compile Include="BASE_PATROL.cs" />
     <Compile Include="BASE_PATROL_GOODS.cs" />
+    <Compile Include="BASE_PLAN.cs" />
+    <Compile Include="BASE_PROCEDURE.cs" />
     <Compile Include="BASE_ROAD_TERM.cs" />
     <Compile Include="BASE_ROAD_TERM_TYPE.cs" />
     <Compile Include="BASE_ROLE.cs" />
+    <Compile Include="BASE_SHOUWEN.cs" />
     <Compile Include="BASE_TERM.cs" />
     <Compile Include="BASE_TERM_TYPE.cs" />
     <Compile Include="BASE_USER.cs" />
