@@ -76,6 +76,7 @@
     <Content Include="Scripts\jquery-ui-1.8.18.custom\css\redmond\jquery-ui-1.8.18.custom.css" />
     <Content Include="Scripts\jquery-ui-1.8.18.custom\js\jquery-1.7.1.min.js" />
     <Content Include="Scripts\jquery-ui-1.8.18.custom\js\jquery-ui-1.8.18.custom.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.18.custom\js\jquery.ui.datepicker-zh-CN.js" />
     <Content Include="Scripts\kindeditor-4.0.5\kindeditor-min.js" />
     <Content Include="Scripts\kindeditor-4.0.5\lang\zh_CN.js" />
     <Content Include="Scripts\kindeditor-4.0.5\plugins\anchor\anchor.js" />
@@ -313,6 +314,14 @@
     <Folder Include="Scripts\kindeditor-4.0.5\attached\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SmartHydBLL\SmartHydBLL.csproj">
+      <Project>{AB9A553F-206D-47E9-9B3F-E4B7757C2760}</Project>
+      <Name>SmartHydBLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SmartHydEntity\SmartHydEntity.csproj">
+      <Project>{084DC70E-F416-420D-AD6D-A74F004B3940}</Project>
+      <Name>SmartHydEntity</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SmartHydUI\SmartHydUI.csproj">
       <Project>{7CCEDED4-CAA7-43B7-8C85-32DCFE71EB01}</Project>
       <Name>SmartHydUI</Name>

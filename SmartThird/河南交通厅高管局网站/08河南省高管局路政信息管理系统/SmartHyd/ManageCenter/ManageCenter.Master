@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="../Scripts/jquery-ui-1.8.18.custom/css/redmond/jquery-ui-1.8.18.custom.css" />
     <script type="text/javascript" src="../Scripts/jquery-ui-1.8.18.custom/js/jquery-1.7.1.min.js"></script>
     <script type="text/javascript" src="../Scripts/jquery-ui-1.8.18.custom/js/jquery-ui-1.8.18.custom.min.js"></script>
+    <script type="text/javascript" src="../Scripts/jquery-ui-1.8.18.custom/js/jquery.ui.datepicker-zh-CN.js"></script>
 
     <script type="text/javascript" src="../Scripts/kindeditor-4.0.5/kindeditor-min.js"></script>
     <script type="text/javascript" src="../Scripts/kindeditor-4.0.5/lang/zh_CN.js"></script>
