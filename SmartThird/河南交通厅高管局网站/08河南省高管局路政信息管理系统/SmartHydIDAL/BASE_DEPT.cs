@@ -53,6 +53,13 @@ namespace SmartHyd.IDAL
 		/// <summary>
 		/// 获得前几行数据
 		/// </summary>
-		DataSet GetList(int Top,string strWhere,string filedOrder);   
+		DataSet GetList(int Top,string strWhere,string filedOrder);
+
+        /// <summary>
+        /// 获取用户所属的部门和子部门
+        /// </summary>
+        /// <param name="userName">用户名称</param>
+        /// <returns>部门信息</returns>
+        DataTable GetUserWhereDepartment(string userName);
 	}
 }

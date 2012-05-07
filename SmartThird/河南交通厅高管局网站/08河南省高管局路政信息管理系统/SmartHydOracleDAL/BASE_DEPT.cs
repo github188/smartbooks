@@ -126,9 +126,7 @@ namespace SmartHyd.OracleDAL {
                 return false;
             }
         }
-
-
-
+        
         /// <summary>
         /// 得到一个对象实体
         /// </summary>
@@ -198,6 +196,16 @@ namespace SmartHyd.OracleDAL {
         }
 
 
+        #region 自定义查询
+        /// <summary>
+        /// 获取用户所属的部门和子部门
+        /// </summary>
+        /// <param name="userName">用户名称</param>
+        /// <returns>部门信息</returns>
+        public DataTable GetUserWhereDepartment(string userName) {
+            return null;
+        }
+        #endregion
     }
 }
 

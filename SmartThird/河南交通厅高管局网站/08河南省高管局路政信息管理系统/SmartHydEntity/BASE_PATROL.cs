@@ -4,7 +4,7 @@
 // 文件名称:BASE_PATROL.cs
 // 功能描述:人工巡逻日志表 -- 实体定义
 //
-// 创建标识： 王 亚 2012-05-04
+// 创建标识： 王 亚 2012-05-07
 namespace SmartHyd.Entity {
     using System;
     using System.Collections.Generic;
@@ -25,11 +25,11 @@ namespace SmartHyd.Entity {
         /// <summary>
         /// 巡查负责人
         /// </summary>		
-        private decimal _RESPUSER;
+        private string _RESPUSER;
         /// <summary>
         /// 巡查人员
         /// </summary>		
-        private decimal _PATROLUSER;
+        private string _PATROLUSER;
         /// <summary>
         /// 巡查车牌号
         /// </summary>		
@@ -49,11 +49,11 @@ namespace SmartHyd.Entity {
         /// <summary>
         /// 巡查开始时间
         /// </summary>		
-        private DateTime _BEGINTIME;
+        private DateTime _BEGINTIME = DateTime.Now;
         /// <summary>
         /// 巡查结束时间
         /// </summary>		
-        private DateTime _ENDTIME;
+        private DateTime _ENDTIME = DateTime.Now;
         /// <summary>
         /// 移交人
         /// </summary>		
@@ -73,11 +73,11 @@ namespace SmartHyd.Entity {
         /// <summary>
         /// 接班中队长
         /// </summary>		
-        private decimal _ACCEPTCAPTAIN;
+        private string _ACCEPTCAPTAIN;
         /// <summary>
         /// 交班中队长
         /// </summary>		
-        private decimal _SHIFTCAPTAIN;
+        private string _SHIFTCAPTAIN;
         /// <summary>
         /// 接班巡逻车牌号
         /// </summary>		
@@ -85,11 +85,15 @@ namespace SmartHyd.Entity {
         /// <summary>
         /// 交接班时间
         /// </summary>		
-        private DateTime _TICKTIME;
+        private DateTime _TICKTIME = DateTime.Now;
         /// <summary>
         /// 接班巡逻车里程表（KM）
         /// </summary>		
         private decimal _BUSKM;
+        /// <summary>
+        /// 移交器材
+        /// </summary>		
+        private string _GOODS;
 
         /// <summary>
         /// 巡逻日志ID
@@ -108,14 +112,14 @@ namespace SmartHyd.Entity {
         /// <summary>
         /// 巡查负责人
         /// </summary>
-        public decimal RESPUSER {
+        public string RESPUSER {
             get { return _RESPUSER; }
             set { _RESPUSER = value; }
         }
         /// <summary>
         /// 巡查人员
         /// </summary>
-        public decimal PATROLUSER {
+        public string PATROLUSER {
             get { return _PATROLUSER; }
             set { _PATROLUSER = value; }
         }
@@ -192,14 +196,14 @@ namespace SmartHyd.Entity {
         /// <summary>
         /// 接班中队长
         /// </summary>
-        public decimal ACCEPTCAPTAIN {
+        public string ACCEPTCAPTAIN {
             get { return _ACCEPTCAPTAIN; }
             set { _ACCEPTCAPTAIN = value; }
         }
         /// <summary>
         /// 交班中队长
         /// </summary>
-        public decimal SHIFTCAPTAIN {
+        public string SHIFTCAPTAIN {
             get { return _SHIFTCAPTAIN; }
             set { _SHIFTCAPTAIN = value; }
         }
@@ -223,6 +227,13 @@ namespace SmartHyd.Entity {
         public decimal BUSKM {
             get { return _BUSKM; }
             set { _BUSKM = value; }
+        }
+        /// <summary>
+        /// 移交器材
+        /// </summary>
+        public string GOODS {
+            get { return _GOODS; }
+            set { _GOODS = value; }
         }
     }
 }

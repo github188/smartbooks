@@ -52,5 +52,14 @@ namespace SmartHyd.IDAL {
         /// 获得前几行数据
         /// </summary>
         DataSet GetList(int Top, string strWhere, string filedOrder);
+
+        /// <summary>
+        /// 获取指定时间范围内某部门下日志
+        /// </summary>
+        /// <param name="beginTime">开始时间</param>
+        /// <param name="endTime">结束时间</param>
+        /// <param name="deptCode">部门ID编号</param>
+        /// <returns>日志数据</returns>
+        DataTable GetDeptLog(DateTime beginTime, DateTime endTime, int deptCode);
     }
 }
