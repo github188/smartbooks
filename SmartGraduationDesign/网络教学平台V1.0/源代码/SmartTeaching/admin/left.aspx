@@ -20,25 +20,26 @@
         <h3>
             <a>文章信息管理</a></h3>
         <div>
-            <a href="newsAdd.aspx" target="main">添加文章</a> <a href="newsList.aspx" target="main">
-                文章管理</a> <a href="docsType.aspx" target="main">文章分类管理</a>
+            <a href="newsAdd.aspx" target="main" runat="server" id="addnews">添加文章</a> 
+            <a href="newsList.aspx" target="main" runat="server" id="newsmgr">文章管理</a>
+            <a href="docsType.aspx" target="main" runat="server" id="newstype">文章分类管理</a>
         </div>
         <h3>
             <a>教学互动管理</a></h3>
         <div>
-            <a href="bbsDiscuss.aspx" target="main">我的消息</a>
+            <a href="bbsDiscuss.aspx" target="main" runat="server" id="msg">我的消息</a>
         </div>
         <h3>
             <a>角色信息管理</a></h3>
         <div>
-            <a href="roleAdd.aspx" target="main">添加角色</a> <a href="roleList.aspx" target="main">
-                角色管理</a>
+            <a href="roleAdd.aspx" target="main" runat="server" id="rolemgr">添加角色</a> 
+            <a href="roleList.aspx" target="main" runat="server" id="addrole">角色管理</a>
         </div>
         <h3>
             <a>用户信息管理</a></h3>
         <div>
-            <a href="userAdd.aspx" target="main">添加用户</a> <a href="userList.aspx" target="main">
-                用户管理</a>
+            <a href="userAdd.aspx" target="main" runat="server" id="adduser">添加用户</a> 
+            <a href="userList.aspx" target="main" runat="server" id="usermgr">用户管理</a>
         </div>
     </div>
     </form>
