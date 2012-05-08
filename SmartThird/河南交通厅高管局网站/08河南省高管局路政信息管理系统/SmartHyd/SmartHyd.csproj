@@ -53,9 +53,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Css\base.css" />
+    <Content Include="ManageCenter\Ascx\FaWen.ascx" />
     <Content Include="ManageCenter\Ascx\Patrol.ascx" />
+    <Content Include="ManageCenter\Ascx\ShouWen.ascx" />
     <Content Include="ManageCenter\Ascx\UserManage.ascx" />
+    <Content Include="ManageCenter\FaWen.aspx" />
     <Content Include="ManageCenter\Patrol.aspx" />
+    <Content Include="ManageCenter\ShouWen.aspx" />
     <Content Include="ManageCenter\UserManage.aspx" />
     <Content Include="Scripts\base.js" />
     <Content Include="Scripts\jquery-ui-1.8.18.custom\css\redmond\images\ui-bg_flat_0_aaaaaa_40x100.png" />
@@ -268,6 +272,13 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ManageCenter\Ascx\FaWen.ascx.cs">
+      <DependentUpon>FaWen.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\Ascx\FaWen.ascx.designer.cs">
+      <DependentUpon>FaWen.ascx</DependentUpon>
+    </Compile>
     <Compile Include="ManageCenter\Ascx\Patrol.ascx.cs">
       <DependentUpon>Patrol.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -275,12 +286,26 @@
     <Compile Include="ManageCenter\Ascx\Patrol.ascx.designer.cs">
       <DependentUpon>Patrol.ascx</DependentUpon>
     </Compile>
+    <Compile Include="ManageCenter\Ascx\ShouWen.ascx.cs">
+      <DependentUpon>ShouWen.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\Ascx\ShouWen.ascx.designer.cs">
+      <DependentUpon>ShouWen.ascx</DependentUpon>
+    </Compile>
     <Compile Include="ManageCenter\Ascx\UserManage.ascx.cs">
       <DependentUpon>UserManage.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ManageCenter\Ascx\UserManage.ascx.designer.cs">
       <DependentUpon>UserManage.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\FaWen.aspx.cs">
+      <DependentUpon>FaWen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\FaWen.aspx.designer.cs">
+      <DependentUpon>FaWen.aspx</DependentUpon>
     </Compile>
     <Compile Include="ManageCenter\ManageCenter.Master.cs">
       <DependentUpon>ManageCenter.Master</DependentUpon>
@@ -295,6 +320,13 @@
     </Compile>
     <Compile Include="ManageCenter\Patrol.aspx.designer.cs">
       <DependentUpon>Patrol.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\ShouWen.aspx.cs">
+      <DependentUpon>ShouWen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\ShouWen.aspx.designer.cs">
+      <DependentUpon>ShouWen.aspx</DependentUpon>
     </Compile>
     <Compile Include="ManageCenter\UserManage.aspx.cs">
       <DependentUpon>UserManage.aspx</DependentUpon>

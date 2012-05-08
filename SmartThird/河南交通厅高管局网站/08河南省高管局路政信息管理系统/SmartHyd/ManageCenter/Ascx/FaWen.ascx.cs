@@ -9,7 +9,7 @@ namespace SmartHyd.ManageCenter.Ascx
 {
     public partial class FaWen : System.Web.UI.UserControl
     {
-        SmartHyd.OracleDAL.BASE_FAWEN f_dal = new SmartHyd.OracleDAL.BASE_FAWEN();
+        //SmartHyd.OracleDAL.BASE_FAWEN f_dal = new SmartHyd.OracleDAL.BASE_FAWEN();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -27,7 +27,7 @@ namespace SmartHyd.ManageCenter.Ascx
             //{
                
             //}
-            this.fawenList.DataSource = f_dal.GetList("1=1"); //定义数据源
+            //this.fawenList.DataSource = f_dal.GetList("1=1"); //定义数据源
             this.fawenList.DataBind(); //绑定数据
         }
         //发送

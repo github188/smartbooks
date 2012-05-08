@@ -201,9 +201,31 @@ namespace SmartHyd.OracleDAL {
         /// 获取用户所属的部门和子部门
         /// </summary>
         /// <param name="userName">用户名称</param>
+        /// <param name="issubdept">0:包含子部门,其他:用户所属部门</param>
         /// <returns>部门信息</returns>
-        public DataTable GetUserWhereDepartment(string userName) {
-            return null;
+        public DataTable GetUserWhereDepartment(string userName, int issubdept) {
+            string procName = "PKG_USER_QUERY.proc_getdept";
+            OracleParameter[] param = new OracleParameter[3];
+
+            param[0] = new OracleParameter();
+            param[1] = new OracleParameter();
+            param[2] = new OracleParameter();
+
+            param[0].Direction = ParameterDirection.Input;
+            param[0].OracleType = OracleType.VarChar;
+            param[0].ParameterName = "username";
+            param[0].Value = userName;
+
+            param[1].Direction = ParameterDirection.Input;
+            param[1].OracleType = OracleType.Number;
+            param[1].ParameterName = "issubdept";
+            param[1].Value = issubdept;
+
+            param[2].Direction = ParameterDirection.Output;
+            param[2].OracleType = OracleType.Cursor;
+            param[2].ParameterName = "out_cursor";
+
+            return OracleHelper.RunProcedure(procName, param).Tables[0];
         }
         #endregion
     }

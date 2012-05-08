@@ -4,7 +4,6 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 <script type="text/jscript">
     $(function () {
-        alert('hi');
         var editor;
         kindeditor.ready(function (k) {
             editor = k.create('textarea[id="ctl00_ContentPlaceHolder1_FaWen1_TxContent"]', {

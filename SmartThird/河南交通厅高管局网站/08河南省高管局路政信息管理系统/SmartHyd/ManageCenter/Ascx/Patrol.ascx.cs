@@ -18,7 +18,7 @@ namespace SmartHyd.ManageCenter.Ascx {
         }
 
         private void bindDeptLog() {
-            DateTime beginTime = DateTime.Now.AddDays(-90);
+            DateTime beginTime = DateTime.Now.AddDays(-5);
             DateTime endTime = DateTime.Now;
             int deptCode = 0;
             DataTable dt = new DataTable();
@@ -41,7 +41,7 @@ namespace SmartHyd.ManageCenter.Ascx {
             string userName = "";
             DataTable dt = new DataTable();
             BLL.BASE_DEPT bllDept = new BLL.BASE_DEPT();
-            dt = bllDept.GetUserWhereDepartment(userName);
+            dt = bllDept.GetUserWhereDepartment(userName, 0);
             ddldept.Items.Clear();
             foreach (DataRow row in dt.Rows) {
                 ddldept.Items.Add(new ListItem(

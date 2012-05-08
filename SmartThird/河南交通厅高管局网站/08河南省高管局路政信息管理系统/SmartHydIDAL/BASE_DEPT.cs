@@ -60,6 +60,6 @@ namespace SmartHyd.IDAL
         /// </summary>
         /// <param name="userName">用户名称</param>
         /// <returns>部门信息</returns>
-        DataTable GetUserWhereDepartment(string userName);
+        DataTable GetUserWhereDepartment(string userName, int issubdept);
 	}
 }

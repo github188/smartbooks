@@ -126,27 +126,39 @@
                 <HeaderTemplate>
                     <thead>
                         <tr>
-                            <th>
-                                标题
-                            </th>
+                            <th>单位部门</th>
+                            <th>巡逻人员</th>
+                            <th>巡查车牌号</th>
+                            <th>巡查里程</th>
+                            <th>天气情况</th>
+                            <th>交接班时间</th>
+                            <th>接班巡逻车里程表（KM）</th>
                         </tr>
                     </thead>
                 </HeaderTemplate>
                 <ItemTemplate>
                     <tbody>
                         <tr>
-                            <td>
-                                <#=Eval('dptname')#>
-                            </td>
+                            <td><#=Eval('dptname')#></td>
+                            <td><#=Eval('username')#></td>
+                            <td><#=Eval('busnumber')#></td>
+                            <td><#=Eval('mileage')#></td>
+                            <td><#=Eval('weather')#></td>
+                            <td><#=Eval('ticktime')#></td>
+                            <td><#=Eval('buskm')#></td>
                         </tr>
                     </tbody>
                 </ItemTemplate>
                 <FooterTemplate>
                     <tfoot>
                         <tr>
-                            <td colspan="2">
-                                分页
-                            </td>
+                            <td>单位部门</td>
+                            <td>巡逻人员</td>
+                            <td>巡查车牌号</td>
+                            <td>巡查里程</td>
+                            <td>天气情况</td>
+                            <td>交接班时间</td>
+                            <td>接班巡逻车里程表（KM）</td>
                         </tr>
                     </tfoot>
                 </FooterTemplate>
