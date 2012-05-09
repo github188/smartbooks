@@ -13,5 +13,11 @@ namespace SmartHyd.ManageCenter.Ascx
         {
 
         }
+
+        protected void AspNetPager1_PageChanging(object src, Wuqi.Webdiyer.PageChangingEventArgs e)
+        {
+
+        }
+
     }
 }
