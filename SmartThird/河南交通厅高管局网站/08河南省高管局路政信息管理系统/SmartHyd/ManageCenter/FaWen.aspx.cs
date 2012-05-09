@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace SmartHyd.ManageCenter.FilesManage
 {
-    public partial class FaWen : System.Web.UI.Page
+    public partial class FaWen : UI.BaseUserPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
