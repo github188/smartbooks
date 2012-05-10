@@ -4,7 +4,7 @@
 // 文件名称:BASE_SHOUWEN.cs
 // 功能描述:收文信息表 -- 实体定义
 //
-// 创建标识： 付晓 2012-05-04
+// 创建标识： 付晓 2012-05-10
 namespace SmartHyd.Entity
 {
     using System;
@@ -64,10 +64,6 @@ namespace SmartHyd.Entity
         /// 备注
         /// </summary>		
         private string _REMARKS;
-		/// <summary>
-        /// 来文内容
-        /// </summary>		
-        private string _S_CONTENT;
 	
 	        /// <summary>
         /// 收文信息 编号
@@ -164,14 +160,6 @@ namespace SmartHyd.Entity
         {
             get { return _REMARKS; }
             set { _REMARKS = value; }
-        }
-	        /// <summary>
-        /// 来文内容
-        /// </summary>
-        public string S_CONTENT
-        {
-            get { return _S_CONTENT; }
-            set { _S_CONTENT = value; }
         }
 	}
 }
