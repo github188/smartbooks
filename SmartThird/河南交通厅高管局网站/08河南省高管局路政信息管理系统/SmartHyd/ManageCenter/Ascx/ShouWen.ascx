@@ -7,6 +7,22 @@
     </ul>
     <!--收文管理开始-->
     <div id="tabs-1">
+        <div id="search" style="float: right;">
+            发文类型：
+            <select name="tid" class="SmallSelect">
+                <option value="">全部</option>
+                <option value="88">会议纪要</option>
+                <option value="89">通知</option>
+                <option value="25">邀请函</option>
+                <option value="35">上级转发</option>
+                <option value="69">通知通报</option>
+                <option value="79">政府发文稿纸</option>
+                <option value="80">fewfwf</option>
+            </select>
+            标题：<input type="text" name="title" size="15" value="" onclick="this.value='';" class="SmallInput" />
+            <input type="submit" value="查询" class="SmallButton" />
+            <input type="reset" value="重置" class="SmallButton" />
+        </div>
         <table class="table">
             <asp:Repeater ID="RptShouwen" runat="server">
                 <HeaderTemplate>
@@ -59,7 +75,7 @@
                             <td>
                                 <%# Eval("S_FROMDATE")%>
                             </td>
-                             <td>
+                            <td>
                                 <%# Eval("S_HANDLEPROGRESS")%>
                             </td>
                             <td>
@@ -85,16 +101,141 @@
         <webdiyer:AspNetPager ID="AspNetPager1" runat="server" CustomInfoHTML="共%PageCount%页，当前为第%CurrentPageIndex%页"
             FirstPageText="首页" LastPageText="尾页" NextPageText="下一页" PageIndexBoxType="TextBox"
             PrevPageText="上一页" ShowCustomInfoSection="Right" ShowPageIndexBox="Auto" SubmitButtonText="Go"
-            TextAfterPageIndexBox="页" TextBeforePageIndexBox="转到" 
-            onpagechanging="AspNetPager1_PageChanging" >
+            TextAfterPageIndexBox="页" TextBeforePageIndexBox="转到" OnPageChanging="AspNetPager1_PageChanging">
         </webdiyer:AspNetPager>
     </div>
     <!--收文管理结束-->
     <!--收文批复开始-->
-    <div id="tabs—2">
-    <table>
-       <tr><td>dgsdf fgd ss</td></tr>
-    </table>
+    <div id="tabs-2">
+        <div id="content">
+            <h1 align="center">
+                <%# Eval("F_TYPE")%></h1>
+            <table class="TableList red" align="center" width="700">
+                <tr>
+                    <td class="left" align="center">
+                        发文字号
+                    </td>
+                    <td class="red">
+                        <asp:HiddenField ID="hidPrimary" runat="server" Value="-1" />
+                        <asp:TextBox ID="txNumber" runat="server" CssClass="input"></asp:TextBox>
+                    </td>
+                    <%--<td class="red" align="center">密级</td>
+		<td class="red"><input type="text" name="secret" class="field" size=20
+			value=""></td>--%>
+                </tr>
+                <tr>
+                    <td class="left" align="center">
+                        来文机关
+                    </td>
+                    <td>
+                        <asp:TextBox ID="TxtOrgan" runat="server"></asp:TextBox>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="red" align="center">
+                        来文标题
+                    </td>
+                    <td class="red" colspan="3">
+                        <asp:TextBox ID="txTitle" runat="server" CssClass="input"></asp:TextBox>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="red" align="center">
+                        来文内容
+                    </td>
+                    <td class="red" colspan="3">
+                        <asp:TextBox ID="TxContent" runat="server" CssClass="input" Height="140px" TextMode="MultiLine"
+                            Width="215px"></asp:TextBox>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="red" align="center">
+                        来文时间
+                    </td>
+                    <td class="red" colspan="3">
+                        <asp:TextBox ID="TxtFromTime" runat="server" ReadOnly="true" CssClass="input"></asp:TextBox>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="red" align="center">
+                        承办时间
+                    </td>
+                    <td class="red" colspan="3">
+                        <asp:TextBox ID="TxtHandTime" runat="server" CssClass="input"></asp:TextBox>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="red" align="center">
+                        涉及相关运营单位
+                    </td>
+                    <td class="red">
+                        <asp:TextBox ID="TxtRelateOrgan" runat="server"></asp:TextBox>
+                    </td>
+                    <%--<td class="red" align="center">缓急程度</td>
+		<td class="red"><input type="text" name="priority" class="field"
+			size=20 value=""></td>--%>
+                </tr>
+                <%--<tr>
+		<td class="red" align="center">主送</td>
+		<td class="red" colspan=3>&nbsp;</td>
+	</tr>--%>
+                <tr>
+                    <td class="red" align="center">
+                        办理进度
+                    </td>
+                    <td class="red" colspan="3">
+                        <asp:TextBox ID="TxtProgress" runat="server" CssClass="input"></asp:TextBox>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="red" align="center">
+                        办理结果
+                    </td>
+                    <td class="red" colspan="3">
+                        <asp:TextBox ID="TxtResult" runat="server" CssClass="input"></asp:TextBox>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="left" align="center">
+                        申请人
+                    </td>
+                    <td class="red" colspan="3">
+                        <asp:TextBox ID="TxtApplicant" runat="server" CssClass="input"></asp:TextBox>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="red" align="center">
+                        相关单位承办人
+                    </td>
+                    <td class="red" colspan="3">
+                        <asp:TextBox ID="TxtHandler" runat="server" CssClass="input"></asp:TextBox>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="left" align="center">
+                        备注
+                    </td>
+                    <td class="red" colspan="3">
+                        <asp:TextBox ID="TxtRemark" runat="server" CssClass="input" Height="40px" TextMode="MultiLine"
+                            Width="313px"></asp:TextBox>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="left" align="center">
+                        附件
+                    </td>
+                    <td class="red" colspan="3">
+                        <asp:FileUpload ID="FileUploadPath" runat="server" CssClass="input" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="red" align="center" colspan='3'>
+                        <asp:Button ID="BtnSave" runat="server" Text="" />
+                        <asp:Button ID="BtnBack" runat="server" Text="返回" />
+                    </td>
+                </tr>
+            </table>
+        </div>
     </div>
     <!--收文批复开始-->
 </div>
