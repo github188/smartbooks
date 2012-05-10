@@ -4,7 +4,7 @@
 // 文件名称:BASE_AFFICHE.cs
 // 功能描述:公告信息表 -- 实体定义
 //
-// 创建标识： 付晓 2012-05-04
+// 创建标识： 付晓 2012-05-10
 namespace SmartHyd.Entity
 {
     using System;
@@ -36,6 +36,10 @@ namespace SmartHyd.Entity
         /// 公告发布时间
         /// </summary>		
         private DateTime _AFFICHEDATE;
+		/// <summary>
+        /// 公告状态
+        /// </summary>		
+        private decimal _STATES;
 	
 	        /// <summary>
         /// 公告编号
@@ -76,6 +80,14 @@ namespace SmartHyd.Entity
         {
             get { return _AFFICHEDATE; }
             set { _AFFICHEDATE = value; }
+        }
+	        /// <summary>
+        /// 公告状态
+        /// </summary>
+        public decimal STATES
+        {
+            get { return _STATES; }
+            set { _STATES = value; }
         }
 	}
 }
