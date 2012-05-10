@@ -34,7 +34,7 @@ namespace SmartHyd.ManageCenter.Ascx
             model.FT_DEPT = this.category.Value;            //所属类别
             model.FT_STATE = 0;                             //状态：0正常；1已删除
             bll.Add(model);
-            Response.Redirect("FaWen.aspx?tabindex=2");
+            Response.Redirect("FaWen.aspx#tabs-3");
 
         }
         /// <summary>
@@ -44,7 +44,7 @@ namespace SmartHyd.ManageCenter.Ascx
         /// <param name="e"></param>
         protected void BtnBack_Click(object sender, EventArgs e)
         {
-            Response.Redirect("FaWen.aspx?tabindex=2");
+            Response.Redirect("FaWen.aspx#tabs-3");
         }
         /// <summary>
         /// 取消
