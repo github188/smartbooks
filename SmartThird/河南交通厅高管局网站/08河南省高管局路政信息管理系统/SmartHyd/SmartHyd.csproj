@@ -83,6 +83,8 @@
     <Content Include="Scripts\jquery-ui-1.8.18.custom\js\jquery-1.7.1.min.js" />
     <Content Include="Scripts\jquery-ui-1.8.18.custom\js\jquery-ui-1.8.18.custom.min.js" />
     <Content Include="Scripts\jquery-ui-1.8.18.custom\js\jquery.ui.datepicker-zh-CN.js" />
+    <Content Include="Scripts\jquery-validation-1.9.0\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery-validation-1.9.0\messages_cn.js" />
     <Content Include="Scripts\kindeditor-4.0.5\kindeditor-min.js" />
     <Content Include="Scripts\kindeditor-4.0.5\lang\zh_CN.js" />
     <Content Include="Scripts\kindeditor-4.0.5\plugins\anchor\anchor.js" />

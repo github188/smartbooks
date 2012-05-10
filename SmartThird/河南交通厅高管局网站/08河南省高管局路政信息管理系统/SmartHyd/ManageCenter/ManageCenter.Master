@@ -12,19 +12,35 @@
     <script type="text/javascript" src="../Scripts/jquery-ui-1.8.18.custom/js/jquery.ui.datepicker-zh-CN.js"></script>
     <script type="text/javascript" src="../Scripts/kindeditor-4.0.5/kindeditor-min.js"></script>
     <script type="text/javascript" src="../Scripts/kindeditor-4.0.5/lang/zh_CN.js"></script>
+    <script type="text/javascript" src="../Scripts/jquery-validation-1.9.0/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="../Scripts/jquery-validation-1.9.0/messages_cn.js"></script>
+    <script type="text/javascript" src="../Scripts/jquery-validation-1.9.0/jquery.metadata.js"></script>
     <script type="text/javascript" src="../Scripts/base.js"></script>
     <script type="text/jscript">
         $(function () {            
         });
-    </script>    
+    </script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
     <div>
+        <!--提示消息开始-->
+        <div class="alert ui-widget" id="alert">
+            <div class="ui-state-highlight ui-corner-all">
+                <p><span class="ui-icon ui-icon-info"></span>
+                    <strong>提示信息:</strong>
+                    <label id="errormessage"></label>
+                </p>
+            </div>
+        </div>
+        <!--提示消息结束-->
+
+        <!--内容开始-->
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         </asp:ContentPlaceHolder>
+        <!--内容结束-->
     </div>
     </form>
 </body>

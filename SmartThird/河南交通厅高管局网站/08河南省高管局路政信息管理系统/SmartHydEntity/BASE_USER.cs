@@ -4,7 +4,7 @@
 // 文件名称:BASE_USER.cs
 // 功能描述:用户信息表 -- 实体定义
 //
-// 创建标识： 王 亚 2012-05-04
+// 创建标识： 王 亚 2012-05-10
 namespace SmartHyd.Entity {
     using System;
     using System.Collections.Generic;
@@ -41,7 +41,7 @@ namespace SmartHyd.Entity {
         /// <summary>
         /// 出生年月
         /// </summary>		
-        private DateTime _BIRTHDAY;
+        private DateTime _BIRTHDAY = DateTime.Now;
         /// <summary>
         /// 学历
         /// </summary>		
@@ -55,7 +55,7 @@ namespace SmartHyd.Entity {
         /// </summary>		
         private string _IDNUMBER;
         /// <summary>
-        /// 执法证号
+        /// 工作证号
         /// </summary>		
         private string _JOBNUMBER;
         /// <summary>
@@ -74,6 +74,10 @@ namespace SmartHyd.Entity {
         /// 状态（0：正常，1：删除）
         /// </summary>		
         private decimal _STSTUS;
+        /// <summary>
+        /// 联系电话
+        /// </summary>		
+        private string _PHONE;
 
         /// <summary>
         /// 用户ID编号
@@ -146,7 +150,7 @@ namespace SmartHyd.Entity {
             set { _IDNUMBER = value; }
         }
         /// <summary>
-        /// 执法证号
+        /// 工作证号
         /// </summary>
         public string JOBNUMBER {
             get { return _JOBNUMBER; }
@@ -179,6 +183,13 @@ namespace SmartHyd.Entity {
         public decimal STSTUS {
             get { return _STSTUS; }
             set { _STSTUS = value; }
+        }
+        /// <summary>
+        /// 联系电话
+        /// </summary>
+        public string PHONE {
+            get { return _PHONE; }
+            set { _PHONE = value; }
         }
     }
 }

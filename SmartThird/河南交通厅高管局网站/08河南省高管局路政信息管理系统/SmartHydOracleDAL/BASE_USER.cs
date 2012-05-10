@@ -4,14 +4,14 @@
 // 文件名称:BASE_USER.cs
 // 功能描述:用户信息表 -- 接口实现
 //
-// 创建标识：王 亚 2012-05-04
+// 创建标识：王 亚 2012-05-10
 namespace SmartHyd.OracleDAL {
     using System;
     using System.Text;
-    using System.Data.OracleClient;
     using System.Collections.Generic;
     using System.Data;
     using Smart.DBUtility;
+    using System.Data.OracleClient;
     using IDAL;
 
     /// <summary>
@@ -42,16 +42,23 @@ namespace SmartHyd.OracleDAL {
         /// <summary>
         /// 增加一条数据
         /// </summary>
-        public void Add(Entity.BASE_USER entity) {
+        public void Add(Entity.BASE_USER model) {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("insert into BASE_USER(");
-            strSql.Append("USERID,USERNAME,USERPWD,PARENTID,SEX,DEPTID,BIRTHDAY,DEGREE,FACE,IDNUMBER,JOBNUMBER,PHOTO,PROF,REMARK,STSTUS");
+            strSql.Append("USERID,IDNUMBER,JOBNUMBER,PHOTO,PROF,REMARK,STSTUS,PHONE,USERNAME,USERPWD,PARENTID,SEX,DEPTID,BIRTHDAY,DEGREE,FACE");
             strSql.Append(") values (");
-            strSql.Append(":USERID,:USERNAME,:USERPWD,:PARENTID,:SEX,:DEPTID,:BIRTHDAY,:DEGREE,:FACE,:IDNUMBER,:JOBNUMBER,:PHOTO,:PROF,:REMARK,:STSTUS");
+            strSql.Append(":USERID,:IDNUMBER,:JOBNUMBER,:PHOTO,:PROF,:REMARK,:STSTUS,:PHONE,:USERNAME,:USERPWD,:PARENTID,:SEX,:DEPTID,:BIRTHDAY,:DEGREE,:FACE");
             strSql.Append(") ");
 
             OracleParameter[] parameters = {
 			            new OracleParameter(":USERID", OracleType.Number,4) ,            
+                        new OracleParameter(":IDNUMBER", OracleType.VarChar,18) ,            
+                        new OracleParameter(":JOBNUMBER", OracleType.VarChar,50) ,            
+                        new OracleParameter(":PHOTO", OracleType.VarChar,200) ,            
+                        new OracleParameter(":PROF", OracleType.VarChar,50) ,            
+                        new OracleParameter(":REMARK", OracleType.VarChar,50) ,            
+                        new OracleParameter(":STSTUS", OracleType.Number,4) ,            
+                        new OracleParameter(":PHONE", OracleType.VarChar,50) ,            
                         new OracleParameter(":USERNAME", OracleType.VarChar,50) ,            
                         new OracleParameter(":USERPWD", OracleType.VarChar,32) ,            
                         new OracleParameter(":PARENTID", OracleType.Number,4) ,            
@@ -59,31 +66,26 @@ namespace SmartHyd.OracleDAL {
                         new OracleParameter(":DEPTID", OracleType.Number,4) ,            
                         new OracleParameter(":BIRTHDAY", OracleType.DateTime) ,            
                         new OracleParameter(":DEGREE", OracleType.VarChar,50) ,            
-                        new OracleParameter(":FACE", OracleType.VarChar,50) ,            
-                        new OracleParameter(":IDNUMBER", OracleType.VarChar,18) ,            
-                        new OracleParameter(":JOBNUMBER", OracleType.VarChar,50) ,            
-                        new OracleParameter(":PHOTO", OracleType.VarChar,200) ,            
-                        new OracleParameter(":PROF", OracleType.VarChar,50) ,            
-                        new OracleParameter(":REMARK", OracleType.VarChar,50) ,            
-                        new OracleParameter(":STSTUS", OracleType.Number,4)             
+                        new OracleParameter(":FACE", OracleType.VarChar,50)             
               
             };
 
-            parameters[0].Value = entity.USERID;
-            parameters[1].Value = entity.USERNAME;
-            parameters[2].Value = entity.USERPWD;
-            parameters[3].Value = entity.PARENTID;
-            parameters[4].Value = entity.SEX;
-            parameters[5].Value = entity.DEPTID;
-            parameters[6].Value = entity.BIRTHDAY;
-            parameters[7].Value = entity.DEGREE;
-            parameters[8].Value = entity.FACE;
-            parameters[9].Value = entity.IDNUMBER;
-            parameters[10].Value = entity.JOBNUMBER;
-            parameters[11].Value = entity.PHOTO;
-            parameters[12].Value = entity.PROF;
-            parameters[13].Value = entity.REMARK;
-            parameters[14].Value = entity.STSTUS;
+            parameters[0].Value = model.USERID;
+            parameters[1].Value = model.IDNUMBER;
+            parameters[2].Value = model.JOBNUMBER;
+            parameters[3].Value = model.PHOTO;
+            parameters[4].Value = model.PROF;
+            parameters[5].Value = model.REMARK;
+            parameters[6].Value = model.STSTUS;
+            parameters[7].Value = model.PHONE;
+            parameters[8].Value = model.USERNAME;
+            parameters[9].Value = model.USERPWD;
+            parameters[10].Value = model.PARENTID;
+            parameters[11].Value = model.SEX;
+            parameters[12].Value = model.DEPTID;
+            parameters[13].Value = model.BIRTHDAY;
+            parameters[14].Value = model.DEGREE;
+            parameters[15].Value = model.FACE;
             OracleHelper.ExecuteNonQuery(strSql.ToString(), parameters);
 
         }
@@ -92,11 +94,18 @@ namespace SmartHyd.OracleDAL {
         /// <summary>
         /// 更新一条数据
         /// </summary>
-        public bool Update(Entity.BASE_USER entity) {
+        public bool Update(Entity.BASE_USER model) {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("update BASE_USER set ");
 
             strSql.Append(" USERID = :USERID , ");
+            strSql.Append(" IDNUMBER = :IDNUMBER , ");
+            strSql.Append(" JOBNUMBER = :JOBNUMBER , ");
+            strSql.Append(" PHOTO = :PHOTO , ");
+            strSql.Append(" PROF = :PROF , ");
+            strSql.Append(" REMARK = :REMARK , ");
+            strSql.Append(" STSTUS = :STSTUS , ");
+            strSql.Append(" PHONE = :PHONE , ");
             strSql.Append(" USERNAME = :USERNAME , ");
             strSql.Append(" USERPWD = :USERPWD , ");
             strSql.Append(" PARENTID = :PARENTID , ");
@@ -104,17 +113,18 @@ namespace SmartHyd.OracleDAL {
             strSql.Append(" DEPTID = :DEPTID , ");
             strSql.Append(" BIRTHDAY = :BIRTHDAY , ");
             strSql.Append(" DEGREE = :DEGREE , ");
-            strSql.Append(" FACE = :FACE , ");
-            strSql.Append(" IDNUMBER = :IDNUMBER , ");
-            strSql.Append(" JOBNUMBER = :JOBNUMBER , ");
-            strSql.Append(" PHOTO = :PHOTO , ");
-            strSql.Append(" PROF = :PROF , ");
-            strSql.Append(" REMARK = :REMARK , ");
-            strSql.Append(" STSTUS = :STSTUS  ");
+            strSql.Append(" FACE = :FACE  ");
             strSql.Append(" where USERID=:USERID  ");
 
             OracleParameter[] parameters = {
 			            new OracleParameter(":USERID", OracleType.Number,4) ,            
+                        new OracleParameter(":IDNUMBER", OracleType.VarChar,18) ,            
+                        new OracleParameter(":JOBNUMBER", OracleType.VarChar,50) ,            
+                        new OracleParameter(":PHOTO", OracleType.VarChar,200) ,            
+                        new OracleParameter(":PROF", OracleType.VarChar,50) ,            
+                        new OracleParameter(":REMARK", OracleType.VarChar,50) ,            
+                        new OracleParameter(":STSTUS", OracleType.Number,4) ,            
+                        new OracleParameter(":PHONE", OracleType.VarChar,50) ,            
                         new OracleParameter(":USERNAME", OracleType.VarChar,50) ,            
                         new OracleParameter(":USERPWD", OracleType.VarChar,32) ,            
                         new OracleParameter(":PARENTID", OracleType.Number,4) ,            
@@ -122,31 +132,26 @@ namespace SmartHyd.OracleDAL {
                         new OracleParameter(":DEPTID", OracleType.Number,4) ,            
                         new OracleParameter(":BIRTHDAY", OracleType.DateTime) ,            
                         new OracleParameter(":DEGREE", OracleType.VarChar,50) ,            
-                        new OracleParameter(":FACE", OracleType.VarChar,50) ,            
-                        new OracleParameter(":IDNUMBER", OracleType.VarChar,18) ,            
-                        new OracleParameter(":JOBNUMBER", OracleType.VarChar,50) ,            
-                        new OracleParameter(":PHOTO", OracleType.VarChar,200) ,            
-                        new OracleParameter(":PROF", OracleType.VarChar,50) ,            
-                        new OracleParameter(":REMARK", OracleType.VarChar,50) ,            
-                        new OracleParameter(":STSTUS", OracleType.Number,4)             
+                        new OracleParameter(":FACE", OracleType.VarChar,50)             
               
             };
 
-            parameters[15].Value = entity.USERID;
-            parameters[16].Value = entity.USERNAME;
-            parameters[17].Value = entity.USERPWD;
-            parameters[18].Value = entity.PARENTID;
-            parameters[19].Value = entity.SEX;
-            parameters[20].Value = entity.DEPTID;
-            parameters[21].Value = entity.BIRTHDAY;
-            parameters[22].Value = entity.DEGREE;
-            parameters[23].Value = entity.FACE;
-            parameters[24].Value = entity.IDNUMBER;
-            parameters[25].Value = entity.JOBNUMBER;
-            parameters[26].Value = entity.PHOTO;
-            parameters[27].Value = entity.PROF;
-            parameters[28].Value = entity.REMARK;
-            parameters[29].Value = entity.STSTUS;
+            parameters[16].Value = model.USERID;
+            parameters[17].Value = model.IDNUMBER;
+            parameters[18].Value = model.JOBNUMBER;
+            parameters[19].Value = model.PHOTO;
+            parameters[20].Value = model.PROF;
+            parameters[21].Value = model.REMARK;
+            parameters[22].Value = model.STSTUS;
+            parameters[23].Value = model.PHONE;
+            parameters[24].Value = model.USERNAME;
+            parameters[25].Value = model.USERPWD;
+            parameters[26].Value = model.PARENTID;
+            parameters[27].Value = model.SEX;
+            parameters[28].Value = model.DEPTID;
+            parameters[29].Value = model.BIRTHDAY;
+            parameters[30].Value = model.DEGREE;
+            parameters[31].Value = model.FACE;
             int rows = OracleHelper.ExecuteNonQuery(strSql.ToString(), parameters);
             if (rows > 0) {
                 return true;
@@ -185,7 +190,7 @@ namespace SmartHyd.OracleDAL {
         public Entity.BASE_USER GetEntity(decimal USERID) {
 
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("select USERID, USERNAME, USERPWD, PARENTID, SEX, DEPTID, BIRTHDAY, DEGREE, FACE, IDNUMBER, JOBNUMBER, PHOTO, PROF, REMARK, STSTUS  ");
+            strSql.Append("select USERID, IDNUMBER, JOBNUMBER, PHOTO, PROF, REMARK, STSTUS, PHONE, USERNAME, USERPWD, PARENTID, SEX, DEPTID, BIRTHDAY, DEGREE, FACE  ");
             strSql.Append("  from BASE_USER ");
             strSql.Append(" where USERID=:USERID ");
             OracleParameter[] parameters = {
@@ -200,6 +205,15 @@ namespace SmartHyd.OracleDAL {
                 if (dt.Rows[0]["USERID"].ToString() != "") {
                     entity.USERID = decimal.Parse(dt.Rows[0]["USERID"].ToString());
                 }
+                entity.IDNUMBER = dt.Rows[0]["IDNUMBER"].ToString();
+                entity.JOBNUMBER = dt.Rows[0]["JOBNUMBER"].ToString();
+                entity.PHOTO = dt.Rows[0]["PHOTO"].ToString();
+                entity.PROF = dt.Rows[0]["PROF"].ToString();
+                entity.REMARK = dt.Rows[0]["REMARK"].ToString();
+                if (dt.Rows[0]["STSTUS"].ToString() != "") {
+                    entity.STSTUS = decimal.Parse(dt.Rows[0]["STSTUS"].ToString());
+                }
+                entity.PHONE = dt.Rows[0]["PHONE"].ToString();
                 entity.USERNAME = dt.Rows[0]["USERNAME"].ToString();
                 entity.USERPWD = dt.Rows[0]["USERPWD"].ToString();
                 if (dt.Rows[0]["PARENTID"].ToString() != "") {
@@ -216,14 +230,6 @@ namespace SmartHyd.OracleDAL {
                 }
                 entity.DEGREE = dt.Rows[0]["DEGREE"].ToString();
                 entity.FACE = dt.Rows[0]["FACE"].ToString();
-                entity.IDNUMBER = dt.Rows[0]["IDNUMBER"].ToString();
-                entity.JOBNUMBER = dt.Rows[0]["JOBNUMBER"].ToString();
-                entity.PHOTO = dt.Rows[0]["PHOTO"].ToString();
-                entity.PROF = dt.Rows[0]["PROF"].ToString();
-                entity.REMARK = dt.Rows[0]["REMARK"].ToString();
-                if (dt.Rows[0]["STSTUS"].ToString() != "") {
-                    entity.STSTUS = decimal.Parse(dt.Rows[0]["STSTUS"].ToString());
-                }
 
                 return entity;
             } else {
@@ -263,7 +269,22 @@ namespace SmartHyd.OracleDAL {
             return OracleHelper.Query(strSql.ToString());
         }
 
+        /// <summary>
+        /// 获取全部数据
+        /// </summary>
+        /// <returns></returns>
+        public DataTable GetAllList() {
+            string procName = "PKG_USER_QUERY.proc_alluser";
+            OracleParameter[] param = new OracleParameter[1];
 
+            param[0] = new OracleParameter();
+
+            param[0].Direction = ParameterDirection.Output;
+            param[0].OracleType = OracleType.Cursor;
+            param[0].ParameterName = "out_cursor";
+
+            return OracleHelper.RunProcedure(procName, param).Tables[0];
+        }
     }
 }
 

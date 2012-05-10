@@ -42,6 +42,7 @@
     <Compile Include="BASE_DEPT.cs" />
     <Compile Include="BASE_OBSERVED.cs" />
     <Compile Include="BASE_PATROL.cs" />
+    <Compile Include="BASE_USER.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -30,3 +30,8 @@ span,input{float:left;}
 /*通用input元素样式--文本框*/
 .input{border: #C1C1C1 1px solid; background-color: #FBFBFB; color: #444; padding: 4px 5px 4px;}
 .input:hover{background-color:#FFC; border:1px solid #d5ae4f;}
+
+/*通用消息提示*/
+.alert{height:26px; display:none; padding:0px; margin:5px 0px 5px 0px;}
+.alert p,strong,span{height:26px; line-height:26px; padding:0px; margin:0px;}
+.alert span{ margin-top:6px; margin-left:6px;}
