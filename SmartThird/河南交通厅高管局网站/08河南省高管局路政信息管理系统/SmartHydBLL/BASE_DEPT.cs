@@ -19,5 +19,14 @@ namespace SmartHyd.BLL {
 
             return dal.GetUserWhereDepartment(userName, issubdept);
         }
+        /// <summary>
+        /// 根据条件获取部门列表
+        /// </summary>
+        /// <param name="strWhere">查询部门的条件</param>
+        /// <returns>DataTable</returns>
+        public DataTable GetAllDep(string strWhere)
+        {
+            return dal.GetList(strWhere).Tables[0];
+        }
     }
 }
