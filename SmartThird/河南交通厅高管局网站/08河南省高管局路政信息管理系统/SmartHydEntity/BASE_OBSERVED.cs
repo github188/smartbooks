@@ -4,7 +4,7 @@
 // 文件名称:BASE_OBSERVED.cs
 // 功能描述:电子巡逻日志表 -- 实体定义
 //
-// 创建标识： 王 亚 2012-05-04
+// 创建标识： 王 亚 2012-05-10
 namespace SmartHyd.Entity {
     using System;
     using System.Collections.Generic;
@@ -21,7 +21,7 @@ namespace SmartHyd.Entity {
         /// <summary>
         /// 巡查人员
         /// </summary>		
-        private decimal _PATROLUSER;
+        private string _PATROLUSER;
         /// <summary>
         /// 天气
         /// </summary>		
@@ -29,15 +29,19 @@ namespace SmartHyd.Entity {
         /// <summary>
         /// 巡查开始时间
         /// </summary>		
-        private DateTime _BEGINTIME;
+        private DateTime _BEGINTIME = DateTime.Now;
         /// <summary>
         /// 巡查结束时间
         /// </summary>		
-        private DateTime _ENDDATE;
+        private DateTime _ENDDATE = DateTime.Now;
         /// <summary>
         /// 巡查处理情况
         /// </summary>		
         private string _LOG;
+        /// <summary>
+        /// 部门
+        /// </summary>		
+        private decimal _DEPTID;
 
         /// <summary>
         /// 电子巡逻日志编号
@@ -49,7 +53,7 @@ namespace SmartHyd.Entity {
         /// <summary>
         /// 巡查人员
         /// </summary>
-        public decimal PATROLUSER {
+        public string PATROLUSER {
             get { return _PATROLUSER; }
             set { _PATROLUSER = value; }
         }
@@ -80,6 +84,13 @@ namespace SmartHyd.Entity {
         public string LOG {
             get { return _LOG; }
             set { _LOG = value; }
+        }
+        /// <summary>
+        /// 部门
+        /// </summary>
+        public decimal DEPTID {
+            get { return _DEPTID; }
+            set { _DEPTID = value; }
         }
     }
 }

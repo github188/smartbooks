@@ -54,10 +54,12 @@
   <ItemGroup>
     <Content Include="Css\base.css" />
     <Content Include="ManageCenter\Ascx\FaWen.ascx" />
+    <Content Include="ManageCenter\Ascx\Observed.ascx" />
     <Content Include="ManageCenter\Ascx\Patrol.ascx" />
     <Content Include="ManageCenter\Ascx\ShouWen.ascx" />
     <Content Include="ManageCenter\Ascx\UserManage.ascx" />
     <Content Include="ManageCenter\FaWen.aspx" />
+    <Content Include="ManageCenter\Observed.aspx" />
     <Content Include="ManageCenter\Patrol.aspx" />
     <Content Include="ManageCenter\ShouWen.aspx" />
     <Content Include="ManageCenter\UserManage.aspx" />
@@ -263,7 +265,9 @@
     <Content Include="Scripts\kindeditor-4.0.5\themes\default\default.css" />
     <Content Include="Scripts\kindeditor-4.0.5\themes\default\default.png" />
     <Content Include="Scripts\kindeditor-4.0.5\themes\simple\simple.css" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -278,6 +282,13 @@
     </Compile>
     <Compile Include="ManageCenter\Ascx\FaWen.ascx.designer.cs">
       <DependentUpon>FaWen.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\Ascx\Observed.ascx.cs">
+      <DependentUpon>Observed.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\Ascx\Observed.ascx.designer.cs">
+      <DependentUpon>Observed.ascx</DependentUpon>
     </Compile>
     <Compile Include="ManageCenter\Ascx\Patrol.ascx.cs">
       <DependentUpon>Patrol.ascx</DependentUpon>
@@ -313,6 +324,13 @@
     </Compile>
     <Compile Include="ManageCenter\ManageCenter.Master.designer.cs">
       <DependentUpon>ManageCenter.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\Observed.aspx.cs">
+      <DependentUpon>Observed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\Observed.aspx.designer.cs">
+      <DependentUpon>Observed.aspx</DependentUpon>
     </Compile>
     <Compile Include="ManageCenter\Patrol.aspx.cs">
       <DependentUpon>Patrol.aspx</DependentUpon>

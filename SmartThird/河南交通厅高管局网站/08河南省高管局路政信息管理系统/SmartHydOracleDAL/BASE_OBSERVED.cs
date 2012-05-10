@@ -18,6 +18,7 @@ namespace SmartHyd.OracleDAL {
     /// 电子巡逻日志表 -- 接口实现
     /// </summary>
     public partial class BASE_OBSERVED : IBASE_OBSERVED {
+        #region 通用查询接口
         /// <summary>
         /// 确定记录是否存在
         /// </summary>
@@ -45,18 +46,19 @@ namespace SmartHyd.OracleDAL {
         public void Add(Entity.BASE_OBSERVED entity) {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("insert into BASE_OBSERVED(");
-            strSql.Append("OBSERVEDID,PATROLUSER,WEATHER,BEGINTIME,ENDDATE,LOG");
+            strSql.Append("OBSERVEDID,PATROLUSER,WEATHER,BEGINTIME,ENDDATE,LOG,DEPTID");
             strSql.Append(") values (");
-            strSql.Append(":OBSERVEDID,:PATROLUSER,:WEATHER,:BEGINTIME,:ENDDATE,:LOG");
+            strSql.Append(":OBSERVEDID,:PATROLUSER,:WEATHER,:BEGINTIME,:ENDDATE,:LOG,:DEPTID");
             strSql.Append(") ");
 
             OracleParameter[] parameters = {
 			            new OracleParameter(":OBSERVEDID", OracleType.Number,4) ,            
-                        new OracleParameter(":PATROLUSER", OracleType.Number,4) ,            
+                        new OracleParameter(":PATROLUSER", OracleType.VarChar,50) ,            
                         new OracleParameter(":WEATHER", OracleType.VarChar,50) ,            
                         new OracleParameter(":BEGINTIME", OracleType.DateTime) ,            
                         new OracleParameter(":ENDDATE", OracleType.DateTime) ,            
-                        new OracleParameter(":LOG", OracleType.VarChar,500)             
+                        new OracleParameter(":LOG", OracleType.VarChar,500) ,            
+                        new OracleParameter(":DEPTID", OracleType.Number,4)             
               
             };
 
@@ -66,6 +68,7 @@ namespace SmartHyd.OracleDAL {
             parameters[3].Value = entity.BEGINTIME;
             parameters[4].Value = entity.ENDDATE;
             parameters[5].Value = entity.LOG;
+            parameters[6].Value = entity.DEPTID;
             OracleHelper.ExecuteNonQuery(strSql.ToString(), parameters);
 
         }
@@ -83,25 +86,28 @@ namespace SmartHyd.OracleDAL {
             strSql.Append(" WEATHER = :WEATHER , ");
             strSql.Append(" BEGINTIME = :BEGINTIME , ");
             strSql.Append(" ENDDATE = :ENDDATE , ");
-            strSql.Append(" LOG = :LOG  ");
+            strSql.Append(" LOG = :LOG , ");
+            strSql.Append(" DEPTID = :DEPTID  ");
             strSql.Append(" where OBSERVEDID=:OBSERVEDID  ");
 
             OracleParameter[] parameters = {
 			            new OracleParameter(":OBSERVEDID", OracleType.Number,4) ,            
-                        new OracleParameter(":PATROLUSER", OracleType.Number,4) ,            
+                        new OracleParameter(":PATROLUSER", OracleType.VarChar,50) ,            
                         new OracleParameter(":WEATHER", OracleType.VarChar,50) ,            
                         new OracleParameter(":BEGINTIME", OracleType.DateTime) ,            
                         new OracleParameter(":ENDDATE", OracleType.DateTime) ,            
-                        new OracleParameter(":LOG", OracleType.VarChar,500)             
+                        new OracleParameter(":LOG", OracleType.VarChar,500) ,            
+                        new OracleParameter(":DEPTID", OracleType.Number,4)             
               
             };
 
-            parameters[6].Value = entity.OBSERVEDID;
-            parameters[7].Value = entity.PATROLUSER;
-            parameters[8].Value = entity.WEATHER;
-            parameters[9].Value = entity.BEGINTIME;
-            parameters[10].Value = entity.ENDDATE;
-            parameters[11].Value = entity.LOG;
+            parameters[7].Value = entity.OBSERVEDID;
+            parameters[8].Value = entity.PATROLUSER;
+            parameters[9].Value = entity.WEATHER;
+            parameters[10].Value = entity.BEGINTIME;
+            parameters[11].Value = entity.ENDDATE;
+            parameters[12].Value = entity.LOG;
+            parameters[13].Value = entity.DEPTID;
             int rows = OracleHelper.ExecuteNonQuery(strSql.ToString(), parameters);
             if (rows > 0) {
                 return true;
@@ -140,7 +146,7 @@ namespace SmartHyd.OracleDAL {
         public Entity.BASE_OBSERVED GetEntity(decimal OBSERVEDID) {
 
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("select OBSERVEDID, PATROLUSER, WEATHER, BEGINTIME, ENDDATE, LOG  ");
+            strSql.Append("select OBSERVEDID, PATROLUSER, WEATHER, BEGINTIME, ENDDATE, LOG, DEPTID  ");
             strSql.Append("  from BASE_OBSERVED ");
             strSql.Append(" where OBSERVEDID=:OBSERVEDID ");
             OracleParameter[] parameters = {
@@ -155,9 +161,7 @@ namespace SmartHyd.OracleDAL {
                 if (dt.Rows[0]["OBSERVEDID"].ToString() != "") {
                     entity.OBSERVEDID = decimal.Parse(dt.Rows[0]["OBSERVEDID"].ToString());
                 }
-                if (dt.Rows[0]["PATROLUSER"].ToString() != "") {
-                    entity.PATROLUSER = decimal.Parse(dt.Rows[0]["PATROLUSER"].ToString());
-                }
+                entity.PATROLUSER = dt.Rows[0]["PATROLUSER"].ToString();
                 entity.WEATHER = dt.Rows[0]["WEATHER"].ToString();
                 if (dt.Rows[0]["BEGINTIME"].ToString() != "") {
                     entity.BEGINTIME = DateTime.Parse(dt.Rows[0]["BEGINTIME"].ToString());
@@ -166,6 +170,9 @@ namespace SmartHyd.OracleDAL {
                     entity.ENDDATE = DateTime.Parse(dt.Rows[0]["ENDDATE"].ToString());
                 }
                 entity.LOG = dt.Rows[0]["LOG"].ToString();
+                if (dt.Rows[0]["DEPTID"].ToString() != "") {
+                    entity.DEPTID = decimal.Parse(dt.Rows[0]["DEPTID"].ToString());
+                }
 
                 return entity;
             } else {
@@ -204,8 +211,30 @@ namespace SmartHyd.OracleDAL {
             strSql.Append(" order by " + filedOrder);
             return OracleHelper.Query(strSql.ToString());
         }
+        #endregion
 
+        #region 自定义数据查询
 
+        /// <summary>
+        /// 根据指定时间范围，获取某个部门下的电子巡逻日志数据
+        /// </summary>
+        /// <param name="beginTime">开始时间</param>
+        /// <param name="endTime">结束时间</param>
+        /// <param name="deptCode">部门ID</param>
+        /// <returns>电子巡逻日志数据</returns>
+        public DataTable GetDeptLog(DateTime beginTime, DateTime endTime, int deptCode) {
+            StringBuilder where = new StringBuilder();
+            where.Append("SELECT a.dptname, b.patroluser, b.weather, b.begintime, b.enddate, b.LOG, b.deptid ");
+            where.Append("FROM base_dept a, base_observed b ");
+            where.Append("WHERE a.deptid = b.deptid ");
+            where.AppendFormat("AND b.begintime >= TO_DATE ('{0}', 'yyyy-mm-dd') ", beginTime.ToString("yyyy-MM-dd"));
+            where.AppendFormat("AND b.begintime >= TO_DATE ('{0}', 'yyyy-mm-dd') ", endTime.ToString("yyyy-MM-dd"));
+            where.AppendFormat("AND b.deptid = {0}", deptCode.ToString());
+
+            return OracleHelper.Query(where.ToString()).Tables[0];
+        }
+
+        #endregion
     }
 }
 

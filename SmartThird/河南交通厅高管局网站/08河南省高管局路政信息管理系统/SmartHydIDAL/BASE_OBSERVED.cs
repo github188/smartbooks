@@ -52,5 +52,16 @@ namespace SmartHyd.IDAL {
         /// 获得前几行数据
         /// </summary>
         DataSet GetList(int Top, string strWhere, string filedOrder);
+
+        #region 自定义数据查询接口
+        /// <summary>
+        /// 根据指定时间范围，获取某个部门下的电子巡逻日志数据
+        /// </summary>
+        /// <param name="beginTime">开始时间</param>
+        /// <param name="endTime">结束时间</param>
+        /// <param name="deptCode">部门ID</param>
+        /// <returns>电子巡逻日志数据</returns>
+        DataTable GetDeptLog(DateTime beginTime, DateTime endTime, int deptCode);
+        #endregion
     }
 }

@@ -3,6 +3,7 @@
     font-size:14px;
     font-family: Verdana,arial,sans-serif;
 }
+span,input{float:left;}
 
 /*通用分页按钮样式-迅雷风格(蓝色)*/
 .anpager .cpb {background:#1F3A87 none repeat scroll 0 0;border:1px solid #CCCCCC;color:#FFFFFF;font-weight:bold;margin:5px 4px 0 0;padding:4px 5px 0;}

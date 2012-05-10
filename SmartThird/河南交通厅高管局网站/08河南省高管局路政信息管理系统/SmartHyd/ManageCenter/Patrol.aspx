@@ -6,6 +6,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script type="text/jscript">
         $(function () {
+            /*编辑器*/
             var editor;
             KindEditor.ready(function (K) {
                 /*巡查处理情况*/
@@ -46,9 +47,6 @@
             $("#ctl00_ContentPlaceHolder1_Patrol1_txtENDTIME").datepicker();
         });
     </script>
-    <style type="text/css">
-        span,input{ float:left;}
-    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <uc1:Patrol ID="Patrol1" runat="server" />
