@@ -14,7 +14,7 @@
                     <thead>
                         <tr>
                             <th>
-                                 <asp:CheckBox ID="CheckallFawen" runat="server" Text="全选" OnClick="javascript:selectall(this);" />
+                                <asp:CheckBox ID="CheckallFawen" runat="server" Text="全选" OnClick="javascript:selectall(this);" />
                             </th>
                             <th>
                                 标题
@@ -35,9 +35,9 @@
                     <tbody>
                         <tr>
                             <td>
-                                 <asp:CheckBox ID="CheckSingleFawen" runat="server" />
-                                    <asp:Label ID="FID" runat="server" Text='<%#Eval("FID") %>' Visible="false"></asp:Label>
-                                    <asp:HiddenField ID="hidPrimary" runat="server" Value="-1" />
+                                <asp:CheckBox ID="CheckSingleFawen" runat="server" />
+                                <asp:Label ID="FID" runat="server" Text='<%#Eval("FID") %>' Visible="false"></asp:Label>
+                                <asp:HiddenField ID="hidPrimary" runat="server" Value="-1" />
                             </td>
                             <td>
                                 <%# Eval("F_TITLE")%>
@@ -49,7 +49,10 @@
                                 <%# Eval("F_TYPE")%>
                             </td>
                             <td>
-                                <a href="<%# Eval("FID")%>">编辑</a> <a href="<%# Eval("FID")%>">删除</a>
+                                <a href="<%# Eval("FID")%>">编辑</a>
+
+                                <a href="javascript:send_doc('0')" onclick="javascript:send_doc('0')">发送</a> 
+                                <a href="<%# Eval("FID")%>">删除</a>
                             </td>
                         </tr>
                     </tbody>
@@ -68,8 +71,59 @@
         <webdiyer:AspNetPager ID="AspNetPager1" runat="server" CustomInfoHTML="共%PageCount%页，当前为第%CurrentPageIndex%页"
             FirstPageText="首页" LastPageText="尾页" NextPageText="下一页" PageIndexBoxType="TextBox"
             PrevPageText="上一页" ShowCustomInfoSection="Right" ShowPageIndexBox="Auto" SubmitButtonText="Go"
-            TextAfterPageIndexBox="页" TextBeforePageIndexBox="转到" OnPageChanging="AspNetPager1_PageChanging1">
+            TextAfterPageIndexBox="页" TextBeforePageIndexBox="转到" 
+            onpagechanging="AspNetPager1_PageChanging">
         </webdiyer:AspNetPager>
+        <!--dialog窗口开始-->
+        <div id="overlay">
+        </div>
+        <div id="dialog" class="ModalDialog" style="display: none">
+            <div class="header">
+                <span id="title" class="title">发送公文</span><a class="operation" href="javascript:HideDialog('send');"></a></div>
+            
+            <form name="form1" method="post" action="">
+            <div id="send_body" class="body">
+                <table width="95%" class="table" align="center">
+                    <thead>
+                        <tr>
+                            <td colspan="2" class="TableContent">
+                                请选择发送单位/部门
+                            </td>
+                        </tr>
+                    </thead>
+                    <tr>
+                        <td colspan="2" class="TableData">
+                            <asp:TreeView ID="TvDept" runat="server">
+                            </asp:TreeView>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="left">
+                            自定义数据
+                        </td>
+                        <td class="TableData">
+                        </td>
+                    </tr>
+                   <%-- <tr>
+                        <td class="TableContent">
+                            提醒
+                        </td>
+                        <td>
+                            <input type="checkbox" name="sms_notice" id="sms_notice" checked="checked" /><label
+                                for="sms_notice">提醒登记员</label>
+                        </td>
+                    </tr>--%>
+                </table>
+            </div>
+            <div id="footer" class="footer">
+                <input type="hidden" name="dept_str" id="dept_str">
+                <input type="hidden" name="sid" id="sid">
+                <input class="BigButton" type="submit" value="确定" />
+                <input class="BigButton" onclick="HideDialog('send')" type="button" value="关闭" />
+            </div>
+            </form>
+        </div>
+        <!--dialog窗口结束-->
     </div>
     <!--发文管理结束-->
     <!--公文拟稿开始-->
@@ -113,7 +167,8 @@
                         公文内容
                     </td>
                     <td class="red" colspan="3">
-                        <asp:TextBox ID="TxContent" runat="server" CssClass="input" Height="140px" TextMode="MultiLine" Width="215px"></asp:TextBox>
+                        <asp:TextBox ID="TxContent" runat="server" CssClass="input" Height="140px" TextMode="MultiLine"
+                            Width="215px"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
@@ -137,7 +192,8 @@
                         备注
                     </td>
                     <td class="red" colspan="3">
-                        <asp:TextBox ID="TxRemark" runat="server" CssClass="input" Height="40px" TextMode="MultiLine" Width="313px"></asp:TextBox>
+                        <asp:TextBox ID="TxRemark" runat="server" CssClass="input" Height="40px" TextMode="MultiLine"
+                            Width="313px"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
@@ -145,12 +201,12 @@
                         附件
                     </td>
                     <td class="red" colspan="3">
-                        <asp:FileUpload ID="FileUploadPath" runat="server" CssClass="input"/>
+                        <asp:FileUpload ID="FileUploadPath" runat="server" CssClass="input" />
                     </td>
                 </tr>
                 <tr>
                     <td class="red" align="center" colspan='3'>
-                        <asp:Button ID="BtnSave" runat="server" Text="保存" onclick="BtnSave_Click" />
+                        <asp:Button ID="BtnSave" runat="server" Text="保存" OnClick="BtnSave_Click" />
                         <asp:Button ID="BtnBack" runat="server" Text="返回" OnClick="BtnBack_Click" />
                     </td>
                 </tr>
@@ -223,8 +279,8 @@
                                     <%# Eval("FT_DEPT")%>
                                 </td>
                                 <td>
-                                    <a href="javascript:edit_type('<%# Eval("FTID")%>','43');">编辑</a> <a href="javascript:clean_type('<%# Eval("FTID")%>','43');">清空公文</a> <a href="javascript:delete_type('<%# Eval("FTID")%>','43');">
-                                        删除</a>
+                                    <a href="javascript:edit_type('<%# Eval("FTID")%>','43');">编辑</a> <a href="javascript:clean_type('<%# Eval("FTID")%>','43');">
+                                        清空公文</a> <a href="javascript:delete_type('<%# Eval("FTID")%>','43');">删除</a>
                                 </td>
                             </tr>
                         </tbody>
