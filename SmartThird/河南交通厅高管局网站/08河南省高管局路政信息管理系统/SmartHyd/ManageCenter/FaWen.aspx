@@ -20,6 +20,9 @@
                 });
             });
         });
+
+
+
         //清空公文
         function clean_type(tid, count) {
             if (count == 0) {
@@ -60,14 +63,14 @@
             //var api = $("#tabs-3").tabs(); //先通过获取tab容器获取tab
             $(function () {
                 $("#tab").tabs();
-                    $(this).click(function () {
-                        $("#tab>ul>li>a:eq(" + tabindex + ")").click();
-                        return false;
-                    });
-                
+                $(this).click(function () {
+                    $("#tab>ul>li>a:eq(" + tabindex + ")").click();
+                    return false;
+                });
+
             });
 
-            }
+        }
 
         //全选
         function selectall(chkcontrol) {
@@ -81,6 +84,51 @@
                     }
                 }
             }
+        }
+
+        function all_done() {
+            var sid = get_checked();
+            if (sid == "") {
+                alert("请选择一份公文进行操作！");
+                return;
+            }
+
+            send_doc(sid);
+        }
+        function check_form() {
+            var v = true;
+            var vsid = $("sid").value;
+
+            var checkedNodes = zTree.getCheckedNodes();
+            if (checkedNodes == "") {
+                alert("请选择发送部门！");
+                return false;
+            }
+            jQuery.each(checkedNodes, function (i, n) {
+                //alert(n.innerHTML);
+                var vid = n.id;
+                var vname = n.name;
+                if (jQuery("#print_" + vid).attr("value") == "") {
+                    alert(vname + "未填写可打印份数！");
+                    v = false;
+                    return false;
+                }
+                $("dept_str").value += vid + ",";
+            });
+            //	alert($("dept_str").value);
+            return v;
+        }
+        //发送公文
+        function send_doc(sid) {
+            $(function () {
+
+                var dialog = $("#dialog").dialog({
+                    modal:true,
+                    title: "发送公文窗口"
+                });
+
+            });
+            
         }
 
     </script>
