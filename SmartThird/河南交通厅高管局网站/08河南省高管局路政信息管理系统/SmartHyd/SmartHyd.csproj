@@ -52,24 +52,26 @@
     <Reference Include="System.Web.Mobile" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Ascx\Department.ascx" />
     <Content Include="Css\base.css" />
     <Content Include="ManageCenter\Affiche.aspx" />
     <Content Include="ManageCenter\Ascx\Affiche.ascx" />
     <Content Include="ManageCenter\Ascx\FaWen.ascx" />
-    <Content Include="ManageCenter\Ascx\Observed.ascx" />
-    <Content Include="ManageCenter\Ascx\Offic_TypeAdd.ascx" />
+    <Content Include="ManageCenter\Ascx\FaWenEdit.ascx" />
+    <Content Include="ManageCenter\Ascx\OfficTypeAdd.ascx" />
+    <Content Include="ManageCenter\Ascx\OfficTypeEdit.ascx" />
     <Content Include="ManageCenter\Ascx\Patrol.ascx" />
+    <Content Include="ManageCenter\Ascx\Plan.ascx" />
     <Content Include="ManageCenter\Ascx\ShouWen.ascx" />
-    <Content Include="ManageCenter\Ascx\Term.ascx" />
     <Content Include="ManageCenter\Ascx\UserManage.ascx" />
     <Content Include="ManageCenter\FaWen.aspx" />
-    <Content Include="ManageCenter\Observed.aspx" />
-    <Content Include="ManageCenter\Offic_TypeAdd.aspx" />
+    <Content Include="ManageCenter\FaWenEdit.aspx" />
+    <Content Include="ManageCenter\OfficTypeAdd.aspx" />
+    <Content Include="ManageCenter\OfficTypeEdit.aspx" />
     <Content Include="ManageCenter\Patrol.aspx" />
+    <Content Include="ManageCenter\Plan.aspx" />
     <Content Include="ManageCenter\ShouWen.aspx" />
-    <Content Include="ManageCenter\Term.aspx" />
     <Content Include="ManageCenter\UserManage.aspx" />
+    <Content Include="ManageCenter\WebForm1.aspx" />
     <Content Include="Scripts\base.js" />
     <Content Include="Scripts\jquery-ui-1.8.18.custom\css\redmond\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Scripts\jquery-ui-1.8.18.custom\css\redmond\images\ui-bg_flat_55_fbec88_40x100.png" />
@@ -90,8 +92,6 @@
     <Content Include="Scripts\jquery-ui-1.8.18.custom\js\jquery-1.7.1.min.js" />
     <Content Include="Scripts\jquery-ui-1.8.18.custom\js\jquery-ui-1.8.18.custom.min.js" />
     <Content Include="Scripts\jquery-ui-1.8.18.custom\js\jquery.ui.datepicker-zh-CN.js" />
-    <Content Include="Scripts\jquery-validation-1.9.0\jquery.validate.min.js" />
-    <Content Include="Scripts\jquery-validation-1.9.0\messages_cn.js" />
     <Content Include="Scripts\kindeditor-4.0.5\kindeditor-min.js" />
     <Content Include="Scripts\kindeditor-4.0.5\lang\zh_CN.js" />
     <Content Include="Scripts\kindeditor-4.0.5\plugins\anchor\anchor.js" />
@@ -285,13 +285,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Ascx\Department.ascx.cs">
-      <DependentUpon>Department.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Ascx\Department.ascx.designer.cs">
-      <DependentUpon>Department.ascx</DependentUpon>
-    </Compile>
     <Compile Include="ManageCenter\Affiche.aspx.cs">
       <DependentUpon>Affiche.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -313,19 +306,26 @@
     <Compile Include="ManageCenter\Ascx\FaWen.ascx.designer.cs">
       <DependentUpon>FaWen.ascx</DependentUpon>
     </Compile>
-    <Compile Include="ManageCenter\Ascx\Observed.ascx.cs">
-      <DependentUpon>Observed.ascx</DependentUpon>
+    <Compile Include="ManageCenter\Ascx\FaWenEdit.ascx.cs">
+      <DependentUpon>FaWenEdit.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ManageCenter\Ascx\Observed.ascx.designer.cs">
-      <DependentUpon>Observed.ascx</DependentUpon>
+    <Compile Include="ManageCenter\Ascx\FaWenEdit.ascx.designer.cs">
+      <DependentUpon>FaWenEdit.ascx</DependentUpon>
     </Compile>
-    <Compile Include="ManageCenter\Ascx\Offic_TypeAdd.ascx.cs">
-      <DependentUpon>Offic_TypeAdd.ascx</DependentUpon>
+    <Compile Include="ManageCenter\Ascx\OfficTypeAdd.ascx.cs">
+      <DependentUpon>OfficTypeAdd.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ManageCenter\Ascx\Offic_TypeAdd.ascx.designer.cs">
-      <DependentUpon>Offic_TypeAdd.ascx</DependentUpon>
+    <Compile Include="ManageCenter\Ascx\OfficTypeAdd.ascx.designer.cs">
+      <DependentUpon>OfficTypeAdd.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\Ascx\OfficTypeEdit.ascx.cs">
+      <DependentUpon>OfficTypeEdit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\Ascx\OfficTypeEdit.ascx.designer.cs">
+      <DependentUpon>OfficTypeEdit.ascx</DependentUpon>
     </Compile>
     <Compile Include="ManageCenter\Ascx\Patrol.ascx.cs">
       <DependentUpon>Patrol.ascx</DependentUpon>
@@ -334,19 +334,19 @@
     <Compile Include="ManageCenter\Ascx\Patrol.ascx.designer.cs">
       <DependentUpon>Patrol.ascx</DependentUpon>
     </Compile>
+    <Compile Include="ManageCenter\Ascx\Plan.ascx.cs">
+      <DependentUpon>Plan.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\Ascx\Plan.ascx.designer.cs">
+      <DependentUpon>Plan.ascx</DependentUpon>
+    </Compile>
     <Compile Include="ManageCenter\Ascx\ShouWen.ascx.cs">
       <DependentUpon>ShouWen.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ManageCenter\Ascx\ShouWen.ascx.designer.cs">
       <DependentUpon>ShouWen.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="ManageCenter\Ascx\Term.ascx.cs">
-      <DependentUpon>Term.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ManageCenter\Ascx\Term.ascx.designer.cs">
-      <DependentUpon>Term.ascx</DependentUpon>
     </Compile>
     <Compile Include="ManageCenter\Ascx\UserManage.ascx.cs">
       <DependentUpon>UserManage.ascx</DependentUpon>
@@ -362,6 +362,13 @@
     <Compile Include="ManageCenter\FaWen.aspx.designer.cs">
       <DependentUpon>FaWen.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ManageCenter\FaWenEdit.aspx.cs">
+      <DependentUpon>FaWenEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\FaWenEdit.aspx.designer.cs">
+      <DependentUpon>FaWenEdit.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ManageCenter\ManageCenter.Master.cs">
       <DependentUpon>ManageCenter.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -369,19 +376,19 @@
     <Compile Include="ManageCenter\ManageCenter.Master.designer.cs">
       <DependentUpon>ManageCenter.Master</DependentUpon>
     </Compile>
-    <Compile Include="ManageCenter\Observed.aspx.cs">
-      <DependentUpon>Observed.aspx</DependentUpon>
+    <Compile Include="ManageCenter\OfficTypeAdd.aspx.cs">
+      <DependentUpon>OfficTypeAdd.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ManageCenter\Observed.aspx.designer.cs">
-      <DependentUpon>Observed.aspx</DependentUpon>
+    <Compile Include="ManageCenter\OfficTypeAdd.aspx.designer.cs">
+      <DependentUpon>OfficTypeAdd.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ManageCenter\Offic_TypeAdd.aspx.cs">
-      <DependentUpon>Offic_TypeAdd.aspx</DependentUpon>
+    <Compile Include="ManageCenter\OfficTypeEdit.aspx.cs">
+      <DependentUpon>OfficTypeEdit.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ManageCenter\Offic_TypeAdd.aspx.designer.cs">
-      <DependentUpon>Offic_TypeAdd.aspx</DependentUpon>
+    <Compile Include="ManageCenter\OfficTypeEdit.aspx.designer.cs">
+      <DependentUpon>OfficTypeEdit.aspx</DependentUpon>
     </Compile>
     <Compile Include="ManageCenter\Patrol.aspx.cs">
       <DependentUpon>Patrol.aspx</DependentUpon>
@@ -390,19 +397,19 @@
     <Compile Include="ManageCenter\Patrol.aspx.designer.cs">
       <DependentUpon>Patrol.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ManageCenter\Plan.aspx.cs">
+      <DependentUpon>Plan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\Plan.aspx.designer.cs">
+      <DependentUpon>Plan.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ManageCenter\ShouWen.aspx.cs">
       <DependentUpon>ShouWen.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ManageCenter\ShouWen.aspx.designer.cs">
       <DependentUpon>ShouWen.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ManageCenter\Term.aspx.cs">
-      <DependentUpon>Term.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ManageCenter\Term.aspx.designer.cs">
-      <DependentUpon>Term.aspx</DependentUpon>
     </Compile>
     <Compile Include="ManageCenter\UserManage.aspx.cs">
       <DependentUpon>UserManage.aspx</DependentUpon>
@@ -411,10 +418,18 @@
     <Compile Include="ManageCenter\UserManage.aspx.designer.cs">
       <DependentUpon>UserManage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ManageCenter\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Ascx\" />
     <Folder Include="Document\" />
     <Folder Include="Images\" />
     <Folder Include="Log\" />
