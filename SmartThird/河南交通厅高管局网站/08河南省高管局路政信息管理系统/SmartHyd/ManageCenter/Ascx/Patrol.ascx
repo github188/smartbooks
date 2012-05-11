@@ -1,5 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Patrol.ascx.cs" Inherits="SmartHyd.ManageCenter.Ascx.Patrol" %>
 <%@ Register Assembly="AspNetPager" Namespace="Wuqi.Webdiyer" TagPrefix="webdiyer" %>
+<%@ Register src="../../Ascx/Department.ascx" tagname="Department" tagprefix="uc1" %>
 <div id="tab">
     <ul>
         <li><a href="#tabs-1">添加日志</a></li>
@@ -20,90 +21,98 @@
                     <td>
                         <asp:Label ID="Label1" runat="server" Text="巡查中队:"></asp:Label>
                         <asp:HiddenField ID="hidPrimary" runat="server" Value="-1" />
-                        <asp:DropDownList ID="ddldept" runat="server" CssClass="input">
-                        </asp:DropDownList>
+                        
+                        <uc1:Department ID="Department1" runat="server" />
+                        
                     </td>
                     <td>
                         <asp:Label ID="Label2" runat="server" Text="负责人员:"></asp:Label>
-                        <asp:TextBox ID="txtRESPUSER" runat="server" CssClass="input"></asp:TextBox>
+                        <asp:TextBox ID="txtRESPUSER" runat="server" CssClass="input {required:true}"></asp:TextBox>
+                        <div class="validate ui-state-highlight ui-corner-all"  style="border:none;"></div>
                     </td>
                     <td>
                         <asp:Label ID="Label3" runat="server" Text="巡查人员:"></asp:Label>
-                        <asp:TextBox ID="txtPATROLUSER" runat="server" CssClass="input"></asp:TextBox>
+                        <asp:TextBox ID="txtPATROLUSER" runat="server" CssClass="input {required:true}"></asp:TextBox>
+                        <div class="validate ui-state-highlight ui-corner-all"  style="border:none;"></div>
                     </td>
                 </tr>
                 <tr height="38">
                     <td>
                         <asp:Label ID="Label4" runat="server" Text="车牌号码:"></asp:Label>
-                        <asp:TextBox ID="txtBUSNUMBER" runat="server" CssClass="input"></asp:TextBox>
+                        <asp:TextBox ID="txtBUSNUMBER" runat="server" CssClass="input {required:true}"></asp:TextBox>
+                        <div class="validate ui-state-highlight ui-corner-all"  style="border:none;"></div>
                     </td>
                     <td>
                         <asp:Label ID="Label5" runat="server" Text="巡查里程:"></asp:Label>
-                        <asp:TextBox ID="txtMILEAGE" runat="server" CssClass="input" Text="1000"></asp:TextBox>
+                        <asp:TextBox ID="txtMILEAGE" runat="server" CssClass="input {required:true}" Text="1000"></asp:TextBox>
+                        <div class="validate ui-state-highlight ui-corner-all"  style="border:none;"></div>
                     </td>
                     <td>
                         <asp:Label ID="Label6" runat="server" Text="天气情况:"></asp:Label>
-                        <asp:TextBox ID="txtWEATHER" runat="server" CssClass="input" Text="晴天"></asp:TextBox>
+                        <asp:TextBox ID="txtWEATHER" runat="server" CssClass="input {required:true}" Text="晴天"></asp:TextBox>
+                        <div class="validate ui-state-highlight ui-corner-all"  style="border:none;"></div>
                     </td>
                 </tr>
                 <tr>
                     <td colspan="3">
                         <asp:Label ID="Label7" runat="server" Text="巡查处理情况:"></asp:Label>
-                        <asp:TextBox ID="txtLog" runat="server" CssClass="input" 
-                            TextMode="MultiLine">
+                        <asp:TextBox ID="txtLog" runat="server" CssClass="input" TextMode="MultiLine">
                         </asp:TextBox>
                     </td>
                 </tr>
                 <tr>
                     <td colspan="3">
                         <asp:Label ID="Label8" runat="server" Text="移交内业处理事项:"></asp:Label>
-                        <asp:TextBox ID="txtWITHIN" runat="server" CssClass="input" 
-                            TextMode="MultiLine" Text="无">
+                        <asp:TextBox ID="txtWITHIN" runat="server" CssClass="input" TextMode="MultiLine">
                         </asp:TextBox>
                     </td>
                 </tr>
                 <tr>
                     <td colspan="3">
                         <asp:Label ID="Label9" runat="server" Text="移交下班处理事项:"></asp:Label>
-                        <asp:TextBox ID="txtNEXTWITHIN" runat="server" CssClass="input" 
-                            TextMode="MultiLine" Text="无">
+                        <asp:TextBox ID="txtNEXTWITHIN" runat="server" CssClass="input"  TextMode="MultiLine">
                         </asp:TextBox>
                     </td>
                 </tr>
                 <tr>
                     <td colspan="3">
                         <asp:Label ID="Label10" runat="server" Text="移交下班器材:"></asp:Label>
-                        <asp:TextBox ID="txtGOODS" runat="server" CssClass="input"
-                            TextMode="MultiLine" Text="无">
+                        <asp:TextBox ID="txtGOODS" runat="server" CssClass="input" TextMode="MultiLine">
                         </asp:TextBox>
                     </td>
                 </tr>
                 <tr height="38">
                     <td>
                         <asp:Label ID="Label11" runat="server" Text="交班中队:"></asp:Label>
-                        <asp:TextBox ID="txtSHIFTCAPTAIN" runat="server" CssClass="input"></asp:TextBox>
+                        <asp:TextBox ID="txtSHIFTCAPTAIN" runat="server" CssClass="input {required:true}"></asp:TextBox>
+                        <div class="validate ui-state-highlight ui-corner-all"  style="border:none;"></div>
                     </td>
                     <td>
                         <asp:Label ID="Label12" runat="server" Text="接班中队:"></asp:Label>
-                        <asp:TextBox ID="txtACCEPTCAPTAIN" runat="server" CssClass="input"></asp:TextBox>
+                        <asp:TextBox ID="txtACCEPTCAPTAIN" runat="server" CssClass="input {required:true}"></asp:TextBox>
+                        <div class="validate ui-state-highlight ui-corner-all"  style="border:none;"></div>
                     </td>
                     <td>
                         <asp:Label ID="Label13" runat="server" Text="车牌号码:"></asp:Label>
-                        <asp:TextBox ID="txtACCEPTBUSNUMBER" runat="server" CssClass="input"></asp:TextBox>
+                        <asp:TextBox ID="txtACCEPTBUSNUMBER" runat="server" CssClass="input {required:true}"></asp:TextBox>
+                        <div class="validate ui-state-highlight ui-corner-all"  style="border:none;"></div>
                     </td>
                 </tr>
                 <tr height="38">
                     <td>
                         <asp:Label ID="Label14" runat="server" Text="开始时间:"></asp:Label>
-                        <asp:TextBox ID="txtBEGINTIME" runat="server" CssClass="input"></asp:TextBox>
+                        <asp:TextBox ID="txtBEGINTIME" runat="server" CssClass="input {required:true}"></asp:TextBox>
+                        <div class="validate ui-state-highlight ui-corner-all"  style="border:none;"></div>
                     </td>
                     <td>
                         <asp:Label ID="Label16" runat="server" Text="结束时间:"></asp:Label>
-                        <asp:TextBox ID="txtENDTIME" runat="server" CssClass="input"></asp:TextBox>
+                        <asp:TextBox ID="txtENDTIME" runat="server" CssClass="input {required:true}"></asp:TextBox>
+                        <div class="validate ui-state-highlight ui-corner-all"  style="border:none;"></div>
                     </td>
                     <td>
                         <asp:Label ID="Label15" runat="server" Text="里程表数:"></asp:Label>
-                        <asp:TextBox ID="txtBUSKM" runat="server" CssClass="input" Text="1000"></asp:TextBox>
+                        <asp:TextBox ID="txtBUSKM" runat="server" CssClass="input {required:true}" Text="1000"></asp:TextBox>
+                        <div class="validate ui-state-highlight ui-corner-all"  style="border:none;"></div>
                     </td>
                 </tr>
             </tbody>
@@ -139,13 +148,13 @@
                 <ItemTemplate>
                     <tbody>
                         <tr>
-                            <td><#=Eval('dptname')#></td>
-                            <td><#=Eval('username')#></td>
-                            <td><#=Eval('busnumber')#></td>
-                            <td><#=Eval('mileage')#></td>
-                            <td><#=Eval('weather')#></td>
-                            <td><#=Eval('ticktime')#></td>
-                            <td><#=Eval('buskm')#></td>
+                            <td><%#Eval("dptname") %></td>
+                            <td><%#Eval("username") %></td>
+                            <td><%#Eval("busnumber") %>></td>
+                            <td><%#Eval("mileage") %></td>
+                            <td><%#Eval("weather") %>></td>
+                            <td><%#Eval("ticktime") %>></td>
+                            <td><%#Eval("buskm") %>></td>
                         </tr>
                     </tbody>
                 </ItemTemplate>

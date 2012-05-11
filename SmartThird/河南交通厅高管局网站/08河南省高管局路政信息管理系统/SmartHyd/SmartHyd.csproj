@@ -52,16 +52,23 @@
     <Reference Include="System.Web.Mobile" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Ascx\Department.ascx" />
     <Content Include="Css\base.css" />
+    <Content Include="ManageCenter\Affiche.aspx" />
+    <Content Include="ManageCenter\Ascx\Affiche.ascx" />
     <Content Include="ManageCenter\Ascx\FaWen.ascx" />
     <Content Include="ManageCenter\Ascx\Observed.ascx" />
+    <Content Include="ManageCenter\Ascx\Offic_TypeAdd.ascx" />
     <Content Include="ManageCenter\Ascx\Patrol.ascx" />
     <Content Include="ManageCenter\Ascx\ShouWen.ascx" />
+    <Content Include="ManageCenter\Ascx\Term.ascx" />
     <Content Include="ManageCenter\Ascx\UserManage.ascx" />
     <Content Include="ManageCenter\FaWen.aspx" />
     <Content Include="ManageCenter\Observed.aspx" />
+    <Content Include="ManageCenter\Offic_TypeAdd.aspx" />
     <Content Include="ManageCenter\Patrol.aspx" />
     <Content Include="ManageCenter\ShouWen.aspx" />
+    <Content Include="ManageCenter\Term.aspx" />
     <Content Include="ManageCenter\UserManage.aspx" />
     <Content Include="Scripts\base.js" />
     <Content Include="Scripts\jquery-ui-1.8.18.custom\css\redmond\images\ui-bg_flat_0_aaaaaa_40x100.png" />
@@ -278,6 +285,27 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Ascx\Department.ascx.cs">
+      <DependentUpon>Department.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ascx\Department.ascx.designer.cs">
+      <DependentUpon>Department.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\Affiche.aspx.cs">
+      <DependentUpon>Affiche.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\Affiche.aspx.designer.cs">
+      <DependentUpon>Affiche.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\Ascx\Affiche.ascx.cs">
+      <DependentUpon>Affiche.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\Ascx\Affiche.ascx.designer.cs">
+      <DependentUpon>Affiche.ascx</DependentUpon>
+    </Compile>
     <Compile Include="ManageCenter\Ascx\FaWen.ascx.cs">
       <DependentUpon>FaWen.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -292,6 +320,13 @@
     <Compile Include="ManageCenter\Ascx\Observed.ascx.designer.cs">
       <DependentUpon>Observed.ascx</DependentUpon>
     </Compile>
+    <Compile Include="ManageCenter\Ascx\Offic_TypeAdd.ascx.cs">
+      <DependentUpon>Offic_TypeAdd.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\Ascx\Offic_TypeAdd.ascx.designer.cs">
+      <DependentUpon>Offic_TypeAdd.ascx</DependentUpon>
+    </Compile>
     <Compile Include="ManageCenter\Ascx\Patrol.ascx.cs">
       <DependentUpon>Patrol.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -305,6 +340,13 @@
     </Compile>
     <Compile Include="ManageCenter\Ascx\ShouWen.ascx.designer.cs">
       <DependentUpon>ShouWen.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\Ascx\Term.ascx.cs">
+      <DependentUpon>Term.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\Ascx\Term.ascx.designer.cs">
+      <DependentUpon>Term.ascx</DependentUpon>
     </Compile>
     <Compile Include="ManageCenter\Ascx\UserManage.ascx.cs">
       <DependentUpon>UserManage.ascx</DependentUpon>
@@ -334,6 +376,13 @@
     <Compile Include="ManageCenter\Observed.aspx.designer.cs">
       <DependentUpon>Observed.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ManageCenter\Offic_TypeAdd.aspx.cs">
+      <DependentUpon>Offic_TypeAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\Offic_TypeAdd.aspx.designer.cs">
+      <DependentUpon>Offic_TypeAdd.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ManageCenter\Patrol.aspx.cs">
       <DependentUpon>Patrol.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -348,6 +397,13 @@
     <Compile Include="ManageCenter\ShouWen.aspx.designer.cs">
       <DependentUpon>ShouWen.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ManageCenter\Term.aspx.cs">
+      <DependentUpon>Term.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\Term.aspx.designer.cs">
+      <DependentUpon>Term.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ManageCenter\UserManage.aspx.cs">
       <DependentUpon>UserManage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -359,7 +415,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Ascx\" />
     <Folder Include="Document\" />
     <Folder Include="Images\" />
     <Folder Include="Log\" />

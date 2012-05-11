@@ -175,7 +175,15 @@ namespace SmartHyd.OracleDAL {
             return OracleHelper.Query(strSql.ToString());
         }
 
-
+        #region 自定义查询
+        /// <summary>
+        /// 获取全部数据
+        /// </summary>
+        /// <returns></returns>
+        public DataTable GetAllList() {
+            return OracleHelper.Query("SELECT * FROM BASE_TERM_TYPE").Tables[0];
+        }
+        #endregion
     }
 }
 

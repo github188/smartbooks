@@ -39,9 +39,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BASE_AFFICHE.cs" />
     <Compile Include="BASE_DEPT.cs" />
+    <Compile Include="BASE_FAWEN.cs" />
+    <Compile Include="BASE_FILETYPE.cs" />
     <Compile Include="BASE_OBSERVED.cs" />
     <Compile Include="BASE_PATROL.cs" />
+    <Compile Include="BASE_SHOUWEN.cs" />
+    <Compile Include="BASE_TERM.cs" />
+    <Compile Include="BASE_TERM_TYPE.cs" />
     <Compile Include="BASE_USER.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

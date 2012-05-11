@@ -17,7 +17,13 @@
     <script type="text/javascript" src="../Scripts/jquery-validation-1.9.0/jquery.metadata.js"></script>
     <script type="text/javascript" src="../Scripts/base.js"></script>
     <script type="text/jscript">
-        $(function () {            
+        $(function () {
+            /*向页面注册表单验证全局*/
+            $("#aspnetForm").validate({
+                errorPlacement: function (error, element) {
+                    error.appendTo(element.siblings("div:first"));
+                }
+            });
         });
     </script>
     <asp:ContentPlaceHolder ID="head" runat="server">

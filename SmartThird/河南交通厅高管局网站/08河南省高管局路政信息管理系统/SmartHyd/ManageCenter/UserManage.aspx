@@ -10,13 +10,7 @@
 
             /*日期控件*/
             $('#ctl00_ContentPlaceHolder1_UserManage1_txtBIRTHDAY').datepicker();
-
-            /*向页面注册表单验证*/
-            $("#aspnetForm").validate({                
-                errorPlacement: function (error, element) {
-                    error.appendTo(element.siblings("div:first"));                    
-                }
-            });
+                        
             /*重置表单*/
             $("#ctl00_ContentPlaceHolder1_UserManage1_btnCancel").click(function () {
                 validator.resetForm();

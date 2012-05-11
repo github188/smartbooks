@@ -274,14 +274,20 @@ namespace SmartHyd.OracleDAL {
         /// </summary>
         /// <returns></returns>
         public DataTable GetAllList() {
-            string procName = "PKG_USER_QUERY.proc_alluser";
-            OracleParameter[] param = new OracleParameter[1];
+            string procName = "PKG_USER_QUERY.proc_getuser";
+            OracleParameter[] param = new OracleParameter[2];
 
             param[0] = new OracleParameter();
+            param[1] = new OracleParameter();
 
-            param[0].Direction = ParameterDirection.Output;
-            param[0].OracleType = OracleType.Cursor;
-            param[0].ParameterName = "out_cursor";
+            param[0].Direction = ParameterDirection.Input;
+            param[0].OracleType = OracleType.Number;
+            param[0].ParameterName = "dptcode";
+            param[0].Value = 1;
+
+            param[1].Direction = ParameterDirection.Output;
+            param[1].OracleType = OracleType.Cursor;
+            param[1].ParameterName = "out_cursor";
 
             return OracleHelper.RunProcedure(procName, param).Tables[0];
         }

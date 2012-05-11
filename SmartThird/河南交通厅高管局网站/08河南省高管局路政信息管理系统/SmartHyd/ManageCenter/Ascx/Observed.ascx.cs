@@ -7,7 +7,7 @@ using System.Data;
 using System.Web.UI.WebControls;
 
 namespace SmartHyd.ManageCenter.Ascx {
-    public partial class Observed : System.Web.UI.UserControl {
+    public partial class Observed : UI.BaseUserControl {
         private BLL.BASE_OBSERVED bll = new BLL.BASE_OBSERVED();
 
         protected void Page_Load(object sender, EventArgs e) {
@@ -43,21 +43,21 @@ namespace SmartHyd.ManageCenter.Ascx {
         //绑定部门
         private void BindDept() {
             //获取用户所属的部门和子部门
-            string userName = "";
-            DataTable dt = new DataTable();
-            BLL.BASE_DEPT bllDept = new BLL.BASE_DEPT();
-            dt = bllDept.GetUserWhereDepartment(userName, 0);
-            ddldept.Items.Clear();
-            foreach (DataRow row in dt.Rows) {
-                ddldept.Items.Add(new ListItem(
-                    row["DPTNAME"].ToString(),
-                    row["DEPTID"].ToString()));
-            }
+            //string userName = "";
+            //DataTable dt = new DataTable();
+            //BLL.BASE_DEPT bllDept = new BLL.BASE_DEPT();
+            //dt = bllDept.GetUserWhereDepartment(userName, 0);
+            //ddldept.Items.Clear();
+            //foreach (DataRow row in dt.Rows) {
+            //    ddldept.Items.Add(new ListItem(
+            //        row["DPTNAME"].ToString(),
+            //        row["DEPTID"].ToString()));
+            //}
         }
         //获取实体
         private Entity.BASE_OBSERVED GetEntity() {
             Entity.BASE_OBSERVED model = new Entity.BASE_OBSERVED();
-            model.DEPTID = Convert.ToInt32(ddldept.SelectedValue);
+            //model.DEPTID = Convert.ToInt32(ddldept.SelectedValue);
             model.PATROLUSER = txtPATROLUSER.Text.Trim();
             model.BEGINTIME = DateTime.Parse(txtBEGINTIME.Text.Trim());
             model.ENDDATE = DateTime.Parse(txtENDTIME.Text.Trim());
@@ -69,7 +69,7 @@ namespace SmartHyd.ManageCenter.Ascx {
         }
         //将实体赋值到页面
         private void SetEntity(Entity.BASE_OBSERVED model) {
-            ddldept.SelectedValue = model.DEPTID.ToString();
+            //ddldept.SelectedValue = model.DEPTID.ToString();
             txtPATROLUSER.Text = model.PATROLUSER;
             txtBEGINTIME.Text = model.BEGINTIME.ToString("yyyy-MM-dd");
             txtENDTIME.Text = model.ENDDATE.ToString("yyyy-MM-dd");

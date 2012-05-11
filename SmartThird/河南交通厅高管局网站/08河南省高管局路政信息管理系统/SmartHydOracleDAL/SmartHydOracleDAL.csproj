@@ -54,6 +54,7 @@
     <Compile Include="BASE_COMPS.cs" />
     <Compile Include="BASE_DEPT.cs" />
     <Compile Include="BASE_FAWEN.cs" />
+    <Compile Include="BASE_FILETYPE.cs" />
     <Compile Include="BASE_LICENSE_ACCEPT.cs" />
     <Compile Include="BASE_MENU.cs" />
     <Compile Include="BASE_MESSAGE.cs" />

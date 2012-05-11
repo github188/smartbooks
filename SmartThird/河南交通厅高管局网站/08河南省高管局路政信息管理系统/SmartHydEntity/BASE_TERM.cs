@@ -49,7 +49,7 @@ namespace SmartHyd.Entity {
         /// <summary>
         /// 投入使用时间
         /// </summary>		
-        private DateTime _USETIME;
+        private DateTime _USETIME = DateTime.Now;
         /// <summary>
         /// 存放地点
         /// </summary>		

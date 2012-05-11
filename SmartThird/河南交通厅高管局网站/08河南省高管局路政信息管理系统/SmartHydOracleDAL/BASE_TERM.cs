@@ -249,7 +249,34 @@ namespace SmartHyd.OracleDAL {
             return OracleHelper.Query(strSql.ToString());
         }
 
+        /// <summary>
+        /// 获取部门下装备数据
+        /// </summary>
+        /// <returns></returns>
+        public DataTable GetTermList(int deptId) {
+            string procName = "PKG_TERM_QUERY.proc_getterm";
+            OracleParameter[] param = new OracleParameter[3];
 
+            param[0] = new OracleParameter();
+            param[1] = new OracleParameter();
+            param[2] = new OracleParameter();
+
+            param[0].Direction = ParameterDirection.Input;
+            param[0].OracleType = OracleType.Number;
+            param[0].ParameterName = "dpecode";
+            param[0].Value = deptId;
+
+            param[1].Direction = ParameterDirection.Input;
+            param[1].OracleType = OracleType.Number;
+            param[1].ParameterName = "issubdept";
+            param[1].Value = 1;
+
+            param[2].Direction = ParameterDirection.Output;
+            param[2].OracleType = OracleType.Cursor;
+            param[2].ParameterName = "out_cursor";
+
+            return OracleHelper.RunProcedure(procName, param).Tables[0];
+        }
     }
 }
 

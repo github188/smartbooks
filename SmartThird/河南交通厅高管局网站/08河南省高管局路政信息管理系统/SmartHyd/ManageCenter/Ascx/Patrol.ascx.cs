@@ -38,16 +38,16 @@ namespace SmartHyd.ManageCenter.Ascx {
 
         private void BindDept() {
             //获取用户所属的部门和子部门
-            string userName = "";
-            DataTable dt = new DataTable();
-            BLL.BASE_DEPT bllDept = new BLL.BASE_DEPT();
-            dt = bllDept.GetUserWhereDepartment(userName, 0);
-            ddldept.Items.Clear();
-            foreach (DataRow row in dt.Rows) {
-                ddldept.Items.Add(new ListItem(
-                    row["DPTNAME"].ToString(),
-                    row["DEPTID"].ToString()));
-            }
+            //string userName = "";
+            //DataTable dt = new DataTable();
+            //BLL.BASE_DEPT bllDept = new BLL.BASE_DEPT();
+            //dt = bllDept.GetUserWhereDepartment(userName, 0);
+            //ddldept.Items.Clear();
+            //foreach (DataRow row in dt.Rows) {
+            //    ddldept.Items.Add(new ListItem(
+            //        row["DPTNAME"].ToString(),
+            //        row["DEPTID"].ToString()));
+            //}
         }
 
         protected void AspNetPager1_PageChanging(object src, Wuqi.Webdiyer.PageChangingEventArgs e) {
@@ -58,7 +58,7 @@ namespace SmartHyd.ManageCenter.Ascx {
         private Entity.BASE_PATROL GetEntity() {
             Entity.BASE_PATROL model = new Entity.BASE_PATROL();
             model.PATROLID = Convert.ToInt32(hidPrimary.Value);     //id,主键
-            model.DEPTID = Convert.ToInt32(ddldept.SelectedValue);  //巡查中队
+            //model.DEPTID = Convert.ToInt32(ddldept.SelectedValue);  //巡查中队
             model.RESPUSER = txtRESPUSER.Text;                      //巡查负责人
             model.PATROLUSER = txtPATROLUSER.Text;                  //巡查人员
             model.BUSNUMBER = txtBUSNUMBER.Text;                    //巡逻车牌号
@@ -83,7 +83,7 @@ namespace SmartHyd.ManageCenter.Ascx {
 
         private void SetEntity(Entity.BASE_PATROL model) {
             hidPrimary.Value = model.PATROLID.ToString();
-            ddldept.SelectedValue = model.DEPTID.ToString();
+            //ddldept.SelectedValue = model.DEPTID.ToString();
             txtRESPUSER.Text = model.RESPUSER;
             txtPATROLUSER.Text = model.PATROLUSER;
             txtBUSNUMBER.Text = model.BUSNUMBER;

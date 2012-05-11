@@ -32,6 +32,9 @@ span,input{float:left;}
 .input:hover{background-color:#FFC; border:1px solid #d5ae4f;}
 
 /*通用消息提示*/
-.alert{height:26px; display:none; padding:0px; margin:5px 0px 5px 0px;}
+.alert{height:26px; display:none; padding:0px; margin:5px 0px 5px 0px; float:left;}
 .alert p,strong,span{height:26px; line-height:26px; padding:0px; margin:0px;}
 .alert span{ margin-top:6px; margin-left:6px;}
+
+/*验证元素提示框*/
+.validate{float:left; width:150px; font-size:12px;}

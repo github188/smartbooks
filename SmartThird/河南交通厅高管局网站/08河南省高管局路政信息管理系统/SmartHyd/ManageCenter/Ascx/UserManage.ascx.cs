@@ -38,7 +38,7 @@ namespace SmartHyd.ManageCenter.Ascx {
 
             model.BIRTHDAY = DateTime.Parse(txtBIRTHDAY.Text);
             model.DEGREE = txtDEGREE.Text;
-            model.DEPTID = Convert.ToInt32(ddldept.SelectedValue);
+            //model.DEPTID = Convert.ToInt32(ddldept.SelectedValue);
             model.FACE = txtFACE.Text;
             model.IDNUMBER = txtIDNUMBER.Text;
             model.JOBNUMBER = txtJOBNUMBER.Text;            

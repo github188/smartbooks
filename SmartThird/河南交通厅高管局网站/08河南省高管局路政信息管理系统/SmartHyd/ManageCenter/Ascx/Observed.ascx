@@ -1,5 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Observed.ascx.cs" Inherits="SmartHyd.ManageCenter.Ascx.Observed" %>
 <%@ Register Assembly="AspNetPager" Namespace="Wuqi.Webdiyer" TagPrefix="webdiyer" %>
+<%@ Register src="../../Ascx/Department.ascx" tagname="Department" tagprefix="uc1" %>
 <div id="tab">
     <ul>
         <li><a href="#tabs-1">添加日志</a></li>
@@ -20,26 +21,31 @@
                     <td>
                         <asp:Label ID="Label1" runat="server" Text="巡查中队:"></asp:Label>
                         <asp:HiddenField ID="hidPrimary" runat="server" Value="-1" />
-                        <asp:DropDownList ID="ddldept" runat="server" CssClass="input">
-                        </asp:DropDownList>
+                        
+                        <uc1:Department ID="Department1" runat="server" />
+                        
                     </td>
                     <td>
                         <asp:Label ID="Label3" runat="server" Text="巡查人员:"></asp:Label>
-                        <asp:TextBox ID="txtPATROLUSER" runat="server" CssClass="input"></asp:TextBox>
+                        <asp:TextBox ID="txtPATROLUSER" runat="server" CssClass="input {required:true}"></asp:TextBox>
+                        <div class="validate ui-state-highlight ui-corner-all"  style="border:none;"></div>
                     </td>
                     <td>
                         <asp:Label ID="Label6" runat="server" Text="天气情况:"></asp:Label>
-                        <asp:TextBox ID="txtWEATHER" runat="server" CssClass="input" Text="晴天"></asp:TextBox>
+                        <asp:TextBox ID="txtWEATHER" runat="server" CssClass="input {required:true}" Text="晴天"></asp:TextBox>
+                        <div class="validate ui-state-highlight ui-corner-all"  style="border:none;"></div>
                     </td>
                 </tr>
                 <tr height="38">
                     <td>
                         <asp:Label ID="Label14" runat="server" Text="开始时间:"></asp:Label>
-                        <asp:TextBox ID="txtBEGINTIME" runat="server" CssClass="input"></asp:TextBox>
+                        <asp:TextBox ID="txtBEGINTIME" runat="server" CssClass="input {required:true}"></asp:TextBox>
+                        <div class="validate ui-state-highlight ui-corner-all"  style="border:none;"></div>
                     </td>
                     <td>
                         <asp:Label ID="Label16" runat="server" Text="结束时间:"></asp:Label>
-                        <asp:TextBox ID="txtENDTIME" runat="server" CssClass="input"></asp:TextBox>
+                        <asp:TextBox ID="txtENDTIME" runat="server" CssClass="input {required:true}"></asp:TextBox>
+                        <div class="validate ui-state-highlight ui-corner-all"  style="border:none;"></div>
                     </td>
                     <td>
                     </td>
@@ -48,7 +54,7 @@
                     <td colspan="3">
                         <asp:Label ID="Label7" runat="server" Text="巡查处理情况:"></asp:Label>
                         <asp:TextBox ID="txtLog" runat="server" CssClass="input" TextMode="MultiLine">
-                        </asp:TextBox>
+                        </asp:TextBox>                        
                     </td>
                 </tr>
             </tbody>
@@ -92,19 +98,19 @@
                     <tbody>
                         <tr>
                             <td>
-                                <#=Eval('DPTNAME')#>
+                                <%#Eval("DPTNAME")%>
                             </td>
                             <td>
-                                <#=Eval('username')#>
+                                <%#Eval("username")%>
                             </td>
                             <td>
-                                <#=Eval('WEATHER')#>
+                                <%#Eval("WEATHER")%>
                             </td>
                             <td>
-                                <#=Eval('BEGINTIME')#>
+                                <%#Eval("BEGINTIME")%>
                             </td>
                             <td>
-                                <#=Eval('ENDDATE')#>
+                                <%#Eval("ENDDATE") %>
                             </td>
                         </tr>
                     </tbody>
