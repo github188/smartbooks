@@ -37,13 +37,13 @@ namespace SmartHyd.IDAL
 		/// <summary>
 		/// 删除一条数据
 		/// </summary>
-		bool Delete();
+        bool Delete(decimal CALENDARID);
 		
 				
 		/// <summary>
 		/// 得到一个对象实体
 		/// </summary>
-		Entity.BASE_PLAN GetEntity();
+        Entity.BASE_PLAN GetEntity(decimal CALENDARID);
 		
 		/// <summary>
 		/// 获得数据列表

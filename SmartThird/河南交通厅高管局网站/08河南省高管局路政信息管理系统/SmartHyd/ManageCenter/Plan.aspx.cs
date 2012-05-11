@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace SmartHyd.ManageCenter
 {
-    public partial class Affiche : UI.BaseUserPage
+    public partial class Plan : UI.BaseUserPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {

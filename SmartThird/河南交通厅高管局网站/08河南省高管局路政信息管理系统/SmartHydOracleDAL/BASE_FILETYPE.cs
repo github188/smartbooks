@@ -108,13 +108,13 @@ namespace SmartHyd.OracleDAL
               
             };
 
-            parameters[7].Value = entity.FTID;
-            parameters[8].Value = entity.FT_NAME;
-            parameters[9].Value = entity.FT_DESCRIBE;
-            parameters[10].Value = entity.FT_DEPT;
-            parameters[11].Value = entity.FT_PREFIX;
-            parameters[12].Value = entity.FT_SUFFIX;
-            parameters[13].Value = entity.FT_STATE;
+            parameters[0].Value = entity.FTID;
+            parameters[1].Value = entity.FT_NAME;
+            parameters[2].Value = entity.FT_DESCRIBE;
+            parameters[3].Value = entity.FT_DEPT;
+            parameters[4].Value = entity.FT_PREFIX;
+            parameters[5].Value = entity.FT_SUFFIX;
+            parameters[6].Value = entity.FT_STATE;
             int rows = OracleHelper.ExecuteNonQuery(strSql.ToString(), parameters);
             if (rows > 0)
             {

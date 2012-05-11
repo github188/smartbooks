@@ -126,14 +126,16 @@ namespace SmartHyd.OracleDAL
         /// <summary>
         /// 删除一条数据
         /// </summary>
-        public bool Delete()
+        public bool Delete(decimal CALENDARID)
         {
 
             StringBuilder strSql = new StringBuilder();
             strSql.Append("delete from BASE_PLAN ");
             strSql.Append(" where ");
-            OracleParameter[] parameters = {
-			};
+            strSql.Append(" CALENDARID=:CALENDARID ");
+
+            OracleParameter[] parameters = { new OracleParameter(":CALENDARID", OracleType.Number, 4) };
+            parameters[0].Value = CALENDARID;
 
 
             int rows = OracleHelper.ExecuteNonQuery(strSql.ToString(), parameters);
@@ -152,15 +154,17 @@ namespace SmartHyd.OracleDAL
         /// <summary>
         /// 得到一个对象实体
         /// </summary>
-        public Entity.BASE_PLAN GetEntity()
+        public Entity.BASE_PLAN GetEntity(decimal CALENDARID)
         {
 
             StringBuilder strSql = new StringBuilder();
             strSql.Append("select CALENDARID, USERID, CALENDARCONTENT, START_DATE, END_DATE, CALENDARREMIND  ");
             strSql.Append("  from BASE_PLAN ");
             strSql.Append(" where ");
-            OracleParameter[] parameters = {
-			};
+            strSql.Append(" CALENDARID=:CALENDARID ");
+
+            OracleParameter[] parameters = { new OracleParameter(":CALENDARID", OracleType.Number, 4) };
+            parameters[0].Value = CALENDARID;
 
 
             Entity.BASE_PLAN entity = new Entity.BASE_PLAN();

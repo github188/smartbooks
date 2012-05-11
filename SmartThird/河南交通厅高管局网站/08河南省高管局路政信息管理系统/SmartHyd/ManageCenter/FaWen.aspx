@@ -45,17 +45,21 @@
                     window.location = "/general/document/index.php/setting/type/delete/" + tid;
             }
         }
-        //编辑
+        //编辑公文类型
         function edit_type(tid, count) {
             if (count > 0) {
                 var msg = "该发文类型已包含公文，编辑可能会造成文件损坏，确定继续进行编辑吗？";
                 if (window.confirm(msg))
-                    window.location = "/general/document/index.php/setting/type/edit/" + tid;
+                    window.location = "OfficTypeEdit.aspx?ftid=" + tid;
             }
             else
-                window.location = "/general/document/index.php/setting/type/edit/" + tid;
-        }
+                window.location = "OfficTypeEdit.aspx?ftid=" + tid;
 
+        }
+        //公文在线编辑
+        function edit_fawen(fid) {
+            window.location = "FaWenEdit.aspx?fid" + fid;
+        }
         //跳转到指定选项卡
         function trans_tabs(tabindex) {
             alert(tabindex);

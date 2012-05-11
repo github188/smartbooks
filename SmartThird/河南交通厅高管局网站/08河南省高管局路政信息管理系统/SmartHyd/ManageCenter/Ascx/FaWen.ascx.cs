@@ -8,7 +8,7 @@ using SmartHyd.Entity;
 using System.Data;
 namespace SmartHyd.ManageCenter.Ascx
 {
-    public partial class FaWen : System.Web.UI.UserControl
+    public partial class FaWen : UI.BaseUserControl
     {
         private BLL.BASE_FAWEN bll = new BLL.BASE_FAWEN();
         private BLL.BASE_FILETYPE tbll = new BLL.BASE_FILETYPE();
@@ -200,13 +200,14 @@ namespace SmartHyd.ManageCenter.Ascx
             //model.F_DELSTATE = 0;  
 
         }
-        /// <summary>
-        /// 公文拟稿保存
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        ///// <summary>
+        ///// 公文拟稿保存
+        ///// </summary>
+        ///// <param name="sender"></param>
+        ///// <param name="e"></param>
         protected void BtnSave_Click(object sender, EventArgs e)
         {
+            Response.Write("<script type='text/javascript'>alert('请检查数据是否填写完整！');</script>");
             Entity.BASE_FAWEN model = GetEntity();
             bll.Add(model);
             if (bll.Exists(model.FID))
@@ -215,14 +216,15 @@ namespace SmartHyd.ManageCenter.Ascx
             }
             else
             {
-               // ScriptManager.RegisterStartupScript(this,typeof(Page),"提示"，"alert('请检查数据是否填写完整！')；"，true);
-                
-               // ClientScript.RegisterStartupScript(this.GetType(), "tishi", "<script type=\"text/javascript\">alert('请检查数据是否填写完整！');</script>");
+                // ScriptManager.RegisterStartupScript(this,typeof(Page),"提示"，"alert('请检查数据是否填写完整！')；"，true);
+
+                // ClientScript.RegisterStartupScript(this.GetType(), "tishi", "<script type=\"text/javascript\">alert('请检查数据是否填写完整！');</script>");
                 Response.Write("<script type='text/javascript'>alert('请检查数据是否填写完整！');</script>");
 
                 Response.Redirect("FaWen.ascx#tabs-2");
             }
         }
+
         /// <summary>
         /// 返回
         /// </summary>
@@ -299,7 +301,7 @@ namespace SmartHyd.ManageCenter.Ascx
         /// <param name="e"></param>
         protected void BtnAdd_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Offic_TypeAdd.aspx");
+            Response.Redirect("OfficTypeAdd.aspx");
         }
 
         /// <summary>
@@ -313,6 +315,9 @@ namespace SmartHyd.ManageCenter.Ascx
             TypeBindToRepeater("1=1");
         }
         #endregion
+
+       
+      
 
        
 

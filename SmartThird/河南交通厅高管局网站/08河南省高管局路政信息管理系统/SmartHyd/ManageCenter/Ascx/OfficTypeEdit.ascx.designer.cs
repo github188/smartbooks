@@ -10,25 +10,7 @@
 namespace SmartHyd.ManageCenter.Ascx {
     
     
-    public partial class Affiche {
-        
-        /// <summary>
-        /// RptAffiche 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater RptAffiche;
-        
-        /// <summary>
-        /// AspNetPager1 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::Wuqi.Webdiyer.AspNetPager AspNetPager1;
+    public partial class OfficTypeEdit {
         
         /// <summary>
         /// hidPrimary 控件。
@@ -40,49 +22,58 @@ namespace SmartHyd.ManageCenter.Ascx {
         protected global::System.Web.UI.WebControls.HiddenField hidPrimary;
         
         /// <summary>
-        /// TxtTitle 控件。
+        /// TxtTypeName 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtTitle;
+        protected global::System.Web.UI.WebControls.TextBox TxtTypeName;
         
         /// <summary>
-        /// TxtTime 控件。
+        /// category 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtTime;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect category;
         
         /// <summary>
-        /// TxtContent 控件。
+        /// TxtPrefix 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtContent;
+        protected global::System.Web.UI.WebControls.TextBox TxtPrefix;
         
         /// <summary>
-        /// BtnSend 控件。
+        /// TxtSuffix 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnSend;
+        protected global::System.Web.UI.WebControls.TextBox TxtSuffix;
         
         /// <summary>
-        /// BtnSave 控件。
+        /// TxtDescribe 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnSave;
+        protected global::System.Web.UI.WebControls.TextBox TxtDescribe;
+        
+        /// <summary>
+        /// BtnEdit 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BtnEdit;
         
         /// <summary>
         /// BtnBack 控件。
@@ -92,14 +83,5 @@ namespace SmartHyd.ManageCenter.Ascx {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button BtnBack;
-        
-        /// <summary>
-        /// TvDept 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TreeView TvDept;
     }
 }

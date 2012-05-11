@@ -49,9 +49,9 @@
                                 <%# Eval("F_TYPE")%>
                             </td>
                             <td>
-                                <a href="<%# Eval("FID")%>">编辑</a>
+                                <a href="javascript:edit_fawen('<%# Eval("FID")%>')">编辑</a>
 
-                                <a href="javascript:send_doc('0')" onclick="javascript:send_doc('0')">发送</a> 
+                                <a href="javascript:send_doc('<%# Eval("FID")%>')" onclick="javascript:send_doc('<%# Eval("FID")%>')">发送</a> 
                                 <a href="<%# Eval("FID")%>">删除</a>
                             </td>
                         </tr>
@@ -116,8 +116,8 @@
                 </table>
             </div>
             <div id="footer" class="footer">
-                <input type="hidden" name="dept_str" id="dept_str">
-                <input type="hidden" name="sid" id="sid">
+                <input type="hidden" name="dept_str" id="dept_str"/>
+                <input type="hidden" name="sid" id="sid"/>
                 <input class="BigButton" type="submit" value="确定" />
                 <input class="BigButton" onclick="HideDialog('send')" type="button" value="关闭" />
             </div>
@@ -206,7 +206,8 @@
                 </tr>
                 <tr>
                     <td class="red" align="center" colspan='3'>
-                        <asp:Button ID="BtnSave" runat="server" Text="保存" OnClick="BtnSave_Click" />
+                        <asp:Button ID="BtnSave" runat="server" Text="保存" CssClass="input" 
+                            onclick="BtnSave_Click" />
                         <asp:Button ID="BtnBack" runat="server" Text="返回" OnClick="BtnBack_Click" />
                     </td>
                 </tr>
@@ -243,6 +244,8 @@
                 </tr>
             </table>
         </div>
+       
+        <br />
         <div id="content2">
             <table class="table">
                 <asp:Repeater ID="RptType" runat="server">
@@ -279,7 +282,7 @@
                                     <%# Eval("FT_DEPT")%>
                                 </td>
                                 <td>
-                                    <a href="javascript:edit_type('<%# Eval("FTID")%>','43');">编辑</a> <a href="javascript:clean_type('<%# Eval("FTID")%>','43');">
+                                    <a href="javascript:edit_type('<%# Eval("FTID")%>','0');">编辑</a> <a href="javascript:clean_type('<%# Eval("FTID")%>','43');">
                                         清空公文</a> <a href="javascript:delete_type('<%# Eval("FTID")%>','43');">删除</a>
                                 </td>
                             </tr>

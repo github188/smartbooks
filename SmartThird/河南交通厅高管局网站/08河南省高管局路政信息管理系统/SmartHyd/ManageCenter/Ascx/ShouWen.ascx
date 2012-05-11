@@ -21,7 +21,7 @@
             </select>
             标题：<input type="text" name="title" size="15" value="" onclick="this.value='';" class="SmallInput" />
             <input type="submit" value="查询" class="SmallButton" />
-            <input type="reset" value="重置" class="SmallButton" />
+            <input type="reset" value="重置" class="input" />
         </div>
         <table class="table">
             <asp:Repeater ID="RptShouwen" runat="server">
@@ -230,7 +230,7 @@
                 </tr>
                 <tr>
                     <td class="red" align="center" colspan='3'>
-                        <asp:Button ID="BtnSave" runat="server" Text="" />
+                        <asp:Button ID="BtnSave" runat="server" Text="批复" />
                         <asp:Button ID="BtnBack" runat="server" Text="返回" />
                     </td>
                 </tr>

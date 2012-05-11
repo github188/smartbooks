@@ -6,27 +6,27 @@ using System.Data;
 
 namespace SmartHyd.BLL
 {
-    public class BASE_FILETYPE
+    public class BASE_PLAN
     {
-        private OracleDAL.BASE_FILETYPE dal = new OracleDAL.BASE_FILETYPE();
+        private OracleDAL.BASE_PLAN dal = new OracleDAL.BASE_PLAN();
 
         /// <summary>
-        /// 获取公文类型列表
+        /// 获取日程信息列表
         /// </summary>
-        /// <param name="strwhere">获取公文数据的条件</param>
-        /// <returns>公文数据</returns>
+        /// <param name="strwhere">获取日程信息的条件</param>
+        /// <returns>日程信息数据</returns>
 
-        public DataTable GetFileTypeList(string strwhere)
+        public DataTable GetPlanList(string strwhere)
         {
             //
             DataSet ds = dal.GetList(strwhere);
             return ds.Tables[0];
         }
         /// <summary>
-        /// 新建公文类型
+        /// 新建日程信息
         /// </summary>
-        /// <param name="model">公文类型实体</param>
-        public void Add(Entity.BASE_FILETYPE model)
+        /// <param name="model">日程信息实体</param>
+        public void Add(Entity.BASE_PLAN model)
         {
             dal.Add(model);
         }
@@ -35,9 +35,9 @@ namespace SmartHyd.BLL
         /// </summary>
         /// <param name="FTID"></param>
         /// <returns></returns>
-        public bool Exists(decimal FTID)
+        public bool Exists(decimal CALENDARID)
         {
-            if(dal.Exists(FTID))
+            if (dal.Exists(CALENDARID))
             {
                 return true;
 
@@ -52,26 +52,17 @@ namespace SmartHyd.BLL
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        public bool update(Entity.BASE_FILETYPE model)
+        public bool update(Entity.BASE_PLAN model)
         {
             if (dal.Update(model))
             {
                 return true;
-                
+
             }
             else
             {
                 return false;
             }
-        }
-        /// <summary>
-        /// 根据FTID获得公文类型实体数据
-        /// </summary>
-        /// <param name="FTID"></param>
-        /// <returns></returns>
-        public Entity.BASE_FILETYPE Getmodel(decimal FTID)
-        {
-           return  dal.GetEntity(FTID);
         }
     }
 }

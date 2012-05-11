@@ -35,9 +35,9 @@ namespace SmartHyd.BLL
         /// </summary>
         /// <param name="FTID"></param>
         /// <returns></returns>
-        public bool Exists(decimal FTID)
+        public bool Exists(decimal AFFICHEID)
         {
-            if (dal.Exists(FTID))
+            if (dal.Exists(AFFICHEID))
             {
                 return true;
 

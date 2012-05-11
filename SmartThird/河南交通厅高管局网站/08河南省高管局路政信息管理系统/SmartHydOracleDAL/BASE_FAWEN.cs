@@ -167,14 +167,17 @@ namespace SmartHyd.OracleDAL {
         /// <summary>
         /// 得到一个对象实体
         /// </summary>
-        public Entity.BASE_FAWEN GetEntity() {
+        public Entity.BASE_FAWEN GetEntity(decimal FID)
+        {
 
             StringBuilder strSql = new StringBuilder();
             strSql.Append("select FID, F_NUMBER, F_TITLE, F_TYPE, F_CONTENT, F_ANNEX, F_DATE, REMARK, F_ORGAN, F_LEVEL, F_DEGREE, F_DELSTATE  ");
             strSql.Append("  from BASE_FAWEN ");
             strSql.Append(" where ");
+            strSql.Append(" FID = :FID  ");
             OracleParameter[] parameters = {
-			};
+					new OracleParameter(":FID", OracleType.Number,4)			};
+            parameters[0].Value = FID;
 
 
             Entity.BASE_FAWEN entity = new Entity.BASE_FAWEN();

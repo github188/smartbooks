@@ -28,5 +28,48 @@ namespace SmartHyd.BLL {
         {
             return dal.GetList(strWhere).Tables[0];
         }
+       
+        /// <summary>
+        /// 新建部门
+        /// </summary>
+        /// <param name="model">部门实体</param>
+        public void Add(Entity.BASE_DEPT model)
+        {
+            dal.Add(model);
+        }
+        /// <summary>
+        /// 确定记录是否存在
+        /// </summary>
+        /// <param name="FTID"></param>
+        /// <returns></returns>
+        public bool Exists(decimal DEPTID)
+        {
+            if (dal.Exists(DEPTID))
+            {
+                return true;
+
+            }
+            else
+            {
+                return false;
+            }
+        }
+        /// <summary>
+        /// 更新数据
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        public bool update(Entity.BASE_DEPT model)
+        {
+            if (dal.Update(model))
+            {
+                return true;
+
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

@@ -43,7 +43,7 @@ namespace SmartHyd.IDAL
 		/// <summary>
 		/// 得到一个对象实体
 		/// </summary>
-		Entity.BASE_FAWEN GetEntity();
+        Entity.BASE_FAWEN GetEntity(decimal FID);
 		
 		/// <summary>
 		/// 获得数据列表

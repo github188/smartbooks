@@ -4,11 +4,11 @@
     <script type="text/jscript">
         $(function () {
 
-            /*发文内容编辑器*/
+            /*公告内容编辑器*/
 
             var editor;
             KindEditor.ready(function (k) {
-                editor = k.create('textarea[id="ctl00_ContentPlaceHolder1_Shouwen1_TxContent"]', {
+                editor = k.create('textarea[id="ctl00_ContentPlaceHolder1_Affiche1_TxtContent"]', {
                     items: ['source', '|', 'undo', 'redo', '|', 'preview', 'print', 'template', 'cut', 'copy',
                         'paste', 'plainpaste', 'wordpaste', '|', 'justifyleft', 'justifycenter', 'justifyright',
                         'justifyfull', 'insertorderedlist', 'insertunorderedlist', 'indent', 'outdent',
@@ -18,10 +18,46 @@
                 });
             });
             /*时间*/
-            $("#ctl00_ContentPlaceHolder1_Shouwen1_TxtFromTime").datepicker();
-            $("#ctl00_ContentPlaceHolder1_Shouwen1_TxtHandTime").datepicker();
+            $("#ctl00_ContentPlaceHolder1_Affiche1_TxtTime").datepicker();
         });
     
+        //全选
+        function selectall(chkcontrol) {
+            var chkall = chkcontrol;
+            State = chkall.checked;
+            elem = document.getElementsByTagName("input");
+            for (i = 0; i < elem.length; i++) {
+                if (elem[i].type == "checkbox" && elem[i] != chkall.id) {
+                    if (elem[i].checked != State) {
+                        elem[i].click();
+                    }
+                }
+            }
+        }
+        //按人员发布显示/隐藏
+        function changeRange() {
+            if (document.getElementById("rang_role").style.display == "none") {
+                document.getElementById("rang_role").style.display = "";
+                document.getElementById("rang_user").style.display = "";
+                document.getElementById("href_txt").innerText = "隐藏按人员或角色发布";
+            }
+            else {
+                document.getElementById("rang_role").style.display = "none";
+                document.getElementById("rang_user").style.display = "none";
+                document.getElementById("href_txt").innerText = "按人员或角色发布";
+            }
+        }
+        //按钮点击：添加（按部门）
+        function SelectDept() {
+            $(function () {
+                var dialog = $("#dialog").dialog({
+                    modal: true,
+                    title: "部门选项窗口"
+                });
+
+            });
+            
+        }
 
         function open_notify(NOTIFY_ID, FORMAT) {
             URL = "../show/read_notify.php?IS_MANAGE=1&NOTIFY_ID=" + NOTIFY_ID;
@@ -126,53 +162,18 @@
             }
         }
 
-        function cancel_top(flag) {
-            delete_str = "";
-            for (i = 0; i < document.all("email_select").length; i++) {
-
-                el = document.all("email_select").item(i);
-                if (el.checked) {
-                    val = el.value;
-                    delete_str += val + ",";
-                }
-            }
-
-            if (i == 0) {
-                el = document.all("email_select");
-                if (el.checked) {
-                    val = el.value;
-                    delete_str += val + ",";
-                }
-            }
-
-            if (delete_str == "") {
-                if (flag == 0)
-                    alert("要取消公告通知置顶，请至少选择其中一条。");
-                else
-                    alert("要设置公告通知置顶，请至少选择其中一条。");
-                return;
-            }
-            if (flag == 0)
-                msg = '确认要取消所选公告通知的置顶吗？';
-            else
-                msg = '确认要将所选的公告通知设置为置顶吗？';
-            if (window.confirm(msg)) {
-                if (flag == 0)
-                    url = "notop.php?DELETE_STR=" + delete_str + "&start=0";
-                else
-                    url = "settop.php?DELETE_STR=" + delete_str + "&start=0";
-                location = url;
-            }
-        }
 
         function my_affair(NOTIFY_ID) {
             myleft = (screen.availWidth - 250) / 2;
             mytop = (screen.availHeight - 200) / 2;
             URL = "note.php?NOTIFY_ID=" + NOTIFY_ID;
             window.open(URL, "", "height=200,width=250,status=0,toolbar=no,menubar=no,location=no,scrollbars=auto,resizable=no,top=" + mytop + ",left=" + myleft);
-        }
-</script>
-
+        }
+
+</script>
+
+
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <uc1:Affiche ID="Affiche1" runat="server" />

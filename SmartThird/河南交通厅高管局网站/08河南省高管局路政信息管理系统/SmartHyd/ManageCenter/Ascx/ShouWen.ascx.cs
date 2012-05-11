@@ -8,7 +8,7 @@ using System.Data;
 
 namespace SmartHyd.ManageCenter.Ascx
 {
-    public partial class Shouwen : System.Web.UI.UserControl
+    public partial class Shouwen : UI.BaseUserControl
     {
         private BLL.BASE_SHOUWEN bll = new BLL.BASE_SHOUWEN();
         protected void Page_Load(object sender, EventArgs e)
