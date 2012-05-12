@@ -292,6 +292,7 @@
   <ItemGroup>
     <Compile Include="Ascx\Department.ascx.cs">
       <DependentUpon>Department.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Ascx\Department.ascx.designer.cs">
       <DependentUpon>Department.ascx</DependentUpon>
