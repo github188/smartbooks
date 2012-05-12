@@ -1,4 +1,7 @@
-﻿<%@ Page Title="公告管理" Language="C#" AutoEventWireup="true" MasterPageFile="~/ManageCenter/ManageCenter.Master" CodeBehind="Affiche.aspx.cs" Inherits="SmartHyd.ManageCenter.Affiche" %>
+﻿<%@ Page Title="公告管理" Language="C#" AutoEventWireup="true" ValidateRequest="false"
+    MasterPageFile="~/ManageCenter/ManageCenter.Master" CodeBehind="Affiche.aspx.cs"
+    Inherits="SmartHyd.ManageCenter.Affiche" %>
+
 <%@ Register Src="~/ManageCenter/Ascx/Affiche.ascx" TagName="Affiche" TagPrefix="uc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script type="text/jscript">
@@ -20,7 +23,7 @@
             /*时间*/
             $("#ctl00_ContentPlaceHolder1_Affiche1_TxtTime").datepicker();
         });
-    
+
         //全选
         function selectall(chkcontrol) {
             var chkall = chkcontrol;
@@ -56,7 +59,7 @@
                 });
 
             });
-            
+
         }
 
         function open_notify(NOTIFY_ID, FORMAT) {
@@ -91,11 +94,12 @@
             myleft = (screen.availWidth - 500) / 2;
             window.open(URL, "read_notify", "height=250,width=600,status=0,toolbar=no,menubar=no,location=no,scrollbars=yes,top=150,left=" + myleft + ",resizable=yes");
         }
-        function delete_notify(notify_id) {
-            msg = '删除后将不可恢复，确认要删除该条公告吗？';
-            if (window.confirm(msg))
-                window.location = "delete.php?DELETE_STR=" + notify_id + "&start=0";
-        }
+        //删除公告
+//        function delete_notify(notify_id) {
+//            msg = '删除后将不可恢复，确认要删除该条公告吗？';
+//            if (window.confirm(msg))
+//            window.location = "Affiche.aspx";
+//        }
         function delete_all() {
             msg = '确认要删除所有公告通知吗？\n删除后将不可恢复，确认删除请输入大写字母“OK”';
             if (window.prompt(msg, "") == "OK") {
@@ -170,10 +174,7 @@
             window.open(URL, "", "height=200,width=250,status=0,toolbar=no,menubar=no,location=no,scrollbars=auto,resizable=no,top=" + mytop + ",left=" + myleft);
         }
 
-</script>
-
-
-
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <uc1:Affiche ID="Affiche1" runat="server" />
