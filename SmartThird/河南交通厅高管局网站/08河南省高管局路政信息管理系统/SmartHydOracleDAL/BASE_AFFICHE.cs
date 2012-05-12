@@ -104,12 +104,12 @@ namespace SmartHyd.OracleDAL
                         new OracleParameter(":STATES", OracleType.Number,4)
             };
 
-            parameters[6].Value = entity.AFFICHEID;
-            parameters[7].Value = entity.AFFICHETITLE;
-            parameters[8].Value = entity.AFFICHECONTENTS;
-            parameters[9].Value = entity.AFFICHER;
-            parameters[10].Value = entity.AFFICHEDATE;
-            parameters[11].Value = entity.STATES;
+            parameters[0].Value = entity.AFFICHEID;
+            parameters[1].Value = entity.AFFICHETITLE;
+            parameters[2].Value = entity.AFFICHECONTENTS;
+            parameters[3].Value = entity.AFFICHER;
+            parameters[4].Value = entity.AFFICHEDATE;
+            parameters[5].Value = entity.STATES;
             int rows = OracleHelper.ExecuteNonQuery(strSql.ToString(), parameters);
             if (rows > 0)
             {
@@ -155,7 +155,7 @@ namespace SmartHyd.OracleDAL
         {
 
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("select AFFICHEID, AFFICHETITLE, AFFICHECONTENTS, AFFICHER, AFFICHEDATE  ");
+            strSql.Append("select AFFICHEID, AFFICHETITLE, AFFICHECONTENTS, AFFICHER, AFFICHEDATE,STATES  ");
             strSql.Append("  from BASE_AFFICHE ");
             strSql.Append(" where AFFICHEID = :AFFICHEID  ");
             OracleParameter[] parameters = {
