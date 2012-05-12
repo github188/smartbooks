@@ -57,7 +57,9 @@
     <Content Include="Error.aspx" />
     <Content Include="Global.asax" />
     <Content Include="ManageCenter\Affiche.aspx" />
+    <Content Include="ManageCenter\AfficheEdit.aspx" />
     <Content Include="ManageCenter\Ascx\Affiche.ascx" />
+    <Content Include="ManageCenter\Ascx\AfficheEdit.ascx" />
     <Content Include="ManageCenter\Ascx\FaWen.ascx" />
     <Content Include="ManageCenter\Ascx\FaWenEdit.ascx" />
     <Content Include="ManageCenter\Ascx\Observed.ascx" />
@@ -65,6 +67,7 @@
     <Content Include="ManageCenter\Ascx\OfficTypeEdit.ascx" />
     <Content Include="ManageCenter\Ascx\Patrol.ascx" />
     <Content Include="ManageCenter\Ascx\Plan.ascx" />
+    <Content Include="ManageCenter\Ascx\RoadProject.ascx" />
     <Content Include="ManageCenter\Ascx\RoadTerm.ascx" />
     <Content Include="ManageCenter\Ascx\ShouWen.ascx" />
     <Content Include="ManageCenter\Ascx\Term.ascx" />
@@ -76,6 +79,7 @@
     <Content Include="ManageCenter\OfficTypeEdit.aspx" />
     <Content Include="ManageCenter\Patrol.aspx" />
     <Content Include="ManageCenter\Plan.aspx" />
+    <Content Include="ManageCenter\RoadProject.aspx" />
     <Content Include="ManageCenter\RoadTerm.aspx" />
     <Content Include="ManageCenter\ShouWen.aspx" />
     <Content Include="ManageCenter\Term.aspx" />
@@ -317,12 +321,24 @@
     <Compile Include="ManageCenter\Affiche.aspx.designer.cs">
       <DependentUpon>Affiche.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ManageCenter\AfficheEdit.aspx.cs">
+      <DependentUpon>AfficheEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\AfficheEdit.aspx.designer.cs">
+      <DependentUpon>AfficheEdit.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ManageCenter\Ascx\Affiche.ascx.cs">
       <DependentUpon>Affiche.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ManageCenter\Ascx\Affiche.ascx.designer.cs">
       <DependentUpon>Affiche.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\Ascx\AfficheEdit.ascx.cs">
+      <DependentUpon>AfficheEdit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\Ascx\AfficheEdit.ascx.designer.cs">
+      <DependentUpon>AfficheEdit.ascx</DependentUpon>
     </Compile>
     <Compile Include="ManageCenter\Ascx\FaWen.ascx.cs">
       <DependentUpon>FaWen.ascx</DependentUpon>
@@ -372,6 +388,12 @@
     </Compile>
     <Compile Include="ManageCenter\Ascx\Plan.ascx.designer.cs">
       <DependentUpon>Plan.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\Ascx\RoadProject.ascx.cs">
+      <DependentUpon>RoadProject.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\Ascx\RoadProject.ascx.designer.cs">
+      <DependentUpon>RoadProject.ascx</DependentUpon>
     </Compile>
     <Compile Include="ManageCenter\Ascx\RoadTerm.ascx.cs">
       <DependentUpon>RoadTerm.ascx</DependentUpon>
@@ -456,6 +478,12 @@
     </Compile>
     <Compile Include="ManageCenter\Plan.aspx.designer.cs">
       <DependentUpon>Plan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\RoadProject.aspx.cs">
+      <DependentUpon>RoadProject.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\RoadProject.aspx.designer.cs">
+      <DependentUpon>RoadProject.aspx</DependentUpon>
     </Compile>
     <Compile Include="ManageCenter\RoadTerm.aspx.cs">
       <DependentUpon>RoadTerm.aspx</DependentUpon>
