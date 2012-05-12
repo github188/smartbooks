@@ -43,7 +43,7 @@ namespace SmartHyd.IDAL
 		/// <summary>
 		/// 得到一个对象实体
 		/// </summary>
-		Entity.BASE_LICENSE_ACCEPT GetEntity();
+        Entity.BASE_LICENSE_ACCEPT GetEntity(decimal REQUISITIONID);
 		
 		/// <summary>
 		/// 获得数据列表
