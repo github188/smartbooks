@@ -148,23 +148,23 @@ namespace SmartHyd.OracleDAL
               
             };
 			            
-            parameters[17].Value = entity.REQUISITIONID;
-            parameters[18].Value = entity.REQUISITIONNAME;
-            parameters[19].Value = entity.ADDRESS;
-            parameters[20].Value = entity.TEL;
-            parameters[21].Value = entity.PHONE;
-            parameters[22].Value = entity.EMAIL;
-            parameters[23].Value = entity.POST;
-            parameters[24].Value = entity.REQUISITIONCONTENT;
-            parameters[25].Value = entity.DEPUTY;
-            parameters[26].Value = entity.MATERIALS;
-            parameters[27].Value = entity.MARK;
-            parameters[28].Value = entity.CREATDATE;
-            parameters[29].Value = entity.AUDITOR;
-            parameters[30].Value = entity.AUDIT_STATE;
-            parameters[31].Value = entity.FILE_PATH;
-            parameters[32].Value = entity.AUDIT_DESC;
-            parameters[33].Value = entity.AUDIT_REPLY;
+            parameters[0].Value = entity.REQUISITIONID;
+            parameters[1].Value = entity.REQUISITIONNAME;
+            parameters[2].Value = entity.ADDRESS;
+            parameters[3].Value = entity.TEL;
+            parameters[4].Value = entity.PHONE;
+            parameters[5].Value = entity.EMAIL;
+            parameters[6].Value = entity.POST;
+            parameters[7].Value = entity.REQUISITIONCONTENT;
+            parameters[8].Value = entity.DEPUTY;
+            parameters[9].Value = entity.MATERIALS;
+            parameters[10].Value = entity.MARK;
+            parameters[11].Value = entity.CREATDATE;
+            parameters[12].Value = entity.AUDITOR;
+            parameters[13].Value = entity.AUDIT_STATE;
+            parameters[14].Value = entity.FILE_PATH;
+            parameters[15].Value = entity.AUDIT_DESC;
+            parameters[16].Value = entity.AUDIT_REPLY;
             int rows = OracleHelper.ExecuteNonQuery(strSql.ToString(), parameters);
 			if (rows > 0)
 			{
@@ -206,15 +206,17 @@ namespace SmartHyd.OracleDAL
 		/// <summary>
 		/// 得到一个对象实体
 		/// </summary>
-		public Entity.BASE_LICENSE_ACCEPT GetEntity()
+        public Entity.BASE_LICENSE_ACCEPT GetEntity(decimal REQUISITIONID)
 		{
 			
 			StringBuilder strSql=new StringBuilder();
 			strSql.Append("select REQUISITIONID, REQUISITIONNAME, ADDRESS, TEL, PHONE, EMAIL, POST, REQUISITIONCONTENT, DEPUTY, MATERIALS, MARK, CREATDATE, AUDITOR, AUDIT_STATE, FILE_PATH, AUDIT_DESC, AUDIT_REPLY  ");			
 			strSql.Append("  from BASE_LICENSE_ACCEPT ");
 			strSql.Append(" where ");
-						OracleParameter[] parameters = {
-			};
+            strSql.Append(" REQUISITIONID = :REQUISITIONID  ");
+            OracleParameter[] parameters = {
+					new OracleParameter(":REQUISITIONID", OracleType.Number,4)			};
+            parameters[0].Value = REQUISITIONID;
 
 			
 			Entity.BASE_LICENSE_ACCEPT entity=new Entity.BASE_LICENSE_ACCEPT();
