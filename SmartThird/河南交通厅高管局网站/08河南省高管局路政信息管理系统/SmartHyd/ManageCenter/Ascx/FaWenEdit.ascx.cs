@@ -4,22 +4,75 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
 
 namespace SmartHyd.ManageCenter.Ascx
 {
     public partial class FaWenEdit : UI.BaseUserControl
     {
         private BLL.BASE_FAWEN bll = new BLL.BASE_FAWEN();
+        private BLL.BASE_FILETYPE tbll = new BLL.BASE_FILETYPE();
+        private BLL.BASE_DEPT bllDept = new BLL.BASE_DEPT();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                  if ("" != Request.QueryString["fid"] || null != Request.QueryString["ftid"])
+                if ("" != Request.QueryString["fid"] || null != Request.QueryString["ftid"])
                 {
-                     decimal FID =Convert.ToDecimal(Request.QueryString["fid"]);
-                     Entity.BASE_FAWEN model = bll.Getmodel(FID);
-                     SetEntity(model);
+                    BindType();//DropDownList数据绑定
+                    BindDept();//DropDownList主办单位（部门）数据绑定
+                    decimal FID = Convert.ToDecimal(Request.QueryString["fid"]);
+                    Entity.BASE_FAWEN model = bll.Getmodel(FID);
+                    SetEntity(model);
                 }
+            }
+        }
+        /// <summary>
+        /// 公文类型数据绑定
+        /// </summary>
+        private void BindType()
+        {
+            //获取公文类型
+            DataTable dt = new DataTable();
+            dt = tbll.GetFileTypeList("1=1");
+            //绑定方法一：
+            this.Ddl_type.Items.Clear();
+            foreach (DataRow row in dt.Rows)
+            {
+                this.Ddl_type.Items.Add(new ListItem(
+                    row["FT_NAME"].ToString(),
+                    row["FTID"].ToString()));
+            }
+            #region  绑定方法二:
+            ////指定DropDownList使用的数据源
+
+            //Ddl_type.DataSource = dt.DefaultView;
+
+            ////指定DropDownList使用的表里的那些字段
+
+            //Ddl_type.DataTextField = "FT_NAME"; //dropdownlist的Text的字段
+
+            //Ddl_type.DataValueField = "FTID";//dropdownlist的Value的字段
+
+            //Ddl_type.DataBind();
+            #endregion
+
+        }
+        /// <summary>
+        /// 主办单位（部门）绑定
+        /// </summary>
+        private void BindDept()
+        {
+            //获取用户所属的部门和子部门
+            string userName = "";
+            DataTable dt = new DataTable();
+            dt = bllDept.GetUserWhereDepartment(userName, 0);
+            this.DdlOrgan.Items.Clear();
+            foreach (DataRow row in dt.Rows)
+            {
+                DdlOrgan.Items.Add(new ListItem(
+                    row["DPTNAME"].ToString(),
+                    row["DEPTID"].ToString()));
             }
         }
         /// <summary>
@@ -72,7 +125,15 @@ namespace SmartHyd.ManageCenter.Ascx
         /// <param name="e"></param>
         protected void BtnEdit_Click(object sender, EventArgs e)
         {
-
+            Entity.BASE_FAWEN model = GetEntity();
+            if (bll.update(model))
+            {
+                Response.Redirect("FaWen.aspx");
+            }
+            else
+            {
+                Response.Write("<script type='text/javascript'>alert('请检查数据是否填写完整！');</script>");
+            }
         }
         /// <summary>
         /// 按钮事件:返回
@@ -81,7 +142,7 @@ namespace SmartHyd.ManageCenter.Ascx
         /// <param name="e"></param>
         protected void BtnBack_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("FaWen.aspx");
         }
     }
 }

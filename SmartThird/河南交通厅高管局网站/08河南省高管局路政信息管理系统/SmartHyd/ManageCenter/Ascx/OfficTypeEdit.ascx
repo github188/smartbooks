@@ -1,26 +1,30 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="OfficTypeEdit.ascx.cs" Inherits="SmartHyd.ManageCenter.Ascx.OfficTypeEdit" %>
 <div id="divedit">
-<table border="0" width="100%" cellspacing="0" cellpadding="3" class="small">
-    <tr>
-        <td class="Big">
-            <span class="big3">编辑公文类型</span>
-        </td>
-    </tr>
-</table>
-<br />
-<table class="table" width="80%" align="center">
+<table border="0" width="100%" cellspacing="0" cellpadding="3" class="edit">
+    <thead>
+        <tr>
+            <th colspan="3">
+                编辑公文类型
+            </th>
+        </tr>
+    </thead>
+    <tbody>
     <tr>
         <td nowrap="nowrap" class="TableContent" align="center">
             公文类型名称
         </td>
-        <td class="TableData">
+        <td>
             <asp:HiddenField ID="hidPrimary" runat="server" Value="-1" />
-            <asp:TextBox ID="TxtTypeName" runat="server" CssClass="input"></asp:TextBox>
+            <asp:TextBox ID="TxtTypeName" runat="server" CssClass="input{required:true}"></asp:TextBox>
+                <div class="validate ui-state-highlight ui-corner-all"  style="border:none;"></div>
         </td>
+       
+    </tr>
+    <tr>
         <td nowrap="nowrap" class="TableContent" align="center">
             所属分类
         </td>
-        <td class="TableData">
+        <td>
             <select id="category" name="category" class="BigSelect" runat="server">
                 <option value="1">行政</option>
                 <option value="2">其他</option>
@@ -34,7 +38,10 @@
         <td class="TableData">
             <asp:TextBox ID="TxtPrefix" runat="server" CssClass="input"></asp:TextBox>
         </td>
-        <td nowrap="nowrap" class="TableContent" align="center">
+      
+    </tr>
+    <tr>
+         <td nowrap="nowrap" class="TableContent" align="center">
             默认文号后缀
         </td>
         <td class="TableData">
@@ -58,5 +65,6 @@
         
         </td>
     </tr>
+    </tbody>
 </table>
 </div>

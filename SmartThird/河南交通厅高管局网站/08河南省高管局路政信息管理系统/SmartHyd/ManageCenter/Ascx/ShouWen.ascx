@@ -17,11 +17,10 @@
                 <option value="35">上级转发</option>
                 <option value="69">通知通报</option>
                 <option value="79">政府发文稿纸</option>
-                <option value="80">fewfwf</option>
             </select>
-            标题：<input type="text" name="title" size="15" value="" onclick="this.value='';" class="SmallInput" />
+            标题：<input type="text" name="title" size="15" value="" onclick="this.value='';" class="input" />
             <input type="submit" value="查询" class="SmallButton" />
-            <input type="reset" value="重置" class="input" />
+            <input type="reset" value="重置" class="SmallButton" />
         </div>
         <table class="table">
             <asp:Repeater ID="RptShouwen" runat="server">
@@ -109,7 +108,7 @@
     <div id="tabs-2">
         <div id="content">
             <h1 align="center">
-                <%# Eval("F_TYPE")%></h1>
+                通知<%# Eval("F_TYPE")%></h1>
             <table class="TableList red" align="center" width="700">
                 <tr>
                     <td class="left" align="center">
@@ -128,7 +127,7 @@
                         来文机关
                     </td>
                     <td>
-                        <asp:TextBox ID="TxtOrgan" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="TxtOrgan" runat="server" CssClass="input"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
@@ -144,8 +143,8 @@
                         来文内容
                     </td>
                     <td class="red" colspan="3">
-                        <asp:TextBox ID="TxContent" runat="server" CssClass="input" Height="140px" TextMode="MultiLine"
-                            Width="215px"></asp:TextBox>
+                        <asp:TextBox ID="TxContent" runat="server" CssClass="input" Height="108px" TextMode="MultiLine"
+                            Width="238px"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
@@ -169,7 +168,8 @@
                         涉及相关运营单位
                     </td>
                     <td class="red">
-                        <asp:TextBox ID="TxtRelateOrgan" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="TxtRelateOrgan" runat="server" TextMode="MultiLine" 
+                            Width="220px"></asp:TextBox>
                     </td>
                     <%--<td class="red" align="center">缓急程度</td>
 		<td class="red"><input type="text" name="priority" class="field"
