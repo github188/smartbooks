@@ -47,6 +47,11 @@ namespace SmartHyd.BLL
                 return false;
             }
         }
+        /// <summary>
+        /// 根据FID获取公文实体数据
+        /// </summary>
+        /// <param name="FID"></param>
+        /// <returns></returns>
         public Entity.BASE_FAWEN Getmodel(decimal FID)
         {
             return dal.GetEntity(FID);
