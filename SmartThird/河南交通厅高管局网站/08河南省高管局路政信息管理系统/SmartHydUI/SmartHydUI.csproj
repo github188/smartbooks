@@ -10,8 +10,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SmartHyd.UI</RootNamespace>
     <AssemblyName>SmartHyd.UI</AssemblyName>
-    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -46,7 +47,24 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Smart\SmartUtility\SmartUtility.csproj">
+      <Project>{B7456CA5-DDD6-47D7-9618-9C4A5F7C8D6B}</Project>
+      <Name>SmartUtility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SmartHydBLL\SmartHydBLL.csproj">
+      <Project>{AB9A553F-206D-47E9-9B3F-E4B7757C2760}</Project>
+      <Name>SmartHydBLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SmartHydEntity\SmartHydEntity.csproj">
+      <Project>{084DC70E-F416-420D-AD6D-A74F004B3940}</Project>
+      <Name>SmartHydEntity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SmartHydUtility\SmartHydUtility.csproj">
+      <Project>{3C1180E0-2514-49EB-9436-E6C6D8615AE3}</Project>
+      <Name>SmartHydUtility</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

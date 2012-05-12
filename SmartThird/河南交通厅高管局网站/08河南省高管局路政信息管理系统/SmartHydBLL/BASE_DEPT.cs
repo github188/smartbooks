@@ -8,6 +8,10 @@ namespace SmartHyd.BLL {
     public class BASE_DEPT {
         private OracleDAL.BASE_DEPT dal = new OracleDAL.BASE_DEPT();
 
+        public Entity.BASE_DEPT GetEntity(int deptID) {
+            return dal.GetEntity(deptID);
+        }
+
         /// <summary>
         /// 获取用户所属的部门和子部门
         /// </summary>

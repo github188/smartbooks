@@ -175,7 +175,16 @@ namespace SmartHyd.OracleDAL {
             return OracleHelper.Query(strSql.ToString());
         }
 
-
+        #region 自定义查询
+        /// <summary>
+        /// 获取全部路产设备类型数据
+        /// </summary>
+        /// <returns></returns>
+        public DataTable GetAllList() {
+            string sec = "SELECT * FROM BASE_ROAD_TERM_TYPE";
+            return OracleHelper.Query(sec).Tables[0];
+        }
+        #endregion
     }
 }
 

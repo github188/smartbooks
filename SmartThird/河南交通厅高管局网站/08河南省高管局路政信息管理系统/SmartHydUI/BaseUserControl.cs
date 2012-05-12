@@ -7,6 +7,6 @@ using System.Web.UI.WebControls;
 using System.Configuration;
 
 namespace SmartHyd.UI {
-    public class BaseUserControl : System.Web.UI.UserControl {
+    public class BaseUserControl : System.Web.UI.UserControl{
     }
 }

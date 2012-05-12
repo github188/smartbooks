@@ -53,6 +53,7 @@
     <Compile Include="RegexLib.cs" />
     <Compile Include="SecurityEncryption.cs" />
     <Compile Include="SerializeUtilities.cs" />
+    <Compile Include="ISessionBox.cs" />
     <Compile Include="StringHandle.cs" />
     <Compile Include="StringHelper.cs" />
     <Compile Include="TypeParse.cs" />
@@ -64,6 +65,9 @@
       <Project>{116EC11E-6812-48DF-BFD6-8B3FF66C884F}</Project>
       <Name>SmartSecurity</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

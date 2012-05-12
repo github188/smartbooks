@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartUtility", "..\..\..\Sm
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartHydUI", "SmartHydUI\SmartHydUI.csproj", "{7CCEDED4-CAA7-43B7-8C85-32DCFE71EB01}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartHydUtility", "SmartHydUtility\SmartHydUtility.csproj", "{3C1180E0-2514-49EB-9436-E6C6D8615AE3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{7CCEDED4-CAA7-43B7-8C85-32DCFE71EB01}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7CCEDED4-CAA7-43B7-8C85-32DCFE71EB01}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7CCEDED4-CAA7-43B7-8C85-32DCFE71EB01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C1180E0-2514-49EB-9436-E6C6D8615AE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C1180E0-2514-49EB-9436-E6C6D8615AE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C1180E0-2514-49EB-9436-E6C6D8615AE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C1180E0-2514-49EB-9436-E6C6D8615AE3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

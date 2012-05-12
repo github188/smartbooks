@@ -10,7 +10,7 @@ namespace SmartHyd.ManageCenter
     public partial class UserManage : UI.BaseUserPage
     {
         protected void Page_Load(object sender, EventArgs e)
-        {            
+        {
             
         }
     }

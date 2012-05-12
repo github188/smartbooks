@@ -2,33 +2,33 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Data;
 using System.Web.UI;
+using System.Data;
 using System.Web.UI.WebControls;
 
 namespace SmartHyd.ManageCenter.Ascx {
-    public partial class Term : UI.BaseUserControl {
-        private BLL.BASE_TERM bll = new BLL.BASE_TERM();
+    public partial class RoadTerm : UI.BaseUserControl {
+        private BLL.BASE_ROAD_TERM bll = new BLL.BASE_ROAD_TERM();
 
         //加载
         protected void Page_Load(object sender, EventArgs e) {
             if (!IsPostBack) {
-                BindTermData();
-                BinfTermTypeData();
+                BindingData();          //绑定路产设备列表数据
+                BindingRoadType();      //绑定路产设备类型数据
             }
         }
 
         //从页面获取实体
-        private Entity.BASE_TERM GetEntity() {
+        private Entity.BASE_ROAD_TERM GetEntity() {
             return null;
         }
 
         //初始化实体到页面
-        private void SetEntity(Entity.BASE_TERM model) {
+        private void SetEntity(Entity.BASE_ROAD_TERM model) {
         }
 
-        //绑定装备类型数据
-        private void BinfTermTypeData() {
+        //绑定路产设备类型数据
+        private void BindingRoadType() {
             DataTable dt = new DataTable();
             ddlTermType.Items.Clear();
             foreach (DataRow dr in dt.Rows) {
@@ -38,11 +38,10 @@ namespace SmartHyd.ManageCenter.Ascx {
             }
         }
 
-        //绑定装备分页数据
-        private void BindTermData() {
+        //绑定路产设备分页数据
+        private void BindingData() {
             DataTable dt = new DataTable();
-            int deptId = 0; //当前用户所属部门编号
-            dt = bll.GetTermList(deptId);
+            int deptId = 0; //当前用户所属部门编号           
 
             //初始化分页数据
             AspNetPager1.RecordCount = dt.Rows.Count;
@@ -59,18 +58,25 @@ namespace SmartHyd.ManageCenter.Ascx {
 
         //提交
         protected void btnSubmit_Click(object sender, EventArgs e) {
-            throw new Exception("test");
+            //校验逻辑放在客户端用js实现
+            
+            //增加
+            Entity.BASE_ROAD_TERM model = GetEntity();
+            //bll.Add(model);
+
+            //刷新页面
+            Response.Redirect(Request.Url.AbsoluteUri, true);
         }
 
         //取消
         protected void btnCancel_Click(object sender, EventArgs e) {
-            SetEntity(new Entity.BASE_TERM());
+            SetEntity(new Entity.BASE_ROAD_TERM());
         }
 
         //分页事件
         protected void AspNetPager1_PageChanging(object src, Wuqi.Webdiyer.PageChangingEventArgs e) {
             this.AspNetPager1.CurrentPageIndex = e.NewPageIndex;
-            BindTermData();
+            BindingData();
         }
     }
 }
