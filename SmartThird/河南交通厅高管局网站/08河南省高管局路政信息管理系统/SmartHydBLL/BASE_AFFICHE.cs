@@ -48,6 +48,15 @@ namespace SmartHyd.BLL
             }
         }
         /// <summary>
+        /// 根据AFFICHEID获取公文实体数据
+        /// </summary>
+        /// <param name="AFFICHEID"></param>
+        /// <returns></returns>
+        public Entity.BASE_AFFICHE Getmodel(decimal AFFICHEID)
+        {
+            return dal.GetEntity(AFFICHEID);
+        }
+        /// <summary>
         /// 更新数据
         /// </summary>
         /// <param name="model"></param>
