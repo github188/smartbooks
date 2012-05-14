@@ -14,7 +14,7 @@
                         'paste', 'plainpaste', 'wordpaste', '|', 'justifyleft', 'justifycenter', 'justifyright',
                         'justifyfull', 'insertorderedlist', 'insertunorderedlist', 'indent', 'outdent',
                         'subscript', 'superscript', 'clearhtml'],
-                    width: "100%",
+                    width: "90%",
                     height: "300px"
                 });
                 //申请材料目录 编辑器
