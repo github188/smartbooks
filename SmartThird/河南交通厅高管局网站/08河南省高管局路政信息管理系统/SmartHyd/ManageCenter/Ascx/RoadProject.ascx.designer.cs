@@ -13,6 +13,24 @@ namespace SmartHyd.ManageCenter.Ascx {
     public partial class RoadProject {
         
         /// <summary>
+        /// repList 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater repList;
+        
+        /// <summary>
+        /// AspNetPager1 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::Wuqi.Webdiyer.AspNetPager AspNetPager1;
+        
+        /// <summary>
         /// hidPrimary 控件。
         /// </summary>
         /// <remarks>
@@ -58,13 +76,13 @@ namespace SmartHyd.ManageCenter.Ascx {
         protected global::System.Web.UI.WebControls.TextBox TxtPost;
         
         /// <summary>
-        /// TEL_NO_DEPT 控件。
+        /// TEL_NO 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TEL_NO_DEPT;
+        protected global::System.Web.UI.WebControls.TextBox TEL_NO;
         
         /// <summary>
         /// MOBIL_NO 控件。
@@ -76,15 +94,6 @@ namespace SmartHyd.ManageCenter.Ascx {
         protected global::System.Web.UI.WebControls.TextBox MOBIL_NO;
         
         /// <summary>
-        /// txtContent 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtContent;
-        
-        /// <summary>
         /// TxtDEPUTY 控件。
         /// </summary>
         /// <remarks>
@@ -94,15 +103,6 @@ namespace SmartHyd.ManageCenter.Ascx {
         protected global::System.Web.UI.WebControls.TextBox TxtDEPUTY;
         
         /// <summary>
-        /// TxtMATERIALS 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtMATERIALS;
-        
-        /// <summary>
         /// TxtTime 控件。
         /// </summary>
         /// <remarks>
@@ -110,6 +110,24 @@ namespace SmartHyd.ManageCenter.Ascx {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TxtTime;
+        
+        /// <summary>
+        /// txtContent 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtContent;
+        
+        /// <summary>
+        /// TxtMATERIALS 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TxtMATERIALS;
         
         /// <summary>
         /// Txtremark 控件。

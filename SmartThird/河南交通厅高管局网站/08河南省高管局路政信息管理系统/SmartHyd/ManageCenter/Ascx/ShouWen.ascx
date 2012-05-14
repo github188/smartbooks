@@ -55,6 +55,7 @@
                     </thead>
                 </HeaderTemplate>
                 <ItemTemplate>
+
                     <tbody>
                         <tr>
                             <td>
@@ -81,7 +82,7 @@
                                 <%# Eval("S_RESULT")%>
                             </td>
                             <td>
-                                <a href="<%# Eval("SID")%>">编辑</a> <a href="<%# Eval("SID")%>">删除</a>
+                                <a href="<%# Eval("SID")%>">批复</a> <a href="<%# Eval("SID")%>">删除</a>
                             </td>
                         </tr>
                     </tbody>
@@ -230,8 +231,8 @@
                 </tr>
                 <tr>
                     <td class="red" align="center" colspan='3'>
-                        <asp:Button ID="BtnSave" runat="server" Text="批复" />
-                        <asp:Button ID="BtnBack" runat="server" Text="返回" />
+                        <asp:Button ID="BtnSave" runat="server" Text="批复" onclick="BtnSave_Click" />
+                        <asp:Button ID="BtnBack" runat="server" Text="返回" onclick="BtnBack_Click" />
                     </td>
                 </tr>
             </table>

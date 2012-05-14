@@ -99,5 +99,24 @@ namespace SmartHyd.ManageCenter.Ascx
             // model.F_DELSTATE = 0;                                    //状态（0已保存；1已发送；2已删除）
 
         }
+        /// <summary>
+        ///按钮事件：批复
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void BtnSave_Click(object sender, EventArgs e)
+        {
+            Entity.BASE_SHOUWEN model = GetEntity();
+            bll.Add(model);
+        }
+        /// <summary>
+        /// 按钮事件：返回
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void BtnBack_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
