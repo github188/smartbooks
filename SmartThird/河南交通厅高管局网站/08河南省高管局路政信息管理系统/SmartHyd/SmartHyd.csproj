@@ -58,8 +58,11 @@
     <Content Include="Global.asax" />
     <Content Include="ManageCenter\Affiche.aspx" />
     <Content Include="ManageCenter\AfficheEdit.aspx" />
+    <Content Include="ManageCenter\Area.aspx" />
     <Content Include="ManageCenter\Ascx\Affiche.ascx" />
     <Content Include="ManageCenter\Ascx\AfficheEdit.ascx" />
+    <Content Include="ManageCenter\Ascx\Area.ascx" />
+    <Content Include="ManageCenter\Ascx\Dept.ascx" />
     <Content Include="ManageCenter\Ascx\FaWen.ascx" />
     <Content Include="ManageCenter\Ascx\FaWenEdit.ascx" />
     <Content Include="ManageCenter\Ascx\Observed.ascx" />
@@ -70,8 +73,10 @@
     <Content Include="ManageCenter\Ascx\RoadProject.ascx" />
     <Content Include="ManageCenter\Ascx\RoadTerm.ascx" />
     <Content Include="ManageCenter\Ascx\ShouWen.ascx" />
+    <Content Include="ManageCenter\Ascx\SysLog.ascx" />
     <Content Include="ManageCenter\Ascx\Term.ascx" />
     <Content Include="ManageCenter\Ascx\UserManage.ascx" />
+    <Content Include="ManageCenter\Dept.aspx" />
     <Content Include="ManageCenter\FaWen.aspx" />
     <Content Include="ManageCenter\FaWenEdit.aspx" />
     <Content Include="ManageCenter\Observed.aspx" />
@@ -82,6 +87,7 @@
     <Content Include="ManageCenter\RoadProject.aspx" />
     <Content Include="ManageCenter\RoadTerm.aspx" />
     <Content Include="ManageCenter\ShouWen.aspx" />
+    <Content Include="ManageCenter\SysLog.aspx" />
     <Content Include="ManageCenter\Term.aspx" />
     <Content Include="ManageCenter\UserManage.aspx" />
     <Content Include="Scripts\base.js" />
@@ -328,6 +334,13 @@
     <Compile Include="ManageCenter\AfficheEdit.aspx.designer.cs">
       <DependentUpon>AfficheEdit.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ManageCenter\Area.aspx.cs">
+      <DependentUpon>Area.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\Area.aspx.designer.cs">
+      <DependentUpon>Area.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ManageCenter\Ascx\Affiche.ascx.cs">
       <DependentUpon>Affiche.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -341,6 +354,19 @@
     </Compile>
     <Compile Include="ManageCenter\Ascx\AfficheEdit.ascx.designer.cs">
       <DependentUpon>AfficheEdit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\Ascx\Area.ascx.cs">
+      <DependentUpon>Area.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\Ascx\Area.ascx.designer.cs">
+      <DependentUpon>Area.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\Ascx\Dept.ascx.cs">
+      <DependentUpon>Dept.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\Ascx\Dept.ascx.designer.cs">
+      <DependentUpon>Dept.ascx</DependentUpon>
     </Compile>
     <Compile Include="ManageCenter\Ascx\FaWen.ascx.cs">
       <DependentUpon>FaWen.ascx</DependentUpon>
@@ -412,6 +438,12 @@
     <Compile Include="ManageCenter\Ascx\ShouWen.ascx.designer.cs">
       <DependentUpon>ShouWen.ascx</DependentUpon>
     </Compile>
+    <Compile Include="ManageCenter\Ascx\SysLog.ascx.cs">
+      <DependentUpon>SysLog.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\Ascx\SysLog.ascx.designer.cs">
+      <DependentUpon>SysLog.ascx</DependentUpon>
+    </Compile>
     <Compile Include="ManageCenter\Ascx\Term.ascx.cs">
       <DependentUpon>Term.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -425,6 +457,12 @@
     </Compile>
     <Compile Include="ManageCenter\Ascx\UserManage.ascx.designer.cs">
       <DependentUpon>UserManage.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\Dept.aspx.cs">
+      <DependentUpon>Dept.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\Dept.aspx.designer.cs">
+      <DependentUpon>Dept.aspx</DependentUpon>
     </Compile>
     <Compile Include="ManageCenter\FaWen.aspx.cs">
       <DependentUpon>FaWen.aspx</DependentUpon>
@@ -503,6 +541,12 @@
     <Compile Include="ManageCenter\ShouWen.aspx.designer.cs">
       <DependentUpon>ShouWen.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ManageCenter\SysLog.aspx.cs">
+      <DependentUpon>SysLog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\SysLog.aspx.designer.cs">
+      <DependentUpon>SysLog.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ManageCenter\Term.aspx.cs">
       <DependentUpon>Term.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -542,6 +586,10 @@
     <ProjectReference Include="..\SmartHydUI\SmartHydUI.csproj">
       <Project>{7CCEDED4-CAA7-43B7-8C85-32DCFE71EB01}</Project>
       <Name>SmartHydUI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SmartHydUtility\SmartHydUtility.csproj">
+      <Project>{3C1180E0-2514-49EB-9436-E6C6D8615AE3}</Project>
+      <Name>SmartHydUtility</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

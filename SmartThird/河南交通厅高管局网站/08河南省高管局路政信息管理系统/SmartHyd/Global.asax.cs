@@ -14,8 +14,7 @@ namespace SmartHyd {
 
         }
 
-        protected void Session_Start(object sender, EventArgs e) {
-
+        protected void Session_Start(object sender, EventArgs e) {            
         }
 
         protected void Application_BeginRequest(object sender, EventArgs e) {
@@ -96,7 +95,7 @@ namespace SmartHyd {
                 Session["error"] = ex.InnerException;
             } else {
                 Session["error"] = ex;
-            }
+            }            
             Response.Redirect(errorPath, true);
         }
     }

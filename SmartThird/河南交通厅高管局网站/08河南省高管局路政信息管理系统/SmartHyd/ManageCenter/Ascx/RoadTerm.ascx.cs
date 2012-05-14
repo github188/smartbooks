@@ -64,6 +64,8 @@ namespace SmartHyd.ManageCenter.Ascx {
             Entity.BASE_ROAD_TERM model = GetEntity();
             //bll.Add(model);
 
+            //上传图片
+
             //刷新页面
             Response.Redirect(Request.Url.AbsoluteUri, true);
         }

@@ -9,22 +9,12 @@ using System.IO;
 
 namespace SmartHyd.UI {
     public class BaseUserPage : System.Web.UI.Page, Smart.Utility.ISessionBox {
+        #region 私有变量
+        private Utility.UserSession _UserSession;
         private BLL.BASE_USER bll = new BLL.BASE_USER();
-
-        void Page_Init(Object source, EventArgs e) {
-            object userSession = this.Get("user");
-            if (userSession == null) {
-                /*
-                 *用户登录校验逻辑
-                 */
-                //throw new Exception("用户尚未登录系统。");
-            }
-        }
-
-        void Page_Error(Object source, EventArgs e) {
-        }
-
-        #region SessionBox 接口实现
+        #endregion
+        
+        #region 公共方法
 
         /// <summary>
         /// 检查Session是否有效
@@ -101,9 +91,7 @@ namespace SmartHyd.UI {
                 return null;
             }
         }
-        #endregion
 
-        #region 登录实现
         /// <summary>
         /// 用户登录
         /// </summary>
@@ -140,5 +128,27 @@ namespace SmartHyd.UI {
             }
         }
         #endregion
+
+        #region 公共属性
+
+        /// <summary>
+        /// 获取当前已登录用户的Session，默认Null值
+        /// </summary>
+        public Utility.UserSession UserSession {
+            get { return _UserSession; }
+        }
+
+        #endregion
+        
+        /*
+        void Page_Init(Object source, EventArgs e) {
+            object userSession = this.Get("user");
+            if (userSession == null) {
+                throw new Exception("用户尚未登录系统,无法授权使用该页面。");
+            } else {
+                _UserSession = (Utility.UserSession)userSession;
+            }
+        }
+        */
     }
 }

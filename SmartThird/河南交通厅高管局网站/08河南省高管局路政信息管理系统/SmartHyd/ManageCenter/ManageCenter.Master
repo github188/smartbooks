@@ -32,21 +32,22 @@
 <body>
     <form id="form1" runat="server">
     <div>
-        <!--提示消息开始-->
-        <div class="alert ui-widget" id="alert">
-            <div class="ui-state-highlight ui-corner-all">
-                <p><span class="ui-icon ui-icon-info"></span>
-                    <strong>提示信息:</strong>
-                    <label id="errormessage"></label>
-                </p>
-            </div>
-        </div>
-        <!--提示消息结束-->
 
         <!--内容开始-->
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         </asp:ContentPlaceHolder>
         <!--内容结束-->
+        
+        <!--提示消息开始-->
+        <div class="alert ui-widget" id="alert">
+            <div class="ui-state-highlight ui-corner-all">
+                <p><span class="ui-icon ui-icon-info"></span>
+                    <strong>提示信息:</strong>
+                    <label id="errormessage">您输入错误了</label>
+                </p>
+            </div>
+        </div>
+        <!--提示消息结束-->
     </div>
     </form>
 </body>

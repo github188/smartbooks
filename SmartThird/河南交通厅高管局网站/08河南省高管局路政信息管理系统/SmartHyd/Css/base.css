@@ -2,6 +2,8 @@
 {
     font-size:14px;
     font-family: Verdana,arial,sans-serif;
+    padding:0px;
+    margin:0px;
 }
 span,input{float:left;}
 
@@ -31,10 +33,16 @@ span,input{float:left;}
 .input{border: #C1C1C1 1px solid; background-color: #FBFBFB; color: #444; padding: 4px 5px 4px;}
 .input:hover{background-color:#FFC; border:1px solid #d5ae4f;}
 
-/*通用消息提示*/
-.alert{height:26px; display:none; padding:0px; margin:5px 0px 5px 0px; float:left;}
-.alert p,strong,span{height:26px; line-height:26px; padding:0px; margin:0px;}
-.alert span{ margin-top:6px; margin-left:6px;}
-
 /*验证元素提示框*/
 .validate{float:left; width:150px; font-size:12px;}
+
+/*通用消息提示*/
+.alert{height:30px; margin:2px; float:left; width:99%;}
+.alert p,strong,span{height:26px; line-height:26px; padding:0px; margin:0px; }
+.alert span{ margin-top:6px; margin-left:6px;}
+
+/*页面功能按钮容器*/
+.panel{ margin:2px; float:left; height:34px; width:98%;}
+
+/*选项卡*/
+#tab{ float:left;  margin:4px; width:98%;}
