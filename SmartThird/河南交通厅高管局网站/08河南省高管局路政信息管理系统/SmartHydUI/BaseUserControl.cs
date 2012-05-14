@@ -6,8 +6,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Configuration;
 
-namespace SmartHyd.UI {
-    public class BaseUserControl : System.Web.UI.UserControl {
+namespace SmartHyd.UI
+{
+    public class BaseUserControl : System.Web.UI.UserControl
+    {
 
         #region 私有字段变量定义
         #region 发布模式按钮初始化代码
@@ -51,85 +53,99 @@ namespace SmartHyd.UI {
         /// <summary>
         /// 添加
         /// </summary>
-        public Button BtnAdd {
+        public Button BtnAdd
+        {
             get { return _BtnAdd; }
         }
         /// <summary>
         /// 删除
         /// </summary>
-        public Button BtnDelete {
+        public Button BtnDelete
+        {
             get { return _BtnDelete; }
         }
         /// <summary>
         /// 更新
         /// </summary>
-        public Button BtnUpdate {
+        public Button BtnUpdate
+        {
             get { return _BtnUpdate; }
         }
         /// <summary>
         /// 查看
         /// </summary>
-        public Button BtnView {
+        public Button BtnView
+        {
             get { return _BtnView; }
         }
         /// <summary>
         /// 查询
         /// </summary>
-        public Button BtnSearch {
+        public Button BtnSearch
+        {
             get { return _BtnSearch; }
         }
         /// <summary>
         /// 导入
         /// </summary>
-        public Button BtnImport {
+        public Button BtnImport
+        {
             get { return _BtnImport; }
         }
         /// <summary>
         /// 导出
         /// </summary>
-        public Button BtnExport {
+        public Button BtnExport
+        {
             get { return _BtnExport; }
         }
         /// <summary>
         /// 打印
         /// </summary>
-        public Button BtnPrint {
+        public Button BtnPrint
+        {
             get { return _BtnPrint; }
         }
         /// <summary>
         /// 移动
         /// </summary>
-        public Button BtnMove {
+        public Button BtnMove
+        {
             get { return _BtnMove; }
         }
         /// <summary>
         /// 下载
         /// </summary>
-        public Button BtnDownload {
+        public Button BtnDownload
+        {
             get { return _BtnDownload; }
         }
         /// <summary>
         /// 备份
         /// </summary>
-        public Button BtnBackup {
+        public Button BtnBackup
+        {
             get { return _BtnBackup; }
         }
         /// <summary>
         /// 审核
         /// </summary>
-        public Button BtnVerify {
+        public Button BtnVerify
+        {
             get { return _BtnVerify; }
         }
         /// <summary>
         /// 授权
         /// </summary>
-        public Button BtnGrant {
+        public Button BtnGrant
+        {
             get { return _BtnGrant; }
         }
         /// <summary>
         /// 重置
         /// </summary>
-        public Button BtnCancel {
+        public Button BtnCancel
+        {
             get { return _BtnCancel; }
         }
         #endregion
@@ -138,7 +154,8 @@ namespace SmartHyd.UI {
         /// <summary>
         /// 初始化页面功能按钮元素
         /// </summary>
-        public BaseUserControl() {
+        public BaseUserControl()
+        {
             /*
              * 定义页面功能按钮容器面板
              */
@@ -160,6 +177,8 @@ namespace SmartHyd.UI {
             funPanel.Controls.Add(_BtnGrant);
             funPanel.Controls.Add(_BtnCancel);
 
+            InitFunction(); //订阅按钮事件
+
             this.Controls.Add(funPanel);        //页面功能按钮容器
         }
 
@@ -168,7 +187,8 @@ namespace SmartHyd.UI {
         /// </summary>
         /// <param name="userSession">当前登录用户Session信息</param>
         /// <param name="pageUrl">页面地址</param>
-        public void PermissionsDistribution(Utility.UserSession userSession, string pageUrl) {
+        public void PermissionsDistribution(Utility.UserSession userSession, string pageUrl)
+        {
             /*//遍历角色
             foreach (Utility.UserRole role in userSession.UserRole) {
                 //遍历菜单
@@ -201,23 +221,55 @@ namespace SmartHyd.UI {
             }*/
         }
 
-        /// <summary>
-        /// 弹出消息提示框
-        /// </summary>
-        /// <param name="title">消息标题</param>
-        /// <param name="message">消息内容</param>
-        public void Alert(string title, string message) {
-            //StringBuilder script = new StringBuilder();
-            //script.Append("<script type='text/jscript'>");
-            //script.Append("alert('hi');");/*$('#diagle').dialog();*/
-            //script.Append("</script>");
-            //Page.ClientScript.RegisterStartupScript(this.GetType(), "aaa", script.ToString());
-        }
-
+        //添加
+        public virtual void BtnAdd_Click(object sender, EventArgs e) { }
+        //删除
+        public virtual void BtnDelete_Click(object sender, EventArgs e) { }
+        //重置
+        public virtual void BtnCancel_Click(object sender, EventArgs e) { }
+        //修改
+        public virtual void BtnUpdate_Click(object sender, EventArgs e) { }
+        //查看
+        public virtual void BtnView_Click(object sender, EventArgs e) { }
+        //查询
+        public virtual void BtnSearch_Click(object sender, EventArgs e) { }
+        //导入
+        public virtual void BtnImport_Click(object sender, EventArgs e) { }
+        //导出
+        public virtual void BtnExport_Click(object sender, EventArgs e) { }
+        //打印
+        public virtual void BtnPrint_Click(object sender, EventArgs e) { }
+        //移动
+        public virtual void BtnMove_Click(object sender, EventArgs e) { }
+        //下载
+        public virtual void BtnDownload_Click(object sender, EventArgs e) { }
+        //备份
+        public virtual void BtnBackup_Click(object sender, EventArgs e) { }
+        //审核
+        public virtual void BtnVerify_Click(object sender, EventArgs e) { }
+        //授权
+        public virtual void BtnGrant_Click(object sender, EventArgs e) { }
         #endregion
 
         #region 私有方法
-
+        //订阅按钮事件
+        private void InitFunction()
+        {
+            this.BtnAdd.Click += new EventHandler(BtnAdd_Click);        //添加
+            this.BtnDelete.Click += new EventHandler(BtnDelete_Click);  //删除
+            this.BtnCancel.Click += new EventHandler(BtnCancel_Click);   //重置
+            this.BtnUpdate.Click += new EventHandler(BtnUpdate_Click);   //修改
+            this.BtnView.Click += new EventHandler(BtnView_Click);   //查看
+            this.BtnSearch.Click += new EventHandler(BtnSearch_Click);    //查询
+            this.BtnImport.Click += new EventHandler(BtnImport_Click);   //导入
+            this.BtnExport.Click += new EventHandler(BtnExport_Click);   //导出
+            this.BtnPrint.Click += new EventHandler(BtnPrint_Click); //打印
+            this.BtnMove.Click += new EventHandler(BtnMove_Click);    //移动
+            this.BtnDownload.Click += new EventHandler(BtnDownload_Click); //下载
+            this.BtnBackup.Click += new EventHandler(BtnBackup_Click);   //备份
+            this.BtnVerify.Click += new EventHandler(BtnVerify_Click);//审核
+            this.BtnGrant.Click += new EventHandler(BtnGrant_Click); //授权
+        }
         #endregion
     }
 }

@@ -364,6 +364,7 @@
     </Compile>
     <Compile Include="ManageCenter\Ascx\Dept.ascx.cs">
       <DependentUpon>Dept.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ManageCenter\Ascx\Dept.ascx.designer.cs">
       <DependentUpon>Dept.ascx</DependentUpon>
@@ -440,6 +441,7 @@
     </Compile>
     <Compile Include="ManageCenter\Ascx\SysLog.ascx.cs">
       <DependentUpon>SysLog.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ManageCenter\Ascx\SysLog.ascx.designer.cs">
       <DependentUpon>SysLog.ascx</DependentUpon>
@@ -460,6 +462,7 @@
     </Compile>
     <Compile Include="ManageCenter\Dept.aspx.cs">
       <DependentUpon>Dept.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ManageCenter\Dept.aspx.designer.cs">
       <DependentUpon>Dept.aspx</DependentUpon>
@@ -543,6 +546,7 @@
     </Compile>
     <Compile Include="ManageCenter\SysLog.aspx.cs">
       <DependentUpon>SysLog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ManageCenter\SysLog.aspx.designer.cs">
       <DependentUpon>SysLog.aspx</DependentUpon>
@@ -601,7 +605,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>3710</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
