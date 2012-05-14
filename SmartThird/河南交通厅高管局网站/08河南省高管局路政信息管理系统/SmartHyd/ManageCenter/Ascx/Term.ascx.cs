@@ -59,7 +59,7 @@ namespace SmartHyd.ManageCenter.Ascx {
 
         //提交
         protected void btnSubmit_Click(object sender, EventArgs e) {
-            throw new Exception("test");
+            throw new Exception("添加装备抛异常测试。");
         }
 
         //取消

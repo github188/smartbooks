@@ -18,10 +18,10 @@
         <div id="tabs-1">
             <p>
                 非常抱歉，您访问的页面出现错误了,我们已经记录了该页面的相关信息！<br />
+                <h3>详细信息：</h3>
+                <p style="color:Red;"><asp:Label ID="lblError" runat="server"></asp:Label></p>
                 <h3>您的信息：</h3>
                 请求地址:<%=Request.UserHostAddress %><br />
-                访问页面:<%=Request.UrlReferrer.AbsoluteUri%><br />
-                会话标志:<%=Session.SessionID %><br />
                 代理信息:<%=Request.UserAgent %>
                 <h3>尝试操作：</h3>
                 ◆重新刷新该页面。<br />

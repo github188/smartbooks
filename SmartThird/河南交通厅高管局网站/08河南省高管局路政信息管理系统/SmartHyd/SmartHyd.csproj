@@ -323,6 +323,7 @@
     </Compile>
     <Compile Include="ManageCenter\AfficheEdit.aspx.cs">
       <DependentUpon>AfficheEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ManageCenter\AfficheEdit.aspx.designer.cs">
       <DependentUpon>AfficheEdit.aspx</DependentUpon>
@@ -336,6 +337,7 @@
     </Compile>
     <Compile Include="ManageCenter\Ascx\AfficheEdit.ascx.cs">
       <DependentUpon>AfficheEdit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ManageCenter\Ascx\AfficheEdit.ascx.designer.cs">
       <DependentUpon>AfficheEdit.ascx</DependentUpon>
@@ -391,6 +393,7 @@
     </Compile>
     <Compile Include="ManageCenter\Ascx\RoadProject.ascx.cs">
       <DependentUpon>RoadProject.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ManageCenter\Ascx\RoadProject.ascx.designer.cs">
       <DependentUpon>RoadProject.ascx</DependentUpon>
@@ -481,6 +484,7 @@
     </Compile>
     <Compile Include="ManageCenter\RoadProject.aspx.cs">
       <DependentUpon>RoadProject.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ManageCenter\RoadProject.aspx.designer.cs">
       <DependentUpon>RoadProject.aspx</DependentUpon>

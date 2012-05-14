@@ -14,7 +14,10 @@ namespace SmartHyd.UI {
         void Page_Init(Object source, EventArgs e) {
             object userSession = this.Get("user");
             if (userSession == null) {
-                throw new Exception("用户未登录");
+                /*
+                 *用户登录校验逻辑
+                 */
+                //throw new Exception("用户尚未登录系统。");
             }
         }
 
