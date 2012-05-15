@@ -28,6 +28,8 @@ namespace SmartHyd.UI
         private Button _BtnVerify = new Button() { Text = "审核", Visible = false };   //审核
         private Button _BtnGrant = new Button() { Text = "授权", Visible = false };    //授权
         private Button _BtnCancel = new Button() { Text = "重置", Visible = false };   //重置
+        private Button _BtnSend = new Button() { Text = "发布", Visible = false  };    //发布
+        private Button _BtnReply = new Button() { Text = "回复", Visible = false  };   //回复
         */
         #endregion
 
@@ -46,6 +48,8 @@ namespace SmartHyd.UI
         private Button _BtnVerify = new Button() { Text = "审核" };   //审核
         private Button _BtnGrant = new Button() { Text = "授权" };    //授权
         private Button _BtnCancel = new Button() { Text = "重置" };   //重置
+        private Button _BtnSend = new Button() { Text = "发布" };     //发布
+        private Button _BtnReply = new Button() { Text = "回复" };     //回复
         #endregion
         #endregion
 
@@ -148,6 +152,20 @@ namespace SmartHyd.UI
         {
             get { return _BtnCancel; }
         }
+        /// <summary>
+        /// 发布
+        /// </summary>
+        public Button BtnSend
+        {
+            get { return _BtnSend; }
+        }
+        /// <summary>
+        /// 回复
+        /// </summary>
+        public Button BtnReply
+        {
+            get { return _BtnReply; }
+        }
         #endregion
 
         #region 公共方法
@@ -176,6 +194,8 @@ namespace SmartHyd.UI
             funPanel.Controls.Add(_BtnVerify);
             funPanel.Controls.Add(_BtnGrant);
             funPanel.Controls.Add(_BtnCancel);
+            funPanel.Controls.Add(_BtnSend);       //发布
+            funPanel.Controls.Add(_BtnReply);      //回复
 
             InitFunction(); //订阅按钮事件
 
@@ -249,6 +269,10 @@ namespace SmartHyd.UI
         public virtual void BtnVerify_Click(object sender, EventArgs e) { }
         //授权
         public virtual void BtnGrant_Click(object sender, EventArgs e) { }
+        //发布
+        public virtual void BtnSend_Click(object sender, EventArgs e) { }
+        //回复
+        public virtual void BtnReply_Click(object sender, EventArgs e) { }
         #endregion
 
         #region 私有方法
@@ -269,6 +293,9 @@ namespace SmartHyd.UI
             this.BtnBackup.Click += new EventHandler(BtnBackup_Click);   //备份
             this.BtnVerify.Click += new EventHandler(BtnVerify_Click);//审核
             this.BtnGrant.Click += new EventHandler(BtnGrant_Click); //授权
+            this.BtnSend.Click += new EventHandler(BtnSend_Click); //发布
+            this.BtnReply.Click += new EventHandler(BtnReply_Click); //回复
+
         }
         #endregion
     }
