@@ -38,7 +38,7 @@
         </asp:ContentPlaceHolder>
         <!--内容结束-->
         
-        <!--提示消息开始-->
+        <!--提示消息开始
         <div class="alert ui-widget" id="alert">
             <div class="ui-state-highlight ui-corner-all">
                 <p><span class="ui-icon ui-icon-info"></span>
@@ -47,7 +47,7 @@
                 </p>
             </div>
         </div>
-        <!--提示消息结束-->
+        提示消息结束-->
     </div>
     </form>
 </body>

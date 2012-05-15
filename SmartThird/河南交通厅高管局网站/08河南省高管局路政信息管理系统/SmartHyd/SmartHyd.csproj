@@ -66,6 +66,7 @@
     <Content Include="ManageCenter\Ascx\DeptEdit.ascx" />
     <Content Include="ManageCenter\Ascx\FaWen.ascx" />
     <Content Include="ManageCenter\Ascx\FaWenEdit.ascx" />
+    <Content Include="ManageCenter\Ascx\ImportData.ascx" />
     <Content Include="ManageCenter\Ascx\Observed.ascx" />
     <Content Include="ManageCenter\Ascx\OfficTypeAdd.ascx" />
     <Content Include="ManageCenter\Ascx\OfficTypeEdit.ascx" />
@@ -81,6 +82,7 @@
     <Content Include="ManageCenter\DeptEdit.aspx" />
     <Content Include="ManageCenter\FaWen.aspx" />
     <Content Include="ManageCenter\FaWenEdit.aspx" />
+    <Content Include="ManageCenter\ImportData.aspx" />
     <Content Include="ManageCenter\Observed.aspx" />
     <Content Include="ManageCenter\OfficTypeAdd.aspx" />
     <Content Include="ManageCenter\OfficTypeEdit.aspx" />
@@ -393,6 +395,13 @@
     <Compile Include="ManageCenter\Ascx\FaWenEdit.ascx.designer.cs">
       <DependentUpon>FaWenEdit.ascx</DependentUpon>
     </Compile>
+    <Compile Include="ManageCenter\Ascx\ImportData.ascx.cs">
+      <DependentUpon>ImportData.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\Ascx\ImportData.ascx.designer.cs">
+      <DependentUpon>ImportData.ascx</DependentUpon>
+    </Compile>
     <Compile Include="ManageCenter\Ascx\Observed.ascx.cs">
       <DependentUpon>Observed.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -498,6 +507,13 @@
     <Compile Include="ManageCenter\FaWenEdit.aspx.designer.cs">
       <DependentUpon>FaWenEdit.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ManageCenter\ImportData.aspx.cs">
+      <DependentUpon>ImportData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\ImportData.aspx.designer.cs">
+      <DependentUpon>ImportData.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ManageCenter\ManageCenter.Master.cs">
       <DependentUpon>ManageCenter.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -597,6 +613,7 @@
     <Folder Include="Images\" />
     <Folder Include="Log\" />
     <Folder Include="Scripts\kindeditor-4.0.5\attached\" />
+    <Folder Include="Temp\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\Smart\SmartUtility\SmartUtility.csproj">
