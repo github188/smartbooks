@@ -21,6 +21,7 @@ namespace SmartHyd.Ascx {
 
         private void BindingControl(DropDownList ddl, DataTable dt) {
             ddl.Items.Clear();
+            ddl.Items.Add("请选择");
             InitTreeNodes(ddl, 0, dt, 0);
         }
 
