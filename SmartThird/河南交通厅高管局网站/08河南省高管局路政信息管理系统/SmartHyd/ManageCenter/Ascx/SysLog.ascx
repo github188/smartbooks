@@ -4,7 +4,6 @@
 <div id="tab">
     <ui id="menu">
    <li><a href="#tabs-1">日志管理</a></li>
-   <li><a href="#tabs-2">日志管理</a></li>
 </ui>
     <div id="tabs-1">
     <table class="table" width="100%" align="center">

@@ -4,7 +4,7 @@
 // 文件名称:BASE_PROCEDURE.cs
 // 功能描述:路政许可流程表 -- 实体定义
 //
-// 创建标识： 付晓 2012-05-04
+// 创建标识： 付晓 2012-05-15
 namespace SmartHyd.Entity
 {
     using System;
@@ -44,6 +44,10 @@ namespace SmartHyd.Entity
         /// 审理时间
         /// </summary>		
         private DateTime _P_DATE;
+		/// <summary>
+        /// 状态(0:正常；)
+        /// </summary>		
+        private decimal _P_STATUS;
 	
 	        /// <summary>
         /// 编号
@@ -100,6 +104,14 @@ namespace SmartHyd.Entity
         {
             get { return _P_DATE; }
             set { _P_DATE = value; }
+        }
+	        /// <summary>
+        /// 状态(0:正常；)
+        /// </summary>
+        public decimal P_STATUS
+        {
+            get { return _P_STATUS; }
+            set { _P_STATUS = value; }
         }
 	}
 }

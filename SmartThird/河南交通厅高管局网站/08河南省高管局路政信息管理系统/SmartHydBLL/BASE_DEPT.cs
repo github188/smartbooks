@@ -8,7 +8,8 @@ namespace SmartHyd.BLL {
     public class BASE_DEPT {
         private OracleDAL.BASE_DEPT dal = new OracleDAL.BASE_DEPT();
 
-        public Entity.BASE_DEPT GetEntity(int deptID) {
+        public Entity.BASE_DEPT GetEntity(decimal deptID)
+        {
             return dal.GetEntity(deptID);
         }
 
@@ -32,7 +33,6 @@ namespace SmartHyd.BLL {
         {
             return dal.GetList(strWhere).Tables[0];
         }
-       
         /// <summary>
         /// 新建部门
         /// </summary>

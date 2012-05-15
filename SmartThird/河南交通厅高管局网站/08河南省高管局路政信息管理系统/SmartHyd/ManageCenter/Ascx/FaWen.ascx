@@ -1,5 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="FaWen.ascx.cs" Inherits="SmartHyd.ManageCenter.Ascx.FaWen" %>
 <%@ Register Assembly="AspNetPager" Namespace="Wuqi.Webdiyer" TagPrefix="webdiyer" %>
+<%@ Register Src="../../Ascx/Department.ascx" TagName="Department" TagPrefix="uc1" %>
 <div id="tab">
     <ul id="menu">
         <li><a href="#tabs-1">发文管理</a></li>
@@ -176,8 +177,7 @@
                         主办单位
                     </td>
                     <td class="red">
-                        <asp:DropDownList ID="DdlOrgan" runat="server" CssClass="input">
-                        </asp:DropDownList>
+                        <uc1:Department ID="department1" runat="server" />
                     </td>
                     <%--<td class="red" align="center">缓急程度</td>
 		<td class="red"><input type="text" name="priority" class="field"
@@ -204,13 +204,13 @@
                         <asp:FileUpload ID="FileUploadPath" runat="server" CssClass="input" />
                     </td>
                 </tr>
-                <tr>
+               <%-- <tr>
                     <td class="red" align="center" colspan='3'>
                         <asp:Button ID="BtnSave" runat="server" Text="保存" CssClass="input" 
                             onclick="BtnSave_Click" />
                         <asp:Button ID="BtnBack" runat="server" Text="返回" OnClick="BtnBack_Click" />
                     </td>
-                </tr>
+                </tr>--%>
             </table>
             </form>
         </div>
@@ -239,7 +239,7 @@
                     </td>
                     <td class="TableContent">
                         <asp:Button ID="BtnSearch" runat="server" Text="查询" OnClick="BtnSearch_Click1" />&nbsp;
-                        <asp:Button ID="BtnAdd" runat="server" Text="新建类型" OnClick="BtnAdd_Click" />
+                        <asp:Button ID="BtnNewType" runat="server" Text="新建类型" OnClick="BtnNewType_Click" />
                     </td>
                 </tr>
             </table>

@@ -10,7 +10,16 @@
 namespace SmartHyd.ManageCenter.Ascx {
     
     
-    public partial class Affiche {
+    public partial class DeptEdit {
+        
+        /// <summary>
+        /// Lbdeptname 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Lbdeptname;
         
         /// <summary>
         /// hidPrimary 控件。
@@ -22,57 +31,48 @@ namespace SmartHyd.ManageCenter.Ascx {
         protected global::System.Web.UI.WebControls.HiddenField hidPrimary;
         
         /// <summary>
-        /// TxtTitle 控件。
+        /// TxtDeptName 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtTitle;
+        protected global::System.Web.UI.WebControls.TextBox TxtDeptName;
         
         /// <summary>
-        /// TxtTime 控件。
+        /// Lbdept 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtTime;
+        protected global::System.Web.UI.WebControls.Label Lbdept;
         
         /// <summary>
-        /// TxtContent 控件。
+        /// Department1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtContent;
+        protected global::SmartHyd.Ascx.Department Department1;
         
         /// <summary>
-        /// TvDept 控件。
+        /// Label2 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TreeView TvDept;
+        protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
-        /// RptAffiche 控件。
+        /// txtDptinfo 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater RptAffiche;
-        
-        /// <summary>
-        /// AspNetPager1 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::Wuqi.Webdiyer.AspNetPager AspNetPager1;
+        protected global::System.Web.UI.WebControls.TextBox txtDptinfo;
     }
 }

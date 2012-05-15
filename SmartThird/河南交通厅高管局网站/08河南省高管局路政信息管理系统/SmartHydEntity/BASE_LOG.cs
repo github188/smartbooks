@@ -4,7 +4,7 @@
 // 文件名称:BASE_LOG.cs
 // 功能描述:系统日志表 -- 实体定义
 //
-// 创建标识： 付晓 2012-05-14
+// 创建标识： 付晓 2012-05-15
 namespace SmartHyd.Entity
 {
     using System;
@@ -36,6 +36,10 @@ namespace SmartHyd.Entity
         /// 日志信息描述
         /// </summary>		
         private string _DESCRIPTION;
+		/// <summary>
+        /// Ip地址
+        /// </summary>		
+        private string _IPADDRESS;
 	
 	        /// <summary>
         /// 日志编号
@@ -76,6 +80,14 @@ namespace SmartHyd.Entity
         {
             get { return _DESCRIPTION; }
             set { _DESCRIPTION = value; }
+        }
+	        /// <summary>
+        /// Ip地址
+        /// </summary>
+        public string IPADDRESS
+        {
+            get { return _IPADDRESS; }
+            set { _IPADDRESS = value; }
         }
 	}
 }

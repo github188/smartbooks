@@ -4,7 +4,7 @@
 // 文件名称:IBASE_LOG.cs
 // 功能描述:系统日志表 -- 接口定义
 //
-// 创建标识：付晓 2012-05-14
+// 创建标识：付晓 2012-05-15
 namespace SmartHyd.IDAL
 {
 	using System;

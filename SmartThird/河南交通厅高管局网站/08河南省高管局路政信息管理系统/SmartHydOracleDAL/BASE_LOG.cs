@@ -4,7 +4,7 @@
 // 文件名称:BASE_LOG.cs
 // 功能描述:系统日志表 -- 接口实现
 //
-// 创建标识：付晓 2012-05-14
+// 创建标识：付晓 2012-05-15
 namespace SmartHyd.OracleDAL
 {
 	using System;
@@ -33,7 +33,6 @@ namespace SmartHyd.OracleDAL
 					new OracleParameter(":LOGID", OracleType.Number,4)			};
 			parameters[0].Value = LOGID;
 
-
             if (OracleHelper.ExecuteNonQuery(strSql.ToString(), parameters) > 0)
             {
                 return true;
@@ -43,9 +42,6 @@ namespace SmartHyd.OracleDAL
                 return false;
             }
 		}
-		
-				
-		
 		/// <summary>
 		/// 增加一条数据
 		/// </summary>
@@ -53,9 +49,9 @@ namespace SmartHyd.OracleDAL
 		{
 			StringBuilder strSql=new StringBuilder();
 			strSql.Append("insert into BASE_LOG(");			
-            strSql.Append("LOGID,LOGTYPE,CREATEDATE,OPERATORID,DESCRIPTION");
+            strSql.Append("LOGID,LOGTYPE,CREATEDATE,OPERATORID,DESCRIPTION,IPADDRESS");
 			strSql.Append(") values (");
-            strSql.Append(":LOGID,:LOGTYPE,:CREATEDATE,:OPERATORID,:DESCRIPTION");            
+            strSql.Append(":LOGID,:LOGTYPE,:CREATEDATE,:OPERATORID,:DESCRIPTION,:IPADDRESS");            
             strSql.Append(") ");            
             		
 			OracleParameter[] parameters = {
@@ -63,7 +59,8 @@ namespace SmartHyd.OracleDAL
                         new OracleParameter(":LOGTYPE", OracleType.VarChar,50) ,            
                         new OracleParameter(":CREATEDATE", OracleType.DateTime) ,            
                         new OracleParameter(":OPERATORID", OracleType.Number,4) ,            
-                        new OracleParameter(":DESCRIPTION", OracleType.VarChar,200)             
+                        new OracleParameter(":DESCRIPTION", OracleType.VarChar,200) ,            
+                        new OracleParameter(":IPADDRESS", OracleType.VarChar,50)             
               
             };
 			            
@@ -72,6 +69,7 @@ namespace SmartHyd.OracleDAL
             parameters[2].Value = entity.CREATEDATE;                        
             parameters[3].Value = entity.OPERATORID;                        
             parameters[4].Value = entity.DESCRIPTION;                        
+            parameters[5].Value = entity.IPADDRESS;                        
 			            OracleHelper.ExecuteNonQuery(strSql.ToString(),parameters);
             			
 		}
@@ -89,7 +87,8 @@ namespace SmartHyd.OracleDAL
             strSql.Append(" LOGTYPE = :LOGTYPE , ");                                    
             strSql.Append(" CREATEDATE = :CREATEDATE , ");                                    
             strSql.Append(" OPERATORID = :OPERATORID , ");                                    
-            strSql.Append(" DESCRIPTION = :DESCRIPTION  ");            			
+            strSql.Append(" DESCRIPTION = :DESCRIPTION , ");                                    
+            strSql.Append(" IPADDRESS = :IPADDRESS  ");            			
 			strSql.Append(" where LOGID=:LOGID  ");
 						
 OracleParameter[] parameters = {
@@ -97,7 +96,8 @@ OracleParameter[] parameters = {
                         new OracleParameter(":LOGTYPE", OracleType.VarChar,50) ,            
                         new OracleParameter(":CREATEDATE", OracleType.DateTime) ,            
                         new OracleParameter(":OPERATORID", OracleType.Number,4) ,            
-                        new OracleParameter(":DESCRIPTION", OracleType.VarChar,200)             
+                        new OracleParameter(":DESCRIPTION", OracleType.VarChar,200) ,            
+                        new OracleParameter(":IPADDRESS", OracleType.VarChar,50)             
               
             };
 			            
@@ -106,6 +106,7 @@ OracleParameter[] parameters = {
             parameters[2].Value = entity.CREATEDATE;                        
             parameters[3].Value = entity.OPERATORID;                        
             parameters[4].Value = entity.DESCRIPTION;                        
+            parameters[5].Value = entity.IPADDRESS;                        
             int rows=OracleHelper.ExecuteNonQuery(strSql.ToString(),parameters);
 			if (rows > 0)
 			{
@@ -152,7 +153,7 @@ OracleParameter[] parameters = {
 		{
 			
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select LOGID, LOGTYPE, CREATEDATE, OPERATORID, DESCRIPTION  ");			
+			strSql.Append("select LOGID, LOGTYPE, CREATEDATE, OPERATORID, DESCRIPTION, IPADDRESS  ");			
 			strSql.Append("  from BASE_LOG ");
 			strSql.Append(" where LOGID=:LOGID ");
 						OracleParameter[] parameters = {
@@ -179,6 +180,7 @@ OracleParameter[] parameters = {
 					entity.OPERATORID=decimal.Parse(dt.Rows[0]["OPERATORID"].ToString());
 				}
 																																				entity.DESCRIPTION= dt.Rows[0]["DESCRIPTION"].ToString();
+																																entity.IPADDRESS= dt.Rows[0]["IPADDRESS"].ToString();
 																										
 				return entity;
 			}

@@ -24,19 +24,7 @@
             $("#ctl00_ContentPlaceHolder1_Affiche1_TxtTime").datepicker();
         });
 
-        //全选
-        function selectall(chkcontrol) {
-            var chkall = chkcontrol;
-            State = chkall.checked;
-            elem = document.getElementsByTagName("input");
-            for (i = 0; i < elem.length; i++) {
-                if (elem[i].type == "checkbox" && elem[i] != chkall.id) {
-                    if (elem[i].checked != State) {
-                        elem[i].click();
-                    }
-                }
-            }
-        }
+       
         //按人员发布显示/隐藏
         function changeRange() {
             if (document.getElementById("rang_role").style.display == "none") {
@@ -115,26 +103,7 @@
         function change_type(type) {
             window.location = "index1.php?start=0&TYPE=" + type + "&FIELD=&ASC_DESC=";
         }
-        function check_all() {
-            for (i = 0; i < document.all("email_select").length; i++) {
-                if (document.all("allbox").checked)
-                    document.all("email_select").item(i).checked = true;
-                else
-                    document.all("email_select").item(i).checked = false;
-            }
-
-            if (i == 0) {
-                if (document.all("allbox").checked)
-                    document.all("email_select").checked = true;
-                else
-                    document.all("email_select").checked = false;
-            }
-        }
-
-        function check_one(el) {
-            if (!el.checked)
-                document.all("allbox").checked = false;
-        }
+      
         function delete_mail() {
             delete_str = "";
             for (i = 0; i < document.all("email_select").length; i++) {

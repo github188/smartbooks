@@ -17,7 +17,7 @@ namespace SmartHyd.ManageCenter.Ascx
         {
             if (!IsPostBack)
             {
-                if ("" != Request.QueryString["fid"] || null != Request.QueryString["ftid"])
+                if ("" != Request.QueryString["fid"] || null != Request.QueryString["fid"])
                 {
                     BindType();//DropDownList数据绑定
                     BindDept();//DropDownList主办单位（部门）数据绑定

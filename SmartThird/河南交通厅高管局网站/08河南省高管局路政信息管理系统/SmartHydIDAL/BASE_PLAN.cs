@@ -4,7 +4,7 @@
 // 文件名称:IBASE_PLAN.cs
 // 功能描述:日程信息表 -- 接口定义
 //
-// 创建标识：付晓 2012-05-04
+// 创建标识：付晓 2012-05-15
 namespace SmartHyd.IDAL
 {
 	using System;
@@ -22,7 +22,7 @@ namespace SmartHyd.IDAL
 		/// <summary>
 		/// 确定记录是否存在
 		/// </summary>
-        bool Exists(decimal CALENDARID);
+		bool Exists(decimal CALENDARID);
 		
 		/// <summary>
 		/// 增加一条数据
@@ -37,13 +37,13 @@ namespace SmartHyd.IDAL
 		/// <summary>
 		/// 删除一条数据
 		/// </summary>
-        bool Delete(decimal CALENDARID);
+		bool Delete(decimal CALENDARID);
 		
 				
 		/// <summary>
 		/// 得到一个对象实体
 		/// </summary>
-        Entity.BASE_PLAN GetEntity(decimal CALENDARID);
+		Entity.BASE_PLAN GetEntity(decimal CALENDARID);
 		
 		/// <summary>
 		/// 获得数据列表

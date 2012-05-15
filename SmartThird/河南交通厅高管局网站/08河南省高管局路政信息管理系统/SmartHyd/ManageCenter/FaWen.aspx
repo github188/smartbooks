@@ -76,20 +76,6 @@
 
         }
 
-        //全选
-        function selectall(chkcontrol) {
-            var chkall = chkcontrol;
-            State = chkall.checked;
-            elem = document.getElementsByTagName("input");
-            for (i = 0; i < elem.length; i++) {
-                if (elem[i].type == "checkbox" && elem[i] != chkall.id) {
-                    if (elem[i].checked != State) {
-                        elem[i].click();
-                    }
-                }
-            }
-        }
-
         function all_done() {
             var sid = get_checked();
             if (sid == "") {

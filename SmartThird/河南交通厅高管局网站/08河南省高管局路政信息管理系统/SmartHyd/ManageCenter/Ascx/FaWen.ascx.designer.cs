@@ -85,13 +85,13 @@ namespace SmartHyd.ManageCenter.Ascx {
         protected global::System.Web.UI.WebControls.TextBox TxContent;
         
         /// <summary>
-        /// DdlOrgan 控件。
+        /// department1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DdlOrgan;
+        protected global::SmartHyd.Ascx.Department department1;
         
         /// <summary>
         /// TxRemark 控件。
@@ -110,24 +110,6 @@ namespace SmartHyd.ManageCenter.Ascx {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::System.Web.UI.WebControls.FileUpload FileUploadPath;
-        
-        /// <summary>
-        /// BtnSave 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnSave;
-        
-        /// <summary>
-        /// BtnBack 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnBack;
         
         /// <summary>
         /// TxtTypeName 控件。
@@ -157,13 +139,13 @@ namespace SmartHyd.ManageCenter.Ascx {
         protected global::System.Web.UI.WebControls.Button BtnSearch;
         
         /// <summary>
-        /// BtnAdd 控件。
+        /// BtnNewType 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnAdd;
+        protected global::System.Web.UI.WebControls.Button BtnNewType;
         
         /// <summary>
         /// RptType 控件。

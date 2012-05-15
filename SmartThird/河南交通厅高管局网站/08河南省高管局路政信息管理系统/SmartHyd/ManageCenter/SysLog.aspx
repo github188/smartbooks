@@ -2,6 +2,7 @@
 
 <%@ Register Src="~/ManageCenter/Ascx/SysLog.ascx" TagName="SysLog" TagPrefix="uc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <uc1:SysLog ID="SysLog1" runat="server" />

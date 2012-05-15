@@ -4,7 +4,7 @@
 // 文件名称:IBASE_PROCEDURE.cs
 // 功能描述:路政许可流程表 -- 接口定义
 //
-// 创建标识：付晓 2012-05-04
+// 创建标识：付晓 2012-05-15
 namespace SmartHyd.IDAL
 {
 	using System;
@@ -22,7 +22,7 @@ namespace SmartHyd.IDAL
 		/// <summary>
 		/// 确定记录是否存在
 		/// </summary>
-        bool Exists(decimal PID);
+		bool Exists(decimal PID);
 		
 		/// <summary>
 		/// 增加一条数据
@@ -37,13 +37,13 @@ namespace SmartHyd.IDAL
 		/// <summary>
 		/// 删除一条数据
 		/// </summary>
-        bool Delete(decimal PID);
+		bool Delete(decimal PID);
 		
 				
 		/// <summary>
 		/// 得到一个对象实体
 		/// </summary>
-        Entity.BASE_PROCEDURE GetEntity(decimal PID);
+		Entity.BASE_PROCEDURE GetEntity(decimal PID);
 		
 		/// <summary>
 		/// 获得数据列表

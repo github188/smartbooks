@@ -18,9 +18,6 @@
                     height: "350px"
                 });
             });
-            /*时间*/
-            $("#ctl00_ContentPlaceHolder1_Shouwen1_TxtFromTime").datepicker();
-            $("#ctl00_ContentPlaceHolder1_Shouwen1_TxtHandTime").datepicker();
         });
     </script>
 </asp:Content>

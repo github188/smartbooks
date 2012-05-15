@@ -21,7 +21,6 @@ namespace SmartHyd.ManageCenter.Ascx
                     dataBindToRepeater();//公文数据绑定
                     TypeBindToRepeater("1=1");//公文类型数据绑定
                     BindType();//DropDownList数据绑定
-                    BindDept();//DropDownList主办单位（部门）数据绑定
                     GetTree();//（单位）部门树形绑定
                     this.BtnSearch.Attributes.Add("onclick", "trans_tabs(2);");
              
@@ -48,19 +47,6 @@ namespace SmartHyd.ManageCenter.Ascx
         }
 
   
-
-
-
-        /// <summary>
-        /// 公文分页事件
-        /// </summary>
-        /// <param name="src"></param>
-        /// <param name="e"></param>
-        protected void AspNetPager1_PageChanging(object src, Wuqi.Webdiyer.PageChangingEventArgs e)
-        {
-            this.AspNetPager1.CurrentPageIndex = e.NewPageIndex;
-            dataBindToRepeater();
-        }
         /// <summary>
         /// 公文类型数据绑定
         /// </summary>
@@ -91,23 +77,6 @@ namespace SmartHyd.ManageCenter.Ascx
             //Ddl_type.DataBind();
             #endregion
 
-        }
-        /// <summary>
-        /// 主办单位（部门）绑定
-        /// </summary>
-        private void BindDept()
-        {
-            //获取用户所属的部门和子部门
-            string userName = "";
-            DataTable dt = new DataTable();
-            dt = bllDept.GetUserWhereDepartment(userName, 0);
-            this.DdlOrgan.Items.Clear();
-            foreach (DataRow row in dt.Rows)
-            {
-                DdlOrgan.Items.Add(new ListItem(
-                    row["DPTNAME"].ToString(),
-                    row["DEPTID"].ToString()));
-            }
         }
         /// <summary>
         /// 部门树绑定
@@ -172,7 +141,8 @@ namespace SmartHyd.ManageCenter.Ascx
             model.F_ANNEX = this.FileUploadPath.FileName;           //公文附件路径
             model.F_DATE = DateTime.Now;                             //发文日期
             model.REMARK = this.TxRemark.Text;                      //备注
-            model.F_ORGAN = this.DdlOrgan.SelectedValue;                      //发文单位部门
+            DropDownList ddr = (DropDownList)this.department1.FindControl("ddlDepartment");//找到用户控件中的子控件
+            model.F_ORGAN = ddr.SelectedValue;                      //发文单位部门
             model.F_LEVEL = "";                                     //密级
             model.F_DEGREE = "";                                    //缓急程度
             model.F_DELSTATE = 0;                                   //状态（0已保存；1已发送；2已删除）
@@ -194,21 +164,20 @@ namespace SmartHyd.ManageCenter.Ascx
             //this.FileUploadPath.FileName=model.F_ANNEX;           //公文附件路径
             // model.F_DATE = DateTime.Now;                             //发文日期
             this.TxRemark.Text = model.REMARK;                                      //备注
-            this.DdlOrgan.SelectedValue = model.F_ORGAN;                      //发文单位部门
+            DropDownList ddr = (DropDownList)this.department1.FindControl("ddlDepartment");//找到用户控件中的子控件
+            ddr.SelectedValue = model.F_ORGAN;                      //发文单位部门
             //model.F_LEVEL = "";                                     //密级
             //model.F_DEGREE = "";                                    //缓急程度
             //model.F_DELSTATE = 0;  
 
         }
-        ///// <summary>
-        ///// 公文拟稿保存
-        ///// </summary>
-        ///// <param name="sender"></param>
-        ///// <param name="e"></param>
-        protected void BtnSave_Click(object sender, EventArgs e)
+        //添加
+        public override void BtnAdd_Click(object sender, EventArgs e)
         {
-            Response.Write("<script type='text/javascript'>alert('请检查数据是否填写完整！');</script>");
+            //获取实体
             Entity.BASE_FAWEN model = GetEntity();
+
+            //添加数据
             bll.Add(model);
             if (bll.Exists(model.FID))
             {
@@ -223,17 +192,49 @@ namespace SmartHyd.ManageCenter.Ascx
 
                 Response.Redirect("FaWen.ascx#tabs-2");
             }
+            //重新加载当前页
+            Response.Redirect(Request.Url.AbsoluteUri, true);
         }
-
-        /// <summary>
-        /// 返回
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        protected void BtnBack_Click(object sender, EventArgs e)
+        //删除
+        public override void BtnDelete_Click(object sender, EventArgs e)
         {
-
         }
+        //重置
+        public override void BtnCancel_Click(object sender, EventArgs e)
+        {
+            SetEntity(new Entity.BASE_FAWEN());
+
+            Smart.Utility.Alerts.Alert("test");
+        }
+        //修改
+        public override void BtnUpdate_Click(object sender, EventArgs e) { }
+        //查看
+        public override void BtnView_Click(object sender, EventArgs e) { }
+        //查询
+        public override void BtnSearch_Click(object sender, EventArgs e) { }
+        //导入
+        public override void BtnImport_Click(object sender, EventArgs e) { }
+        //导出
+        public override void BtnExport_Click(object sender, EventArgs e) { }
+        //打印
+        public override void BtnPrint_Click(object sender, EventArgs e) { }
+        //移动
+        public override void BtnMove_Click(object sender, EventArgs e) { }
+        //下载
+        public override void BtnDownload_Click(object sender, EventArgs e) { }
+        //备份
+        public override void BtnBackup_Click(object sender, EventArgs e) { }
+        //审核
+        public override void BtnVerify_Click(object sender, EventArgs e) { }
+        //授权
+        public override void BtnGrant_Click(object sender, EventArgs e) { }
+        //分页事件
+        protected void AspNetPager1_PageChanging(object src, Wuqi.Webdiyer.PageChangingEventArgs e)
+        {
+            this.AspNetPager1.CurrentPageIndex = e.NewPageIndex;
+            dataBindToRepeater();
+        }
+       
         #endregion
         #region 公文类型管理
         //使用TypeBindToRepeater()方法绑定公文类型数据
@@ -299,7 +300,7 @@ namespace SmartHyd.ManageCenter.Ascx
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        protected void BtnAdd_Click(object sender, EventArgs e)
+        protected void BtnNewType_Click(object sender, EventArgs e)
         {
             Response.Redirect("OfficTypeAdd.aspx");
         }
@@ -315,6 +316,8 @@ namespace SmartHyd.ManageCenter.Ascx
             TypeBindToRepeater("1=1");
         }
         #endregion
+
+       
 
        
       

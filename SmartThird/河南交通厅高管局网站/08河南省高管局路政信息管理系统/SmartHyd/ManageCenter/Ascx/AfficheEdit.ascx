@@ -39,7 +39,7 @@
                         <asp:TextBox ID="TxtContent" runat="server" CssClass="input" TextMode="MultiLine"></asp:TextBox>
                     </td>
                 </tr>
-                <tr>
+             <%--   <tr>
                     <td nowrap="nowrap" class="TableData">
                         &nbsp;事务提醒：
                     </td>
@@ -62,7 +62,7 @@
                         <asp:Button ID="BtnBack" runat="server" Text="返回" class="BigButton" 
                             onclick="BtnBack_Click"  />
                     </td>
-                </tr>
+                </tr>--%>
             </tbody>
         </table>
 </div>

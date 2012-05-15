@@ -23,7 +23,7 @@
                         </td>
                         <td>
                         <asp:HiddenField ID="hidPrimary" runat="server" Value="-1" />
-                        <asp:TextBox ID="TxtDeptName" runat="server" CssClass="input  {required:true,minlength:5,maxlength:12}"></asp:TextBox>
+                        <asp:TextBox ID="TxtDeptName" runat="server" CssClass="input  {required:true,minlength:3,maxlength:12}"></asp:TextBox>
                          <div class="validate ui-state-highlight ui-corner-all " style="border: none;">
                         </div>
                     </td>
@@ -46,14 +46,14 @@
                     </td>
                 </tr>
             </tbody>
-            <tfoot>
+            <%--<tfoot>
                 <tr>
                     <td colspan="2" style="text-align: center;">
                         <asp:Button ID="btnSubmit" runat="server" Text="提交" OnClick="btnSubmit_Click" />
                         <asp:Button ID="btnCancel" runat="server" Text="重置" />
                     </td>
                 </tr>
-            </tfoot>
+            </tfoot>--%>
         </table>
     </div>
     <!--新建部门结束-->
@@ -106,9 +106,9 @@
                                 <%# Eval("STATUS")%>
                             </td>
                             <td>
-                                <a href="<%# Eval("DEPTID")%>">编辑</a> 
-                                <a href="" id="delhref" runat="server"> 删除</a>
-                                 <%--onclick="javascript:delete_notify(<%# Eval("AFFICHEID")%>)"--%>
+                                <a href="DeptEdit.aspx?fid=<%# Eval("DEPTID")%>">编辑</a> 
+                               <%-- <a href="" id="delhref" runat="server"> 删除</a>
+                                 onclick="javascript:delete_notify(<%# Eval("AFFICHEID")%>)"--%>
                                     
                                    
                             </td>

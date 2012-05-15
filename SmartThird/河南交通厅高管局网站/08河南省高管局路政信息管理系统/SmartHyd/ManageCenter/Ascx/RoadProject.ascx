@@ -59,7 +59,9 @@
                             <%# Eval("AUDIT_DESC")%>
                             </td>
                             <td>
-                            <a href="">###</a><a href="">###</a>
+                            <a href="">查看</a>  &nbsp;
+                            <a href="">回复</a>  &nbsp;
+                            <a href="">转交领导批示</a>
                             </td>
                         </tr>
                     </tbody>
@@ -87,7 +89,7 @@
             <tbody>
                 <tr>
                     <td nowrap="nowrap" class="TableData">
-                        &nbsp; 申请人及法定代表人名称：
+                        &nbsp; 申请人（及法定代表人）名称：
                     </td>
                     <td class="TableData">
                         <asp:HiddenField ID="hidPrimary" runat="server" Value="-1" />
@@ -167,7 +169,7 @@
                         申请日期：
                     </td>
                     <td class="TableData">
-                        <asp:TextBox ID="TxtTime" runat="server" CssClass="input {required:true}"></asp:TextBox>
+                        <asp:TextBox ID="TxtTime" runat="server" ReadOnly="true" CssClass="input"></asp:TextBox>
                         <div class="validate ui-state-highlight ui-corner-all" style="border: none;">
                         </div>
                     </td>
@@ -207,12 +209,12 @@
                         <asp:FileUpload ID="FulRoad" runat="server" />
                     </td>
                 </tr>
-                <tr  colspan="2">
+               <%-- <tr  colspan="2">
                     <td align="center" >
                         <asp:Button ID="btnSubmit" runat="server" Text="提交" onclick="btnSubmit_Click" />
                         <asp:Button ID="btnCancel" runat="server" Text="重置" />
                     </td>
-                </tr>
+                </tr>--%>
             </tbody>
         </table>
     </div>

@@ -4,13 +4,12 @@
 // 文件名称:BASE_PROCEDURE.cs
 // 功能描述:路政许可流程表 -- 接口实现
 //
-// 创建标识：付晓 2012-05-04
+// 创建标识：付晓 2012-05-15
 namespace SmartHyd.OracleDAL
 {
 	using System;
 	using System.Text;
-	using System.Data.SqlClient;
-    using System.Data.OracleClient;
+	using System.Data.OracleClient;
 	using System.Collections.Generic; 
 	using System.Data;
 	using Smart.DBUtility;
@@ -24,15 +23,15 @@ namespace SmartHyd.OracleDAL
    		/// <summary>
 		/// 确定记录是否存在
 		/// </summary>
-        public bool Exists(decimal PID)
+		public bool Exists(decimal PID)
 		{
 			StringBuilder strSql=new StringBuilder();
 			strSql.Append("select count(1) from BASE_PROCEDURE");
 			strSql.Append(" where ");
-            strSql.Append(" PID = :PID  ");
-            OracleParameter[] parameters = {
+			                                       strSql.Append(" PID = :PID  ");
+                            			OracleParameter[] parameters = {
 					new OracleParameter(":PID", OracleType.Number,4)			};
-            parameters[0].Value = PID;
+			parameters[0].Value = PID;
 
             if (OracleHelper.ExecuteNonQuery(strSql.ToString(), parameters) > 0)
             {
@@ -42,7 +41,6 @@ namespace SmartHyd.OracleDAL
             {
                 return false;
             }
-						
 		}
 		
 				
@@ -54,30 +52,32 @@ namespace SmartHyd.OracleDAL
 		{
 			StringBuilder strSql=new StringBuilder();
 			strSql.Append("insert into BASE_PROCEDURE(");			
-            strSql.Append("PID,REQUISITIONID,DEPARTMENT,TRANSACTOR,CONTENTS,RESULT,P_DATE");
+            strSql.Append("PID,REQUISITIONID,DEPARTMENT,TRANSACTOR,CONTENTS,RESULT,P_DATE,P_STATUS");
 			strSql.Append(") values (");
-            strSql.Append(":PID,:REQUISITIONID,:DEPARTMENT,:TRANSACTOR,:CONTENTS,:RESULT,:P_DATE");            
-            strSql.Append(") ");
-
-            OracleParameter[] parameters = {
+            strSql.Append(":PID,:REQUISITIONID,:DEPARTMENT,:TRANSACTOR,:CONTENTS,:RESULT,:P_DATE,:P_STATUS");            
+            strSql.Append(") ");            
+            		
+			OracleParameter[] parameters = {
 			            new OracleParameter(":PID", OracleType.Number,4) ,            
                         new OracleParameter(":REQUISITIONID", OracleType.Number,4) ,            
                         new OracleParameter(":DEPARTMENT", OracleType.VarChar,50) ,            
                         new OracleParameter(":TRANSACTOR", OracleType.VarChar,50) ,            
                         new OracleParameter(":CONTENTS", OracleType.VarChar,50) ,            
                         new OracleParameter(":RESULT", OracleType.VarChar,50) ,            
-                        new OracleParameter(":P_DATE", OracleType.DateTime)             
+                        new OracleParameter(":P_DATE", OracleType.DateTime) ,            
+                        new OracleParameter(":P_STATUS", OracleType.Number,4)             
               
             };
-
-            parameters[0].Value = entity.PID;
-            parameters[1].Value = entity.REQUISITIONID;
-            parameters[2].Value = entity.DEPARTMENT;
-            parameters[3].Value = entity.TRANSACTOR;
-            parameters[4].Value = entity.CONTENTS;
-            parameters[5].Value = entity.RESULT;
-            parameters[6].Value = entity.P_DATE;
-            OracleHelper.ExecuteNonQuery(strSql.ToString(), parameters);
+			            
+            parameters[0].Value = entity.PID;                        
+            parameters[1].Value = entity.REQUISITIONID;                        
+            parameters[2].Value = entity.DEPARTMENT;                        
+            parameters[3].Value = entity.TRANSACTOR;                        
+            parameters[4].Value = entity.CONTENTS;                        
+            parameters[5].Value = entity.RESULT;                        
+            parameters[6].Value = entity.P_DATE;                        
+            parameters[7].Value = entity.P_STATUS;                        
+			            OracleHelper.ExecuteNonQuery(strSql.ToString(),parameters);
             			
 		}
 		
@@ -96,28 +96,31 @@ namespace SmartHyd.OracleDAL
             strSql.Append(" TRANSACTOR = :TRANSACTOR , ");                                    
             strSql.Append(" CONTENTS = :CONTENTS , ");                                    
             strSql.Append(" RESULT = :RESULT , ");                                    
-            strSql.Append(" P_DATE = :P_DATE  ");            			
-			strSql.Append(" where  ");
-
-            OracleParameter[] parameters = {
+            strSql.Append(" P_DATE = :P_DATE , ");                                    
+            strSql.Append(" P_STATUS = :P_STATUS  ");            			
+			strSql.Append(" where PID=:PID  ");
+						
+OracleParameter[] parameters = {
 			            new OracleParameter(":PID", OracleType.Number,4) ,            
                         new OracleParameter(":REQUISITIONID", OracleType.Number,4) ,            
                         new OracleParameter(":DEPARTMENT", OracleType.VarChar,50) ,            
                         new OracleParameter(":TRANSACTOR", OracleType.VarChar,50) ,            
                         new OracleParameter(":CONTENTS", OracleType.VarChar,50) ,            
                         new OracleParameter(":RESULT", OracleType.VarChar,50) ,            
-                        new OracleParameter(":P_DATE", OracleType.DateTime)             
+                        new OracleParameter(":P_DATE", OracleType.DateTime) ,            
+                        new OracleParameter(":P_STATUS", OracleType.Number,4)             
               
             };
 			            
-            parameters[7].Value = entity.PID;                        
-            parameters[8].Value = entity.REQUISITIONID;                        
-            parameters[9].Value = entity.DEPARTMENT;                        
-            parameters[10].Value = entity.TRANSACTOR;                        
-            parameters[11].Value = entity.CONTENTS;                        
-            parameters[12].Value = entity.RESULT;                        
-            parameters[13].Value = entity.P_DATE;
-            int rows = OracleHelper.ExecuteNonQuery(strSql.ToString(), parameters);
+            parameters[0].Value = entity.PID;                        
+            parameters[1].Value = entity.REQUISITIONID;                        
+            parameters[2].Value = entity.DEPARTMENT;                        
+            parameters[3].Value = entity.TRANSACTOR;                        
+            parameters[4].Value = entity.CONTENTS;                        
+            parameters[5].Value = entity.RESULT;                        
+            parameters[6].Value = entity.P_DATE;                        
+            parameters[7].Value = entity.P_STATUS;                        
+            int rows=OracleHelper.ExecuteNonQuery(strSql.ToString(),parameters);
 			if (rows > 0)
 			{
 				return true;
@@ -132,27 +135,26 @@ namespace SmartHyd.OracleDAL
 		/// <summary>
 		/// 删除一条数据
 		/// </summary>
-        public bool Delete(decimal PID)
+		public bool Delete(decimal PID)
 		{
 			
 			StringBuilder strSql=new StringBuilder();
 			strSql.Append("delete from BASE_PROCEDURE ");
-			strSql.Append(" where ");
-            strSql.Append(" PID=:PID ");
-            OracleParameter[] parameters = {
+			strSql.Append(" where PID=:PID ");
+						OracleParameter[] parameters = {
 					new OracleParameter(":PID", OracleType.Number,4)			};
-            parameters[0].Value = PID;
+			parameters[0].Value = PID;
 
 
-            int rows = OracleHelper.ExecuteNonQuery(strSql.ToString(), parameters);
-            if (rows > 0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+			int rows=OracleHelper.ExecuteNonQuery(strSql.ToString(),parameters);
+			if (rows > 0)
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
 		}
 		
 				
@@ -164,16 +166,16 @@ namespace SmartHyd.OracleDAL
 		{
 			
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select PID, REQUISITIONID, DEPARTMENT, TRANSACTOR, CONTENTS, RESULT, P_DATE  ");			
+			strSql.Append("select PID, REQUISITIONID, DEPARTMENT, TRANSACTOR, CONTENTS, RESULT, P_DATE, P_STATUS  ");			
 			strSql.Append("  from BASE_PROCEDURE ");
-			strSql.Append(" where ");
-            strSql.Append(" PID=:PID ");
-            OracleParameter[] parameters = {
+			strSql.Append(" where PID=:PID ");
+						OracleParameter[] parameters = {
 					new OracleParameter(":PID", OracleType.Number,4)			};
-            parameters[0].Value = PID;
+			parameters[0].Value = PID;
+
 			
 			Entity.BASE_PROCEDURE entity=new Entity.BASE_PROCEDURE();
-            DataTable dt = OracleHelper.Query(CommandType.Text,strSql.ToString(), parameters);
+			DataTable dt=OracleHelper.Query(CommandType.Text,strSql.ToString(),parameters);
 			
 			if(dt.Rows.Count>0)
 			{
@@ -192,6 +194,10 @@ namespace SmartHyd.OracleDAL
 																												if(dt.Rows[0]["P_DATE"].ToString()!="")
 				{
 					entity.P_DATE=DateTime.Parse(dt.Rows[0]["P_DATE"].ToString());
+				}
+																																if(dt.Rows[0]["P_STATUS"].ToString()!="")
+				{
+					entity.P_STATUS=decimal.Parse(dt.Rows[0]["P_STATUS"].ToString());
 				}
 																														
 				return entity;
@@ -215,7 +221,7 @@ namespace SmartHyd.OracleDAL
 			{
 				strSql.Append(" where "+strWhere);
 			}
-            return OracleHelper.Query(strSql.ToString());
+			return OracleHelper.Query(strSql.ToString());
 		}
 		
 		/// <summary>
@@ -236,7 +242,7 @@ namespace SmartHyd.OracleDAL
 				strSql.Append(" where "+strWhere);
 			}
 			strSql.Append(" order by " + filedOrder);
-            return OracleHelper.Query(strSql.ToString());
+			return OracleHelper.Query(strSql.ToString());
 		}
 
    

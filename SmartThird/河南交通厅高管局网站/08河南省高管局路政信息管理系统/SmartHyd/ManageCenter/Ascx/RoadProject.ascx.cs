@@ -35,10 +35,11 @@ namespace SmartHyd.ManageCenter.Ascx
             //绑定分页后的数据
             repList.DataSource = pds;
             repList.DataBind();
-
-
-            
         }
+        /// <summary>
+        /// 获得申请单实体数据
+        /// </summary>
+        /// <returns></returns>
         private Entity.BASE_LICENSE_ACCEPT GetEntity()
         {
             Entity.BASE_LICENSE_ACCEPT model = new Entity.BASE_LICENSE_ACCEPT();
@@ -84,24 +85,58 @@ namespace SmartHyd.ManageCenter.Ascx
             //model.AUDIT_REPLY = "";            //意见回复
 
         }
-        /// <summary>
-        ///按钮事件：提交
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        protected void btnSubmit_Click(object sender, EventArgs e)
+        #region 页面功能按钮事件(必须重写基类虚方法，否则按钮的事件是无效的)
+        //添加
+        public override void BtnAdd_Click(object sender, EventArgs e)
         {
-            Entity.BASE_LICENSE_ACCEPT model =GetEntity();
+            //获取实体
+            Entity.BASE_LICENSE_ACCEPT model = GetEntity();
+
+            //添加数据
             bll.Add(model);
 
-            //刷新页面
-            //Response.Redirect(Request.Url.AbsoluteUri, true);
+            //重新加载当前页
+            Response.Redirect(Request.Url.AbsoluteUri, true);
         }
+        //删除
+        public override void BtnDelete_Click(object sender, EventArgs e)
+        {
+        }
+        //重置
+        public override void BtnCancel_Click(object sender, EventArgs e)
+        {
+            SetEntity(new Entity.BASE_LICENSE_ACCEPT());
 
+            Smart.Utility.Alerts.Alert("test");
+        }
+        //修改
+        public override void BtnUpdate_Click(object sender, EventArgs e) { }
+        //查看
+        public override void BtnView_Click(object sender, EventArgs e) { }
+        //查询
+        public override void BtnSearch_Click(object sender, EventArgs e) { }
+        //导入
+        public override void BtnImport_Click(object sender, EventArgs e) { }
+        //导出
+        public override void BtnExport_Click(object sender, EventArgs e) { }
+        //打印
+        public override void BtnPrint_Click(object sender, EventArgs e) { }
+        //移动
+        public override void BtnMove_Click(object sender, EventArgs e) { }
+        //下载
+        public override void BtnDownload_Click(object sender, EventArgs e) { }
+        //备份
+        public override void BtnBackup_Click(object sender, EventArgs e) { }
+        //审核
+        public override void BtnVerify_Click(object sender, EventArgs e) { }
+        //授权
+        public override void BtnGrant_Click(object sender, EventArgs e) { }
+        //分页事件
         protected void AspNetPager1_PageChanging(object src, Wuqi.Webdiyer.PageChangingEventArgs e)
         {
             this.AspNetPager1.CurrentPageIndex = e.NewPageIndex;
             BindingData();
         }
+        #endregion
     }
 }

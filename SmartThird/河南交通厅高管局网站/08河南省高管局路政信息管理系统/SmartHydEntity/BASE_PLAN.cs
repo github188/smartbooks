@@ -4,7 +4,7 @@
 // 文件名称:BASE_PLAN.cs
 // 功能描述:日程信息表 -- 实体定义
 //
-// 创建标识： 付晓 2012-05-04
+// 创建标识： 付晓 2012-05-15
 namespace SmartHyd.Entity
 {
     using System;
@@ -40,6 +40,10 @@ namespace SmartHyd.Entity
         /// 提醒时间
         /// </summary>		
         private DateTime _CALENDARREMIND;
+		/// <summary>
+        /// 事务类型
+        /// </summary>		
+        private string _CALENDARTYPE;
 	
 	        /// <summary>
         /// 日程信息编号
@@ -88,6 +92,14 @@ namespace SmartHyd.Entity
         {
             get { return _CALENDARREMIND; }
             set { _CALENDARREMIND = value; }
+        }
+	        /// <summary>
+        /// 事务类型
+        /// </summary>
+        public string CALENDARTYPE
+        {
+            get { return _CALENDARTYPE; }
+            set { _CALENDARTYPE = value; }
         }
 	}
 }
