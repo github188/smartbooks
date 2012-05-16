@@ -58,18 +58,18 @@
                     Width="419px"></asp:TextBox>
             </td>
         </tr>
-        <tr align="center" class="TableControl">
+       <%-- <tr align="center" class="TableControl">
             <td colspan="4" nowrap="nowrap">
                 <input type="hidden" name="tid" value="">
                 <asp:Button ID="BtnSave" runat="server" Text="保存" OnClick="BtnSave_Click" />
                 <asp:Button ID="btnCancel" runat="server" Text="取消" OnClick="btnCancel_Click" />
                 <asp:Button ID="BtnBack" runat="server" Text="返回" OnClick="BtnBack_Click" />
-                <%--<input type="button" value="保存" class="BigButton" onclick="javascript:mysubmit();">&nbsp;&nbsp; <input
+                <input type="button" value="保存" class="BigButton" onclick="javascript:mysubmit();">&nbsp;&nbsp; <input
 
 			type="button" value="返回" class="BigButton"
 
-			onclick="javascript:location='/general/document/index.php/setting/type'">&nbsp;&nbsp;--%>
+			onclick="javascript:location='/general/document/index.php/setting/type'">&nbsp;&nbsp;
             </td>
-        </tr>
+        </tr>--%>
     </tbody>
 </table>

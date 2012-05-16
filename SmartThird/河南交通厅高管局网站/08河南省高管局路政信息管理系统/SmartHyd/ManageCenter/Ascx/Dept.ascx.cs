@@ -11,6 +11,7 @@ namespace SmartHyd.ManageCenter.Ascx
     public partial class Department : UI.BaseUserControl
     {
         private BLL.BASE_DEPT bll = new BLL.BASE_DEPT();
+        private BLL.BASE_LOG model = new BLL.BASE_LOG();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)

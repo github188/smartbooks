@@ -1,12 +1,11 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="SysLog.ascx.cs" Inherits="SmartHyd.ManageCenter.Ascx.SysLog" %>
 <%@ Register Assembly="AspNetPager" Namespace="Wuqi.Webdiyer" TagPrefix="webdiyer" %>
-
 <div id="tab">
-    <ui id="menu">
-   <li><a href="#tabs-1">日志管理</a></li>
-</ui>
+    <ul id="menu">
+          <li><a href="#tabs-1">日志管理</a></li>
+      </ui>
     <div id="tabs-1">
-    <table class="table" width="100%" align="center">
+        <table class="table" width="100%" align="center">
             <asp:Repeater ID="RptList" runat="server">
                 <HeaderTemplate>
                     <thead>
@@ -29,9 +28,9 @@
                             <th>
                                 操作人
                             </th>
-                            <th>
+                            <%--  <th>
                                 操作
-                            </th>
+                            </th>--%>
                         </tr>
                     </thead>
                 </HeaderTemplate>
@@ -52,20 +51,19 @@
                             <td>
                                 <%# Eval("CREATEDATE")%>
                             </td>
-                             <td>
+                            <td>
                                 <%# Eval("DESCRIPTION")%>
                             </td>
                             <td>
                                 <%# Eval("OPERATORID")%>
                             </td>
-                           
-                            <td>
+                            <%-- <td>
                                 <a href="AfficheEdit.aspx?aid=<%# Eval("LOGID")%>">编辑</a> 
                                 <a href="" id="delhref" runat="server"> 删除</a>
-                                 <%--onclick="javascript:delete_notify(<%# Eval("LOGID")%>)"--%>
+                                 onclick="javascript:delete_notify(<%# Eval("LOGID")%>)"
                                     
                                    
-                            </td>
+                            </td>--%>
                         </tr>
                     </tbody>
                 </ItemTemplate>

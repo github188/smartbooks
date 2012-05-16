@@ -10,6 +10,7 @@ namespace SmartHyd.ManageCenter.Ascx
     public partial class AfficheEdit : UI.BaseUserControl
     {
         private BLL.BASE_AFFICHE bll = new BLL.BASE_AFFICHE();
+        private BLL.BASE_LOG model = new BLL.BASE_LOG();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)

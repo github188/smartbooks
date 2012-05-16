@@ -11,6 +11,7 @@ namespace SmartHyd.ManageCenter.Ascx
     public partial class RoadProject : UI.BaseUserControl
     {
         private BLL.BASE_LICENSE_ACCEPT bll = new BLL.BASE_LICENSE_ACCEPT();
+        private BLL.BASE_LOG model = new BLL.BASE_LOG();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)

@@ -9,6 +9,7 @@ using System.Web.UI.WebControls;
 namespace SmartHyd.ManageCenter.Ascx {
     public partial class ImportData : UI.BaseUserControl {
         private BLL.BASE_BUS_OVERRUN bll = new BLL.BASE_BUS_OVERRUN();
+        private BLL.BASE_LOG model = new BLL.BASE_LOG();
 
         protected void Page_Load(object sender, EventArgs e) {
             if (!IsPostBack) {

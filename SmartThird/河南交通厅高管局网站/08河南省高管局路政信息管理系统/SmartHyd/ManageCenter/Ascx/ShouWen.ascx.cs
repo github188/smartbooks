@@ -11,6 +11,7 @@ namespace SmartHyd.ManageCenter.Ascx
     public partial class Shouwen : UI.BaseUserControl
     {
         private BLL.BASE_SHOUWEN bll = new BLL.BASE_SHOUWEN();
+        private BLL.BASE_LOG model = new BLL.BASE_LOG();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)

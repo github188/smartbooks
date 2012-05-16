@@ -18,6 +18,12 @@
                     height: "350px"
                 });
             });
+            /*开始时间*/
+            $("#ctl00_ContentPlaceHolder1_Plan1_txtStartTIME").datepicker();
+            /*结束时间*/
+            $("#ctl00_ContentPlaceHolder1_Plan1_txtEndTIME").datepicker();
+            /*提醒时间*/
+            $("#ctl00_ContentPlaceHolder1_Plan1_txtPrompt").datepicker();
         });
     </script>
 </asp:Content>

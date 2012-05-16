@@ -9,6 +9,7 @@ using System.Web.UI.WebControls;
 namespace SmartHyd.ManageCenter.Ascx {
     public partial class RoadTerm : UI.BaseUserControl {
         private BLL.BASE_ROAD_TERM bll = new BLL.BASE_ROAD_TERM();
+        private BLL.BASE_LOG model = new BLL.BASE_LOG();
 
         //加载
         protected void Page_Load(object sender, EventArgs e) {

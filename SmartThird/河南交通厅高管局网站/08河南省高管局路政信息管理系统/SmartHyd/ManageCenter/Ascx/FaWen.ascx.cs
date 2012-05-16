@@ -13,7 +13,7 @@ namespace SmartHyd.ManageCenter.Ascx
         private BLL.BASE_FAWEN bll = new BLL.BASE_FAWEN();
         private BLL.BASE_FILETYPE tbll = new BLL.BASE_FILETYPE();
         private BLL.BASE_DEPT bllDept = new BLL.BASE_DEPT();
-
+        private BLL.BASE_LOG model = new BLL.BASE_LOG();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)

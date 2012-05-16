@@ -57,14 +57,14 @@
                 Width="419px"></asp:TextBox>
         </td>
     </tr>
-    <tr align="center" class="TableControl">
+   <%-- <tr align="center" class="TableControl">
         <td colspan="4" nowrap="nowrap">
             <input type="hidden" name="tid" value="" />
             <asp:Button ID="BtnEdit" runat="server" Text="修改" onclick="BtnEdit_Click" />
             <asp:Button ID="BtnBack" runat="server" Text="返回" onclick="BtnBack_Click" />
         
         </td>
-    </tr>
+    </tr>--%>
     </tbody>
 </table>
 </div>

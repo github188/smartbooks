@@ -74,11 +74,11 @@
                 <asp:FileUpload ID="FileUploadPath" runat="server" CssClass="input" />
             </td>
         </tr>
-        <tr>
+      <%--  <tr>
             <td class="red" align="center" colspan='3'>
                 <asp:Button ID="BtnEdit" runat="server" Text="修改" OnClick="BtnEdit_Click" />
                 <asp:Button ID="BtnBack" runat="server" Text="返回" OnClick="BtnBack_Click" />
             </td>
-        </tr>
+        </tr>--%>
     </table>
 </div>

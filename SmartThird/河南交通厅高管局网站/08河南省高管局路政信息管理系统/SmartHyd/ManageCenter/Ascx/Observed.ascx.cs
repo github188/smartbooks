@@ -9,6 +9,7 @@ using System.Web.UI.WebControls;
 namespace SmartHyd.ManageCenter.Ascx {
     public partial class Observed : UI.BaseUserControl {
         private BLL.BASE_OBSERVED bll = new BLL.BASE_OBSERVED();
+        private BLL.BASE_LOG model = new BLL.BASE_LOG();
 
         protected void Page_Load(object sender, EventArgs e) {
             if (!IsPostBack) {

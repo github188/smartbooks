@@ -10,7 +10,10 @@ namespace SmartHyd.ManageCenter.Ascx
 {
     public partial class Affiche : UI.BaseUserControl
     {
+        private Utility.Log log=new Utility.Log();
+       
         private BLL.BASE_AFFICHE bll = new BLL.BASE_AFFICHE();
+        private BLL.BASE_LOG logbll = new BLL.BASE_LOG();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -51,9 +54,19 @@ namespace SmartHyd.ManageCenter.Ascx
 
             //添加数据
             bll.Add(model);
+            //日志..............添加
+             Entity.BASE_LOG logmodel = new Entity.BASE_LOG();
 
+            logmodel.LOGID = -1;                        //id,主键
+            logmodel.LOGTYPE = "电子公告";                     //日志类型
+            logmodel.CREATEDATE = DateTime.Now;                   //日志创建时间
+            logmodel.DESCRIPTION = "添加公告";                             //日志信息内容
+            logmodel.OPERATORID = 23;                    //操作人
+            logmodel.IPADDRESS = Smart.Utility.IpAddress.getIP();                 //ip地址
+            
+            logbll.Add(logmodel);
             //重新加载当前页
-            Response.Redirect(Request.Url.AbsoluteUri, true);
+            Response.Redirect(Request.Url.AbsoluteUri+"#tabs-2", true);
         }
         //删除
         public override void BtnDelete_Click(object sender, EventArgs e)

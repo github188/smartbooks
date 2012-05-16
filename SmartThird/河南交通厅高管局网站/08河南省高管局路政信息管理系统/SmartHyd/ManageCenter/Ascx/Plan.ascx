@@ -1,4 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Plan.ascx.cs" Inherits="SmartHyd.ManageCenter.Ascx.Plan" %>
+<%@ Register Assembly="AspNetPager" Namespace="Wuqi.Webdiyer" TagPrefix="webdiyer" %>
 <div id="tab">
     <ul id="menu">
         <li><a href="#tabs-1">新建日程</a></li>
@@ -87,6 +88,64 @@
     <!--新建日程结束-->
     <!--日程管理开始-->
     <div id="tabs-2">
+        <table class="table">
+            <asp:Repeater ID="repList" runat="server">
+                <HeaderTemplate>
+                    <thead>
+                        <tr>
+                            <th>
+                                编号
+                            </th>
+                            <th>
+                                事务类型
+                            </th>
+                            <th>
+                                开始时间
+                            </th>
+                            <th>
+                                结束时间
+                            </th>
+                            <th>
+                                日程内容
+                            </th>
+                            <th>
+                                提醒时间
+                            </th>
+                        </tr>
+                    </thead>
+                </HeaderTemplate>
+                <ItemTemplate>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <%#Eval("CALENDARID")%>
+                            </td>
+                            <td>
+                                <%#Eval("CALENDARTYPE")%>
+                            </td>
+                            <td>
+                                <%#Eval("START_DATE")%>
+                            </td>
+                            <td>
+                                <%#Eval("END_DATE")%>
+                            </td>
+                            <td>
+                                <%#Eval("CALENDARCONTENT")%>
+                            </td>
+                          
+                            <td>
+                                <%#Eval("CALENDARREMIND")%>
+                            </td>
+                        </tr>
+                    </tbody>
+                </ItemTemplate>
+            </asp:Repeater>
+        </table>
+         <webdiyer:AspNetPager ID="AspNetPager1" runat="server" CustomInfoHTML="共%PageCount%页，当前为第%CurrentPageIndex%页"
+            FirstPageText="首页" LastPageText="尾页" NextPageText="下一页" PageIndexBoxType="TextBox"
+            PrevPageText="上一页" ShowCustomInfoSection="Right" ShowPageIndexBox="Auto" SubmitButtonText="Go"
+            TextAfterPageIndexBox="页" TextBeforePageIndexBox="转到" OnPageChanging="AspNetPager1_PageChanging">
+        </webdiyer:AspNetPager>
     </div>
     <!--日程管理结束-->
 </div>

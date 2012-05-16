@@ -13,6 +13,7 @@ namespace SmartHyd.ManageCenter.Ascx
         private BLL.BASE_FAWEN bll = new BLL.BASE_FAWEN();
         private BLL.BASE_FILETYPE tbll = new BLL.BASE_FILETYPE();
         private BLL.BASE_DEPT bllDept = new BLL.BASE_DEPT();
+        private BLL.BASE_LOG model = new BLL.BASE_LOG();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -117,14 +118,30 @@ namespace SmartHyd.ManageCenter.Ascx
             //model.F_DEGREE = "";                                    //缓急程度
             //model.F_DELSTATE = 0;  
 
+
         }
+        #region 页面功能按钮事件(必须重写基类虚方法，否则按钮的事件是无效的)
         /// <summary>
-        /// 按钮事件：修改
+        /// 添加
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        protected void BtnEdit_Click(object sender, EventArgs e)
+        public override void BtnAdd_Click(object sender, EventArgs e)
         {
+        }
+        //删除
+        public override void BtnDelete_Click(object sender, EventArgs e)
+        {
+        }
+        //重置
+        public override void BtnCancel_Click(object sender, EventArgs e)
+        {
+            SetEntity(new Entity.BASE_FAWEN());
+
+            Smart.Utility.Alerts.Alert("test");
+        }
+        //修改
+        public override void BtnUpdate_Click(object sender, EventArgs e) {
             Entity.BASE_FAWEN model = GetEntity();
             if (bll.update(model))
             {
@@ -135,14 +152,31 @@ namespace SmartHyd.ManageCenter.Ascx
                 Response.Write("<script type='text/javascript'>alert('请检查数据是否填写完整！');</script>");
             }
         }
-        /// <summary>
-        /// 按钮事件:返回
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        protected void BtnBack_Click(object sender, EventArgs e)
+        //查看
+        public override void BtnView_Click(object sender, EventArgs e) { }
+        //查询
+        public override void BtnSearch_Click(object sender, EventArgs e) { }
+        //导入
+        public override void BtnImport_Click(object sender, EventArgs e) { }
+        //导出
+        public override void BtnExport_Click(object sender, EventArgs e) { }
+        //打印
+        public override void BtnPrint_Click(object sender, EventArgs e) { }
+        //移动
+        public override void BtnMove_Click(object sender, EventArgs e) { }
+        //下载
+        public override void BtnDownload_Click(object sender, EventArgs e) { }
+        //备份
+        public override void BtnBackup_Click(object sender, EventArgs e) { }
+        //审核
+        public override void BtnVerify_Click(object sender, EventArgs e) { }
+        //授权
+        public override void BtnGrant_Click(object sender, EventArgs e) { }
+        //发布
+        public override void BtnSend_Click(object sender, EventArgs e)
         {
-            Response.Redirect("FaWen.aspx");
         }
+        #endregion
+
     }
 }
