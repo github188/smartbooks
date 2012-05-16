@@ -51,6 +51,7 @@
     <Compile Include="Date\WeekService.cs" />
     <Compile Include="Domain\WhoisSearch.cs" />
     <Compile Include="Alerts.cs" />
+    <Compile Include="IpAddress.cs" />
     <Compile Include="NumberToChineseChar.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PublicCheck.cs" />

@@ -64,6 +64,7 @@
     <Content Include="ManageCenter\Ascx\Area.ascx" />
     <Content Include="ManageCenter\Ascx\Dept.ascx" />
     <Content Include="ManageCenter\Ascx\DeptEdit.ascx" />
+    <Content Include="ManageCenter\Ascx\Empower.ascx" />
     <Content Include="ManageCenter\Ascx\FaWen.ascx" />
     <Content Include="ManageCenter\Ascx\FaWenEdit.ascx" />
     <Content Include="ManageCenter\Ascx\ImportData.ascx" />
@@ -80,6 +81,7 @@
     <Content Include="ManageCenter\Ascx\UserManage.ascx" />
     <Content Include="ManageCenter\Dept.aspx" />
     <Content Include="ManageCenter\DeptEdit.aspx" />
+    <Content Include="ManageCenter\Empower.aspx" />
     <Content Include="ManageCenter\FaWen.aspx" />
     <Content Include="ManageCenter\FaWenEdit.aspx" />
     <Content Include="ManageCenter\ImportData.aspx" />
@@ -380,6 +382,12 @@
     <Compile Include="ManageCenter\Ascx\DeptEdit.ascx.designer.cs">
       <DependentUpon>DeptEdit.ascx</DependentUpon>
     </Compile>
+    <Compile Include="ManageCenter\Ascx\Empower.ascx.cs">
+      <DependentUpon>Empower.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\Ascx\Empower.ascx.designer.cs">
+      <DependentUpon>Empower.ascx</DependentUpon>
+    </Compile>
     <Compile Include="ManageCenter\Ascx\FaWen.ascx.cs">
       <DependentUpon>FaWen.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -491,6 +499,12 @@
     </Compile>
     <Compile Include="ManageCenter\DeptEdit.aspx.designer.cs">
       <DependentUpon>DeptEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\Empower.aspx.cs">
+      <DependentUpon>Empower.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\Empower.aspx.designer.cs">
+      <DependentUpon>Empower.aspx</DependentUpon>
     </Compile>
     <Compile Include="ManageCenter\FaWen.aspx.cs">
       <DependentUpon>FaWen.aspx</DependentUpon>
