@@ -13,12 +13,12 @@ span,input{float:left;}
 .anpager a:hover{background:#1F3A87 none repeat scroll 0 0;border:1px solid #1F3A87;color:#FFFFFF;}
 
 /*通用表格样式--列表*/
-.table { text-align:center; border-collapse:collapse; margin:9px; width:100%; background-color:#FFFFFF;}
-.table th,tr,td{border:1px solid #d3d8dc; line-height:26px; padding-left:9px;padding-right:9px;}
+.table { text-align:center; margin:9px; width:100%; background-color:#4297d7;}
+.table th,tr,td{line-height:26px; padding-left:9px; padding-right:9px; border:none;}
 .table th{ background-color:#6194c1; color:#ffffff; font-size:15px;}
-.table tr:hover{background-color:#f8f8f8; cursor:pointer;}
-.table td{ overflow:hidden;}
-/*table thead,tfoot{ background-color:#6194c1;}*/
+.table tr:hover{background-color:#95bfdf; }
+.table td{ overflow:hidden; font-size:13px; background-color:#ffffff;}
+.table thead,tfoot{ background-color:#6194c1; color:#FFFFFF;}
 
 /*通用表格样式--编辑*/
 .edit {border-collapse:collapse; margin:9px; background-color:#FFFFFF;}

@@ -22,9 +22,9 @@ namespace SmartHyd.ManageCenter.Ascx {
 
         #region 页面功能按钮事件(必须重写基类虚方法，否则按钮的事件是无效的)
         //添加
-        public override void BtnAdd_Click(object sender, EventArgs e) {}
+        public override void BtnAdd_Click(object sender, EventArgs e) { }
         //删除
-        public override void BtnDelete_Click(object sender, EventArgs e) {}
+        public override void BtnDelete_Click(object sender, EventArgs e) { }
         //重置
         public override void BtnCancel_Click(object sender, EventArgs e) { }
         //修改
@@ -71,7 +71,7 @@ namespace SmartHyd.ManageCenter.Ascx {
         private void BindData() {
             DataTable dt = new DataTable();
             //获取数据，默认查询起始时间：（当前时间减去1小时），截止时间：（当前时间）
-            dt = bll.GetPreviewData(DateTime.Now.AddHours(-1), DateTime.Now);
+            dt = bll.GetPreviewData(DateTime.Now.AddHours(-10), DateTime.Now);
 
             //初始化分页数据
             AspNetPager1.RecordCount = dt.Rows.Count;
@@ -96,7 +96,10 @@ namespace SmartHyd.ManageCenter.Ascx {
                 //设置数据库保存文件名称
                 string filename = string.Format("{0}Temp\\{1}",
                     Server.MapPath("~/"),
-                    Guid.NewGuid().ToString().ToUpper());
+                    /*Guid.NewGuid().ToString().ToUpper()*/
+                    "A7EF1E10-1ACE-4298-8274-47C3F5030FBE");
+
+                bll.On_CompleteSingle +=new BLL.OnCompleteSingle(On_CompleteSingle);
 
                 //保存文件到服务器
                 fileUpAccessDB.SaveAs(filename);
@@ -105,17 +108,13 @@ namespace SmartHyd.ManageCenter.Ascx {
                 string oleDBConnectionString = string.Format("Provider=Microsoft.Jet.Oledb.4.0; Data Source={0};",
                     filename);
 
-                //从Access获取导入数据
-                DataTable dtSource = new DataTable();
-                dtSource = bll.GetImportData("TEMP_OVERLOADRATE_DETAIL", oleDBConnectionString);
-
-                //写入数据到Oracle
-                bll.ImportData(dtSource);
+                //导入数据到Oracle
+                bll.ExecImportDataToOracle("TEMP_OVERLOADRATE_DETAIL", oleDBConnectionString);
 
                 //加密、压缩、删除临时文件等
 
                 return true;
-            }            
+            }
             return false;
         }
 
@@ -140,6 +139,12 @@ namespace SmartHyd.ManageCenter.Ascx {
             }
 
             return true;
+        }
+
+        private void On_CompleteSingle(int size, int count) {
+            this.lblprogressbarNum.Text = string.Format("{0}/{1}",
+                size.ToString(), count.ToString());
+            hidPercentage.Value = Convert.ToString(100 - (count - size) / count * 100);
         }
         #endregion
     }

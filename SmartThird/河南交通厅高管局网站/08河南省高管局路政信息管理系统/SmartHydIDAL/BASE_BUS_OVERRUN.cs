@@ -52,8 +52,7 @@ namespace SmartHyd.IDAL {
         /// 获得前几行数据
         /// </summary>
         DataSet GetList(int Top, string strWhere, string filedOrder);
-
-
-        void ImportData(DataTable source);
+        
+        void ExecImportDataToOracle(string tabname, string connectionAccess);
     }
 }

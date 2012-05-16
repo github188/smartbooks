@@ -39,6 +39,12 @@ namespace Smart.Utility
             #endregion
         }
 
+        public static void RunFunction(string CallfunctionCode) {
+            string js = @"<Script language='JavaScript'>" +
+                CallfunctionCode + "</Script>";
+            HttpContext.Current.Response.Write(js);
+        }
+
         /// <summary>
         /// 弹出消息框并且转向到新的URL
         /// </summary>

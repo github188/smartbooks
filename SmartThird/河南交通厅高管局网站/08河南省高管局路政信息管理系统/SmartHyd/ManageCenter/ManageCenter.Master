@@ -32,7 +32,6 @@
 <body>
     <form id="form1" runat="server">
     <div>
-
         <!--内容开始-->
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         </asp:ContentPlaceHolder>

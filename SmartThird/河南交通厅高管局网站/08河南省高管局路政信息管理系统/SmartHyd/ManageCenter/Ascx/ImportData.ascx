@@ -19,20 +19,23 @@
             </thead>
             <tbody>
                 <tr height="38">
-                    <td>
+                    <td colspan="2">
                         <asp:Label ID="Label1" runat="server" Text="数据文件:"></asp:Label>
                         <asp:FileUpload ID="fileUpAccessDB" runat="server" CssClass="input {required:true}" />
                         <div class="validate ui-state-highlight ui-corner-all" style="border: none;"></div>
                     </td>
-                </tr>
-            </tbody>
-            <tfoot>
-                <tr>
-                    <td colspan="3" style="text-align: center;">
+                    <td>
                         请选择Office 2003 Access数据库文件格式(*.mdb)。
                     </td>
                 </tr>
-            </tfoot>
+                <tr>
+                    <td colspan="3">
+                        <asp:HiddenField ID="hidPercentage" runat="server" Value="0"/>
+                        <asp:Label ID="lblprogressbarNum" runat="server"></asp:Label>
+                        <div id="progressbar"></div>
+                    </td>
+                </tr>
+            </tbody>
         </table>
     </div>
     <!--导入数据结束-->
@@ -45,10 +48,8 @@
                         <tr>
                             <th>导入时间</th>
                             <th>车牌号码</th>
-                            <th>入口车站</th>
                             <th>入口站名</th>
                             <th>入口时间</th>
-                            <th>出口车站</th>
                             <th>出口站名</th>
                             <th>出口时间</th>
                             <th>支付方式</th>
@@ -65,10 +66,8 @@
                         <tr>
                             <td><%#Eval("IMPORTDATE")%></td>
                             <td><%#Eval("VEHICLELICENSE")%></td>
-                            <td><%#Eval("ENTRYSTATION")%></td>
                             <td><%#Eval("ENTRYSTATIONNAME")%></td>
-                            <td><%#DateTime.Parse(Eval("ENTRYTIME").ToString()).ToString("yyyy-MM-dd HH:mm:ss")%></td>
-                            <td><%#Eval("EXITSTATION")%></td>
+                            <td><%#DateTime.Parse(Eval("ENTRYTIME").ToString()).ToString("yyyy-MM-dd HH:mm:ss")%></td>                            
                             <td><%#Eval("EXITSTATIONNAME")%></td>
                             <td><%#DateTime.Parse(Eval("EXITTIME").ToString()).ToString("yyyy-MM-dd HH:mm:ss")%></td>
                             <td><%#Eval("PAYTYPE")%></td>
@@ -85,10 +84,8 @@
                         <tr>
                             <td>导入时间</td>
                             <td>车牌号码</td>
-                            <td>入口车站</td>
                             <td>入口站名</td>
                             <td>入口时间</td>
-                            <td>出口车站</td>
                             <td>出口站名</td>
                             <td>出口时间</td>
                             <td>支付方式</td>
@@ -106,7 +103,7 @@
             FirstPageText="首页" LastPageText="尾页" NextPageText="下一页" PageIndexBoxType="TextBox"
             PrevPageText="上一页" ShowCustomInfoSection="Right" ShowPageIndexBox="Auto" SubmitButtonText="Go"
             TextAfterPageIndexBox="页" TextBeforePageIndexBox="转到" OnPageChanging="AspNetPager1_PageChanging"
-            PageSize="20">
+            PageSize="20" CssClass="anpager" CurrentPageButtonClass="cpb">
         </webdiyer:AspNetPager>
     </div>
     <!--数据预览结束-->

@@ -14,10 +14,14 @@ namespace SmartHyd.OracleDAL {
     using System.Data.OracleClient;
     using IDAL;
 
+    public delegate void OnCompleteSingle(int size, int count);
+
     /// <summary>
     /// 高速公路超限车辆数据表 -- 接口实现
     /// </summary>
     public partial class BASE_BUS_OVERRUN : IBASE_BUS_OVERRUN {
+        public event OnCompleteSingle On_CompleteSingle;
+
         /// <summary>
         /// 确定记录是否存在
         /// </summary>
@@ -86,7 +90,6 @@ namespace SmartHyd.OracleDAL {
 
         }
 
-
         /// <summary>
         /// 更新一条数据
         /// </summary>
@@ -153,7 +156,6 @@ namespace SmartHyd.OracleDAL {
             }
         }
 
-
         /// <summary>
         /// 删除一条数据
         /// </summary>
@@ -174,9 +176,7 @@ namespace SmartHyd.OracleDAL {
                 return false;
             }
         }
-
-
-
+        
         /// <summary>
         /// 得到一个对象实体
         /// </summary>
@@ -239,7 +239,6 @@ namespace SmartHyd.OracleDAL {
             }
         }
 
-
         /// <summary>
         /// 获得数据列表
         /// </summary>
@@ -273,16 +272,38 @@ namespace SmartHyd.OracleDAL {
 
         #region 自定义查询
 
-        public void ImportData(DataTable source) {
-            #region 定义Insert语句和参数对象
-            StringBuilder strSql = new StringBuilder();
-            strSql.Append("insert into BASE_BUS_OVERRUN(");
-            strSql.Append("AXISNUM,OVERLOADRATE,TOTALWEIGHT,TOTALTOLL,DISTANCE,VEHICLELICENSE,ENTRYSTATION,ENTRYSTATIONNAME,ENTRYTIME,EXITSTATION,EXITSTATIONNAME,EXITTIME,PAYTYPE");
-            strSql.Append(") values (");
-            strSql.Append(":AXISNUM,:OVERLOADRATE,:TOTALWEIGHT,:TOTALTOLL,:DISTANCE,:VEHICLELICENSE,:ENTRYSTATION,:ENTRYSTATIONNAME,:ENTRYTIME,:EXITSTATION,:EXITSTATIONNAME,:EXITTIME,:PAYTYPE");
-            strSql.Append(") ");
+        public void ExecImportDataToOracle(string tabname, string connectionAccess) {
+            using (System.Data.OleDb.OleDbConnection connection = new System.Data.OleDb.OleDbConnection(connectionAccess)) {
+                #region 定义Access数据连接对象
+                string select = string.Format("SELECT AXISNUM,OVERLOADRATE,TOTALWEIGHT,TOTALTOLL,DISTANCE,VEHICLELICENSE,ENTRYSTATION,ENTRYSTATIONNAME,ENTRYTIME,EXITSTATION,EXITSTATIONNAME,EXITTIME,PAYTYPE FROM {0}", tabname);
+                connection.Open();
+                System.Data.OleDb.OleDbCommand command = new System.Data.OleDb.OleDbCommand(select, connection);
+                System.Data.OleDb.OleDbDataReader dataRead = command.ExecuteReader();
+                
+                //获取记录总数
+                int size = 0;
+                int count = 0;
+                DataTable dtCount = new DataTable();
+                System.Data.OleDb.OleDbDataAdapter oleDa = new System.Data.OleDb.OleDbDataAdapter(
+                    string.Format("select count(1) from {0}",tabname),
+                    connectionAccess);
+                oleDa.Fill(dtCount);
+                count = Convert.ToInt32(dtCount.Rows[0][0].ToString());
 
-            OracleParameter[] parameters = {
+                #endregion
+
+                #region Oracle
+                #region Insert语句
+                StringBuilder strSql = new StringBuilder();
+                strSql.Append("insert into BASE_BUS_OVERRUN(");
+                strSql.Append("AXISNUM,OVERLOADRATE,TOTALWEIGHT,TOTALTOLL,DISTANCE,VEHICLELICENSE,ENTRYSTATION,ENTRYSTATIONNAME,ENTRYTIME,EXITSTATION,EXITSTATIONNAME,EXITTIME,PAYTYPE");
+                strSql.Append(") values (");
+                strSql.Append(":AXISNUM,:OVERLOADRATE,:TOTALWEIGHT,:TOTALTOLL,:DISTANCE,:VEHICLELICENSE,:ENTRYSTATION,:ENTRYSTATIONNAME,:ENTRYTIME,:EXITSTATION,:EXITSTATIONNAME,:EXITTIME,:PAYTYPE");
+                strSql.Append(") ");
+                #endregion
+
+                #region Oracle参数对象
+                OracleParameter[] parameters = {
 			            new OracleParameter(":AXISNUM", OracleType.Number,4) ,            
                         new OracleParameter(":OVERLOADRATE", OracleType.Number,4) ,            
                         new OracleParameter(":TOTALWEIGHT", OracleType.Number,4) ,            
@@ -295,67 +316,54 @@ namespace SmartHyd.OracleDAL {
                         new OracleParameter(":EXITSTATION", OracleType.Number,4) ,            
                         new OracleParameter(":EXITSTATIONNAME", OracleType.VarChar,200) ,            
                         new OracleParameter(":EXITTIME", OracleType.DateTime) ,            
-                        new OracleParameter(":PAYTYPE", OracleType.VarChar,200)             
-              
-            };
-            #endregion
+                        new OracleParameter(":PAYTYPE", OracleType.VarChar,200)
+                };
+                #endregion
 
-            #region 定义事务
-            OracleConnection Connection = new OracleConnection(OracleHelper.ConnectionString);
-            OracleTransaction Transaction = Connection.BeginTransaction();
-            try {
-                OracleCommand command = Connection.CreateCommand();
-                command.CommandType = CommandType.Text;
-                command.Transaction = Transaction;
-                command.CommandText = strSql.ToString();
+                OracleConnection OraConnection = new OracleConnection(OracleHelper.ConnectionString);
+                OraConnection.Open();
+                OracleCommand Oracommand = OraConnection.CreateCommand();
+                Oracommand.CommandType = CommandType.Text;
+                Oracommand.CommandText = strSql.ToString();
 
-                foreach (DataRow row in source.Rows) {
-                    parameters[0].Value = row["AXISNUM"];
-                    parameters[1].Value = row["OVERLOADRATE"];
-                    parameters[2].Value = row["TOTALWEIGHT"];
-                    parameters[3].Value = row["TOTALTOLL"];
-                    parameters[4].Value = row["DISTANCE"];
-                    parameters[5].Value = row["VEHICLELICENSE"];
-                    parameters[6].Value = row["ENTRYSTATION"];
-                    parameters[7].Value = row["ENTRYSTATIONNAME"];
-                    parameters[8].Value = row["ENTRYTIME"];
-                    parameters[9].Value = row["EXITSTATION"];
-                    parameters[10].Value = row["EXITSTATIONNAME"];
-                    parameters[11].Value = row["EXITTIME"];
-                    parameters[12].Value = row["PAYTYPE"];
+                #endregion
 
-                    foreach (OracleParameter pm in parameters) {
-                        command.Parameters.Add(pm);
+                #region Begin
+                try {
+                    while (dataRead.Read()) {
+                        parameters[0].Value = dataRead["AXISNUM"];
+                        parameters[1].Value = dataRead["OVERLOADRATE"];
+                        parameters[2].Value = dataRead["TOTALWEIGHT"];
+                        parameters[3].Value = dataRead["TOTALTOLL"];
+                        parameters[4].Value = dataRead["DISTANCE"];
+                        parameters[5].Value = dataRead["VEHICLELICENSE"];
+                        parameters[6].Value = dataRead["ENTRYSTATION"];
+                        parameters[7].Value = dataRead["ENTRYSTATIONNAME"];
+                        parameters[8].Value = dataRead["ENTRYTIME"];
+                        parameters[9].Value = dataRead["EXITSTATION"];
+                        parameters[10].Value = dataRead["EXITSTATIONNAME"];
+                        parameters[11].Value = dataRead["EXITTIME"];
+                        parameters[12].Value = dataRead["PAYTYPE"];
+                        foreach (OracleParameter pm in parameters) {
+                            Oracommand.Parameters.Add(pm);
+                        }
+                        
+                        Oracommand.ExecuteNonQuery();
+                        Oracommand.Parameters.Clear();
+                        size++;
+                        if (On_CompleteSingle != null) {
+                            On_CompleteSingle(size, count);
+                        }
                     }
-                    command.ExecuteNonQuery();
-                    command.Parameters.Clear();
+                } catch (Exception ex) {
+                    throw ex;
+                } finally {
+                    connection.Close();
+                    connection.Dispose();
                 }
-
-                Transaction.Commit();
-            } catch (Exception ex) {
-                Transaction.Rollback();
-                throw ex;
-            } finally {
-                Transaction.Dispose();
-                Connection.Close();
-                Connection.Dispose();
+                #endregion
             }
-            #endregion
         }
-
-        /// <summary>
-        /// 获取Access文件数据
-        /// </summary>
-        /// <param name="tabname">表名</param>
-        /// <param name="connectionAccess">access连接字符串</param>
-        /// <returns>数据集</returns>
-        public DataTable GetImportData(string tabname, string connectionAccess) {
-            string select = string.Format("SELECT AXISNUM,OVERLOADRATE,TOTALWEIGHT,TOTALTOLL,DISTANCE,VEHICLELICENSE,ENTRYSTATION,ENTRYSTATIONNAME,ENTRYTIME,EXITSTATION,EXITSTATIONNAME,EXITTIME,PAYTYPE FROM {0}", tabname);
-            AccessHelper.connectionString = connectionAccess;
-            return AccessHelper.Query(select).Tables[0];
-        }
-
         #endregion
     }
 }
-
