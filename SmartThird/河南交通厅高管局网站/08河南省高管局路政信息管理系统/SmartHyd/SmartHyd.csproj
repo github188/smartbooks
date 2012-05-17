@@ -384,6 +384,7 @@
     </Compile>
     <Compile Include="ManageCenter\Ascx\Empower.ascx.cs">
       <DependentUpon>Empower.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ManageCenter\Ascx\Empower.ascx.designer.cs">
       <DependentUpon>Empower.ascx</DependentUpon>
@@ -502,6 +503,7 @@
     </Compile>
     <Compile Include="ManageCenter\Empower.aspx.cs">
       <DependentUpon>Empower.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ManageCenter\Empower.aspx.designer.cs">
       <DependentUpon>Empower.aspx</DependentUpon>

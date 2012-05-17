@@ -10,7 +10,6 @@ namespace SmartHyd.ManageCenter.Ascx
 {
     public partial class Affiche : UI.BaseUserControl
     {
-        private Utility.Log log=new Utility.Log();
        
         private BLL.BASE_AFFICHE bll = new BLL.BASE_AFFICHE();
         private BLL.BASE_LOG logbll = new BLL.BASE_LOG();
