@@ -128,8 +128,13 @@ namespace SmartHyd.ManageCenter.Ascx {
         #region 页面功能按钮事件(必须重写基类虚方法，否则按钮的事件是无效的)
         //添加
         public override void BtnAdd_Click(object sender, EventArgs e) {
+            Entity.BASE_ARTICLE model;
+            model = this.GetEntity();
+
+            //此处实现上传附件
             
-            
+            bll.Add(model);
+
             //重新加载当前页
             Response.Redirect(Request.Url.AbsoluteUri, true);
         }
