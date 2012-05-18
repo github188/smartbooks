@@ -3,7 +3,7 @@
     $('#tab').tabs();
 
     //全局按钮
-    $('input:submit').button();
+    //$('input:submit').button();
 
     //$('#alert').hide();
 });

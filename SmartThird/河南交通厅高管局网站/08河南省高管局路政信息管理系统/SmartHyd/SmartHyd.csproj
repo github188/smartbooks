@@ -54,8 +54,12 @@
   <ItemGroup>
     <Content Include="Ascx\Department.ascx" />
     <Content Include="Css\base.css" />
+    <Content Include="Css\tongdaoa.css" />
     <Content Include="Error.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="Images\big_btn_a.png" />
+    <Content Include="Images\pbar-ani.gif" />
+    <Content Include="Images\user-ico.jpg" />
     <Content Include="ManageCenter\Affiche.aspx" />
     <Content Include="ManageCenter\AfficheEdit.aspx" />
     <Content Include="ManageCenter\Area.aspx" />
@@ -64,6 +68,7 @@
     <Content Include="ManageCenter\Ascx\Area.ascx" />
     <Content Include="ManageCenter\Ascx\Dept.ascx" />
     <Content Include="ManageCenter\Ascx\DeptEdit.ascx" />
+    <Content Include="ManageCenter\Ascx\DocumentManage.ascx" />
     <Content Include="ManageCenter\Ascx\Empower.ascx" />
     <Content Include="ManageCenter\Ascx\FaWen.ascx" />
     <Content Include="ManageCenter\Ascx\FaWenEdit.ascx" />
@@ -81,6 +86,7 @@
     <Content Include="ManageCenter\Ascx\UserManage.ascx" />
     <Content Include="ManageCenter\Dept.aspx" />
     <Content Include="ManageCenter\DeptEdit.aspx" />
+    <Content Include="ManageCenter\DocumentManage.aspx" />
     <Content Include="ManageCenter\Empower.aspx" />
     <Content Include="ManageCenter\FaWen.aspx" />
     <Content Include="ManageCenter\FaWenEdit.aspx" />
@@ -382,6 +388,13 @@
     <Compile Include="ManageCenter\Ascx\DeptEdit.ascx.designer.cs">
       <DependentUpon>DeptEdit.ascx</DependentUpon>
     </Compile>
+    <Compile Include="ManageCenter\Ascx\DocumentManage.ascx.cs">
+      <DependentUpon>DocumentManage.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\Ascx\DocumentManage.ascx.designer.cs">
+      <DependentUpon>DocumentManage.ascx</DependentUpon>
+    </Compile>
     <Compile Include="ManageCenter\Ascx\Empower.ascx.cs">
       <DependentUpon>Empower.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -501,6 +514,13 @@
     <Compile Include="ManageCenter\DeptEdit.aspx.designer.cs">
       <DependentUpon>DeptEdit.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ManageCenter\DocumentManage.aspx.cs">
+      <DependentUpon>DocumentManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\DocumentManage.aspx.designer.cs">
+      <DependentUpon>DocumentManage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ManageCenter\Empower.aspx.cs">
       <DependentUpon>Empower.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -618,7 +638,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Document\" />
-    <Folder Include="Images\" />
     <Folder Include="Log\" />
     <Folder Include="Scripts\kindeditor-4.0.5\attached\" />
     <Folder Include="Temp\" />

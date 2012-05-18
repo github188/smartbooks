@@ -71,6 +71,8 @@
     <Compile Include="BASE_TERM_TYPE.cs" />
     <Compile Include="BASE_USER.cs" />
     <Compile Include="BASE_USER_ROLE.cs" />
+    <Compile Include="IBASE_ARTICLE.cs" />
+    <Compile Include="IBASE_ARTICLE_TYPE.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
