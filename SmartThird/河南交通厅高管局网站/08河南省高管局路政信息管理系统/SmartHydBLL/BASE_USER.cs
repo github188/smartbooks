@@ -16,6 +16,10 @@ namespace SmartHyd.BLL {
             dal.Add(model);
         }
 
+        public DataTable GetList(string strWhere)
+        { 
+          return dal.GetList(strWhere).Tables[0];
+        }
         public Entity.BASE_USER GetUser(int userId) {
             return dal.GetEntity(userId);
         }

@@ -76,55 +76,7 @@
                 </tr>--%>
             </tbody>
         </table>
-        <!--dialog窗口开始-->
-        <div id="overlay">
-        </div>
-        <div id="dialog" class="ModalDialog" style="display: none">
-            <div class="header">
-                <span id="title" class="title">发布公告</span><a class="operation" href="javascript:HideDialog('send');"></a></div>
-            <table width="95%" class="table" align="center">
-                <thead>
-                    <tr>
-                        <td colspan="2" class="TableContent">
-                            请选择发送单位/部门
-                        </td>
-                    </tr>
-                </thead>
-                <tr>
-                    <td colspan="2" class="TableData">
-                        <asp:TreeView ID="TvDept" runat="server">
-                        </asp:TreeView>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="left">
-                        自定义数据
-                    </td>
-                    <td class="TableData">
-                    </td>
-                </tr>
-                <%-- <tr>
-                        <td class="TableContent">
-                            提醒
-                        </td>
-                        <td>
-                            <input type="checkbox" name="sms_notice" id="sms_notice" checked="checked" /><label
-                                for="sms_notice">提醒登记员</label>
-                        </td>
-                    </tr>--%>
-            </table>
-            <form name="form1" method="post" action="">
-            <div id="send_body" class="body">
-            </div>
-            <div id="footer" class="footer">
-                <input type="hidden" name="dept_str" id="dept_str" />
-                <input type="hidden" name="sid" id="sid" />
-                <input class="BigButton" type="submit" value="确定" />
-                <input class="BigButton" type="button" value="关闭" />
-            </div>
-            </form>
-        </div>
-        <!--dialog窗口结束-->
+    
     </div>
 <!--新建公告结束-->
 <!--公告管理开始-->
@@ -203,4 +155,53 @@
         </webdiyer:AspNetPager>
     </div>
     <!--公告管理结束-->
+        <!--dialog窗口开始-->
+        <div id="overlay">
+        </div>
+        <div id="dialog" class="ModalDialog" style="display: none">
+            <div class="header">
+                <span id="title" class="title">发布公告</span><a class="operation" href="javascript:HideDialog('send');"></a></div>
+            <table width="95%" class="table" align="center">
+                <thead>
+                    <tr>
+                        <td colspan="2" class="TableContent">
+                            请选择发送单位/部门
+                        </td>
+                    </tr>
+                </thead>
+                <tr>
+                    <td colspan="2" class="TableData">
+                        <asp:TreeView ID="TvDept" runat="server">
+                        </asp:TreeView>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="left">
+                        自定义数据
+                    </td>
+                    <td class="TableData">
+                    </td>
+                </tr>
+                <%-- <tr>
+                        <td class="TableContent">
+                            提醒
+                        </td>
+                        <td>
+                            <input type="checkbox" name="sms_notice" id="sms_notice" checked="checked" /><label
+                                for="sms_notice">提醒登记员</label>
+                        </td>
+                    </tr>--%>
+            </table>
+            <form name="form1" method="post" action="">
+            <div id="send_body" class="body">
+            </div>
+            <div id="footer" class="footer">
+                <input type="hidden" name="dept_str" id="dept_str" />
+                <input type="hidden" name="sid" id="sid" />
+                <input class="BigButton" type="submit" value="确定" />
+                <input class="BigButton" type="button" value="关闭" />
+            </div>
+            </form>
+        </div>
+        <!--dialog窗口结束-->
 </div> 

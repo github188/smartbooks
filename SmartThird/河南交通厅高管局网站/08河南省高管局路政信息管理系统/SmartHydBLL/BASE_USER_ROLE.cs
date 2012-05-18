@@ -13,10 +13,23 @@ namespace SmartHyd.BLL {
         /// </summary>
         /// <param name="userId">用户ID</param>
         /// <returns></returns>
-        public DataTable GetList(int userId) {
+        public DataTable GetList(decimal userId)
+        {
             return dal.GetList(string.Format("USERID={0}", userId.ToString())).Tables[0];
         }
+        /// <summary>
+        /// 向用户授权
+        /// </summary>
+        public void Add(Entity.BASE_USER_ROLE model)
+        {
+            dal.Add(model);
 
+        }
+        /// <summary>
+        /// 根据指定条件获取用户权限列表
+        /// </summary>
+        /// <param name="where"></param>
+        /// <returns></returns>
         public DataTable GetList(string where) {
             return dal.GetList(where).Tables[0];
         }

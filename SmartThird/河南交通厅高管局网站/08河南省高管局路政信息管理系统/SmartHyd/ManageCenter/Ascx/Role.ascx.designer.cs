@@ -10,7 +10,16 @@
 namespace SmartHyd.ManageCenter.Ascx {
     
     
-    public partial class Affiche {
+    public partial class Role {
+        
+        /// <summary>
+        /// Label1 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
         /// hidPrimary 控件。
@@ -22,40 +31,40 @@ namespace SmartHyd.ManageCenter.Ascx {
         protected global::System.Web.UI.WebControls.HiddenField hidPrimary;
         
         /// <summary>
-        /// TxtTitle 控件。
+        /// TxtRoleName 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtTitle;
+        protected global::System.Web.UI.WebControls.TextBox TxtRoleName;
         
         /// <summary>
-        /// TxtTime 控件。
+        /// Label14 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtTime;
+        protected global::System.Web.UI.WebControls.Label Label14;
         
         /// <summary>
-        /// TxtContent 控件。
+        /// txtdesc 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtContent;
+        protected global::System.Web.UI.WebControls.TextBox txtdesc;
         
         /// <summary>
-        /// RptAffiche 控件。
+        /// repList 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater RptAffiche;
+        protected global::System.Web.UI.WebControls.Repeater repList;
         
         /// <summary>
         /// AspNetPager1 控件。
@@ -65,14 +74,5 @@ namespace SmartHyd.ManageCenter.Ascx {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::Wuqi.Webdiyer.AspNetPager AspNetPager1;
-        
-        /// <summary>
-        /// TvDept 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TreeView TvDept;
     }
 }

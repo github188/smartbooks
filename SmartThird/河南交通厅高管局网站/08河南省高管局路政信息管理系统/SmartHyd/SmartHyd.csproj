@@ -80,6 +80,7 @@
     <Content Include="ManageCenter\Ascx\Plan.ascx" />
     <Content Include="ManageCenter\Ascx\RoadProject.ascx" />
     <Content Include="ManageCenter\Ascx\RoadTerm.ascx" />
+    <Content Include="ManageCenter\Ascx\Role.ascx" />
     <Content Include="ManageCenter\Ascx\ShouWen.ascx" />
     <Content Include="ManageCenter\Ascx\SysLog.ascx" />
     <Content Include="ManageCenter\Ascx\Term.ascx" />
@@ -98,10 +99,12 @@
     <Content Include="ManageCenter\Plan.aspx" />
     <Content Include="ManageCenter\RoadProject.aspx" />
     <Content Include="ManageCenter\RoadTerm.aspx" />
+    <Content Include="ManageCenter\Role.aspx" />
     <Content Include="ManageCenter\ShouWen.aspx" />
     <Content Include="ManageCenter\SysLog.aspx" />
     <Content Include="ManageCenter\Term.aspx" />
     <Content Include="ManageCenter\UserManage.aspx" />
+    <Content Include="ManageCenter\WebForm2.aspx" />
     <Content Include="Scripts\base.js" />
     <Content Include="Scripts\jquery-ui-1.8.18.custom\css\redmond\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Scripts\jquery-ui-1.8.18.custom\css\redmond\images\ui-bg_flat_55_fbec88_40x100.png" />
@@ -472,6 +475,13 @@
     <Compile Include="ManageCenter\Ascx\RoadTerm.ascx.designer.cs">
       <DependentUpon>RoadTerm.ascx</DependentUpon>
     </Compile>
+    <Compile Include="ManageCenter\Ascx\Role.ascx.cs">
+      <DependentUpon>Role.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\Ascx\Role.ascx.designer.cs">
+      <DependentUpon>Role.ascx</DependentUpon>
+    </Compile>
     <Compile Include="ManageCenter\Ascx\ShouWen.ascx.cs">
       <DependentUpon>ShouWen.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -605,6 +615,13 @@
     <Compile Include="ManageCenter\RoadTerm.aspx.designer.cs">
       <DependentUpon>RoadTerm.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ManageCenter\Role.aspx.cs">
+      <DependentUpon>Role.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\Role.aspx.designer.cs">
+      <DependentUpon>Role.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ManageCenter\ShouWen.aspx.cs">
       <DependentUpon>ShouWen.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -632,6 +649,13 @@
     </Compile>
     <Compile Include="ManageCenter\UserManage.aspx.designer.cs">
       <DependentUpon>UserManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\WebForm2.aspx.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\WebForm2.aspx.designer.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
