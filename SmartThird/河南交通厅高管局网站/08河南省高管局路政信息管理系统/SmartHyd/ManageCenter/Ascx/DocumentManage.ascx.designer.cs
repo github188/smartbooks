@@ -76,13 +76,13 @@ namespace SmartHyd.ManageCenter.Ascx {
         protected global::System.Web.UI.WebControls.RadioButtonList rdoIsReply;
         
         /// <summary>
-        /// DropDownList1 控件。
+        /// ddlStatus 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::System.Web.UI.WebControls.DropDownList ddlStatus;
         
         /// <summary>
         /// btnSubmit 控件。
@@ -121,21 +121,21 @@ namespace SmartHyd.ManageCenter.Ascx {
         protected global::Wuqi.Webdiyer.AspNetPager AspNetPager1;
         
         /// <summary>
-        /// btnDownload 控件。
+        /// repArticleList 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnDownload;
+        protected global::System.Web.UI.WebControls.Repeater repArticleList;
         
         /// <summary>
-        /// btnDelete 控件。
+        /// AspNetPager2 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnDelete;
+        protected global::Wuqi.Webdiyer.AspNetPager AspNetPager2;
     }
 }

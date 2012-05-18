@@ -14,15 +14,19 @@ namespace SmartHyd.Ascx {
         protected void Page_Load(object sender, EventArgs e) {
             if (!IsPostBack) {
                 DataTable dt = new DataTable();
-                dt = dept.GetUserWhereDepartment("admin", 0);
+                //dt = dept.GetUserWhereDepartment("admin", 0);
+                dt = dept.GetAllDep("STATUS=0");
                 BindingControl(this.ddlDepartment, dt);
             }
         }
 
         private void BindingControl(DropDownList ddl, DataTable dt) {
             ddl.Items.Clear();
-            ddl.Items.Add("请选择");
             InitTreeNodes(ddl, 0, dt, 0);
+            if (ddlDepartment.Items.Count != 0) {
+                ddlDepartment.SelectedIndex = 0;
+                Session["deptcode"] = ddlDepartment.SelectedValue;
+            }
         }
 
         private void InitTreeNodes(DropDownList ddl, int parentId, DataTable dt, int indent) {            
@@ -40,6 +44,10 @@ namespace SmartHyd.Ascx {
                     inde -= 2;
                 }
             }
+        }
+
+        protected void ddlDepartment_SelectedIndexChanged(object sender, EventArgs e) {
+            Session["deptcode"] = ddlDepartment.SelectedValue;
         }
     }
 }

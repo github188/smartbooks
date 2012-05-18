@@ -8,121 +8,109 @@
     </ul>
     <!--新建部门开始-->
     <div id="tabs-1">
-        <table class="edit" width="100%">
-            <thead>
-                <tr>
-                    <th colspan="2">
+        <table class="TableBlock" width="100%" align="center">
+            <tbody>
+                <!--首选行-->
+                <tr class="TableHeader">
+                    <td colspan="2">
                         新建部门
-                    </th>
+                    </td>
                 </tr>
-            </thead>
-            <tbody >
-                <tr height="38" >
-                    <td align="center">
-                        <asp:Label ID="Lbdeptname" runat="server" Text="部门名称:"></asp:Label>
-                        </td>
-                        <td>
+                <!--部门名称-->
+                <tr>
+                    <td nowrap="nowrap" class="TableData">
+                        部门名称:
+                    </td>
+                    <td class="TableData">
                         <asp:HiddenField ID="hidPrimary" runat="server" Value="-1" />
-                        <asp:TextBox ID="TxtDeptName" runat="server" CssClass="input  {required:true,minlength:3,maxlength:12}"></asp:TextBox>
-                         <div class="validate ui-state-highlight ui-corner-all " style="border: none;">
+                        <asp:TextBox ID="TxtDeptName" runat="server" CssClass="input  {required:true,minlength:1,maxlength:50}"
+                            Width="350">
+                        </asp:TextBox>
+                        <div class="validate ui-state-highlight ui-corner-all " style="border: none;">
                         </div>
                     </td>
                 </tr>
-                <tr height="38">
-                    <td align="center">
-                        <asp:Label ID="Lbdept" runat="server" Text="上级部门:"></asp:Label>
-                        </td>
-                        <td>
+                <!--上级部门-->
+                <tr>
+                    <td nowrap="nowrap" class="TableData">
+                        上级部门:
+                    </td>
+                    <td class="TableData">
                         <uc1:Department ID="Department1" runat="server" />
                     </td>
                 </tr>
-                <tr height="38">
-                    <td align="center">
-                        <asp:Label ID="Label2" runat="server" Text="部门描述:"></asp:Label>
-                        </td>
-                        <td>
-                        <asp:TextBox ID="txtDptinfo" runat="server" CssClass="input" Height="81px" TextMode="MultiLine"
-                            Width="641px"></asp:TextBox>
+                <!--部门描述-->
+                <tr>
+                    <td nowrap="nowrap" class="TableData">
+                        部门描述:
+                    </td>
+                    <td class="TableData">
+                        <asp:TextBox ID="txtDptinfo" runat="server" CssClass="input {required:true,minlength:1,maxlength:50}"
+                            Height="81px" TextMode="MultiLine" Width="350">
+                        </asp:TextBox>
+                        <div class="validate ui-state-highlight ui-corner-all " style="border: none;">
+                        </div>
                     </td>
                 </tr>
             </tbody>
-            <%--<tfoot>
-                <tr>
-                    <td colspan="2" style="text-align: center;">
-                        <asp:Button ID="btnSubmit" runat="server" Text="提交" OnClick="btnSubmit_Click" />
-                        <asp:Button ID="btnCancel" runat="server" Text="重置" />
-                    </td>
-                </tr>
-            </tfoot>--%>
         </table>
     </div>
     <!--新建部门结束-->
     <!--部门列表开始-->
     <div id="tabs-2">
-    <table class="table" width="100%" align="center">
+        <table class="TableList" width="100%">
             <asp:Repeater ID="RptList" runat="server">
                 <HeaderTemplate>
-                    <thead>
-                        <tr>
-                            <th>
-                                <asp:CheckBox ID="Checkall" runat="server" Text="全选" OnClick="javascript:selectall(this);" />
-                            </th>
-                            <th>
+                    <tbody>
+                        <tr class="TableHeader" align="center">
+                            <td>
+                                <asp:CheckBox ID="Checkall" runat="server" Text="全选" OnClick="javascript:selectall(tdis);" />
+                            </td>
+                            <td>
                                 部门名称
-                            </th>
-                            <th>
+                            </td>
+                            <td>
                                 上级部门
-                            </th>
-                            <th>
+                            </td>
+                            <td>
                                 部门描述
-                            </th>
-                            <th>
+                            </td>
+                            <td>
                                 状态
-                            </th>
-                            <th>
+                            </td>
+                            <td>
                                 操作
-                            </th>
+                            </td>
                         </tr>
-                    </thead>
                 </HeaderTemplate>
                 <ItemTemplate>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <asp:CheckBox ID="CheckSingle" runat="server" />
-                                <asp:Label ID="DEPTID" runat="server" Text='<%#Eval("DEPTID") %>' Visible="false"></asp:Label>
-                                <asp:HiddenField ID="hidPrimary" runat="server" Value="-1" />
-                            </td>
-                            <td>
-                                <%# Eval("DPTNAME")%>
-                            </td>
-                            <td>
-                                <%# Eval("PARENTID")%>
-                            </td>
-                            <td>
-                                <%# Eval("DPTINFO")%>
-                            </td>
-                            <td>
-                                <%# Eval("STATUS")%>
-                            </td>
-                            <td>
-                                <a href="DeptEdit.aspx?fid=<%# Eval("DEPTID")%>">编辑</a> 
-                               <%-- <a href="" id="delhref" runat="server"> 删除</a>
+                    <tr class="TableLine1">
+                        <td>
+                            <asp:CheckBox ID="CheckSingle" runat="server" />
+                            <asp:Label ID="DEPTID" runat="server" Text='<%#Eval("DEPTID") %>' Visible="false"></asp:Label>
+                            <asp:HiddenField ID="hidPrimary" runat="server" Value="-1" />
+                        </td>
+                        <td>
+                            <%# Eval("DPTNAME")%>
+                        </td>
+                        <td>
+                            <%# Eval("PARENTID")%>
+                        </td>
+                        <td>
+                            <%# Eval("DPTINFO")%>
+                        </td>
+                        <td>
+                            <%# Eval("STATUS")%>
+                        </td>
+                        <td>
+                            <a href="DeptEdit.aspx?fid=<%# Eval("DEPTID")%>">编辑</a>
+                            <%-- <a href="" id="delhref" runat="server"> 删除</a>
                                  onclick="javascript:delete_notify(<%# Eval("AFFICHEID")%>)"--%>
-                                    
-                                   
-                            </td>
-                        </tr>
-                    </tbody>
+                        </td>
+                    </tr>
                 </ItemTemplate>
                 <FooterTemplate>
-                    <tfoot>
-                        <tr>
-                            <td colspan="2">
-                                <%--分页--%>
-                            </td>
-                        </tr>
-                    </tfoot>
+                    </tbody>
                 </FooterTemplate>
             </asp:Repeater>
         </table>

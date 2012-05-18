@@ -5,7 +5,7 @@
 // 功能描述:公文信息表 -- 接口实现
 //
 // 创建标识：王 亚 2012-05-18
-namespace Maticsoft.OracleDAL {
+namespace SmartHyd.OracleDAL {
     using System;
     using System.Text;
     using System.Collections.Generic;
@@ -257,7 +257,59 @@ namespace Maticsoft.OracleDAL {
             return OracleHelper.Query(strSql.ToString());
         }
 
+        #region 自定义查询
 
+        public DataTable GetArticle(int articleId) {
+            string procName = "PKG_ARTICLE_QUERY.proc_getarticle";
+            OracleParameter[] param = new OracleParameter[2];
+
+            param[0] = new OracleParameter();
+            param[1] = new OracleParameter();
+
+            param[0].Direction = ParameterDirection.Input;
+            param[0].OracleType = OracleType.Number;
+            param[0].ParameterName = "articleid";
+            param[0].Value = articleId;
+
+            param[1].Direction = ParameterDirection.Output;
+            param[1].OracleType = OracleType.Cursor;
+            param[1].ParameterName = "out_cursor";
+
+            return OracleHelper.RunProcedure(procName, param).Tables[0];
+        }
+
+        public DataTable GetArticleDept(int dptCode, int typeCode, int stateCode) {
+            string procName = "PKG_ARTICLE_QUERY.proc_getdeptarticle";
+            OracleParameter[] param = new OracleParameter[4];
+
+            param[0] = new OracleParameter();
+            param[1] = new OracleParameter();
+            param[2] = new OracleParameter();
+            param[3] = new OracleParameter();
+
+            param[0].Direction = ParameterDirection.Input;
+            param[0].OracleType = OracleType.Number;
+            param[0].ParameterName = "dptcode";
+            param[0].Value = dptCode;
+
+            param[1].Direction = ParameterDirection.Input;
+            param[1].OracleType = OracleType.Number;
+            param[1].ParameterName = "typecode";
+            param[1].Value = typeCode;
+
+            param[2].Direction = ParameterDirection.Input;
+            param[2].OracleType = OracleType.Number;
+            param[2].ParameterName = "statecode";
+            param[2].Value = stateCode;
+
+            param[3].Direction = ParameterDirection.Output;
+            param[3].OracleType = OracleType.Cursor;
+            param[3].ParameterName = "out_cursor";
+
+            return OracleHelper.RunProcedure(procName, param).Tables[0];
+        }
+
+        #endregion
     }
 }
 

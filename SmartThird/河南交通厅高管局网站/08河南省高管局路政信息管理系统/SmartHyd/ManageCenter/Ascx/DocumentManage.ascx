@@ -94,7 +94,7 @@
                         发文状态:
                     </td>
                     <td class="TableData">
-                        <asp:DropDownList ID="DropDownList1" runat="server" CssClass="input">
+                        <asp:DropDownList ID="ddlStatus" runat="server" CssClass="input">
                             <asp:ListItem Text="0.已审核√" Value="0" Selected="True"></asp:ListItem>
                             <asp:ListItem Text="1.未审核×" Value="1"></asp:ListItem>
                             <asp:ListItem Text="2.草稿箱×" Value="2"></asp:ListItem>
@@ -136,12 +136,14 @@
                 <!--标题行-->
                 <tr class="TableControl">
                     <td width="163" align="center">
-                        安阳路政处
+                        <%#Eval("dptname")%>
                     </td>
                     <td width="798">
-                        <span style="float: left;">发表于：2012-10-10 12:10:51</span> <span style="float: right;
+                        <span style="float: left;">发表于：<%#Eval("TIMESTAMP")%></span> <span style="float: right;
                             margin: 0px 6px 0px 6px;">楼主</span> <span style="float: right; margin: 0px 6px 0px 6px;">
-                                得分:20</span> <span style="float: right; margin: 0px 6px 0px 6px; color: #B00;">已结贴</span>
+                                得分:<%#Eval("score")%></span> <span style="float: right; margin: 0px 6px 0px 6px;
+                                    color: #B00;">
+                                    <%#Eval("status")%></span>
                     </td>
                 </tr>
                 <!--内容框-->
@@ -152,7 +154,7 @@
                         <table style="color: #444; height: 20px;">
                             <tr>
                                 <td colspan="2" align="center">
-                                    SmartBooks
+                                    <%#Eval("username")%>
                                 </td>
                             </tr>
                             <tr>
@@ -160,7 +162,7 @@
                                     工作证号
                                 </td>
                                 <td>
-                                    451236548
+                                    <%#Eval("jobnumber")%>
                                 </td>
                             </tr>
                             <tr>
@@ -168,21 +170,21 @@
                                     联系电话
                                 </td>
                                 <td>
-                                    125654856
+                                    <%#Eval("phone")%>
                                 </td>
                             </tr>
                         </table>
                     </td>
                     <td width="758" valign="top" style="padding: 20px; overflow: hidden;">
                         <h2>
-                            关于XXXX的放假通知</h2>
+                            <%#Eval("title")%></h2>
                         <h5>
-                            高管局发2012[08]号</h5>
+                            <%#Eval("sendcode")%></h5>
                         <div>
-                            正文
-                        </div>
+                            <%#Eval("content")%></div>
                         <div style="color: #002D93;">
-                            <span>下载附件:</span> <a href="#">关于XXXXX的规定.doc</a>
+                            <span>下载附件:</span> <a href='<%#Eval("annex")%>'>
+                                <%#Eval("title")%></a>
                         </div>
                     </td>
                 </tr>
@@ -197,17 +199,18 @@
                         <asp:Button ID="btnDel" runat="server" Text="删除" CssClass="BigButtonA" />
                     </td>
                 </tr>
-                <tr style="height: 6px;"></tr>
+                <tr style="height: 6px;">
+                </tr>
             </ItemTemplate>
             <FooterTemplate>
                 </tbody> </table>
             </FooterTemplate>
         </asp:Repeater>
-
         <webdiyer:AspNetPager ID="AspNetPager1" runat="server" CustomInfoHTML="共%PageCount%页，当前为第%CurrentPageIndex%页"
             FirstPageText="首页" LastPageText="尾页" NextPageText="下一页" PageIndexBoxType="TextBox"
-            PrevPageText="上一页" ShowCustomInfoSection="Right" ShowPageIndexBox="Auto" SubmitButtonText="Go"
-            TextAfterPageIndexBox="页" TextBeforePageIndexBox="转到" OnPageChanging="AspNetPager1_PageChanging" CssClass="anpager" CurrentPageButtonClass="cpb">
+            PrevPageText="上一页" ShowPageIndexBox="Auto" SubmitButtonText="Go" TextAfterPageIndexBox="页"
+            TextBeforePageIndexBox="转到" OnPageChanging="AspNetPager1_PageChanging" CssClass="anpager"
+            CurrentPageButtonClass="cpb">
         </webdiyer:AspNetPager>
     </div>
     <!--发文浏览结束-->
@@ -215,88 +218,67 @@
     <div id="tabs-3">
         <table class="TableList" width="100%">
             <tbody>
-                <!--标题行-->
-                <tr class="TableHeader" align="center">
-                    <td>
-                        标题
-                    </td>
-                    <td>
-                        字号
-                    </td>
-                    <td>
-                        时间
-                    </td>
-                    <td>
-                        分值
-                    </td>
-                    <td>
-                        状态
-                    </td>
-                    <td>
-                        附件
-                    </td>
-                    <!--操作行-->
-                    <td>
-                        操作
-                    </td>
-                </tr>
-                <tr class="TableLine1">
-                    <td>
-                        标题
-                    </td>
-                    <td>
-                        字号
-                    </td>
-                    <td>
-                        时间
-                    </td>
-                    <td>
-                        分值
-                    </td>
-                    <td>
-                        状态
-                    </td>
-                    <td>
-                        附件
-                    </td>
-                    <!--操作行-->
-                    <td>
-                        编辑/删除
-                    </td>
-                </tr>
-                <tr class="TableLine2">
-                    <td>
-                        标题
-                    </td>
-                    <td>
-                        字号
-                    </td>
-                    <td>
-                        时间
-                    </td>
-                    <td>
-                        分值
-                    </td>
-                    <td>
-                        状态
-                    </td>
-                    <td>
-                        附件
-                    </td>
-                    <!--操作行-->
-                    <td>
-                        编辑/删除
-                    </td>
-                </tr>
-                <!--操作按钮栏-->
-                <tr class="TableControl">
-                    <td colspan="7">
-                        <asp:Button ID="btnDownload" runat="server" Text="编辑" CssClass="BigButtonA" />
-                        <asp:Button ID="btnDelete" runat="server" Text="删除" CssClass="BigButtonA" />
-                    </td>
-                </tr>
+                <asp:Repeater ID="repArticleList" runat="server">
+                    <HeaderTemplate>
+                        <!--标题行-->
+                        <tr class="TableHeader" align="center">
+                            <td>
+                                标题
+                            </td>
+                            <td>
+                                字号
+                            </td>
+                            <td>
+                                时间
+                            </td>
+                            <td>
+                                分值
+                            </td>
+                            <td>
+                                状态
+                            </td>
+                            <td>
+                                附件
+                            </td>
+                            <!--操作行-->
+                            <td>
+                                操作
+                            </td>
+                        </tr>
+                    </HeaderTemplate>
+                    <ItemTemplate>
+                        <tr class="TableLine1">
+                            <td><%#Eval("title")%></td>
+                            <td><%#Eval("sendcode")%></td>
+                            <td><%#Eval("TIMESTAMP")%></td>
+                            <td><%#Eval("score")%></td>
+                            <td><%#Eval("status")%></td>
+                            <td><%#Eval("annex")%></td>
+                            <!--操作行-->
+                            <td>
+                                编辑/删除
+                            </td>
+                        </tr>
+                    </ItemTemplate>
+                    <FooterTemplate>
+                        <!--操作按钮栏-->
+                        <tr class="TableControl">
+                            <td colspan="7">
+                                <asp:Button ID="btnDownload" runat="server" Text="编辑" CssClass="BigButtonA" />
+                                <asp:Button ID="btnDelete" runat="server" Text="删除" CssClass="BigButtonA" />
+                            </td>
+                        </tr>
+                    </FooterTemplate>
+                </asp:Repeater>
             </tbody>
         </table>
+
+        <webdiyer:AspNetPager ID="AspNetPager2" runat="server" CustomInfoHTML="共%PageCount%页，当前为第%CurrentPageIndex%页"
+            FirstPageText="首页" LastPageText="尾页" NextPageText="下一页" PageIndexBoxType="TextBox"
+            PrevPageText="上一页" ShowPageIndexBox="Auto" SubmitButtonText="Go" TextAfterPageIndexBox="页"
+            TextBeforePageIndexBox="转到" OnPageChanging="AspNetPager2_PageChanging" CssClass="anpager"
+            CurrentPageButtonClass="cpb">
+        </webdiyer:AspNetPager>
     </div>
     <!--发文管理结束-->
 </div>

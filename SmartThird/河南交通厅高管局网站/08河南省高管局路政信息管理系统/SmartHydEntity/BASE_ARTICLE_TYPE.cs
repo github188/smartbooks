@@ -5,7 +5,7 @@
 // 功能描述:公文类别表 -- 实体定义
 //
 // 创建标识： 王 亚 2012-05-18
-namespace Maticsoft.Entity {
+namespace SmartHyd.Entity {
     using System;
     using System.Collections.Generic;
     using System.Text;

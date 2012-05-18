@@ -5,7 +5,7 @@
 // 功能描述:公文类别表 -- 接口定义
 //
 // 创建标识：王 亚 2012-05-18
-namespace Maticsoft.IDAL {
+namespace SmartHyd.IDAL {
     using System;
     using System.Text;
     using System.Collections.Generic;

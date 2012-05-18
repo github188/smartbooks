@@ -5,7 +5,7 @@
 // 功能描述:公文类别表 -- 接口实现
 //
 // 创建标识：王 亚 2012-05-18
-namespace Maticsoft.OracleDAL {
+namespace SmartHyd.OracleDAL {
     using System;
     using System.Text;
     using System.Collections.Generic;

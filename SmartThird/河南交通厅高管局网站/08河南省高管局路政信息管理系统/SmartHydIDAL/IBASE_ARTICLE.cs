@@ -5,7 +5,7 @@
 // 功能描述:公文信息表 -- 接口定义
 //
 // 创建标识：王 亚 2012-05-18
-namespace Maticsoft.IDAL {
+namespace SmartHyd.IDAL {
     using System;
     using System.Text;
     using System.Collections.Generic;
@@ -51,5 +51,8 @@ namespace Maticsoft.IDAL {
         /// 获得前几行数据
         /// </summary>
         DataSet GetList(int Top, string strWhere, string filedOrder);
+
+        DataTable GetArticle(int articleId);
+        DataTable GetArticleDept(int dptCode, int typeCode, int stateCode); 
     }
 }
