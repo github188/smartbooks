@@ -13,6 +13,10 @@
         /// 构造函数
         /// </summary>
         public TaskFolderTree() {
+
+            //初始化组件
+            InitializeComponent();
+
             this.Nodes.Clear();            
             this.Nodes.Add(Load(_defaultTaskPath, "根文件夹"));
             this.Refresh();
@@ -81,6 +85,24 @@
             }
             node.Tag = controller;
             return node;
+        }
+
+        /// <summary>
+        /// 初始化组件
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Font = new System.Drawing.Font("宋体", 12F);
+            this.ImageIndex = 8;            
+            this.ItemHeight = 20;
+            this.Location = new System.Drawing.Point(0, 0);
+            this.Name = "trwTaskFolder";
+            this.SelectedImageIndex = 8;
+            this.Size = new System.Drawing.Size(200, 288);
+            this.TabIndex = 0;
+            this.HideSelection = false;            
         }
         #endregion
 

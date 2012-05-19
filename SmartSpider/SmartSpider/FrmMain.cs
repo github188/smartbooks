@@ -24,13 +24,10 @@
             //加载系统配置文件
             LoadConfiguration();
 
-            //加载本地XML任务配置文件
-            LoadLocationTaskItem();
-
             /*加载DBTaskList*/
             //LoadDBTaskItem();
 
-            this.Text = "网络信息智能采集系统 V1.0.0.0 内部测试版 - 郑州豫图信息技术有限公司";
+            this.Text = "网络信息智能采集系统 V1.0.1 内部测试版";
             //this.Icon = new System.Drawing.Icon("mainProgram.ico");
         }
         #endregion
@@ -283,15 +280,16 @@
         private void tolStartTask_Click(object sender, EventArgs e) {
             foreach (ListViewItem item in this.livTaskView.SelectedItems) {
                 int taskIndex = (int)item.Tag;
-                if (taskItem[taskIndex].Action == Action.Finish) {
+                if (taskItem[taskIndex].Action == Config.Action.Finish)
+                {
                     if (MessageBox.Show("该任务已经采集完毕，确定重新采集吗？", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Information) ==
                         System.Windows.Forms.DialogResult.Yes) {
                         ShowTaskRuntimesInfo(ref taskItem[taskIndex]);  //显示任务运行日志信息窗口
-                        taskItem[taskIndex].Action = Action.Start;
+                        taskItem[taskIndex].Action = Config.Action.Start;
                     }
                 } else {
                     ShowTaskRuntimesInfo(ref taskItem[taskIndex]);      //显示任务运行日志信息窗口
-                    taskItem[taskIndex].Action = Action.Start;
+                    taskItem[taskIndex].Action = Config.Action.Start;
                 }
             }
 
@@ -307,7 +305,7 @@
         private void tolPauseTask_Click(object sender, EventArgs e) {
             foreach (ListViewItem item in this.livTaskView.SelectedItems) {
                 int taskIndex = (int)item.Tag;
-                taskItem[taskIndex].Action = Action.Pause;
+                taskItem[taskIndex].Action = Config.Action.Pause;
 
                 this.tolPauseTask.Enabled = false;
                 this.tolStartTask.Enabled = true;
@@ -322,7 +320,7 @@
         private void tolStopTask_Click(object sender, EventArgs e) {
             foreach (ListViewItem item in this.livTaskView.SelectedItems) {
                 int taskIndex = (int)item.Tag;
-                taskItem[taskIndex].Action = Action.Stop;
+                taskItem[taskIndex].Action = Config.Action.Stop;
 
                 this.tolPauseTask.Enabled = false;
                 this.tolStartTask.Enabled = true;
@@ -440,53 +438,63 @@
             Application.Exit();
         }
         //任务文件夹：单击节点显示到任务信息到任务窗口
-        private void trwTaskFolder_AfterSelect(object sender, TreeViewEventArgs e) {
+        private void trwTaskFolder_AfterSelect(object sender, TreeViewEventArgs e)
+        {
             //筛选出tag分类下任务显示到任务详细信息窗口
-            this.livTaskView.Items.Clear();
-            string dir = (string)trwTaskFolder.SelectedNode.Tag;
-            for (int i = 0; i < taskItem.Length; i++) {
-                if (taskItem[i] != null) {
-                    if (taskItem[i].ConfigDir.Equals(dir)) {
-                        Utility.TaskViewItem item = new Utility.TaskViewItem(ref taskItem[i], i);
-                        this.livTaskView.Items.Add(item);
-                    }
-                }
-            }
+            string dir = (string)this.trwTaskFolder.SelectedNode.Tag;
+
+            //显示任务项到控件视图中
+            this.livTaskView.ShowGroupItem(dir);
         }
         //任务运行信息窗口：双击编辑任务配置
-        private void livTaskView_MouseDoubleClick(object sender, MouseEventArgs e) {
-            if (livTaskView.SelectedItems.Count != 0) {
-                int taskIndex = (int)livTaskView.SelectedItems[0].Tag;
+        private void livTaskView_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (this.livTaskView.SelectedItems.Count != 0)
+            {
+                int taskIndex = (int)this.livTaskView.SelectedItems[0].Tag;
                 FrmTask edit = new FrmTask(ref taskItem[taskIndex]);
-                if (taskItem[taskIndex].Action == Action.Start) {
+                if (taskItem[taskIndex].Action == Config.Action.Start)
+                {
                     if (MessageBox.Show("任务处于非停止状态，单击YES按钮暂停任务已进行编辑，单击No按钮取消编辑操作!", "提示",
                         MessageBoxButtons.YesNo, MessageBoxIcon.Question) ==
-                        System.Windows.Forms.DialogResult.Yes) {
-                        taskItem[taskIndex].Action = Action.Stop;
+                        System.Windows.Forms.DialogResult.Yes)
+                    {
+                        taskItem[taskIndex].Action = Config.Action.Stop;
                         taskItem[taskIndex].time.Change(System.Threading.Timeout.Infinite, System.Threading.Timeout.Infinite);
                         edit.ShowDialog();
                     }
                     return;
-                } else {
+                }
+                else
+                {
                     edit.ShowDialog();
                 }
             }
         }
         //任务运行信息窗口：单击任务
-        private void livTaskView_MouseClick(object sender, MouseEventArgs e) {
-            foreach (Utility.TaskViewItem item in this.livTaskView.SelectedItems) {
+        private void livTaskView_MouseClick(object sender, MouseEventArgs e)
+        {
+            foreach (Utility.TaskViewItem item in this.livTaskView.SelectedItems)
+            {
                 SetTaskStatusUi(item.Action);
             }
         }
         //任务运行信息窗口：选定项改变
-        private void livTaskView_SelectedIndexChanged(object sender, EventArgs e) {
-            if (this.livTaskView.SelectedItems.Count == 0) {
+        private void livTaskView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (this.livTaskView.SelectedItems.Count == 0)
+            {
                 SetDefaultUI();
-            } else if (this.livTaskView.SelectedItems.Count == 1) {
-                foreach (Utility.TaskViewItem item in this.livTaskView.SelectedItems) {
+            }
+            else if (this.livTaskView.SelectedItems.Count == 1)
+            {
+                foreach (Utility.TaskViewItem item in this.livTaskView.SelectedItems)
+                {
                     SetTaskStatusUi(item.Action);
                 }
-            } else {
+            }
+            else
+            {
                 SetSelectMultiTask();
             }
         }
@@ -581,39 +589,9 @@
                     Smart.DBUtility.SqlServerHelper.Query(update);
                 }
             }
-        }
-        /// <summary>
-        /// 加载本地任务列表(默认在当前程序所在目录task目录下)
-        /// </summary>
-        private void LoadLocationTaskItem() {
-            string taskRootPath = AppDomain.CurrentDomain.BaseDirectory + "Task";
-            string[] files = Directory.GetFiles(taskRootPath, "*.xml", SearchOption.AllDirectories);
-            this.taskItem = new TaskUnit[files.Length];
-            for (int i = 0; i < files.Length; i++) {
-                try {
-                    //反序列化配置文件
-                    XmlSerializer xs = new XmlSerializer(typeof(Task));
-                    Stream readStream = new FileStream(files[i], FileMode.Open, FileAccess.Read, FileShare.Read);
-                    Task task = (Task)xs.Deserialize(readStream);
-                    readStream.Close();
-                    readStream.Dispose();
-
-                    if (taskItem[i] == null) {
-                        taskItem[i] = new TaskUnit();
-                    }
-
-                    taskItem[i].ConfigPath = files[i];
-                    taskItem[i].TaskConfig = task;
-                    taskItem[i].ConfigDir = Directory.GetParent(files[i]).FullName;
-
-                } catch (Exception ex) {
-                    throw new Exception(ex.Message);
-                }
-            }
-        }
+        }        
         private void SaveLoactionTaskItem() {
         }
-
         private TreeNode RecursiveCreateNode(string id, DataTable dt) {
             TreeNode node = new TreeNode();
             foreach (DataRow row in dt.Rows) {
@@ -651,7 +629,6 @@
 
         #region 私有字段定义
         private Configuration _Configuration = new Configuration();
-        private TaskUnit[] taskItem;
         #endregion
 
         #region 公共属性定义

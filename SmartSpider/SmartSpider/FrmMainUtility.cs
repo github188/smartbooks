@@ -18,14 +18,14 @@ namespace SmartSpider {
             this.tolEditTask.Enabled = true;
             this.tolDeleteTask.Enabled = true;
             switch (status) {
-                case Action.Finish:
-                case Action.Ready:
-                case Action.Stop:   //停止状态
+                case Config.Action.Finish:
+                case Config.Action.Ready:
+                case Config.Action.Stop:   //停止状态
                     this.tolStartTask.Enabled = true;
                     this.tolPauseTask.Enabled = false;
                     this.tolStopTask.Enabled = false;
                     break;
-                case Action.Start:  //运行状态
+                case Config.Action.Start:  //运行状态
                     this.tolStartTask.Enabled = false;
                     this.tolPauseTask.Enabled = true;
                     this.tolStopTask.Enabled = true;
@@ -33,7 +33,7 @@ namespace SmartSpider {
                     this.tolEditTask.Enabled = false;
                     this.tolDeleteTask.Enabled = false;
                     break;
-                case Action.Pause:  //暂停状态
+                case Config.Action.Pause:  //暂停状态
                     this.tolStartTask.Enabled = true;
                     this.tolPauseTask.Enabled = false;
                     this.tolStopTask.Enabled = true;
