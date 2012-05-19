@@ -17,9 +17,7 @@
             //初始化组件
             InitializeComponent();
 
-            this.Nodes.Clear();            
-            this.Nodes.Add(Load(_defaultTaskPath, "根文件夹"));
-            this.Refresh();
+            ReLoad();
         }
 
         /// <summary>
@@ -37,53 +35,19 @@
         /// <param name="taskPath">Task配置文件目录</param>
         /// <param name="parentNodeName">根节点名称</param>
         /// <returns>Task任务节点树</returns>
-        private TreeNode Load(string taskPath, string parentNodeName) {
-            string[] dirs = Directory.GetDirectories(taskPath);
+        private TreeNode Load(string rootPath, string parentNodeName) {
+            string[] dirs = Directory.GetDirectories(rootPath);
             TreeNode node = new TreeNode(parentNodeName);
             node.Expand();
-            node.Tag = taskPath;
+            node.Tag = rootPath;
             node.ImageKey = "foldermax.png";
-            //node = AddToNode(node, taskPath);
-
-            if (dirs.Length != 0) {
-                for (int i = 0; i < dirs.Length; i++) {
-                    string[] files = Directory.GetFiles(dirs[i], "*.xml");
-                    string[] curDir = dirs[i].Split('\\');
-                    string subNodeName = curDir[curDir.Length - 1];
-                    node.Nodes.Add(Load(dirs[i], subNodeName));
-                }
+            
+            foreach (string path in dirs)
+            {
+                string[] curDir = path.Split('\\');
+                string nodeName = curDir[curDir.Length - 1];
+                node.Nodes.Add(Load(path, nodeName));
             }
-            return node;
-        }
-
-        /// <summary>
-        /// 挂载Task配置文件目录下文件到指定节点
-        /// </summary>
-        /// <param name="node">Node节点</param>
-        /// <param name="taskConfigFilePath">Task配置文件所在目录</param>
-        /// <returns>挂在了task配置文件信息的节点</returns>
-        private TreeNode AddToNode(TreeNode node, string taskConfigFileDirectory) {
-            string[] files = Directory.GetFiles(taskConfigFileDirectory, "*.xml");
-            TaskController controller = new TaskController();
-
-            for (int i = 0; i < files.Length; i++) {
-                try {
-                    XmlSerializer xs = new XmlSerializer(typeof(Task));
-                    Stream readStream = new FileStream(files[i], FileMode.Open, FileAccess.Read, FileShare.Read);
-                    Task task = (Task)xs.Deserialize(readStream);
-                    readStream.Close();
-                    readStream.Dispose();
-
-                    TaskUnit taskUnit = new TaskUnit();
-                    taskUnit.TaskConfig = task;
-                    taskUnit.ConfigPath = files[i];
-
-                    controller.Add(taskUnit);
-                } catch(Exception e) {
-                    throw new Exception(e.Message);
-                }
-            }
-            node.Tag = controller;
             return node;
         }
 

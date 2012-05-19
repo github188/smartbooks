@@ -12,14 +12,11 @@
     using System.Text.RegularExpressions;
     using System.Xml.Serialization;
 
-    public delegate void OnTaskStatusChanges(object sender, Action action);
-    public delegate void LogEventHanlder(LogEventArgs e);
-    public delegate void OnTaskStarting();
-    public delegate void OnTaskPause();
-    public delegate void OnTaskStop();
-    public delegate void OnTaskComplete();
-    public delegate void OnAppendSingleResult(params object[] values);
-    public delegate void OnPublishResult();
+    public delegate void OnTaskStatusChanges(object sender, Config.Action action);
+    public delegate void LogEventHanlder(object sender,LogEventArgs e);
+    public delegate void OnTaskComplete(object sender, EventArgs e);
+    public delegate void OnAppendSingleResult(object sender,params object[] values);
+    public delegate void OnPublishResult(object sender, EventArgs e);
 
     public class TaskUnit : IDisposable
     {
@@ -222,7 +219,7 @@
             if (this.Log != null)
             {
                 LogEventArgs logevent = new LogEventArgs(loginfo);
-                this.Log(logevent);
+                this.Log(this, logevent);
             }
         }
         #endregion

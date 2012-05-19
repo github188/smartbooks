@@ -70,23 +70,31 @@
         /// <param name="method">请求模式</param>
         /// <param name="data">post数据(仅用于POST模式)</param>
         public string RequestResult(string url, string referer, HttpMethod method, string data) {
-            this._WebRequest = (HttpWebRequest)System.Net.WebRequest.Create(url);
-            this._WebRequest.CookieContainer = this._Cookie;
-            this._WebRequest.Method = method.ToString();
-            this._WebRequest.Accept = "*/*";
-            this._WebRequest.ContentType = "application/x-www-form-urlencoded";
-            if (method == HttpMethod.POST) {
-                byte[] buffer = this._encoding.GetBytes(data);
-                this._WebRequest.ContentLength = buffer.Length;
-                this._WebRequest.GetRequestStream().Write(buffer, 0, buffer.Length);
+            try
+            {
+                this._WebRequest = (HttpWebRequest)System.Net.WebRequest.Create(url);
+                this._WebRequest.CookieContainer = this._Cookie;
+                this._WebRequest.Method = method.ToString();
+                this._WebRequest.Accept = "*/*";
+                this._WebRequest.ContentType = "application/x-www-form-urlencoded";
+                if (method == HttpMethod.POST)
+                {
+                    byte[] buffer = this._encoding.GetBytes(data);
+                    this._WebRequest.ContentLength = buffer.Length;
+                    this._WebRequest.GetRequestStream().Write(buffer, 0, buffer.Length);
+                }
+                this._WebResponse = (HttpWebResponse)this._WebRequest.GetResponse();
+                StreamReader read = new StreamReader(this._WebResponse.GetResponseStream(), this._encoding);
+                //this._Cookie.Add(this._WebResponse.Cookies);
+                string htmlText = read.ReadToEnd();
+                read.Close();
+                read.Dispose();
+                return htmlText;
             }
-            this._WebResponse = (HttpWebResponse)this._WebRequest.GetResponse();
-            StreamReader read = new StreamReader(this._WebResponse.GetResponseStream(), this._encoding);
-            //this._Cookie.Add(this._WebResponse.Cookies);
-            string htmlText = read.ReadToEnd();
-            read.Close();
-            read.Dispose();
-            return htmlText;
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public Stream GetResponse(string url)

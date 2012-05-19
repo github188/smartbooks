@@ -9,8 +9,8 @@
         private SplitContainer splitContainerMain = new SplitContainer();
         private RichTextBox rtxLogEvent = new RichTextBox();
         private DataGridView dgvResult = new DataGridView();
-        private delegate void SetTextCallback(Config.LogEventArgs e);
-        private delegate void RefererDataSource(params object[] values);
+        private delegate void SetTextCallback(object sender,Config.LogEventArgs e);
+        private delegate void RefererDataSource(object sender,params object[] values);
         private Config.TaskUnit _unit = new Config.TaskUnit();
 
         /// <summary>
@@ -86,7 +86,7 @@
             this.Controls.Add(splitContainerMain);
         }
         //添加日志
-        private void On_unitLog(Config.LogEventArgs e) {
+        private void On_unitLog(object sender, Config.LogEventArgs e) {
             try {
                 string space = "";
                 for (int i = 0; i < e.Indent; i++) {
@@ -95,7 +95,7 @@
 
                 if (this.rtxLogEvent.InvokeRequired) {
                     SetTextCallback callBack = new SetTextCallback(On_unitLog);
-                    this.Invoke(callBack, new object[] { e });
+                    this.Invoke(callBack, new object[] {this, e });
                 } else {
                     this.rtxLogEvent.AppendText(space + e.Message + "\r\n");
                     if (this.rtxLogEvent.Text.Length > 1) {
@@ -109,11 +109,11 @@
             }
         }
         //添加结果
-        private void On_AppendResult(params object[] values) {
+        private void On_AppendResult(object sender, params object[] values) {
             try {
                 if (this.dgvResult.InvokeRequired) {
                     RefererDataSource referer = new RefererDataSource(On_AppendResult);
-                    this.Invoke(referer, new object[] { values });
+                    this.Invoke(referer, new object[] {this, values });
                 } else {
                     if (this.dgvResult.Columns.Count == 0) {
                         foreach (Config.ExtractionRule item in this._unit.TaskConfig.ExtractionRules) {

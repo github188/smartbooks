@@ -40,5 +40,10 @@
         /// </summary>
         [XmlEnum("Running")]
         Running = 5,
+        /// <summary>
+        /// 无状态
+        /// </summary>
+        [XmlEnum("None")]
+        None = 6,
     }
 }

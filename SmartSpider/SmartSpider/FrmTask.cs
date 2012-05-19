@@ -13,13 +13,13 @@
 
     public partial class FrmTask : Form {
         #region 私有变量定义
-        private TaskUnit _TaskUnit = new TaskUnit();
+        public TaskUnit _TaskUnit = new TaskUnit();
         private List<HtmlMark> htmlMarks = new List<HtmlMark>();
         //private List<Replacement> _Replacement = new List<Replacement>();
         //private List<HtmlMark> _htmlMakes = new List<HtmlMark>();
         #endregion
 
-        public FrmTask(ref TaskUnit taskUnit) {
+        public FrmTask(TaskUnit taskUnit) {
             InitializeComponent();
             SerializerHtmlMaker();
 
@@ -499,6 +499,13 @@
         }
         //取消
         private void btnCancel_Click(object sender, EventArgs e) {
+            if (_TaskUnit.TaskConfig.ExtractionRules == null ||
+                _TaskUnit.TaskConfig.ExtractionRules.Count == 0 ||
+                _TaskUnit.TaskConfig.UrlListManager.NavigationRules == null ||
+                _TaskUnit.TaskConfig.UrlListManager.NavigationRules.Count == 0)
+            {
+                _TaskUnit = null;
+            }
             this.Close();
             this.Dispose();
         }
