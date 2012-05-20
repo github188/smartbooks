@@ -15,6 +15,7 @@ namespace SmartHyd.ManageCenter.Ascx {
                 dataBindToRepeater();
             }
         }
+
         #region 私有方法
         //使用dataBindToRepeater()方法绑定部门数据
         private void dataBindToRepeater() {
@@ -38,13 +39,15 @@ namespace SmartHyd.ManageCenter.Ascx {
         /// </summary>
         /// <returns></returns>
         private Entity.BASE_DEPT GetEntity() {
+            int parentId = 0;
+            if (Session["deptcode"] != null) {
+                Convert.ToInt32(Session["deptcode"].ToString());
+            }
             Entity.BASE_DEPT model = new Entity.BASE_DEPT();
-            //DropDownList ddr = (DropDownList)this.Department1.FindControl("ddlDepartment");//找到用户控件中的子控件
-            //model.PARENTID = Convert.ToDecimal(ddr.SelectedIndex);//上级部门
             model.DEPTID = Convert.ToInt32(this.hidPrimary.Value);  //id,主键
             model.DPTNAME = this.TxtDeptName.Text.Trim();           //部门名称       
             model.DPTINFO = this.txtDptinfo.Text.Trim();            //部门描述
-            model.PARENTID = Convert.ToInt32(Session["deptcode"].ToString());   //上级部门
+            model.PARENTID = parentId;   //上级部门
             model.STATUS = 0;                                   //状态0:正常；1：关闭
 
             return model;
@@ -56,15 +59,14 @@ namespace SmartHyd.ManageCenter.Ascx {
         private void SetEntity(Entity.BASE_DEPT model) {
             this.hidPrimary.Value = model.DEPTID.ToString();        //id,主键
             this.TxtDeptName.Text = model.DPTNAME;                    //部门名称
-
-            DropDownList ddr = (DropDownList)this.Department1.FindControl("ddlDepartment");//找到用户控件中的子控件
-            ddr.SelectedValue = model.PARENTID.ToString();                                //上级部门
             this.txtDptinfo.Text = model.DPTINFO;             //部门描述
 
+            //DropDownList ddr = (DropDownList)this.Department1.FindControl("ddlDepartment");//找到用户控件中的子控件
+            //ddr.SelectedValue = model.PARENTID.ToString();                                //上级部门
             //model.STATES = 0;                                  //状态
-
         }
         #endregion
+
         #region 页面功能按钮事件(必须重写基类虚方法，否则按钮的事件是无效的)
         //添加
         public override void BtnAdd_Click(object sender, EventArgs e) {

@@ -106,6 +106,7 @@
     <Content Include="ManageCenter\SysLog.aspx" />
     <Content Include="ManageCenter\Term.aspx" />
     <Content Include="ManageCenter\UserManage.aspx" />
+    <Content Include="readme.txt" />
     <Content Include="Scripts\base.js" />
     <Content Include="Scripts\jquery-ui-1.8.18.custom\css\redmond\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Scripts\jquery-ui-1.8.18.custom\css\redmond\images\ui-bg_flat_55_fbec88_40x100.png" />
