@@ -1,32 +1,34 @@
-﻿namespace SmartSpider.Utility {
+﻿namespace SmartSpider.Utility
+{
     using System;
     using System.Collections.Generic;
     using System.Text;
     using System.Windows.Forms;
     using System.Data;
 
-    public class TaskResultLog : TabPage {
+    public class TaskResultLog : TabPage
+    {
         private SplitContainer splitContainerMain = new SplitContainer();
         private RichTextBox rtxLogEvent = new RichTextBox();
         private DataGridView dgvResult = new DataGridView();
-        private delegate void SetTextCallback(object sender,Config.LogEventArgs e);
-        private delegate void RefererDataSource(object sender,params object[] values);
-        private Config.TaskUnit _unit = new Config.TaskUnit();
 
-        /// <summary>
-        /// 构造函数
-        /// </summary>
-        /// <param name="unit">任务控制单元</param>
-        public TaskResultLog(ref Config.TaskUnit unit) {
-            this.BindController();
-            this.Text = unit.TaskConfig.Name;
-            this._unit = unit;
-            this._unit.Log += new Config.LogEventHanlder(On_unitLog);
-            this._unit.onAppendResult += new Config.OnAppendSingleResult(On_AppendResult);
-            this.Tag = unit.ConfigPath;
+        private delegate void SetTextCallback(Config.LogEventArgs e);
+        private delegate void RefererDataSource(params object[] values);
+
+        public TaskResultLog(string tabPageName, List<Config.ExtractionRule> extractionRules)
+        {
+            this.InitializeComponent();
+
+            this.Text = tabPageName;
+
+            foreach (Config.ExtractionRule item in extractionRules)
+            {
+                this.dgvResult.Columns.Add(item.DataColumn, item.Name);
+            }
         }
 
-        private void InitializeComponent() {
+        private void InitializeComponent()
+        {
             this.splitContainerMain = new System.Windows.Forms.SplitContainer();
             this.rtxLogEvent = new System.Windows.Forms.RichTextBox();
             this.dgvResult = new System.Windows.Forms.DataGridView();
@@ -75,69 +77,82 @@
             this.splitContainerMain.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvResult)).EndInit();
             this.ResumeLayout(false);
-            this.dgvResult.RowsAdded +=new DataGridViewRowsAddedEventHandler(dgvResult_RowsAdded);
-        }
-
-        private void BindController() {
-            this.InitializeComponent();
+            this.dgvResult.RowsAdded += new DataGridViewRowsAddedEventHandler(dgvResult_RowsAdded);
 
             this.splitContainerMain.Panel1.Controls.Add(dgvResult);
             this.splitContainerMain.Panel2.Controls.Add(rtxLogEvent);
             this.Controls.Add(splitContainerMain);
         }
-        //添加日志
-        private void On_unitLog(object sender, Config.LogEventArgs e) {
-            try {
-                string space = "";
-                for (int i = 0; i < e.Indent; i++) {
-                    space += " ";
-                }
 
-                if (this.rtxLogEvent.InvokeRequired) {
-                    SetTextCallback callBack = new SetTextCallback(On_unitLog);
-                    this.Invoke(callBack, new object[] {this, e });
-                } else {
-                    this.rtxLogEvent.AppendText(space + e.Message + "\r\n");
-                    if (this.rtxLogEvent.Text.Length > 1) {
-                        this.rtxLogEvent.Select(rtxLogEvent.Text.Length - 1, 1);
-                    }
-                    this.rtxLogEvent.ScrollToCaret();
-                    this.rtxLogEvent.Refresh();
+        //添加一行采集结果
+        public void AppendRowResult(params object[] values)
+        {
+            try
+            {
+                if (this.dgvResult.InvokeRequired)
+                {
+                    RefererDataSource referer = new RefererDataSource(AppendRowResult);
+                    this.Invoke(referer, new object[] { values });
                 }
-            } catch (Exception ex) {
-                throw ex;
-            }
-        }
-        //添加结果
-        private void On_AppendResult(object sender, params object[] values) {
-            try {
-                if (this.dgvResult.InvokeRequired) {
-                    RefererDataSource referer = new RefererDataSource(On_AppendResult);
-                    this.Invoke(referer, new object[] {this, values });
-                } else {
-                    if (this.dgvResult.Columns.Count == 0) {
-                        foreach (Config.ExtractionRule item in this._unit.TaskConfig.ExtractionRules) {
-                            this.dgvResult.Columns.Add(item.DataColumn, item.Name);
-                        }
-                    }
+                else
+                {                    
                     this.dgvResult.Rows.Add(values);
                     this.dgvResult.Rows[this.dgvResult.Rows.Count - 1].Selected = true;
                     this.dgvResult.FirstDisplayedScrollingRowIndex = this.dgvResult.Rows.Count - 1;
                     this.dgvResult.Refresh();
                 }
-            } catch (Exception e) {
+            }
+            catch (Exception e)
+            {
                 throw e;
             }
         }
-        //日志大于5000自动清空
-        private void rtxLogEvent_TextChanged(object sender, EventArgs e) {
-            if (this.rtxLogEvent.TextLength > 5000) {
-                this.rtxLogEvent.Clear();
+        //追加日志
+        public void AppendLogevent(Config.LogEventArgs e)
+        {
+            try
+            {
+                string space = "";
+                for (int i = 0; i < e.Indent; i++)
+                {
+                    space += " ";
+                }
+
+                if (this.rtxLogEvent.InvokeRequired)
+                {
+                    SetTextCallback callBack = new SetTextCallback(AppendLogevent);
+                    this.Invoke(callBack, new object[] { e });
+                }
+                else
+                {
+                    this.rtxLogEvent.AppendText(space + e.Message + "\r\n");
+                    if (this.rtxLogEvent.Text.Length > 1)
+                    {
+                        this.rtxLogEvent.Select(rtxLogEvent.Text.Length - 1, 1);
+                    }
+                    this.rtxLogEvent.ScrollToCaret();
+                    this.rtxLogEvent.Refresh();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
         }
 
-        private void dgvResult_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e) {
-            if (dgvResult.Rows.Count >= 100) {
+        //日志大于5000自动清空
+        private void rtxLogEvent_TextChanged(object sender, EventArgs e)
+        {
+            if (this.rtxLogEvent.TextLength > 5000)
+            {
+                this.rtxLogEvent.Clear();
+            }
+        }
+        //采集结果行岛屿100自动清空
+        private void dgvResult_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            if (dgvResult.Rows.Count >= 100)
+            {
                 dgvResult.Rows.Clear();
             }
         }

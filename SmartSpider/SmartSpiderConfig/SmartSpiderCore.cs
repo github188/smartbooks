@@ -7,7 +7,7 @@ namespace SmartSpider.Config {
         /// <summary>
         /// 日志记录事件
         /// </summary>
-        public event LogEventHanlder Log;
+        public event OnAppendSingileLog OnAppendSingileLog;
 
         /// <summary>
         /// 创建

@@ -93,6 +93,9 @@
     </Compile>
     <Compile Include="Utility\ExtractionRulesItem.cs" />
     <Compile Include="Utility\NavigationRuleItem.cs" />
+    <Compile Include="Utility\SplitContainerRight.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Utility\TaskListView.cs">
       <SubType>Component</SubType>
     </Compile>

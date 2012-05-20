@@ -139,8 +139,7 @@
             this.splitContainerMain = new System.Windows.Forms.SplitContainer();
 
             this.imageListMax = new System.Windows.Forms.ImageList(this.components);
-            this.splitContainerRight = new System.Windows.Forms.SplitContainer();
-            this.livTaskView = new Utility.TaskListView();
+            this.splitContainerRight = new Utility.SplitContainerRight();
             this.trwTaskFolder = new Utility.TaskFolderTree();
 
             this.tabContent = new System.Windows.Forms.TabControl();
@@ -152,9 +151,6 @@
             this.splitContainerMain.Panel1.SuspendLayout();
             this.splitContainerMain.Panel2.SuspendLayout();
             this.splitContainerMain.SuspendLayout();
-            this.splitContainerRight.Panel1.SuspendLayout();
-            this.splitContainerRight.Panel2.SuspendLayout();
-            this.splitContainerRight.SuspendLayout();
             this.tabContent.SuspendLayout();
             this.tabPageDefault.SuspendLayout();
             this.SuspendLayout();
@@ -1165,39 +1161,7 @@
             this.imageListMax.Images.SetKeyName(15, "stopmin.png");
             this.imageListMax.Images.SetKeyName(16, "taskmin.png");
             this.imageListMax.Images.SetKeyName(17, "timemin.png");
-            // 
-            // splitContainerRight
-            // 
-            this.splitContainerRight.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainerRight.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
-            this.splitContainerRight.Location = new System.Drawing.Point(0, 0);
-            this.splitContainerRight.Name = "splitContainerRight";
-            this.splitContainerRight.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // splitContainerRight.Panel1
-            // 
-            this.splitContainerRight.Panel1.Controls.Add(this.livTaskView);
-            this.splitContainerRight.Panel1MinSize = 150;
-            // 
-            // splitContainerRight.Panel2
-            // 
-            this.splitContainerRight.Panel2.Controls.Add(this.tabContent);
-            this.splitContainerRight.Panel2MinSize = 100;
-            this.splitContainerRight.Size = new System.Drawing.Size(389, 288);
-            this.splitContainerRight.SplitterDistance = 150;
-            this.splitContainerRight.TabIndex = 0;
-            // 
-            // tabContent
-            // 
-            this.tabContent.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
-            this.tabContent.Controls.Add(this.tabPageDefault);
-            this.tabContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabContent.Location = new System.Drawing.Point(0, 0);
-            this.tabContent.Multiline = true;
-            this.tabContent.Name = "tabContent";
-            this.tabContent.SelectedIndex = 0;
-            this.tabContent.Size = new System.Drawing.Size(389, 134);
-            this.tabContent.TabIndex = 0;
+                        
             // 
             // tabPageDefault
             // 
@@ -1248,9 +1212,6 @@
             this.splitContainerMain.Panel1.ResumeLayout(false);
             this.splitContainerMain.Panel2.ResumeLayout(false);
             this.splitContainerMain.ResumeLayout(false);
-            this.splitContainerRight.Panel1.ResumeLayout(false);
-            this.splitContainerRight.Panel2.ResumeLayout(false);
-            this.splitContainerRight.ResumeLayout(false);
             this.tabContent.ResumeLayout(false);
             this.tabPageDefault.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -1260,11 +1221,11 @@
             this.trwTaskFolder.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.trwTaskFolder_AfterSelect);
             this.trwTaskFolder.ImageList = this.imageListMax;
             //任务运行信息框
-            this.livTaskView.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(livTaskView_MouseDoubleClick);
-            this.livTaskView.MouseClick += new System.Windows.Forms.MouseEventHandler(livTaskView_MouseClick);
-            this.livTaskView.SelectedIndexChanged += new System.EventHandler(livTaskView_SelectedIndexChanged);
-            this.livTaskView.LargeImageList = this.imageListMax;
-            this.livTaskView.SmallImageList = this.imageListMax;
+            this.splitContainerRight.livTaskView.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(livTaskView_MouseDoubleClick);
+            this.splitContainerRight.livTaskView.MouseClick += new System.Windows.Forms.MouseEventHandler(livTaskView_MouseClick);
+            this.splitContainerRight.livTaskView.SelectedIndexChanged += new System.EventHandler(livTaskView_SelectedIndexChanged);
+            this.splitContainerRight.livTaskView.LargeImageList = this.imageListMax;
+            this.splitContainerRight.livTaskView.SmallImageList = this.imageListMax;
         }
 
         #endregion
@@ -1377,29 +1338,15 @@
         private System.Windows.Forms.ToolStripStatusLabel staTaskStatus;
         private System.Windows.Forms.ToolStripStatusLabel staThreadNumber;
         private System.Windows.Forms.SplitContainer splitContainerMain;
-        private System.Windows.Forms.SplitContainer splitContainerRight;
+       
         private System.Windows.Forms.TabControl tabContent;
         private System.Windows.Forms.TabPage tabPageDefault;
         private System.Windows.Forms.WebBrowser webDefaultView;
         private System.Windows.Forms.ImageList imageListMax;
 
         private Utility.TaskFolderTree trwTaskFolder;
-        private Utility.TaskListView livTaskView;
+        //private Utility.TaskListView livTaskView;
+        private Utility.SplitContainerRight splitContainerRight;
         #endregion
-
-        //private System.Windows.Forms.ColumnHeader taskName;
-        //private System.Windows.Forms.ColumnHeader ExtractCount;
-        //private System.Windows.Forms.ColumnHeader ExtractURL;
-        //private System.Windows.Forms.ColumnHeader ExtractStartSuccessUrl;
-        //private System.Windows.Forms.ColumnHeader ExtractStartUrl;
-        //private System.Windows.Forms.ColumnHeader ExtractHistory;
-        //private System.Windows.Forms.ColumnHeader ExtractCurrent;
-        //private System.Windows.Forms.ColumnHeader ExtractResult;
-        //private System.Windows.Forms.ColumnHeader ReleaseRepeat;
-        //private System.Windows.Forms.ColumnHeader ReleaseError;
-        //private System.Windows.Forms.ColumnHeader ExtractSpaceTime;
-        //private System.Windows.Forms.ColumnHeader StartTime;        
-        //private System.Windows.Forms.TreeView trwTaskFolder;
-        //private System.Windows.Forms.ListView livTaskView;
     }
 }

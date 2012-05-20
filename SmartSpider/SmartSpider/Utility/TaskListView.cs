@@ -8,14 +8,51 @@ using System.Xml.Serialization;
 namespace SmartSpider.Utility
 {
     public delegate void OnRefreshTaskStatus(int index, Config.TaskUnit task);
+    public delegate void OnShowTaskRuntimeInfo(object sender, EventArgs e);
 
     public class TaskListView : ListView
     {
         #region 公共字段定义
         public List<Config.TaskUnit> _TaskItem = new List<Config.TaskUnit>();
-        public event Config.LogEventHanlder _LogEventHanlder;
-        public event Config.OnAppendSingleResult _OnAppendSingleResult;
-        public event Config.OnTaskComplete _OnTaskComplete;
+        #endregion
+
+        #region 公共事件定义
+        /// <summary>
+        /// 当任务状态改变时执行的事件
+        /// </summary>
+        public event Config.OnTaskStatusChanges OnTaskStatusChanges;
+
+        /// <summary>
+        /// 当任务完成时产生的事件
+        /// </summary>
+        public event Config.OnTaskComplete OnTaskComplete;
+        /// <summary>
+        /// 任务开始
+        /// </summary>
+        public event Config.OnTaskStart OnTaskStart;
+        /// <summary>
+        /// 任务暂停
+        /// </summary>
+        public event Config.OnTaskPause OnTaskPause;
+        /// <summary>
+        /// 任务暂停
+        /// </summary>
+        public event Config.OnTaskStop OnTaskStop;
+
+        /// <summary>
+        /// 追加日志
+        /// </summary>
+        public event Config.OnAppendSingileLog OnAppendSingileLog;
+        /// <summary>
+        /// 追加结果
+        /// </summary>
+        public event Config.OnAppendSingleResult OnAppendSingleResult;
+        /// <summary>
+        /// 发布结果
+        /// </summary>
+        public event Config.OnPublishResult OnPublishResult;
+
+        public event OnShowTaskRuntimeInfo OnShowTaskRuntimeInfo;
         #endregion
 
         #region 公共属性定义
@@ -55,12 +92,17 @@ namespace SmartSpider.Utility
             else
             {
                 #region 更新项状态
+                if (Items.Count == 0) return;
+
                 for (int i = 0; i < _TaskItem.Count; i++)
                 {
-                    if (_TaskItem[i].TaskConfig.Name.Equals(task.TaskConfig.Name))
+                    for (int j = 0; j < Items.Count; j++)
                     {
-                        index = i;
-                        break;
+                        if (_TaskItem[i].TaskConfig.Name.Equals(Items[j].Text))
+                        {
+                            index = j;
+                            break;
+                        }
                     }
                 }
 
@@ -95,6 +137,9 @@ namespace SmartSpider.Utility
                         break;
                     case Config.Action.Stop:
                         this.Items[index].ImageKey = "stopmin.png";
+                        break;
+                    case Config.Action.Running:
+                        this.Items[index].ImageKey = "pausemin.png";
                         break;
                 }
                 #endregion
@@ -325,7 +370,7 @@ namespace SmartSpider.Utility
             }
         }
         #endregion
-        
+
         #region 私有方法定义
         /// <summary>
         /// 初始化组件
@@ -448,6 +493,26 @@ namespace SmartSpider.Utility
                 this.StartTime});
             #endregion
 
+            #region 快捷菜单初始化
+            TaskListViewQuickMenu = new ContextMenu();
+            TaskListViewQuickMenu.MenuItems.Add(new MenuItem("显示运行信息(&R)", new EventHandler(TaskListViewQuickMenu_MenuItems_ShowInfo)));
+            TaskListViewQuickMenu.MenuItems.Add("-");
+            TaskListViewQuickMenu.MenuItems.Add(new MenuItem("开始(&S)", new EventHandler(TaskListViewQuickMenu_MenuItems_Start)));
+            TaskListViewQuickMenu.MenuItems.Add(new MenuItem("暂停(&P)", new EventHandler(TaskListViewQuickMenu_MenuItems_Pause)));
+            TaskListViewQuickMenu.MenuItems.Add(new MenuItem("停止(&T)", new EventHandler(TaskListViewQuickMenu_MenuItems_Stop)));
+            TaskListViewQuickMenu.MenuItems.Add("-");
+            TaskListViewQuickMenu.MenuItems.Add(new MenuItem("新建(&N)", new EventHandler(TaskListViewQuickMenu_MenuItems_Create)));
+            TaskListViewQuickMenu.MenuItems.Add(new MenuItem("编辑(&E)", new EventHandler(TaskListViewQuickMenu_MenuItems_Edit)));
+            TaskListViewQuickMenu.MenuItems.Add(new MenuItem("复制(&C)", new EventHandler(TaskListViewQuickMenu_MenuItems_Copy)));
+            TaskListViewQuickMenu.MenuItems.Add(new MenuItem("删除(&D)", new EventHandler(TaskListViewQuickMenu_MenuItems_Delete)));
+            TaskListViewQuickMenu.MenuItems.Add("-");
+            TaskListViewQuickMenu.MenuItems.Add(new MenuItem("导出(&X)", new EventHandler(TaskListViewQuickMenu_MenuItems_Export)));
+            TaskListViewQuickMenu.MenuItems.Add(new MenuItem("导入(&I)", new EventHandler(TaskListViewQuickMenu_MenuItems_Import)));
+            TaskListViewQuickMenu.MenuItems.Add("-");
+            TaskListViewQuickMenu.MenuItems.Add(new MenuItem("全选(&A)", new EventHandler(TaskListViewQuickMenu_MenuItems_SelectAll)));
+
+            this.ContextMenu = TaskListViewQuickMenu;
+            #endregion
         }
         /// <summary>
         /// 加载本地xml Task配置文件
@@ -470,13 +535,19 @@ namespace SmartSpider.Utility
                     unit.ConfigPath = files[i];
                     unit.TaskConfig = task;
                     unit.ConfigDir = Directory.GetParent(files[i]).FullName;
-                    
+
                     this._TaskItem.Add(unit);
 
-                    this._TaskItem[_TaskItem.Count-1].onAppendResult += new Config.OnAppendSingleResult(unit_onAppendResult);
-                    this._TaskItem[_TaskItem.Count - 1].OnTaskComplete += new Config.OnTaskComplete(unit_OnTaskComplete);
-                    this._TaskItem[_TaskItem.Count - 1].OnTaskStatusChanges += new Config.OnTaskStatusChanges(unit_OnTaskStatusChanges);
-                    this._TaskItem[_TaskItem.Count - 1].Log +=new Config.LogEventHanlder(TaskListView_Log);
+                    #region 订阅事件
+                    this._TaskItem[_TaskItem.Count - 1].OnTaskStatusChanges += new Config.OnTaskStatusChanges(TaskListView_OnTaskStatusChanges);
+                    this._TaskItem[_TaskItem.Count - 1].OnTaskComplete += new Config.OnTaskComplete(TaskListView_OnTaskComplete);
+                    this._TaskItem[_TaskItem.Count - 1].OnTaskStart += new Config.OnTaskStart(TaskListView_OnTaskStart);
+                    this._TaskItem[_TaskItem.Count - 1].OnTaskPause += new Config.OnTaskPause(TaskListView_OnTaskPause);
+                    this._TaskItem[_TaskItem.Count - 1].OnTaskStop += new Config.OnTaskStop(TaskListView_OnTaskStop);
+                    this._TaskItem[_TaskItem.Count - 1].OnAppendSingileLog += new Config.OnAppendSingileLog(TaskListView_OnAppendSingileLog);
+                    this._TaskItem[_TaskItem.Count - 1].OnAppendSingleResult += new Config.OnAppendSingleResult(TaskListView_OnAppendSingleResult);
+                    this._TaskItem[_TaskItem.Count - 1].OnPublishResult += new Config.OnPublishResult(TaskListView_OnPublishResult);
+                    #endregion
                 }
                 catch (Exception ex)
                 {
@@ -484,36 +555,129 @@ namespace SmartSpider.Utility
                 }
             }
         }
-        //当任务完成时产生的事件
-        private void unit_OnTaskComplete(object sender, EventArgs e)
-        {
-            if (_OnTaskComplete != null)
-            {
-                _OnTaskComplete(sender, e);
-            }
-        }
-        //当增加一条采集结果行时触发的事件
-        private void unit_onAppendResult(object sender, object[] values)
-        {
-            if (_OnAppendSingleResult != null)
-            {
-                _OnAppendSingleResult(sender, values);
-            }
-        }
-        //当追加一段日志信息时产生的事件
-        private void TaskListView_Log(object sender, Config.LogEventArgs e)
-        {
-            if (_LogEventHanlder != null)
-            {
-                _LogEventHanlder(sender, e);
-            }
-        }
-        //不能重写：当任务状态改变时执行的事件
-        private void unit_OnTaskStatusChanges(object sender, Config.Action action)
+
+        #region 任务运行事件
+        //状态改变
+        private void TaskListView_OnTaskStatusChanges(object sender, Config.Action action)
         {
             Config.TaskUnit unit = (Config.TaskUnit)sender;
             RefreshTaskStatus(0, unit); //刷新任务状态
         }
+        //任务完成
+        private void TaskListView_OnTaskComplete(object sender, Config.LogEventArgs e)
+        {
+            if (OnTaskComplete != null)
+            {
+                OnTaskComplete(sender, e);
+            }
+        }
+        //任务开始
+        private void TaskListView_OnTaskStart(object sender, Config.LogEventArgs e)
+        {
+            if (OnTaskStart != null)
+            {
+                OnTaskStart(sender, e);
+            }
+        }
+        //任务暂停
+        private void TaskListView_OnTaskPause(object sender, Config.LogEventArgs e)
+        {
+            if (OnTaskPause != null)
+            {
+                OnTaskPause(sender, e);
+            }
+        }
+        //任务停止
+        private void TaskListView_OnTaskStop(object sender, Config.LogEventArgs e)
+        {
+            if (OnTaskStop != null)
+            {
+                OnTaskStop(sender, e);
+            }
+        }
+        //追加日志
+        private void TaskListView_OnAppendSingileLog(object sender, Config.LogEventArgs e)
+        {
+            if (OnAppendSingileLog != null)
+            {
+                OnAppendSingileLog(sender, e);
+            }
+        }
+        //增加结果行
+        private void TaskListView_OnAppendSingleResult(object sender, object[] values)
+        {
+            if (OnAppendSingleResult != null)
+            {
+                //引发事件
+                OnAppendSingleResult(sender, values);
+
+                //刷新任务项
+                RefreshTaskStatus(0, (Config.TaskUnit)sender);
+            }
+        }
+        //发布结果
+        private void TaskListView_OnPublishResult(object sender, Config.LogEventArgs e)
+        {
+            if (OnPublishResult != null)
+            {
+                OnPublishResult(sender, e);
+            }
+        }
+        #endregion
+
+        #region   快捷菜单事件
+        private void TaskListViewQuickMenu_MenuItems_ShowInfo(object sender, EventArgs e) {
+            if (OnShowTaskRuntimeInfo != null)
+            {
+                OnShowTaskRuntimeInfo(this, e);
+            }
+        }
+        private void TaskListViewQuickMenu_MenuItems_Start(object sender, EventArgs e) {
+            StartTask();
+        }
+        private void TaskListViewQuickMenu_MenuItems_Pause(object sender, EventArgs e) {
+            PauseTask();
+        }
+        private void TaskListViewQuickMenu_MenuItems_Stop(object sender, EventArgs e) {
+            StopTask();
+        }
+        private void TaskListViewQuickMenu_MenuItems_Create(object sender, EventArgs e) {
+            CreateTask(this.currentGroupText);
+        }
+        private void TaskListViewQuickMenu_MenuItems_Edit(object sender, EventArgs e) {
+            EditTask();
+        }
+        private void TaskListViewQuickMenu_MenuItems_Copy(object sender, EventArgs e) {
+            foreach (ListViewItem item in SelectedItems)
+            {
+                foreach (Config.TaskUnit unit in _TaskItem)
+                {
+                    if (unit.TaskConfig.Name.Equals(item.Text))
+                    {
+                        Clipboard.Clear();
+                        Clipboard.SetData(DataFormats.Serializable, unit.TaskConfig);
+                        return;
+                    }
+                }
+            }
+        }
+        private void TaskListViewQuickMenu_MenuItems_Delete(object sender, EventArgs e) {
+            DeleteTask();
+        }
+        private void TaskListViewQuickMenu_MenuItems_Export(object sender, EventArgs e) {
+        
+        }
+        private void TaskListViewQuickMenu_MenuItems_Import(object sender, EventArgs e) {
+        
+        }
+        private void TaskListViewQuickMenu_MenuItems_SelectAll(object sender, EventArgs e) {
+            foreach (ListViewItem item in Items)
+            {
+                item.Selected = true;
+            }
+        }
+        #endregion
+
         #endregion
 
         #region 私有字段定义
@@ -530,6 +694,7 @@ namespace SmartSpider.Utility
         private System.Windows.Forms.ColumnHeader ExtractSpaceTime;
         private System.Windows.Forms.ColumnHeader StartTime;
         private string currentGroupText = "";
+        private ContextMenu TaskListViewQuickMenu;
         #endregion
     }
 }

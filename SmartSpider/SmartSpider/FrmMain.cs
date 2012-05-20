@@ -36,7 +36,7 @@
         #region 文件菜单
         //文件菜单：发布结果
         private void FileItemPublishResults_Click(object sender, EventArgs e) {
-            livTaskView.PublishResult();
+            splitContainerRight.livTaskView.PublishResult();
         }
         //文件菜单：结果另存为Excel
         private void FileItemSaveAsExcel_Click(object sender, EventArgs e) {
@@ -56,7 +56,7 @@
         }
         //文件菜单：清空结果
         private void FileItemClearResult_Click(object sender, EventArgs e) {
-            livTaskView.ClearResult();
+            splitContainerRight.livTaskView.ClearResult();
         }
         //文件菜单：发布时重复行-查看
         private void FileItemPublishResultRepeatView_Click(object sender, EventArgs e) {
@@ -164,11 +164,11 @@
         }
         //任务菜单：新建
         private void TaskItemAdd_Click(object sender, EventArgs e) {
-            livTaskView.CreateTask((string)trwTaskFolder.SelectedNode.Tag);
+            splitContainerRight.livTaskView.CreateTask((string)trwTaskFolder.SelectedNode.Tag);
         }
         //任务菜单：编辑
         private void TaskItemEdit_Click(object sender, EventArgs e) {
-            livTaskView.EditTask();
+            splitContainerRight.livTaskView.EditTask();
         }
         //任务菜单：复制
         private void TaskItemCopy_Click(object sender, EventArgs e) {
@@ -176,7 +176,7 @@
         }
         //任务菜单：删除
         private void TaskItemDelete_Click(object sender, EventArgs e) {
-            livTaskView.DeleteTask();
+            splitContainerRight.livTaskView.DeleteTask();
         }
         //任务菜单：导出
         private void TaskItemExport_Click(object sender, EventArgs e) {
@@ -267,10 +267,10 @@
         //工具栏：开始
         private void tolStartTask_Click(object sender, EventArgs e) {
             //开始任务
-            livTaskView.StartTask();
+            splitContainerRight.livTaskView.StartTask();
 
             //显示日志窗口
-            int index = livTaskView.GetSelectedIndex();
+            int index = splitContainerRight.livTaskView.GetSelectedIndex();
             if (index != -1)
             {
                 //this.ShowTaskRuntimesInfo(ref livTaskView._TaskItem[index]);
@@ -287,24 +287,24 @@
         //工具栏：暂停
         private void tolPauseTask_Click(object sender, EventArgs e) {
             //暂停任务
-            livTaskView.PauseTask();
+            splitContainerRight.livTaskView.PauseTask();
         }
         //工具栏：停止
         private void tolStopTask_Click(object sender, EventArgs e) {
-            livTaskView.StopTask();
+            splitContainerRight.livTaskView.StopTask();
         }
         //工具栏：新建任务
         private void tolAddTask_Click(object sender, EventArgs e) {
             //新建任务
-            livTaskView.CreateTask((string)trwTaskFolder.SelectedNode.Tag);
+            splitContainerRight.livTaskView.CreateTask((string)trwTaskFolder.SelectedNode.Tag);
         }
         //工具栏：编辑任务
         private void tolEditTask_Click(object sender, EventArgs e) {
-            livTaskView.EditTask();
+            splitContainerRight.livTaskView.EditTask();
         }
         //工具栏：删除任务
         private void tolDeleteTask_Click(object sender, EventArgs e) {
-            livTaskView.DeleteTask();
+            splitContainerRight.livTaskView.DeleteTask();
         }
         //工具栏：所有任务完成后关机
         private void tolAllTaskSuccessShutdown_Click(object sender, EventArgs e) {
@@ -369,7 +369,7 @@
             //SaveLoactionTaskItem();
 
             //保存采集结果数据
-            livTaskView.SaveResult();
+            splitContainerRight.livTaskView.SaveResult();
 
             Application.ExitThread();
             Application.Exit();
@@ -381,31 +381,31 @@
             string dir = (string)this.trwTaskFolder.SelectedNode.Tag;
 
             //显示任务项到控件视图中
-            this.livTaskView.ShowGroupItem(dir);
+            this.splitContainerRight.livTaskView.ShowGroupItem(dir);
         }
         //任务运行信息窗口：双击编辑任务配置
         private void livTaskView_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            livTaskView.EditTask();
+            splitContainerRight.livTaskView.EditTask();
         }
         //任务运行信息窗口：单击任务
         private void livTaskView_MouseClick(object sender, MouseEventArgs e)
         {
             //获取选定项的任务状态
-            SetTaskStatusUi(livTaskView.GetSelectedItemStatus());
+            SetTaskStatusUi(splitContainerRight.livTaskView.GetSelectedItemStatus());
         }
         //任务运行信息窗口：选定项改变
         private void livTaskView_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (this.livTaskView.SelectedItems.Count == 0)
+            if (this.splitContainerRight.livTaskView.SelectedItems.Count == 0)
             {
                 SetDefaultUI();
             }
-            else if (this.livTaskView.SelectedItems.Count == 1)
+            else if (this.splitContainerRight.livTaskView.SelectedItems.Count == 1)
             {
-                foreach (Utility.TaskViewItem item in this.livTaskView.SelectedItems)
+                foreach (Utility.TaskViewItem item in this.splitContainerRight.livTaskView.SelectedItems)
                 {
-                    SetTaskStatusUi(livTaskView.GetSelectedItemStatus());
+                    SetTaskStatusUi(splitContainerRight.livTaskView.GetSelectedItemStatus());
                 }
             }
             else
@@ -456,27 +456,7 @@
                 }
             }
             return node;
-        }
-        /// <summary>
-        /// 显示任务运行日志信息窗口
-        /// </summary>
-        /// <param name="unit">任务单元</param>
-        private void ShowTaskRuntimesInfo(ref TaskUnit unit) {
-            bool isNull = true;
-            foreach (TabPage page in this.tabContent.TabPages) {
-                string kind = (string)page.Tag;
-                if (kind == unit.ConfigPath) {
-                    this.tabContent.SelectedTab = page;
-                    isNull = false;
-                    break;
-                }
-            }
-            if (isNull) {
-                Utility.TaskResultLog log = new Utility.TaskResultLog(ref unit);
-                this.tabContent.TabPages.Add(log);
-                this.tabContent.SelectedTab = log;
-            }
-        }
+        }        
         #endregion
 
         #region 私有字段定义

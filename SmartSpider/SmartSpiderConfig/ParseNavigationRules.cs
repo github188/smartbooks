@@ -16,6 +16,11 @@ namespace SmartSpider.Config
     /// </summary>
     public class ParseNavigationRules
     {
+        /// <summary>
+        /// 追加日志事件
+        /// </summary>
+        public event OnAppendSingileLog OnAppendSingileLog;
+
         public ParseNavigationRules(UrlListManager urlItem)
         {
             this._urlItem = urlItem;
@@ -123,24 +128,34 @@ namespace SmartSpider.Config
                     }
                     else
                     {
-                        HttpHelper http = new HttpHelper();
-                        string htmlText = http.RequestResult(u);    //发送Http请求获取导航地址
-                        StringCollection navUrlItem = ParseNavigationRuleHtmlText(rule, htmlText);
-                        foreach (string r in navUrlItem)
+                        try
                         {
-                            /*
-                             * 处理相对路径网址问题如：/html/gndy/jddy/20120425/37418.html
-                             * 如果不包含http://选项，则在相对路径前边加上主机地址。
-                             */
-                            string path = r;
-                            if (!r.Contains("http://") && r.Length > 0)
+                            HttpHelper http = new HttpHelper();
+                            string htmlText = http.RequestResult(u);    //发送Http请求获取导航地址
+                            StringCollection navUrlItem = ParseNavigationRuleHtmlText(rule, htmlText);
+                            foreach (string r in navUrlItem)
                             {
-                                path = r.Insert(0,  "http://" + http.WebResponse.ResponseUri.Authority);                                
+                                /*
+                                 * 处理相对路径网址问题如：/html/gndy/jddy/20120425/37418.html
+                                 * 如果不包含http://选项，则在相对路径前边加上主机地址。
+                                 */
+                                string path = r;
+                                if (!r.Contains("http://") && r.Length > 0)
+                                {
+                                    path = r.Insert(0, "http://" + http.WebResponse.ResponseUri.Authority);
+                                }
+                                urls.Add(path);
+                                if (onSingleComplete != null)
+                                {
+                                    this.onSingleComplete(this, path);    //引发增加一条网址事件
+                                }
                             }
-                            urls.Add(path);                            
-                            if (onSingleComplete != null)
+                        }
+                        catch (Exception ex)
+                        {
+                            if (OnAppendSingileLog != null)
                             {
-                                this.onSingleComplete(this, path);    //引发增加一条网址事件
+                                OnAppendSingileLog(this, new LogEventArgs(ex.Message));
                             }
                         }
                     }

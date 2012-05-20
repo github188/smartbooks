@@ -12,23 +12,20 @@
     using System.Text.RegularExpressions;
     using System.Xml.Serialization;
 
-    public delegate void OnTaskStatusChanges(object sender, Config.Action action);
-    public delegate void LogEventHanlder(object sender,LogEventArgs e);
-    public delegate void OnTaskComplete(object sender, EventArgs e);
-    public delegate void OnAppendSingleResult(object sender,params object[] values);
-    public delegate void OnPublishResult(object sender, EventArgs e);
+    #region 委托方法定义
+    public delegate void OnTaskStatusChanges(object sender, Config.Action action);      //任务状态改变    
+    public delegate void OnTaskComplete(object sender, Config.LogEventArgs e);          //任务完成
+    public delegate void OnTaskStart(object sender, Config.LogEventArgs e);             //任务开始
+    public delegate void OnTaskPause(object sender, Config.LogEventArgs e);             //任务暂停
+    public delegate void OnTaskStop(object sender, Config.LogEventArgs e);              //任务停止
+    public delegate void OnAppendSingileLog(object sender, Config.LogEventArgs e);      //追加日志
+    public delegate void OnAppendSingleResult(object sender,params object[] values);    //追加结果
+    public delegate void OnPublishResult(object sender, Config.LogEventArgs e);         //发布结果
+    #endregion
 
     public class TaskUnit : IDisposable
     {
         #region 公共事件定义
-        /// <summary>
-        /// 日志记录事件
-        /// </summary>
-        public event LogEventHanlder Log;
-        /// <summary>
-        /// 当增加一条采集结果行时触发的事件
-        /// </summary>
-        public event OnAppendSingleResult onAppendResult;
         /// <summary>
         /// 当任务状态改变时执行的事件
         /// </summary>
@@ -37,6 +34,30 @@
         /// 当任务完成时产生的事件
         /// </summary>
         public event OnTaskComplete OnTaskComplete;
+        /// <summary>
+        /// 任务开始
+        /// </summary>
+        public event OnTaskStart OnTaskStart;
+        /// <summary>
+        /// 任务暂停
+        /// </summary>
+        public event OnTaskPause OnTaskPause;
+        /// <summary>
+        /// 任务暂停
+        /// </summary>
+        public event OnTaskStop OnTaskStop;
+        /// <summary>
+        /// 追加日志
+        /// </summary>
+        public event OnAppendSingileLog OnAppendSingileLog;        
+        /// <summary>
+        /// 追加结果
+        /// </summary>
+        public event OnAppendSingleResult OnAppendSingleResult;
+        /// <summary>
+        /// 发布结果
+        /// </summary>
+        public event OnPublishResult OnPublishResult;
         #endregion
 
         #region 私有变量定义
@@ -110,6 +131,7 @@
              */
             ParseNavigationRules parseNav = new ParseNavigationRules(this._TaskConfig.UrlListManager);
             parseNav.onSingleComplete += new onSingleComplete(parseNav_onSingleComplete);
+            parseNav.OnAppendSingileLog +=new Config.OnAppendSingileLog(parseNav_OnAppendSingileLog);
             parseNav.Exec();
 
             //设置任务状态为完成
@@ -200,9 +222,9 @@
                     PublishResult();                            //发布采集结果
                     Results.Rows.Clear();                       //清除现有的采集结果
                 }
-                if (this.onAppendResult != null)
+                if (this.OnAppendSingleResult != null)
                 {
-                    this.onAppendResult(resultRow);             //引发完成一条采集结果事件
+                    this.OnAppendSingleResult(this, resultRow); //引发完成一条采集结果事件
                 }
             }
             catch (Exception e)
@@ -216,10 +238,10 @@
         /// </summary>
         private void AppendLog(string loginfo)
         {
-            if (this.Log != null)
+            if (this.OnAppendSingileLog != null)
             {
                 LogEventArgs logevent = new LogEventArgs(loginfo);
-                this.Log(this, logevent);
+                this.OnAppendSingileLog(this, logevent);
             }
         }
         #endregion
@@ -584,6 +606,14 @@
 
         #endregion
 
+        #region 私有方法定义
+        //导航地址解析日志追加事件
+        private void parseNav_OnAppendSingileLog(object sender, Config.LogEventArgs e)
+        {
+            this.OnAppendSingileLog(this, e);
+        }
+        #endregion
+
         #region 公共属性定义
         /// <summary>
         /// 任务配置
@@ -626,22 +656,32 @@
                     case Config.Action.Ready:   //准备
                         time.Change(Timeout.Infinite, Timeout.Infinite);   //停止
                         loginfo = string.Format("{0} 任务准备就绪...", timeTick);
+                        this.OnTaskPause(this, new LogEventArgs("准备就绪"));
                         break;
+
                     case Config.Action.Start:   //开始
                         StartTask();
+                        this.OnTaskStart(this, new LogEventArgs("开始任务"));
                         break;
+
                     case Config.Action.Pause:   //暂停
                         time.Change(Timeout.Infinite, Timeout.Infinite);   //停止,暂时没有好的办法来停止任务的执行
                         loginfo = string.Format("{0} 暂停任务...", timeTick);
+                        this.OnTaskPause(this, new LogEventArgs("暂停任务"));
                         break;
+
                     case Config.Action.Stop:    //停止
                         time.Change(Timeout.Infinite, Timeout.Infinite);   //停止
                         loginfo = string.Format("{0} 停止任务...", timeTick);
+                        this.OnTaskStop(this, new LogEventArgs("停止任务"));
                         break;
+
                     case Config.Action.Finish:  //完成
                         //time.Change(Timeout.Infinite, Timeout.Infinite);   //停止
                         loginfo = string.Format("{0} 任务完成...", timeTick);
+                        this.OnTaskComplete(this, new LogEventArgs("任务完成"));
                         break;
+
                     case Config.Action.Running: //运行中
                         loginfo = string.Format("{0} 任务运行中...", timeTick);
                         break;

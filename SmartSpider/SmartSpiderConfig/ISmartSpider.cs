@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SmartSpider.Config {
     public interface ISmartSpider {
-        event LogEventHanlder Log;
+        event OnAppendSingileLog OnAppendSingileLog;
     
         void Create(string taskPath, string pluginPath, SmartSpiderInformation smartSpiderInfo, Action action, bool firstCall);
 
