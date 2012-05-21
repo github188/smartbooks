@@ -33,5 +33,14 @@ namespace SmartHyd.BLL {
         public DataTable GetList(string where) {
             return dal.GetList(where).Tables[0];
         }
+        /// <summary>
+        /// 根据指定条件删除数据
+        /// </summary>
+        /// <param name="strWhere"></param>
+        /// <returns></returns>
+        public bool deletelist(string strWhere)
+        {
+            return dal.deletelist(strWhere);
+        }
     }
 }
