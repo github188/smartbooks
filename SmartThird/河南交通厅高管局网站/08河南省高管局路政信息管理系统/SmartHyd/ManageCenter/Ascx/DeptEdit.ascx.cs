@@ -21,6 +21,15 @@ namespace SmartHyd.ManageCenter.Ascx
                     Entity.BASE_DEPT model = bll.GetEntity(FID);
                     SetEntity(model);
                 }
+                else
+                {
+                    //模拟数据
+                    decimal FID = 1;
+                    Entity.BASE_DEPT model = bll.GetEntity(FID);
+                    SetEntity(model);
+
+                   // Response.Redirect(Request.Url.AbsoluteUri, false);
+                }
             }
         }
         #region 私有方法
@@ -37,7 +46,7 @@ namespace SmartHyd.ManageCenter.Ascx
             DropDownList ddr = (DropDownList)this.Department1.FindControl("ddlDepartment");//找到用户控件中的子控件
             model.PARENTID = Convert.ToDecimal(ddr.SelectedIndex);    //上级部门
             model.DPTINFO = this.txtDptinfo.Text;                      //部门描述
-            model.STATUS = 0;                                              //状态0:正常；1：关闭
+            model.STATUS = 0;                                          //状态0:正常；1：关闭
 
             return model;
         }

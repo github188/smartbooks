@@ -35,13 +35,14 @@ namespace SmartHyd.ManageCenter.Ascx
             DataTable dt = new DataTable();
 
             dt = rolebll.GetList("1=1");
-            #region  单选框显示
-            RadioButton radio;
-            foreach(DataRow dr in dt.Rows)
+            #region  单选框列表显示
+            ListItem item;
+            foreach (DataRow dr in dt.Rows)
             {
-               radio=new RadioButton();
-                radio.GroupName="role";
-               radio.Text=(string)dr["ROLENAME"];
+                item = new ListItem();
+                item.Text = dr["ROLENAME"].ToString();//角色名称
+                item.Value = dr["ROLEID"].ToString();//角色编号
+                this.RBLRole.Items.Add(item);//rdl RadioButtonList控件名
             }
             #endregion
             #region  复选框显示
@@ -54,9 +55,9 @@ namespace SmartHyd.ManageCenter.Ascx
             //    node.Value = dr["ROLEID"].ToString();
             //    node.Text = (string)dr["ROLENAME"];
             //    node.ShowCheckBox = true;
-                
+
             //}
-           #endregion
+            #endregion
         }
         /// <summary>
         /// 动作权限树绑定
@@ -73,7 +74,7 @@ namespace SmartHyd.ManageCenter.Ascx
             foreach (DataRow dr in dt.Rows)
             {
                 node = new TreeNode();
-                this.TvRole.Nodes.Add(node);
+                this.TvAction.Nodes.Add(node);
                 node.Value = dr["ACTIONID"].ToString();
                 node.Text = (string)dr["ACTIONNAME"];
                 node.ShowCheckBox = true;
@@ -107,7 +108,7 @@ namespace SmartHyd.ManageCenter.Ascx
         {
             DataTable dt = new DataTable();
             dt = userbll.GetList("1=1");
-            if (dt.Rows.Count>0)
+            if (dt.Rows.Count > 0)
             {
                 AspNetPager1.RecordCount = dt.Rows.Count;
 
@@ -121,7 +122,7 @@ namespace SmartHyd.ManageCenter.Ascx
                 this.RptAffiche.DataSource = pds; //定义数据源
                 this.RptAffiche.DataBind(); //绑定数据
             }
-            
+
         }
         /// <summary>
         /// 获取用户角色名称
@@ -130,7 +131,7 @@ namespace SmartHyd.ManageCenter.Ascx
         /// <returns></returns>
         protected string GetRole(decimal userid)
         {
-            string role=string.Empty;
+            string role = string.Empty;
             if (bll.GetList(userid).Rows.Count > 0)
             {
                 int roleid = Convert.ToInt32(bll.GetList(userid).Rows[0]["ROLEID"].ToString());
@@ -149,9 +150,9 @@ namespace SmartHyd.ManageCenter.Ascx
         /// <returns>部门名称</returns>
         public string GetDept(decimal DEPTID)
         {
-           
+
             string deptName = string.Empty;
-            if (DEPTID==0)
+            if (DEPTID == 0)
             {
                 deptName = "暂无数据";
             }
@@ -159,21 +160,21 @@ namespace SmartHyd.ManageCenter.Ascx
             {
                 deptName = deptbll.GetEntity(DEPTID).DPTNAME;
             }
-           return deptName;
-            
+            return deptName;
+
         }
-           //循环遍历TREEVIEW，验证是否设置权限
+        //循环遍历TREEVIEW，验证是否设置权限
         public List<string> GetNode(TreeNodeCollection tc)//接收TreeView转过来的节点集合
         {
-            List<string> list =new List<string>();
-            string id=string.Empty;
+            List<string> list = new List<string>();
+            string id = string.Empty;
             foreach (TreeNode TNode in tc)//循环遍历所有节点包括父节点
             {
                 if (TNode.Parent != null)//排除父节点
                 {
                     if (TNode.Checked == true)//如果有复选框，被勾选中的节点
                     {
-                       id= TNode.Value.ToString();//显示节点的名称（不是显示名称）
+                        id = TNode.Value.ToString();//显示节点的名称（不是显示名称）
                     }
                     list.Add(id);
                 }
@@ -182,17 +183,17 @@ namespace SmartHyd.ManageCenter.Ascx
         }
 
 
-        protected Entity.BASE_USER_ROLE GetModel(decimal userid,decimal ROLEID,decimal MENUID,decimal ACTIONID)
+        protected Entity.BASE_USER_ROLE GetModel(decimal userid, decimal ROLEID, decimal MENUID, decimal ACTIONID)
         {
             Entity.BASE_USER_ROLE Model = new Entity.BASE_USER_ROLE();
-           // Model.USERROLEID = Convert.ToDecimal(this.hidPrimary.value);//主键，ID
+            // Model.USERROLEID = Convert.ToDecimal(this.hidPrimary.value);//主键，ID
             Model.USERID = userid;// 用户编号；
             Model.ROLEID = ROLEID;//角色编号；
             Model.MENUID = MENUID;//菜单编号；
             Model.ACTIONID = ACTIONID;//动作编号；
             return Model;
         }
-         /// <summary>
+        /// <summary>
         /// //分页事件 用户权限分页事件
         /// </summary>
         /// <param name="src"></param>
@@ -209,8 +210,66 @@ namespace SmartHyd.ManageCenter.Ascx
         /// <param name="e"></param>
         protected void BtnEmp_Click(object sender, EventArgs e)
         {
-           // Entity.BASE_USER_ROLE model = GetModel();
-           // bll.Add(model);
+
+
+            //获取用户编号（先判断用户是否存在已有权限，如果存在，删除已有权限）
+            decimal userid = 0;
+            string strwhere = "USERID=" + userid;
+            if (bll.deletelist(strwhere))
+            {
+                //获取角色编号
+                decimal roleid = Convert.ToDecimal(this.RBLRole.SelectedValue.ToString());
+                //获取菜单编号
+                List<int> menuID = GetMenuID();
+                //获取动作编号
+                List<int> ACTIONID = GetActionID();
+
+                int total = menuID.Count * ACTIONID.Count;//要添加数据的总记录数
+                for (int i = 0; i < menuID.Count; i++)
+                {
+                    for (int j = 0; j < ACTIONID.Count; j++)
+                    {
+                        bll.Add(GetModel(userid, roleid, menuID[i], ACTIONID[j]));
+                    }
+                }
+                Response.Write("<javascript>alert('添加成功！')</javascript>");
+                // Entity.BASE_USER_ROLE model = GetModel();
+                // bll.Add(model);
+            }
+
+           
+        }
+        /// <summary>
+        /// 获取菜单编号列表
+        /// </summary>
+        /// <returns></returns>
+        private List<int> GetMenuID()
+        {
+            List<int> menuID = new List<int>();//菜单编号数组
+            foreach (TreeNode tn in this.Tvmenu.Nodes)
+            {
+                if (tn.Checked && tn.ChildNodes.Count == 0)
+                {
+                    menuID.Add(Convert.ToInt32(tn.Value));//tn 就是要的节点 
+                }
+            }
+            return menuID;
+        }
+        /// <summary>
+        /// 获取动作编号列表
+        /// </summary>
+        /// <returns></returns>
+        private List<int> GetActionID()
+        {
+            List<int> ACTIONID = new List<int>();//动作编号数组
+            foreach (TreeNode tn in this.TvAction.Nodes)
+            {
+                if (tn.Checked && tn.ChildNodes.Count == 0)
+                {
+                    ACTIONID.Add(Convert.ToInt32(tn.Value));//tn 就是要的节点 
+                }
+            }
+            return ACTIONID;
         }
     }
 }

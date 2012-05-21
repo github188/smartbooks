@@ -26,6 +26,15 @@ namespace SmartHyd.ManageCenter.Ascx
                     Entity.BASE_FAWEN model = bll.Getmodel(FID);
                     SetEntity(model);
                 }
+                else
+                { 
+                   //模拟数据
+                    BindType();//DropDownList数据绑定
+                    BindDept();//DropDownList主办单位（部门）数据绑定
+                    decimal FID = 1;
+                    Entity.BASE_FAWEN model = bll.Getmodel(FID);
+                    SetEntity(model);
+                }
             }
         }
         /// <summary>

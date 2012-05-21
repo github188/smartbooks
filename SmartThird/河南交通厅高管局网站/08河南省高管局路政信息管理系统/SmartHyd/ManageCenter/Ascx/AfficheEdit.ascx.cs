@@ -19,7 +19,14 @@ namespace SmartHyd.ManageCenter.Ascx
                 {
                     decimal AFFICHEID = Convert.ToDecimal(Request.QueryString["aid"]);
                     Entity.BASE_AFFICHE model = bll.Getmodel(AFFICHEID);
-                     SetEntity(model);
+                    SetEntity(model);
+                }
+                else
+                {
+                    //模拟数据
+                    decimal AFFICHEID = 1;
+                    Entity.BASE_AFFICHE model = bll.Getmodel(AFFICHEID);
+                    SetEntity(model);
                 }
             }
         }

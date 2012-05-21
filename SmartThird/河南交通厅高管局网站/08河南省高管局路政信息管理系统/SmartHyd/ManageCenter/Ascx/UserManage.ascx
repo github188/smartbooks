@@ -105,8 +105,8 @@
             <tfoot>
                 <tr>
                     <td colspan="3" style="text-align: center;">
-                        <asp:Button ID="btnSubmit" runat="server" Text="提交" OnClick="btnSubmit_Click" />
-                        <asp:Button ID="btnCancel" runat="server" Text="重置" OnClick="btnCancel_Click" />
+                     <%--   <asp:Button ID="btnSubmit" runat="server" Text="提交" OnClick="btnSubmit_Click" />
+                        <asp:Button ID="btnCancel" runat="server" Text="重置" OnClick="btnCancel_Click" />--%>
                     </td>
                 </tr>
             </tfoot>

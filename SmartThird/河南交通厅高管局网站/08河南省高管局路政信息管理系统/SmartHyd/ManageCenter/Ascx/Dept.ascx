@@ -64,7 +64,7 @@
                     <tbody>
                         <tr class="TableHeader" align="center">
                             <td>
-                                <asp:CheckBox ID="Checkall" runat="server" Text="全选" OnClick="javascript:selectall(tdis);" />
+                                <asp:CheckBox ID="Checkall" runat="server" Text="全选" OnClick="javascript:selectall(this);" />
                             </td>
                             <td>
                                 部门名称

@@ -1,10 +1,12 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Empower.ascx.cs" Inherits="SmartHyd.ManageCenter.Ascx.Empower" %>
 <%@ Register Assembly="AspNetPager" Namespace="Wuqi.Webdiyer" TagPrefix="webdiyer" %>
 <div id="tab">
-    <ui id="menu">
-       <li><a href="#tabs_1">用户授权</a></li>
-    </ui>
-    <div id="tabs_1">
+    <ul>
+        <li><a href="#tabs-1">用户列表</a></li>
+        <li><a href="#tabs-2">用户授权</a></li>
+    </ul>
+    <!--用户列表开始-->
+    <div id="tabs-1">
         <table class="table" width="100%" align="center">
             <asp:Repeater ID="RptAffiche" runat="server">
                 <HeaderTemplate>
@@ -16,7 +18,7 @@
                             <th>
                                 用户名
                             </th>
-                           <%-- <th>
+                            <%-- <th>
                                 角色
                             </th>--%>
                             <th>
@@ -39,14 +41,15 @@
                             <td>
                                 <%# Eval("USERNAME")%>
                             </td>
-                           <%--  <td>
+                            <%--  <td>
                                <%#GetRole((decimal)Eval("USERID"))%>
                             </td>--%>
                             <td>
                                 <%#GetDept((decimal)Eval("DEPTID"))%>
                             </td>
                             <td>
-                                <a href="javascript:Rolelist()">分配角色</a>
+                             <%--    <a href="javascript:Rolelist()">分配角色</a>--%>
+                               <a href="#tabs-2">授权</a>
                             </td>
                         </tr>
                     </tbody>
@@ -68,56 +71,50 @@
             TextAfterPageIndexBox="页" TextBeforePageIndexBox="转到" OnPageChanging="AspNetPager1_PageChanging">
         </webdiyer:AspNetPager>
     </div>
-     <!--dialog窗口开始-->
-        <div id="dialog" class="ModalDialog" style="display: none">
-            <div class="header">
-                <span id="title" class="title">权限列表</span><a class="operation" href="javascript:HideDialog('send');"></a></div>
-            <table width="95%" class="table" align="center">
-                    <tr>
-                        <td colspan="2">
-                            分配用户角色
-                        </td>
-                    </tr>
-                <tr>
-                    <td colspan="2" class="TableData">
-                        <asp:TreeView ID="TvRole" runat="server">
-                        </asp:TreeView>
-                    </td>
-                </tr>
-                   <tr>
-                        <td colspan="2">
-                            请选择角色菜单
-                        </td>
-                    </tr>
-                <tr>
-                    <td colspan="2" class="TableData">
-                        <asp:TreeView ID="Tvmenu" runat="server">
-                        </asp:TreeView>
-                    </td>
-                </tr>
-                   <tr>
-                        <td colspan="2">
-                            请选择菜单动作
-                        </td>
-                    </tr>
-                <tr>
-                    <td colspan="2" class="TableData">
-                        <asp:TreeView ID="TvAction" runat="server">
-                        </asp:TreeView>
-                    </td>
-                </tr>
-            </table>
-            <form name="form1" method="post" action="">
-            <div id="send_body" class="body">
-            </div>
-            <div id="footer" class="footer">
-             <%--   <input type="hidden" name="dept_str" id="dept_str" />
-                <input type="hidden" name="sid" id="sid" />
-                <input class="BigButton" type="submit" value="确定" />
-                <input class="BigButton" type="button" value="关闭" />--%>
-                <asp:Button ID="BtnEmp" runat="server" Text="授权" OnClick="BtnEmp_Click" />
-            </div>
-            </form>
-        </div>
-        <!--dialog窗口结束-->
+    <!--用户列表结束-->
+    <!--用户授权开始-->
+    <div id="tabs-2">
+        <table width="95%" class="table" align="center">
+            <tr>
+                <td colspan="2">
+                    请选择用户角色
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" class="TableData">
+                    <asp:RadioButtonList ID="RBLRole" runat="server">
+                    </asp:RadioButtonList>
+                    <%--<asp:TreeView ID="TvRole" runat="server">
+                        </asp:TreeView>--%>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    请选择角色菜单
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" class="TableData">
+                    <asp:TreeView ID="Tvmenu" runat="server">
+                    </asp:TreeView>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    请选择菜单动作
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" class="TableData">
+                    <asp:TreeView ID="TvAction" runat="server">
+                    </asp:TreeView>
+                </td>
+            </tr>
+            <tr>
+                <td><asp:Button ID="BtnEmp" runat="server" Text="授权" OnClick="BtnEmp_Click" /></td>
+            </tr>
+        </table>
+    </div>
+    <!--用户授权结束-->
+   
 </div>

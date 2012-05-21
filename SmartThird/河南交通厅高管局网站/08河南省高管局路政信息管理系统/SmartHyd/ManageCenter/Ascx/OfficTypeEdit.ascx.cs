@@ -18,11 +18,17 @@ namespace SmartHyd.ManageCenter.Ascx
             {
                 if ("" != Request.QueryString["ftid"] || null != Request.QueryString["ftid"])
                 {
-                     decimal FTID =Convert.ToDecimal(Request.QueryString["ftid"]);
-                     Entity.BASE_FILETYPE model = bll.Getmodel(FTID);
-                     SetEntity(model);
+                    decimal FTID = Convert.ToDecimal(Request.QueryString["ftid"]);
+                    Entity.BASE_FILETYPE model = bll.Getmodel(FTID);
+                    SetEntity(model);
                 }
-               
+                else
+                {
+                    //模拟数据
+                    decimal FTID = 1;
+                    Entity.BASE_FILETYPE model = bll.Getmodel(FTID);
+                    SetEntity(model);
+                }
             }
         }
         /// <summary>
