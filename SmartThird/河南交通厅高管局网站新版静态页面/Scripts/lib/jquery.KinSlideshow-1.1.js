@@ -29,7 +29,7 @@ $.fn.KinSlideshow = function(settings){
 		   intervalTime : 5, //切换展示间隔时间 【单位：秒】
 		   moveSpeedTime : 400,//切换一张图片所需时间，【单位：毫秒】
 		   moveStyle:"left",//切换方向 【 left | right | up | down 】left:向左切换,right:向右切换,up:向上切换,down:向下切换
-		   mouseEvent:"mouseclick", //鼠标操作按钮事件,【mouseclick | mouseover】mouseclick：鼠标单击切换。mouseover：鼠标滑过切换。
+		   mouseEvent:"mouseover", //鼠标操作按钮事件,【mouseclick | mouseover】mouseclick：鼠标单击切换。mouseover：鼠标滑过切换。
 		   isHasTitleBar:true,//是否显示标题背景，
 		   titleBar:{titleBar_height:50,titleBar_bgColor:"#000000",titleBar_alpha:0.7},//标题背景样式，(isHasTitleBar = true 前提下启用)
 		   isHasTitleFont:true,//是否显示标题文字 
