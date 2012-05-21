@@ -2,7 +2,7 @@
 
 <%@ Register Src="~/ManageCenter/Ascx/Dept.ascx" TagName="Dept" TagPrefix="uc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-
+<script type="text/jscript"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <uc1:Dept ID="Dept1" runat="server" />
