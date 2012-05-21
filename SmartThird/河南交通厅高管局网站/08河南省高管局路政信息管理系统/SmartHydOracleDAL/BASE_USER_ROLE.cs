@@ -126,8 +126,30 @@ namespace SmartHyd.OracleDAL {
                 return false;
             }
         }
-
-
+        /// <summary>
+        /// 根据指定条件删除数据
+        /// </summary>
+        /// <param name="strWhere"></param>
+        /// <returns></returns>
+        public bool deletelist(string strWhere)
+        { 
+        StringBuilder strSql = new StringBuilder();
+            strSql.Append("delete from BASE_USER_ROLE ");
+            strSql.Append(" where ");
+            if (strWhere.Trim() != "")
+            {
+                strSql.Append(strWhere);
+            }
+            int rows = OracleHelper.ExecuteNonQuery(strSql.ToString());
+            if (rows > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
         /// <summary>
         /// 得到一个对象实体

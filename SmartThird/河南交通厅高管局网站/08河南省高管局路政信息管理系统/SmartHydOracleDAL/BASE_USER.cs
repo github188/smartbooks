@@ -283,7 +283,7 @@ namespace SmartHyd.OracleDAL {
             param[0].Direction = ParameterDirection.Input;
             param[0].OracleType = OracleType.Number;
             param[0].ParameterName = "dptcode";
-            param[0].Value = 1;
+            param[0].Value = -1;
 
             param[1].Direction = ParameterDirection.Output;
             param[1].OracleType = OracleType.Cursor;
