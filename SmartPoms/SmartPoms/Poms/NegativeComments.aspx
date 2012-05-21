@@ -43,8 +43,8 @@
     </style>
     <script type="text/jscript" language="javascript">
         $(document).ready(function () {
-            $("#ctl00_ContentPlaceHolder1_NegativeComments1_txtBeginDate").datetimepicker();
-            $("#ctl00_ContentPlaceHolder1_NegativeComments1_txtEndDate").datetimepicker();
+            $("#ContentPlaceHolder1_NegativeComments1_txtBeginDate").datetimepicker();
+            $("#ContentPlaceHolder1_NegativeComments1_txtEndDate").datetimepicker();
         });
     </script>
 </asp:Content>

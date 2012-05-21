@@ -53,33 +53,34 @@ namespace SmartPoms.BLL.Service {
                     /*文章标题包含关键字*/
                     sql.Append(string.Format(" AND a.title like ('%{0}%') ", keys[i].ToString()));
                     /*文章内容包含关键字*/
-                    sql.Append(string.Format(" OR a.detail like ('%{0}%') ", keys[i].ToString()));
+                    sql.Append(string.Format(" AND a.detail like ('%{0}%') ", keys[i].ToString()));
                 }
             }
 
+            sql.Append(" order by a.sendtime desc ");
             /*构造结果排序条件*/
-            switch (sortType) {
-                case 0:
-                    /*点击数量降序*/
-                    sql.Append(" order by a.clicknum desc ");
-                    break;
-                case 1:
-                    /*点击数量升序*/
-                    sql.Append(" order by a.clicknum ASC ");
-                    break;
-                case 2:
-                    /*评论数量降序*/
-                    sql.Append(" order by a.commentnum desc ");
-                    break;
-                case 3:
-                    /*评论数量升序*/
-                    sql.Append(" order by a.commentnum desc ");
-                    break;
-                default:
-                    /*发布时间降序*/
-                    sql.Append(" order by a.sendtime desc ");
-                    break;
-            }
+            //switch (sortType) {
+            //    case 0:
+            //        /*点击数量降序*/
+            //        sql.Append(" order by a.clicknum desc ");
+            //        break;
+            //    case 1:
+            //        /*点击数量升序*/
+            //        sql.Append(" order by a.clicknum ASC ");
+            //        break;
+            //    case 2:
+            //        /*评论数量降序*/
+            //        sql.Append(" order by a.commentnum desc ");
+            //        break;
+            //    case 3:
+            //        /*评论数量升序*/
+            //        sql.Append(" order by a.commentnum desc ");
+            //        break;
+            //    default:
+            //        /*发布时间降序*/
+            //        sql.Append(" order by a.sendtime desc ");
+            //        break;
+            //}
             /*获取数据集*/
             return Smart.DBUtility.SqlServerHelper.Query(sql.ToString(), param).Tables[0];
         }
