@@ -82,7 +82,7 @@
                 <!--分类节点状态-->
                 <tr>
                     <td nowrap="nowrap" class="TableData">
-                        排序:
+                        状态:
                     </td>
                     <td class="TableData">
                         <asp:DropDownList ID="ddlState" runat="server" CssClass="input">
@@ -102,12 +102,18 @@
                 <HeaderTemplate>
                     <tbody>
                         <tr class="TableHeader" align="center">                            
-                            <td>部门名称</td>
+                            <td>分类名称</td>
+                            <td>分类描述</td>
+                            <td>排序</td>
+                            <td>状态</td>
                         </tr>
                 </HeaderTemplate>
                 <ItemTemplate>
                     <tr class="TableLine1">                        
-                        <td><%# Eval("DPTNAME")%></td>
+                        <td><%# Eval("TYPENAME")%></td>
+                        <td><%# Eval("SUMMARY")%></td>
+                        <td><%# Eval("SORT")%></td>
+                        <td><%# Eval("STATUS").ToString().Equals("0") ? "正常" : "删除"%></td>
                     </tr>
                 </ItemTemplate>
                 <FooterTemplate>

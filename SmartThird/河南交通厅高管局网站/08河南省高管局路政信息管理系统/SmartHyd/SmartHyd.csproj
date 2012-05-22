@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Ascx\Department.ascx" />
+    <Content Include="Ascx\TreeView.ascx" />
     <Content Include="Css\base.css" />
     <Content Include="Css\tongdaoa.css" />
     <Content Include="Error.aspx" />
@@ -66,6 +67,7 @@
     <Content Include="ManageCenter\Ascx\Affiche.ascx" />
     <Content Include="ManageCenter\Ascx\AfficheEdit.ascx" />
     <Content Include="ManageCenter\Ascx\Area.ascx" />
+    <Content Include="ManageCenter\Ascx\Chat.ascx" />
     <Content Include="ManageCenter\Ascx\Dept.ascx" />
     <Content Include="ManageCenter\Ascx\DeptEdit.ascx" />
     <Content Include="ManageCenter\Ascx\DocumentManage.ascx" />
@@ -79,6 +81,7 @@
     <Content Include="ManageCenter\Ascx\OfficTypeEdit.ascx" />
     <Content Include="ManageCenter\Ascx\Patrol.ascx" />
     <Content Include="ManageCenter\Ascx\Plan.ascx" />
+    <Content Include="ManageCenter\Ascx\PublishDocument.ascx" />
     <Content Include="ManageCenter\Ascx\RoadProject.ascx" />
     <Content Include="ManageCenter\Ascx\RoadTerm.ascx" />
     <Content Include="ManageCenter\Ascx\Role.ascx" />
@@ -86,6 +89,7 @@
     <Content Include="ManageCenter\Ascx\SysLog.ascx" />
     <Content Include="ManageCenter\Ascx\Term.ascx" />
     <Content Include="ManageCenter\Ascx\UserManage.ascx" />
+    <Content Include="ManageCenter\Chat.aspx" />
     <Content Include="ManageCenter\Dept.aspx" />
     <Content Include="ManageCenter\DeptEdit.aspx" />
     <Content Include="ManageCenter\DocumentManage.aspx" />
@@ -99,6 +103,7 @@
     <Content Include="ManageCenter\OfficTypeEdit.aspx" />
     <Content Include="ManageCenter\Patrol.aspx" />
     <Content Include="ManageCenter\Plan.aspx" />
+    <Content Include="ManageCenter\PublishDocument.aspx" />
     <Content Include="ManageCenter\RoadProject.aspx" />
     <Content Include="ManageCenter\RoadTerm.aspx" />
     <Content Include="ManageCenter\Role.aspx" />
@@ -330,6 +335,13 @@
     <Compile Include="Ascx\Department.ascx.designer.cs">
       <DependentUpon>Department.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Ascx\TreeView.ascx.cs">
+      <DependentUpon>TreeView.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ascx\TreeView.ascx.designer.cs">
+      <DependentUpon>TreeView.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Error.aspx.cs">
       <DependentUpon>Error.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -381,6 +393,12 @@
     </Compile>
     <Compile Include="ManageCenter\Ascx\Area.ascx.designer.cs">
       <DependentUpon>Area.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\Ascx\Chat.ascx.cs">
+      <DependentUpon>Chat.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\Ascx\Chat.ascx.designer.cs">
+      <DependentUpon>Chat.ascx</DependentUpon>
     </Compile>
     <Compile Include="ManageCenter\Ascx\Dept.ascx.cs">
       <DependentUpon>Dept.ascx</DependentUpon>
@@ -473,6 +491,13 @@
     <Compile Include="ManageCenter\Ascx\Plan.ascx.designer.cs">
       <DependentUpon>Plan.ascx</DependentUpon>
     </Compile>
+    <Compile Include="ManageCenter\Ascx\PublishDocument.ascx.cs">
+      <DependentUpon>PublishDocument.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\Ascx\PublishDocument.ascx.designer.cs">
+      <DependentUpon>PublishDocument.ascx</DependentUpon>
+    </Compile>
     <Compile Include="ManageCenter\Ascx\RoadProject.ascx.cs">
       <DependentUpon>RoadProject.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -521,6 +546,12 @@
     </Compile>
     <Compile Include="ManageCenter\Ascx\UserManage.ascx.designer.cs">
       <DependentUpon>UserManage.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\Chat.aspx.cs">
+      <DependentUpon>Chat.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\Chat.aspx.designer.cs">
+      <DependentUpon>Chat.aspx</DependentUpon>
     </Compile>
     <Compile Include="ManageCenter\Dept.aspx.cs">
       <DependentUpon>Dept.aspx</DependentUpon>
@@ -619,6 +650,13 @@
     </Compile>
     <Compile Include="ManageCenter\Plan.aspx.designer.cs">
       <DependentUpon>Plan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\PublishDocument.aspx.cs">
+      <DependentUpon>PublishDocument.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\PublishDocument.aspx.designer.cs">
+      <DependentUpon>PublishDocument.aspx</DependentUpon>
     </Compile>
     <Compile Include="ManageCenter\RoadProject.aspx.cs">
       <DependentUpon>RoadProject.aspx</DependentUpon>

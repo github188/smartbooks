@@ -96,8 +96,7 @@ namespace SmartHyd.ManageCenter.Ascx {
                 //设置数据库保存文件名称
                 string filename = string.Format("{0}Temp\\{1}",
                     Server.MapPath("~/"),
-                    /*Guid.NewGuid().ToString().ToUpper()*/
-                    "A7EF1E10-1ACE-4298-8274-47C3F5030FBE");
+                    Guid.NewGuid().ToString().ToUpper());
 
                 bll.On_CompleteSingle +=new BLL.OnCompleteSingle(On_CompleteSingle);
 

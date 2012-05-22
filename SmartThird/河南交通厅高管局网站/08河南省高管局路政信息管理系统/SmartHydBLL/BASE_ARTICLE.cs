@@ -8,6 +8,10 @@ namespace SmartHyd.BLL {
     public class BASE_ARTICLE {
         OracleDAL.BASE_ARTICLE dal = new OracleDAL.BASE_ARTICLE();
 
+        public DataTable GetList(string where) {
+            return dal.GetList(where).Tables[0];
+        }
+
         /// <summary>
         /// 添加
         /// </summary>
