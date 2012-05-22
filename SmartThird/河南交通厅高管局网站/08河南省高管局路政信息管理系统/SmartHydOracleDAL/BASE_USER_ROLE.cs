@@ -36,8 +36,30 @@ namespace SmartHyd.OracleDAL {
                 return false;
             }
         }
+        /// <summary>
+        /// 确定用户权限是否存在
+        /// </summary>
+        /// <param name="USERID"></param>
+        /// <returns></returns>
+        public bool ExistsUserid(decimal USERID)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("select count(1) from BASE_USER_ROLE");
+            strSql.Append(" where ");
+            strSql.Append("USERID = :USERID  ");
+            OracleParameter[] parameters = {
+					new OracleParameter(":USERID", OracleType.Number,4)			};
+            parameters[0].Value = USERID;
 
-
+            if (OracleHelper.ExecuteNonQuery(strSql.ToString(), parameters) < 0)//执行查询语句，返回-1
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
         /// <summary>
         /// 增加一条数据

@@ -136,22 +136,22 @@ namespace SmartHyd.OracleDAL {
               
             };
 
-            parameters[16].Value = model.USERID;
-            parameters[17].Value = model.IDNUMBER;
-            parameters[18].Value = model.JOBNUMBER;
-            parameters[19].Value = model.PHOTO;
-            parameters[20].Value = model.PROF;
-            parameters[21].Value = model.REMARK;
-            parameters[22].Value = model.STSTUS;
-            parameters[23].Value = model.PHONE;
-            parameters[24].Value = model.USERNAME;
-            parameters[25].Value = model.USERPWD;
-            parameters[26].Value = model.PARENTID;
-            parameters[27].Value = model.SEX;
-            parameters[28].Value = model.DEPTID;
-            parameters[29].Value = model.BIRTHDAY;
-            parameters[30].Value = model.DEGREE;
-            parameters[31].Value = model.FACE;
+            parameters[0].Value = model.USERID;
+            parameters[1].Value = model.IDNUMBER;
+            parameters[2].Value = model.JOBNUMBER;
+            parameters[3].Value = model.PHOTO;
+            parameters[4].Value = model.PROF;
+            parameters[5].Value = model.REMARK;
+            parameters[6].Value = model.STSTUS;
+            parameters[7].Value = model.PHONE;
+            parameters[8].Value = model.USERNAME;
+            parameters[9].Value = model.USERPWD;
+            parameters[10].Value = model.PARENTID;
+            parameters[11].Value = model.SEX;
+            parameters[12].Value = model.DEPTID;
+            parameters[13].Value = model.BIRTHDAY;
+            parameters[14].Value = model.DEGREE;
+            parameters[15].Value = model.FACE;
             int rows = OracleHelper.ExecuteNonQuery(strSql.ToString(), parameters);
             if (rows > 0) {
                 return true;
