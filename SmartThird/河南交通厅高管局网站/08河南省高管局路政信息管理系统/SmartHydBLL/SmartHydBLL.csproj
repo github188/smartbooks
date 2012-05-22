@@ -50,6 +50,7 @@
     <Compile Include="BASE_LICENSE_ACCEPT.cs" />
     <Compile Include="BASE_LOG.cs" />
     <Compile Include="BASE_MENU.cs" />
+    <Compile Include="BASE_MESSAGE.cs" />
     <Compile Include="BASE_OBSERVED.cs" />
     <Compile Include="BASE_PATROL.cs" />
     <Compile Include="BASE_PLAN.cs" />

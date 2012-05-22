@@ -18,6 +18,15 @@ namespace SmartHyd.BLL {
             return dal.GetList(string.Format("USERID={0}", userId.ToString())).Tables[0];
         }
         /// <summary>
+        /// 确定用户权限是否存在
+        /// </summary>
+        /// <param name="USERID"></param>
+        /// <returns></returns>
+        public bool ExistsUserid(decimal USERID)
+        {
+            return dal.ExistsUserid(USERID);
+        }
+        /// <summary>
         /// 向用户授权
         /// </summary>
         public void Add(Entity.BASE_USER_ROLE model)
