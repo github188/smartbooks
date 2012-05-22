@@ -3,9 +3,9 @@
 <div id="tab">
     <ul id="menu">
           <li><a href="#tabs-1">日志管理</a></li>
-      </ui>
+      </ul>
     <div id="tabs-1">
-        <table class="table" width="100%" align="center">
+        <table class="edit" width="100%" align="center">
             <asp:Repeater ID="RptList" runat="server">
                 <HeaderTemplate>
                     <thead>
@@ -70,7 +70,7 @@
                 <FooterTemplate>
                     <tfoot>
                         <tr>
-                            <td colspan="2">
+                            <td colspan="6">
                                 <%--分页--%>
                             </td>
                         </tr>

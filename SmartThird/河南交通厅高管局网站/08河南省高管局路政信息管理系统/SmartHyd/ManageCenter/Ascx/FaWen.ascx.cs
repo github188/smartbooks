@@ -190,7 +190,7 @@ namespace SmartHyd.ManageCenter.Ascx
                 // ClientScript.RegisterStartupScript(this.GetType(), "tishi", "<script type=\"text/javascript\">alert('请检查数据是否填写完整！');</script>");
                 Response.Write("<script type='text/javascript'>alert('请检查数据是否填写完整！');</script>");
 
-                Response.Redirect("FaWen.ascx#tabs-2");
+                Response.Redirect("FaWen.aspx#tabs-2");
             }
             //重新加载当前页
             Response.Redirect(Request.Url.AbsoluteUri, true);

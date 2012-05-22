@@ -15,16 +15,17 @@ namespace SmartHyd.ManageCenter.Ascx
         {
             if (!IsPostBack)
             {
-                if ("" != Request.QueryString["aid"] || null != Request.QueryString["aid"])
-                {
-                    decimal AFFICHEID = Convert.ToDecimal(Request.QueryString["aid"]);
-                    Entity.BASE_AFFICHE model = bll.Getmodel(AFFICHEID);
-                    SetEntity(model);
-                }
-                else
+                if ("" == Request.QueryString["aid"] || null == Request.QueryString["aid"])
                 {
                     //模拟数据
                     decimal AFFICHEID = 1;
+                    Entity.BASE_AFFICHE model = bll.Getmodel(AFFICHEID);
+                    SetEntity(model);
+                   
+                }
+                else
+                {
+                    decimal AFFICHEID = Convert.ToDecimal(Request.QueryString["aid"]);
                     Entity.BASE_AFFICHE model = bll.Getmodel(AFFICHEID);
                     SetEntity(model);
                 }

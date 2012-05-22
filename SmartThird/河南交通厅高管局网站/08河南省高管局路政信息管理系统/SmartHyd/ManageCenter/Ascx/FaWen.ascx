@@ -9,7 +9,7 @@
     </ul>
     <!--发文管理开始-->
     <div id="tabs-1">
-        <table class="table">
+        <table class="edit" width="100%">
             <asp:Repeater ID="RptFawen" runat="server">
                 <HeaderTemplate>
                     <thead>
@@ -50,10 +50,9 @@
                                 <%# Eval("F_TYPE")%>
                             </td>
                             <td>
-                                <a href="javascript:edit_fawen('<%# Eval("FID")%>')">编辑</a>
-
-                                <a href="javascript:send_doc('<%# Eval("FID")%>')" onclick="javascript:send_doc('<%# Eval("FID")%>')">发送</a> 
-                                <a href="<%# Eval("FID")%>">删除</a>
+                                <a href="javascript:edit_fawen('<%# Eval("FID")%>')">编辑</a> <a href="javascript:send_doc('<%# Eval("FID")%>')"
+                                    onclick="javascript:send_doc('<%# Eval("FID")%>')">发送</a> <a href="<%# Eval("FID")%>">
+                                        删除</a>
                             </td>
                         </tr>
                     </tbody>
@@ -61,7 +60,7 @@
                 <FooterTemplate>
                     <tfoot>
                         <tr>
-                            <td colspan="2">
+                            <td colspan="5">
                                 <%--分页--%>
                             </td>
                         </tr>
@@ -72,8 +71,7 @@
         <webdiyer:AspNetPager ID="AspNetPager1" runat="server" CustomInfoHTML="共%PageCount%页，当前为第%CurrentPageIndex%页"
             FirstPageText="首页" LastPageText="尾页" NextPageText="下一页" PageIndexBoxType="TextBox"
             PrevPageText="上一页" ShowCustomInfoSection="Right" ShowPageIndexBox="Auto" SubmitButtonText="Go"
-            TextAfterPageIndexBox="页" TextBeforePageIndexBox="转到" 
-            onpagechanging="AspNetPager1_PageChanging">
+            TextAfterPageIndexBox="页" TextBeforePageIndexBox="转到" OnPageChanging="AspNetPager1_PageChanging">
         </webdiyer:AspNetPager>
         <!--dialog窗口开始-->
         <div id="overlay">
@@ -81,7 +79,6 @@
         <div id="dialog" class="ModalDialog" style="display: none">
             <div class="header">
                 <span id="title" class="title">发送公文</span><a class="operation" href="javascript:HideDialog('send');"></a></div>
-            
             <form name="form1" method="post" action="">
             <div id="send_body" class="body">
                 <table width="95%" class="table" align="center">
@@ -105,7 +102,7 @@
                         <td class="TableData">
                         </td>
                     </tr>
-                   <%-- <tr>
+                    <%-- <tr>
                         <td class="TableContent">
                             提醒
                         </td>
@@ -117,8 +114,8 @@
                 </table>
             </div>
             <div id="footer" class="footer">
-                <input type="hidden" name="dept_str" id="dept_str"/>
-                <input type="hidden" name="sid" id="sid"/>
+                <input type="hidden" name="dept_str" id="dept_str" />
+                <input type="hidden" name="sid" id="sid" />
                 <input class="BigButton" type="submit" value="确定" />
                 <input class="BigButton" onclick="HideDialog('send')" type="button" value="关闭" />
             </div>
@@ -204,7 +201,7 @@
                         <asp:FileUpload ID="FileUploadPath" runat="server" CssClass="input" />
                     </td>
                 </tr>
-               <%-- <tr>
+                <%-- <tr>
                     <td class="red" align="center" colspan='3'>
                         <asp:Button ID="BtnSave" runat="server" Text="保存" CssClass="input" 
                             onclick="BtnSave_Click" />
@@ -244,10 +241,9 @@
                 </tr>
             </table>
         </div>
-       
         <br />
         <div id="content2">
-            <table class="table">
+            <table class="edit" width="94%">
                 <asp:Repeater ID="RptType" runat="server">
                     <HeaderTemplate>
                         <thead>
@@ -291,7 +287,7 @@
                     <FooterTemplate>
                         <tfoot>
                             <tr>
-                                <td colspan="2">
+                                <td colspan="4">
                                     <%--分页--%>
                                 </td>
                             </tr>

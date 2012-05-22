@@ -15,12 +15,13 @@
                     </th>
                 </tr>
             </thead>
-            <tbody align="center">
+            <tbody>
                 <tr>
                     <td>
                         <asp:Label ID="Label1" runat="server" Text="角色名称:"></asp:Label>
                         <asp:HiddenField ID="hidPrimary" runat="server" Value="-1" />
-                        <asp:TextBox ID="TxtRoleName" runat="server" CssClass="input {required:true}"></asp:TextBox>
+                    
+                        <asp:TextBox ID="TxtRoleName" runat="server" CssClass="input {required:true}"></asp:TextBox><span>*</span>
                         <div class="validate ui-state-highlight ui-corner-all" style="border: none;">
                         </div>
                     </td>
@@ -28,6 +29,7 @@
                 <tr>
                     <td>
                         <asp:Label ID="Label14" runat="server" Text="角色描述:"></asp:Label>
+                  
                         <asp:TextBox ID="txtdesc" runat="server" CssClass="input {required:true}" TextMode="MultiLine"></asp:TextBox>
                         <div class="validate ui-state-highlight ui-corner-all" style="border: none;">
                         </div>
@@ -59,6 +61,9 @@
                             <th>
                                 角色描述
                             </th>
+                            <th>
+                                操作
+                            </th>
                         </tr>
                     </thead>
                 </HeaderTemplate>
@@ -74,6 +79,10 @@
                             <td>
                                 <%#Eval("ROLEINFO")%>
                             </td>
+                            <td>
+                                <a href="">编辑</a>
+                                <a href="">删除</a>
+                            </td>
                         </tr>
                     </tbody>
                 </ItemTemplate>
@@ -88,6 +97,9 @@
                             </td>
                             <td>
                                 角色描述
+                            </td>
+                             <td>
+                                
                             </td>
                         </tr>
                     </tfoot>

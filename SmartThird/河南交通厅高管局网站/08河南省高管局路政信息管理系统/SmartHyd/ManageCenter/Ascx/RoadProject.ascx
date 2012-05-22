@@ -8,7 +8,7 @@
     </ul>
     <!--许可案件办理进度开始-->
     <div id="tabs-1">
-        <table class="table">
+        <table class="edit">
             <asp:Repeater ID="repList" runat="server">
                 <HeaderTemplate>
                     <thead>

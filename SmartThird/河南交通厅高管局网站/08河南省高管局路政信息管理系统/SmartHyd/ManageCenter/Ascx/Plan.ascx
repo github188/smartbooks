@@ -19,18 +19,16 @@
                 <tr>
                     <td>
                         <asp:Label ID="LabType" runat="server" Text="事务类型:"></asp:Label>
-                    </td>
-                    <td>
                         <asp:HiddenField ID="hidPrimary" runat="server" Value="-1" />
                         <asp:DropDownList ID="DdrType" runat="server">
+                            <asp:ListItem Value="0">工作计划</asp:ListItem>
+                            <asp:ListItem Value="1">个人事务</asp:ListItem>
                         </asp:DropDownList>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <asp:Label ID="LbUser" runat="server" Text="所属者:"></asp:Label>
-                    </td>
-                    <td>
+                        <asp:Label ID="LbUser" runat="server" Text="所属者:"></asp:Label>&nbsp;&nbsp;
                         <asp:TextBox ID="TxtUser" CssClass="input {required:true}" runat="server"></asp:TextBox>
                         <div class="validate ui-state-highlight ui-corner-all" style="border: none;">
                         </div>
@@ -39,8 +37,6 @@
                 <tr>
                     <td>
                         <asp:Label ID="Lbstart" runat="server" Text="开始时间:"></asp:Label>
-                    </td>
-                    <td>
                         <asp:TextBox ID="txtStartTIME" runat="server" CssClass="input {required:true}"></asp:TextBox>
                         <div class="validate ui-state-highlight ui-corner-all" style="border: none;">
                         </div>
@@ -49,8 +45,6 @@
                 <tr>
                     <td>
                         <asp:Label ID="LbEnd" runat="server" Text="结束时间:"></asp:Label>
-                    </td>
-                    <td>
                         <asp:TextBox ID="txtEndTIME" runat="server" CssClass="input {required:true}"></asp:TextBox>
                         <div class="validate ui-state-highlight ui-corner-all" style="border: none;">
                         </div>
@@ -59,8 +53,6 @@
                 <tr>
                     <td>
                         <asp:Label ID="Lbcontent" runat="server" Text="事务内容:"></asp:Label>
-                    </td>
-                    <td>
                         <asp:TextBox ID="txtContent" runat="server" TextMode="MultiLine" CssClass="input {required:true}"></asp:TextBox>
                         <div class="validate ui-state-highlight ui-corner-all" style="border: none;">
                         </div>
@@ -69,8 +61,6 @@
                 <tr>
                     <td>
                         <asp:Label ID="Lbprompt" runat="server" Text="提醒时间:"></asp:Label>
-                    </td>
-                    <td>
                         <asp:TextBox ID="txtPrompt" runat="server" CssClass="input {required:true}"></asp:TextBox>
                         <div class="validate ui-state-highlight ui-corner-all" style="border: none;">
                         </div>
@@ -88,7 +78,7 @@
     <!--新建日程结束-->
     <!--日程管理开始-->
     <div id="tabs-2">
-        <table class="table">
+        <table class="edit" width="100%" cellspacing="0" cellpadding="3">
             <asp:Repeater ID="repList" runat="server">
                 <HeaderTemplate>
                     <thead>
@@ -111,6 +101,9 @@
                             <th>
                                 提醒时间
                             </th>
+                            <th>
+                                操作
+                            </th>
                         </tr>
                     </thead>
                 </HeaderTemplate>
@@ -132,16 +125,18 @@
                             <td>
                                 <%#Eval("CALENDARCONTENT")%>
                             </td>
-                          
                             <td>
                                 <%#Eval("CALENDARREMIND")%>
+                            </td>
+                            <td>
+                                <a href="#">编辑</a> <a href="#">删除</a>
                             </td>
                         </tr>
                     </tbody>
                 </ItemTemplate>
             </asp:Repeater>
         </table>
-         <webdiyer:AspNetPager ID="AspNetPager1" runat="server" CustomInfoHTML="共%PageCount%页，当前为第%CurrentPageIndex%页"
+        <webdiyer:AspNetPager ID="AspNetPager1" runat="server" CustomInfoHTML="共%PageCount%页，当前为第%CurrentPageIndex%页"
             FirstPageText="首页" LastPageText="尾页" NextPageText="下一页" PageIndexBoxType="TextBox"
             PrevPageText="上一页" ShowCustomInfoSection="Right" ShowPageIndexBox="Auto" SubmitButtonText="Go"
             TextAfterPageIndexBox="页" TextBeforePageIndexBox="转到" OnPageChanging="AspNetPager1_PageChanging">

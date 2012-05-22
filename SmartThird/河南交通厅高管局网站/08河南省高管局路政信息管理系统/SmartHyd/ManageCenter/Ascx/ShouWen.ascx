@@ -7,7 +7,8 @@
     </ul>
     <!--收文管理开始-->
     <div id="tabs-1">
-        <div id="search" style="float: right;">
+        <div id="search" class="TableList" align="left">
+        标题：<input type="text" name="title" size="15" value="" onclick="this.value='';" class="input" />
             发文类型：
             <select name="tid" class="SmallSelect">
                 <option value="">全部</option>
@@ -18,11 +19,11 @@
                 <option value="69">通知通报</option>
                 <option value="79">政府发文稿纸</option>
             </select>
-            标题：<input type="text" name="title" size="15" value="" onclick="this.value='';" class="input" />
+            
             <input type="submit" value="查询" class="SmallButton" />
             <input type="reset" value="重置" class="SmallButton" />
         </div>
-        <table class="table">
+        <table class="edit" width="95%">
             <asp:Repeater ID="RptShouwen" runat="server">
                 <HeaderTemplate>
                     <thead>
@@ -90,7 +91,7 @@
                 <FooterTemplate>
                     <tfoot>
                         <tr>
-                            <td colspan="2">
+                            <td colspan="8">
                                 <%--分页--%>
                             </td>
                         </tr>

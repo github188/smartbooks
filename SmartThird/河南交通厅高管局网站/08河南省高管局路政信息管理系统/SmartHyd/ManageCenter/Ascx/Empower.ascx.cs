@@ -208,36 +208,85 @@ namespace SmartHyd.ManageCenter.Ascx
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        protected void BtnEmp_Click(object sender, EventArgs e)
+        //protected void BtnEmp_Click(object sender, EventArgs e)
+        //{
+        //}
+        #region 页面功能按钮事件(必须重写基类虚方法，否则按钮的事件是无效的)
+        //添加
+        public override void BtnAdd_Click(object sender, EventArgs e)
         {
-
-
+        }
+        //删除
+        public override void BtnDelete_Click(object sender, EventArgs e)
+        {
+        }
+        //重置
+        public override void BtnCancel_Click(object sender, EventArgs e)
+        {
+        }
+        //修改
+        public override void BtnUpdate_Click(object sender, EventArgs e) { }
+        //查看
+        public override void BtnView_Click(object sender, EventArgs e) { }
+        //查询
+        public override void BtnSearch_Click(object sender, EventArgs e) { }
+        //导入
+        public override void BtnImport_Click(object sender, EventArgs e) { }
+        //导出
+        public override void BtnExport_Click(object sender, EventArgs e) { }
+        //打印
+        public override void BtnPrint_Click(object sender, EventArgs e) { }
+        //移动
+        public override void BtnMove_Click(object sender, EventArgs e) { }
+        //下载
+        public override void BtnDownload_Click(object sender, EventArgs e) { }
+        //备份
+        public override void BtnBackup_Click(object sender, EventArgs e) { }
+        //审核
+        public override void BtnVerify_Click(object sender, EventArgs e) { }
+        //授权
+        public override void BtnGrant_Click(object sender, EventArgs e)
+        {
             //获取用户编号（先判断用户是否存在已有权限，如果存在，删除已有权限）
             decimal userid = 0;
-            string strwhere = "USERID=" + userid;
-            if (bll.deletelist(strwhere))
+
+            if (bll.ExistsUserid(userid))
             {
-                //获取角色编号
-                decimal roleid = Convert.ToDecimal(this.RBLRole.SelectedValue.ToString());
-                //获取菜单编号
-                List<int> menuID = GetMenuID();
-                //获取动作编号
-                List<int> ACTIONID = GetActionID();
-
-                int total = menuID.Count * ACTIONID.Count;//要添加数据的总记录数
-                for (int i = 0; i < menuID.Count; i++)
-                {
-                    for (int j = 0; j < ACTIONID.Count; j++)
-                    {
-                        bll.Add(GetModel(userid, roleid, menuID[i], ACTIONID[j]));
-                    }
-                }
-                Response.Write("<javascript>alert('添加成功！')</javascript>");
-                // Entity.BASE_USER_ROLE model = GetModel();
-                // bll.Add(model);
+                string strwhere = "USERID=" + userid;
+                bll.deletelist(strwhere);//删除已有权限
+                PowerAdd(userid);
             }
+            else
+            {
+                PowerAdd(userid);
+            }
+        }
+        #endregion
+        #region 授权代码
+        /// <summary>
+        /// 给用户循环添加授权
+        /// </summary>
+        /// <param name="userid"></param>
+        private void PowerAdd(decimal userid)
+        {
+            //获取角色编号
+            decimal roleid = Convert.ToDecimal(this.RBLRole.SelectedValue.ToString());
+            //获取菜单编号
+            List<int> menuID = GetMenuID();
+            //获取动作编号
+            List<int> ACTIONID = GetActionID();
 
-           
+            int total = menuID.Count * ACTIONID.Count;//要添加数据的总记录数
+            for (int i = 0; i < menuID.Count; i++)
+            {
+                for (int j = 0; j < ACTIONID.Count; j++)
+                {
+                    bll.Add(GetModel(userid, roleid, menuID[i], ACTIONID[j]));
+                }
+            }
+            // Response.Write("<javascript>alert('添加成功！')</javascript>");
+            // Entity.BASE_USER_ROLE model = GetModel();
+            // bll.Add(model);
         }
         /// <summary>
         /// 获取菜单编号列表
@@ -271,5 +320,6 @@ namespace SmartHyd.ManageCenter.Ascx
             }
             return ACTIONID;
         }
+        #endregion
     }
 }

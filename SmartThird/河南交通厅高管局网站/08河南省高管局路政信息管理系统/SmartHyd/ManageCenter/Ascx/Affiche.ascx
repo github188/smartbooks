@@ -81,7 +81,7 @@
 <!--新建公告结束-->
 <!--公告管理开始-->
     <div id="tabs-2">
-        <table class="table" width="100%" align="center">
+        <table class="edit" width="100%" cellspacing="0" cellpadding="3" align="center">
             <asp:Repeater ID="RptAffiche" runat="server">
                 <HeaderTemplate>
                     <thead>
@@ -140,7 +140,7 @@
                 <FooterTemplate>
                     <tfoot>
                         <tr>
-                            <td colspan="2">
+                            <td colspan="6">
                                 <%--分页--%>
                             </td>
                         </tr>

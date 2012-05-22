@@ -15,20 +15,20 @@ namespace SmartHyd.ManageCenter.Ascx
         {
             if (!IsPostBack)
             {
-                if ("" != Request.QueryString["fid"] || null != Request.QueryString["fid"])
+                if ("" == Request.QueryString["fid"] || null == Request.QueryString["fid"])
+                {
+                    //模拟数据
+                    decimal FID = 15;
+                    Entity.BASE_DEPT model = bll.GetEntity(FID);
+                    SetEntity(model);
+
+                    // Response.Redirect(Request.Url.AbsoluteUri, false);
+                }
+                else
                 {
                     decimal FID = Convert.ToDecimal(Request.QueryString["fid"]);
                     Entity.BASE_DEPT model = bll.GetEntity(FID);
                     SetEntity(model);
-                }
-                else
-                {
-                    //模拟数据
-                    decimal FID = 1;
-                    Entity.BASE_DEPT model = bll.GetEntity(FID);
-                    SetEntity(model);
-
-                   // Response.Redirect(Request.Url.AbsoluteUri, false);
                 }
             }
         }

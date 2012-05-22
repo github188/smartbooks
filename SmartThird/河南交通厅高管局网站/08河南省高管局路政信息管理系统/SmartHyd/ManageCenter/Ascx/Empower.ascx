@@ -7,7 +7,7 @@
     </ul>
     <!--用户列表开始-->
     <div id="tabs-1">
-        <table class="table" width="100%" align="center">
+        <table class="edit" width="100%" align="center" cellpadding="0">
             <asp:Repeater ID="RptAffiche" runat="server">
                 <HeaderTemplate>
                     <thead>
@@ -57,7 +57,7 @@
                 <FooterTemplate>
                     <tfoot>
                         <tr>
-                            <td colspan="2">
+                            <td colspan="4">
                                 <%--分页--%>
                             </td>
                         </tr>
@@ -74,14 +74,14 @@
     <!--用户列表结束-->
     <!--用户授权开始-->
     <div id="tabs-2">
-        <table width="95%" class="table" align="center">
+        <table width="95%" class="TableBlock" align="center">
             <tr>
-                <td colspan="2">
+                <td colspan="2" class="TableHeader">
                     请选择用户角色
                 </td>
             </tr>
             <tr>
-                <td colspan="2" class="TableData">
+                <td colspan="2" class="TableData" align="center">
                     <asp:RadioButtonList ID="RBLRole" runat="server">
                     </asp:RadioButtonList>
                     <%--<asp:TreeView ID="TvRole" runat="server">
@@ -89,29 +89,29 @@
                 </td>
             </tr>
             <tr>
-                <td colspan="2">
+                <td colspan="2" class="TableHeader">
                     请选择角色菜单
                 </td>
             </tr>
             <tr>
-                <td colspan="2" class="TableData">
+                <td colspan="2" class="TableData" align="center">
                     <asp:TreeView ID="Tvmenu" runat="server">
                     </asp:TreeView>
                 </td>
             </tr>
             <tr>
-                <td colspan="2">
+                <td colspan="2" class="TableHeader">
                     请选择菜单动作
                 </td>
             </tr>
             <tr>
-                <td colspan="2" class="TableData">
+                <td colspan="2" class="TableData" align="center">
                     <asp:TreeView ID="TvAction" runat="server">
                     </asp:TreeView>
                 </td>
             </tr>
             <tr>
-                <td><asp:Button ID="BtnEmp" runat="server" Text="授权" OnClick="BtnEmp_Click" /></td>
+                <td><%--<asp:Button ID="BtnEmp" runat="server" Text="授权" OnClick="BtnEmp_Click" />--%></td>
             </tr>
         </table>
     </div>
