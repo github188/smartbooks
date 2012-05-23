@@ -120,18 +120,18 @@ namespace SmartHyd.OracleDAL {
               
             };
 
-            parameters[12].Value = entity.FID;
-            parameters[13].Value = entity.F_NUMBER;
-            parameters[14].Value = entity.F_TITLE;
-            parameters[15].Value = entity.F_TYPE;
-            parameters[16].Value = entity.F_CONTENT;
-            parameters[17].Value = entity.F_ANNEX;
-            parameters[18].Value = entity.F_DATE;
-            parameters[19].Value = entity.REMARK;
-            parameters[20].Value = entity.F_ORGAN;
-            parameters[21].Value = entity.F_LEVEL;
-            parameters[22].Value = entity.F_DEGREE;
-            parameters[23].Value = entity.F_DELSTATE;
+            parameters[0].Value = entity.FID;
+            parameters[1].Value = entity.F_NUMBER;
+            parameters[2].Value = entity.F_TITLE;
+            parameters[3].Value = entity.F_TYPE;
+            parameters[4].Value = entity.F_CONTENT;
+            parameters[5].Value = entity.F_ANNEX;
+            parameters[6].Value = entity.F_DATE;
+            parameters[7].Value = entity.REMARK;
+            parameters[8].Value = entity.F_ORGAN;
+            parameters[9].Value = entity.F_LEVEL;
+            parameters[10].Value = entity.F_DEGREE;
+            parameters[11].Value = entity.F_DELSTATE;
             int rows = OracleHelper.ExecuteNonQuery(strSql.ToString(), parameters);
             if (rows > 0) {
                 return true;

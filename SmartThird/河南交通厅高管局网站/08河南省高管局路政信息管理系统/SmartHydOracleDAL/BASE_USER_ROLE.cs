@@ -114,11 +114,11 @@ namespace SmartHyd.OracleDAL {
               
             };
 
-            parameters[5].Value = entity.USERROLEID;
-            parameters[6].Value = entity.USERID;
-            parameters[7].Value = entity.ROLEID;
-            parameters[8].Value = entity.MENUID;
-            parameters[9].Value = entity.ACTIONID;
+            parameters[0].Value = entity.USERROLEID;
+            parameters[1].Value = entity.USERID;
+            parameters[2].Value = entity.ROLEID;
+            parameters[3].Value = entity.MENUID;
+            parameters[4].Value = entity.ACTIONID;
             int rows = OracleHelper.ExecuteNonQuery(strSql.ToString(), parameters);
             if (rows > 0) {
                 return true;

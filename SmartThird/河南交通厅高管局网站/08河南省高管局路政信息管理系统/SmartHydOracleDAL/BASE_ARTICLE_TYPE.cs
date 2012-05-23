@@ -100,13 +100,13 @@ namespace SmartHyd.OracleDAL {
               
             };
 
-            parameters[7].Value = model.ID;
-            parameters[8].Value = model.TYPENAME;
-            parameters[9].Value = model.SUMMARY;
-            parameters[10].Value = model.STATUS;
-            parameters[11].Value = model.PARENT;
-            parameters[12].Value = model.SORT;
-            parameters[13].Value = model.DEPTID;
+            parameters[0].Value = model.ID;
+            parameters[1].Value = model.TYPENAME;
+            parameters[2].Value = model.SUMMARY;
+            parameters[3].Value = model.STATUS;
+            parameters[4].Value = model.PARENT;
+            parameters[5].Value = model.SORT;
+            parameters[6].Value = model.DEPTID;
             int rows = OracleHelper.ExecuteNonQuery(strSql.ToString(), parameters);
             if (rows > 0) {
                 return true;

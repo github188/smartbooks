@@ -132,21 +132,21 @@ namespace SmartHyd.OracleDAL {
               
             };
 
-            parameters[15].Value = entity.ID;
-            parameters[16].Value = entity.AREANAME;
-            parameters[17].Value = entity.TYPEID;
-            parameters[18].Value = entity.LINENAME;
-            parameters[19].Value = entity.STAKEK;
-            parameters[20].Value = entity.STAKEM;
-            parameters[21].Value = entity.SUMMARY;
-            parameters[22].Value = entity.COMPTIME;
-            parameters[23].Value = entity.REGTIME;
-            parameters[24].Value = entity.OWNER;
-            parameters[25].Value = entity.DETAILED;
-            parameters[26].Value = entity.STATUS;
-            parameters[27].Value = entity.REMARK;
-            parameters[28].Value = entity.PHOTO;
-            parameters[29].Value = entity.DEPTID;
+            parameters[0].Value = entity.ID;
+            parameters[1].Value = entity.AREANAME;
+            parameters[2].Value = entity.TYPEID;
+            parameters[3].Value = entity.LINENAME;
+            parameters[4].Value = entity.STAKEK;
+            parameters[5].Value = entity.STAKEM;
+            parameters[6].Value = entity.SUMMARY;
+            parameters[7].Value = entity.COMPTIME;
+            parameters[8].Value = entity.REGTIME;
+            parameters[9].Value = entity.OWNER;
+            parameters[10].Value = entity.DETAILED;
+            parameters[11].Value = entity.STATUS;
+            parameters[12].Value = entity.REMARK;
+            parameters[13].Value = entity.PHOTO;
+            parameters[14].Value = entity.DEPTID;
             int rows = OracleHelper.ExecuteNonQuery(strSql.ToString(), parameters);
             if (rows > 0) {
                 return true;

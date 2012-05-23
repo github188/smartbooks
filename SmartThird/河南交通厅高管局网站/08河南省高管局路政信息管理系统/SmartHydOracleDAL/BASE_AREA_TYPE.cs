@@ -80,8 +80,8 @@ namespace SmartHyd.OracleDAL {
               
             };
 
-            parameters[2].Value = entity.TYPENAME;
-            parameters[3].Value = entity.TYPEID;
+            parameters[0].Value = entity.TYPENAME;
+            parameters[1].Value = entity.TYPEID;
             int rows = OracleHelper.ExecuteNonQuery(strSql.ToString(), parameters);
             if (rows > 0) {
                 return true;

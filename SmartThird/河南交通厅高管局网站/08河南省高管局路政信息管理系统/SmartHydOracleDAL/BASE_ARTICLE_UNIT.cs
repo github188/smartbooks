@@ -92,11 +92,11 @@ namespace SmartHyd.OracleDAL {
               
             };
 
-            parameters[5].Value = model.ID;
-            parameters[6].Value = model.ARTICLEID;
-            parameters[7].Value = model.DPTCODE;
-            parameters[8].Value = model.ISREAD;
-            parameters[9].Value = model.READTIME;
+            parameters[0].Value = model.ID;
+            parameters[1].Value = model.ARTICLEID;
+            parameters[2].Value = model.DPTCODE;
+            parameters[3].Value = model.ISREAD;
+            parameters[4].Value = model.READTIME;
             int rows = OracleHelper.ExecuteNonQuery(strSql.ToString(), parameters);
             if (rows > 0) {
                 return true;

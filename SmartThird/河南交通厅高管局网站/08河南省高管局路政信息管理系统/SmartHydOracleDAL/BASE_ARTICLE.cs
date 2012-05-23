@@ -124,19 +124,19 @@ namespace SmartHyd.OracleDAL {
               
             };
 
-            parameters[13].Value = model.ID;
-            parameters[14].Value = model.STATUS;
-            parameters[15].Value = model.ISREPLY;
-            parameters[16].Value = model.TYPEID;
-            parameters[17].Value = model.SENDCODE;
-            parameters[18].Value = model.USERID;
-            parameters[19].Value = model.DEPTID;
-            parameters[20].Value = model.PARENTID;
-            parameters[21].Value = model.TITLE;
-            parameters[22].Value = model.CONTENT;
-            parameters[23].Value = model.TIMESTAMP;
-            parameters[24].Value = model.SCORE;
-            parameters[25].Value = model.ANNEX;
+            parameters[0].Value = model.ID;
+            parameters[1].Value = model.STATUS;
+            parameters[2].Value = model.ISREPLY;
+            parameters[3].Value = model.TYPEID;
+            parameters[4].Value = model.SENDCODE;
+            parameters[5].Value = model.USERID;
+            parameters[6].Value = model.DEPTID;
+            parameters[7].Value = model.PARENTID;
+            parameters[8].Value = model.TITLE;
+            parameters[9].Value = model.CONTENT;
+            parameters[10].Value = model.TIMESTAMP;
+            parameters[11].Value = model.SCORE;
+            parameters[12].Value = model.ANNEX;
             int rows = OracleHelper.ExecuteNonQuery(strSql.ToString(), parameters);
             if (rows > 0) {
                 return true;

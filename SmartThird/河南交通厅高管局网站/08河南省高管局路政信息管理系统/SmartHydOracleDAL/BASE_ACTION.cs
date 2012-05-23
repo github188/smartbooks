@@ -93,10 +93,10 @@ namespace SmartHyd.OracleDAL {
               
             };
 
-            parameters[4].Value = entity.ACTIONID;
-            parameters[5].Value = entity.ACTIONNAME;
-            parameters[6].Value = entity.STATUS;
-            parameters[7].Value = entity.ACTIONINFO;
+            parameters[0].Value = entity.ACTIONID;
+            parameters[1].Value = entity.ACTIONNAME;
+            parameters[2].Value = entity.STATUS;
+            parameters[3].Value = entity.ACTIONINFO;
             int rows = OracleHelper.ExecuteNonQuery(strSql.ToString(), parameters);
             if (rows > 0) {
                 return true;

@@ -105,12 +105,12 @@ OracleParameter[] parameters = {
               
             };
 
-parameters[6].Value = entity.MESSAGEID;
-parameters[7].Value = entity.SENDER;
-parameters[8].Value = entity.TOUSER;
-parameters[9].Value = entity.MESSAGEBODY;
-parameters[10].Value = entity.SENDDATE;
-parameters[11].Value = entity.STATE;
+parameters[0].Value = entity.MESSAGEID;
+parameters[1].Value = entity.SENDER;
+parameters[2].Value = entity.TOUSER;
+parameters[3].Value = entity.MESSAGEBODY;
+parameters[4].Value = entity.SENDDATE;
+parameters[5].Value = entity.STATE;
             int rows = OracleHelper.ExecuteNonQuery(strSql.ToString(), parameters);
 			if (rows > 0)
 			{

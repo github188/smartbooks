@@ -84,9 +84,9 @@ namespace SmartHyd.OracleDAL {
               
             };
 
-            parameters[3].Value = entity.ROLEID;
-            parameters[4].Value = entity.ROLENAME;
-            parameters[5].Value = entity.ROLEINFO;
+            parameters[0].Value = entity.ROLEID;
+            parameters[1].Value = entity.ROLENAME;
+            parameters[2].Value = entity.ROLEINFO;
             int rows = OracleHelper.ExecuteNonQuery(strSql.ToString(), parameters);
             if (rows > 0) {
                 return true;

@@ -100,13 +100,13 @@ namespace SmartHyd.OracleDAL {
               
             };
 
-            parameters[7].Value = entity.MENUID;
-            parameters[8].Value = entity.MENUNAME;
-            parameters[9].Value = entity.MENUINFO;
-            parameters[10].Value = entity.MENUURL;
-            parameters[11].Value = entity.ICON;
-            parameters[12].Value = entity.PARENTID;
-            parameters[13].Value = entity.STATUS;
+            parameters[0].Value = entity.MENUID;
+            parameters[1].Value = entity.MENUNAME;
+            parameters[2].Value = entity.MENUINFO;
+            parameters[3].Value = entity.MENUURL;
+            parameters[4].Value = entity.ICON;
+            parameters[5].Value = entity.PARENTID;
+            parameters[6].Value = entity.STATUS;
             int rows = OracleHelper.ExecuteNonQuery(strSql.ToString(), parameters);
             if (rows > 0) {
                 return true;
