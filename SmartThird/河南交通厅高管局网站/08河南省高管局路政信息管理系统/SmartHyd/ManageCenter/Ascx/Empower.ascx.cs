@@ -119,8 +119,8 @@ namespace SmartHyd.ManageCenter.Ascx
                 pds.PageSize = AspNetPager1.PageSize;
 
 
-                this.RptAffiche.DataSource = pds; //定义数据源
-                this.RptAffiche.DataBind(); //绑定数据
+                this.RptList.DataSource = pds; //定义数据源
+                this.RptList.DataBind(); //绑定数据
             }
 
         }
@@ -248,17 +248,32 @@ namespace SmartHyd.ManageCenter.Ascx
         public override void BtnGrant_Click(object sender, EventArgs e)
         {
             //获取用户编号（先判断用户是否存在已有权限，如果存在，删除已有权限）
-            decimal userid = 0;
 
+
+            decimal userid = 0;
+            //选择用户
+            foreach (RepeaterItem Ritem in this.RptList.Items)
+            {
+                CheckBox ch = Ritem.FindControl("CheckSingle") as CheckBox;
+                Label lb = Ritem.FindControl("LBUSERID") as Label;
+                if (null != ch && null != lb)
+                {
+                    if (ch.Checked)
+                        Response.Write("编号：" + lb.Text);
+                    // value +=ch.Text;
+                }
+            }
+
+            //判断用户是否拥有权限
             if (bll.ExistsUserid(userid))
             {
                 string strwhere = "USERID=" + userid;
                 bll.deletelist(strwhere);//删除已有权限
-                PowerAdd(userid);
+                PowerAdd(userid);//用户授权
             }
             else
             {
-                PowerAdd(userid);
+                PowerAdd(userid);//用户授权
             }
         }
         #endregion
@@ -270,19 +285,28 @@ namespace SmartHyd.ManageCenter.Ascx
         private void PowerAdd(decimal userid)
         {
             //获取角色编号
-            decimal roleid = Convert.ToDecimal(this.RBLRole.SelectedValue.ToString());
+            decimal roleid = -1;
+            if (null != this.RBLRole.SelectedValue.ToString() || "" != this.RBLRole.SelectedValue.ToString())
+            {
+                roleid = Convert.ToDecimal(this.RBLRole.SelectedValue.ToString());
+            }
+
             //获取菜单编号
             List<int> menuID = GetMenuID();
             //获取动作编号
             List<int> ACTIONID = GetActionID();
 
             int total = menuID.Count * ACTIONID.Count;//要添加数据的总记录数
-            for (int i = 0; i < menuID.Count; i++)
+            if (total > 0)
             {
-                for (int j = 0; j < ACTIONID.Count; j++)
+                for (int i = 0; i < menuID.Count; i++)
                 {
-                    bll.Add(GetModel(userid, roleid, menuID[i], ACTIONID[j]));
+                    for (int j = 0; j < ACTIONID.Count; j++)
+                    {
+                        bll.Add(GetModel(userid, roleid, menuID[i], ACTIONID[j]));
+                    }
                 }
+
             }
             // Response.Write("<javascript>alert('添加成功！')</javascript>");
             // Entity.BASE_USER_ROLE model = GetModel();

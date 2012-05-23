@@ -8,7 +8,7 @@
     <!--用户列表开始-->
     <div id="tabs-1">
         <table class="edit" width="100%" align="center" cellpadding="0">
-            <asp:Repeater ID="RptAffiche" runat="server">
+            <asp:Repeater ID="RptList" runat="server">
                 <HeaderTemplate>
                     <thead>
                         <tr>
@@ -34,7 +34,7 @@
                     <tbody>
                         <tr>
                             <td>
-                                <asp:CheckBox ID="CheckSingle" runat="server" />
+                                <asp:CheckBox ID="CheckSingle" runat="server"/>
                                 <asp:Label ID="LBUSERID" runat="server" Text='<%#Eval("USERID") %>' Visible="false"></asp:Label>
                                 <asp:HiddenField ID="hidPrimary" runat="server" Value="-1" />
                             </td>

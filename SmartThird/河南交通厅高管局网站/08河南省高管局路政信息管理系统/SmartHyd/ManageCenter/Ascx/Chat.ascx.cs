@@ -45,7 +45,7 @@ namespace SmartHyd.ManageCenter.Ascx
         {
             Entity.BASE_MESSAGE model = new Entity.BASE_MESSAGE();
             model.MESSAGEID = Convert.ToInt32(this.hidPrimary.Value);     //id,主键
-            model.SENDER = 1;                    //发信人编号
+            model.SENDER = 0;                        //发信人编号
             model.MESSAGEBODY = this.Message.Value;                      //消息内容
             decimal touserid = Convert.ToDecimal(userbll.GetList("USERNAME='" + this.TxtTouser.Text+"'").Rows[0]["USERID"]);
             model.TOUSER = touserid;             //收信人编号
@@ -62,8 +62,17 @@ namespace SmartHyd.ManageCenter.Ascx
         /// <returns></returns>
         protected string getUserName(int userid)
         {
-            string username=userbll.GetUser(userid).USERNAME;
-            return username;
+            string username = string.Empty;
+
+            if (userbll.GetUser(userid)==null)
+            {
+                username = "该用户不存在";
+            }
+            else
+            {
+                username = userbll.GetUser(userid).USERNAME;
+            }
+                return username;
         }
         /// <summary>
         /// 状态转为文字
