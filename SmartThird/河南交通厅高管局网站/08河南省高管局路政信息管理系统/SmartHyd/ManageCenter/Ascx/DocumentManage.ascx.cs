@@ -9,60 +9,33 @@ using System.Web.UI.WebControls;
 
 namespace SmartHyd.ManageCenter.Ascx {
     public partial class DocumentManage : UI.BaseUserControl {
-        #region 私有字段
         private BLL.BASE_ARTICLE bll = new BLL.BASE_ARTICLE();
-        private BLL.BASE_ARTICLE_TYPE bllType = new BLL.BASE_ARTICLE_TYPE();
         private Utility.UserSession userSession;
-        private int inde = 0;
-        #endregion
 
-        #region 页面事件
+        //页面加载
         protected void Page_Load(object sender, EventArgs e) {
-            if (!IsPostBack) {
-                BindData();     //绑定一个公文ID 
+            if (!IsPostBack) {                
                 //获取用户Session
                 userSession = (Utility.UserSession)Session["user"];
+
+                //绑定发文列表数据
+                BindPublichList();
             }
         }
-        //详细模式分页
-        protected void AspNetPager1_PageChanging(object src, Wuqi.Webdiyer.PageChangingEventArgs e) {
-            this.AspNetPager1.CurrentPageIndex = e.NewPageIndex;
-            BindData();
-        }
-        //预览模式分页
+        //发文列表分页
         protected void AspNetPager2_PageChanging(object src, Wuqi.Webdiyer.PageChangingEventArgs e) {
             this.AspNetPager2.CurrentPageIndex = e.NewPageIndex;
-        }
-        #endregion
-
-        #region 方法定义
-        //绑定数据
-        private void BindData() {
-            DataTable dt = new DataTable();
-            dt = bll.GetArticle(0);
-
-            //初始化分页数据
-            AspNetPager1.RecordCount = dt.Rows.Count;
-            PagedDataSource pds = new PagedDataSource();
-            pds.DataSource = dt.DefaultView;
-            pds.AllowPaging = true;
-            pds.CurrentPageIndex = AspNetPager1.CurrentPageIndex - 1;
-            pds.PageSize = AspNetPager1.PageSize;
-
-            //绑定分页后的数据
-            repList.DataSource = pds;
-            repList.DataBind();
+            BindPublichList();
         }
 
         /// <summary>
-        /// 获取部门下文章
+        /// 绑定发文列表数据
         /// </summary>
-        /// <param name="dptCode">部门编号</param>
-        /// <param name="typeCode">分类编号</param>
-        /// <param name="stateCode">状态:0已审核1未审核2草稿3已删除4隐藏5结贴</param>
-        private void BindArticleDept(int dptCode, int typeCode, int stateCode) {
+        private void BindPublichList() {
             DataTable dt = new DataTable();
-            dt = bll.GetArticleDept(dptCode, typeCode, stateCode);
+            //int typeId = Convert.ToInt32(Session["treevalue"].ToString());   //获取选定节点类型的值
+
+            dt = bll.GetPublishList(13, 2); //获取发文列表数据
 
             //初始化分页数据
             AspNetPager2.RecordCount = dt.Rows.Count;
@@ -73,11 +46,10 @@ namespace SmartHyd.ManageCenter.Ascx {
             pds.PageSize = AspNetPager2.PageSize;
 
             //绑定分页后的数据
-            repArticleList.DataSource = pds;
-            repArticleList.DataBind();
+            reppublishlist.DataSource = pds;
+            reppublishlist.DataBind();
         }
 
-        #endregion
 
         #region 页面功能按钮事件(必须重写基类虚方法，否则按钮的事件是无效的)
         //添加

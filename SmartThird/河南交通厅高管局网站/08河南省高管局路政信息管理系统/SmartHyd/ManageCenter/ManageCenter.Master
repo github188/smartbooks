@@ -30,7 +30,7 @@
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
-<body>
+<body class="bodycolor">
     <form id="form1" runat="server">
     <div>
         <!--内容开始-->

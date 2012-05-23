@@ -59,6 +59,7 @@
     <Content Include="Error.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Images\big_btn_a.png" />
+    <Content Include="Images\notify_open.gif" />
     <Content Include="Images\pbar-ani.gif" />
     <Content Include="Images\user-ico.jpg" />
     <Content Include="ManageCenter\Affiche.aspx" />
@@ -70,7 +71,9 @@
     <Content Include="ManageCenter\Ascx\Chat.ascx" />
     <Content Include="ManageCenter\Ascx\Dept.ascx" />
     <Content Include="ManageCenter\Ascx\DeptEdit.ascx" />
+    <Content Include="ManageCenter\Ascx\DocumentDetail.ascx" />
     <Content Include="ManageCenter\Ascx\DocumentManage.ascx" />
+    <Content Include="ManageCenter\Ascx\DocumentReply.ascx" />
     <Content Include="ManageCenter\Ascx\DocumentTypeManage.ascx" />
     <Content Include="ManageCenter\Ascx\Empower.ascx" />
     <Content Include="ManageCenter\Ascx\FaWen.ascx" />
@@ -92,7 +95,9 @@
     <Content Include="ManageCenter\Chat.aspx" />
     <Content Include="ManageCenter\Dept.aspx" />
     <Content Include="ManageCenter\DeptEdit.aspx" />
+    <Content Include="ManageCenter\DocumentDetail.aspx" />
     <Content Include="ManageCenter\DocumentManage.aspx" />
+    <Content Include="ManageCenter\DocumentReply.aspx" />
     <Content Include="ManageCenter\DocumentTypeManage.aspx" />
     <Content Include="ManageCenter\Empower.aspx" />
     <Content Include="ManageCenter\FaWen.aspx" />
@@ -396,6 +401,7 @@
     </Compile>
     <Compile Include="ManageCenter\Ascx\Chat.ascx.cs">
       <DependentUpon>Chat.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ManageCenter\Ascx\Chat.ascx.designer.cs">
       <DependentUpon>Chat.ascx</DependentUpon>
@@ -414,12 +420,26 @@
     <Compile Include="ManageCenter\Ascx\DeptEdit.ascx.designer.cs">
       <DependentUpon>DeptEdit.ascx</DependentUpon>
     </Compile>
+    <Compile Include="ManageCenter\Ascx\DocumentDetail.ascx.cs">
+      <DependentUpon>DocumentDetail.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\Ascx\DocumentDetail.ascx.designer.cs">
+      <DependentUpon>DocumentDetail.ascx</DependentUpon>
+    </Compile>
     <Compile Include="ManageCenter\Ascx\DocumentManage.ascx.cs">
       <DependentUpon>DocumentManage.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ManageCenter\Ascx\DocumentManage.ascx.designer.cs">
       <DependentUpon>DocumentManage.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\Ascx\DocumentReply.ascx.cs">
+      <DependentUpon>DocumentReply.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\Ascx\DocumentReply.ascx.designer.cs">
+      <DependentUpon>DocumentReply.ascx</DependentUpon>
     </Compile>
     <Compile Include="ManageCenter\Ascx\DocumentTypeManage.ascx.cs">
       <DependentUpon>DocumentTypeManage.ascx</DependentUpon>
@@ -549,6 +569,7 @@
     </Compile>
     <Compile Include="ManageCenter\Chat.aspx.cs">
       <DependentUpon>Chat.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ManageCenter\Chat.aspx.designer.cs">
       <DependentUpon>Chat.aspx</DependentUpon>
@@ -567,12 +588,26 @@
     <Compile Include="ManageCenter\DeptEdit.aspx.designer.cs">
       <DependentUpon>DeptEdit.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ManageCenter\DocumentDetail.aspx.cs">
+      <DependentUpon>DocumentDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\DocumentDetail.aspx.designer.cs">
+      <DependentUpon>DocumentDetail.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ManageCenter\DocumentManage.aspx.cs">
       <DependentUpon>DocumentManage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ManageCenter\DocumentManage.aspx.designer.cs">
       <DependentUpon>DocumentManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\DocumentReply.aspx.cs">
+      <DependentUpon>DocumentReply.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\DocumentReply.aspx.designer.cs">
+      <DependentUpon>DocumentReply.aspx</DependentUpon>
     </Compile>
     <Compile Include="ManageCenter\DocumentTypeManage.aspx.cs">
       <DependentUpon>DocumentTypeManage.aspx</DependentUpon>

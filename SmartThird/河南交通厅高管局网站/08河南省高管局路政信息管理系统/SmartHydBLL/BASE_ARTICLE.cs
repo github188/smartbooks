@@ -20,17 +20,14 @@ namespace SmartHyd.BLL {
             dal.Add(model);
         }
 
-        /// <summary>
-        /// 根据Id获取发文和回复详细信息
-        /// </summary>
-        /// <param name="articleId">发文ID</param>
-        /// <returns></returns>
-        public DataTable GetArticle(int articleId) {
-            return dal.GetArticle(articleId);
+        public DataTable GetReplyList(int sendId) {
+            return dal.GetReplyList(sendId);
         }
-
-        public DataTable GetArticleDept(int dptCode, int typeCode, int stateCode) {
-            return dal.GetArticleDept(dptCode, typeCode, stateCode);
+        public DataTable GetDetail(int id) {
+            return dal.GetDetail(id);
+        }
+        public DataTable GetPublishList(int depCode, int typeCode) {
+            return dal.GetPublishList(depCode, typeCode);
         }
     }
 }

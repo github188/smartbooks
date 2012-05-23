@@ -259,8 +259,13 @@ namespace SmartHyd.OracleDAL {
 
         #region 自定义查询
 
-        public DataTable GetArticle(int articleId) {
-            string procName = "PKG_ARTICLE_QUERY.proc_getarticle";
+        /// <summary>
+        /// 获取发文的回复列表
+        /// </summary>
+        /// <param name="sendId">发文编号</param>
+        /// <returns>回复列表</returns>
+        public DataTable GetReplyList(int sendId) {
+            string procName = "PKG_ARTICLE_QUERY.proc_getreplylist";
             OracleParameter[] param = new OracleParameter[2];
 
             param[0] = new OracleParameter();
@@ -268,8 +273,8 @@ namespace SmartHyd.OracleDAL {
 
             param[0].Direction = ParameterDirection.Input;
             param[0].OracleType = OracleType.Number;
-            param[0].ParameterName = "articleid";
-            param[0].Value = articleId;
+            param[0].ParameterName = "sendid";
+            param[0].Value = sendId;
 
             param[1].Direction = ParameterDirection.Output;
             param[1].OracleType = OracleType.Cursor;
@@ -277,38 +282,60 @@ namespace SmartHyd.OracleDAL {
 
             return OracleHelper.RunProcedure(procName, param).Tables[0];
         }
+        /// <summary>
+        /// 获取公文详情
+        /// </summary>
+        /// <param name="id">公文编号</param>
+        /// <returns></returns>
+        public DataTable GetDetail(int id) {
 
-        public DataTable GetArticleDept(int dptCode, int typeCode, int stateCode) {
-            string procName = "PKG_ARTICLE_QUERY.proc_getdeptarticle";
-            OracleParameter[] param = new OracleParameter[4];
+            string procName = "PKG_ARTICLE_QUERY.proc_getdetail";
+            OracleParameter[] param = new OracleParameter[2];
+
+            param[0] = new OracleParameter();
+            param[1] = new OracleParameter();
+
+            param[0].Direction = ParameterDirection.Input;
+            param[0].OracleType = OracleType.Number;
+            param[0].ParameterName = "sendid";
+            param[0].Value = id;
+
+            param[1].Direction = ParameterDirection.Output;
+            param[1].OracleType = OracleType.Cursor;
+            param[1].ParameterName = "out_cursor";
+
+            return OracleHelper.RunProcedure(procName, param).Tables[0];
+        }
+        /// <summary>
+        /// 根据部门、分类获取公文列表（发文）
+        /// </summary>
+        /// <param name="depCode">部门编号</param>
+        /// <param name="typeCode">分类编号</param>
+        /// <returns>公文列表</returns>
+        public DataTable GetPublishList(int depCode, int typeCode) {
+            string procName = "PKG_ARTICLE_QUERY.proc_getpublishlist";
+            OracleParameter[] param = new OracleParameter[3];
 
             param[0] = new OracleParameter();
             param[1] = new OracleParameter();
             param[2] = new OracleParameter();
-            param[3] = new OracleParameter();
 
             param[0].Direction = ParameterDirection.Input;
             param[0].OracleType = OracleType.Number;
             param[0].ParameterName = "dptcode";
-            param[0].Value = dptCode;
+            param[0].Value = depCode;
 
             param[1].Direction = ParameterDirection.Input;
             param[1].OracleType = OracleType.Number;
             param[1].ParameterName = "typecode";
             param[1].Value = typeCode;
 
-            param[2].Direction = ParameterDirection.Input;
-            param[2].OracleType = OracleType.Number;
-            param[2].ParameterName = "statecode";
-            param[2].Value = stateCode;
-
-            param[3].Direction = ParameterDirection.Output;
-            param[3].OracleType = OracleType.Cursor;
-            param[3].ParameterName = "out_cursor";
+            param[2].Direction = ParameterDirection.Output;
+            param[2].OracleType = OracleType.Cursor;
+            param[2].ParameterName = "out_cursor";
 
             return OracleHelper.RunProcedure(procName, param).Tables[0];
         }
-
         #endregion
     }
 }

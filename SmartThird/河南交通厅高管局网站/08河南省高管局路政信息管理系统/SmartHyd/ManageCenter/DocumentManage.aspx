@@ -1,7 +1,8 @@
-﻿<%@ Page Title="档案管理" Language="C#" MasterPageFile="~/ManageCenter/ManageCenter.Master" AutoEventWireup="true" CodeBehind="DocumentManage.aspx.cs" Inherits="SmartHyd.ManageCenter.DocumentManage" ValidateRequest="false" %>
+﻿<%@ Page Title="发文管理" Language="C#" MasterPageFile="~/ManageCenter/ManageCenter.Master" AutoEventWireup="true" CodeBehind="DocumentManage.aspx.cs" Inherits="SmartHyd.ManageCenter.DocumentManage" ValidateRequest="false" %>
 <%@ Register src="Ascx/DocumentManage.ascx" tagname="DocumentManage" tagprefix="uc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-     
+    <link type="text/css" rel="Stylesheet" href="../css/email.css" />
+    <link type="text/css" rel="Stylesheet" href="../css/layoutleft.css" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <uc1:DocumentManage ID="DocumentManage1" runat="server" />

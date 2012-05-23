@@ -51,8 +51,10 @@ namespace SmartHyd.IDAL {
         /// 获得前几行数据
         /// </summary>
         DataSet GetList(int Top, string strWhere, string filedOrder);
+        
+        DataTable GetReplyList(int sendId);
+        DataTable GetDetail(int id);
+        DataTable GetPublishList(int depCode, int typeCode);
 
-        DataTable GetArticle(int articleId);
-        DataTable GetArticleDept(int dptCode, int typeCode, int stateCode); 
     }
 }

@@ -6,6 +6,7 @@
     </ul>
     <!--新建发文开始-->
     <div id="tabs-1">
+        <span class="big3">新建公文</span>
         <table class="TableBlock" width="100%" align="center">
             <tbody>
                 <!--首选行-->

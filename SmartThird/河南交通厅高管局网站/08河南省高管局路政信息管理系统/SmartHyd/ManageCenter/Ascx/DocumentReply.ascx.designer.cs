@@ -10,33 +10,24 @@
 namespace SmartHyd.ManageCenter.Ascx {
     
     
-    public partial class DocumentManage {
+    public partial class DocumentReply {
         
         /// <summary>
-        /// TreeView1 控件。
+        /// repReplyList 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::SmartHyd.Ascx.TreeView TreeView1;
+        protected global::System.Web.UI.WebControls.Repeater repReplyList;
         
         /// <summary>
-        /// reppublishlist 控件。
+        /// AspNetPager1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater reppublishlist;
-        
-        /// <summary>
-        /// AspNetPager2 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::Wuqi.Webdiyer.AspNetPager AspNetPager2;
+        protected global::Wuqi.Webdiyer.AspNetPager AspNetPager1;
     }
 }

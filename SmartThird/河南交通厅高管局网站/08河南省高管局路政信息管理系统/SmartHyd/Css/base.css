@@ -46,3 +46,7 @@ span,input{float:left;}
 
 /*选项卡*/
 #tab{ float:left;  margin:4px; width:98%;}
+
+/*树控件*/
+.treeview{float:left; overflow:scroll; font-size:15px;}
+.treeview tr{ float:left;}

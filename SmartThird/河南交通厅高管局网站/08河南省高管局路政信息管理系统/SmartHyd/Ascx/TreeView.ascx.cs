@@ -61,7 +61,7 @@ namespace SmartHyd.Ascx {
             dt = bll.GetAllDep("1=1");
 
             TreeNode rootNode = new TreeNode();
-            rootNode.Text = "河南省高速公路路政管理系统 V1.0 - 部门树";
+            rootNode.Text = "部门树";
             rootNode.Value = "0";
             rootNode.Expanded = true;
             InitTreeView(rootNode, dt);
@@ -77,8 +77,9 @@ namespace SmartHyd.Ascx {
             dt = bll.GetAllDep("1=1");
 
             TreeNode rootNode = new TreeNode();
-            rootNode.Text = "河南省高速公路路政管理系统 V1.0 - 部门用户树";
+            rootNode.Text = "部门用户树";
             rootNode.Value = "0";
+            rootNode.Expanded = true;
             InitTreeView(rootNode, dt);
             this.trvControl.Nodes.Add(rootNode);
         }
@@ -92,8 +93,9 @@ namespace SmartHyd.Ascx {
             dt = bll.GetList("1=1");
 
             TreeNode rootNode = new TreeNode();
-            rootNode.Text = "河南省高速公路路政管理系统 V1.0 - 档案分类树";
+            rootNode.Text = "档案分类树";
             rootNode.Value = "0";
+            rootNode.Expanded = true;
             InitTreeView(rootNode, dt);
             this.trvControl.Nodes.Add(rootNode);
         }
@@ -107,8 +109,9 @@ namespace SmartHyd.Ascx {
             dt = bll.GetList("1=1");
 
             TreeNode rootNode = new TreeNode();
-            rootNode.Text = "河南省高速公路路政管理系统 V1.0 - 菜单树";
+            rootNode.Text = "菜单树";
             rootNode.Value = "0";
+            rootNode.Expanded = true;
             InitTreeView(rootNode, dt);
             this.trvControl.Nodes.Add(rootNode);
         }
@@ -127,7 +130,6 @@ namespace SmartHyd.Ascx {
              * Session["treetext"]存放当前选定节点Name值
              * Session["treevalue"]存放当前当定节点Id值
              */
-            node.Expanded = false;
             foreach (DataRow dr in dt.Rows) {
                 TreeNode subNode = new TreeNode();
                 //subNode.ShowCheckBox = true;    //显示CheckBox
