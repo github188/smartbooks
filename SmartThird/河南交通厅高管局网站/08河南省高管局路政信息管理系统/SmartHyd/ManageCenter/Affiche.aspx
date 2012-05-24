@@ -1,4 +1,4 @@
-﻿<%@ Page Title="公告管理" Language="C#" AutoEventWireup="true" ValidateRequest="false"
+﻿<%@ Page Title="电子公告管理" Language="C#" AutoEventWireup="true" ValidateRequest="false"
     MasterPageFile="~/ManageCenter/ManageCenter.Master" CodeBehind="Affiche.aspx.cs"
     Inherits="SmartHyd.ManageCenter.Affiche" %>
 
