@@ -1,5 +1,5 @@
 -- Start of DDL Script for Package ORAHYD.PKG_ARTICLE_QUERY
--- Generated 18-五月-2012 18:29:44 from ORAHYD@ORAHYD
+-- Generated 24-五月-2012 8:37:32 from ORAHYD@ORAHYD
 
 -- Drop the old instance of PKG_ARTICLE_QUERY
 DROP PACKAGE orahyd.pkg_article_query
@@ -23,11 +23,24 @@ IS
    --过程包名：proc_getarticle
    --作　　者：王亚
    --时　　间：2012-5-18
-   --说　　明：此过程用户获取公文详细信息和回复信息
+   --说　　明：此过程用于获取回复列表
    ----------------------------------------------------------------------------
    */
-   PROCEDURE proc_getarticle (
-      articleid    IN       NUMBER,                              --公文ID编号
+   PROCEDURE proc_getreplylist (
+      sendid       IN       NUMBER,                                --发文编号
+      out_cursor   OUT      refcursortype
+   );
+
+   /*
+   ----------------------------------------------------------------------------
+   --过程包名：proc_getreplydetail
+   --作　　者：王亚
+   --时　　间：2012-5-18
+   --说　　明：此过程用于获取单个回文详细信息
+   ----------------------------------------------------------------------------
+   */
+   PROCEDURE proc_getdetail (
+      sendid       IN       NUMBER,                                --发文编号
       out_cursor   OUT      refcursortype
    );
 
@@ -39,10 +52,9 @@ IS
    --说　　明：此过程根据部门编号和分类编号获公文信息
    ----------------------------------------------------------------------------
    */
-   PROCEDURE proc_getdeptarticle (
-      dptcode       IN       NUMBER,                                  --部门编号 
-      typecode      IN       NUMBER,                                  --公文类别 
-      statecode     IN       NUMBER,  --状态:0已审核1未审核2草稿3已删除4隐藏5结贴
+   PROCEDURE proc_getpublishlist (
+      dptcode      IN       NUMBER,                                --部门编号
+      typecode     IN       NUMBER,                                --公文类别
       out_cursor   OUT      refcursortype
    );
 END;
@@ -57,57 +69,76 @@ IS
    --过程包名：proc_getarticle
    --作　　者：王亚
    --时　　间：2012-5-18
-   --说　　明：此过程用户获取公文详细信息和回复信息
+   --说　　明：此过程用于获取回复列表
    ----------------------------------------------------------------------------
    */
-   PROCEDURE proc_getarticle (
-      articleid    IN       NUMBER,
-      --公文ID编号
+   PROCEDURE proc_getreplylist (
+      sendid       IN       NUMBER,                                --发文编号
       out_cursor   OUT      refcursortype
    )
    IS
    BEGIN
       OPEN out_cursor FOR
-         /*用户名,用户ID,工作证,电话,照片,部门名称,公文类别,标题,内容,时间,分值
-         * 附件,发文字号,公文id,状态,允许回复,公文父ID
+         /*
+         * 部门,查阅状态,查阅时间,标题,发文字号,回复时间
          */
-         SELECT   c.username, c.userid, c.jobnumber, c.phone, c.photo,
-                  d.dptname, b.typename, a.title, a.content,
-                  TO_CHAR (a.TIMESTAMP, 'yyyy-mm-dd hh24:mi:ss') AS TIMESTAMP,
-                  a.score, a.annex, a.sendcode, a.ID,
-                  CASE a.status
+         SELECT   b.dptname,a.articleid,
+                  CASE a.isread
                      WHEN 0
-                        THEN '已审核'
+                        THEN '未查阅'
                      WHEN 1
-                        THEN '未审核'
-                     WHEN 2
-                        THEN '草稿'
-                     WHEN 3
-                        THEN '已删除'
-                     WHEN 4
-                        THEN '隐藏'
-                     WHEN 5
-                        THEN '结贴'
+                        THEN '已查阅'
                      ELSE '异常'
-                  END AS status,
-                  CASE a.isreply
-                     WHEN 0
-                        THEN '是'
-                     WHEN 1
-                        THEN '否'
-                     ELSE '异常'
-                  END AS isreply,
-                  a.parentid
-             FROM base_article a,
-                  base_article_type b,
-                  base_user c,
-                  base_dept d
-            WHERE a.userid = c.userid
-              AND a.typeid = b.ID
-              AND a.deptid = d.deptid
-              AND a.ID = articleid
-              AND a.parentid = a.ID
-         ORDER BY a.TIMESTAMP;
+                  END AS isread,
+                  TO_CHAR (a.readtime, 'yyyy-mm-dd hh24:mi:ss') AS readtime,
+                  c.title, c.sendcode,
+                  TO_CHAR (c.TIMESTAMP, 'yyyy-mm-dd hh24:mi:ss')
+                                                                AS TIMESTAMP
+             FROM base_article_unit a, base_dept b, base_article c
+            WHERE a.articleid = sendid
+              AND a.dptcode = b.deptid
+              AND a.dptcode = c.deptid(+)
+         ORDER BY c.TIMESTAMP DESC;
+   END;
+
+   /*
+   ----------------------------------------------------------------------------
+   --过程包名：proc_getreplydetail
+   --作　　者：王亚
+   --时　　间：2012-5-18
+   --说　　明：此过程用于获取单个回文详细信息
+   ----------------------------------------------------------------------------
+   */
+   PROCEDURE proc_getdetail (
+      sendid       IN       NUMBER,                                 --发文编号
+      out_cursor   OUT      refcursortype
+   )
+   IS
+   BEGIN
+      OPEN out_cursor FOR
+         SELECT a.ID, b.dptname, c.username, a.title, a.sendcode,
+                a.TIMESTAMP, a.score, a.content, a.annex,c.jobnumber,c.phone,
+                CASE a.status
+                   WHEN 0
+                      THEN '已审核'
+                   WHEN 1
+                      THEN '未审核'
+                   WHEN 2
+                      THEN '草稿'
+                   WHEN 3
+                      THEN '已删除'
+                   WHEN 4
+                      THEN '隐藏'
+                   WHEN 5
+                      THEN '结贴'
+                   ELSE '异常'
+                END AS status
+           FROM base_article a, base_dept b, base_user c
+          WHERE     a.userid = c.userid
+                AND a.deptid = b.deptid
+                AND a.ID = sendid
+                AND a.status = 0
+             OR a.status = 5;
    END;
 
    /*
@@ -115,21 +146,20 @@ IS
    --过程包名：proc_getdeptarticle
    --作　　者：王亚
    --时　　间：2012-5-18
-   --说　　明：此过程用于获取部门下公文列表
+   --说　　明：此过程用于获取发文列表 
    ----------------------------------------------------------------------------
    */
-   PROCEDURE proc_getdeptarticle (
+   PROCEDURE proc_getpublishlist (
       dptcode      IN       NUMBER,                                 --部门编号
       typecode     IN       NUMBER,                                 --公文类别
-      statecode    IN       NUMBER,--状态:0已审核1未审核2草稿3已删除4隐藏5结贴
       out_cursor   OUT      refcursortype
    )
    IS
    BEGIN
       OPEN out_cursor FOR
-         SELECT b.dptname, c.username, d.typename, a.title, a.content,
+         SELECT b.dptname, c.username, a.title, a.content,
                 TO_CHAR (a.TIMESTAMP, 'yyyy-mm-dd hh24:mi:ss') AS TIMESTAMP,
-                a.score, a.annex, a.sendcode,
+                a.score, a.annex, a.sendcode,a.id,
                 CASE a.status
                    WHEN 0
                       THEN '已审核'
@@ -158,9 +188,8 @@ IS
             AND a.userid = c.userid
             AND a.typeid = d.ID
             AND a.deptid = dptcode                                      --部门
-            AND a.typeid = typecode                                     --类别
-            AND a.status = statecode                                    --状态
-            AND a.isreply = 0;                                          --发文
+            AND a.typeid = typecode                                     --类别            
+            AND a.parentid = 0;                                         --发文
    END;
 END;
 /

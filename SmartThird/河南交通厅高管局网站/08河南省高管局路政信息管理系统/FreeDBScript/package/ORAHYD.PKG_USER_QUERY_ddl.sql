@@ -1,5 +1,5 @@
 -- Start of DDL Script for Package ORAHYD.PKG_USER_QUERY
--- Generated 18-五月-2012 18:30:14 from ORAHYD@ORAHYD
+-- Generated 24-五月-2012 8:38:44 from ORAHYD@ORAHYD
 
 -- Drop the old instance of PKG_USER_QUERY
 DROP PACKAGE orahyd.pkg_user_query
@@ -78,26 +78,50 @@ IS
    )
    IS
    BEGIN
-      OPEN out_cursor FOR
-         SELECT b.dptname, a.username,
-                TO_CHAR (a.birthday, 'yyyy-mm-dd') AS birthday, a.DEGREE,
-                a.face, a.idnumber, a.jobnumber, a.photo, a.prof, a.phone,
-                CASE a.sex
-                   WHEN 0
-                      THEN '男'
-                   WHEN 1
-                      THEN '女'
-                   ELSE '未知'
-                END AS sex,
-                CASE a.ststus
-                   WHEN 0
-                      THEN '正常'
-                   WHEN 1
-                      THEN '删除'
-                   ELSE '未知'
-                END AS status
-           FROM base_user a, base_dept b
-          WHERE a.deptid = b.deptid AND a.deptid = dptcode;
+      IF dptcode = -1
+      THEN
+         OPEN out_cursor FOR
+            SELECT b.dptname, a.username,
+                   TO_CHAR (a.birthday, 'yyyy-mm-dd') AS birthday, a.DEGREE,
+                   a.face, a.idnumber, a.jobnumber, a.photo, a.prof, a.phone,
+                   CASE a.sex
+                      WHEN 0
+                         THEN '男'
+                      WHEN 1
+                         THEN '女'
+                      ELSE '未知'
+                   END AS sex,
+                   CASE a.ststus
+                      WHEN 0
+                         THEN '正常'
+                      WHEN 1
+                         THEN '删除'
+                      ELSE '未知'
+                   END AS status
+              FROM base_user a, base_dept b
+             WHERE a.deptid = b.deptid;
+      ELSE
+         OPEN out_cursor FOR
+            SELECT b.dptname, a.username,
+                   TO_CHAR (a.birthday, 'yyyy-mm-dd') AS birthday, a.DEGREE,
+                   a.face, a.idnumber, a.jobnumber, a.photo, a.prof, a.phone,
+                   CASE a.sex
+                      WHEN 0
+                         THEN '男'
+                      WHEN 1
+                         THEN '女'
+                      ELSE '未知'
+                   END AS sex,
+                   CASE a.ststus
+                      WHEN 0
+                         THEN '正常'
+                      WHEN 1
+                         THEN '删除'
+                      ELSE '未知'
+                   END AS status
+              FROM base_user a, base_dept b
+             WHERE a.deptid = b.deptid AND a.deptid = dptcode;
+      END IF;
    END;
 END;
 /

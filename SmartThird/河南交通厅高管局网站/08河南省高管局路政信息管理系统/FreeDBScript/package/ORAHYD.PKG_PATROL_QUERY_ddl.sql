@@ -1,5 +1,5 @@
 -- Start of DDL Script for Package ORAHYD.PKG_PATROL_QUERY
--- Generated 18-五月-2012 18:30:06 from ORAHYD@ORAHYD
+-- Generated 24-五月-2012 8:38:28 from ORAHYD@ORAHYD
 
 -- Drop the old instance of PKG_PATROL_QUERY
 DROP PACKAGE orahyd.pkg_patrol_query
