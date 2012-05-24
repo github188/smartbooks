@@ -346,6 +346,7 @@
     </Compile>
     <Compile Include="ManageCenter\Affiche.aspx.cs">
       <DependentUpon>Affiche.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ManageCenter\Affiche.aspx.designer.cs">
       <DependentUpon>Affiche.aspx</DependentUpon>
@@ -359,6 +360,7 @@
     </Compile>
     <Compile Include="ManageCenter\Ascx\Affiche.ascx.cs">
       <DependentUpon>Affiche.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ManageCenter\Ascx\Affiche.ascx.designer.cs">
       <DependentUpon>Affiche.ascx</DependentUpon>
