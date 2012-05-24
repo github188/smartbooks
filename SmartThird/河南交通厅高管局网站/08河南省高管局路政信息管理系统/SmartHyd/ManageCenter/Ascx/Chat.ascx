@@ -7,7 +7,7 @@
 </ul>
 <!--发送消息开始-->
 <div id="tabs-1">
-    <table class="edit" width="600">
+    <table class="TableHeader" width="600">
         <tr>
             <td class="left">
             </td>
