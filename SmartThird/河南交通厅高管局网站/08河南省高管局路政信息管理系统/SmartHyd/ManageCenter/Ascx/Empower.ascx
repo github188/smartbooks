@@ -6,7 +6,7 @@
     </ul>
     <!--用户授权开始-->
     <div id="tabs-1">
-        <table class="TableBlock" width="100%" align="center" cellpadding="0">
+        <table class="TableBlock" width="100%" cellpadding="0">
             <tbody>
                 <!--首选行-->
                 <tr class="TableHeader">
@@ -20,6 +20,7 @@
                 <!--内容-->
                 <tr>
                     <td>
+                      <div>
                         <table width="95%">
                             <asp:Repeater ID="RptList" runat="server">
                                 <HeaderTemplate>
@@ -80,18 +81,19 @@
                             PrevPageText="上一页" ShowCustomInfoSection="Right" ShowPageIndexBox="Auto" SubmitButtonText="Go"
                             TextAfterPageIndexBox="页" TextBeforePageIndexBox="转到" OnPageChanging="AspNetPager1_PageChanging">
                         </webdiyer:AspNetPager>
+                        </div>
                     </td>
                     <td>
                         <!--授权项-->
                         <div>
                             <table width="95%" align="center">
                                 <tr>
-                                    <td colspan="2" class="TableHeader">
+                                    <td class="TableHeader">
                                         请选择用户角色
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td colspan="2" class="TableData" align="center">
+                                    <td class="TableData" align="center">
                                         <asp:RadioButtonList ID="RBLRole" runat="server">
                                         </asp:RadioButtonList>
                                         <%--<asp:TreeView ID="TvRole" runat="server">
@@ -99,23 +101,23 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td colspan="2" class="TableHeader">
+                                    <td class="TableHeader">
                                         请选择角色菜单
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td colspan="2" class="TableData" align="center">
+                                    <td class="TableData" align="center">
                                         <asp:TreeView ID="Tvmenu" runat="server">
                                         </asp:TreeView>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td colspan="2" class="TableHeader">
+                                    <td class="TableHeader">
                                         请选择菜单动作
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td colspan="2" class="TableData" align="center">
+                                    <td class="TableData" align="center">
                                         <asp:TreeView ID="TvAction" runat="server">
                                         </asp:TreeView>
                                     </td>
