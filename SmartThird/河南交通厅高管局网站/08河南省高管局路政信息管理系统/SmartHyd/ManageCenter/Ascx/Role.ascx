@@ -2,8 +2,12 @@
 <%@ Register Assembly="AspNetPager" Namespace="Wuqi.Webdiyer" TagPrefix="webdiyer" %>
 <div id="tab">
     <ul>
-        <li><a href="#tabs-1">添加角色</a></li>
-        <li><a href="#tabs-2">角色管理</a></li>
+        <li><a href="#tabs-1">
+            <asp:Label ID="LbTabName" runat="server" Text=""></asp:Label>
+        </a></li>
+        <li><a href="#tabs-2">
+        <asp:Label ID="LbTabName1" runat="server" Text="角色管理"></asp:Label>
+        </a></li>
     </ul>
     <!--添加角色开始-->
     <div id="tabs-1">
@@ -11,7 +15,9 @@
             <tbody>
                 <!--标题栏-->
                 <tr class="TableHeader">
-                    <td colspan="4">添加角色</td>
+                    <td colspan="4">
+                    <asp:Label ID="LbHeadName" runat="server" Text=""></asp:Label>
+                    </td>
                 </tr>
 
                 <tr>
