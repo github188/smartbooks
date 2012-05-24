@@ -1,4 +1,4 @@
-﻿<%@ Page Title="日程管理" Language="C#" MasterPageFile="~/ManageCenter/ManageCenter.Master" AutoEventWireup="true" CodeBehind="Plan.aspx.cs" Inherits="SmartHyd.ManageCenter.Plan" %>
+﻿<%@ Page Title="事务提醒" Language="C#" MasterPageFile="~/ManageCenter/ManageCenter.Master" AutoEventWireup="true" CodeBehind="Plan.aspx.cs" Inherits="SmartHyd.ManageCenter.Plan" %>
 
 <%@ Register Src="~/ManageCenter/Ascx/Plan.ascx" TagName="Plan" TagPrefix="uc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
