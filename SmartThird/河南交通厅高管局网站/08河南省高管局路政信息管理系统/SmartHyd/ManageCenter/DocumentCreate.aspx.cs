@@ -5,8 +5,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace SmartHyd.ManageCenter.Ascx {
-    public partial class DocumentDetail : System.Web.UI.UserControl {
+namespace SmartHyd.ManageCenter {
+    public partial class DocumentCreate :UI.BaseUserPage {
         protected void Page_Load(object sender, EventArgs e) {
 
         }

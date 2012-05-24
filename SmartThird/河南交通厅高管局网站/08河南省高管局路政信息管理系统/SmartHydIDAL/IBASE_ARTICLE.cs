@@ -55,6 +55,7 @@ namespace SmartHyd.IDAL {
         DataTable GetReplyList(int sendId);
         DataTable GetDetail(int id);
         DataTable GetPublishList(int depCode, int typeCode);
-
+        void CheckOut(Dictionary<int, int> dictionary);
+        void UpdateState(int state, int id);
     }
 }

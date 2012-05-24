@@ -7,7 +7,14 @@ using System.Data;
 using System.Web.UI.WebControls;
 
 namespace SmartHyd.Ascx {
+    public delegate void OnSelectedNodeChanged(object sender, object value);
+
     public partial class TreeView : System.Web.UI.UserControl {
+        /// <summary>
+        /// 选定节点改变时触发的事件
+        /// </summary>
+        public event OnSelectedNodeChanged OnSelectedNodeChanged;
+
         #region 私有变量定义
         /// <summary>
         /// 当前树类型
@@ -229,6 +236,10 @@ namespace SmartHyd.Ascx {
             Session["treetype"] = this._TreeEnum;
             Session["treetext"] = this.trvControl.SelectedNode.Text;
             Session["treevalue"] = this.trvControl.SelectedNode.Value;
+
+            if (OnSelectedNodeChanged != null) {
+                OnSelectedNodeChanged(this.trvControl, this.trvControl.SelectedNode.Value);
+            }
         }
     }
 }

@@ -58,62 +58,48 @@
     <Content Include="Css\tongdaoa.css" />
     <Content Include="Error.aspx" />
     <Content Include="Global.asax" />
-    <Content Include="Images\big_btn_a.png" />
-    <Content Include="Images\notify_open.gif" />
-    <Content Include="Images\pbar-ani.gif" />
-    <Content Include="Images\user-ico.jpg" />
     <Content Include="ManageCenter\Affiche.aspx" />
-    <Content Include="ManageCenter\AfficheEdit.aspx" />
     <Content Include="ManageCenter\Area.aspx" />
     <Content Include="ManageCenter\Ascx\Affiche.ascx" />
-    <Content Include="ManageCenter\Ascx\AfficheEdit.ascx" />
     <Content Include="ManageCenter\Ascx\Area.ascx" />
     <Content Include="ManageCenter\Ascx\Chat.ascx" />
     <Content Include="ManageCenter\Ascx\Dept.ascx" />
-    <Content Include="ManageCenter\Ascx\DeptEdit.ascx" />
+    <Content Include="ManageCenter\Ascx\DocumentCheckOut.ascx" />
+    <Content Include="ManageCenter\Ascx\DocumentCreate.ascx" />
     <Content Include="ManageCenter\Ascx\DocumentDetail.ascx" />
     <Content Include="ManageCenter\Ascx\DocumentManage.ascx" />
     <Content Include="ManageCenter\Ascx\DocumentReply.ascx" />
     <Content Include="ManageCenter\Ascx\DocumentTypeManage.ascx" />
     <Content Include="ManageCenter\Ascx\Empower.ascx" />
-    <Content Include="ManageCenter\Ascx\FaWen.ascx" />
-    <Content Include="ManageCenter\Ascx\FaWenEdit.ascx" />
     <Content Include="ManageCenter\Ascx\ImportData.ascx" />
+    <Content Include="ManageCenter\Ascx\MenuManage.ascx" />
     <Content Include="ManageCenter\Ascx\Observed.ascx" />
-    <Content Include="ManageCenter\Ascx\OfficTypeAdd.ascx" />
-    <Content Include="ManageCenter\Ascx\OfficTypeEdit.ascx" />
     <Content Include="ManageCenter\Ascx\Patrol.ascx" />
     <Content Include="ManageCenter\Ascx\Plan.ascx" />
-    <Content Include="ManageCenter\Ascx\PublishDocument.ascx" />
     <Content Include="ManageCenter\Ascx\RoadProject.ascx" />
     <Content Include="ManageCenter\Ascx\RoadTerm.ascx" />
     <Content Include="ManageCenter\Ascx\Role.ascx" />
-    <Content Include="ManageCenter\Ascx\ShouWen.ascx" />
     <Content Include="ManageCenter\Ascx\SysLog.ascx" />
     <Content Include="ManageCenter\Ascx\Term.ascx" />
     <Content Include="ManageCenter\Ascx\UserManage.ascx" />
     <Content Include="ManageCenter\Chat.aspx" />
     <Content Include="ManageCenter\Dept.aspx" />
-    <Content Include="ManageCenter\DeptEdit.aspx" />
+    <Content Include="ManageCenter\DocumentCheckOut.aspx" />
+    <Content Include="ManageCenter\DocumentCreate.aspx" />
     <Content Include="ManageCenter\DocumentDetail.aspx" />
     <Content Include="ManageCenter\DocumentManage.aspx" />
     <Content Include="ManageCenter\DocumentReply.aspx" />
     <Content Include="ManageCenter\DocumentTypeManage.aspx" />
     <Content Include="ManageCenter\Empower.aspx" />
-    <Content Include="ManageCenter\FaWen.aspx" />
-    <Content Include="ManageCenter\FaWenEdit.aspx" />
     <Content Include="ManageCenter\ImportData.aspx" />
+    <Content Include="ManageCenter\MenuManage.aspx" />
     <Content Include="ManageCenter\Observed.aspx" />
-    <Content Include="ManageCenter\OfficTypeAdd.aspx" />
-    <Content Include="ManageCenter\OfficTypeEdit.aspx" />
     <Content Include="ManageCenter\Patrol.aspx" />
     <Content Include="ManageCenter\Plan.aspx" />
-    <Content Include="ManageCenter\PublishDocument.aspx" />
     <Content Include="ManageCenter\readme.txt" />
     <Content Include="ManageCenter\RoadProject.aspx" />
     <Content Include="ManageCenter\RoadTerm.aspx" />
     <Content Include="ManageCenter\Role.aspx" />
-    <Content Include="ManageCenter\ShouWen.aspx" />
     <Content Include="ManageCenter\SysLog.aspx" />
     <Content Include="ManageCenter\Term.aspx" />
     <Content Include="ManageCenter\UserManage.aspx" />
@@ -360,17 +346,9 @@
     </Compile>
     <Compile Include="ManageCenter\Affiche.aspx.cs">
       <DependentUpon>Affiche.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ManageCenter\Affiche.aspx.designer.cs">
       <DependentUpon>Affiche.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ManageCenter\AfficheEdit.aspx.cs">
-      <DependentUpon>AfficheEdit.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ManageCenter\AfficheEdit.aspx.designer.cs">
-      <DependentUpon>AfficheEdit.aspx</DependentUpon>
     </Compile>
     <Compile Include="ManageCenter\Area.aspx.cs">
       <DependentUpon>Area.aspx</DependentUpon>
@@ -381,17 +359,9 @@
     </Compile>
     <Compile Include="ManageCenter\Ascx\Affiche.ascx.cs">
       <DependentUpon>Affiche.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ManageCenter\Ascx\Affiche.ascx.designer.cs">
       <DependentUpon>Affiche.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="ManageCenter\Ascx\AfficheEdit.ascx.cs">
-      <DependentUpon>AfficheEdit.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ManageCenter\Ascx\AfficheEdit.ascx.designer.cs">
-      <DependentUpon>AfficheEdit.ascx</DependentUpon>
     </Compile>
     <Compile Include="ManageCenter\Ascx\Area.ascx.cs">
       <DependentUpon>Area.ascx</DependentUpon>
@@ -414,12 +384,19 @@
     <Compile Include="ManageCenter\Ascx\Dept.ascx.designer.cs">
       <DependentUpon>Dept.ascx</DependentUpon>
     </Compile>
-    <Compile Include="ManageCenter\Ascx\DeptEdit.ascx.cs">
-      <DependentUpon>DeptEdit.ascx</DependentUpon>
+    <Compile Include="ManageCenter\Ascx\DocumentCheckOut.ascx.cs">
+      <DependentUpon>DocumentCheckOut.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ManageCenter\Ascx\DeptEdit.ascx.designer.cs">
-      <DependentUpon>DeptEdit.ascx</DependentUpon>
+    <Compile Include="ManageCenter\Ascx\DocumentCheckOut.ascx.designer.cs">
+      <DependentUpon>DocumentCheckOut.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\Ascx\DocumentCreate.ascx.cs">
+      <DependentUpon>DocumentCreate.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\Ascx\DocumentCreate.ascx.designer.cs">
+      <DependentUpon>DocumentCreate.ascx</DependentUpon>
     </Compile>
     <Compile Include="ManageCenter\Ascx\DocumentDetail.ascx.cs">
       <DependentUpon>DocumentDetail.ascx</DependentUpon>
@@ -456,20 +433,6 @@
     <Compile Include="ManageCenter\Ascx\Empower.ascx.designer.cs">
       <DependentUpon>Empower.ascx</DependentUpon>
     </Compile>
-    <Compile Include="ManageCenter\Ascx\FaWen.ascx.cs">
-      <DependentUpon>FaWen.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ManageCenter\Ascx\FaWen.ascx.designer.cs">
-      <DependentUpon>FaWen.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="ManageCenter\Ascx\FaWenEdit.ascx.cs">
-      <DependentUpon>FaWenEdit.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ManageCenter\Ascx\FaWenEdit.ascx.designer.cs">
-      <DependentUpon>FaWenEdit.ascx</DependentUpon>
-    </Compile>
     <Compile Include="ManageCenter\Ascx\ImportData.ascx.cs">
       <DependentUpon>ImportData.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -477,26 +440,19 @@
     <Compile Include="ManageCenter\Ascx\ImportData.ascx.designer.cs">
       <DependentUpon>ImportData.ascx</DependentUpon>
     </Compile>
+    <Compile Include="ManageCenter\Ascx\MenuManage.ascx.cs">
+      <DependentUpon>MenuManage.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\Ascx\MenuManage.ascx.designer.cs">
+      <DependentUpon>MenuManage.ascx</DependentUpon>
+    </Compile>
     <Compile Include="ManageCenter\Ascx\Observed.ascx.cs">
       <DependentUpon>Observed.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ManageCenter\Ascx\Observed.ascx.designer.cs">
       <DependentUpon>Observed.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="ManageCenter\Ascx\OfficTypeAdd.ascx.cs">
-      <DependentUpon>OfficTypeAdd.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ManageCenter\Ascx\OfficTypeAdd.ascx.designer.cs">
-      <DependentUpon>OfficTypeAdd.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="ManageCenter\Ascx\OfficTypeEdit.ascx.cs">
-      <DependentUpon>OfficTypeEdit.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ManageCenter\Ascx\OfficTypeEdit.ascx.designer.cs">
-      <DependentUpon>OfficTypeEdit.ascx</DependentUpon>
     </Compile>
     <Compile Include="ManageCenter\Ascx\Patrol.ascx.cs">
       <DependentUpon>Patrol.ascx</DependentUpon>
@@ -511,13 +467,6 @@
     </Compile>
     <Compile Include="ManageCenter\Ascx\Plan.ascx.designer.cs">
       <DependentUpon>Plan.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="ManageCenter\Ascx\PublishDocument.ascx.cs">
-      <DependentUpon>PublishDocument.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ManageCenter\Ascx\PublishDocument.ascx.designer.cs">
-      <DependentUpon>PublishDocument.ascx</DependentUpon>
     </Compile>
     <Compile Include="ManageCenter\Ascx\RoadProject.ascx.cs">
       <DependentUpon>RoadProject.ascx</DependentUpon>
@@ -539,13 +488,6 @@
     </Compile>
     <Compile Include="ManageCenter\Ascx\Role.ascx.designer.cs">
       <DependentUpon>Role.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="ManageCenter\Ascx\ShouWen.ascx.cs">
-      <DependentUpon>ShouWen.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ManageCenter\Ascx\ShouWen.ascx.designer.cs">
-      <DependentUpon>ShouWen.ascx</DependentUpon>
     </Compile>
     <Compile Include="ManageCenter\Ascx\SysLog.ascx.cs">
       <DependentUpon>SysLog.ascx</DependentUpon>
@@ -582,12 +524,19 @@
     <Compile Include="ManageCenter\Dept.aspx.designer.cs">
       <DependentUpon>Dept.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ManageCenter\DeptEdit.aspx.cs">
-      <DependentUpon>DeptEdit.aspx</DependentUpon>
+    <Compile Include="ManageCenter\DocumentCheckOut.aspx.cs">
+      <DependentUpon>DocumentCheckOut.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ManageCenter\DeptEdit.aspx.designer.cs">
-      <DependentUpon>DeptEdit.aspx</DependentUpon>
+    <Compile Include="ManageCenter\DocumentCheckOut.aspx.designer.cs">
+      <DependentUpon>DocumentCheckOut.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\DocumentCreate.aspx.cs">
+      <DependentUpon>DocumentCreate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\DocumentCreate.aspx.designer.cs">
+      <DependentUpon>DocumentCreate.aspx</DependentUpon>
     </Compile>
     <Compile Include="ManageCenter\DocumentDetail.aspx.cs">
       <DependentUpon>DocumentDetail.aspx</DependentUpon>
@@ -624,20 +573,6 @@
     <Compile Include="ManageCenter\Empower.aspx.designer.cs">
       <DependentUpon>Empower.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ManageCenter\FaWen.aspx.cs">
-      <DependentUpon>FaWen.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ManageCenter\FaWen.aspx.designer.cs">
-      <DependentUpon>FaWen.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ManageCenter\FaWenEdit.aspx.cs">
-      <DependentUpon>FaWenEdit.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ManageCenter\FaWenEdit.aspx.designer.cs">
-      <DependentUpon>FaWenEdit.aspx</DependentUpon>
-    </Compile>
     <Compile Include="ManageCenter\ImportData.aspx.cs">
       <DependentUpon>ImportData.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -652,26 +587,19 @@
     <Compile Include="ManageCenter\ManageCenter.Master.designer.cs">
       <DependentUpon>ManageCenter.Master</DependentUpon>
     </Compile>
+    <Compile Include="ManageCenter\MenuManage.aspx.cs">
+      <DependentUpon>MenuManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\MenuManage.aspx.designer.cs">
+      <DependentUpon>MenuManage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ManageCenter\Observed.aspx.cs">
       <DependentUpon>Observed.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ManageCenter\Observed.aspx.designer.cs">
       <DependentUpon>Observed.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ManageCenter\OfficTypeAdd.aspx.cs">
-      <DependentUpon>OfficTypeAdd.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ManageCenter\OfficTypeAdd.aspx.designer.cs">
-      <DependentUpon>OfficTypeAdd.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ManageCenter\OfficTypeEdit.aspx.cs">
-      <DependentUpon>OfficTypeEdit.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ManageCenter\OfficTypeEdit.aspx.designer.cs">
-      <DependentUpon>OfficTypeEdit.aspx</DependentUpon>
     </Compile>
     <Compile Include="ManageCenter\Patrol.aspx.cs">
       <DependentUpon>Patrol.aspx</DependentUpon>
@@ -686,13 +614,6 @@
     </Compile>
     <Compile Include="ManageCenter\Plan.aspx.designer.cs">
       <DependentUpon>Plan.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ManageCenter\PublishDocument.aspx.cs">
-      <DependentUpon>PublishDocument.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ManageCenter\PublishDocument.aspx.designer.cs">
-      <DependentUpon>PublishDocument.aspx</DependentUpon>
     </Compile>
     <Compile Include="ManageCenter\RoadProject.aspx.cs">
       <DependentUpon>RoadProject.aspx</DependentUpon>
@@ -714,13 +635,6 @@
     </Compile>
     <Compile Include="ManageCenter\Role.aspx.designer.cs">
       <DependentUpon>Role.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ManageCenter\ShouWen.aspx.cs">
-      <DependentUpon>ShouWen.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ManageCenter\ShouWen.aspx.designer.cs">
-      <DependentUpon>ShouWen.aspx</DependentUpon>
     </Compile>
     <Compile Include="ManageCenter\SysLog.aspx.cs">
       <DependentUpon>SysLog.aspx</DependentUpon>

@@ -336,6 +336,31 @@ namespace SmartHyd.OracleDAL {
 
             return OracleHelper.RunProcedure(procName, param).Tables[0];
         }
+        /// <summary>
+        /// checkout operation
+        /// </summary>
+        /// <param name="dictionary">key=id,value=score</param>
+        public void CheckOut(Dictionary<int, int> dictionary) {
+            //cycle update this is reply article.
+            foreach (KeyValuePair<int, int> entry in dictionary) {
+                //build sql update command statement.
+                string update = string.Format("update base_article set score={0},status=5 where id={1}",
+                    entry.Value.ToString(), entry.Key.ToString());
+                
+                //update to database.
+                OracleHelper.ExecuteNonQuery(update);
+            }
+        }
+        /// <summary>
+        /// update this is aricle state.
+        /// </summary>
+        /// <param name="state">0已审核，1未审核，2草稿，3已删除，4隐藏，5结贴</param>
+        /// <param name="id">primary id</param>
+        public void UpdateState(int state, int id) {
+            string update = string.Format("update base_article set status={0} where id={1}",
+                state, id);
+            OracleHelper.ExecuteNonQuery(update);
+        }
         #endregion
     }
 }

@@ -1,35 +1,45 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="DocumentReply.ascx.cs"
-    Inherits="SmartHyd.ManageCenter.Ascx.DocumentReply" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="DocumentCheckOut.ascx.cs"
+    Inherits="SmartHyd.ManageCenter.Ascx.DocumentCheckOut" %>
 <%@ Register Assembly="AspNetPager" Namespace="Wuqi.Webdiyer" TagPrefix="webdiyer" %>
 <div id="tab">
     <ul id="menu">
-        <li><a href="#tabs-1">回文列表</a></li>
+        <li><a href="#tabs-1">结贴页面</a></li>
     </ul>
-    <!--回文列表开始-->
+    <!--结贴页面开始-->
     <div id="tabs-1">
+        <table border="0" width="100%" cellspacing="0" class="small" align="center">
+            <tbody>
+                <!--导航按钮栏-->
+                <tr>
+                    <td>
+                        <span class="big3" style=" margin-right:20px;">结贴操作</span>
+                        <asp:Button ID="btnCheckOut" runat="server" Text="结贴" CssClass="BigButtonA" 
+                            onclick="btnCheckOut_Click" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
             <ContentTemplate>
-                <span class="big3">回文列表</span>
                 <table class="TableList" width="100%">
                     <tbody>
+                        <!--数据列表标题栏-->
                         <tr class="TableHeader" align="center">
                             <td width="230">
                                 部门名称
                             </td>
                             <td>
-                                回文标题
-                            </td>
-                            <td width="75">
-                                查阅状态
+                                回复标题
                             </td>
                             <td width="170">
-                                查阅时间
-                            </td>
-                            <td width="170">
-                                回文字号
+                                发文字号
                             </td>
                             <td width="170">
                                 回复时间
+                            </td>
+                            <td width="170">
+                                分值
                             </td>
                         </tr>
                         <!--回文列表-->
@@ -37,24 +47,24 @@
                             <ItemTemplate>
                                 <tr class="TableLine1" align="center">
                                     <td align="left">
+                                        <input type="hidden" value='<%#Eval("id")%>' />
                                         <%#Eval("dptname")%>
                                     </td>
                                     <td align="left">
-                                        <a href='DocumentDetail.aspx?id=<%#Eval("articleid") %>'>
-                                            <%#Eval("title")%>
-                                        </a>
-                                    </td>
-                                    <td>
-                                        <%#Eval("isread")%>
-                                    </td>
-                                    <td>
-                                        <%#Eval("readtime")%>
+                                        <%#Eval("title")%>
                                     </td>
                                     <td>
                                         <%#Eval("sendcode")%>
                                     </td>
                                     <td>
                                         <%#Eval("TIMESTAMP")%>
+                                    </td>
+                                    <td>
+                                        <input type="text" value='<%#Eval("score")%>' 
+                                            class="input {required:true,minlength:1,maxlength:3}" 
+                                            style=" width=75px;" />
+                                        <div class="validate ui-state-highlight ui-corner-all " 
+                                            style="border: none;"></div>
                                     </td>
                                 </tr>
                             </ItemTemplate>
@@ -70,5 +80,5 @@
             </ContentTemplate>
         </asp:UpdatePanel>
     </div>
-    <!--回文列表结束-->
+    <!--结贴页面结束-->
 </div>
