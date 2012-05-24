@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // 有关程序集的常规信息通过以下特性集 
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("SmartHyd")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("河南省高速公路路政管理系统")]
+[assembly: AssemblyDescription("路政网络协同办公系统")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("YT")]
-[assembly: AssemblyProduct("SmartHyd")]
-[assembly: AssemblyCopyright("Copyright © YT 2012")]
+[assembly: AssemblyCompany("郑州豫图信息技术有限公司")]
+[assembly: AssemblyProduct("河南省高速公路路政管理系统")]
+[assembly: AssemblyCopyright("Copyright © 郑州豫图信息技术有限公司 2012")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

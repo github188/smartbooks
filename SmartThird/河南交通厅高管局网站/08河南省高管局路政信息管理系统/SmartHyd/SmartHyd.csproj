@@ -109,6 +109,7 @@
     <Content Include="ManageCenter\Patrol.aspx" />
     <Content Include="ManageCenter\Plan.aspx" />
     <Content Include="ManageCenter\PublishDocument.aspx" />
+    <Content Include="ManageCenter\readme.txt" />
     <Content Include="ManageCenter\RoadProject.aspx" />
     <Content Include="ManageCenter\RoadTerm.aspx" />
     <Content Include="ManageCenter\Role.aspx" />
