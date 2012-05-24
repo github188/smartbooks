@@ -28,5 +28,14 @@ namespace SmartHyd.BLL {
         {
             return roleDal.GetList(strWhere).Tables[0];
         }
+        /// <summary>
+        /// 修改角色信息
+        /// </summary>
+        /// <param name="model">角色实体数据</param>
+        /// <returns></returns>
+        public bool update(Entity.BASE_ROLE model)
+        {
+           return roleDal.Update(model);
+        }
     }
 }
