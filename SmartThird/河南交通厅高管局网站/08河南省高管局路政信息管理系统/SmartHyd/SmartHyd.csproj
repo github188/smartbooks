@@ -68,16 +68,18 @@
     <Content Include="ManageCenter\Ascx\Area.ascx" />
     <Content Include="ManageCenter\Ascx\Chat.ascx" />
     <Content Include="ManageCenter\Ascx\Dept.ascx" />
+    <Content Include="ManageCenter\Ascx\DocumentCheckOut.ascx" />
+    <Content Include="ManageCenter\Ascx\DocumentCreate.ascx" />
     <Content Include="ManageCenter\Ascx\DocumentDetail.ascx" />
     <Content Include="ManageCenter\Ascx\DocumentManage.ascx" />
     <Content Include="ManageCenter\Ascx\DocumentReply.ascx" />
     <Content Include="ManageCenter\Ascx\DocumentTypeManage.ascx" />
     <Content Include="ManageCenter\Ascx\Empower.ascx" />
     <Content Include="ManageCenter\Ascx\ImportData.ascx" />
+    <Content Include="ManageCenter\Ascx\MenuManage.ascx" />
     <Content Include="ManageCenter\Ascx\Observed.ascx" />
     <Content Include="ManageCenter\Ascx\Patrol.ascx" />
     <Content Include="ManageCenter\Ascx\Plan.ascx" />
-    <Content Include="ManageCenter\Ascx\PublishDocument.ascx" />
     <Content Include="ManageCenter\Ascx\RoadProject.ascx" />
     <Content Include="ManageCenter\Ascx\RoadTerm.ascx" />
     <Content Include="ManageCenter\Ascx\Role.ascx" />
@@ -86,16 +88,18 @@
     <Content Include="ManageCenter\Ascx\UserManage.ascx" />
     <Content Include="ManageCenter\Chat.aspx" />
     <Content Include="ManageCenter\Dept.aspx" />
+    <Content Include="ManageCenter\DocumentCheckOut.aspx" />
+    <Content Include="ManageCenter\DocumentCreate.aspx" />
     <Content Include="ManageCenter\DocumentDetail.aspx" />
     <Content Include="ManageCenter\DocumentManage.aspx" />
     <Content Include="ManageCenter\DocumentReply.aspx" />
     <Content Include="ManageCenter\DocumentTypeManage.aspx" />
     <Content Include="ManageCenter\Empower.aspx" />
     <Content Include="ManageCenter\ImportData.aspx" />
+    <Content Include="ManageCenter\MenuManage.aspx" />
     <Content Include="ManageCenter\Observed.aspx" />
     <Content Include="ManageCenter\Patrol.aspx" />
     <Content Include="ManageCenter\Plan.aspx" />
-    <Content Include="ManageCenter\PublishDocument.aspx" />
     <Content Include="ManageCenter\readme.txt" />
     <Content Include="ManageCenter\RoadProject.aspx" />
     <Content Include="ManageCenter\RoadTerm.aspx" />
@@ -103,7 +107,6 @@
     <Content Include="ManageCenter\SysLog.aspx" />
     <Content Include="ManageCenter\Term.aspx" />
     <Content Include="ManageCenter\UserManage.aspx" />
-    <Content Include="ManageCenter\WebForm2.aspx" />
     <Content Include="readme.txt" />
     <Content Include="Scripts\base.js" />
     <Content Include="Scripts\jquery-ui-1.8.18.custom\css\redmond\images\ui-bg_flat_0_aaaaaa_40x100.png" />
@@ -387,6 +390,20 @@
     <Compile Include="ManageCenter\Ascx\Dept.ascx.designer.cs">
       <DependentUpon>Dept.ascx</DependentUpon>
     </Compile>
+    <Compile Include="ManageCenter\Ascx\DocumentCheckOut.ascx.cs">
+      <DependentUpon>DocumentCheckOut.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\Ascx\DocumentCheckOut.ascx.designer.cs">
+      <DependentUpon>DocumentCheckOut.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\Ascx\DocumentCreate.ascx.cs">
+      <DependentUpon>DocumentCreate.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\Ascx\DocumentCreate.ascx.designer.cs">
+      <DependentUpon>DocumentCreate.ascx</DependentUpon>
+    </Compile>
     <Compile Include="ManageCenter\Ascx\DocumentDetail.ascx.cs">
       <DependentUpon>DocumentDetail.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -429,6 +446,13 @@
     <Compile Include="ManageCenter\Ascx\ImportData.ascx.designer.cs">
       <DependentUpon>ImportData.ascx</DependentUpon>
     </Compile>
+    <Compile Include="ManageCenter\Ascx\MenuManage.ascx.cs">
+      <DependentUpon>MenuManage.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\Ascx\MenuManage.ascx.designer.cs">
+      <DependentUpon>MenuManage.ascx</DependentUpon>
+    </Compile>
     <Compile Include="ManageCenter\Ascx\Observed.ascx.cs">
       <DependentUpon>Observed.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -449,13 +473,6 @@
     </Compile>
     <Compile Include="ManageCenter\Ascx\Plan.ascx.designer.cs">
       <DependentUpon>Plan.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="ManageCenter\Ascx\PublishDocument.ascx.cs">
-      <DependentUpon>PublishDocument.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ManageCenter\Ascx\PublishDocument.ascx.designer.cs">
-      <DependentUpon>PublishDocument.ascx</DependentUpon>
     </Compile>
     <Compile Include="ManageCenter\Ascx\RoadProject.ascx.cs">
       <DependentUpon>RoadProject.ascx</DependentUpon>
@@ -513,6 +530,20 @@
     <Compile Include="ManageCenter\Dept.aspx.designer.cs">
       <DependentUpon>Dept.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ManageCenter\DocumentCheckOut.aspx.cs">
+      <DependentUpon>DocumentCheckOut.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\DocumentCheckOut.aspx.designer.cs">
+      <DependentUpon>DocumentCheckOut.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\DocumentCreate.aspx.cs">
+      <DependentUpon>DocumentCreate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\DocumentCreate.aspx.designer.cs">
+      <DependentUpon>DocumentCreate.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ManageCenter\DocumentDetail.aspx.cs">
       <DependentUpon>DocumentDetail.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -562,6 +593,13 @@
     <Compile Include="ManageCenter\ManageCenter.Master.designer.cs">
       <DependentUpon>ManageCenter.Master</DependentUpon>
     </Compile>
+    <Compile Include="ManageCenter\MenuManage.aspx.cs">
+      <DependentUpon>MenuManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\MenuManage.aspx.designer.cs">
+      <DependentUpon>MenuManage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ManageCenter\Observed.aspx.cs">
       <DependentUpon>Observed.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -582,13 +620,6 @@
     </Compile>
     <Compile Include="ManageCenter\Plan.aspx.designer.cs">
       <DependentUpon>Plan.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ManageCenter\PublishDocument.aspx.cs">
-      <DependentUpon>PublishDocument.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ManageCenter\PublishDocument.aspx.designer.cs">
-      <DependentUpon>PublishDocument.aspx</DependentUpon>
     </Compile>
     <Compile Include="ManageCenter\RoadProject.aspx.cs">
       <DependentUpon>RoadProject.aspx</DependentUpon>
@@ -631,13 +662,6 @@
     </Compile>
     <Compile Include="ManageCenter\UserManage.aspx.designer.cs">
       <DependentUpon>UserManage.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ManageCenter\WebForm2.aspx.cs">
-      <DependentUpon>WebForm2.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ManageCenter\WebForm2.aspx.designer.cs">
-      <DependentUpon>WebForm2.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
