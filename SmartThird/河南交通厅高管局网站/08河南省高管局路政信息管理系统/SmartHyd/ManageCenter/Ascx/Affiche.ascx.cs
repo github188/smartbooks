@@ -10,17 +10,41 @@ namespace SmartHyd.ManageCenter.Ascx
 {
     public partial class Affiche : UI.BaseUserControl
     {
-       
         private BLL.BASE_AFFICHE bll = new BLL.BASE_AFFICHE();
         private BLL.BASE_LOG logbll = new BLL.BASE_LOG();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                dataBindToRepeater();
+                if ("" == Request.QueryString["aid"] || null == Request.QueryString["aid"])
+                {
+                    if (this.hidPrimary.Value == "-1")
+                    {
+                        this.LbTabName.Text = "新建电子公告";//设置选项卡名称
+                        this.LbHeadName.Text = "新建电子公告";//设置标题头名称
+                        this.TxtTime.Text = DateTime.Now.ToString("yyyy-MM-dd");
+                    }
+                    else
+                    {
+                        this.LbTabName.Text = "编辑电子公告";//设置选项卡名称
+                        this.LbHeadName.Text = "编辑电子公告";//设置标题头名称
+                        decimal AFFICHEID = Convert.ToDecimal(this.hidPrimary.Value);
+                        Entity.BASE_AFFICHE model = bll.Getmodel(AFFICHEID);
+                        SetEntity(model);
+                    }
+                }
+                else
+                {
+                    this.LbTabName.Text = "编辑电子公告";//设置选项卡名称
+                    this.LbHeadName.Text = "编辑电子公告";//设置标题头名称
+                    decimal AFFICHEID = Convert.ToDecimal(Request.QueryString["aid"]);
+                    Entity.BASE_AFFICHE model = bll.Getmodel(AFFICHEID);
+                    SetEntity(model);
+                }
+                dataBindToRepeater();//绑定电子公告数据
             }
         }
-        //使用dataBindToRepeater()方法绑定公文数据
+        //使用dataBindToRepeater()方法绑定电子公告数据
         private void dataBindToRepeater()
         {
             DataTable dt = new DataTable();
@@ -38,7 +62,39 @@ namespace SmartHyd.ManageCenter.Ascx
             this.RptAffiche.DataSource = pds; //定义数据源
             this.RptAffiche.DataBind(); //绑定数据
         }
-      
+        #region 公告数据添加
+        /// <summary>
+        /// 获得公告实体数据
+        /// </summary>
+        /// <param name="states">公告状态</param>
+        /// <returns></returns>
+        private Entity.BASE_AFFICHE GetEntity(decimal states)
+        {
+            Entity.BASE_AFFICHE model = new Entity.BASE_AFFICHE();
+            model.AFFICHEID = Convert.ToInt32(this.hidPrimary.Value);     //id,主键
+            model.AFFICHETITLE = this.TxtTitle.Text;                      //公告标题
+            model.AFFICHER = "admin";                                     //公告发布人
+            model.AFFICHEDATE = DateTime.Parse(this.TxtTime.Text);         //公告发布时间
+            model.AFFICHECONTENTS = this.TxtContent.Text;                  //公告内容
+            model.STATES = states;                                              //公告状态0:已保存；1：已发布；2：已删除；
+
+            return model;
+        }
+        /// <summary>
+        /// 设置公告数据
+        /// </summary>
+        /// <param name="model">公告实体</param>
+        private void SetEntity(Entity.BASE_AFFICHE model)
+        {
+            this.hidPrimary.Value = model.AFFICHEID.ToString();        //id,主键
+            this.TxtTitle.Text = model.AFFICHETITLE;                    //公告标题
+            //model.AFFICHER = "admin";                                //公告发布人
+            this.TxtTime.Text = model.AFFICHEDATE.ToString("yyyy-MM-dd");             //公告发布时间
+            this.TxtContent.Text = model.AFFICHECONTENTS;                  //公告内容
+            //model.STATES = 0;                                   //公告状态0:已保存；1：已发布；2：已删除；
+
+        }
+        #endregion
 
         #region 页面功能按钮事件(必须重写基类虚方法，否则按钮的事件是无效的)
         /// <summary>
@@ -70,6 +126,7 @@ namespace SmartHyd.ManageCenter.Ascx
         //删除
         public override void BtnDelete_Click(object sender, EventArgs e)
         {
+
         }
         //重置
         public override void BtnCancel_Click(object sender, EventArgs e)
@@ -79,7 +136,21 @@ namespace SmartHyd.ManageCenter.Ascx
             Smart.Utility.Alerts.Alert("test");
         }
         //修改
-        public override void BtnUpdate_Click(object sender, EventArgs e) { }
+        public override void BtnUpdate_Click(object sender, EventArgs e) {
+            //获取实体
+            Entity.BASE_AFFICHE model = GetEntity(0);
+
+            //修改公告
+            if (bll.update(model))
+            {
+                //重新加载当前页
+                Response.Redirect("Affiche.aspx#tabs-2", true);
+            }
+            else
+            {
+                Response.Redirect(Request.Url.AbsoluteUri, false);
+            }
+        }
         //查看
         public override void BtnView_Click(object sender, EventArgs e) { }
         //查询
@@ -123,39 +194,7 @@ namespace SmartHyd.ManageCenter.Ascx
             dataBindToRepeater();
         }
         #endregion
-        #region 公告数据添加
-        /// <summary>
-        /// 获得公告实体数据
-        /// </summary>
-        /// <param name="states">公告状态</param>
-        /// <returns></returns>
-        private Entity.BASE_AFFICHE GetEntity(decimal states)
-        {
-            Entity.BASE_AFFICHE model = new Entity.BASE_AFFICHE();
-            model.AFFICHEID = Convert.ToInt32(this.hidPrimary.Value);     //id,主键
-            model.AFFICHETITLE = this.TxtTitle.Text;                      //公告标题
-            model.AFFICHER = "admin";                                     //公告发布人
-            model.AFFICHEDATE =DateTime.Parse(this.TxtTime.Text);         //公告发布时间
-            model.AFFICHECONTENTS = this.TxtContent.Text;                  //公告内容
-            model.STATES = states;                                              //公告状态0:已保存；1：已发布；2：已删除；
-
-            return model;
-        }
-        /// <summary>
-        /// 设置公告数据
-        /// </summary>
-        /// <param name="model">公告实体</param>
-        private void SetEntity(Entity.BASE_AFFICHE model)
-        {
-            this.hidPrimary.Value = model.AFFICHEID.ToString();        //id,主键
-            this.TxtTitle.Text = model.AFFICHETITLE;                    //公告标题
-            //model.AFFICHER = "admin";                                //公告发布人
-            this.TxtTime.Text = model.AFFICHEDATE.ToString("yyyy-MM-dd");             //公告发布时间
-            this.TxtContent.Text=model.AFFICHECONTENTS;                  //公告内容
-            //model.STATES = 0;                                   //公告状态0:已保存；1：已发布；2：已删除；
-
-        }
-        #endregion
+     
       
         /// <summary>
         /// 删除公告

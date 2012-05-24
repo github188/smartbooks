@@ -2,16 +2,20 @@
 <%@ Register Assembly="AspNetPager" Namespace="Wuqi.Webdiyer" TagPrefix="webdiyer" %>
 <div id="tab">
     <ul id="menu">
-        <li><a href="#tabs-1">新建公告</a></li>
-        <li><a href="#tabs-2">公告管理</a></li>
+        <li><a href="#tabs-1">
+            <asp:Label ID="LbTabName" runat="server" Text=""></asp:Label>
+        </a></li>
+        <li><a href="#tabs-2">
+        <asp:Label ID="LbTabName2" runat="server" Text="电子公告管理"></asp:Label>
+        </a></li>
     </ul>
     <!--新建公告开始-->
     <div id="tabs-1">
-        <table border="0" width="100%" cellspacing="0" cellpadding="3" class="edit">
+        <table border="0" width="100%" cellspacing="0" cellpadding="3" class="TableBlock">
             <thead>
-                <tr>
+                <tr class="TableHeader">
                     <th colspan="3">
-                        新建公告通知
+                        <asp:Label ID="LbHeadName" runat="server" Text=""></asp:Label>
                     </th>
                 </tr>
             </thead>
@@ -81,11 +85,11 @@
 <!--新建公告结束-->
 <!--公告管理开始-->
     <div id="tabs-2">
-        <table class="edit" width="100%" cellspacing="0" cellpadding="3" align="center">
+        <table class="TableBlock" width="100%" cellspacing="0" cellpadding="3" align="center">
             <asp:Repeater ID="RptAffiche" runat="server">
                 <HeaderTemplate>
                     <thead>
-                        <tr>
+                        <tr class="TableHeader">
                             <th>
                                 <asp:CheckBox ID="CheckallAffiche" runat="server" Text="全选" OnClick="javascript:selectall(this);" />
                             </th>
@@ -110,25 +114,25 @@
                 <ItemTemplate>
                     <tbody>
                         <tr>
-                            <td>
+                            <td align="center">
                                 <asp:CheckBox ID="CheckSingleAffiche" runat="server" />
                                 <asp:Label ID="AFFICHEID" runat="server" Text='<%#Eval("AFFICHEID") %>' Visible="false"></asp:Label>
-                                <asp:HiddenField ID="hidPrimary" runat="server" Value="-1" />
+                             
                             </td>
-                            <td>
+                            <td align="center">
                                 <%# Eval("AFFICHER")%>
                             </td>
-                            <td>
+                            <td align="center">
                                 <%# Eval("AFFICHETITLE")%>
                             </td>
-                            <td>
+                            <td align="center">
                                 <%# Eval("AFFICHEDATE")%>
                             </td>
-                            <td>
+                            <td align="center">
                                 <%# Eval("STATES")%>
                             </td>
-                            <td>
-                                <a href="AfficheEdit.aspx?aid=<%# Eval("AFFICHEID")%>">编辑</a> 
+                            <td align="center">
+                                <a href="Affiche.aspx?aid=<%# Eval("AFFICHEID")%>">编辑</a> 
                                 <a href="" id="delhref" runat="server"> 删除</a>
                                  <%--onclick="javascript:delete_notify(<%# Eval("AFFICHEID")%>)"--%>
                                     
