@@ -16,6 +16,11 @@ namespace SmartHyd.ManageCenter.Ascx
         {
             if (!IsPostBack)
             {
+                //初始化参数
+                DateTime beginTime = DateTime.Now;
+                DateTime endTime = DateTime.Now.AddDays(5);
+                this.txtStartTIME.Text = beginTime.ToString("yyyy-MM-dd");
+                this.txtEndTIME.Text = endTime.ToString("yyyy-MM-dd");
                 dataBindToRepeater();    
             }
             
