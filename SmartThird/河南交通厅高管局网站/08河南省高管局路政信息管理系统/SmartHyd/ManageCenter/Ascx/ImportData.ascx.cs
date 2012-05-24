@@ -140,10 +140,7 @@ namespace SmartHyd.ManageCenter.Ascx {
             return true;
         }
 
-        private void On_CompleteSingle(int size, int count) {
-            this.lblprogressbarNum.Text = string.Format("{0}/{1}",
-                size.ToString(), count.ToString());
-            hidPercentage.Value = Convert.ToString(100 - (count - size) / count * 100);
+        private void On_CompleteSingle(int size, int count) {            
         }
         #endregion
     }

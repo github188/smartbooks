@@ -9,163 +9,152 @@
     </ul>
     <!--添加用户开始-->
     <div id="tabs-1">
-        <table class="edit" width="100%">
-            <thead>
-                <tr>
-                    <th colspan="3">
-                        添加用户
-                    </th>
-                </tr>
-            </thead>
+        <table class="TableBlock" width="100%" align="center">            
             <tbody>
-                <tr height="38">
-                    <td>
-                        <asp:Label ID="Label1" runat="server" Text="所属部门:"></asp:Label>
+                <!--标题栏-->
+                <tr class="TableHeader">
+                    <td colspan="4">添加用户</td>
+                </tr>
+
+                <!--部门、账号-->
+                <tr>
+                    <td nowrap="nowrap" class="TableData" width="70">所属部门:</td>
+                    <td nowrap="nowrap" class="TableData" style="width:325px;">
                         <asp:HiddenField ID="hidPrimary" runat="server" Value="-1" />
                         <uc1:Department ID="Department1" runat="server" />
                     </td>
-                    <td>
-                        <asp:Label ID="Label2" runat="server" Text="用户账号:"></asp:Label>
-                        <asp:TextBox ID="txtUserName" runat="server" CssClass="input {required:true,minlength:5,maxlength:12}"></asp:TextBox>
-                        <div class="validate ui-state-highlight ui-corner-all " style="border: none;">
-                        </div>
-                    </td>
-                    <td>
-                        <asp:Label ID="Label3" runat="server" Text="用户密码:"></asp:Label>
-                        <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" CssClass="input {required:true,minlength:5,maxlength:12}"></asp:TextBox>
-                        <div class="validate ui-state-highlight ui-corner-all" style="border: none;">
-                        </div>
+                    <td nowrap="nowrap" class="TableData" width="70">用户账号:</td>
+                    <td nowrap="nowrap" class="TableData" style="width:325px;">
+                        <asp:TextBox ID="txtUserName" runat="server" 
+                            CssClass="input {required:true,minlength:5,maxlength:12}">
+                        </asp:TextBox>
+                        <div class="validate ui-state-highlight ui-corner-all " style="border: none;"></div>
                     </td>
                 </tr>
-                <tr height="38">
-                    <td>
-                        <asp:Label ID="Label4" runat="server" Text="用户性别:"></asp:Label>
+
+                <!--密码、性别-->
+                <tr>
+                    <td nowrap="nowrap" class="TableData" width="70">用户密码:</td>
+                    <td nowrap="nowrap" class="TableData" style="width:325px;">
+                        <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" 
+                            CssClass="input {required:true,minlength:5,maxlength:12}">
+                        </asp:TextBox>
+                        <div class="validate ui-state-highlight ui-corner-all" style="border: none;"></div>
+                    </td>
+                    <td nowrap="nowrap" class="TableData" width="70">用户性别:</td>
+                    <td nowrap="nowrap" class="TableData" style="width:325px;">
                         <asp:DropDownList ID="ddlSex" runat="server" CssClass="input">
                             <asp:ListItem Text="男" Value="0" Selected="True"></asp:ListItem>
                             <asp:ListItem Text="女" Value="1"></asp:ListItem>
                         </asp:DropDownList>
                     </td>
-                    <td>
-                        <asp:Label ID="Label5" runat="server" Text="出生年月:"></asp:Label>
-                        <asp:TextBox ID="txtBIRTHDAY" runat="server" CssClass="input {required:true}"></asp:TextBox>
-                        <div class="validate ui-state-highlight ui-corner-all" style="border: none;">
-                        </div>
+                </tr>
+
+                <!--生日、学历-->
+                <tr>
+                    <td nowrap="nowrap" class="TableData" width="70">出生年月:</td>
+                    <td nowrap="nowrap" class="TableData" style="width:325px;">
+                        <asp:TextBox ID="txtBIRTHDAY" runat="server" 
+                            CssClass="input {required:true}">
+                        </asp:TextBox>
+                        <div class="validate ui-state-highlight ui-corner-all" style="border: none;"></div>
                     </td>
-                    <td>
-                        <asp:Label ID="Label6" runat="server" Text="最高学历:"></asp:Label>
-                        <asp:TextBox ID="txtDEGREE" runat="server" CssClass="input {required:true}" Text="本科"></asp:TextBox>
-                        <div class="validate ui-state-highlight ui-corner-all" style="border: none;">
-                        </div>
+                    <td nowrap="nowrap" class="TableData" width="70">最高学历:</td>
+                    <td nowrap="nowrap" class="TableData" style="width:325px;">
+                        <asp:TextBox ID="txtDEGREE" runat="server" 
+                            CssClass="input {required:true}" Text="本科">
+                        </asp:TextBox>
+                        <div class="validate ui-state-highlight ui-corner-all" style="border: none;"></div>
                     </td>
                 </tr>
+
+                <!--政治面貌、身份证号-->
                 <tr>
-                    <td>
-                        <asp:Label ID="Label7" runat="server" Text="政治面貌:"></asp:Label>
+                    <td nowrap="nowrap" class="TableData" width="70">政治面貌:</td>
+                    <td nowrap="nowrap" class="TableData" >
                         <asp:TextBox ID="txtFACE" runat="server" CssClass="input {required:true}"></asp:TextBox>
-                        <div class="validate ui-state-highlight ui-corner-all" style="border: none;">
-                        </div>
+                        <div class="validate ui-state-highlight ui-corner-all" style="border: none;"></div>
                     </td>
-                    <td>
-                        <asp:Label ID="Label10" runat="server" Text="身份证号:"></asp:Label>
+                    <td nowrap="nowrap" class="TableData" width="70">身份证号:</td>
+                    <td nowrap="nowrap" class="TableData" >
                         <asp:TextBox ID="txtIDNUMBER" runat="server" CssClass="input {required:true}"></asp:TextBox>
-                        <div class="validate ui-state-highlight ui-corner-all" style="border: none;">
-                        </div>
-                    </td>
-                    <td>
-                        <asp:Label ID="Label11" runat="server" Text="工作证号:"></asp:Label>
-                        <asp:TextBox ID="txtJOBNUMBER" runat="server" CssClass="input {required:true}"></asp:TextBox>
-                        <div class="validate ui-state-highlight ui-corner-all" style="border: none;">
-                        </div>
+                        <div class="validate ui-state-highlight ui-corner-all" style="border: none;"></div>
                     </td>
                 </tr>
+
+                <!--工作证号、所学专业-->
                 <tr>
-                    <td>
-                        <asp:Label ID="Label8" runat="server" Text="所学专业:"></asp:Label>
+                    <td nowrap="nowrap" class="TableData" width="70">工作证号:</td>
+                    <td nowrap="nowrap" class="TableData" >
+                        <asp:TextBox ID="txtJOBNUMBER" runat="server" CssClass="input {required:true}"></asp:TextBox>
+                        <div class="validate ui-state-highlight ui-corner-all" style="border: none;"></div>
+                    </td>
+                    <td nowrap="nowrap" class="TableData" width="70">所学专业:</td>
+                    <td nowrap="nowrap" class="TableData" >
                         <asp:TextBox ID="txtPROF" runat="server" CssClass="input {required:true}"></asp:TextBox>
                         <div class="validate ui-state-highlight ui-corner-all"  style="border:none;"></div>
                     </td>
-                    <td>
-                        <asp:Label ID="Label9" runat="server" Text="联系方式:"></asp:Label>
+                </tr>
+
+                <!--联系方式、备注信息-->
+                <tr>
+                    <td nowrap="nowrap" class="TableData" width="70">联系方式:</td>
+                    <td nowrap="nowrap" class="TableData" >
                         <asp:TextBox ID="txtPhone" runat="server" CssClass="input {required:true}"></asp:TextBox>
-                        <div class="validate ui-state-highlight ui-corner-all" style="border: none;">
-                        </div>
+                        <div class="validate ui-state-highlight ui-corner-all" style="border: none;"></div>
                     </td>
-                    <td>
-                        <asp:Label ID="Label12" runat="server" Text="备注信息:"></asp:Label>
+                    <td nowrap="nowrap" class="TableData" width="70">备注信息:</td>
+                    <td nowrap="nowrap" class="TableData" >
                         <asp:TextBox ID="txtRemark" runat="server" CssClass="input"></asp:TextBox>
                     </td>
                 </tr>
+
+                <!--用户照片-->
                 <tr>
-                    <td colspan="3">
-                        <asp:Label ID="Label13" runat="server" Text="用户照片:"></asp:Label>
+                    <td nowrap="nowrap" class="TableData" width="70">用户照片</td>
+                    <td nowrap="nowrap" class="TableData" colspan="3" >
                         <asp:FileUpload ID="fileupPhoto" runat="server" />
                     </td>
                 </tr>
             </tbody>
-            <tfoot>
-                <tr>
-                    <td colspan="3" style="text-align: center;">
-                     <%--   <asp:Button ID="btnSubmit" runat="server" Text="提交" OnClick="btnSubmit_Click" />
-                        <asp:Button ID="btnCancel" runat="server" Text="重置" OnClick="btnCancel_Click" />--%>
-                    </td>
-                </tr>
-            </tfoot>
         </table>
     </div>
     <!--添加用户结束-->
     <!--浏览用户开始-->
     <div id="tabs-2">
-        <table class="table">
+        <table class="TableList" width="100%">
+            <tbody>
             <asp:Repeater ID="repList" runat="server">
                 <HeaderTemplate>
-                    <thead>
-                        <tr>
-                            <th>所属部门</th>
-                            <th>工作证号</th>
-                            <th>登录账号</th>
-                            <th>联系电话</th>
-                            <th>用户性别</th>
-                            <th>政治面貌</th>
-                            <th>最高学历</th>
-                            <th>所学专业</th>
-                            <th>出生年月</th>
-                            <th>身份证号</th>
-                        </tr>
-                    </thead>
+                    <tr class="TableHeader" align="center">
+                        <td>所属部门</td>
+                        <td>工作证号</td>
+                        <td>登录账号</td>
+                        <td>联系电话</td>
+                        <td>用户性别</td>
+                        <td>政治面貌</td>
+                        <td>最高学历</td>
+                        <td>所学专业</td>
+                        <td>出生年月</td>
+                        <td>身份证号</td>
+                    </tr>
                 </HeaderTemplate>
-                <ItemTemplate>
-                    <tbody>
-                        <tr>
-                            <td><%# Eval("dptname") %></td>
-                            <td><%# Eval("jobnumber")%></td>
-                            <td><%# Eval("username")%></td>
-                            <td><%# Eval("phone")%></td>
-                            <td><%# Eval("sex")%></td>
-                            <td><%# Eval("face")%></td>
-                            <td><%# Eval("DEGREE")%></td>
-                            <td><%# Eval("prof")%></td>
-                            <td><%# Eval("birthday")%></td>
-                            <td><%# Eval("idnumber")%></td>
-                        </tr>
-                    </tbody>
-                </ItemTemplate>
-                <FooterTemplate>
-                    <tfoot>
-                        <tr>
-                            <td>所属部门</td>
-                            <td>工作证号</td>
-                            <td>登录账号</td>
-                            <td>联系电话</td>
-                            <td>用户性别</td>
-                            <td>政治面貌</td>
-                            <td>最高学历</td>
-                            <td>所学专业</td>
-                            <td>出生年月</td>
-                            <td>身份证号</td>
-                        </tr>
-                    </tfoot>
-                </FooterTemplate>
+                <ItemTemplate>                    
+                    <tr class="TableLine1" align="center">
+                        <td><%# Eval("dptname") %></td>
+                        <td><%# Eval("jobnumber")%></td>
+                        <td><%# Eval("username")%></td>
+                        <td><%# Eval("phone")%></td>
+                        <td><%# Eval("sex")%></td>
+                        <td><%# Eval("face")%></td>
+                        <td><%# Eval("DEGREE")%></td>
+                        <td><%# Eval("prof")%></td>
+                        <td><%# Eval("birthday")%></td>
+                        <td><%# Eval("idnumber")%></td>
+                    </tr>                    
+                </ItemTemplate>                
             </asp:Repeater>
+            </tbody>
         </table>
         <webdiyer:AspNetPager ID="AspNetPager1" runat="server" CustomInfoHTML="共%PageCount%页，当前为第%CurrentPageIndex%页"
             FirstPageText="首页" LastPageText="尾页" NextPageText="下一页" PageIndexBoxType="TextBox"

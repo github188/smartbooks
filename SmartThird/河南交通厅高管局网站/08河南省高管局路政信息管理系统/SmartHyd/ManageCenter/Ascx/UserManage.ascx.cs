@@ -14,6 +14,8 @@ namespace SmartHyd.ManageCenter.Ascx {
         protected void Page_Load(object sender, EventArgs e) {
             if (!IsPostBack) {
                 BindUserList();
+
+                SetEntity(new Entity.BASE_USER());
             }
         }
 
