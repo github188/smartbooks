@@ -12,6 +12,30 @@ namespace SmartHyd.ManageCenter.Ascx {
         private BLL.BASE_LOG model = new BLL.BASE_LOG();
         protected void Page_Load(object sender, EventArgs e) {
             if (!IsPostBack) {
+                if ("" == Request.QueryString["Fid"] || null == Request.QueryString["Fid"])
+                {
+                    if (this.hidPrimary.Value == "-1")
+                    {
+                        this.LbTabName.Text = "新建部门";//设置选项卡名称
+                        this.LbHeadName.Text = "新建部门";//设置标题头名称
+                    }
+                    else
+                    {
+                        this.LbTabName.Text = "编辑部门信息";//设置选项卡名称
+                        this.LbHeadName.Text = "编辑部门信息";//设置标题头名称
+                        decimal DEPTID = Convert.ToDecimal(this.hidPrimary.Value);
+                        Entity.BASE_DEPT model = bll.GetEntity(DEPTID);
+                        SetEntity(model);
+                    }
+                }
+                else
+                {
+                    this.LbTabName.Text = "编辑部门信息";//设置选项卡名称
+                    this.LbHeadName.Text = "编辑部门信息";//设置标题头名称
+                    decimal DEPTID = Convert.ToDecimal(Request.QueryString["Fid"]);
+                    Entity.BASE_DEPT model = bll.GetEntity(DEPTID);
+                    SetEntity(model);
+                }
                 dataBindToRepeater();
             }
         }

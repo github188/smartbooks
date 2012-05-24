@@ -3,8 +3,12 @@
 <%@ Register Src="../../Ascx/Department.ascx" TagName="Department" TagPrefix="uc1" %>
 <div id="tab">
     <ul id="menu">
-        <li><a href="#tabs-1">新建部门</a></li>
-        <li><a href="#tabs-2">部门列表</a></li>
+        <li><a href="#tabs-1">
+        <asp:Label ID="LbTabName" runat="server" Text=""></asp:Label>
+        </a></li>
+        <li><a href="#tabs-2">
+        <asp:Label ID="LbTabName1" runat="server" Text="部门列表"></asp:Label>
+        </a></li>
     </ul>
     <!--新建部门开始-->
     <div id="tabs-1">
@@ -13,7 +17,7 @@
                 <!--首选行-->
                 <tr class="TableHeader">
                     <td colspan="2">
-                        新建部门
+                       <asp:Label ID="LbHeadName" runat="server" Text=""></asp:Label>
                     </td>
                 </tr>
                 <!--部门名称-->
@@ -85,25 +89,25 @@
                 </HeaderTemplate>
                 <ItemTemplate>
                     <tr class="TableLine1">
-                        <td>
+                        <td align="center">
                             <asp:CheckBox ID="CheckSingle" runat="server" />
                             <asp:Label ID="DEPTID" runat="server" Text='<%#Eval("DEPTID") %>' Visible="false"></asp:Label>
                             <asp:HiddenField ID="hidPrimary" runat="server" Value="-1" />
                         </td>
-                        <td>
+                        <td align="center">
                             <%# Eval("DPTNAME")%>
                         </td>
-                        <td>
+                        <td align="center">
                             <%# Eval("PARENTID")%>
                         </td>
-                        <td>
+                        <td align="center">
                             <%# Eval("DPTINFO")%>
                         </td>
-                        <td>
+                        <td align="center">
                             <%# Eval("STATUS")%>
                         </td>
-                        <td>
-                            <a href="DeptEdit.aspx?fid=<%# Eval("DEPTID")%>">编辑</a>
+                        <td align="center">
+                            <a href="Dept.aspx?Fid=<%# Eval("DEPTID")%>">编辑</a>
                             <%-- <a href="" id="delhref" runat="server"> 删除</a>
                                  onclick="javascript:delete_notify(<%# Eval("AFFICHEID")%>)"--%>
                         </td>
