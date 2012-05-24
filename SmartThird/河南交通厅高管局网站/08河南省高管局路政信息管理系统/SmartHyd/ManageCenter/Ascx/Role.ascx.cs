@@ -13,6 +13,30 @@ namespace SmartHyd.ManageCenter.Ascx
         private BLL.BASE_ROLE bll = new BLL.BASE_ROLE();
         protected void Page_Load(object sender, EventArgs e)
         {
+            if ("" == Request.QueryString["rid"] || null == Request.QueryString["rid"])
+            {
+                if (this.hidPrimary.Value == "-1")
+                {
+                    this.LbTabName.Text = "添加角色";//设置选项卡名称
+                    this.LbHeadName.Text = "添加角色";//设置标题头名称
+                }
+                else
+                {
+                    this.LbTabName.Text = "编辑角色";//设置选项卡名称
+                    this.LbHeadName.Text = "编辑角色";//设置标题头名称
+                    int RoleID = Convert.ToInt32(this.hidPrimary.Value);
+                    Entity.BASE_ROLE model = bll.GetEntity(RoleID);
+                    SetEntity(model);
+                }
+            }
+            else
+            {
+                this.LbTabName.Text = "编辑角色";//设置选项卡名称
+                this.LbHeadName.Text = "编辑角色";//设置标题头名称
+                int RoleID = Convert.ToInt32(Request.QueryString["rid"]);
+                Entity.BASE_ROLE model = bll.GetEntity(RoleID);
+                SetEntity(model);
+            }
             dataBindToRepeater();
         }
 
@@ -85,7 +109,21 @@ namespace SmartHyd.ManageCenter.Ascx
             Smart.Utility.Alerts.Alert("test");
         }
         //修改
-        public override void BtnUpdate_Click(object sender, EventArgs e) { }
+        public override void BtnUpdate_Click(object sender, EventArgs e) {
+            //获取实体
+            Entity.BASE_ROLE model = GetEntity();
+
+            //修改数据
+            if (bll.update(model))
+            {
+                //重新加载当前页
+                Response.Redirect("Role.aspx#tabs-2");
+            }
+            else
+            {
+                Response.Write("<script type='text/javascript'>alert('请检查数据是否填写完整！');</script>");
+            }
+        }
         //查看
         public override void BtnView_Click(object sender, EventArgs e) { }
         //查询

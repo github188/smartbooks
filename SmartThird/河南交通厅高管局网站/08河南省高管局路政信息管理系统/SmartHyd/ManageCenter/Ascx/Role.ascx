@@ -2,25 +2,30 @@
 <%@ Register Assembly="AspNetPager" Namespace="Wuqi.Webdiyer" TagPrefix="webdiyer" %>
 <div id="tab">
     <ul>
-        <li><a href="#tabs-1">添加角色</a></li>
-        <li><a href="#tabs-2">角色管理</a></li>
+        <li><a href="#tabs-1">
+        <asp:Label ID="LbTabName" runat="server" Text=""></asp:Label>
+        </a></li>
+        <li><a href="#tabs-2">
+        <asp:Label ID="LbTabName1" runat="server" Text="角色管理"></asp:Label>
+        </a></li>
     </ul>
     <!--添加角色开始-->
     <div id="tabs-1">
-        <table class="edit" width="100%">
+        <table class="TableBlock" width="100%">
             <thead>
-                <tr>
+                <tr class="TableHeader">
                     <th colspan="3">
-                        添加角色
+                        <asp:Label ID="LbHeadName" runat="server" Text=""></asp:Label>
                     </th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>
-                        <asp:Label ID="Label1" runat="server" Text="角色名称:"></asp:Label>
+                    <td class="TableData">
+                        <asp:Label ID="LbRoleName" runat="server" Text="角色名称:"></asp:Label>
                         <asp:HiddenField ID="hidPrimary" runat="server" Value="-1" />
-                    
+                    </td>
+                    <td class="TableData">
                         <asp:TextBox ID="TxtRoleName" runat="server" CssClass="input {required:true}"></asp:TextBox><span>*</span>
                         <div class="validate ui-state-highlight ui-corner-all" style="border: none;">
                         </div>
@@ -28,8 +33,9 @@
                 </tr>
                 <tr>
                     <td>
-                        <asp:Label ID="Label14" runat="server" Text="角色描述:"></asp:Label>
-                  
+                        <asp:Label ID="LbDesc" runat="server" Text="角色描述:"></asp:Label>
+                  </td>
+                    <td class="TableData">
                         <asp:TextBox ID="txtdesc" runat="server" CssClass="input {required:true}" TextMode="MultiLine"></asp:TextBox>
                         <div class="validate ui-state-highlight ui-corner-all" style="border: none;">
                         </div>
@@ -80,7 +86,7 @@
                                 <%#Eval("ROLEINFO")%>
                             </td>
                             <td>
-                                <a href='RoleEdit.aspx?rid=<%#Eval("ROLEID")%>'>编辑</a>
+                                <a href='Role.aspx?rid=<%#Eval("ROLEID")%>'>编辑</a>
                                 <a href="">删除</a>
                             </td>
                         </tr>
