@@ -17,7 +17,8 @@ namespace SmartHyd.ManageCenter.Ascx {
         protected void Page_Load(object sender, EventArgs e) {
             //选定节点改变时触发的事件
             TreeView1.OnSelectedNodeChanged += new SmartHyd.Ascx.OnSelectedNodeChanged(TreeView1_OnSelectedNodeChanged);
-
+            //publishlist.Visible = false;
+            
             if (!IsPostBack) {
                 //获取用户Session
                 userSession = (Utility.UserSession)Session["user"];
@@ -33,7 +34,6 @@ namespace SmartHyd.ManageCenter.Ascx {
             this.AspNetPager2.CurrentPageIndex = e.NewPageIndex;
             BindPublichList();
         }
-
         //绑定发文列表数据
         private void BindPublichList() {
             DataTable dt = new DataTable();
@@ -53,15 +53,14 @@ namespace SmartHyd.ManageCenter.Ascx {
 
             reppublishlist.DataSource = pds;
             reppublishlist.DataBind();
-        }
-        
+        }        
         //选定节点改变时触发的事件
         private void TreeView1_OnSelectedNodeChanged(object sender, object value) {
             typeId = Convert.ToInt32(value.ToString());
 
             //重新绑定发文列表
             BindPublichList();
-        }
+        }              
 
         #region 页面功能按钮事件(必须重写基类虚方法，否则按钮的事件是无效的)
         //添加
@@ -93,5 +92,25 @@ namespace SmartHyd.ManageCenter.Ascx {
         //授权
         public override void BtnGrant_Click(object sender, EventArgs e) { }
         #endregion
+
+        //分页数据列表按钮事件
+        protected void reppublishlist_ItemCommand(object source, RepeaterCommandEventArgs e) {
+            switch (e.CommandName) {
+                //编辑
+                case "edit":
+                    Response.Redirect(string.Format("DocumentCreate.aspx?id={0}", e.CommandArgument.ToString()));
+                    break;
+                //删除
+                case "delete": break;
+                //结贴
+                case "checkout":
+                    Response.Redirect(string.Format("DocumentCheckOut.aspx?id={0}", e.CommandArgument.ToString()));
+                    break;
+                //详情
+                case "detail":
+                    Response.Redirect(string.Format("DocumentDetail.aspx?id={0}", e.CommandArgument.ToString()));
+                    break;
+            }
+        }
     }
 }

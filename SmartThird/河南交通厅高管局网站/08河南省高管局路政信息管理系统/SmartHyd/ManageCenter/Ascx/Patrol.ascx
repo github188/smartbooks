@@ -177,7 +177,7 @@
             FirstPageText="首页" LastPageText="尾页" NextPageText="下一页" PageIndexBoxType="TextBox"
             PrevPageText="上一页" ShowCustomInfoSection="Right" ShowPageIndexBox="Auto" SubmitButtonText="Go"
             TextAfterPageIndexBox="页" TextBeforePageIndexBox="转到" OnPageChanging="AspNetPager1_PageChanging"
-            PageSize="20">
+            PageSize="20" CssClass="anpager" CurrentPageButtonClass="cpb">
         </webdiyer:AspNetPager>
     </div>
     <!--日志查看结束-->

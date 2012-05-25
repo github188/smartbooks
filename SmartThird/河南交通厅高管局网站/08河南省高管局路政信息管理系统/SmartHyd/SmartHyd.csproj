@@ -28,7 +28,7 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
@@ -61,6 +61,7 @@
     <Content Include="Images\big_btn_a.png" />
     <Content Include="Images\notify_open.gif" />
     <Content Include="Images\pbar-ani.gif" />
+    <Content Include="Images\sale_manage.png" />
     <Content Include="Images\user-ico.jpg" />
     <Content Include="ManageCenter\Affiche.aspx" />
     <Content Include="ManageCenter\Area.aspx" />
@@ -668,6 +669,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Document\" />
+    <Folder Include="Images\FaceImage\" />
     <Folder Include="Log\" />
     <Folder Include="Scripts\kindeditor-4.0.5\attached\" />
     <Folder Include="Temp\" />

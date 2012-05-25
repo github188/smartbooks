@@ -31,7 +31,7 @@
                         </div>
                     </td>
                     <td rowspan="8" valign="top">
-                        <asp:TreeView ID="TreeViewAcceptUnit" runat="server" Height="100%">
+                        <asp:TreeView ID="TreeViewAcceptUnit" runat="server" Height="100%" CssClass="treeview">
                         </asp:TreeView>
                     </td>
                 </tr>
@@ -125,9 +125,7 @@
                 </tr>
                 <!--操作按钮-->
                 <tr class="TableControl" align="center">
-                    <td colspan="3" nowrap="nowrap">
-                        <asp:Button ID="btnSubmit" runat="server" Text="提交" CssClass="BigButtonA" />
-                        <asp:Button ID="btnCancel" runat="server" Text="返回" CssClass="BigButtonA" />
+                    <td colspan="3" nowrap="nowrap">                        
                     </td>
                 </tr>
             </tbody>

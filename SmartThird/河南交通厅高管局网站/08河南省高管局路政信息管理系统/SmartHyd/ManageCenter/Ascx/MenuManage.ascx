@@ -114,6 +114,33 @@
     <!--添加菜单 end-->
     <!--菜单列表 start-->
     <div id="tabs-2">
+        <table class="TableList" width="100%" style="margin-bottom:20px;">
+            <tbody>
+                <tr class="TableHeader" align="center">
+                    <td>菜单图标</td>
+                    <td>菜单名称</td>
+                    <td>菜单说明</td>                    
+                    <td>菜单状态</td>
+                </tr>
+            <asp:Repeater ID="repList" runat="server">
+                <ItemTemplate>                    
+                    <tr class="TableLine1" align="center">
+                        <td><img src='../<%#Eval("ICON")%>' /></td>                        
+                        <td><a href='../<%#Eval("MENUURL")%>'><%#Eval("MENUNAME")%></a></td>
+                        <td><%#Eval("MENUINFO")%></td> 
+                        <td><%#Eval("STATUS").ToString().Equals("0")? "正常":"关闭" %></td>
+                    </tr>                    
+                </ItemTemplate>                
+            </asp:Repeater>
+            </tbody>
+        </table>
+        <webdiyer:AspNetPager ID="AspNetPager1" runat="server" 
+            CustomInfoHTML="共%PageCount%页，当前为第%CurrentPageIndex%页"
+            FirstPageText="首页" LastPageText="尾页" NextPageText="下一页" PageIndexBoxType="TextBox"
+            PrevPageText="上一页" ShowCustomInfoSection="Right" ShowPageIndexBox="Auto" SubmitButtonText="Go"
+            TextAfterPageIndexBox="页" TextBeforePageIndexBox="转到" OnPageChanging="AspNetPager1_PageChanging"
+            PageSize="10" CssClass="anpager" CurrentPageButtonClass="cpb" >
+        </webdiyer:AspNetPager>
     </div>
     <!--菜单列表 end-->
 </div>

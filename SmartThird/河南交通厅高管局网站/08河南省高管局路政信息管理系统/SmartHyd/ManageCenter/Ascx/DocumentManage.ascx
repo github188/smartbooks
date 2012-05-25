@@ -35,7 +35,7 @@
                                     <tbody>
                                         <!--标题行-->
                                         <tr class="TableHeader" align="center">
-                                            <td>
+                                            <td width="235">
                                                 操作选项
                                             </td>
                                             <td>
@@ -55,12 +55,15 @@
                                             </td>
                                         </tr>
                                         <!--项集合-->
-                                        <asp:Repeater ID="reppublishlist" runat="server">
+                                        <asp:Repeater ID="reppublishlist" runat="server" OnItemCommand="reppublishlist_ItemCommand">
                                             <ItemTemplate>
                                                 <tr class="TableLine1" align="center">
                                                     <td>
-                                                        <a href='DocumentDetail.aspx?id=<%#Eval("id") %>'>详细</a> | 
-                                                        <a href='DocumentCheckOut.aspx?id=<%#Eval("id") %>'>结贴</a>
+                                                        <asp:Button runat="server" CommandName="edit" Text="编辑" CssClass="BigButtonA" CommandArgument='<%#Eval("id")%>' />
+                                                        <asp:Button runat="server" CommandName="delete" Text="删除" CssClass="BigButtonA" CommandArgument='<%#Eval("id")%>' />
+                                                        <asp:Button runat="server" CommandName="checkout" Text="结贴" CssClass="BigButtonA"
+                                                            CommandArgument='<%#Eval("id")%>' />
+                                                        <asp:Button runat="server" CommandName="detail" Text="详情" CssClass="BigButtonA" CommandArgument='<%#Eval("id")%>' />
                                                     </td>
                                                     <td align="left">
                                                         <a href='DocumentReply.aspx?id=<%#Eval("id") %>'>

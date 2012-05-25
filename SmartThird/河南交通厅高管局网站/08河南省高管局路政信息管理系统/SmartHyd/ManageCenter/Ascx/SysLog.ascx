@@ -22,9 +22,6 @@
                         <td>
                             日志内容
                         </td>
-                        <td>
-                            操作人
-                        </td>
                     </tr>
                 </HeaderTemplate>
                 <ItemTemplate>                    
@@ -40,9 +37,6 @@
                         </td>
                         <td>
                             <%# Eval("DESCRIPTION")%>
-                        </td>
-                        <td>
-                            <%# Eval("OPERATORID")%>
                         </td>
                     </tr>
                 </ItemTemplate>

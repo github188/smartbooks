@@ -8,7 +8,7 @@
             var editor;
             KindEditor.ready(function (K) {
                 /*发文内容*/
-                editor = K.create('textarea[id="ctl00_ContentPlaceHolder1_PublishDocument1_txtContent"]', {
+                editor = K.create('textarea[id="id="ctl00_ContentPlaceHolder1_DocumentCreate1_txtContent""]', {
                     items: ['source', '|', 'undo', 'redo', '|', 'cut', 'copy',
                             'paste', 'plainpaste', 'wordpaste'],
                     width: "100%",

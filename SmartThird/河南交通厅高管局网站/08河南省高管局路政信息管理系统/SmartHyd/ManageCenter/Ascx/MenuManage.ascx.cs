@@ -13,10 +13,30 @@ namespace SmartHyd.ManageCenter.Ascx {
 
         protected void Page_Load(object sender, EventArgs e) {
             if (!IsPostBack) {
+                //绑定菜单分类
                 BindingParentMenuNode();
+                
+                //绑定菜单列表
+                GetMenuList();
             }
         }
 
+        private void GetMenuList() {
+            DataTable dt = new DataTable();
+            dt = bllMenu.GetList("1=1");
+
+            //初始化分页数据
+            AspNetPager1.RecordCount = dt.Rows.Count;
+            PagedDataSource pds = new PagedDataSource();
+            pds.DataSource = dt.DefaultView;
+            pds.AllowPaging = true;
+            pds.CurrentPageIndex = AspNetPager1.CurrentPageIndex - 1;
+            pds.PageSize = AspNetPager1.PageSize;
+
+            //绑定分页后的数据
+            repList.DataSource = pds;
+            repList.DataBind();
+        }
 
         private Entity.BASE_MENU GetModel() {
             Entity.BASE_MENU model = new Entity.BASE_MENU();
@@ -74,6 +94,11 @@ namespace SmartHyd.ManageCenter.Ascx {
             bllMenu.Add(model);
 
             Response.Redirect(Request.UrlReferrer.AbsoluteUri, true);
+        }
+        //分页事件
+        protected void AspNetPager1_PageChanging(object src, Wuqi.Webdiyer.PageChangingEventArgs e) {
+            this.AspNetPager1.CurrentPageIndex = e.NewPageIndex;
+            GetMenuList();
         }
     }
 }

@@ -82,5 +82,9 @@ namespace SmartHyd.ManageCenter.Ascx {
                 Smart.Utility.Alerts.Alert("回文列表时空的");
             }
         }
+        //返回
+        protected void btnBacktrack_Click(object sender, EventArgs e) {
+            Response.Redirect(Request.UrlReferrer.AbsoluteUri, true);
+        }
     }
 }

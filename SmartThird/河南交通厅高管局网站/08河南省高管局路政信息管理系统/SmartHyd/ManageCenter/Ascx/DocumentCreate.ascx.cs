@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,7 +9,7 @@ using System.Data;
 using System.IO;
 
 namespace SmartHyd.ManageCenter.Ascx {
-    public partial class DocumentCreate : UI.BaseUserControl {
+    public partial class DocumentCreate : UI.BaseUserControl {        
         #region 私有字段
         private BLL.BASE_ARTICLE bll = new BLL.BASE_ARTICLE();
         private BLL.BASE_ARTICLE_TYPE bllType = new BLL.BASE_ARTICLE_TYPE();
@@ -28,6 +29,17 @@ namespace SmartHyd.ManageCenter.Ascx {
                 DataTable dt = bllType.GetDeptNodeData(13); //默认采用13部门
                 ddlTypeId.Items.Clear();
                 InitTreeNodes(ddlTypeId, 0, dt, 0);
+
+                //获取编辑模式和ID
+                if (Request.QueryString["id"] != null) {
+                    int id = Convert.ToInt32(Request.QueryString["id"].ToString());
+                    //获取实体
+                    Entity.BASE_ARTICLE model = new Entity.BASE_ARTICLE();
+                    model = bll.GetEntity(id);
+
+                    //初始化实体到页面
+                    SetEntity(model);
+                }
             }
         }
 
@@ -46,7 +58,8 @@ namespace SmartHyd.ManageCenter.Ascx {
             }
         }
         //获取实体
-        private Entity.BASE_ARTICLE GetEntity() {
+        private Entity.BASE_ARTICLE GetEntity() {            
+
             Entity.BASE_ARTICLE model = new Entity.BASE_ARTICLE();
             model.CONTENT = txtContent.Text;    //内容            
             model.ISREPLY = Convert.ToInt32(rdoIsReply.SelectedValue);  //允许回复            
@@ -56,31 +69,33 @@ namespace SmartHyd.ManageCenter.Ascx {
             model.TITLE = txtTitle.Text;        //标题
             model.TYPEID = Convert.ToInt32(ddlTypeId.SelectedValue);    //公文类别
             model.PARENTID = 0;                 //父发文编号
-            model.TIMESTAMP = DateTime.Now;     //时间戳
+            model.TIMESTAMP = DateTime.Now;     //时间戳            
+            model.ANNEX = "";                   //附件]
+
+            model.USERID = 0;
+            model.DEPTID = 13;
 
             //model.USERID = userSession.USERID;  //用户编号
             //model.DEPTID = userSession.Department[0].DEPTID;    //部门
-            model.USERID = 0;
-            model.DEPTID = 13;
-            model.ANNEX = "";                   //附件
-
             return model;
         }
         //设置实体
         private void SetEntity(Entity.BASE_ARTICLE model) {
-            txtContent.Text = model.CONTENT;                        //内容
-            rdoIsReply.SelectedValue = model.ISREPLY.ToString();    //允许回复
-            txtSCORE.Text = model.SCORE.ToString();                 //分值
-            txtSendCode.Text = model.SENDCODE;                      //发文字号
-            ddlStatus.SelectedValue = model.STATUS.ToString();      //发文状态
-            txtTitle.Text = model.TITLE;                            //标题
-            ddlTypeId.SelectedValue = model.TYPEID.ToString();      //公文类别
+            if (model != null) {
+                txtContent.Text = model.CONTENT;                        //内容
+                rdoIsReply.SelectedValue = model.ISREPLY.ToString();    //允许回复
+                txtSCORE.Text = model.SCORE.ToString();                 //分值
+                txtSendCode.Text = model.SENDCODE;                      //发文字号
+                ddlStatus.SelectedValue = model.STATUS.ToString();      //发文状态
+                txtTitle.Text = model.TITLE;                            //标题
+                ddlTypeId.SelectedValue = model.TYPEID.ToString();      //公文类别
 
-            //model.PARENTID = 0;                 //父发文编号
-            //model.TIMESTAMP = DateTime.Now;     //时间戳
-            //model.USERID = userSession.USERID;  //用户编号
-            //model.DEPTID = userSession.Department[0].DEPTID;    //部门
-            //model.ANNEX = "";                   //附件
+                //model.PARENTID = 0;                 //父发文编号
+                //model.TIMESTAMP = DateTime.Now;     //时间戳
+                //model.USERID = userSession.USERID;  //用户编号
+                //model.DEPTID = userSession.Department[0].DEPTID;    //部门
+                //model.ANNEX = "";                   //附件
+            }
         }
         //遍历每一个部门节点
         private void RecursiveSubNode(TreeNode node, int articleId) {
@@ -234,7 +249,7 @@ namespace SmartHyd.ManageCenter.Ascx {
                 }
 
                 //重新加载当前页
-                Response.Redirect(Request.Url.AbsoluteUri, true);
+                Response.Redirect("DocumentManage.aspx", true);
             } else {
                 Smart.Utility.Alerts.Alert("请选择至少一个公文接收的部门");
             }

@@ -13,6 +13,15 @@ namespace SmartHyd.BLL {
         }
 
         /// <summary>
+        /// 获取实体
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public Entity.BASE_ARTICLE GetEntity(int id) {
+            return dal.GetEntity(id);
+        }
+
+        /// <summary>
         /// 添加
         /// </summary>
         /// <param name="model">实体</param>

@@ -117,7 +117,7 @@ namespace SmartHyd.ManageCenter.Ascx
             logmodel.CREATEDATE = DateTime.Now;                   //日志创建时间
             logmodel.DESCRIPTION = "添加公告";                             //日志信息内容
             logmodel.OPERATORID = 23;                    //操作人
-            logmodel.IPADDRESS = Smart.Utility.IpAddress.getIP();                 //ip地址
+            logmodel.IPADDRESS = Smart.Utility.IpAddress.GetLocationIpAddress();                 //ip地址
             
             logbll.Add(logmodel);
             //重新加载当前页

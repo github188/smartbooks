@@ -15,6 +15,8 @@
                         <span class="big3" style=" margin-right:20px;">结贴操作</span>
                         <asp:Button ID="btnCheckOut" runat="server" Text="结贴" CssClass="BigButtonA" 
                             onclick="btnCheckOut_Click" />
+                        <asp:Button ID="btnBacktrack" runat="server" Text="返回" 
+                            onclick="btnBacktrack_Click" CssClass="BigButtonA" />
                     </td>
                 </tr>
             </tbody>
@@ -60,9 +62,8 @@
                                         <%#Eval("TIMESTAMP")%>
                                     </td>
                                     <td>
-                                        <input type="text" value='<%#Eval("score")%>' 
-                                            class="input {required:true,minlength:1,maxlength:3}" 
-                                            style=" width=75px;" />
+                                        <input type="text" value='<%#Eval("score") %>' 
+                                            class="input {required:true,minlength:1,maxlength:3}" style="width:75px;" />
                                         <div class="validate ui-state-highlight ui-corner-all " 
                                             style="border: none;"></div>
                                     </td>
