@@ -17,13 +17,13 @@ namespace SmartHyd.ManageCenter.Ascx
             {
                 if (this.hidPrimary.Value == "-1")
                 {
-                    //this.LbTabName.Text = "添加角色";//设置选项卡名称
-                    //this.LbHeadName.Text = "添加角色";//设置标题头名称
+                    this.LbTabName.Text = "添加角色";//设置选项卡名称
+                    this.LbHeadName.Text = "添加角色";//设置标题头名称
                 }
                 else
                 {
-                    //this.LbTabName.Text = "编辑角色";//设置选项卡名称
-                    //this.LbHeadName.Text = "编辑角色";//设置标题头名称
+                    this.LbTabName.Text = "编辑角色";//设置选项卡名称
+                    this.LbHeadName.Text = "编辑角色";//设置标题头名称
                     int RoleID = Convert.ToInt32(this.hidPrimary.Value);
                     Entity.BASE_ROLE model = bll.GetEntity(RoleID);
                     SetEntity(model);
@@ -31,8 +31,8 @@ namespace SmartHyd.ManageCenter.Ascx
             }
             else
             {
-                //this.LbTabName.Text = "编辑角色";//设置选项卡名称
-                //this.LbHeadName.Text = "编辑角色";//设置标题头名称
+                this.LbTabName.Text = "编辑角色";//设置选项卡名称
+                this.LbHeadName.Text = "编辑角色";//设置标题头名称
                 int RoleID = Convert.ToInt32(Request.QueryString["rid"]);
                 Entity.BASE_ROLE model = bll.GetEntity(RoleID);
                 SetEntity(model);

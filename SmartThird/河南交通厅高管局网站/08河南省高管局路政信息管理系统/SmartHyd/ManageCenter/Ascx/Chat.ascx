@@ -11,7 +11,7 @@
         <tr>
             <td class="left">
             </td>
-            <td>
+            <td align="center">
                 发送消息
             </td>
             <td class="right">
@@ -20,16 +20,16 @@
     </table>
     <table class="TableBlock no-top-border" width="600">
         <tr class="TableData">
-            <td>
+            <td style="width:70px">
                 收信人：
             </td>
             <td>
                 <asp:HiddenField ID="hidPrimary" runat="server" Value="-1"/>
-                <asp:TextBox ID="TxtTouser" runat="server" CssClass="input"></asp:TextBox>
-               <%--   <textarea cols="55" name="TO_NAME" rows="2" class="BigStatic" wrap="yes"></textarea>
-              <a href="javascript:;" class="orgAdd" onclick="SelectUser('2','TO_UID', 'TO_NAME', '', '', '1')">
-                    添加</a> <a href="javascript:;" class="orgClear" onclick="ClearUser('TO_UID', 'TO_NAME')">
-                        清空</a>--%>
+                <asp:TextBox ID="TxtTouser" runat="server" CssClass="input" Width="354px"></asp:TextBox>
+               <%--   <textarea cols="55" name="TO_NAME" rows="2" class="BigStatic" wrap="yes"></textarea>--%>
+              <a href="javascript:;" class="orgAdd" onclick="SelectUser()">
+                    添加</a> <a href="javascript:;" class="orgClear" onclick="ClearUser()">
+                        清空</a>
             </td>
         </tr>
        <%-- <tr class="TableData">
@@ -55,6 +55,30 @@
             </td>
         </tr>
     </table>
+     <!--dialog窗口开始-->
+        <div id="overlay">
+        </div>
+        <div id="dialog" class="ModalDialog" style="display: none" >
+            <div class="header">
+                <span id="title" class="title">收信人列表</span><a class="operation" href="javascript:HideDialog('send');"></a></div>
+            <table width="95%" class="table" align="center">
+                <thead>
+                    <tr>
+                        <td class="TableContent">
+                            请选择收信人
+                        </td>
+                    </tr>
+                </thead>
+                <tr>
+                    <td colspan="2" class="TableData">
+                        <asp:CheckBoxList ID="CBLUser" runat="server">
+                        </asp:CheckBoxList>
+                    </td>
+                </tr>
+            </table>
+            <input type="button" id="btnsubmit" value="确定" onclick="javascript:btn_submit()" />
+        </div>
+        <!--dialog窗口结束-->
     </div>
     <!--发送消息结束-->
     <!--消息列表开始-->

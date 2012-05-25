@@ -17,6 +17,7 @@ namespace SmartHyd.ManageCenter.Ascx
             if (!IsPostBack)
             {
                 dataBindToRepeater();
+                UserBind();//用户树绑定
             }
         }
         //使用dataBindToRepeater()方法绑定部门数据
@@ -36,6 +37,23 @@ namespace SmartHyd.ManageCenter.Ascx
 
             this.RptList.DataSource = pds; //定义数据源
             this.RptList.DataBind(); //绑定数据
+        }
+        public void UserBind()
+        { 
+             DataTable dt = new DataTable();
+
+            dt = userbll.GetList("1=1");
+            
+            foreach (DataRow dr in dt.Rows)
+            {
+                //node = new TreeNode();
+                //this.ListUser.Items.Add(node);
+                //node.Value = dr["USERID"].ToString();
+                //node.Text = (string)dr["USERNAME"];
+                //node.ShowCheckBox = true;
+               
+                this.CBLUser.Items.Add(dr["USERNAME"].ToString());
+            }
         }
         /// <summary>
         /// 获得通讯消息实体数据
@@ -118,5 +136,17 @@ namespace SmartHyd.ManageCenter.Ascx
             this.AspNetPager1.CurrentPageIndex = e.NewPageIndex;
             dataBindToRepeater();
         }
+
+        //protected void Btn_submit_Click(object sender, EventArgs e)
+        //{
+        //    Response.Write("aaaaaaaaaaa");   
+        //    for (int i = 0; i < this.CBLUser.Items.Count; i++)
+        //    {
+        //        if (this.CBLUser.Items[i].Selected)
+        //        {
+        //            this.TxtTouser.Text += this.CBLUser.Items[i].Text + ",";
+        //        }
+        //    }
+        //}
     }
 }
