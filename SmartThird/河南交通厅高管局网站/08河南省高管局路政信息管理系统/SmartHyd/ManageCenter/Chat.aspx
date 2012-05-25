@@ -2,7 +2,6 @@
 
 <%@ Register Src="~/ManageCenter/Ascx/Chat.ascx" TagName="Chat" TagPrefix="uc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-<script type="text/jscript" src="../Scripts/Module.js"></script>
 <script type="text/jscript">
     $(function () {
 
@@ -53,11 +52,40 @@
 
         return (true);
     }
+    //选择收信人
+    function SelectUser() {
+        $(function () {
 
+            var dialog = $("#dialog").dialog({
+                modal: false,
+                title: "收信人列表窗口"
+            });
+
+        });
+
+    }
+    //清空文本框
+    function ClearUser() {
+        document.getElementById('ctl00_ContentPlaceHolder1_Chat1_TxtTouser').value = "";
+    }
+    function btn_submit() {
+        var elem = document.getElementsByTagName("input");
+        var user = document.getElementById('ctl00_ContentPlaceHolder1_Chat1_TxtTouser');
+
+        for (var i = 0; i < elem.length; i++) {
+            
+                    if (elem[i].type == "checkbox") {
+                if (elem[i].checked == true) {
+                    user.value += elem[i] + ",";
+                }
+            }
+        }
+    }
     function CheckSend(evt) {
         if (evt.data.getKey() == 10 && CheckForm())
             document.form1.submit();
     }
+ 
 
 </script>
 </asp:Content>
