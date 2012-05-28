@@ -73,5 +73,14 @@ namespace SmartHyd.BLL
                 return false;
             }
         }
+        /// <summary>
+        /// 删除日志数据
+        /// </summary>
+        /// <param name="LOGID"></param>
+        /// <returns></returns>
+        public bool Del(decimal LOGID)
+        {
+            return dal.Delete(LOGID);
+        }
     }
 }
