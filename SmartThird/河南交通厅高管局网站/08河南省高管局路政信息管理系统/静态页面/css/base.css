@@ -4,27 +4,30 @@ body, div {
 }
 body {
 	font-family: "lucida Grande", Verdana;
-	font-size: 12px;
+	font-size: 12px;	
 }
 a{
-	color:#000000;
+	color: #334b63;
 }
 
 /*
  *顶部内容
  */
 .ui-hander-content {
-	height: 68px;
+	height: 80px;
 	width: 100%;
 	float: left;
+	background-image:url("../images/ui-hander-background.png");
+	background-repeat:repeat-x;
 	overflow: hidden;
+	color: #d6e0ea;
 }
 /*
  * 系统Logo
  */
 .ui-hander-logo {
-	width: 220px;
-	height: 68px;
+	width: 426px;
+	height: 80px;
 	float: left;
 }
 /*
@@ -32,39 +35,18 @@ a{
  */
 .ui-hander-userinfo {
 	width: 188px;
-	height: 68px;
+	height: 55px;
 	float: left;
+	padding-top: 20px;
 }
 /*
- * 用户Logo
+ * 用户昵称和部门
  */
-.ui-hander-userlogo {
-	width: 58px;
-	height: 58px;
-	float: left;
-	margin: 5px;
-	cursor: pointer;
-}
-/*
- * 用户昵称
- */
-.ui-hander-nick {
-	float: left;
-	width: 120px;
-	height: 30px;
-	line-height: 30px;
-	font-size: 20px;
-	margin-top: 5px 0px 0px 0px;
-	font-weight: bold;
-}
-/*应用图标*/
-.ui-hander-application {
-	width: 24px;
-	height: 24px;
-	margin: 8px 4px 0px 0px;
-	border: none;
-	float: left;
-	cursor: pointer;
+.ui-hander-userinfo span,a{
+	height: 25px;
+	line-height: 25px;
+	color: #d6e0ea;
+	text-decoration:none;
 }
 /*
  * 反馈信息
@@ -73,11 +55,31 @@ a{
 	height: 30px;
 	line-height: 30px;
 	float: right;
+	padding-top: 10px;
 	padding-right: 11px;
 	position: absolute;
 	top: 0px;
 	right: 0px;
 }
+/*
+ * 搜索框
+ */
+.ui-hander-searchbox{
+	height:21px;
+	line-height: 21px;
+	width: 252px;
+	border:none;
+	float: right;
+	overflow:hidden;
+	margin-right: 11px;
+	padding-left:25px;
+	position: absolute;
+	top: 43px;
+	right: 0px;
+	color:#999999;
+	background-image: url("../images/ui-hander-searchbox.png");
+}
+
 
 /*
  * 左侧内容
@@ -86,7 +88,11 @@ a{
 	width: 189px;
 	float: left;
 	overflow: hidden;
-	background-color: #dfe1e3;
+	background-color: #e7eaef;
+}
+/*链接文本颜色*/
+.ul-left-content a{
+	color: #334b63;
 }
 
 /*
@@ -97,30 +103,46 @@ a{
 	overflow: hidden;
 	padding: 8px 0px 8px 0px;
 	width: 189px;
-	border-bottom: solid 1px #ffffff;
+	border-bottom: solid 1px #b0bac6;
+	border-right: solid 1px #b0bac6;
 }
-.ui-left-menublock a {
-	height: 25px;
-	line-height: 25px;
-	width: 189px;
-	padding-left: 25px;
-	float: left;
-	font-weight: bold;
-	font-size: 15px;
-	cursor: pointer;
-	text-decoration: none;
-}
-.ui-left-menublock a:hover {
-	background-color: #c9ced3;
-}
-.ui-left-menublock ul {
+.ui-left-menublock ul{
 	list-style: none;
+	width: 189px;
 	padding: 0px;
 	margin: 0px;
 }
-.ui-left-menublock li {
-	padding: 10px;
+.ui-left-menublock li{
+	width: 189px;
+	height:25px;
+	float:left;
 }
+.ui-left-menublock li img{
+	margin-left: 18px;
+	margin-right: 13px;	
+	float:left;
+	height:12px;
+	width: 12px;
+	padding-top: 6px;
+}
+.ui-left-menublock li a{
+	width:145px;
+	height:25px;
+	line-height:25px;
+	padding:0px;
+	margin:0px;
+	border:none;
+	float:left;	
+	overflow:hidden;
+}
+.ui-left-menublock li:hover{	
+	background-color: #065c8f;
+}
+.ui-left-menublock a:hover{
+	color: #ffffff;
+}
+
+
 
 /*
  * 右侧内容
