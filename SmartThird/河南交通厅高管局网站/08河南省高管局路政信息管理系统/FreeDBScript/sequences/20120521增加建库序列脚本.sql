@@ -1,9 +1,5 @@
 -- Start of DDL Script for Sequence ORAHYD.SEQ_BASE_ACTION
--- Generated 28-五月-2012 8:25:38 from ORAHYD@ORAHYD
-
--- Drop the old instance of SEQ_BASE_ACTION
-DROP SEQUENCE orahyd.seq_base_action
-/
+-- Generated 28-五月-2012 8:29:03 from ORAHYD@ORAHYD
 
 CREATE SEQUENCE orahyd.seq_base_action
   INCREMENT BY 1
@@ -19,11 +15,7 @@ CREATE SEQUENCE orahyd.seq_base_action
 -- End of DDL Script for Sequence ORAHYD.SEQ_BASE_ACTION
 
 -- Start of DDL Script for Sequence ORAHYD.SEQ_BASE_AFFICHE
--- Generated 28-五月-2012 8:25:38 from ORAHYD@ORAHYD
-
--- Drop the old instance of SEQ_BASE_AFFICHE
-DROP SEQUENCE orahyd.seq_base_affiche
-/
+-- Generated 28-五月-2012 8:29:03 from ORAHYD@ORAHYD
 
 CREATE SEQUENCE orahyd.seq_base_affiche
   INCREMENT BY 1
@@ -39,11 +31,7 @@ CREATE SEQUENCE orahyd.seq_base_affiche
 -- End of DDL Script for Sequence ORAHYD.SEQ_BASE_AFFICHE
 
 -- Start of DDL Script for Sequence ORAHYD.SEQ_BASE_AREA
--- Generated 28-五月-2012 8:25:38 from ORAHYD@ORAHYD
-
--- Drop the old instance of SEQ_BASE_AREA
-DROP SEQUENCE orahyd.seq_base_area
-/
+-- Generated 28-五月-2012 8:29:03 from ORAHYD@ORAHYD
 
 CREATE SEQUENCE orahyd.seq_base_area
   INCREMENT BY 1
@@ -59,11 +47,7 @@ CREATE SEQUENCE orahyd.seq_base_area
 -- End of DDL Script for Sequence ORAHYD.SEQ_BASE_AREA
 
 -- Start of DDL Script for Sequence ORAHYD.SEQ_BASE_AREA_TYPE
--- Generated 28-五月-2012 8:25:38 from ORAHYD@ORAHYD
-
--- Drop the old instance of SEQ_BASE_AREA_TYPE
-DROP SEQUENCE orahyd.seq_base_area_type
-/
+-- Generated 28-五月-2012 8:29:03 from ORAHYD@ORAHYD
 
 CREATE SEQUENCE orahyd.seq_base_area_type
   INCREMENT BY 1
@@ -79,11 +63,7 @@ CREATE SEQUENCE orahyd.seq_base_area_type
 -- End of DDL Script for Sequence ORAHYD.SEQ_BASE_AREA_TYPE
 
 -- Start of DDL Script for Sequence ORAHYD.SEQ_BASE_ARTICLE
--- Generated 28-五月-2012 8:25:38 from ORAHYD@ORAHYD
-
--- Drop the old instance of SEQ_BASE_ARTICLE
-DROP SEQUENCE orahyd.seq_base_article
-/
+-- Generated 28-五月-2012 8:29:03 from ORAHYD@ORAHYD
 
 CREATE SEQUENCE orahyd.seq_base_article
   INCREMENT BY 1
@@ -99,11 +79,7 @@ CREATE SEQUENCE orahyd.seq_base_article
 -- End of DDL Script for Sequence ORAHYD.SEQ_BASE_ARTICLE
 
 -- Start of DDL Script for Sequence ORAHYD.SEQ_BASE_ARTICLE_TYPE
--- Generated 28-五月-2012 8:25:38 from ORAHYD@ORAHYD
-
--- Drop the old instance of SEQ_BASE_ARTICLE_TYPE
-DROP SEQUENCE orahyd.seq_base_article_type
-/
+-- Generated 28-五月-2012 8:29:03 from ORAHYD@ORAHYD
 
 CREATE SEQUENCE orahyd.seq_base_article_type
   INCREMENT BY 1
@@ -119,11 +95,7 @@ CREATE SEQUENCE orahyd.seq_base_article_type
 -- End of DDL Script for Sequence ORAHYD.SEQ_BASE_ARTICLE_TYPE
 
 -- Start of DDL Script for Sequence ORAHYD.SEQ_BASE_ARTICLE_UNIT
--- Generated 28-五月-2012 8:25:38 from ORAHYD@ORAHYD
-
--- Drop the old instance of SEQ_BASE_ARTICLE_UNIT
-DROP SEQUENCE orahyd.seq_base_article_unit
-/
+-- Generated 28-五月-2012 8:29:03 from ORAHYD@ORAHYD
 
 CREATE SEQUENCE orahyd.seq_base_article_unit
   INCREMENT BY 1
@@ -139,11 +111,7 @@ CREATE SEQUENCE orahyd.seq_base_article_unit
 -- End of DDL Script for Sequence ORAHYD.SEQ_BASE_ARTICLE_UNIT
 
 -- Start of DDL Script for Sequence ORAHYD.SEQ_BASE_ASSESS
--- Generated 28-五月-2012 8:25:38 from ORAHYD@ORAHYD
-
--- Drop the old instance of SEQ_BASE_ASSESS
-DROP SEQUENCE orahyd.seq_base_assess
-/
+-- Generated 28-五月-2012 8:29:03 from ORAHYD@ORAHYD
 
 CREATE SEQUENCE orahyd.seq_base_assess
   INCREMENT BY 1
@@ -159,11 +127,7 @@ CREATE SEQUENCE orahyd.seq_base_assess
 -- End of DDL Script for Sequence ORAHYD.SEQ_BASE_ASSESS
 
 -- Start of DDL Script for Sequence ORAHYD.SEQ_BASE_BUS_OVERRUN
--- Generated 28-五月-2012 8:25:38 from ORAHYD@ORAHYD
-
--- Drop the old instance of SEQ_BASE_BUS_OVERRUN
-DROP SEQUENCE orahyd.seq_base_bus_overrun
-/
+-- Generated 28-五月-2012 8:29:03 from ORAHYD@ORAHYD
 
 CREATE SEQUENCE orahyd.seq_base_bus_overrun
   INCREMENT BY 1
@@ -179,11 +143,7 @@ CREATE SEQUENCE orahyd.seq_base_bus_overrun
 -- End of DDL Script for Sequence ORAHYD.SEQ_BASE_BUS_OVERRUN
 
 -- Start of DDL Script for Sequence ORAHYD.SEQ_BASE_BUS_OVERRUN_SUBMIT
--- Generated 28-五月-2012 8:25:38 from ORAHYD@ORAHYD
-
--- Drop the old instance of SEQ_BASE_BUS_OVERRUN_SUBMIT
-DROP SEQUENCE orahyd.seq_base_bus_overrun_submit
-/
+-- Generated 28-五月-2012 8:29:03 from ORAHYD@ORAHYD
 
 CREATE SEQUENCE orahyd.seq_base_bus_overrun_submit
   INCREMENT BY 1
@@ -199,11 +159,7 @@ CREATE SEQUENCE orahyd.seq_base_bus_overrun_submit
 -- End of DDL Script for Sequence ORAHYD.SEQ_BASE_BUS_OVERRUN_SUBMIT
 
 -- Start of DDL Script for Sequence ORAHYD.SEQ_BASE_CASE
--- Generated 28-五月-2012 8:25:38 from ORAHYD@ORAHYD
-
--- Drop the old instance of SEQ_BASE_CASE
-DROP SEQUENCE orahyd.seq_base_case
-/
+-- Generated 28-五月-2012 8:29:03 from ORAHYD@ORAHYD
 
 CREATE SEQUENCE orahyd.seq_base_case
   INCREMENT BY 1
@@ -219,11 +175,7 @@ CREATE SEQUENCE orahyd.seq_base_case
 -- End of DDL Script for Sequence ORAHYD.SEQ_BASE_CASE
 
 -- Start of DDL Script for Sequence ORAHYD.SEQ_BASE_CASE_BUS
--- Generated 28-五月-2012 8:25:38 from ORAHYD@ORAHYD
-
--- Drop the old instance of SEQ_BASE_CASE_BUS
-DROP SEQUENCE orahyd.seq_base_case_bus
-/
+-- Generated 28-五月-2012 8:29:03 from ORAHYD@ORAHYD
 
 CREATE SEQUENCE orahyd.seq_base_case_bus
   INCREMENT BY 1
@@ -239,11 +191,7 @@ CREATE SEQUENCE orahyd.seq_base_case_bus
 -- End of DDL Script for Sequence ORAHYD.SEQ_BASE_CASE_BUS
 
 -- Start of DDL Script for Sequence ORAHYD.SEQ_BASE_CASE_CLOSED
--- Generated 28-五月-2012 8:25:38 from ORAHYD@ORAHYD
-
--- Drop the old instance of SEQ_BASE_CASE_CLOSED
-DROP SEQUENCE orahyd.seq_base_case_closed
-/
+-- Generated 28-五月-2012 8:29:03 from ORAHYD@ORAHYD
 
 CREATE SEQUENCE orahyd.seq_base_case_closed
   INCREMENT BY 1
@@ -259,11 +207,7 @@ CREATE SEQUENCE orahyd.seq_base_case_closed
 -- End of DDL Script for Sequence ORAHYD.SEQ_BASE_CASE_CLOSED
 
 -- Start of DDL Script for Sequence ORAHYD.SEQ_BASE_CASE_LOSS
--- Generated 28-五月-2012 8:25:38 from ORAHYD@ORAHYD
-
--- Drop the old instance of SEQ_BASE_CASE_LOSS
-DROP SEQUENCE orahyd.seq_base_case_loss
-/
+-- Generated 28-五月-2012 8:29:03 from ORAHYD@ORAHYD
 
 CREATE SEQUENCE orahyd.seq_base_case_loss
   INCREMENT BY 1
@@ -279,11 +223,7 @@ CREATE SEQUENCE orahyd.seq_base_case_loss
 -- End of DDL Script for Sequence ORAHYD.SEQ_BASE_CASE_LOSS
 
 -- Start of DDL Script for Sequence ORAHYD.SEQ_BASE_COMPS
--- Generated 28-五月-2012 8:25:38 from ORAHYD@ORAHYD
-
--- Drop the old instance of SEQ_BASE_COMPS
-DROP SEQUENCE orahyd.seq_base_comps
-/
+-- Generated 28-五月-2012 8:29:03 from ORAHYD@ORAHYD
 
 CREATE SEQUENCE orahyd.seq_base_comps
   INCREMENT BY 1
@@ -299,11 +239,7 @@ CREATE SEQUENCE orahyd.seq_base_comps
 -- End of DDL Script for Sequence ORAHYD.SEQ_BASE_COMPS
 
 -- Start of DDL Script for Sequence ORAHYD.SEQ_BASE_DEPT
--- Generated 28-五月-2012 8:25:38 from ORAHYD@ORAHYD
-
--- Drop the old instance of SEQ_BASE_DEPT
-DROP SEQUENCE orahyd.seq_base_dept
-/
+-- Generated 28-五月-2012 8:29:03 from ORAHYD@ORAHYD
 
 CREATE SEQUENCE orahyd.seq_base_dept
   INCREMENT BY 1
@@ -319,11 +255,7 @@ CREATE SEQUENCE orahyd.seq_base_dept
 -- End of DDL Script for Sequence ORAHYD.SEQ_BASE_DEPT
 
 -- Start of DDL Script for Sequence ORAHYD.SEQ_BASE_FAWEN
--- Generated 28-五月-2012 8:25:38 from ORAHYD@ORAHYD
-
--- Drop the old instance of SEQ_BASE_FAWEN
-DROP SEQUENCE orahyd.seq_base_fawen
-/
+-- Generated 28-五月-2012 8:29:03 from ORAHYD@ORAHYD
 
 CREATE SEQUENCE orahyd.seq_base_fawen
   INCREMENT BY 1
@@ -339,11 +271,7 @@ CREATE SEQUENCE orahyd.seq_base_fawen
 -- End of DDL Script for Sequence ORAHYD.SEQ_BASE_FAWEN
 
 -- Start of DDL Script for Sequence ORAHYD.SEQ_BASE_FILETYPE
--- Generated 28-五月-2012 8:25:38 from ORAHYD@ORAHYD
-
--- Drop the old instance of SEQ_BASE_FILETYPE
-DROP SEQUENCE orahyd.seq_base_filetype
-/
+-- Generated 28-五月-2012 8:29:03 from ORAHYD@ORAHYD
 
 CREATE SEQUENCE orahyd.seq_base_filetype
   INCREMENT BY 1
@@ -359,11 +287,7 @@ CREATE SEQUENCE orahyd.seq_base_filetype
 -- End of DDL Script for Sequence ORAHYD.SEQ_BASE_FILETYPE
 
 -- Start of DDL Script for Sequence ORAHYD.SEQ_BASE_LICENSE_ACCEPT
--- Generated 28-五月-2012 8:25:38 from ORAHYD@ORAHYD
-
--- Drop the old instance of SEQ_BASE_LICENSE_ACCEPT
-DROP SEQUENCE orahyd.seq_base_license_accept
-/
+-- Generated 28-五月-2012 8:29:03 from ORAHYD@ORAHYD
 
 CREATE SEQUENCE orahyd.seq_base_license_accept
   INCREMENT BY 1
@@ -379,11 +303,7 @@ CREATE SEQUENCE orahyd.seq_base_license_accept
 -- End of DDL Script for Sequence ORAHYD.SEQ_BASE_LICENSE_ACCEPT
 
 -- Start of DDL Script for Sequence ORAHYD.SEQ_BASE_LOG
--- Generated 28-五月-2012 8:25:38 from ORAHYD@ORAHYD
-
--- Drop the old instance of SEQ_BASE_LOG
-DROP SEQUENCE orahyd.seq_base_log
-/
+-- Generated 28-五月-2012 8:29:03 from ORAHYD@ORAHYD
 
 CREATE SEQUENCE orahyd.seq_base_log
   INCREMENT BY 1
@@ -399,11 +319,7 @@ CREATE SEQUENCE orahyd.seq_base_log
 -- End of DDL Script for Sequence ORAHYD.SEQ_BASE_LOG
 
 -- Start of DDL Script for Sequence ORAHYD.SEQ_BASE_MENU
--- Generated 28-五月-2012 8:25:38 from ORAHYD@ORAHYD
-
--- Drop the old instance of SEQ_BASE_MENU
-DROP SEQUENCE orahyd.seq_base_menu
-/
+-- Generated 28-五月-2012 8:29:03 from ORAHYD@ORAHYD
 
 CREATE SEQUENCE orahyd.seq_base_menu
   INCREMENT BY 1
@@ -419,11 +335,7 @@ CREATE SEQUENCE orahyd.seq_base_menu
 -- End of DDL Script for Sequence ORAHYD.SEQ_BASE_MENU
 
 -- Start of DDL Script for Sequence ORAHYD.SEQ_BASE_MESSAGE
--- Generated 28-五月-2012 8:25:38 from ORAHYD@ORAHYD
-
--- Drop the old instance of SEQ_BASE_MESSAGE
-DROP SEQUENCE orahyd.seq_base_message
-/
+-- Generated 28-五月-2012 8:29:03 from ORAHYD@ORAHYD
 
 CREATE SEQUENCE orahyd.seq_base_message
   INCREMENT BY 1
@@ -439,11 +351,7 @@ CREATE SEQUENCE orahyd.seq_base_message
 -- End of DDL Script for Sequence ORAHYD.SEQ_BASE_MESSAGE
 
 -- Start of DDL Script for Sequence ORAHYD.SEQ_BASE_OBSERVED
--- Generated 28-五月-2012 8:25:38 from ORAHYD@ORAHYD
-
--- Drop the old instance of SEQ_BASE_OBSERVED
-DROP SEQUENCE orahyd.seq_base_observed
-/
+-- Generated 28-五月-2012 8:29:03 from ORAHYD@ORAHYD
 
 CREATE SEQUENCE orahyd.seq_base_observed
   INCREMENT BY 1
@@ -459,11 +367,7 @@ CREATE SEQUENCE orahyd.seq_base_observed
 -- End of DDL Script for Sequence ORAHYD.SEQ_BASE_OBSERVED
 
 -- Start of DDL Script for Sequence ORAHYD.SEQ_BASE_PATROL
--- Generated 28-五月-2012 8:25:38 from ORAHYD@ORAHYD
-
--- Drop the old instance of SEQ_BASE_PATROL
-DROP SEQUENCE orahyd.seq_base_patrol
-/
+-- Generated 28-五月-2012 8:29:03 from ORAHYD@ORAHYD
 
 CREATE SEQUENCE orahyd.seq_base_patrol
   INCREMENT BY 1
@@ -479,11 +383,7 @@ CREATE SEQUENCE orahyd.seq_base_patrol
 -- End of DDL Script for Sequence ORAHYD.SEQ_BASE_PATROL
 
 -- Start of DDL Script for Sequence ORAHYD.SEQ_BASE_PATROL_GOODS
--- Generated 28-五月-2012 8:25:38 from ORAHYD@ORAHYD
-
--- Drop the old instance of SEQ_BASE_PATROL_GOODS
-DROP SEQUENCE orahyd.seq_base_patrol_goods
-/
+-- Generated 28-五月-2012 8:29:03 from ORAHYD@ORAHYD
 
 CREATE SEQUENCE orahyd.seq_base_patrol_goods
   INCREMENT BY 1
@@ -499,11 +399,7 @@ CREATE SEQUENCE orahyd.seq_base_patrol_goods
 -- End of DDL Script for Sequence ORAHYD.SEQ_BASE_PATROL_GOODS
 
 -- Start of DDL Script for Sequence ORAHYD.SEQ_BASE_PLAN
--- Generated 28-五月-2012 8:25:38 from ORAHYD@ORAHYD
-
--- Drop the old instance of SEQ_BASE_PLAN
-DROP SEQUENCE orahyd.seq_base_plan
-/
+-- Generated 28-五月-2012 8:29:03 from ORAHYD@ORAHYD
 
 CREATE SEQUENCE orahyd.seq_base_plan
   INCREMENT BY 1
@@ -519,11 +415,7 @@ CREATE SEQUENCE orahyd.seq_base_plan
 -- End of DDL Script for Sequence ORAHYD.SEQ_BASE_PLAN
 
 -- Start of DDL Script for Sequence ORAHYD.SEQ_BASE_PROCEDURE
--- Generated 28-五月-2012 8:25:38 from ORAHYD@ORAHYD
-
--- Drop the old instance of SEQ_BASE_PROCEDURE
-DROP SEQUENCE orahyd.seq_base_procedure
-/
+-- Generated 28-五月-2012 8:29:03 from ORAHYD@ORAHYD
 
 CREATE SEQUENCE orahyd.seq_base_procedure
   INCREMENT BY 1
@@ -539,11 +431,7 @@ CREATE SEQUENCE orahyd.seq_base_procedure
 -- End of DDL Script for Sequence ORAHYD.SEQ_BASE_PROCEDURE
 
 -- Start of DDL Script for Sequence ORAHYD.SEQ_BASE_PROJECT_NOTES
--- Generated 28-五月-2012 8:25:38 from ORAHYD@ORAHYD
-
--- Drop the old instance of SEQ_BASE_PROJECT_NOTES
-DROP SEQUENCE orahyd.seq_base_project_notes
-/
+-- Generated 28-五月-2012 8:29:03 from ORAHYD@ORAHYD
 
 CREATE SEQUENCE orahyd.seq_base_project_notes
   INCREMENT BY 1
@@ -559,11 +447,7 @@ CREATE SEQUENCE orahyd.seq_base_project_notes
 -- End of DDL Script for Sequence ORAHYD.SEQ_BASE_PROJECT_NOTES
 
 -- Start of DDL Script for Sequence ORAHYD.SEQ_BASE_ROAD_CONDITION
--- Generated 28-五月-2012 8:25:38 from ORAHYD@ORAHYD
-
--- Drop the old instance of SEQ_BASE_ROAD_CONDITION
-DROP SEQUENCE orahyd.seq_base_road_condition
-/
+-- Generated 28-五月-2012 8:29:03 from ORAHYD@ORAHYD
 
 CREATE SEQUENCE orahyd.seq_base_road_condition
   INCREMENT BY 1
@@ -579,11 +463,7 @@ CREATE SEQUENCE orahyd.seq_base_road_condition
 -- End of DDL Script for Sequence ORAHYD.SEQ_BASE_ROAD_CONDITION
 
 -- Start of DDL Script for Sequence ORAHYD.SEQ_BASE_ROAD_TERM
--- Generated 28-五月-2012 8:25:38 from ORAHYD@ORAHYD
-
--- Drop the old instance of SEQ_BASE_ROAD_TERM
-DROP SEQUENCE orahyd.seq_base_road_term
-/
+-- Generated 28-五月-2012 8:29:03 from ORAHYD@ORAHYD
 
 CREATE SEQUENCE orahyd.seq_base_road_term
   INCREMENT BY 1
@@ -599,11 +479,7 @@ CREATE SEQUENCE orahyd.seq_base_road_term
 -- End of DDL Script for Sequence ORAHYD.SEQ_BASE_ROAD_TERM
 
 -- Start of DDL Script for Sequence ORAHYD.SEQ_BASE_ROAD_TERM_TYPE
--- Generated 28-五月-2012 8:25:38 from ORAHYD@ORAHYD
-
--- Drop the old instance of SEQ_BASE_ROAD_TERM_TYPE
-DROP SEQUENCE orahyd.seq_base_road_term_type
-/
+-- Generated 28-五月-2012 8:29:03 from ORAHYD@ORAHYD
 
 CREATE SEQUENCE orahyd.seq_base_road_term_type
   INCREMENT BY 1
@@ -619,11 +495,7 @@ CREATE SEQUENCE orahyd.seq_base_road_term_type
 -- End of DDL Script for Sequence ORAHYD.SEQ_BASE_ROAD_TERM_TYPE
 
 -- Start of DDL Script for Sequence ORAHYD.SEQ_BASE_ROLE
--- Generated 28-五月-2012 8:25:38 from ORAHYD@ORAHYD
-
--- Drop the old instance of SEQ_BASE_ROLE
-DROP SEQUENCE orahyd.seq_base_role
-/
+-- Generated 28-五月-2012 8:29:03 from ORAHYD@ORAHYD
 
 CREATE SEQUENCE orahyd.seq_base_role
   INCREMENT BY 1
@@ -639,11 +511,7 @@ CREATE SEQUENCE orahyd.seq_base_role
 -- End of DDL Script for Sequence ORAHYD.SEQ_BASE_ROLE
 
 -- Start of DDL Script for Sequence ORAHYD.SEQ_BASE_SHOUWEN
--- Generated 28-五月-2012 8:25:38 from ORAHYD@ORAHYD
-
--- Drop the old instance of SEQ_BASE_SHOUWEN
-DROP SEQUENCE orahyd.seq_base_shouwen
-/
+-- Generated 28-五月-2012 8:29:03 from ORAHYD@ORAHYD
 
 CREATE SEQUENCE orahyd.seq_base_shouwen
   INCREMENT BY 1
@@ -659,11 +527,7 @@ CREATE SEQUENCE orahyd.seq_base_shouwen
 -- End of DDL Script for Sequence ORAHYD.SEQ_BASE_SHOUWEN
 
 -- Start of DDL Script for Sequence ORAHYD.SEQ_BASE_TERM
--- Generated 28-五月-2012 8:25:38 from ORAHYD@ORAHYD
-
--- Drop the old instance of SEQ_BASE_TERM
-DROP SEQUENCE orahyd.seq_base_term
-/
+-- Generated 28-五月-2012 8:29:03 from ORAHYD@ORAHYD
 
 CREATE SEQUENCE orahyd.seq_base_term
   INCREMENT BY 1
@@ -679,11 +543,7 @@ CREATE SEQUENCE orahyd.seq_base_term
 -- End of DDL Script for Sequence ORAHYD.SEQ_BASE_TERM
 
 -- Start of DDL Script for Sequence ORAHYD.SEQ_BASE_TERM_TYPE
--- Generated 28-五月-2012 8:25:38 from ORAHYD@ORAHYD
-
--- Drop the old instance of SEQ_BASE_TERM_TYPE
-DROP SEQUENCE orahyd.seq_base_term_type
-/
+-- Generated 28-五月-2012 8:29:03 from ORAHYD@ORAHYD
 
 CREATE SEQUENCE orahyd.seq_base_term_type
   INCREMENT BY 1
@@ -699,11 +559,7 @@ CREATE SEQUENCE orahyd.seq_base_term_type
 -- End of DDL Script for Sequence ORAHYD.SEQ_BASE_TERM_TYPE
 
 -- Start of DDL Script for Sequence ORAHYD.SEQ_BASE_USER
--- Generated 28-五月-2012 8:25:38 from ORAHYD@ORAHYD
-
--- Drop the old instance of SEQ_BASE_USER
-DROP SEQUENCE orahyd.seq_base_user
-/
+-- Generated 28-五月-2012 8:29:03 from ORAHYD@ORAHYD
 
 CREATE SEQUENCE orahyd.seq_base_user
   INCREMENT BY 1
@@ -719,11 +575,7 @@ CREATE SEQUENCE orahyd.seq_base_user
 -- End of DDL Script for Sequence ORAHYD.SEQ_BASE_USER
 
 -- Start of DDL Script for Sequence ORAHYD.SEQ_BASE_USER_ROLE
--- Generated 28-五月-2012 8:25:38 from ORAHYD@ORAHYD
-
--- Drop the old instance of SEQ_BASE_USER_ROLE
-DROP SEQUENCE orahyd.seq_base_user_role
-/
+-- Generated 28-五月-2012 8:29:03 from ORAHYD@ORAHYD
 
 CREATE SEQUENCE orahyd.seq_base_user_role
   INCREMENT BY 1
