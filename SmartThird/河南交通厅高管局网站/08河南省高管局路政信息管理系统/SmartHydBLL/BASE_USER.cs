@@ -97,5 +97,23 @@ namespace SmartHyd.BLL
                 return null;
             }
         }
+        /// <summary>
+        /// 更新一条数据
+        /// </summary>
+        /// <param name="user">用户实体</param>
+        /// <returns></returns>
+        public bool Update(Entity.BASE_USER user)
+        {
+            return dal.Update(user);
+        }
+        /// <summary>
+        /// 从数据库中根据用户编号删除一条数据
+        /// </summary>
+        /// <param name="UserID">用户编号</param>
+        /// <returns></returns>
+        public bool Del(decimal UserID)
+        {
+            return dal.Delete(UserID);
+        }
     }
 }
