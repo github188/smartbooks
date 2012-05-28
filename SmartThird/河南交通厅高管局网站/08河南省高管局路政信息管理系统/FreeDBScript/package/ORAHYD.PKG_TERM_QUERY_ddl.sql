@@ -1,5 +1,5 @@
 -- Start of DDL Script for Package ORAHYD.PKG_TERM_QUERY
--- Generated 24-五月-2012 8:38:36 from ORAHYD@ORAHYD
+-- Generated 28-五月-2012 8:25:13 from ORAHYD@ORAHYD
 
 -- Drop the old instance of PKG_TERM_QUERY
 DROP PACKAGE orahyd.pkg_term_query

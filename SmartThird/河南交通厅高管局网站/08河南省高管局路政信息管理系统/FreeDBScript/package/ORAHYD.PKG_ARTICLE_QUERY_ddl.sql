@@ -1,5 +1,5 @@
 -- Start of DDL Script for Package ORAHYD.PKG_ARTICLE_QUERY
--- Generated 24-五月-2012 8:37:32 from ORAHYD@ORAHYD
+-- Generated 28-五月-2012 8:24:30 from ORAHYD@ORAHYD
 
 -- Drop the old instance of PKG_ARTICLE_QUERY
 DROP PACKAGE orahyd.pkg_article_query
@@ -82,7 +82,7 @@ IS
          /*
          * 部门,查阅状态,查阅时间,标题,发文字号,回复时间
          */
-         SELECT   b.dptname,a.articleid,
+         SELECT   b.dptname,a.articleid,c.id,c.score,
                   CASE a.isread
                      WHEN 0
                         THEN '未查阅'
