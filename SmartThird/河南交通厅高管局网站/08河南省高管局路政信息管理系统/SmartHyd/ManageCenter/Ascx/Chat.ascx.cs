@@ -43,17 +43,20 @@ namespace SmartHyd.ManageCenter.Ascx
              DataTable dt = new DataTable();
 
             dt = userbll.GetList("1=1");
-            
-            foreach (DataRow dr in dt.Rows)
-            {
-                //node = new TreeNode();
-                //this.ListUser.Items.Add(node);
-                //node.Value = dr["USERID"].ToString();
-                //node.Text = (string)dr["USERNAME"];
-                //node.ShowCheckBox = true;
-               
-                this.CBLUser.Items.Add(dr["USERNAME"].ToString());
-            }
+            this.CBLUser.DataSource = dt;
+            this.CBLUser.DataTextField = "USERNAME";
+            this.CBLUser.DataValueField = "USERID";
+            this.CBLUser.DataBind();
+            //foreach (DataRow dr in dt.Rows)
+            //{
+            //    //node = new TreeNode();
+            //    //this.ListUser.Items.Add(node);
+            //    //node.Value = dr["USERID"].ToString();
+            //    //node.Text = (string)dr["USERNAME"];
+            //    //node.ShowCheckBox = true;
+
+            //    this.CBLUser.Items.Add(dr["USERNAME"].ToString());
+            //}
         }
         /// <summary>
         /// 获得通讯消息实体数据
@@ -65,7 +68,22 @@ namespace SmartHyd.ManageCenter.Ascx
             model.MESSAGEID = Convert.ToInt32(this.hidPrimary.Value);     //id,主键
             model.SENDER = 0;                        //发信人编号
             model.MESSAGEBODY = this.Message.Value;                      //消息内容
-            decimal touserid = Convert.ToDecimal(userbll.GetList("USERNAME='" + this.TxtTouser.Text+"'").Rows[0]["USERID"]);
+            string str_username=this.TxtTouser.Text;//获取文本框中所有的用户名
+            string[] sArray = str_username.Split(',');
+            string username = string.Empty;
+                 //if (sArray.Length > 1)//如果有多个用户
+                 //{
+                 //    foreach (string i in sArray)
+                 //    {
+
+                 //    }
+                 //}
+                 //else//单个用户
+                 //{
+                 //    username = sArray[0].ToString();
+                 //}
+            username = sArray[0].ToString();
+            decimal touserid = Convert.ToDecimal(userbll.GetList("USERNAME='" + username+"'").Rows[0]["USERID"]);
             model.TOUSER = touserid;             //收信人编号
             model.STATE = 0;                  //消息状态（0，未读；1，已读）
             model.SENDDATE = DateTime.Now;                             //发送时间日期
