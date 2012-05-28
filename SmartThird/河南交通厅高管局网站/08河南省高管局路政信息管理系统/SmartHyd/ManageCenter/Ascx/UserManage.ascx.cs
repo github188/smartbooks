@@ -1,6 +1,7 @@
 ﻿
 
-namespace SmartHyd.ManageCenter.Ascx {
+namespace SmartHyd.ManageCenter.Ascx
+{
     using System;
     using System.Collections.Generic;
     using System.Linq;
@@ -11,19 +12,23 @@ namespace SmartHyd.ManageCenter.Ascx {
     using System.IO;
     using System.Web.UI.WebControls;
 
-    public partial class UserManage : UI.BaseUserControl {
+    public partial class UserManage : UI.BaseUserControl
+    {
         private BLL.BASE_USER bll = new BLL.BASE_USER();
         private BLL.BASE_LOG logbll = new BLL.BASE_LOG();
 
-        protected void Page_Load(object sender, EventArgs e) {
-            if (!IsPostBack) {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!IsPostBack)
+            {
                 BindUserList();
 
                 SetEntity(new Entity.BASE_USER());
             }
         }
 
-        private void BindUserList() {
+        private void BindUserList()
+        {
             DataTable dt = new DataTable();
             dt = bll.GetAllUser();
             //dt = bll.GetList("1=1");
@@ -40,7 +45,8 @@ namespace SmartHyd.ManageCenter.Ascx {
             repList.DataBind();
         }
 
-        private Entity.BASE_USER GetEntity() {
+        private Entity.BASE_USER GetEntity()
+        {
             Entity.BASE_USER model = new Entity.BASE_USER();
 
             model.USERID = 0;                //主键，用户ID编号
@@ -64,7 +70,8 @@ namespace SmartHyd.ManageCenter.Ascx {
             return model;
         }
 
-        private void SetEntity(Entity.BASE_USER model) {
+        private void SetEntity(Entity.BASE_USER model)
+        {
             txtBIRTHDAY.Text = model.BIRTHDAY.ToString("yyyy-MM-dd");
             txtDEGREE.Text = model.DEGREE;
             txtFACE.Text = model.FACE;
@@ -81,7 +88,8 @@ namespace SmartHyd.ManageCenter.Ascx {
         /// 上传用户照片
         /// </summary>
         /// <returns>照片存储在服务器的相对路径</returns>
-        private string UpLoadPhoto() {
+        private string UpLoadPhoto()
+        {
             string serverSavePath = "Images/FaceImage/";
 
             string tempFileName = string.Format("{0}{1}",
@@ -96,9 +104,11 @@ namespace SmartHyd.ManageCenter.Ascx {
         /// 校验用户提交的表单
         /// </summary>
         /// <returns>check result</returns>
-        private bool CheckUserSubmitFrom() {
+        private bool CheckUserSubmitFrom()
+        {
             //check file is null
-            if (!fileupPhoto.HasFile) {
+            if (!fileupPhoto.HasFile)
+            {
                 Smart.Utility.Alerts.Alert("图片不能为空.");
                 return false;
             }
@@ -109,28 +119,51 @@ namespace SmartHyd.ManageCenter.Ascx {
             exts.Add(".jpg");
             exts.Add(".gif");
             exts.Add(".jpeg");
-            if (!exts.Contains(Path.GetExtension(fileupPhoto.FileName))) {
+            if (!exts.Contains(Path.GetExtension(fileupPhoto.FileName)))
+            {
                 Smart.Utility.Alerts.Alert("只允许上传 *.png *.jpg *.gif *.jpeg 格式的图片");
                 return false;
             }
 
             //check file size
-            if (fileupPhoto.PostedFile.ContentLength > 3145728) {
+            if (fileupPhoto.PostedFile.ContentLength > 3145728)
+            {
                 Smart.Utility.Alerts.Alert("只允许上传3MB以内的图片文件.");
                 return false;
             }
 
             return true;
         }
-
+        #region 删除用户：Update()修改用户；DelUser()从用户表中删除用户
+        /// <summary>
+        /// 修改用户
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        private bool Update(Entity.BASE_USER model)
+        {
+            return bll.Update(model);
+        }
+        /// <summary>
+        /// 从用户表中根据用户编号删除用户
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <returns></returns>
+        private bool DelUser(decimal userId)
+        {
+            return bll.Del(userId);
+        }
+        #endregion
         #region 页面功能按钮事件(必须重写基类虚方法，否则按钮的事件是无效的)
         /// <summary>
         /// 添加
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        public override void BtnAdd_Click(object sender, EventArgs e) {
-            if (CheckUserSubmitFrom()) {
+        public override void BtnAdd_Click(object sender, EventArgs e)
+        {
+            if (CheckUserSubmitFrom())
+            {
                 Entity.BASE_USER model = GetEntity();
                 model.PHOTO = UpLoadPhoto();
                 bll.Add(model);
@@ -150,16 +183,20 @@ namespace SmartHyd.ManageCenter.Ascx {
             }
         }
         //删除
-        public override void BtnDelete_Click(object sender, EventArgs e) {
+        public override void BtnDelete_Click(object sender, EventArgs e)
+        {
         }
         //重置
-        public override void BtnCancel_Click(object sender, EventArgs e) {
+        public override void BtnCancel_Click(object sender, EventArgs e)
+        {
             SetEntity(new Entity.BASE_USER());
 
             Smart.Utility.Alerts.Alert("test");
         }
         //修改
-        public override void BtnUpdate_Click(object sender, EventArgs e) { }
+        public override void BtnUpdate_Click(object sender, EventArgs e) {
+        
+        }
         //查看
         public override void BtnView_Click(object sender, EventArgs e) { }
         //查询
@@ -186,7 +223,8 @@ namespace SmartHyd.ManageCenter.Ascx {
         /// </summary>
         /// <param name="src"></param>
         /// <param name="e"></param>
-        protected void AspNetPager1_PageChanging(object src, Wuqi.Webdiyer.PageChangingEventArgs e) {
+        protected void AspNetPager1_PageChanging(object src, Wuqi.Webdiyer.PageChangingEventArgs e)
+        {
             this.AspNetPager1.CurrentPageIndex = e.NewPageIndex;
             BindUserList();
         }
