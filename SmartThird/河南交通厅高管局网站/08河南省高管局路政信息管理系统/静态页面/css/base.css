@@ -173,7 +173,7 @@ body {
 	height: 290px;	
 	margin:0px auto;
 	margin-top:75px;
-	background-image: url("../images/ui-login-logo.png");
+	/*background-image: url("../images/ui-login-logo.png");*/
 }
 /*登录框面板*/
 .ui-loginpanel{
