@@ -151,8 +151,112 @@ body {
 /*
  * 右侧内容
  */
-.ul-right-content {
+.ui-right-content {
 	float: left;
 	overflow: hidden;
 	margin: 4px;
+}
+
+
+/*
+ * 登录页面
+ */
+.ui-body{
+	background-color: #065c8f;
+	padding: 0px;
+	margin: 0px;
+	text-align: center;
+}
+/*执法徽标框*/
+.ui-logobox{
+	width: 573px;
+	height: 290px;	
+	margin:0px auto;
+	margin-top:75px;
+	background-image: url("../images/ui-login-logo.png");
+}
+/*登录框面板*/
+.ui-loginpanel{
+	width: 100%;
+	height:147px;
+	background-image: url("../images/ui-login-loginbackground.png");
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+}
+/*登陆框面板内容容器*/
+.ui-loginpanel-container{
+	height: 147px;
+	width: 960px;
+	margin: 0px auto;
+	text-align:left;
+}
+/*登陆框面板元素容器*/
+.ui-loginpanel-containerelement{
+	float: left;
+	width: 230px;
+	margin-top: 35px;
+	overflow: hidden;
+}
+.ui-loginpanel-containerelement span{
+	height: 35px;
+	width: 100%;
+	line-height:35px;
+	float:left;
+	color:#075d8e;
+	font: 20px 黑体;
+	overflow: hidden;
+}
+/*登陆框面板文本框*/
+.ui-loginpanel-container-input{
+	width: 200px;
+	height: 32px;
+	border:none;
+	float:left;
+	line-height:32px;
+	font-weight:bold;
+	padding:2px 8px 2px 8px;
+	color:#494949;
+	font: 20px Verdana,Arial,Helvetica,sans-serif;
+	background-image: url("../images/ui-login-inputbackground.png");	
+}
+/*验证码*/
+.ui-loginpanel-container-cache{
+	width: 92px;
+	height: 32px;
+	border:none;
+	float:left;
+	line-height:32px;
+	font-weight:bold;
+	padding:2px 8px 2px 8px;
+	color:#494949;
+	font: 20px Verdana,Arial,Helvetica,sans-serif;
+	background-image: url("../images/ui-login-inputcheck.png");
+}
+.ui-loginpanel-container-cache-img{
+	width: 92px;
+	height: 34px;
+	border:1px solid #9fa9af;
+	margin-left:10px;
+	float:left;
+}
+/*登录按钮*/
+.ui-loginpanel-container-button-element{
+	float: left;
+	width: 150px;
+	margin-top: 70px;
+	overflow: hidden;
+}
+.ui-loginpanel-container-button{
+	width: 68px;
+	height: 35px;
+	border:none;
+	background-image:url("../images/ui-login-buttonbackground.png");	
+	float:left;	
+	cursor: pointer;
+	color:#075d8e;
+	font: 18px 黑体;
+	line-height: 36px;
+	margin-right: 5px;
 }
