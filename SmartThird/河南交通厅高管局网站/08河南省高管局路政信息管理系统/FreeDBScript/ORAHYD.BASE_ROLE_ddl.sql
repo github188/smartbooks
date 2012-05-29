@@ -1,9 +1,5 @@
 -- Start of DDL Script for Table ORAHYD.BASE_ROLE
--- Generated 18-五月-2012 18:28:46 from ORAHYD@ORAHYD
-
--- Drop the old instance of BASE_ROLE
-DROP TABLE orahyd.base_role CASCADE CONSTRAINTS
-/
+-- Generated 29-五月-2012 14:28:10 from ORAHYD@ORAHYD
 
 CREATE TABLE orahyd.base_role
     (roleid                         NUMBER NOT NULL,

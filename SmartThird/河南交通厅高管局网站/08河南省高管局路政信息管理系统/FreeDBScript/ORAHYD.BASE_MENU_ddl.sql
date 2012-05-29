@@ -1,9 +1,5 @@
 -- Start of DDL Script for Table ORAHYD.BASE_MENU
--- Generated 18-五月-2012 18:27:45 from ORAHYD@ORAHYD
-
--- Drop the old instance of BASE_MENU
-DROP TABLE orahyd.base_menu CASCADE CONSTRAINTS
-/
+-- Generated 29-五月-2012 14:23:24 from ORAHYD@ORAHYD
 
 CREATE TABLE orahyd.base_menu
     (menuid                         NUMBER(*,0) NOT NULL,

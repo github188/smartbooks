@@ -1,9 +1,5 @@
 -- Start of DDL Script for Table ORAHYD.BASE_ROAD_CONDITION
--- Generated 18-五月-2012 18:28:31 from ORAHYD@ORAHYD
-
--- Drop the old instance of BASE_ROAD_CONDITION
-DROP TABLE orahyd.base_road_condition CASCADE CONSTRAINTS
-/
+-- Generated 29-五月-2012 14:26:55 from ORAHYD@ORAHYD
 
 CREATE TABLE orahyd.base_road_condition
     (id                             NUMBER NOT NULL)

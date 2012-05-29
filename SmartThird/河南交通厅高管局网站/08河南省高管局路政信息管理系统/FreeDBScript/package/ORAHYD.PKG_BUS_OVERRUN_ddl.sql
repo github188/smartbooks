@@ -1,9 +1,5 @@
 -- Start of DDL Script for Package ORAHYD.PKG_BUS_OVERRUN
--- Generated 28-五月-2012 8:24:57 from ORAHYD@ORAHYD
-
--- Drop the old instance of PKG_BUS_OVERRUN
-DROP PACKAGE orahyd.pkg_bus_overrun
-/
+-- Generated 29-五月-2012 14:31:10 from ORAHYD@ORAHYD
 
 CREATE OR REPLACE 
 PACKAGE orahyd.pkg_bus_overrun

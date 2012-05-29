@@ -1,9 +1,5 @@
 -- Start of DDL Script for Table ORAHYD.BASE_BUS_OVERRUN_SUBMIT
--- Generated 18-五月-2012 18:26:43 from ORAHYD@ORAHYD
-
--- Drop the old instance of BASE_BUS_OVERRUN_SUBMIT
-DROP TABLE orahyd.base_bus_overrun_submit CASCADE CONSTRAINTS
-/
+-- Generated 29-五月-2012 14:18:54 from ORAHYD@ORAHYD
 
 CREATE TABLE orahyd.base_bus_overrun_submit
     (id                             NUMBER NOT NULL,

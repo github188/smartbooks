@@ -1,9 +1,5 @@
 -- Start of DDL Script for Table ORAHYD.BASE_PROJECT_NOTES
--- Generated 18-五月-2012 18:28:24 from ORAHYD@ORAHYD
-
--- Drop the old instance of BASE_PROJECT_NOTES
-DROP TABLE orahyd.base_project_notes CASCADE CONSTRAINTS
-/
+-- Generated 29-五月-2012 14:26:31 from ORAHYD@ORAHYD
 
 CREATE TABLE orahyd.base_project_notes
     (pid                            NUMBER NOT NULL,

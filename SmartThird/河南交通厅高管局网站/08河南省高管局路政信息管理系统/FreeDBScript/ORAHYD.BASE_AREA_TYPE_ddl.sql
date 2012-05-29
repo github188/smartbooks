@@ -1,9 +1,5 @@
 -- Start of DDL Script for Table ORAHYD.BASE_AREA_TYPE
--- Generated 18-五月-2012 18:26:12 from ORAHYD@ORAHYD
-
--- Drop the old instance of BASE_AREA_TYPE
-DROP TABLE orahyd.base_area_type CASCADE CONSTRAINTS
-/
+-- Generated 29-五月-2012 14:16:46 from ORAHYD@ORAHYD
 
 CREATE TABLE orahyd.base_area_type
     (typename                       VARCHAR2(50) NOT NULL,

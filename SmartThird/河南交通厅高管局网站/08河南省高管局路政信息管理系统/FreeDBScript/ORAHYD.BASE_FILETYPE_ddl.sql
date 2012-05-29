@@ -1,9 +1,5 @@
 -- Start of DDL Script for Table ORAHYD.BASE_FILETYPE
--- Generated 18-五月-2012 18:27:28 from ORAHYD@ORAHYD
-
--- Drop the old instance of BASE_FILETYPE
-DROP TABLE orahyd.base_filetype CASCADE CONSTRAINTS
-/
+-- Generated 29-五月-2012 14:22:08 from ORAHYD@ORAHYD
 
 CREATE TABLE orahyd.base_filetype
     (ftid                           NUMBER NOT NULL,

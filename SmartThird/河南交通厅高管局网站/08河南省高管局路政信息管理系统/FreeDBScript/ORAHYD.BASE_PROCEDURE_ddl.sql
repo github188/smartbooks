@@ -1,9 +1,5 @@
 -- Start of DDL Script for Table ORAHYD.BASE_PROCEDURE
--- Generated 18-五月-2012 18:28:19 from ORAHYD@ORAHYD
-
--- Drop the old instance of BASE_PROCEDURE
-DROP TABLE orahyd.base_procedure CASCADE CONSTRAINTS
-/
+-- Generated 29-五月-2012 14:26:12 from ORAHYD@ORAHYD
 
 CREATE TABLE orahyd.base_procedure
     (pid                            NUMBER NOT NULL,

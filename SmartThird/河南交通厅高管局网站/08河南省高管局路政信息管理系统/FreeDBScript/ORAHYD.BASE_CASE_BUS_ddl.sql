@@ -1,9 +1,5 @@
 -- Start of DDL Script for Table ORAHYD.BASE_CASE_BUS
--- Generated 18-五月-2012 18:26:54 from ORAHYD@ORAHYD
-
--- Drop the old instance of BASE_CASE_BUS
-DROP TABLE orahyd.base_case_bus CASCADE CONSTRAINTS
-/
+-- Generated 29-五月-2012 14:19:39 from ORAHYD@ORAHYD
 
 CREATE TABLE orahyd.base_case_bus
     (id                             NUMBER NOT NULL,

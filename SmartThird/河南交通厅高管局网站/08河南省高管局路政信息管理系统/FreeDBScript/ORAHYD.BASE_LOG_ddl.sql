@@ -1,9 +1,5 @@
 -- Start of DDL Script for Table ORAHYD.BASE_LOG
--- Generated 18-五月-2012 18:27:41 from ORAHYD@ORAHYD
-
--- Drop the old instance of BASE_LOG
-DROP TABLE orahyd.base_log CASCADE CONSTRAINTS
-/
+-- Generated 29-五月-2012 14:22:52 from ORAHYD@ORAHYD
 
 CREATE TABLE orahyd.base_log
     (logid                          NUMBER DEFAULT 0 NOT NULL,

@@ -1,9 +1,5 @@
 -- Start of DDL Script for Table ORAHYD.BASE_SEND_ORGAN
--- Generated 18-五月-2012 18:28:56 from ORAHYD@ORAHYD
-
--- Drop the old instance of BASE_SEND_ORGAN
-DROP TABLE orahyd.base_send_organ CASCADE CONSTRAINTS
-/
+-- Generated 29-五月-2012 14:28:33 from ORAHYD@ORAHYD
 
 CREATE TABLE orahyd.base_send_organ
     (sid                            NUMBER NOT NULL,

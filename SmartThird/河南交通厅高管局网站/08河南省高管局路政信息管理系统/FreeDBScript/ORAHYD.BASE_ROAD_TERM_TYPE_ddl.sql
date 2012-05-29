@@ -1,9 +1,5 @@
 -- Start of DDL Script for Table ORAHYD.BASE_ROAD_TERM_TYPE
--- Generated 18-五月-2012 18:28:41 from ORAHYD@ORAHYD
-
--- Drop the old instance of BASE_ROAD_TERM_TYPE
-DROP TABLE orahyd.base_road_term_type CASCADE CONSTRAINTS
-/
+-- Generated 29-五月-2012 14:27:41 from ORAHYD@ORAHYD
 
 CREATE TABLE orahyd.base_road_term_type
     (typeid                         NUMBER NOT NULL,

@@ -1,9 +1,5 @@
 -- Start of DDL Script for Table ORAHYD.BASE_USER
--- Generated 18-五月-2012 18:29:27 from ORAHYD@ORAHYD
-
--- Drop the old instance of BASE_USER
-DROP TABLE orahyd.base_user CASCADE CONSTRAINTS
-/
+-- Generated 29-五月-2012 14:29:46 from ORAHYD@ORAHYD
 
 CREATE TABLE orahyd.base_user
     (userid                         NUMBER DEFAULT 0 NOT NULL,

@@ -1,9 +1,5 @@
 -- Start of DDL Script for Table ORAHYD.BASE_LICENSE_ACCEPT
--- Generated 18-五月-2012 18:27:33 from ORAHYD@ORAHYD
-
--- Drop the old instance of BASE_LICENSE_ACCEPT
-DROP TABLE orahyd.base_license_accept CASCADE CONSTRAINTS
-/
+-- Generated 29-五月-2012 14:22:28 from ORAHYD@ORAHYD
 
 CREATE TABLE orahyd.base_license_accept
     (requisitionid                  NUMBER NOT NULL,

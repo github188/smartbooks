@@ -1,9 +1,5 @@
 -- Start of DDL Script for Package ORAHYD.PKG_ARTICLE_QUERY
--- Generated 28-五月-2012 8:24:30 from ORAHYD@ORAHYD
-
--- Drop the old instance of PKG_ARTICLE_QUERY
-DROP PACKAGE orahyd.pkg_article_query
-/
+-- Generated 29-五月-2012 14:30:40 from ORAHYD@ORAHYD
 
 CREATE OR REPLACE 
 PACKAGE orahyd.pkg_article_query

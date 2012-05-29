@@ -1,9 +1,5 @@
 -- Start of DDL Script for Table ORAHYD.BASE_OBSERVED
--- Generated 18-五月-2012 18:27:58 from ORAHYD@ORAHYD
-
--- Drop the old instance of BASE_OBSERVED
-DROP TABLE orahyd.base_observed CASCADE CONSTRAINTS
-/
+-- Generated 29-五月-2012 14:24:04 from ORAHYD@ORAHYD
 
 CREATE TABLE orahyd.base_observed
     (observedid                     NUMBER DEFAULT 0 NOT NULL,

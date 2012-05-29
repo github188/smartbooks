@@ -1,9 +1,5 @@
 -- Start of DDL Script for Table ORAHYD.BASE_COMPS
--- Generated 18-五月-2012 18:27:09 from ORAHYD@ORAHYD
-
--- Drop the old instance of BASE_COMPS
-DROP TABLE orahyd.base_comps CASCADE CONSTRAINTS
-/
+-- Generated 29-五月-2012 14:20:36 from ORAHYD@ORAHYD
 
 CREATE TABLE orahyd.base_comps
     (id                             NUMBER NOT NULL,

@@ -1,9 +1,5 @@
 -- Start of DDL Script for Table ORAHYD.BASE_CASE_CLOSED
--- Generated 18-五月-2012 18:26:59 from ORAHYD@ORAHYD
-
--- Drop the old instance of BASE_CASE_CLOSED
-DROP TABLE orahyd.base_case_closed CASCADE CONSTRAINTS
-/
+-- Generated 29-五月-2012 14:19:57 from ORAHYD@ORAHYD
 
 CREATE TABLE orahyd.base_case_closed
     (id                             NUMBER NOT NULL,

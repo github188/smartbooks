@@ -1,9 +1,5 @@
 -- Start of DDL Script for Table ORAHYD.BASE_CASE_LOSS
--- Generated 18-五月-2012 18:27:04 from ORAHYD@ORAHYD
-
--- Drop the old instance of BASE_CASE_LOSS
-DROP TABLE orahyd.base_case_loss CASCADE CONSTRAINTS
-/
+-- Generated 29-五月-2012 14:20:16 from ORAHYD@ORAHYD
 
 CREATE TABLE orahyd.base_case_loss
     (id                             NUMBER NOT NULL,

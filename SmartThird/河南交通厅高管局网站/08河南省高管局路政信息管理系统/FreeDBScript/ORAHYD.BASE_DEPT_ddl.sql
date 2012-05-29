@@ -1,9 +1,5 @@
 -- Start of DDL Script for Table ORAHYD.BASE_DEPT
--- Generated 18-五月-2012 18:27:14 from ORAHYD@ORAHYD
-
--- Drop the old instance of BASE_DEPT
-DROP TABLE orahyd.base_dept CASCADE CONSTRAINTS
-/
+-- Generated 29-五月-2012 14:20:56 from ORAHYD@ORAHYD
 
 CREATE TABLE orahyd.base_dept
     (deptid                         NUMBER NOT NULL,

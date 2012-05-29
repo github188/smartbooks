@@ -1,9 +1,5 @@
 -- Start of DDL Script for Table ORAHYD.BASE_SHOUWEN
--- Generated 18-五月-2012 18:29:04 from ORAHYD@ORAHYD
-
--- Drop the old instance of BASE_SHOUWEN
-DROP TABLE orahyd.base_shouwen CASCADE CONSTRAINTS
-/
+-- Generated 29-五月-2012 14:28:50 from ORAHYD@ORAHYD
 
 CREATE TABLE orahyd.base_shouwen
     (sid                            NUMBER NOT NULL,

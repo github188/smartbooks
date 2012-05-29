@@ -1,9 +1,5 @@
 -- Start of DDL Script for Table ORAHYD.BASE_ARTICLE_TYPE
--- Generated 24-五月-2012 8:40:09 from ORAHYD@ORAHYD
-
--- Drop the old instance of BASE_ARTICLE_TYPE
-DROP TABLE orahyd.base_article_type CASCADE CONSTRAINTS
-/
+-- Generated 29-五月-2012 14:17:37 from ORAHYD@ORAHYD
 
 CREATE TABLE orahyd.base_article_type
     (id                             NUMBER DEFAULT 0 NOT NULL,

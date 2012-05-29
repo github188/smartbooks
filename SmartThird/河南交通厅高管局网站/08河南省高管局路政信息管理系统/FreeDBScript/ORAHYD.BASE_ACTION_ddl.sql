@@ -1,9 +1,5 @@
 -- Start of DDL Script for Table ORAHYD.BASE_ACTION
--- Generated 18-五月-2012 18:25:03 from ORAHYD@ORAHYD
-
--- Drop the old instance of BASE_ACTION
-DROP TABLE orahyd.base_action CASCADE CONSTRAINTS
-/
+-- Generated 29-五月-2012 14:15:06 from ORAHYD@ORAHYD
 
 CREATE TABLE orahyd.base_action
     (actionid                       NUMBER DEFAULT 0 NOT NULL,

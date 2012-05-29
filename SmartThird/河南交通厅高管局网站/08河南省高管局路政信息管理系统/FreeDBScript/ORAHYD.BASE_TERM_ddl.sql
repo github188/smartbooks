@@ -1,9 +1,5 @@
 -- Start of DDL Script for Table ORAHYD.BASE_TERM
--- Generated 18-五月-2012 18:29:13 from ORAHYD@ORAHYD
-
--- Drop the old instance of BASE_TERM
-DROP TABLE orahyd.base_term CASCADE CONSTRAINTS
-/
+-- Generated 29-五月-2012 14:29:06 from ORAHYD@ORAHYD
 
 CREATE TABLE orahyd.base_term
     (termid                         NUMBER NOT NULL,

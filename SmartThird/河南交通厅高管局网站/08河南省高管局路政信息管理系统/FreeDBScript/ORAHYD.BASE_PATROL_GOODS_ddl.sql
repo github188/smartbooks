@@ -1,9 +1,5 @@
 -- Start of DDL Script for Table ORAHYD.BASE_PATROL_GOODS
--- Generated 18-五月-2012 18:28:09 from ORAHYD@ORAHYD
-
--- Drop the old instance of BASE_PATROL_GOODS
-DROP TABLE orahyd.base_patrol_goods CASCADE CONSTRAINTS
-/
+-- Generated 29-五月-2012 14:24:54 from ORAHYD@ORAHYD
 
 CREATE TABLE orahyd.base_patrol_goods
     (patrolgoodsid                  NUMBER NOT NULL,
