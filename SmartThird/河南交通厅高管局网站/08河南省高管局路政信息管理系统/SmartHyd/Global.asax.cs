@@ -29,7 +29,7 @@ namespace SmartHyd {
             /*
              * 开发模式下请注释掉该段代码，上线运行期间请去掉注释。
              */
-            //SaveError();
+            SaveError();
         }
 
         protected void Session_End(object sender, EventArgs e) {

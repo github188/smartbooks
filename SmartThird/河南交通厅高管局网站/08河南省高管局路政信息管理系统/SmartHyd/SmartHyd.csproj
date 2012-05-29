@@ -30,7 +30,7 @@
     <OutputPath>bin\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+    <WarningLevel>0</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AspNetPager, Version=7.3.2.0, Culture=neutral, PublicKeyToken=fb0a0fe055d40fd4, processorArchitecture=MSIL">
@@ -52,9 +52,14 @@
     <Reference Include="System.Web.Mobile" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AdminDefault.aspx" />
+    <Content Include="AdminLeft.aspx" />
+    <Content Include="AdminLogin.aspx" />
+    <Content Include="AdminTop.aspx" />
     <Content Include="Ascx\Department.ascx" />
     <Content Include="Ascx\TreeView.ascx" />
     <Content Include="Css\base.css" />
+    <Content Include="Css\basemain.css" />
     <Content Include="Css\tongdaoa.css" />
     <Content Include="Error.aspx" />
     <Content Include="Global.asax" />
@@ -62,6 +67,13 @@
     <Content Include="Images\notify_open.gif" />
     <Content Include="Images\pbar-ani.gif" />
     <Content Include="Images\sale_manage.png" />
+    <Content Include="Images\ui-hander-background.png" />
+    <Content Include="Images\ui-hander-logo.png" />
+    <Content Include="Images\ui-hander-searchbox.png" />
+    <Content Include="Images\ui-left-ico01.png" />
+    <Content Include="Images\ui-left-ico02.png" />
+    <Content Include="Images\ui-left-ico03.png" />
+    <Content Include="Images\ui-left-menustar.png" />
     <Content Include="Images\user-ico.jpg" />
     <Content Include="ManageCenter\Affiche.aspx" />
     <Content Include="ManageCenter\Area.aspx" />
@@ -325,6 +337,34 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminDefault.aspx.cs">
+      <DependentUpon>AdminDefault.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminDefault.aspx.designer.cs">
+      <DependentUpon>AdminDefault.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminLeft.aspx.cs">
+      <DependentUpon>AdminLeft.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminLeft.aspx.designer.cs">
+      <DependentUpon>AdminLeft.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminLogin.aspx.cs">
+      <DependentUpon>AdminLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminLogin.aspx.designer.cs">
+      <DependentUpon>AdminLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminTop.aspx.cs">
+      <DependentUpon>AdminTop.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminTop.aspx.designer.cs">
+      <DependentUpon>AdminTop.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Ascx\Department.ascx.cs">
       <DependentUpon>Department.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
