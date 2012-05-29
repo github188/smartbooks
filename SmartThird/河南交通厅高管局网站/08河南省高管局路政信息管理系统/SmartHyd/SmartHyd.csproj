@@ -74,6 +74,11 @@
     <Content Include="Images\ui-left-ico02.png" />
     <Content Include="Images\ui-left-ico03.png" />
     <Content Include="Images\ui-left-menustar.png" />
+    <Content Include="Images\ui-login-buttonbackground.png" />
+    <Content Include="Images\ui-login-inputbackground.png" />
+    <Content Include="Images\ui-login-inputcheck.png" />
+    <Content Include="Images\ui-login-loginbackground.png" />
+    <Content Include="Images\ui-login-logo.png" />
     <Content Include="Images\user-ico.jpg" />
     <Content Include="ManageCenter\Affiche.aspx" />
     <Content Include="ManageCenter\Area.aspx" />
@@ -122,6 +127,7 @@
     <Content Include="ManageCenter\UserManage.aspx" />
     <Content Include="readme.txt" />
     <Content Include="Scripts\base.js" />
+    <Content Include="Scripts\DD_belatedPNG_0.0.8a.js" />
     <Content Include="Scripts\jquery-ui-1.8.18.custom\css\redmond\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Scripts\jquery-ui-1.8.18.custom\css\redmond\images\ui-bg_flat_55_fbec88_40x100.png" />
     <Content Include="Scripts\jquery-ui-1.8.18.custom\css\redmond\images\ui-bg_glass_75_d0e5f5_1x400.png" />
