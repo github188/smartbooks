@@ -35,6 +35,7 @@ public partial class management_EditRoadDepart : System.Web.UI.Page
             txtPhone.Text = depart.RD_Phone;
             txtEmail.Text = depart.RD_Email;
             txtPostCode.Text = depart.RD_PostCode;
+            txtReport.Text = depart.RD_Report;
             txtHonour.Text = depart.RD_Honour;
             txtAddress.Text = depart.RD_Address;
             txtSlogon.Text = depart.RD_Slogon;
@@ -44,9 +45,14 @@ public partial class management_EditRoadDepart : System.Web.UI.Page
             Image1.ImageUrl = "../RoadPhoto/" + depart.RD_MainPhoto;
         }
     }
+    /// <summary>
+    /// 编辑部门信息
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     protected void btnSaveInfo_Click(object sender, ImageClickEventArgs e)
     {
-        string sqlStr = "update R_RoadDepart set RD_Manager='" + txtRen.Text.Trim() + "',RD_Phone='" + txtPhone.Text.Trim() + "',RD_Fax='" + txtFax.Text.Trim() + "',RD_Email='" + txtEmail.Text.Trim() + "',RD_PostCode='" + txtPostCode.Text.Trim() + "',RD_QQ='" + txtQQ.Text.Trim() + "',RD_City='" + ddlCity.SelectedValue + "',RD_Address='" + txtAddress.Text.Trim() + "',RD_Honour='" + txtHonour.Text + "',RD_Slogon='" + txtSlogon.Text.Trim() + "',RD_Remark='" + txtRemark.Text + "' where RD_ID='" + ViewState["rdid"].ToString() + "'";
+        string sqlStr = "update R_RoadDepart set RD_Manager='" + txtRen.Text.Trim() + "',RD_Phone='" + txtPhone.Text.Trim() + "',RD_Fax='" + txtFax.Text.Trim() + "',RD_Email='" + txtEmail.Text.Trim() + "',RD_PostCode='" + txtPostCode.Text.Trim() + "',RD_QQ='" + txtQQ.Text.Trim() + "',RD_City='" + ddlCity.SelectedValue + "',RD_Address='" + txtAddress.Text.Trim() + "',RD_Honour='" + txtHonour.Text + "',RD_Slogon='" + txtSlogon.Text.Trim() + "',RD_Remark='" + txtRemark.Text + "',RD_Report='"+txtReport.Text+"' where RD_ID='" + ViewState["rdid"].ToString() + "'";
         if (DBHelper.ExecuteCommand(sqlStr) > 0)
         {
             CommonFunction.AjaxAlert(UpdatePanel1, "信息修改成功");
