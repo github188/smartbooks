@@ -716,6 +716,10 @@
     <Folder Include="Temp\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Smart\SmartSecurity\SmartSecurity.csproj">
+      <Project>{116EC11E-6812-48DF-BFD6-8B3FF66C884F}</Project>
+      <Name>SmartSecurity</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\..\Smart\SmartUtility\SmartUtility.csproj">
       <Project>{B7456CA5-DDD6-47D7-9618-9C4A5F7C8D6B}</Project>
       <Name>SmartUtility</Name>
