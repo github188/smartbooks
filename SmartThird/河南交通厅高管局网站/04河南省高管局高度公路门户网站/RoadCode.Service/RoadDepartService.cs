@@ -41,6 +41,7 @@ namespace RoadService
               depart.RD_MainPhoto = dt.Rows[0]["RD_MainPhoto"].ToString();
               depart.RD_ViewPhoto = dt.Rows[0]["RD_ViewPhoto"].ToString();
               depart.RD_Logo = dt.Rows[0]["RD_Logo"].ToString();
+              depart.RD_Report = dt.Rows[0]["RD_Report"].ToString();
           }
           return depart;
       }
