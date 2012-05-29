@@ -326,6 +326,7 @@
     <Content Include="Scripts\kindeditor-4.0.5\themes\default\default.css" />
     <Content Include="Scripts\kindeditor-4.0.5\themes\default\default.png" />
     <Content Include="Scripts\kindeditor-4.0.5\themes\simple\simple.css" />
+    <Content Include="SmartHyd.Publish.xml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
