@@ -4,10 +4,8 @@ body, div {
 }
 body {
 	font-family: "lucida Grande", Verdana;
-	font-size: 12px;	
-}
-a{
-	color: #334b63;
+	font-size: 12px;
+	color: #334b63;	
 }
 
 /*
@@ -102,46 +100,52 @@ a{
 	float: left;
 	overflow: hidden;
 	padding: 8px 0px 8px 0px;
-	width: 189px;
+	width: 188px;
 	border-bottom: solid 1px #b0bac6;
 	border-right: solid 1px #b0bac6;
 }
 .ui-left-menublock ul{
 	list-style: none;
-	width: 189px;
+	width: 188px;
 	padding: 0px;
 	margin: 0px;
 }
 .ui-left-menublock li{
-	width: 189px;
+	width: 171px;
 	height:25px;
 	float:left;
+	padding-left: 18px;
 }
 .ui-left-menublock li img{
-	margin-left: 18px;
-	margin-right: 13px;	
 	float:left;
 	height:12px;
 	width: 12px;
 	padding-top: 6px;
 }
 .ui-left-menublock li a{
-	width:145px;
+	width:65px;
 	height:25px;
 	line-height:25px;
-	padding:0px;
-	margin:0px;
+	margin:0px 0px 0px 10px;
 	border:none;
 	float:left;	
-	overflow:hidden;
+	overflow:hidden;	
 }
 .ui-left-menublock li:hover{	
-	background-color: #065c8f;
+	background-color: #065c8f;	
 }
 .ui-left-menublock a:hover{
 	color: #ffffff;
 }
-
+.ui-left-menublock-max{
+	font-size: 15px;
+	font-weight:bold;
+}
+.ui-left-menublock-max li img{
+	width: 18px;
+	height: 18px;
+	padding-top: 4px;
+}
 
 
 /*
@@ -150,6 +154,5 @@ a{
 .ul-right-content {
 	float: left;
 	overflow: hidden;
-	margin: 10px;
-	background-color: blue;
+	margin: 4px;
 }
