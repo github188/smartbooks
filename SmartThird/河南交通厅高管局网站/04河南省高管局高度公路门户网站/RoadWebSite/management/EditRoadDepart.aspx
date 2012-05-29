@@ -67,7 +67,11 @@
     <td>
         <asp:TextBox ID="txtPostCode" runat="server" Width="220px"></asp:TextBox></td>
   </tr>
-  
+   <tr>
+    <td height="30" align="right">举报电话：</td>
+    <td colspan="3">
+        <asp:TextBox ID="txtReport" runat="server" Width="592px"></asp:TextBox></td>
+    </tr>
   <tr>
     <td height="30" align="right">荣誉称号：</td>
     <td colspan="3">
