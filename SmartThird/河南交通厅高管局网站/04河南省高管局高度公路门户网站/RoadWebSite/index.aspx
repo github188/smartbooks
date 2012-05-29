@@ -26,12 +26,13 @@
             </dd>
         </dl>
         <dl id="contact" class="left wid240 mar_l10">
-            <dt></dt>
+            <dt> <p class="right mar_t15 mar_r20" style="margin-top:6px;">
+                    <a href="NewsList.aspx?tid=4">更多>></a></p></dt>
             <dd>
                 <div class="jianjie_r">
                     <div class="jianjie_l">
                         <div style="margin: 10px 15px;">
-                            单位负责人：<%=depart.RD_Manager %><br />
+                           <%-- 单位负责人：<%=depart.RD_Manager %><br />
                             联系电话：<%=depart.RD_Phone %><br />
                             单位传真：<%=depart.RD_Fax %>
                             <br />
@@ -39,7 +40,14 @@
                             <br />
                             邮政编码：<%=depart.RD_PostCode %>
                             <br />
-                            地址：<%=depart.RD_Address %>
+                            地址：<%=depart.RD_Address %>--%>
+                            <ul>
+                            <asp:Repeater ID="rptGGGS" runat="server">
+                                <itemtemplate>
+                                <li><span>[<%# PubClass.Tool.Get_MonthAndDay(Eval("N_Date").ToString()) %>]</span><a href='NewsInfo.aspx?nid=<%# Eval("N_ID") %>' target="_blank" title='<%# Eval("N_Title") %>'><%# PubClass.Tool.SubString(Eval("N_Title").ToString(),23) %></a></li>
+                              </itemtemplate>
+                            </asp:Repeater>
+                        </ul>
                         </div>
                     </div>
                 </div>
