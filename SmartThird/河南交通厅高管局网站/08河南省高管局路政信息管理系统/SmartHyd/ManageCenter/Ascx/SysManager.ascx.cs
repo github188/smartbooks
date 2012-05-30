@@ -120,5 +120,10 @@ namespace SmartHyd.ManageCenter.Ascx
             dataBindRepeater();
         }
         #endregion
+
+        //添加用户
+        protected void btnAddUser_Click(object sender, EventArgs e) {
+            Server.Transfer("~/ManageCenter/UserManage.aspx");
+        }
     }
 }

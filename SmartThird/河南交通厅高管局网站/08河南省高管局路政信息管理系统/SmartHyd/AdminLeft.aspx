@@ -58,33 +58,33 @@
 				
 				<li>
 					<img src="images/ui-left-ico03.png" alt="路产管理"/>
-					<a href="#" target="mainFrame">路产管理</a>
+					<a href="ManageCenter/ConstructionPage.aspx" target="mainFrame">路产管理</a>
 				</li>
 				
 				<li>
 					<img src="images/ui-left-ico01.png" alt="超限治理"/>
-					<a href="#">超限治理</a>
+					<a href="ManageCenter/ConstructionPage.aspx" target="mainFrame">超限治理</a>
 					<img src="images/ui-left-menustar.png" alt=""/>
 				</li>
 				
 				<li>
 					<img src="images/ui-left-ico01.png" alt="行政许可"/>
-					<a href="ManageCenter/RoadProject.aspx" target="mainFrame">行政许可</a>
+					<a href="ManageCenter/ConstructionPage.aspx" target="mainFrame">行政许可</a>
 				</li>
 				
 				<li>
 					<img src="images/ui-left-ico01.png" alt="应急安全"/>
-					<a href="#" target="mainFrame">应急安全</a>
+					<a href="ManageCenter/ConstructionPage.aspx" target="mainFrame">应急安全</a>
 				</li>
 				
 				<li>
 					<img src="images/ui-left-ico01.png" alt="路况信息"/>
-					<a href="#">路况信息</a>
+					<a href="ManageCenter/ConstructionPage.aspx" target="mainFrame">路况信息</a>
 				</li>
 				
 				<li>
 					<img src="images/ui-left-ico01.png" alt="考核系统"/>
-					<a href="#" target="mainFrame">考核系统</a>
+					<a href="ManageCenter/ConstructionPage.aspx" target="mainFrame">考核系统</a>
 				</li>
 				
 				<li>
@@ -109,7 +109,7 @@
 		<div class="ui-left-menublock">
 			<ul>
 				<li>
-					<a href="#">路政巡逻</a>
+					<a href="ManageCenter/ConstructionPage.aspx" target="mainFrame">附加功能</a>
 				</li>
 			</ul>
 		</div>

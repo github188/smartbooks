@@ -116,6 +116,14 @@
                         <asp:FileUpload ID="fileupPhoto" runat="server" />
                     </td>
                 </tr>
+
+                <!--按钮栏-->
+                <tr class="TableControl" align="center">
+                    <td colspan="4" nowrap="nowrap">
+                        <asp:Button ID="btnSubmit" runat="server" Text="提交" CssClass="BigButtonA" 
+                            onclick="btnSubmit_Click" />
+                    </td>
+                </tr>
             </tbody>
         </table>
     </div>

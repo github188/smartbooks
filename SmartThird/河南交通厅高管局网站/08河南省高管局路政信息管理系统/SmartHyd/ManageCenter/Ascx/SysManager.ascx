@@ -83,6 +83,10 @@
     <!--部门管理结束-->
     <!--用户管理开始-->
     <div id="tabs-2">
+        <div>
+            <asp:Button ID="btnAddUser" runat="server" Text="添加" CssClass="BigButtonA" 
+                onclick="btnAddUser_Click" />
+        </div>
         <!--用户列表开始-->
         <table class="TableList" width="100%">
             <tbody>

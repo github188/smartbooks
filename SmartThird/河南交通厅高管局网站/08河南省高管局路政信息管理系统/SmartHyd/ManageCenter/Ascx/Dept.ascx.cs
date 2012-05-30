@@ -141,5 +141,18 @@ namespace SmartHyd.ManageCenter.Ascx {
         }
         #endregion
 
+
+        #region 页面按钮事件
+        protected void btnSubmit_Click(object sender, EventArgs e) {
+            //获取实体
+            Entity.BASE_DEPT model = GetEntity();
+
+            //添加数据
+            bll.Add(model);
+
+            //重新加载当前页
+            Response.Redirect(Request.Url.AbsoluteUri, true);
+        }
+        #endregion
     }
 }

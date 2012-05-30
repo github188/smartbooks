@@ -229,5 +229,27 @@ namespace SmartHyd.ManageCenter.Ascx
             BindUserList();
         }
         #endregion
+
+        //修改标志：20120530 王亚 添加用户
+        protected void btnSubmit_Click(object sender, EventArgs e) {
+            if (CheckUserSubmitFrom()) {
+                Entity.BASE_USER model = GetEntity();
+                model.PHOTO = UpLoadPhoto();
+                bll.Add(model);
+
+                //日志..............添加
+                Entity.BASE_LOG logmodel = new Entity.BASE_LOG();
+                logmodel.LOGID = -1;                        //id,主键
+                logmodel.LOGTYPE = "用户管理";                     //日志类型
+                logmodel.CREATEDATE = DateTime.Now;                   //日志创建时间
+                logmodel.DESCRIPTION = "添加用户";                             //日志信息内容
+                logmodel.OPERATORID = 1;                    //操作人
+                logmodel.IPADDRESS = Smart.Utility.IpAddress.GetLocationIpAddress();                 //ip地址
+                logbll.Add(logmodel);
+
+                //重新加载当前页
+                Response.Redirect(Request.Url.AbsoluteUri + "#tabs-2", true);
+            }
+        }
     }
 }

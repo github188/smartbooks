@@ -64,6 +64,7 @@
     <Content Include="Error.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Images\big_btn_a.png" />
+    <Content Include="Images\Construction.png" />
     <Content Include="Images\notify_open.gif" />
     <Content Include="Images\pbar-ani.gif" />
     <Content Include="Images\sale_manage.png" />
@@ -107,6 +108,7 @@
     <Content Include="ManageCenter\Ascx\Term.ascx" />
     <Content Include="ManageCenter\Ascx\UserManage.ascx" />
     <Content Include="ManageCenter\Chat.aspx" />
+    <Content Include="ManageCenter\ConstructionPage.aspx" />
     <Content Include="ManageCenter\Dept.aspx" />
     <Content Include="ManageCenter\DocumentCheckOut.aspx" />
     <Content Include="ManageCenter\DocumentCreate.aspx" />
@@ -591,6 +593,13 @@
     </Compile>
     <Compile Include="ManageCenter\Chat.aspx.designer.cs">
       <DependentUpon>Chat.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\ConstructionPage.aspx.cs">
+      <DependentUpon>ConstructionPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\ConstructionPage.aspx.designer.cs">
+      <DependentUpon>ConstructionPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="ManageCenter\Dept.aspx.cs">
       <DependentUpon>Dept.aspx</DependentUpon>
