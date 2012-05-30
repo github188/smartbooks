@@ -15,16 +15,16 @@ namespace SmartHyd.ManageCenter.Ascx
         private BLL.BASE_LOG logbll = new BLL.BASE_LOG();
         protected void Page_Load(object sender, EventArgs e)
         {
-            dataBindToRepeater();//绑定部门数据
-            BindUserList();   //绑定用户数据
+            dataBindToRepeater("1=1");//绑定部门数据
+             BindUserList();   //绑定用户数据
             dataBindRepeater();//绑定日志数据
         }
         #region 部门管理
         //使用dataBindToRepeater()方法绑定部门数据
-        private void dataBindToRepeater()
+        private void dataBindToRepeater(string strwhere)
         {
             DataTable dt = new DataTable();
-            dt = bll.GetAllDep("1=1");
+            dt = bll.GetAllDep(strwhere);
 
             AspNetPager1.RecordCount = dt.Rows.Count;
 
@@ -42,16 +42,21 @@ namespace SmartHyd.ManageCenter.Ascx
         {
             Server.Transfer("~/ManageCenter/Dept.aspx");
         }
-
+         /// <summary>
+         /// 按钮事件：查询
+         /// </summary>
+         /// <param name="sender"></param>
+         /// <param name="e"></param>
         protected void btnSearchDept_Click(object sender, EventArgs e)
         {
-
+            string strwhere = "DPTNAME='" + this.TxtDeptName.Text + "'";
+            dataBindToRepeater(strwhere);
         }
         //分页事件
         protected void AspNetPager1_PageChanging(object src, Wuqi.Webdiyer.PageChangingEventArgs e)
         {
             this.AspNetPager1.CurrentPageIndex = e.NewPageIndex;
-            dataBindToRepeater();
+            dataBindToRepeater("1=1");
         }
         #endregion
         #region 用户管理

@@ -13,8 +13,9 @@
     <div id="tabs-1">
         <!--按钮栏-->
         <div>
+            <span>部门名称：</span><asp:TextBox ID="TxtDeptName" runat="server" CssClass="input"></asp:TextBox>&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:Button ID="btnSearchDept" runat="server" Text="查询" CssClass="BigButtonA" OnClick="btnSearchDept_Click" />&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Button ID="btnAddDept" runat="server" Text="新建" CssClass="BigButtonA" OnClick="btnAddDept_Click" />
-            <asp:Button ID="btnSearchDept" runat="server" Text="查询" CssClass="BigButtonA" OnClick="btnSearchDept_Click" />
         </div>
         <!--部门列表开始-->
         <table class="TableList" width="100%">
@@ -74,7 +75,7 @@
             </asp:Repeater>
         </table>
         <webdiyer:AspNetPager ID="AspNetPager1" runat="server" CustomInfoHTML="共%PageCount%页，当前为第%CurrentPageIndex%页"
-            FirstPageText="首页" LastPageText="尾页" NextPageText="下一页" PageIndexBoxType="TextBox"
+            FirstPageText="首页" LastPageText="尾页" NextPageText="下一页" PageIndexBoxType="TextBox" 
             PrevPageText="上一页" ShowCustomInfoSection="Right" ShowPageIndexBox="Auto" SubmitButtonText="Go"
             TextAfterPageIndexBox="页" TextBeforePageIndexBox="转到" OnPageChanging="AspNetPager1_PageChanging">
         </webdiyer:AspNetPager>
@@ -165,8 +166,9 @@
         <webdiyer:AspNetPager ID="AspNetPager2" runat="server" CustomInfoHTML="共%PageCount%页，当前为第%CurrentPageIndex%页"
             FirstPageText="首页" LastPageText="尾页" NextPageText="下一页" PageIndexBoxType="TextBox"
             PrevPageText="上一页" ShowCustomInfoSection="Right" ShowPageIndexBox="Auto" SubmitButtonText="Go"
-            TextAfterPageIndexBox="页" TextBeforePageIndexBox="转到" OnPageChanging="AspNetPager2_PageChanging"
-            PageSize="20" CssClass="anpager" CurrentPageButtonClass="cpb">
+            TextAfterPageIndexBox="页" TextBeforePageIndexBox="转到" 
+            OnPageChanging="AspNetPager2_PageChanging" CssClass="anpager" 
+            CurrentPageButtonClass="cpb" UrlPageIndexName="pageIndex">
         </webdiyer:AspNetPager>
         <!--用户列表结束-->
     </div>
@@ -217,9 +219,10 @@
             </tbody>
         </table>
         <webdiyer:AspNetPager ID="AspNetPager3" runat="server" CustomInfoHTML="共%PageCount%页，当前为第%CurrentPageIndex%页"
-            FirstPageText="首页" LastPageText="尾页" NextPageText="下一页" PageIndexBoxType="TextBox"
+            FirstPageText="首页" LastPageText="尾页" NextPageText="下一页" PageIndexBoxType="TextBox" 
             PrevPageText="上一页" ShowCustomInfoSection="Right" ShowPageIndexBox="Auto" SubmitButtonText="Go"
-            TextAfterPageIndexBox="页" TextBeforePageIndexBox="转到" OnPageChanging="AspNetPager3_PageChanging">
+            TextAfterPageIndexBox="页" TextBeforePageIndexBox="转到" 
+            OnPageChanging="AspNetPager3_PageChanging" UrlPageIndexName="pageName">
         </webdiyer:AspNetPager>
         <!--日志列表结束-->
     </div>
