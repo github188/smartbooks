@@ -260,3 +260,12 @@ body {
 	line-height: 36px;
 	margin-right: 5px;
 }
+/*登录页校验输入消息提示*/
+.ui-loginpanel-container-alert{
+	width: 100%;
+	height: 40px;
+	float:left;
+	line-height:40px;
+	font-size:13px;
+	color:red;
+}
