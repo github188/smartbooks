@@ -10,7 +10,7 @@ using System.IO;
 namespace SmartHyd.UI {
     public class BaseUserPage : System.Web.UI.Page, Smart.Utility.ISessionBox {
         #region 私有变量
-        private Utility.UserSession _UserSession;
+        private Utility.UserSession _UserSession = null;
         private BLL.BASE_USER bll = new BLL.BASE_USER();
         #endregion
         
