@@ -9,10 +9,14 @@ using System.Web.UI.WebControls;
 
 namespace SmartHyd.ManageCenter.Ascx {
     public partial class DocumentManage : UI.BaseUserControl {
+        
+        #region 私有字段
         private BLL.BASE_ARTICLE bll = new BLL.BASE_ARTICLE();
+        private BLL.BASE_ARTICLE_TYPE bllType = new BLL.BASE_ARTICLE_TYPE();
         private Utility.UserSession userSession;
+        private int inde = 0;
         private int typeId = 0;
-
+        #endregion
         //页面加载
         protected void Page_Load(object sender, EventArgs e) {
             //选定节点改变时触发的事件

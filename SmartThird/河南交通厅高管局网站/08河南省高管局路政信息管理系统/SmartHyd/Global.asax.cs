@@ -73,10 +73,17 @@ namespace SmartHyd {
             //    query, form, cookie,
             //    ex.Source,
             //    ex.Message);
-            string errorMsg = string.Format("{0}\t{1}\n\n", 
-                DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss"),
-                ex.InnerException.Message
-                );;
+            string message = string.Empty;
+            if (ex.InnerException != null)
+            {
+                message = ex.InnerException.Message;
+            }
+            else
+            {
+                message = "空指针异常！";
+            }
+            string errorMsg = string.Format("{0}\t{1}\n\n",
+                DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss"), message);
 
             //保存错误日志
             File.AppendAllText(path, errorMsg, Encoding.UTF8);

@@ -28,16 +28,16 @@
 		<div class="ui-left-menublock-max ui-left-menublock">
 			<ul>
 				<li>
-					<img src="images/ui-left-ico01.png">
-					<a href="#">发文</a>
+					<img src="images/ui-left-ico01.png" alt="发文"/>
+					<a href="ManageCenter/DocumentCreate.aspx" target="mainFrame">发文</a>
 				</li>
 				<li>
-					<img src="images/ui-left-ico01.png">
-					<a href="#">收文</a>
+					<img src="images/ui-left-ico01.png" alt="收文"/>
+					<a href="ManageCenter/DocumentReply.aspx" target="mainFrame">收文</a>
 				</li>
 				<li>
-					<img src="images/ui-left-ico01.png">
-					<a href="#">单位考核</a>
+					<img src="images/ui-left-ico01.png" alt="单位考核"/>
+					<a href="#" target="mainFrame">单位考核</a>
 				</li>
 			</ul>
 		</div>
@@ -47,59 +47,59 @@
 		<div id="menu" class="ui-left-menublock">
 			<ul>
 				<li>
-					<img src="images/ui-left-ico01.png">
-					<a href="#">路政巡逻</a>
+					<img src="images/ui-left-ico01.png" alt="路政巡逻" />
+					<a href="ManageCenter/Patrol.aspx" target="mainFrame">路政巡逻</a>
 				</li>
 				
 				<li>
-					<img src="images/ui-left-ico02.png">
-					<a href="#">人员装备</a>
+					<img src="images/ui-left-ico02.png" alt="人员装备"/>
+					<a href="ManageCenter/Term.aspx" target="mainFrame">人员装备</a>
 				</li>
 				
 				<li>
-					<img src="images/ui-left-ico03.png">
-					<a href="#">路产管理</a>
+					<img src="images/ui-left-ico03.png" alt="路产管理"/>
+					<a href="#" target="mainFrame">路产管理</a>
 				</li>
 				
 				<li>
-					<img src="images/ui-left-ico01.png">
+					<img src="images/ui-left-ico01.png" alt="超限治理"/>
 					<a href="#">超限治理</a>
-					<img src="images/ui-left-menustar.png">
+					<img src="images/ui-left-menustar.png" alt=""/>
 				</li>
 				
 				<li>
-					<img src="images/ui-left-ico01.png">
-					<a href="#">行政许可</a>
+					<img src="images/ui-left-ico01.png" alt="行政许可"/>
+					<a href="ManageCenter/RoadProject.aspx" target="mainFrame">行政许可</a>
 				</li>
 				
 				<li>
-					<img src="images/ui-left-ico01.png">
-					<a href="#">应急安全</a>
+					<img src="images/ui-left-ico01.png" alt="应急安全"/>
+					<a href="#" target="mainFrame">应急安全</a>
 				</li>
 				
 				<li>
-					<img src="images/ui-left-ico01.png">
+					<img src="images/ui-left-ico01.png" alt="路况信息"/>
 					<a href="#">路况信息</a>
 				</li>
 				
 				<li>
-					<img src="images/ui-left-ico01.png">
-					<a href="#">考核系统</a>
+					<img src="images/ui-left-ico01.png" alt="考核系统"/>
+					<a href="#" target="mainFrame">考核系统</a>
 				</li>
 				
 				<li>
-					<img src="images/ui-left-ico01.png">
-					<a href="#">网络办公</a>
+					<img src="images/ui-left-ico01.png" alt="网络办公"/>
+					<a href="ManageCenter/Affiche.aspx" target="mainFrame">网络办公</a>
 				</li>
 				
 				<li>
-					<img src="images/ui-left-ico01.png">
-					<a href="#">档案管理</a>
+					<img src="images/ui-left-ico01.png" alt="档案管理"/>
+					<a href="ManageCenter/DocumentManage.aspx" target="mainFrame">档案管理</a>
 				</li>
 				
 				<li>
-					<img src="images/ui-left-ico01.png">
-					<a href="#">系统管理</a>
+					<img src="images/ui-left-ico01.png" alt="系统管理"/>
+					<a href="ManageCenter/SysManager.aspx" target="mainFrame">系统管理</a>
 				</li>
 			</ul>
 		</div>

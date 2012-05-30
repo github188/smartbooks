@@ -219,7 +219,7 @@ namespace SmartHyd.ManageCenter.Ascx
         public override void BtnGrant_Click(object sender, EventArgs e) { }
 
         /// <summary>
-        /// //分页事件 公告管理分页事件
+        /// //分页事件 
         /// </summary>
         /// <param name="src"></param>
         /// <param name="e"></param>

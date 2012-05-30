@@ -102,6 +102,7 @@
     <Content Include="ManageCenter\Ascx\RoadTerm.ascx" />
     <Content Include="ManageCenter\Ascx\Role.ascx" />
     <Content Include="ManageCenter\Ascx\SysLog.ascx" />
+    <Content Include="ManageCenter\Ascx\SysManager.ascx" />
     <Content Include="ManageCenter\Ascx\Term.ascx" />
     <Content Include="ManageCenter\Ascx\UserManage.ascx" />
     <Content Include="ManageCenter\Chat.aspx" />
@@ -123,6 +124,7 @@
     <Content Include="ManageCenter\RoadTerm.aspx" />
     <Content Include="ManageCenter\Role.aspx" />
     <Content Include="ManageCenter\SysLog.aspx" />
+    <Content Include="ManageCenter\SysManager.aspx" />
     <Content Include="ManageCenter\Term.aspx" />
     <Content Include="ManageCenter\UserManage.aspx" />
     <Content Include="readme.txt" />
@@ -553,6 +555,13 @@
     <Compile Include="ManageCenter\Ascx\SysLog.ascx.designer.cs">
       <DependentUpon>SysLog.ascx</DependentUpon>
     </Compile>
+    <Compile Include="ManageCenter\Ascx\SysManager.ascx.cs">
+      <DependentUpon>SysManager.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\Ascx\SysManager.ascx.designer.cs">
+      <DependentUpon>SysManager.ascx</DependentUpon>
+    </Compile>
     <Compile Include="ManageCenter\Ascx\Term.ascx.cs">
       <DependentUpon>Term.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -699,6 +708,13 @@
     </Compile>
     <Compile Include="ManageCenter\SysLog.aspx.designer.cs">
       <DependentUpon>SysLog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\SysManager.aspx.cs">
+      <DependentUpon>SysManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\SysManager.aspx.designer.cs">
+      <DependentUpon>SysManager.aspx</DependentUpon>
     </Compile>
     <Compile Include="ManageCenter\Term.aspx.cs">
       <DependentUpon>Term.aspx</DependentUpon>

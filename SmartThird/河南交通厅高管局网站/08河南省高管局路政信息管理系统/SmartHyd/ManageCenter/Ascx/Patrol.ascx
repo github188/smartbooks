@@ -3,8 +3,10 @@
 <%@ Register src="../../Ascx/Department.ascx" tagname="Department" tagprefix="uc1" %>
 <div id="tab">
     <ul>
-        <li><a href="#tabs-1">添加日志</a></li>
-        <li><a href="#tabs-2">日志查看</a></li>
+        <%--<li><a href="#tabs-1">添加日志</a></li>
+        <li><a href="#tabs-2">日志查看</a></li>--%>
+        <li><a href="#tabs-1">人工巡逻</a></li>
+        <li><a href="#tabs-2">电子巡逻</a></li>
     </ul>
     <!--添加日志开始-->
     <div id="tabs-1">

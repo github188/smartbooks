@@ -3,13 +3,13 @@
 <%@ Register Assembly="AspNetPager" Namespace="Wuqi.Webdiyer" TagPrefix="webdiyer" %>
 <div id="tab">
     <ul id="menu">
-        <li><a href="#tabs-1">回文列表</a></li>
+        <li><a href="#tabs-1">收文列表</a></li>
     </ul>
     <!--回文列表开始-->
     <div id="tabs-1">
         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
             <ContentTemplate>
-                <span class="big3">回文列表</span>
+                <span class="big3">收文列表</span>
                 <table class="TableList" width="100%">
                     <tbody>
                         <tr class="TableHeader" align="center">
@@ -17,7 +17,7 @@
                                 部门名称
                             </td>
                             <td>
-                                回文标题
+                                收文标题
                             </td>
                             <td width="75">
                                 查阅状态
@@ -26,7 +26,7 @@
                                 查阅时间
                             </td>
                             <td width="170">
-                                回文字号
+                                收文字号
                             </td>
                             <td width="170">
                                 回复时间
