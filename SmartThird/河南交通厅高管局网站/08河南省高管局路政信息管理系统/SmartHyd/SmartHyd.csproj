@@ -386,6 +386,9 @@
     <Compile Include="Ascx\TreeView.ascx.designer.cs">
       <DependentUpon>TreeView.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Ashx\VerificationCode.ashx.cs">
+      <DependentUpon>VerificationCode.ashx</DependentUpon>
+    </Compile>
     <Compile Include="Error.aspx.cs">
       <DependentUpon>Error.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -749,6 +752,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ManageCenter\ManageCenter.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Ashx\VerificationCode.ashx" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

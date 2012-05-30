@@ -62,7 +62,7 @@ namespace SmartHyd.ManageCenter.Ascx
             model.REMARK = txtRemark.Text;                   //备注
             model.SEX = Convert.ToInt32(ddlSex.SelectedValue);    //性别        
             model.USERNAME = txtUserName.Text;         //用户账号
-            model.USERPWD = txtPassword.Text;          //用户密码
+            model.USERPWD = Smart.Security.MD5.MD5Encrypt(txtPassword.Text).ToUpper();          //用户密码
             model.STSTUS = 0;                        //状态
             model.PARENTID = 0;                      //用户父ID编号（用于多个子账户）
             model.PHOTO = this.fileupPhoto.FileName; //人员照片

@@ -67,7 +67,9 @@ namespace SmartHyd.Utility {
             #endregion
 
             #region 绑定角色信息
-            var roles = userRoleBLL.GetList(string.Format("USERID={0} group by ROLEID", userId.ToString()));
+            var roles = userRoleBLL.Query(
+                string.Format("SELECT   distinct ROLEID FROM base_user_role WHERE userid = {0}",
+                userId.ToString()));
             BLL.BASE_ROLE roleBll = new BLL.BASE_ROLE();
             foreach (DataRow dr in roles.Rows) {
                 Entity.BASE_ROLE roleModel = new Entity.BASE_ROLE();                

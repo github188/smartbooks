@@ -219,7 +219,7 @@ namespace SmartHyd.OracleDAL {
         /// </summary>
         public DataSet GetList(string strWhere) {
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("select * ");
+            strSql.Append("select USERROLEID,USERID,ROLEID,MENUID,ACTIONID ");
             strSql.Append(" FROM BASE_USER_ROLE ");
             if (strWhere.Trim() != "") {
                 strSql.Append(" where " + strWhere);
@@ -245,7 +245,9 @@ namespace SmartHyd.OracleDAL {
             return OracleHelper.Query(strSql.ToString());
         }
 
-
+        public DataTable Query(string select) {
+            return OracleHelper.Query(select).Tables[0];
+        }
     }
 }
 

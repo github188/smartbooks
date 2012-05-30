@@ -51,5 +51,9 @@ namespace SmartHyd.BLL {
         {
             return dal.deletelist(strWhere);
         }
+
+        public DataTable Query(string select) {
+            return dal.Query(select);
+        }
     }
 }
