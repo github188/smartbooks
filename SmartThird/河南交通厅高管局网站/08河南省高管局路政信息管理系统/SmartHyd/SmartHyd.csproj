@@ -65,6 +65,7 @@
     <Content Include="Global.asax" />
     <Content Include="Images\big_btn_a.png" />
     <Content Include="Images\Construction.png" />
+    <Content Include="Images\FaceImage\f24c4f05-dcfe-4e76-8b2d-9d4506eb707d.png" />
     <Content Include="Images\notify_open.gif" />
     <Content Include="Images\pbar-ani.gif" />
     <Content Include="Images\sale_manage.png" />
@@ -760,7 +761,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Document\" />
-    <Folder Include="Images\FaceImage\" />
     <Folder Include="Log\" />
     <Folder Include="Scripts\kindeditor-4.0.5\attached\" />
     <Folder Include="Temp\" />
