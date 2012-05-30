@@ -20,7 +20,7 @@ namespace SmartHyd.ManageCenter.Ascx
                 UserBind();//用户树绑定
             }
         }
-        //使用dataBindToRepeater()方法绑定部门数据
+        //使用dataBindToRepeater()方法绑定消息数据
         private void dataBindToRepeater()
         {
             DataTable dt = new DataTable();
@@ -38,6 +38,9 @@ namespace SmartHyd.ManageCenter.Ascx
             this.RptList.DataSource = pds; //定义数据源
             this.RptList.DataBind(); //绑定数据
         }
+        /// <summary>
+        /// 用户绑定
+        /// </summary>
         public void UserBind()
         { 
              DataTable dt = new DataTable();

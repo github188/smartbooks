@@ -12,7 +12,7 @@
             <asp:Repeater ID="repList" runat="server">
                 <HeaderTemplate>
                     <thead>
-                        <tr>
+                        <tr class="TableHeader">
                         <th>
                                 <asp:CheckBox ID="Checkall" runat="server" Text="全选" OnClick="javascript:selectall(this);" />
                             </th>
