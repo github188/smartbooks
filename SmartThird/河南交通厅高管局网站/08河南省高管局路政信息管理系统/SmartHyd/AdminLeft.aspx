@@ -37,7 +37,7 @@
 				</li>
 				<li>
 					<img src="images/ui-left-ico01.png" alt="单位考核"/>
-					<a href="#" target="mainFrame">单位考核</a>
+					<a href="ManageCenter/ConstructionPage.aspx" target="mainFrame">单位考核</a>
 				</li>
 			</ul>
 		</div>
@@ -49,11 +49,13 @@
 				<li>
 					<img src="images/ui-left-ico01.png" alt="路政巡逻" />
 					<a href="ManageCenter/Patrol.aspx" target="mainFrame">路政巡逻</a>
+                    <img src="images/ui-left-menustar.png" alt="新功能上线"/>
 				</li>
 				
 				<li>
 					<img src="images/ui-left-ico02.png" alt="人员装备"/>
 					<a href="ManageCenter/Term.aspx" target="mainFrame">人员装备</a>
+                    <img src="images/ui-left-menustar.png" alt="新功能上线"/>
 				</li>
 				
 				<li>
@@ -63,8 +65,7 @@
 				
 				<li>
 					<img src="images/ui-left-ico01.png" alt="超限治理"/>
-					<a href="ManageCenter/ConstructionPage.aspx" target="mainFrame">超限治理</a>
-					<img src="images/ui-left-menustar.png" alt=""/>
+					<a href="ManageCenter/ConstructionPage.aspx" target="mainFrame">超限治理</a>					
 				</li>
 				
 				<li>
@@ -90,16 +91,19 @@
 				<li>
 					<img src="images/ui-left-ico01.png" alt="网络办公"/>
 					<a href="ManageCenter/Office.aspx" target="mainFrame">网络办公</a>
+                    <img src="images/ui-left-menustar.png" alt="新功能上线"/>
 				</li>
 				
 				<li>
 					<img src="images/ui-left-ico01.png" alt="档案管理"/>
 					<a href="ManageCenter/DocumentManage.aspx" target="mainFrame">档案管理</a>
+                    <img src="images/ui-left-menustar.png" alt="新功能上线"/>
 				</li>
 				
 				<li>
 					<img src="images/ui-left-ico01.png" alt="系统管理"/>
 					<a href="ManageCenter/SysManager.aspx" target="mainFrame">系统管理</a>
+                    <img src="images/ui-left-menustar.png" alt="新功能上线"/>
 				</li>
 			</ul>
 		</div>
