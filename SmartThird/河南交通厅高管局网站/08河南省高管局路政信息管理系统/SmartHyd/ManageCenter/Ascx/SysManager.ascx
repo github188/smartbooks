@@ -13,8 +13,7 @@
     <div id="tabs-1">
         <!--按钮栏-->
         <div>
-            <asp:Button ID="btnAddDept" runat="server" Text="新建部门" CssClass="BigButtonA" 
-                OnClick="btnAddDept_Click" style="width: 78px" />
+            <asp:Button ID="btnAddDept" runat="server" Text="新建部门" CssClass="BigButtonA" OnClick="btnAddDept_Click" />
             <asp:Button ID="btnSearchDept" runat="server" Text="查询" CssClass="BigButtonA" OnClick="btnSearchDept_Click" />
         </div>
         <!--部门列表开始-->

@@ -89,7 +89,7 @@
 				
 				<li>
 					<img src="images/ui-left-ico01.png" alt="网络办公"/>
-					<a href="ManageCenter/Affiche.aspx" target="mainFrame">网络办公</a>
+					<a href="ManageCenter/Office.aspx" target="mainFrame">网络办公</a>
 				</li>
 				
 				<li>

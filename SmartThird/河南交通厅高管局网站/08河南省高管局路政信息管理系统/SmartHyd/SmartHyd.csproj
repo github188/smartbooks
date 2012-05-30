@@ -96,6 +96,7 @@
     <Content Include="ManageCenter\Ascx\ImportData.ascx" />
     <Content Include="ManageCenter\Ascx\MenuManage.ascx" />
     <Content Include="ManageCenter\Ascx\Observed.ascx" />
+    <Content Include="ManageCenter\Ascx\Office.ascx" />
     <Content Include="ManageCenter\Ascx\Patrol.ascx" />
     <Content Include="ManageCenter\Ascx\Plan.ascx" />
     <Content Include="ManageCenter\Ascx\RoadProject.ascx" />
@@ -117,6 +118,7 @@
     <Content Include="ManageCenter\ImportData.aspx" />
     <Content Include="ManageCenter\MenuManage.aspx" />
     <Content Include="ManageCenter\Observed.aspx" />
+    <Content Include="ManageCenter\Office.aspx" />
     <Content Include="ManageCenter\Patrol.aspx" />
     <Content Include="ManageCenter\Plan.aspx" />
     <Content Include="ManageCenter\readme.txt" />
@@ -513,6 +515,13 @@
     <Compile Include="ManageCenter\Ascx\Observed.ascx.designer.cs">
       <DependentUpon>Observed.ascx</DependentUpon>
     </Compile>
+    <Compile Include="ManageCenter\Ascx\Office.ascx.cs">
+      <DependentUpon>Office.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\Ascx\Office.ascx.designer.cs">
+      <DependentUpon>Office.ascx</DependentUpon>
+    </Compile>
     <Compile Include="ManageCenter\Ascx\Patrol.ascx.cs">
       <DependentUpon>Patrol.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -666,6 +675,13 @@
     </Compile>
     <Compile Include="ManageCenter\Observed.aspx.designer.cs">
       <DependentUpon>Observed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\Office.aspx.cs">
+      <DependentUpon>Office.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\Office.aspx.designer.cs">
+      <DependentUpon>Office.aspx</DependentUpon>
     </Compile>
     <Compile Include="ManageCenter\Patrol.aspx.cs">
       <DependentUpon>Patrol.aspx</DependentUpon>

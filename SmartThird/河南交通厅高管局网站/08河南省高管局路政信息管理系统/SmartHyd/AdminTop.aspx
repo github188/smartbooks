@@ -19,7 +19,7 @@
 
 		<!--用户信息开始-->
 		<div class="ui-hander-userinfo">
-			<span>张三  &lt; 安阳市路政处一大队 &gt;</span><br />
+			<span><%#Session["user"].ToString() %>&lt; 安阳市路政处一大队 &gt;</span><br />
 			<a href="#">系统首页</a><span> | </span>
 			<a href="#">设置 </a><span> - </span>
 			<a href="#">注销</a>
