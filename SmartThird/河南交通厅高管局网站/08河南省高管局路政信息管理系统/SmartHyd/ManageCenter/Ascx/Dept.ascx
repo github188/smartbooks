@@ -108,8 +108,6 @@
                         </td>
                         <td align="center">
                             <a href="Dept.aspx?Fid=<%# Eval("DEPTID")%>">编辑</a>
-                            <%-- <a href="" id="delhref" runat="server"> 删除</a>
-                                 onclick="javascript:delete_notify(<%# Eval("AFFICHEID")%>)"--%>
                         </td>
                     </tr>
                 </ItemTemplate>
@@ -118,10 +116,12 @@
                 </FooterTemplate>
             </asp:Repeater>
         </table>
-        <webdiyer:AspNetPager ID="AspNetPager1" runat="server" CustomInfoHTML="共%PageCount%页，当前为第%CurrentPageIndex%页"
+        <webdiyer:AspNetPager ID="AspNetPager1" runat="server" 
+            CustomInfoHTML="共%PageCount%页，当前为第%CurrentPageIndex%页"
             FirstPageText="首页" LastPageText="尾页" NextPageText="下一页" PageIndexBoxType="TextBox"
             PrevPageText="上一页" ShowCustomInfoSection="Right" ShowPageIndexBox="Auto" SubmitButtonText="Go"
-            TextAfterPageIndexBox="页" TextBeforePageIndexBox="转到" OnPageChanging="AspNetPager1_PageChanging">
+            TextAfterPageIndexBox="页" TextBeforePageIndexBox="转到" OnPageChanging="AspNetPager1_PageChanging"
+            CssClass="anpager" CurrentPageButtonClass="cpb" >
         </webdiyer:AspNetPager>
     </div>
     <!--部门列表结束-->

@@ -33,7 +33,7 @@
 				</li>
 				<li>
 					<img src="images/ui-left-ico01.png" alt="收文"/>
-					<a href="ManageCenter/DocumentReply.aspx" target="mainFrame">收文</a>
+					<a href="ManageCenter/DocumentManage.aspx" target="mainFrame">收文</a>
 				</li>
 				<li>
 					<img src="images/ui-left-ico01.png" alt="单位考核"/>

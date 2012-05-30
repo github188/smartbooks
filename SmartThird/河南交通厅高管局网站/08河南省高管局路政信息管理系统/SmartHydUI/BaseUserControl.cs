@@ -32,22 +32,22 @@ namespace SmartHyd.UI {
         #endregion
 
         #region 开发模式按钮初始化代码
-        private Button _BtnAdd = new Button() { Text = "添加" };      //添加
-        private Button _BtnDelete = new Button() { Text = "删除" };   //删除
-        private Button _BtnUpdate = new Button() { Text = "修改" };   //修改
-        private Button _BtnView = new Button() { Text = "查看" };     //查看
-        private Button _BtnSearch = new Button() { Text = "查询" };   //查询
-        private Button _BtnImport = new Button() { Text = "导入" };   //导入
-        private Button _BtnExport = new Button() { Text = "导出" };   //导出
-        private Button _BtnPrint = new Button() { Text = "打印" };    //打印
-        private Button _BtnMove = new Button() { Text = "移动" };     //移动
-        private Button _BtnDownload = new Button() { Text = "下载" }; //下载
-        private Button _BtnBackup = new Button() { Text = "备份" };   //备份
-        private Button _BtnVerify = new Button() { Text = "审核" };   //审核
-        private Button _BtnGrant = new Button() { Text = "授权" };    //授权
-        private Button _BtnCancel = new Button() { Text = "重置" };   //重置
-        private Button _BtnSend = new Button() { Text = "发布" };     //发布
-        private Button _BtnReply = new Button() { Text = "回复" };     //回复
+        private Button _BtnAdd = new Button() { Text = "添加", CssClass = "BigButtonA" };      //添加
+        private Button _BtnDelete = new Button() { Text = "删除", CssClass = "BigButtonA" };   //删除
+        private Button _BtnUpdate = new Button() { Text = "修改", CssClass = "BigButtonA" };   //修改
+        private Button _BtnView = new Button() { Text = "查看", CssClass = "BigButtonA" };     //查看
+        private Button _BtnSearch = new Button() { Text = "查询", CssClass = "BigButtonA" };   //查询
+        private Button _BtnImport = new Button() { Text = "导入", CssClass = "BigButtonA" };   //导入
+        private Button _BtnExport = new Button() { Text = "导出", CssClass = "BigButtonA" };   //导出
+        private Button _BtnPrint = new Button() { Text = "打印", CssClass = "BigButtonA" };    //打印
+        private Button _BtnMove = new Button() { Text = "移动", CssClass = "BigButtonA" };     //移动
+        private Button _BtnDownload = new Button() { Text = "下载", CssClass = "BigButtonA" }; //下载
+        private Button _BtnBackup = new Button() { Text = "备份", CssClass = "BigButtonA" };   //备份
+        private Button _BtnVerify = new Button() { Text = "审核", CssClass = "BigButtonA" };   //审核
+        private Button _BtnGrant = new Button() { Text = "授权", CssClass = "BigButtonA" };    //授权
+        private Button _BtnCancel = new Button() { Text = "重置", CssClass = "BigButtonA" };   //重置
+        private Button _BtnSend = new Button() { Text = "发布", CssClass = "BigButtonA" };     //发布
+        private Button _BtnReply = new Button() { Text = "回复", CssClass = "BigButtonA" };     //回复
         #endregion
         #endregion
 
@@ -139,20 +139,18 @@ namespace SmartHyd.UI {
         /// <summary>
         /// 发布
         /// </summary>
-        public Button BtnSend
-        {
+        public Button BtnSend {
             get { return _BtnSend; }
         }
         /// <summary>
         /// 回复
         /// </summary>
-        public Button BtnReply
-        {
+        public Button BtnReply {
             get { return _BtnReply; }
         }
         #endregion
 
-        #region 公共方法        
+        #region 公共方法
         /// <summary>
         /// 初始化页面功能按钮元素
         /// </summary>
@@ -181,6 +179,8 @@ namespace SmartHyd.UI {
             funPanel.Controls.Add(_BtnReply);      //回复
 
             InitFunction(); //订阅按钮事件
+
+            funPanel.Visible = false;
 
             this.Controls.Add(funPanel);        //页面功能按钮容器
         }

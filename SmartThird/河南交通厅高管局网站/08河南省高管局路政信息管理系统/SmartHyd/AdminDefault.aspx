@@ -10,7 +10,7 @@
 		<frame src="AdminTop.aspx" name="topFrame" scrolling="No" noresize="noresize" id="topFrame" title="topFrame" />
 		<frameset rows="*" cols="189,*" framespacing="0" frameborder="no" border="0">
 			<frame src="AdminLeft.aspx" name="leftFrame" scrolling="No" noresize="noresize" id="leftFrame" title="leftFrame" />
-			<frame src="Error.aspx" name="mainFrame" id="mainFrame" title="mainFrame" />
+			<frame src="ManageCenter/DocumentManage.aspx" name="mainFrame" id="mainFrame" title="mainFrame" />
 		</frameset>
 	</frameset>
 	<noframes>

@@ -6,7 +6,7 @@
     </ul>
     <!--新建发文开始-->
     <div id="tabs-1">
-        <span class="big3">新建公文</span>
+        <%--<span class="big3">新建公文</span>--%>
         <table class="TableBlock" width="100%" align="center">
             <tbody>
                 <!--首选行-->
@@ -25,13 +25,13 @@
                     </td>
                     <td class="TableData" style="width: 100%;">
                         <asp:TextBox ID="txtTitle" runat="server" CssClass="input {required:true,minlength:1,maxlength:800}"
-                            Width="500">
+                            Width="70%">
                         </asp:TextBox>
                         <div class="validate ui-state-highlight ui-corner-all " style="border: none;">
                         </div>
                     </td>
                     <td rowspan="8" valign="top">
-                        <asp:TreeView ID="TreeViewAcceptUnit" runat="server" Height="100%" CssClass="treeview">
+                        <asp:TreeView ID="TreeViewAcceptUnit" runat="server" CssClass="treeview">
                         </asp:TreeView>
                     </td>
                 </tr>
@@ -125,7 +125,9 @@
                 </tr>
                 <!--操作按钮-->
                 <tr class="TableControl" align="center">
-                    <td colspan="3" nowrap="nowrap">                        
+                    <td colspan="3" nowrap="nowrap">
+                        <asp:Button ID="btnSubmit" runat="server" Text="提交" CssClass="BigButtonA" 
+                            onclick="btnSubmit_Click" />
                     </td>
                 </tr>
             </tbody>

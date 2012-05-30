@@ -8,7 +8,8 @@
 span,input{float:left;}
 
 /*通用分页按钮样式-迅雷风格(蓝色)*/
-.anpager .cpb {background:#1F3A87 none repeat scroll 0 0;border:1px solid #CCCCCC;color:#FFFFFF;font-weight:bold;margin:5px 4px 0 0;padding:4px 5px 0;}
+.anpager { margin-top:10px; }
+.anpager .cpb {background:#1F3A87 none repeat scroll 0 0;border:1px solid #CCCCCC;color:#FFFFFF;font-weight:bold;margin:-6px 4px 0 0;padding:0px 5px 0; width:20px; height:21px;}
 .anpager a {background:#FFFFFF none repeat scroll 0 0;border:1px solid #CCCCCC;color:#1F3A87;margin:5px 4px 0 0;padding:4px 5px 0;text-decoration:none}
 .anpager a:hover{background:#1F3A87 none repeat scroll 0 0;border:1px solid #1F3A87;color:#FFFFFF;}
 
@@ -42,7 +43,7 @@ span,input{float:left;}
 .alert span{ margin-top:6px; margin-left:6px;}
 
 /*页面功能按钮容器*/
-.panel{ margin:2px; float:left; height:34px; width:98%;}
+.panel{ margin:2px; float:left; height:31px; width:98%; padding-top:3px;}
 
 /*选项卡*/
 #tab{ float:left;  margin:4px; width:98%;}

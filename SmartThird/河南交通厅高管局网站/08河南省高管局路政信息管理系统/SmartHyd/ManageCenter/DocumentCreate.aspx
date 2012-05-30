@@ -15,17 +15,14 @@
                     height: "120px"
                 });
             });
-
-            /*开始、结束时间*/
-            //$("#ctl00_ContentPlaceHolder1_Patrol1_txtBEGINTIME").datepicker();/
         });
     </script>
-    <style type="text/css">
-        #ctl00_ContentPlaceHolder1_PublishDocument1_TreeViewAcceptUnit
+    <style type="text/css">        
+        #ContentPlaceHolder1_DocumentCreate1_TreeViewAcceptUnit
         {
             overflow:scroll;
             width:270px;
-            height:100%;
+            height:407px;
             float:right;
             border:1px solid #A6C9E2;
         }

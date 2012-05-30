@@ -40,7 +40,7 @@ namespace SmartHyd.ManageCenter.Ascx
         }
         protected void btnAddDept_Click(object sender, EventArgs e)
         {
-
+            Server.Transfer("~/ManageCenter/Dept.aspx");
         }
 
         protected void btnSearchDept_Click(object sender, EventArgs e)
@@ -120,9 +120,5 @@ namespace SmartHyd.ManageCenter.Ascx
             dataBindRepeater();
         }
         #endregion
-
-     
-
-       
     }
 }
