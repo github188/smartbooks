@@ -27,7 +27,7 @@
                                     <thead>
                                         <tr class="TableHeader">
                                             <th>
-                                               选择 <%--<asp:CheckBox ID="Checkall" runat="server" Text="全选" OnClick="javascript:selectall(this);" />--%>
+                                             <%--  选择 <asp:CheckBox ID="Checkall" runat="server" Text="全选" OnClick="javascript:selectall(this);" />--%>
                                             </th>
                                             <th>
                                                 用户名
