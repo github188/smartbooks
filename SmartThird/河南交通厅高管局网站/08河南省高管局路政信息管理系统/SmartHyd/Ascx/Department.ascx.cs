@@ -14,11 +14,13 @@ namespace SmartHyd.Ascx {
         public event OnSelectedNodeChanged OnSelectedNodeChanged;
 
         protected void Page_Load(object sender, EventArgs e) {
+            Utility.UserSession session = (Utility.UserSession)Session["user"];
+
             if (!IsPostBack) {
                 DataTable dt = new DataTable();
-                //dt = dept.GetUserWhereDepartment("admin", 0);
-                dt = dept.GetAllDep("STATUS=0");
+                dt = dept.GetUserWhereDepartment(session.USERNAME, 0);
                 BindingControl(this.ddlDepartment, dt);
+                ddlDepartment.SelectedValue = session.DEPTID.ToString();
             }
         }
 

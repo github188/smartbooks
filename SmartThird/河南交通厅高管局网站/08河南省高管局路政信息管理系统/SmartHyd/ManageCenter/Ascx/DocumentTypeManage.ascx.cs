@@ -20,13 +20,14 @@ namespace SmartHyd.ManageCenter.Ascx {
             //按分类浏览部门下档案分类数据
             Department2.OnSelectedNodeChanged +=new SmartHyd.Ascx.OnSelectedNodeChanged(Department2_OnSelectedNodeChanged);
 
+            userSession = (Utility.UserSession)Session["user"];
+            deptCode = Convert.ToInt32(userSession.DEPTID);
+
             if (!IsPostBack) {
                 BindData();
-                userSession = (Utility.UserSession)Session["user"];
 
                 //绑定档案分类节点
-                //DataTable dt = bll.GetDeptNodeData(Convert.ToInt32(userSession.DEPTID));
-                DataTable dt = bll.GetDeptNodeData(13);
+                DataTable dt = bll.GetDeptNodeData(Convert.ToInt32(userSession.DEPTID));
                 ddlParentNode.Items.Clear();
                 ddlParentNode.Items.Add(new ListItem("根节点分类", "0"));
                 InitTreeNodes(ddlParentNode, 0, dt, 0);

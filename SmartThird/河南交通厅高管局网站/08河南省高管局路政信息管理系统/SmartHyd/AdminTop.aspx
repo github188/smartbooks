@@ -41,7 +41,7 @@
             <span>
                 <%=userSession.USERNAME %>
                 &lt;
-                <%=userSession.Department[0].DPTNAME %>
+                <%=userSession.Department.DPTNAME %>
                 &gt; </span>
             <br />
             <a href="#">系统首页</a><span> | </span><a href="#">设置 </a><span>- </span><a href="#">注销</a>
@@ -49,7 +49,7 @@
         <!--用户信息结束-->
         <!--反馈信息开始-->
         <div class="ui-hander-feedback">
-            <a href="http://www.google.cn/chrome" style="color:Red;" target="_blank">Google浏览器</a> | 
+            <a href="http://www.google.cn/chrome" style="color:Red;" target="_blank">推荐Google浏览器</a> | 
             <a>反馈建议</a> | 
             <a>帮助中心</a> |
             <asp:LinkButton ID="linkBtnLoginOut" runat="server" Text="退出" OnClick="linkBtnLoginOut_Click">

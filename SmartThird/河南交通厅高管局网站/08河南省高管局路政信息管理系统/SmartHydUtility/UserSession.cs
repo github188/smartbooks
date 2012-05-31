@@ -10,8 +10,9 @@ namespace SmartHyd.Utility {
     /// 包含用户：权限、角色、功能、部门、基本信息、动作
     /// </summary>
     public class UserSession : Entity.BASE_USER {
-        private List<UserRole> _UserRole = new List<UserRole>();        
-        private List<Entity.BASE_DEPT> _Department = new List<Entity.BASE_DEPT>();
+        private List<UserRole> _UserRole = new List<UserRole>();
+        private Entity.BASE_DEPT _Department = new Entity.BASE_DEPT();
+        private BLL.BASE_USER_ROLE _bll = new BLL.BASE_USER_ROLE();
 
         /// <summary>
         /// 构造函数
@@ -51,20 +52,9 @@ namespace SmartHyd.Utility {
             this.USERPWD = userModel.USERPWD;
             #endregion
 
-            #region 绑定部门信息
+            //绑定部门
             BLL.BASE_DEPT deptBLL = new BLL.BASE_DEPT();
-            DataTable dt_Dept = new DataTable();
-            dt_Dept = deptBLL.GetUserWhereDepartment(userModel.USERNAME, 0);    //包含子部门
-            foreach (DataRow dr in dt_Dept.Rows) {
-                Entity.BASE_DEPT model = new Entity.BASE_DEPT();
-                model.DEPTID = Convert.ToInt32(dr["DEPTID"]);
-                model.DPTINFO = dr["DPTINFO"].ToString();
-                model.DPTNAME = dr["DPTNAME"].ToString();
-                model.PARENTID = Convert.ToInt32(dr["PARENTID"].ToString());
-                model.STATUS = Convert.ToInt32(dr["STATUS"].ToString());
-                Department.Add(model);
-            }
-            #endregion
+            _Department = deptBLL.GetEntity(userModel.DEPTID);
 
             #region 绑定角色信息
             var roles = userRoleBLL.Query(
@@ -124,7 +114,7 @@ namespace SmartHyd.Utility {
         /// <summary>
         /// 用户所属部门
         /// </summary>
-        public List<Entity.BASE_DEPT> Department {
+        public Entity.BASE_DEPT Department {
             get {
                 return _Department;
             }

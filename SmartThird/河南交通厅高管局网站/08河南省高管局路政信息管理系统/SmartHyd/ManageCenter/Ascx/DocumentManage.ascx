@@ -34,14 +34,19 @@
                             </td>
                             <!--档案列表-->
                             <td nowrap="nowrap" valign="top">
-                                <span class="big3">发文列表</span>
+                                <span class="big3">公文列表:</span>
+                                <asp:Button ID="Button1" runat="server" Text="编辑" CssClass="BigButtonA" />
+                                <asp:Button ID="Button2" runat="server" Text="删除" CssClass="BigButtonA" />
+                                <asp:Button ID="Button3" runat="server" Text="结贴" CssClass="BigButtonA"/>
+                                <asp:Button ID="Button4" runat="server" Text="详情" CssClass="BigButtonA" />
+                                <asp:Button ID="Button5" runat="server" Text="生成" CssClass="BigButtonA" />
                                 <!--发文列表-->
                                 <table class="TableList" width="100%">
                                     <tbody>
                                         <!--标题行-->
                                         <tr class="TableHeader" align="center">
-                                            <td width="235">
-                                                操作选项
+                                            <td>
+                                                选择
                                             </td>
                                             <td>
                                                 公文标题
@@ -64,16 +69,10 @@
                                             <ItemTemplate>
                                                 <tr class="TableLine1" align="center">
                                                     <td>
-                                                        <asp:Button runat="server" CommandName="edit" Text="编辑" CssClass="BigButtonA" CommandArgument='<%#Eval("id")%>' />
-                                                        <asp:Button runat="server" CommandName="delete" Text="删除" CssClass="BigButtonA" CommandArgument='<%#Eval("id")%>' />
-                                                        <asp:Button runat="server" CommandName="checkout" Text="结贴" CssClass="BigButtonA"
-                                                            CommandArgument='<%#Eval("id")%>' />
-                                                        <asp:Button runat="server" CommandName="detail" Text="详情" CssClass="BigButtonA" CommandArgument='<%#Eval("id")%>' />
+                                                        <asp:CheckBox runat="server" />
                                                     </td>
                                                     <td align="left">
-                                                        <a href='DocumentReply.aspx?id=<%#Eval("id") %>'>
-                                                            <%#Eval("title")%>
-                                                        </a>
+                                                        <a href='DocumentReply.aspx?id=<%#Eval("id") %>'><%#Eval("title")%></a>
                                                     </td>
                                                     <td>
                                                         <%#Eval("sendcode")%>

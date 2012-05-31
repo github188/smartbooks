@@ -18,12 +18,14 @@ namespace SmartHyd.ManageCenter.Ascx {
         #endregion
 
         protected void Page_Load(object sender, EventArgs e) {
+            userSession = (Utility.UserSession)Session["user"];
+
             if (!IsPostBack) {
                 BindType();     //绑定公文分类
                 BindAcceptUnit();   //绑定收文部门
 
                 //绑定公文类别
-                DataTable dt = bllType.GetDeptNodeData(13); //默认采用13部门
+                DataTable dt = bllType.GetDeptNodeData(Convert.ToInt32(userSession.DEPTID)); //默认采用13部门
                 ddlTypeId.Items.Clear();
                 InitTreeNodes(ddlTypeId, 0, dt, 0);
 
@@ -70,13 +72,9 @@ namespace SmartHyd.ManageCenter.Ascx {
             model.TYPEID = Convert.ToInt32(ddlTypeId.SelectedValue);    //公文类别
             model.PARENTID = 0;                 //父发文编号
             model.TIMESTAMP = DateTime.Now;     //时间戳            
-            model.ANNEX = "";                   //附件]
-
-            //model.USERID = 0;
-            //model.DEPTID = 13;
-
+            model.ANNEX = "";                   //附件
             model.USERID = userSession.USERID;  //用户编号
-            model.DEPTID = userSession.Department[0].DEPTID;    //部门
+            model.DEPTID = userSession.DEPTID;  //所属部门
             return model;
         }
         //设置实体
