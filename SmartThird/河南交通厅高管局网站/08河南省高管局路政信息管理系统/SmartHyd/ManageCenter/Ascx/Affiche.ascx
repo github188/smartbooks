@@ -14,7 +14,7 @@
         <table border="0" width="100%" cellspacing="0" cellpadding="3" class="TableBlock">
             <thead>
                 <tr class="TableHeader">
-                    <th colspan="3">
+                    <th colspan="3" align="center">
                         <asp:Label ID="LbHeadName" runat="server" Text=""></asp:Label>
                     </th>
                 </tr>
@@ -66,7 +66,7 @@
                             for="SMS_REMIND">发送事务提醒消息</label>&nbsp;&nbsp;
                     </td>
                 </tr>
-              <%--  <tr align="center" class="TableControl">
+               <tr align="center" class="TableControl">
                     <td colspan="2" nowrap="nowrap">
                         <input type="hidden" name="PUBLISH" value="" />
                         <input type="hidden" name="SUBJECT_COLOR" value="" />
@@ -75,9 +75,9 @@
                         <input type="hidden" name="TOP_FLAG" value="0" />
                         <asp:Button ID="BtnSend" runat="server" Text="发布" class="BigButton" OnClick="BtnSend_Click" />
                         <asp:Button ID="BtnSave" runat="server" Text="保存" class="BigButton" OnClick="BtnSave_Click" />
-                        <asp:Button ID="BtnBack" runat="server" Text="返回" class="BigButton" OnClick="BtnBack_Click" />
+                       <%-- <asp:Button ID="BtnBack" runat="server" Text="返回" class="BigButton" OnClick="BtnBack_Click" />--%>
                     </td>
-                </tr>--%>
+                </tr>
             </tbody>
         </table>
     
@@ -133,8 +133,8 @@
                             </td>
                             <td align="center">
                                 <a href="Affiche.aspx?aid=<%# Eval("AFFICHEID")%>">编辑</a> 
-                                <a href="" id="delhref" runat="server"> 删除</a>
-                                 <%--onclick="javascript:delete_notify(<%# Eval("AFFICHEID")%>)"--%>
+                               <%-- <a href="" id="delhref" runat="server"> 删除</a>
+                                 onclick="javascript:delete_notify(<%# Eval("AFFICHEID")%>)"--%>
                                     
                                    
                             </td>

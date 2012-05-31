@@ -40,6 +40,15 @@ namespace SmartHyd.ManageCenter.Ascx {
         protected global::System.Web.UI.HtmlControls.HtmlTextArea Message;
         
         /// <summary>
+        /// BtnSendMessage 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BtnSendMessage;
+        
+        /// <summary>
         /// CBLUser 控件。
         /// </summary>
         /// <remarks>
@@ -47,6 +56,15 @@ namespace SmartHyd.ManageCenter.Ascx {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBoxList CBLUser;
+        
+        /// <summary>
+        /// BtnPlan 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BtnPlan;
         
         /// <summary>
         /// repList 控件。
@@ -65,6 +83,33 @@ namespace SmartHyd.ManageCenter.Ascx {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::Wuqi.Webdiyer.AspNetPager AspNetPager1;
+        
+        /// <summary>
+        /// TxtDate 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TxtDate;
+        
+        /// <summary>
+        /// btnSearchAffiche 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSearchAffiche;
+        
+        /// <summary>
+        /// BtnAddAffiche 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BtnAddAffiche;
         
         /// <summary>
         /// RptAffiche 控件。

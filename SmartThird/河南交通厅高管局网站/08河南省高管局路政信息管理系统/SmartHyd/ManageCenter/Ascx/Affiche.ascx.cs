@@ -182,7 +182,32 @@ namespace SmartHyd.ManageCenter.Ascx
             bll.Add(model);
             Response.Redirect("Affiche.aspx#tabs-2");
         }
-        
+        /// <summary>
+        /// 保存公告
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void BtnSave_Click(object sender, EventArgs e)
+        {
+            //获取实体
+            Entity.BASE_AFFICHE model = GetEntity(0);
+
+            //添加数据
+            bll.Add(model);
+            //日志..............添加
+            Entity.BASE_LOG logmodel = new Entity.BASE_LOG();
+
+            logmodel.LOGID = -1;                        //id,主键
+            logmodel.LOGTYPE = "电子公告";                     //日志类型
+            logmodel.CREATEDATE = DateTime.Now;                   //日志创建时间
+            logmodel.DESCRIPTION = "添加公告";                             //日志信息内容
+            logmodel.OPERATORID = 23;                    //操作人
+            logmodel.IPADDRESS = Smart.Utility.IpAddress.GetLocationIpAddress();                 //ip地址
+
+            logbll.Add(logmodel);
+            //重新加载当前页
+            Response.Redirect(Request.Url.AbsoluteUri + "#tabs-2", true);
+        }
         /// <summary>
         /// //分页事件 公告管理分页事件
         /// </summary>
@@ -214,5 +239,7 @@ namespace SmartHyd.ManageCenter.Ascx
                 Response.Write("<script type='text/javascript'>alert('删除失败！');</script>");
             }
         }
+
+     
     }
 }

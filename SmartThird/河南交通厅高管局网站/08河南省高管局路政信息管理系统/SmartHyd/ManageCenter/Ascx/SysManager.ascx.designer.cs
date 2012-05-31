@@ -58,6 +58,24 @@ namespace SmartHyd.ManageCenter.Ascx {
         protected global::Wuqi.Webdiyer.AspNetPager AspNetPager1;
         
         /// <summary>
+        /// Txtuser 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox Txtuser;
+        
+        /// <summary>
+        /// BtnSearchUser 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BtnSearchUser;
+        
+        /// <summary>
         /// btnAddUser 控件。
         /// </summary>
         /// <remarks>
@@ -83,6 +101,24 @@ namespace SmartHyd.ManageCenter.Ascx {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::Wuqi.Webdiyer.AspNetPager AspNetPager2;
+        
+        /// <summary>
+        /// TxtDate 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TxtDate;
+        
+        /// <summary>
+        /// btnSearchLog 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSearchLog;
         
         /// <summary>
         /// RptListLog 控件。

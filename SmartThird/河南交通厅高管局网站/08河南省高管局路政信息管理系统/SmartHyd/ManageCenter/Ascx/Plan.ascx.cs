@@ -10,8 +10,9 @@ namespace SmartHyd.ManageCenter.Ascx
 {
     public partial class Plan : UI.BaseUserControl
     {
+        
         private BLL.BASE_PLAN bll = new BLL.BASE_PLAN();
-        private BLL.BASE_LOG model = new BLL.BASE_LOG();
+        private BLL.BASE_LOG logbll = new BLL.BASE_LOG();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -51,7 +52,7 @@ namespace SmartHyd.ManageCenter.Ascx
         {
             Entity.BASE_PLAN model = new Entity.BASE_PLAN();
             model.CALENDARID = Convert.ToInt32(this.hidPrimary.Value);     //id,主键
-            model.CALENDARTYPE = this.DdrType.SelectedValue;                      //事务类型
+            model.CALENDARTYPE = this.DdrType.SelectedItem.Text;                      //事务类型
             model.START_DATE = DateTime.Parse(this.txtStartTIME.Text);            //开始时间
             model.END_DATE = DateTime.Parse(this.txtEndTIME.Text);         //结束时间
             model.CALENDARREMIND = DateTime.Parse(this.txtPrompt.Text);                  //提醒时间
@@ -65,13 +66,14 @@ namespace SmartHyd.ManageCenter.Ascx
         /// <param name="model">公告实体</param>
         private void SetEntity(Entity.BASE_PLAN model)
         {
+            SmartHyd.Utility.UserSession usersession = (SmartHyd.Utility.UserSession)Session["user"];
             this.hidPrimary.Value = model.CALENDARID.ToString();        //id,主键
-            this.DdrType.SelectedValue=model.CALENDARTYPE ;                      //事务类型
+            this.DdrType.SelectedItem.Text=model.CALENDARTYPE ;                      //事务类型
             this.txtStartTIME.Text=model.START_DATE.ToString();            //开始时间
             this.txtEndTIME.Text=model.END_DATE.ToString();         //结束时间
             this.txtPrompt.Text=model.CALENDARREMIND.ToString();                  //提醒时间
             this.txtContent.Text=model.CALENDARCONTENT;//日程内容
-            this.TxtUser.Text=Session["user"].ToString();//用户编号
+            this.TxtUser.Text = usersession.USERID.ToString();//用户编号
 
         }
         #region 页面功能按钮事件(必须重写基类虚方法，否则按钮的事件是无效的)
@@ -137,5 +139,30 @@ namespace SmartHyd.ManageCenter.Ascx
             dataBindToRepeater();
         }
         #endregion
+        /// <summary>
+        /// 按钮事件：添加事务
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void btnSubmit_Click(object sender, EventArgs e)
+        {
+            SmartHyd.Utility.UserSession usersession = (SmartHyd.Utility.UserSession)Session["user"];
+            //获取实体
+            Entity.BASE_PLAN model = GetEntity();
+
+            //添加数据
+            bll.Add(model);
+            //日志..............添加事务
+            Entity.BASE_LOG logmodel = new Entity.BASE_LOG();
+            logmodel.LOGID = -1;                        //id,主键
+            logmodel.LOGTYPE = "事务提醒";                     //日志类型
+            logmodel.CREATEDATE = DateTime.Now;                   //日志创建时间
+            logmodel.DESCRIPTION = "添加事务";                             //日志信息内容
+            logmodel.OPERATORID = usersession.USERID;                    //操作人编号
+            logmodel.IPADDRESS = Smart.Utility.IpAddress.GetLocationIpAddress();                 //ip地址
+            logbll.Add(logmodel);
+            //重新加载当前页
+            Response.Redirect(Request.Url.AbsoluteUri, true);
+        }
     }
 }

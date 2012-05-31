@@ -10,6 +10,7 @@ namespace SmartHyd.ManageCenter.Ascx
 {
     public partial class Chat : UI.BaseUserControl
     {
+
         private BLL.BASE_MESSAGE bll = new BLL.BASE_MESSAGE();
         private BLL.BASE_USER userbll = new BLL.BASE_USER();
         protected void Page_Load(object sender, EventArgs e)
@@ -42,10 +43,11 @@ namespace SmartHyd.ManageCenter.Ascx
         /// 用户绑定
         /// </summary>
         public void UserBind()
-        { 
-             DataTable dt = new DataTable();
-
-            dt = userbll.GetList("1=1");
+        {
+            SmartHyd.Utility.UserSession userSession = (SmartHyd.Utility.UserSession)Session["user"];
+            DataTable dt = new DataTable();
+            string strwhere = "USERID!=" + userSession.USERID;
+            dt = userbll.GetList(strwhere);
             this.CBLUser.DataSource = dt;
             this.CBLUser.DataTextField = "USERNAME";
             this.CBLUser.DataValueField = "USERID";
@@ -67,26 +69,27 @@ namespace SmartHyd.ManageCenter.Ascx
         /// <returns></returns>
         private Entity.BASE_MESSAGE GetEntity()
         {
+            SmartHyd.Utility.UserSession userSession = (SmartHyd.Utility.UserSession)Session["user"];
             Entity.BASE_MESSAGE model = new Entity.BASE_MESSAGE();
             model.MESSAGEID = Convert.ToInt32(this.hidPrimary.Value);     //id,主键
-            model.SENDER = 0;                        //发信人编号
+            model.SENDER = userSession.USERID;                        //发信人编号
             model.MESSAGEBODY = this.Message.Value;                      //消息内容
-            string str_username=this.TxtTouser.Text;//获取文本框中所有的用户名
+            string str_username = this.TxtTouser.Text;//获取文本框中所有的用户名
             string[] sArray = str_username.Split(',');
             string username = string.Empty;
-                 //if (sArray.Length > 1)//如果有多个用户
-                 //{
-                 //    foreach (string i in sArray)
-                 //    {
+            //if (sArray.Length > 1)//如果有多个用户
+            //{
+            //    foreach (string i in sArray)
+            //    {
 
-                 //    }
-                 //}
-                 //else//单个用户
-                 //{
-                 //    username = sArray[0].ToString();
-                 //}
+            //    }
+            //}
+            //else//单个用户
+            //{
+            //    username = sArray[0].ToString();
+            //}
             username = sArray[0].ToString();
-            decimal touserid = Convert.ToDecimal(userbll.GetList("USERNAME='" + username+"'").Rows[0]["USERID"]);
+            decimal touserid = Convert.ToDecimal(userbll.GetList("USERNAME='" + username + "'").Rows[0]["USERID"]);
             model.TOUSER = touserid;             //收信人编号
             model.STATE = 0;                  //消息状态（0，未读；1，已读）
             model.SENDDATE = DateTime.Now;                             //发送时间日期
@@ -103,7 +106,7 @@ namespace SmartHyd.ManageCenter.Ascx
         {
             string username = string.Empty;
 
-            if (userbll.GetUser(userid)==null)
+            if (userbll.GetUser(userid) == null)
             {
                 username = "该用户不存在";
             }
@@ -111,7 +114,7 @@ namespace SmartHyd.ManageCenter.Ascx
             {
                 username = userbll.GetUser(userid).USERNAME;
             }
-                return username;
+            return username;
         }
         /// <summary>
         /// 状态转为文字
@@ -146,10 +149,10 @@ namespace SmartHyd.ManageCenter.Ascx
             //else
             //{
             //    Response.Write("<script type='text/javascript'>alert('请检查数据是否填写完整！');</script>");
-                //重新加载当前页
-                Response.Redirect(Request.Url.AbsoluteUri, true);
-           // }
-           
+            //重新加载当前页
+            Response.Redirect(Request.Url.AbsoluteUri, true);
+            // }
+
         }
         //分页事件
         protected void AspNetPager1_PageChanging(object src, Wuqi.Webdiyer.PageChangingEventArgs e)

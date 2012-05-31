@@ -20,6 +20,7 @@
             });
             /*时间*/
             $("#SEND_TIME").datepicker();
+            $("#ctl00_ContentPlaceHolder1_Office1_TxtDate").datepicker();
         });
         //选择收信人
         function SelectUser() {

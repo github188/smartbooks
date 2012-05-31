@@ -43,6 +43,7 @@
                     <div style="position: relative; width: 100%;">
                         <span id="words_count"></span>
                         <input type="hidden" value="" name="SMS_ID_REPLAY" />
+                        <asp:Button ID="BtnSendMessage" runat="server" Text="发送" CssClass="BigButtonA" onclick="BtnSendMessage_Click" />
                     </div>
                 </td>
             </tr>
@@ -76,6 +77,9 @@
     <!--即时通讯结束-->
     <!--事务提醒开始-->
     <div id="tabs-2">
+     <div>
+        <asp:Button ID="BtnPlan" runat="server" Text="新建" CssClass="BigButtonA" OnClick="BtnPlan_Click" />&nbsp;&nbsp;&nbsp;&nbsp;
+        </div>
         <table class="TableBlock" width="100%" cellspacing="0" cellpadding="3">
             <asp:Repeater ID="repList" runat="server">
                 <HeaderTemplate>
@@ -137,13 +141,21 @@
     <!--事务提醒结束-->
     <!--电子公告开始-->
     <div id="tabs-3">
+     <div>
+            <span>日期：</span><asp:TextBox ID="TxtDate" runat="server" CssClass="input"></asp:TextBox>&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:Button ID="btnSearchAffiche" runat="server" Text="查询" CssClass="BigButtonA" OnClick="btnSearchAffiche_Click" />&nbsp;&nbsp;&nbsp;&nbsp;
+           <asp:Button ID="BtnAddAffiche" runat="server" Text="新建" CssClass="BigButtonA" OnClick="BtnAddAffiche_Click" />&nbsp;&nbsp;&nbsp;&nbsp;
+        </div>
         <table class="TableBlock" width="100%" cellspacing="0" cellpadding="3" align="center">
             <asp:Repeater ID="RptAffiche" runat="server">
                 <HeaderTemplate>
                     <thead>
                         <tr class="TableHeader">
-                            <th>
+                        <%--    <th>
                                 <asp:CheckBox ID="CheckallAffiche" runat="server" Text="全选" OnClick="javascript:selectall(this);" />
+                            </th>--%>
+                              <th>
+                                操作
                             </th>
                             <th>
                                 发布人
@@ -157,19 +169,22 @@
                             <th>
                                 状态
                             </th>
-                            <th>
-                                操作
-                            </th>
+                          
                         </tr>
                     </thead>
                 </HeaderTemplate>
                 <ItemTemplate>
                     <tbody>
                         <tr>
-                            <td align="center">
+                            <%--<td align="center">
                                 <asp:CheckBox ID="CheckSingleAffiche" runat="server" />
                                 <asp:Label ID="AFFICHEID" runat="server" Text='<%#Eval("AFFICHEID") %>' Visible="false"></asp:Label>
                              
+                            </td>--%>
+                             <td align="center">
+                                <a href="Affiche.aspx?aid=<%# Eval("AFFICHEID")%>">编辑</a> 
+                               <%--  <a href="" id="delhref" runat="server"> 删除</a>
+                                onclick="javascript:delete_notify(<%# Eval("AFFICHEID")%>)"--%>
                             </td>
                             <td align="center">
                                 <%# Eval("AFFICHER")%>
@@ -183,13 +198,7 @@
                             <td align="center">
                                 <%# Eval("STATES")%>
                             </td>
-                            <td align="center">
-                                <a href="Affiche.aspx?aid=<%# Eval("AFFICHEID")%>">编辑</a> 
-                                <a href="" id="delhref" runat="server"> 删除</a>
-                                 <%--onclick="javascript:delete_notify(<%# Eval("AFFICHEID")%>)"--%>
-                                    
-                                   
-                            </td>
+                           
                         </tr>
                     </tbody>
                 </ItemTemplate>

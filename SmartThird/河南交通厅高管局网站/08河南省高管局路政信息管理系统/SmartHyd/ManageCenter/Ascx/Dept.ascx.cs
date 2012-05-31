@@ -9,7 +9,7 @@ using System.Data;
 namespace SmartHyd.ManageCenter.Ascx {
     public partial class Department : UI.BaseUserControl {
         private BLL.BASE_DEPT bll = new BLL.BASE_DEPT();
-        private BLL.BASE_LOG model = new BLL.BASE_LOG();
+        private BLL.BASE_LOG logbll = new BLL.BASE_LOG();
         protected void Page_Load(object sender, EventArgs e) {
             if (!IsPostBack) {
                 if ("" == Request.QueryString["Fid"] || null == Request.QueryString["Fid"])
@@ -63,7 +63,10 @@ namespace SmartHyd.ManageCenter.Ascx {
         /// </summary>
         /// <returns></returns>
         private Entity.BASE_DEPT GetEntity() {
-            int parentId = 0;
+            decimal parentId = 0;
+
+            DropDownList ddr = (DropDownList)this.Department1.FindControl("ddlDepartment");//找到用户控件中的子控件
+            parentId=Convert.ToDecimal(ddr.SelectedValue);                                //上级部门
             if (Session["deptcode"] != null) {
                 Convert.ToInt32(Session["deptcode"].ToString());
             }
@@ -144,14 +147,43 @@ namespace SmartHyd.ManageCenter.Ascx {
 
         #region 页面按钮事件
         protected void btnSubmit_Click(object sender, EventArgs e) {
-            //获取实体
-            Entity.BASE_DEPT model = GetEntity();
+            if (this.hidPrimary.Value == "-1")//添加部门信息
+            {
+                //获取实体
+                Entity.BASE_DEPT model = GetEntity();
 
-            //添加数据
-            bll.Add(model);
+                //添加数据
+                bll.Add(model);
 
+                //日志..............添加
+                Entity.BASE_LOG logmodel = new Entity.BASE_LOG();
+                logmodel.LOGID = -1;                        //id,主键
+                logmodel.LOGTYPE = "部门管理";                     //日志类型
+                logmodel.CREATEDATE = DateTime.Now;                   //日志创建时间
+                logmodel.DESCRIPTION = "新建部门";                             //日志信息内容
+                logmodel.OPERATORID = 17;                    //操作人编号
+                logmodel.IPADDRESS = Smart.Utility.IpAddress.GetLocationIpAddress();                 //ip地址
+                logbll.Add(logmodel);
+
+            }
+            else //修改部门信息
+            {
+                //获取实体
+                Entity.BASE_DEPT model = GetEntity();
+                bll.update(model);
+
+                //日志..............修改
+                Entity.BASE_LOG logmodel = new Entity.BASE_LOG();
+                logmodel.LOGID = -1;                        //id,主键
+                logmodel.LOGTYPE = "部门管理";                     //日志类型
+                logmodel.CREATEDATE = DateTime.Now;                   //日志创建时间
+                logmodel.DESCRIPTION = "编辑部门";                             //日志信息内容
+                logmodel.OPERATORID = 17;                    //操作人编号
+                logmodel.IPADDRESS = Smart.Utility.IpAddress.GetLocationIpAddress();                 //ip地址
+                logbll.Add(logmodel);
+            }
             //重新加载当前页
-            Response.Redirect(Request.Url.AbsoluteUri, true);
+            Response.Redirect(Request.Url.AbsoluteUri+"#tabs-2", true);
         }
         #endregion
     }
