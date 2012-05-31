@@ -34,7 +34,7 @@
                             </td>
                             <!--档案列表-->
                             <td nowrap="nowrap" valign="top">
-                                <span class="big3">公文列表:</span>
+                                <span class="big3">操作:</span>
                                 <asp:Button ID="Button1" runat="server" Text="编辑" CssClass="BigButtonA" />
                                 <asp:Button ID="Button2" runat="server" Text="删除" CssClass="BigButtonA" />
                                 <asp:Button ID="Button3" runat="server" Text="结贴" CssClass="BigButtonA"/>
