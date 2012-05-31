@@ -14,14 +14,11 @@ namespace SmartHyd.Ascx {
         /// 选定节点改变时触发的事件
         /// </summary>
         public event OnSelectedNodeChanged OnSelectedNodeChanged;
-
-        #region 私有变量定义
         /// <summary>
         /// 当前树类型
         /// 默认：部门树
         /// </summary>
         private Utility.TreeEnum _TreeEnum;
-        #endregion
 
         #region 方法定义
         /// <summary>
@@ -30,8 +27,7 @@ namespace SmartHyd.Ascx {
         /// <param name="sender"></param>
         /// <param name="e"></param>
         protected void Page_Load(object sender, EventArgs e) {
-            if (!IsPostBack) {
-                //BindingDataSource(_TreeEnum);
+            if (!IsPostBack) {                
             }
         }
         /// <summary>
@@ -96,14 +92,19 @@ namespace SmartHyd.Ascx {
         private void DocuemntClassDataSource() {
             DataTable dt = new DataTable();
             //获取部门数据源
+            Utility.UserSession _userSession = (Utility.UserSession)Session["user"];
             BLL.BASE_ARTICLE_TYPE bll = new BLL.BASE_ARTICLE_TYPE();
-            dt = bll.GetList("1=1");
+            dt = bll.GetList(string.Format("DEPTID={0}", _userSession.DEPTID.ToString()));
 
             TreeNode rootNode = new TreeNode();
             rootNode.Text = "档案分类树";
             rootNode.Value = "0";
             rootNode.Expanded = true;
-            InitTreeView(rootNode, dt);
+
+            if (dt != null && dt.Rows.Count != 0) {
+                InitTreeView(rootNode, dt);
+            }
+
             this.trvControl.Nodes.Add(rootNode);
         }
         /// <summary>

@@ -26,6 +26,11 @@
                             <!--档案分类-->
                             <td nowrap="nowrap" valign="top">
                                 <uc1:TreeView ID="TreeView1" runat="server" TreeEnum="DocuemntClass" />
+                                <!--分类按钮工具栏-->
+                                <div>
+                                    <asp:Button ID="btnDocumentType" runat="server" Text="添加" 
+                                        CssClass="BigButtonA" onclick="btnDocumentType_Click" />
+                                </div>
                             </td>
                             <!--档案列表-->
                             <td nowrap="nowrap" valign="top">

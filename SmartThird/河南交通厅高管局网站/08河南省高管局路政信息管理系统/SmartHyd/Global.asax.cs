@@ -14,7 +14,7 @@ namespace SmartHyd {
 
         }
 
-        protected void Session_Start(object sender, EventArgs e) {            
+        protected void Session_Start(object sender, EventArgs e) {
         }
 
         protected void Application_BeginRequest(object sender, EventArgs e) {
@@ -29,7 +29,7 @@ namespace SmartHyd {
             /*
              * 开发模式下请注释掉该段代码，上线运行期间请去掉注释。
              */
-            SaveError();
+            //SaveError();
         }
 
         protected void Session_End(object sender, EventArgs e) {
@@ -45,45 +45,17 @@ namespace SmartHyd {
         /// </summary>
         private void SaveError() {
             Exception ex = Server.GetLastError();
-
-            //保存路径
             string path = string.Format("{0}\\{1}.txt", Server.MapPath("~/Log"), DateTime.Now.ToString("yyyyMMdd"));
-            string query = string.Empty;
-            string form = string.Empty;
-            string cookie = string.Empty;
-            for (int i = 0; i < Request.QueryString.Count; i++) {
-                query += Request.QueryString.GetKey(i) + "=";
-                query += Request.QueryString.GetValues(i) + ";";
-            }
-            for (int i = 0; i < Request.Form.Count; i++) {
-                form += Request.Form.GetKey(i) + "=";
-                form += Request.Form.GetValues(i) + ";";
-            }
-            for (int i = 0; i < Request.Cookies.Count; i++) {
-                cookie += Request.Cookies[i].Name + "=";
-                cookie += Request.Cookies[i].Value + ";";
-            }
-            //错误详细信息
-            //string errorMsg = string.Format("异常时间:{0}\n客户端IP:{1}\n页面地址:{2}\n浏览器:{3}\n代理信息:{4}\nQueryString:{5}\nForm:{6}\nCookie:{7}\nErrorTitle:{8}\nErrorContent:{9}\n\n",
-            //    DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss"),
-            //    Request.UserHostAddress,
-            //    Request.Url.AbsoluteUri,
-            //    Request.Browser.Version,
-            //    Request.UserAgent,
-            //    query, form, cookie,
-            //    ex.Source,
-            //    ex.Message);
             string message = string.Empty;
-            if (ex.InnerException != null)
-            {
+
+            if (ex.InnerException != null) {
                 message = ex.InnerException.Message;
+                message += "\t异常对象:" + ex.InnerException.StackTrace;
+            } else {
+                message = ex.Message;
+                message += "\t异常对象:" + ex.StackTrace;
             }
-            else
-            {
-                message = "空指针异常！";
-            }
-            string errorMsg = string.Format("{0}\t{1}\n\n",
-                DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss"), message);
+            string errorMsg = string.Format("{0}\t{1}\n\n", DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss"), message);
 
             //保存错误日志
             File.AppendAllText(path, errorMsg, Encoding.UTF8);
@@ -102,7 +74,7 @@ namespace SmartHyd {
                 Session["error"] = ex.InnerException;
             } else {
                 Session["error"] = ex;
-            }            
+            }
             Response.Redirect(errorPath, true);
         }
     }

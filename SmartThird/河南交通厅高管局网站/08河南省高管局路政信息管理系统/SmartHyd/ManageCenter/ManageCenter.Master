@@ -31,7 +31,7 @@
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
-<body class="bodycolor" style="margin:4px;">
+<body class="bodycolor" style="margin:4px;" scroll="no">
     <form id="form1" runat="server">
     <div>
         <asp:ScriptManager ID="ScriptManager1" runat="server">

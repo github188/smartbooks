@@ -11,7 +11,7 @@ namespace SmartHyd {
             if (!IsPostBack) {
                 try {
                     Exception ex = (Exception)Session["error"];
-                    lblError.Text = ex.Message;
+                    txtErrorMessage.Text = ex.Message;
                 } catch { }
             }
         }

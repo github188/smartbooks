@@ -22,9 +22,6 @@ namespace SmartHyd.ManageCenter.Ascx {
                 BindType();     //绑定公文分类
                 BindAcceptUnit();   //绑定收文部门
 
-                //获取用户Session
-                userSession = (Utility.UserSession)Session["user"];
-
                 //绑定公文类别
                 DataTable dt = bllType.GetDeptNodeData(13); //默认采用13部门
                 ddlTypeId.Items.Clear();
@@ -41,6 +38,9 @@ namespace SmartHyd.ManageCenter.Ascx {
                     SetEntity(model);
                 }
             }
+
+            //获取用户Session
+            userSession = (Utility.UserSession)Session["user"];
         }
 
         //绑定公文类别
@@ -72,11 +72,11 @@ namespace SmartHyd.ManageCenter.Ascx {
             model.TIMESTAMP = DateTime.Now;     //时间戳            
             model.ANNEX = "";                   //附件]
 
-            model.USERID = 0;
-            model.DEPTID = 13;
+            //model.USERID = 0;
+            //model.DEPTID = 13;
 
-            //model.USERID = userSession.USERID;  //用户编号
-            //model.DEPTID = userSession.Department[0].DEPTID;    //部门
+            model.USERID = userSession.USERID;  //用户编号
+            model.DEPTID = userSession.Department[0].DEPTID;    //部门
             return model;
         }
         //设置实体
@@ -197,39 +197,7 @@ namespace SmartHyd.ManageCenter.Ascx {
                 RecursiveCheckNode(sub, ref isSelected);
             }
         }
-
-        #region 页面功能按钮事件(必须重写基类虚方法，否则按钮的事件是无效的)
-        //添加
-        public override void BtnAdd_Click(object sender, EventArgs e) {}
-        //删除
-        public override void BtnDelete_Click(object sender, EventArgs e) { }
-        //重置
-        public override void BtnCancel_Click(object sender, EventArgs e) { }
-        //修改
-        public override void BtnUpdate_Click(object sender, EventArgs e) { }
-        //查看
-        public override void BtnView_Click(object sender, EventArgs e) { }
-        //查询
-        public override void BtnSearch_Click(object sender, EventArgs e) { }
-        //导入
-        public override void BtnImport_Click(object sender, EventArgs e) { }
-        //导出
-        public override void BtnExport_Click(object sender, EventArgs e) { }
-        //打印
-        public override void BtnPrint_Click(object sender, EventArgs e) { }
-        //移动
-        public override void BtnMove_Click(object sender, EventArgs e) { }
-        //下载
-        public override void BtnDownload_Click(object sender, EventArgs e) { }
-        //备份
-        public override void BtnBackup_Click(object sender, EventArgs e) { }
-        //审核
-        public override void BtnVerify_Click(object sender, EventArgs e) { }
-        //授权
-        public override void BtnGrant_Click(object sender, EventArgs e) { }
-        #endregion
-        
-        #region 页面按钮事件
+        //添加公文
         protected void btnSubmit_Click(object sender, EventArgs e) {
             //校验输入
             if (CheckSelectDepartment()) {
@@ -284,6 +252,5 @@ namespace SmartHyd.ManageCenter.Ascx {
                 Smart.Utility.Alerts.Alert("请选择至少一个公文接收的部门");
             }
         }
-        #endregion
     }
 }

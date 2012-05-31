@@ -1,4 +1,4 @@
-﻿<%@ Page Title="新建公文" Language="C#" MasterPageFile="~/ManageCenter/ManageCenter.Master" AutoEventWireup="true" CodeBehind="DocumentCreate.aspx.cs" Inherits="SmartHyd.ManageCenter.DocumentCreate" %>
+﻿<%@ Page Title="新建公文" Language="C#" MasterPageFile="~/ManageCenter/ManageCenter.Master" AutoEventWireup="true" CodeBehind="DocumentCreate.aspx.cs" Inherits="SmartHyd.ManageCenter.DocumentCreate" ValidateRequest="false" %>
 <%@ Register src="Ascx/DocumentCreate.ascx" tagname="DocumentCreate" tagprefix="uc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
