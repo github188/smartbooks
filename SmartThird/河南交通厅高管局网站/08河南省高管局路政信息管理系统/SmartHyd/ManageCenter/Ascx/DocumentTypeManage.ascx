@@ -2,6 +2,7 @@
     Inherits="SmartHyd.ManageCenter.Ascx.DocumentTypeManage" %>
 <%@ Register Assembly="AspNetPager" Namespace="Wuqi.Webdiyer" TagPrefix="webdiyer" %>
 <%@ Register Src="../../Ascx/Department.ascx" TagName="Department" TagPrefix="uc1" %>
+<%@ Register src="../../Ascx/TreeView.ascx" tagname="TreeView" tagprefix="uc2" %>
 <div id="tab">
     <ul id="menu">
         <li><a href="#tabs-1">新建档案分类</a></li>
@@ -11,7 +12,7 @@
     <div id="tabs-1">
         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
             <ContentTemplate>
-                <span class="big3">新建分类</span>
+                <span class="big3">新建分类</span>                
                 <table class="TableBlock" width="100%" align="center">
                     <tbody>
                         <!--首选行-->
@@ -91,6 +92,14 @@
                                 </asp:DropDownList>
                             </td>
                         </tr>
+
+                        <!--按钮栏-->
+                        <tr class="TableControl" align="center">
+                            <td colspan="2" nowrap="nowrap">
+                                <asp:Button ID="btnSubmit" runat="server" Text="添加" CssClass="BigButtonA" 
+                                    onclick="btnSubmit_Click" />
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
             </ContentTemplate>
@@ -101,12 +110,14 @@
     <div id="tabs-2">
         <asp:UpdatePanel ID="UpdatePanel2" runat="server">
             <ContentTemplate>
-                <span class="big3">浏览分类</span>
+                <span class="big3">选择单位或部门:</span>
+                <uc1:Department ID="Department2" runat="server" />
                 <table class="TableList" width="100%">
-                    <asp:Repeater ID="RptList" runat="server">
+                    <asp:Repeater ID="RptList" runat="server" OnItemCommand="RptList_ItemCommand">
                         <HeaderTemplate>
                             <tbody>
                                 <tr class="TableHeader" align="center">
+                                    <td>操作</td>
                                     <td >
                                         分类名称
                                     </td>
@@ -123,6 +134,9 @@
                         </HeaderTemplate>
                         <ItemTemplate>
                             <tr class="TableLine1" align="center">
+                                <td>
+                                    <asp:Button runat="server" CommandName="delete" Text="删除" CssClass="BigButtonA" CommandArgument='<%#Eval("id")%>' />
+                                </td>
                                 <td>
                                     <%# Eval("TYPENAME")%>
                                 </td>

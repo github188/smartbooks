@@ -80,9 +80,9 @@ namespace SmartHyd.ManageCenter.Ascx {
             this.AspNetPager2.CurrentPageIndex = e.NewPageIndex;
             BindPublichList();
         }
-        //添加分类
+        //添加档案分类
         protected void btnDocumentType_Click(object sender, EventArgs e) {
-
+           Response.Redirect("~/ManageCenter/DocumentTypeManage.aspx");
         }
     }
 }

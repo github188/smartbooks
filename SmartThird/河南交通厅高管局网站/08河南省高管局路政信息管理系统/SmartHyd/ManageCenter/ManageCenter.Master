@@ -27,6 +27,10 @@
                 }
             });
         });
+
+        function GoBack() {
+            history.go(-1);
+        }
     </script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -37,6 +41,8 @@
         <asp:ScriptManager ID="ScriptManager1" runat="server">
         </asp:ScriptManager>
         
+        <%--<asp:Button ID="btnBack" runat="server" Text="返回" OnClientClick="GoBack();" CssClass="BigButtonA" />--%>
+
         <!--内容开始-->
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         </asp:ContentPlaceHolder>

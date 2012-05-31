@@ -85,6 +85,15 @@ namespace SmartHyd.ManageCenter.Ascx {
         protected global::System.Web.UI.WebControls.DropDownList ddlState;
         
         /// <summary>
+        /// btnSubmit 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSubmit;
+        
+        /// <summary>
         /// UpdatePanel2 控件。
         /// </summary>
         /// <remarks>
@@ -92,6 +101,15 @@ namespace SmartHyd.ManageCenter.Ascx {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel UpdatePanel2;
+        
+        /// <summary>
+        /// Department2 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::SmartHyd.Ascx.Department Department2;
         
         /// <summary>
         /// RptList 控件。

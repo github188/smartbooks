@@ -114,6 +114,10 @@ namespace SmartHyd {
 
                     Session["user"] = session;
 
+                    //放入cookie
+                    Response.Cookies.Add(new HttpCookie("uid", session.USERID.ToString()));
+                    Response.Cookies.Add(new HttpCookie("dpt", session.DEPTID.ToString()));
+
                     //301页面跳转
                     Response.Redirect("~/AdminDefault.aspx", true);
                 } else {

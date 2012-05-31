@@ -27,7 +27,7 @@ namespace SmartHyd.Ascx {
         /// <param name="sender"></param>
         /// <param name="e"></param>
         protected void Page_Load(object sender, EventArgs e) {
-            if (!IsPostBack) {                
+            if (!IsPostBack) {
             }
         }
         /// <summary>
@@ -91,9 +91,12 @@ namespace SmartHyd.Ascx {
         /// </summary>
         private void DocuemntClassDataSource() {
             DataTable dt = new DataTable();
-            //获取部门数据源
-            Utility.UserSession _userSession = (Utility.UserSession)Session["user"];
+            //获取部门数据源            
             BLL.BASE_ARTICLE_TYPE bll = new BLL.BASE_ARTICLE_TYPE();
+            Utility.UserSession _userSession = (Utility.UserSession)Session["user"];
+            if (_userSession == null) {
+                Response.Redirect("~/AdminLogin.aspx", true);
+            }
             dt = bll.GetList(string.Format("DEPTID={0}", _userSession.DEPTID.ToString()));
 
             TreeNode rootNode = new TreeNode();

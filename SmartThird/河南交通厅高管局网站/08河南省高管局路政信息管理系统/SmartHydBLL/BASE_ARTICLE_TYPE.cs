@@ -24,5 +24,9 @@ namespace SmartHyd.BLL {
         public DataTable GetDeptNodeData(int deptCode) {
             return dal.GetList(string.Format("DEPTID={0}", deptCode.ToString())).Tables[0];
         }
+
+        public void Delete(int id) {
+            dal.Delete(id);
+        }
     }
 }

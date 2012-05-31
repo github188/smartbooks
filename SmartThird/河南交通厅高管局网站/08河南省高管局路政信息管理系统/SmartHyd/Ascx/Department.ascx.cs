@@ -11,6 +11,8 @@ namespace SmartHyd.Ascx {
         private BLL.BASE_DEPT dept = new BLL.BASE_DEPT();
         private int inde = 0;
 
+        public event OnSelectedNodeChanged OnSelectedNodeChanged;
+
         protected void Page_Load(object sender, EventArgs e) {
             if (!IsPostBack) {
                 DataTable dt = new DataTable();
@@ -48,6 +50,9 @@ namespace SmartHyd.Ascx {
 
         protected void ddlDepartment_SelectedIndexChanged(object sender, EventArgs e) {
             Session["deptcode"] = ddlDepartment.SelectedValue;
+            if (OnSelectedNodeChanged != null) {
+                OnSelectedNodeChanged(sender, ddlDepartment.SelectedValue);
+            }
         }
     }
 }
