@@ -131,6 +131,10 @@ namespace SmartSpider.Config
                         try
                         {
                             HttpHelper http = new HttpHelper();
+                            /*
+                             *修改标志 20120601 王亚 解析导航地址时增加Http请求编码 
+                             */
+                            http._encoding = Encoding.GetEncoding(_urlItem.UrlEncoding);
                             string htmlText = http.RequestResult(u);    //发送Http请求获取导航地址
                             StringCollection navUrlItem = ParseNavigationRuleHtmlText(rule, htmlText);
                             foreach (string r in navUrlItem)

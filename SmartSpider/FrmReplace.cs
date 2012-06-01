@@ -57,7 +57,7 @@ namespace SmartSpider {
         private void btnDelete_Click(object sender, EventArgs e) {            
             foreach (ListViewItem item in this.livReplaceElement.SelectedItems) {
                 foreach (Config.Replacement r in Replace) {
-                    if (r.NewValue.Equals(item.Text)) {
+                    if (r.OldValue.Equals(item.Text)) {
                         Replace.Remove(r);
                         break;
                     }

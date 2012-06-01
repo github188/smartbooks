@@ -536,6 +536,7 @@ namespace SmartSpider.Utility
             TaskListViewQuickMenu.MenuItems.Add("-");
             TaskListViewQuickMenu.MenuItems.Add(new MenuItem("导出(&X)", new EventHandler(TaskListViewQuickMenu_MenuItems_Export)));
             TaskListViewQuickMenu.MenuItems.Add(new MenuItem("导入(&I)", new EventHandler(TaskListViewQuickMenu_MenuItems_Import)));
+            TaskListViewQuickMenu.MenuItems.Add(new MenuItem("清空(&C)", new EventHandler(TaskListViewQuickMenu_MenuItems_Clear)));
             TaskListViewQuickMenu.MenuItems.Add("-");
             TaskListViewQuickMenu.MenuItems.Add(new MenuItem("全选(&A)", new EventHandler(TaskListViewQuickMenu_MenuItems_SelectAll)));
 
@@ -709,6 +710,22 @@ namespace SmartSpider.Utility
         }
         private void TaskListViewQuickMenu_MenuItems_Import(object sender, EventArgs e) {
         
+        }
+        private void TaskListViewQuickMenu_MenuItems_Clear(object sender, EventArgs e) {
+            foreach (ListViewItem item in SelectedItems) {
+                foreach (Config.TaskUnit unit in _TaskItem) {
+                    if (unit.TaskConfig.Name.Equals(item.Text)) {
+                        //清除采集结果行
+                        if (unit.Results != null && unit.Results.Rows.Count != 0) {
+                            unit.Results.Rows.Clear();
+                        }
+                        //清除重复行
+                        if (unit.RepeatedRow != null && unit.RepeatedRow.Rows.Count != 0) {
+                            unit.RepeatedRow.Rows.Clear();
+                        }
+                    }
+                }
+            }
         }
         private void TaskListViewQuickMenu_MenuItems_SelectAll(object sender, EventArgs e) {
             foreach (ListViewItem item in Items)

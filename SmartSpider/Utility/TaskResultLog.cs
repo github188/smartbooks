@@ -64,14 +64,14 @@
             // 
             this.dgvResult.AllowUserToDeleteRows = false;
             this.dgvResult.AllowUserToResizeRows = false;
-            this.dgvResult.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            //this.dgvResult.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvResult.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvResult.Location = new System.Drawing.Point(0, 0);
             this.dgvResult.Name = "dgvResult";
             this.dgvResult.ReadOnly = true;
             this.dgvResult.RowTemplate.Height = 23;
-            this.dgvResult.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            //this.dgvResult.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvResult.Size = new System.Drawing.Size(240, 150);
             this.dgvResult.TabIndex = 0;
             this.splitContainerMain.ResumeLayout(false);

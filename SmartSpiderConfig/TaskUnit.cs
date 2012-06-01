@@ -208,7 +208,9 @@
                  * 
                  * 修改标志: 王亚 20120424
                  */
-                this._Results.Rows.Add(resultRow);              //追加采集结果
+                if (resultRow != null) {
+                    this._Results.Rows.Add(resultRow);              //追加采集结果
+                }
                 if (this.TaskConfig.PublishResultDircetly) {
                     PublishResult();                            //发布采集结果
                     Results.Rows.Clear();                       //清除现有的采集结果

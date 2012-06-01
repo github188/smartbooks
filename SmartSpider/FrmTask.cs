@@ -28,7 +28,11 @@
             //保存任务配置信息
             //taskUnit.SaveTaskConfiguration(@"c:\01.xml");
 
+            //初始化UI
             this.SetUnitToUI();
+
+            //初始化编码
+            this.FullEncodingList();
 
             this.Refresh();
         }
@@ -935,6 +939,17 @@
                 }
             }
             return false;
+        }
+
+        /// <summary>
+        /// 填充网址编码下拉框
+        /// </summary>
+        private void FullEncodingList() {
+            EncodingInfo[] info = Encoding.GetEncodings();
+            cbxUrlEncoding.Items.Clear();
+            for (int i = 0; i < info.Length; i++) {
+                cbxUrlEncoding.Items.Add(info[i].Name);
+            }            
         }
         #endregion
     }

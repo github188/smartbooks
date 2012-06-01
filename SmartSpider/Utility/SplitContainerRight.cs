@@ -167,7 +167,9 @@ namespace SmartSpider.Utility
             {
                 if (page.Text.Equals(unit.TaskConfig.Name))
                 {
-                    page.AppendRowResult(values);
+                    if (values != null) {
+                        page.AppendRowResult(values);
+                    }
                 }
             }
         }
