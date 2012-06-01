@@ -188,7 +188,7 @@
                  * 
                  * 修改标志:王亚 20120424
                  */
-
+                this._HttpHelper._encoding = Encoding.GetEncoding(_TaskConfig.UrlListManager.UrlEncoding);
                 htmlText = this._HttpHelper.RequestResult(contentUrl);
                 ParseExtractRoles parseHtml = new ParseExtractRoles(
                     _TaskConfig.ExtractionRules,    //提取规则

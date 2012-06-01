@@ -29,6 +29,8 @@
             //taskUnit.SaveTaskConfiguration(@"c:\01.xml");
 
             this.SetUnitToUI();
+
+            this.Refresh();
         }
 
         #region 初始化、获取、保存任务配置信息

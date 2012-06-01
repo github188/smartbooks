@@ -96,8 +96,8 @@ namespace SmartSpider {
             this.livReplaceElement.Items.Clear();
             foreach (Config.Replacement e in this.Replace) {
                 ListViewItem item = new ListViewItem();
-                item.Text = e.NewValue;
-                item.SubItems.Add(new ListViewItem.ListViewSubItem(item, e.OldValue));
+                item.Text = e.OldValue;
+                item.SubItems.Add(new ListViewItem.ListViewSubItem(item, e.NewValue));
                 item.SubItems.Add(new ListViewItem.ListViewSubItem(item, e.UseRegex.ToString()));
                 item.SubItems.Add(new ListViewItem.ListViewSubItem(item, e.OnlyMatchOldValue.ToString()));
                 item.SubItems.Add(new ListViewItem.ListViewSubItem(item, e.Repeatable.ToString()));
