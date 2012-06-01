@@ -66,7 +66,10 @@
             this.SelectedImageIndex = 8;
             this.Size = new System.Drawing.Size(200, 288);
             this.TabIndex = 0;
-            this.HideSelection = false;            
+            this.HideSelection = false;
+
+            //快捷菜单
+            //this.ContextMenu = null;
         }
         #endregion
 
