@@ -219,25 +219,52 @@ namespace SmartSpider.Utility
         /// <summary>
         /// 创建任务
         /// </summary>
-        /// <param name="groupText">分组选项</param>
+        /// <param name="groupText">分组选项（Xml配置文件存储路径目录）</param>
         public void CreateTask(string groupText)
         {
-            Config.TaskUnit task = new Config.TaskUnit();
-            task.ConfigDir = groupText; //配置文件目录
+            CreateTask(groupText, new Config.TaskUnit());
+        }
+        /// <summary>
+        /// 创建任务
+        /// </summary>
+        /// <param name="groupText">分组选项（Xml配置文件存储路径目录）</param>
+        /// <param name="taskUnit">任务控制单元</param>
+        public void CreateTask(string groupText, Config.TaskUnit taskUnit) {
+
+            taskUnit.ConfigDir = groupText; //配置文件目录
 
             //显示任务编辑窗体
-            FrmTask frmtask = new FrmTask(task);
+            FrmTask frmtask = new FrmTask(taskUnit);
             frmtask.ShowDialog();
 
+            /*
+             *此处控制逻辑有异常，待修改。
+             *描述：新建一个任务之后，该任务还并未编辑完毕，任务列表视图已经显示了此任务。
+             *考虑：是否能实现显示模态窗口之后，以下的代码暂停执行？
+             */
             //追加新的任务项
-            if (frmtask._TaskUnit != null)
-            {
+            if (frmtask._TaskUnit != null && !string.IsNullOrEmpty(frmtask._TaskUnit.TaskConfig.Name)) {
                 _TaskItem.Add(frmtask._TaskUnit);
             }
 
             //重新显示
             ShowGroupItem(groupText);
         }
+        /// <summary>
+        /// 创建任务
+        /// </summary>
+        /// <param name="groupText">分组选项（Xml配置文件存储路径目录）</param>
+        /// <param name="task">xml任务配置文件</param>
+        public void CreateTask(string groupText, Config.Task task){
+            Config.TaskUnit unit = new Config.TaskUnit();
+            unit.TaskConfig = task;
+            unit.ConfigDir = groupText;
+            unit.ConfigPath = "";
+
+            this.CreateTask(groupText, unit);
+        }
+        
+
         /// <summary>
         /// 删除任务
         /// </summary>
@@ -504,6 +531,7 @@ namespace SmartSpider.Utility
             TaskListViewQuickMenu.MenuItems.Add(new MenuItem("新建(&N)", new EventHandler(TaskListViewQuickMenu_MenuItems_Create)));
             TaskListViewQuickMenu.MenuItems.Add(new MenuItem("编辑(&E)", new EventHandler(TaskListViewQuickMenu_MenuItems_Edit)));
             TaskListViewQuickMenu.MenuItems.Add(new MenuItem("复制(&C)", new EventHandler(TaskListViewQuickMenu_MenuItems_Copy)));
+            TaskListViewQuickMenu.MenuItems.Add(new MenuItem("粘贴(&P)", new EventHandler(TaskListViewQuickMenu_MenuItems_Paste)));
             TaskListViewQuickMenu.MenuItems.Add(new MenuItem("删除(&D)", new EventHandler(TaskListViewQuickMenu_MenuItems_Delete)));
             TaskListViewQuickMenu.MenuItems.Add("-");
             TaskListViewQuickMenu.MenuItems.Add(new MenuItem("导出(&X)", new EventHandler(TaskListViewQuickMenu_MenuItems_Export)));
@@ -655,10 +683,22 @@ namespace SmartSpider.Utility
                     if (unit.TaskConfig.Name.Equals(item.Text))
                     {
                         Clipboard.Clear();
-                        Clipboard.SetData(DataFormats.Serializable, unit.TaskConfig);
+                        Clipboard.SetDataObject(unit.TaskConfig);
                         return;
                     }
                 }
+            }
+        }
+        private void TaskListViewQuickMenu_MenuItems_Paste(object sender, EventArgs e) {
+            try {
+                Config.Task task = (Config.Task)Clipboard.GetDataObject().GetData(typeof(Config.Task));
+                task.Name = "";
+                task.Description = "";
+
+                CreateTask(currentGroupText, task);
+            }
+            catch (Exception ex) {
+                MessageBox.Show(ex.Message, "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
         private void TaskListViewQuickMenu_MenuItems_Delete(object sender, EventArgs e) {
