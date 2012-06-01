@@ -180,6 +180,146 @@
     <!--用户授权开始-->
     <div id="tabs-3">
        <a href="Empower.aspx">用户授权</a>
+       <table class="TableBlock"  width="500" align="center" >
+    <tr>
+      <td nowrap="nowrap" class="TableContent"" align="center">授权范围：<br/>（人员）</td>
+      <td class="TableData">
+        <input type="hidden" id="USER_ID" name="USER_ID" value=""/>
+          <asp:HiddenField ID="HfUserID" runat="server" Value=""/>
+        <textarea id="txtUser" cols="40" name="USER_NAME" rows="8" class="BigStatic" wrap="yes" readonly="readonly"></textarea>
+        <a href="javascript:;" class="orgAdd" onclick="SelectUser('txtUser','#dialog')">选择</a>
+     <a href="javascript:;" class="orgClear" onclick="Clear('txtUser')">清空</a>
+      </td>
+   </tr>
+   <tr>
+      <td nowrap="nowrap" class="TableContent"" align="center">授权范围：<br/>（角色）</td>
+      <td class="TableData">
+        <input type="hidden" name="PRIV_ID" value=""/>
+        <asp:HiddenField ID="HfRoleID" runat="server" Value=""/>
+        <textarea id="txtRole" cols="40" name="ROLE_NAME" rows="8" class="BigStatic" wrap="yes" readonly="readonly"></textarea>
+        <a href="javascript:;" class="orgAdd" onclick="SelectUser('txtRole','#dialog1')">选择</a>
+        <a href="javascript:;" class="orgClear" onclick="Clear('txtRole')">清空</a>
+      </td>
+   </tr>
+     <tr>
+      <td nowrap="nowrap" class="TableContent"" align="center">授权范围：<br/>（菜单）</td>
+      <td class="TableData">
+        <input type="hidden" name="DEPT_ID" value=""/>
+        <asp:HiddenField ID="HfMenuID" runat="server" Value=""/>
+        <textarea id="TxtMenu" cols="40" name="Menu_NAME" rows="8" class="BigStatic" wrap="yes" readonly="readonly"></textarea>
+        <a href="javascript:;" class="orgAdd" onclick="SelectUser('TxtMenu','#dialog2')">添加</a>
+        <a href="javascript:;" class="orgClear" onclick="ClearUser('TxtMenu')">清空</a>
+      </td>
+   </tr>
+     <tr>
+      <td nowrap="nowrap" class="TableContent"" align="center">授权范围：<br/>（动作）</td>
+      <td class="TableData">
+          <asp:HiddenField ID="HfActionID" runat="server" Value=""/>
+        <textarea id="TxtAction" cols="40" name="ACTION_NAME" rows="8" class="BigStatic" wrap="yes" readonly="readonly"></textarea>
+        <a href="javascript:;" class="orgAdd" onclick="SelectUser('TxtAction','#dialog3')">添加</a>
+        <a href="javascript:;" class="orgClear" onclick="ClearUser('TxtAction')">清空</a>
+      </td>
+   </tr>
+   <tr>
+    <td nowrap="nowrap"  class="TableControl" colspan="2" align="center">
+        <asp:Button ID="BtnEmpower" runat="server" Text="提交" CssClass="BigButton"
+            onclick="BtnEmpower_Click" />
+        <%--<input type="submit" value="确定" class="BigButton" name="button"/>--%>&nbsp;
+    </td>
+   </tr>
+</table>
+ <!--dialog窗口开始-->
+        <div id="overlay">
+        </div>
+        <!--用户列表开始-->
+        <div id="dialog" class="ModalDialog" style="display: none">
+            <div class="header">
+                <span id="title" class="title">授权用户列表</span><a class="operation" href="javascript:HideDialog('send');"></a></div>
+            <table width="95%" class="table" align="center">
+                <thead>
+                    <tr>
+                        <td class="TableContent">
+                            请选择授权用户
+                        </td>
+                    </tr>
+                </thead>
+                <tr>
+                    <td colspan="2" class="TableData">
+                        <asp:CheckBoxList ID="CBLUser" runat="server">
+                        </asp:CheckBoxList>
+                    </td>
+                </tr>
+            </table>
+            <input type="button" id="btnsubmit" value="确定" class="BigButtonA" onclick="javascript:btn_submit('USER_ID','txtUser','#dialog')" />
+        </div>
+        <!--用户列表结束-->
+        <!--角色列表开始-->
+        <div id="dialog1" class="ModalDialog" style="display: none">
+            <div class="header">
+                <span id="Span1" class="title">角色列表</span><a class="operation" href="javascript:HideDialog('send');"></a></div>
+            <table width="95%" class="table" align="center">
+                <thead>
+                    <tr>
+                        <td class="TableContent">
+                            请选择角色
+                        </td>
+                    </tr>
+                </thead>
+                <tr>
+                    <td colspan="2" class="TableData">
+                        <asp:CheckBoxList ID="ChBLRole" runat="server">
+                        </asp:CheckBoxList>
+                    </td>
+                </tr>
+            </table>
+            <input type="button" id="Button1" value="确定" class="BigButtonA" onclick="javascript:btn_submit('ctl00_ContentPlaceHolder1_SysManager1_HfRoleID','txtRole','#dialog1')" />
+        </div>
+        <!--角色列表结束-->
+         <!--菜单列表开始-->
+        <div id="dialog2" class="ModalDialog" style="display: none">
+            <div class="header">
+                <span id="Span2" class="title">菜单列表</span><a class="operation" href="javascript:HideDialog('send');"></a></div>
+            <table width="95%" class="table" align="center">
+                <thead>
+                    <tr>
+                        <td class="TableContent">
+                            请选择菜单
+                        </td>
+                    </tr>
+                </thead>
+                <tr>
+                    <td colspan="2" class="TableData">
+                        <asp:CheckBoxList ID="ChBLMenu" runat="server">
+                        </asp:CheckBoxList>
+                    </td>
+                </tr>
+            </table>
+            <input type="button" id="Button2" value="确定" class="BigButtonA" onclick="javascript:btn_submit('ctl00_ContentPlaceHolder1_SysManager1_HfMenuID','TxtMenu','#dialog2')" />
+        </div>
+        <!--菜单列表结束-->
+         <!--动作列表开始-->
+        <div id="dialog3" class="ModalDialog" style="display: none">
+            <div class="header">
+                <span id="Span3" class="title">动作列表</span><a class="operation" href="javascript:HideDialog('send');"></a></div>
+            <table width="95%" class="table" align="center">
+                <thead>
+                    <tr>
+                        <td class="TableContent">
+                            请选择动作
+                        </td>
+                    </tr>
+                </thead>
+                <tr>
+                    <td colspan="2" class="TableData">
+                        <asp:CheckBoxList ID="ChBLAction" runat="server">
+                        </asp:CheckBoxList>
+                    </td>
+                </tr>
+            </table>
+            <input type="button" id="Button3" value="确定" class="BigButtonA" onclick="javascript:btn_submit('ctl00_ContentPlaceHolder1_SysManager1_HfActionID','TxtAction','#dialog3')" />
+        </div>
+        <!--动作列表结束-->
+        <!--dialog窗口结束-->
     </div>
     <!--用户授权结束-->
     <!--日志管理开始-->

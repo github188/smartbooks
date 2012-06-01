@@ -12,12 +12,20 @@ namespace SmartHyd.ManageCenter.Ascx
     {
         private BLL.BASE_DEPT bll = new BLL.BASE_DEPT();
         private BLL.BASE_USER userbll = new BLL.BASE_USER();
+        private BLL.BASE_MENU menubll = new BLL.BASE_MENU();
+        private BLL.BASE_ROLE rolebll = new BLL.BASE_ROLE();
+        private BLL.BASE_ACTION actionbll = new BLL.BASE_ACTION();
+        private BLL.BASE_USER_ROLE userRolebll = new BLL.BASE_USER_ROLE();
         private BLL.BASE_LOG logbll = new BLL.BASE_LOG();
         protected void Page_Load(object sender, EventArgs e)
         {
             dataBindToRepeater("1=1");//绑定部门数据
             BindUserList();   //绑定用户数据
             dataBindRepeater("1=1");//绑定日志数据
+            UserBind();//授权用户绑定
+            RoleBind();//角色绑定
+            MenuBind();// 菜单绑定
+            ActionBind(); // 动作绑定
         }
         #region 部门管理
         //使用dataBindToRepeater()方法绑定部门数据
@@ -133,6 +141,132 @@ namespace SmartHyd.ManageCenter.Ascx
         }
         #endregion
         #region  用户授权
+         /// <summary>
+        /// 授权用户绑定
+        /// </summary>
+        private void UserBind()
+        {
+            SmartHyd.Utility.UserSession userSession = (SmartHyd.Utility.UserSession)Session["user"];
+            DataTable dt = new DataTable();
+            string strwhere = "USERID!=" + userSession.USERID;
+            dt = userbll.GetList(strwhere);
+            //绑定方法一：
+            this.CBLUser.DataSource = dt;
+            this.CBLUser.DataTextField = "USERNAME";
+            this.CBLUser.DataValueField = "USERID";
+            this.CBLUser.DataBind();
+            foreach (ListItem item in CBLUser.Items)//追加用户编号绑定到页面
+            {
+                item.Attributes.Add("valu", item.Value);
+            }
+
+
+            //方法二：
+            //foreach (DataRow dr in dt.Rows)
+            //{
+            //    //node = new TreeNode();
+            //    //this.ListUser.Items.Add(node);
+            //    //node.Value = dr["USERID"].ToString();
+            //    //node.Text = (string)dr["USERNAME"];
+            //    //node.ShowCheckBox = true;
+
+            //    this.CBLUser.Items.Add(dr["USERNAME"].ToString());
+            //}
+           
+
+
+
+        }
+        /// <summary>
+        /// 角色绑定
+        /// </summary>
+        private void RoleBind()
+        {
+            DataTable dt = new DataTable();
+            dt = rolebll.GetList("1=1");
+            this.ChBLRole.DataSource = dt;
+            this.ChBLRole.DataTextField = "ROLENAME";
+            this.ChBLRole.DataValueField = "ROLEID";
+            this.ChBLRole.DataBind();
+        }
+        /// <summary>
+        /// 菜单绑定
+        /// </summary>
+        private void MenuBind()
+        {
+            DataTable dt = new DataTable();
+            dt = menubll.GetList("1=1");
+            this.ChBLMenu.DataSource = dt;
+            this.ChBLMenu.DataTextField ="MENUNAME";
+            this.ChBLMenu.DataValueField ="MENUID";
+            this.ChBLMenu.DataBind();
+        }
+        /// <summary>
+        /// 动作绑定
+        /// </summary>
+        private void ActionBind()
+        {
+            DataTable dt = new DataTable();
+            dt = actionbll.GetList("1=1");
+            this.ChBLAction.DataSource = dt;
+            this.ChBLAction.DataTextField = "ACTIONNAME";
+            this.ChBLAction.DataValueField ="ACTIONID";
+            this.ChBLAction.DataBind();
+        }
+        /// <summary>
+        /// 按钮事件：授权
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void BtnEmpower_Click(object sender, EventArgs e)
+        {
+            //获取授权用户编号
+            string str_username ="";//获取文本框中所有的用户名
+            string[] sArray = str_username.Split(',');
+            decimal userid = 0;
+            //判断用户是否拥有权限;如果已有权限，删除已有权限
+            if (userRolebll.ExistsUserid(userid))
+            {
+                string strwhere = "USERID=" + userid;
+                userRolebll.deletelist(strwhere);//删除已有权限
+                PowerAdd(userid);//用户授权
+            }
+            else
+            {
+                PowerAdd(userid);//用户授权
+            }
+        }
+        /// <summary>
+        /// 用户授权
+        /// </summary>
+        /// <param name="userid"></param>
+        private void PowerAdd(decimal userid)
+        {
+            //获取角色编号
+            //decimal roleid = -1;
+            //if (null != this.RBLRole.SelectedValue.ToString() || "" != this.RBLRole.SelectedValue.ToString())
+            //{
+            //    roleid = Convert.ToDecimal(this.RBLRole.SelectedValue.ToString());
+            //}
+
+            ////获取菜单编号
+            //List<int> menuID = GetMenuID();
+            ////获取动作编号
+            //List<int> ACTIONID = GetActionID();
+
+            //int total = menuID.Count * ACTIONID.Count;//要添加数据的总记录数
+            //if (total > 0)
+            //{
+            //    for (int i = 0; i < menuID.Count; i++)
+            //    {
+            //        for (int j = 0; j < ACTIONID.Count; j++)
+            //        {
+            //            bll.Add(GetModel(userid, roleid, menuID[i], ACTIONID[j]));
+            //        }
+            //    }
+
+            //}
+        }
         #endregion
         #region  日志管理
         //使用dataBindRepeater()方法绑定系统日志数据
@@ -188,6 +322,7 @@ namespace SmartHyd.ManageCenter.Ascx
             dataBindRepeater("1=1");
         }
         #endregion
+       
      
        
 

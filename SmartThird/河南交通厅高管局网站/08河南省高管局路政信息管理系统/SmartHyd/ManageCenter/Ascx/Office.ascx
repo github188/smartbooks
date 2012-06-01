@@ -69,7 +69,7 @@
                     </td>
                 </tr>
             </table>
-            <input type="button" id="btnsubmit" value="确定" CssClass="BigButtonA" onclick="javascript:btn_submit()" />
+            <input type="button" id="btnsubmit" value="确定" class="BigButtonA" onclick="javascript:btn_submit()" />
         </div>
         <!--dialog窗口结束-->
         <!--发送消息结束-->

@@ -7,6 +7,45 @@
         $(function () {
             $("#ctl00_ContentPlaceHolder1_SysManager1_TxtDate").datepicker();
         });
+        //授权用户模态窗口
+        function SelectUser(textID, dialogid) {
+            Clear(textID);
+            $(function () {
+
+                var dialog = $(dialogid).dialog({
+                    modal: false,
+                    title: "授权窗口"
+                });
+
+            });
+
+        }
+        //清空文本框
+        function Clear(textID) {
+            document.getElementById(textID).value = "";
+        }
+        function btn_submit(Uid, textID, dialogid) {
+
+            var elem = document.getElementsByTagName("input");
+            var user = document.getElementById(textID);
+            var id = document.getElementById(Uid);
+
+
+            for (var i = 0; i < elem.length; i++) {
+
+                if (elem[i].type == "checkbox") {
+                    if (elem[i].checked == true) {
+                        user.value += elem[i].nextSibling.innerText + ","; //-- nextSibling是获得当前对象的下一个对象;nodeValue 节点的值 
+
+                       // id.value += $(this).parent('span').attr("valu") + ","; //获取value值
+                        // alert();   //获取text值
+                        id.value += "2,";
+                    }
+                    elem[i].checked = false; //清空选中的项
+                }
+            }
+            $(dialogid).dialog("close"); //关闭dialog窗口；
+        }
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
