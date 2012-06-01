@@ -47,8 +47,17 @@ namespace Smart.Utility
         public static string SubString(string htmlText, string PreviousFlag, string FollowingFlag)
         {
             string result = htmlText;
+            PreviousFlag = PreviousFlag.Trim();
+            FollowingFlag = FollowingFlag.Trim();
+
             int indexPreviousFlag = result.IndexOf(PreviousFlag);    //信息前标志
             int indexFollowingFlag = result.IndexOf(FollowingFlag);  //信息后标志
+
+            //如果开始或结束标记不存在，那么返回空串
+            if (indexFollowingFlag == -1 && indexPreviousFlag == -1) {
+                return "";
+            }
+
             int indexLength = indexFollowingFlag - indexPreviousFlag;
             if (indexLength > 1 && indexLength >= FollowingFlag.Length)
             {
