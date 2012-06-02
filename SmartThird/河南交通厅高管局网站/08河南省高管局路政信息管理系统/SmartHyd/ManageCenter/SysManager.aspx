@@ -24,11 +24,10 @@
         function Clear(textID) {
             document.getElementById(textID).value = "";
         }
-        function btn_submit(Uid, textID, dialogid) {
+        function btn_submit(textID, dialogid) {
 
             var elem = document.getElementsByTagName("input");
             var user = document.getElementById(textID);
-            var id = document.getElementById(Uid);
 
 
             for (var i = 0; i < elem.length; i++) {
@@ -37,9 +36,6 @@
                     if (elem[i].checked == true) {
                         user.value += elem[i].nextSibling.innerText + ","; //-- nextSibling是获得当前对象的下一个对象;nodeValue 节点的值 
 
-                       // id.value += $(this).parent('span').attr("valu") + ","; //获取value值
-                        // alert();   //获取text值
-                        id.value += "2,";
                     }
                     elem[i].checked = false; //清空选中的项
                 }

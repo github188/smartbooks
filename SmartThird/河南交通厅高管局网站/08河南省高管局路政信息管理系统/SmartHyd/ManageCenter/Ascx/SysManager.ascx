@@ -250,7 +250,7 @@
                     </td>
                 </tr>
             </table>
-            <input type="button" id="btnsubmit" value="确定" class="BigButtonA" onclick="javascript:btn_submit('USER_ID','txtUser','#dialog')" />
+            <input type="button" id="btnsubmit" value="确定" class="BigButtonA" onclick="javascript:btn_submit('txtUser','#dialog')" />
         </div>
         <!--用户列表结束-->
         <!--角色列表开始-->
@@ -272,7 +272,7 @@
                     </td>
                 </tr>
             </table>
-            <input type="button" id="Button1" value="确定" class="BigButtonA" onclick="javascript:btn_submit('ctl00_ContentPlaceHolder1_SysManager1_HfRoleID','txtRole','#dialog1')" />
+            <input type="button" id="Button1" value="确定" class="BigButtonA" onclick="javascript:btn_submit('txtRole','#dialog1')" />
         </div>
         <!--角色列表结束-->
          <!--菜单列表开始-->
@@ -294,7 +294,7 @@
                     </td>
                 </tr>
             </table>
-            <input type="button" id="Button2" value="确定" class="BigButtonA" onclick="javascript:btn_submit('ctl00_ContentPlaceHolder1_SysManager1_HfMenuID','TxtMenu','#dialog2')" />
+            <input type="button" id="Button2" value="确定" class="BigButtonA" onclick="javascript:btn_submit('TxtMenu','#dialog2')" />
         </div>
         <!--菜单列表结束-->
          <!--动作列表开始-->
@@ -316,7 +316,7 @@
                     </td>
                 </tr>
             </table>
-            <input type="button" id="Button3" value="确定" class="BigButtonA" onclick="javascript:btn_submit('ctl00_ContentPlaceHolder1_SysManager1_HfActionID','TxtAction','#dialog3')" />
+            <input type="button" id="Button3" value="确定" class="BigButtonA" onclick="javascript:btn_submit('TxtAction','#dialog3')" />
         </div>
         <!--动作列表结束-->
         <!--dialog窗口结束-->
