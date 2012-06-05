@@ -3,7 +3,10 @@
 
 <%@ Register src="Ascx/Patrol.ascx" tagname="Patrol" tagprefix="uc1" %>
 
+
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+
     <script type="text/jscript">
         $(function () {
             /*编辑器*/

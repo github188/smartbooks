@@ -2,7 +2,12 @@
     CodeBehind="Office.aspx.cs" Inherits="SmartHyd.ManageCenter.Office" %>
 
 <%@ Register Src="Ascx/Office.ascx" TagName="Office" TagPrefix="uc1" %>
+
+
+
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+
     <script type="text/jscript">
         $(function () {
 
