@@ -150,7 +150,7 @@ namespace SmartHyd.ManageCenter.Ascx
             DataTable dt = new DataTable();
             string strwhere = "USERID!=" + userSession.USERID;
             dt = userbll.GetList(strwhere);
-            //绑定方法一：
+            //checkboxList绑定：
             this.CBLUser.DataSource = dt;
             this.CBLUser.DataTextField = "USERNAME";
             this.CBLUser.DataValueField = "USERID";
@@ -159,23 +159,6 @@ namespace SmartHyd.ManageCenter.Ascx
             {
                 item.Attributes.Add("valu", item.Value);
             }
-
-
-            //方法二：
-            //foreach (DataRow dr in dt.Rows)
-            //{
-            //    //node = new TreeNode();
-            //    //this.ListUser.Items.Add(node);
-            //    //node.Value = dr["USERID"].ToString();
-            //    //node.Text = (string)dr["USERNAME"];
-            //    //node.ShowCheckBox = true;
-
-            //    this.CBLUser.Items.Add(dr["USERNAME"].ToString());
-            //}
-           
-
-
-
         }
         /// <summary>
         /// 角色绑定
@@ -188,6 +171,10 @@ namespace SmartHyd.ManageCenter.Ascx
             this.ChBLRole.DataTextField = "ROLENAME";
             this.ChBLRole.DataValueField = "ROLEID";
             this.ChBLRole.DataBind();
+            foreach (ListItem item in ChBLRole.Items)//追加角色编号绑定到页面
+            {
+                item.Attributes.Add("valu", item.Value);
+            }
         }
         /// <summary>
         /// 菜单绑定
@@ -200,6 +187,10 @@ namespace SmartHyd.ManageCenter.Ascx
             this.ChBLMenu.DataTextField ="MENUNAME";
             this.ChBLMenu.DataValueField ="MENUID";
             this.ChBLMenu.DataBind();
+            foreach (ListItem item in ChBLMenu.Items)//追加菜单编号绑定到页面
+            {
+                item.Attributes.Add("valu", item.Value);
+            }
         }
         /// <summary>
         /// 动作绑定
@@ -212,6 +203,10 @@ namespace SmartHyd.ManageCenter.Ascx
             this.ChBLAction.DataTextField = "ACTIONNAME";
             this.ChBLAction.DataValueField ="ACTIONID";
             this.ChBLAction.DataBind();
+            foreach (ListItem item in ChBLAction.Items)//追加菜单编号绑定到页面
+            {
+                item.Attributes.Add("valu", item.Value);
+            }
         }
         /// <summary>
         /// 按钮事件：授权
@@ -221,9 +216,28 @@ namespace SmartHyd.ManageCenter.Ascx
         protected void BtnEmpower_Click(object sender, EventArgs e)
         {
             //获取授权用户编号
-            string str_username ="";//获取文本框中所有的用户名
+            string str_username = this.txtUsers.Value;//获取文本框中所有的用户名
             string[] sArray = str_username.Split(',');
-            decimal userid = 0;
+            string username = string.Empty;
+            if (sArray.Length > 1)//如果有多个用户
+            {
+                foreach (string i in sArray)
+                {
+                    username = i.ToString();
+
+
+
+                }
+            }
+            else//单个用户
+            {
+                username = sArray[0].ToString();
+
+
+
+            }
+            decimal userid = Convert.ToDecimal(userbll.GetList("USERNAME='" + username + "'").Rows[0]["USERID"]);
+           
             //判断用户是否拥有权限;如果已有权限，删除已有权限
             if (userRolebll.ExistsUserid(userid))
             {

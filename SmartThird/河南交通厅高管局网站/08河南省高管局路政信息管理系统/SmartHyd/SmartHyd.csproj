@@ -34,6 +34,9 @@
     <WarningLevel>0</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxPro">
+      <HintPath>..\FreeThirdControle\AjaxPro.dll</HintPath>
+    </Reference>
     <Reference Include="AspNetPager, Version=7.3.2.0, Culture=neutral, PublicKeyToken=fb0a0fe055d40fd4, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\AspNetPager.dll</HintPath>
@@ -91,6 +94,7 @@
     <Content Include="ManageCenter\Ascx\Area.ascx" />
     <Content Include="ManageCenter\Ascx\Chat.ascx" />
     <Content Include="ManageCenter\Ascx\Dept.ascx" />
+    <Content Include="ManageCenter\Ascx\DeptManage.ascx" />
     <Content Include="ManageCenter\Ascx\DocumentCheckOut.ascx" />
     <Content Include="ManageCenter\Ascx\DocumentCreate.ascx" />
     <Content Include="ManageCenter\Ascx\DocumentDetail.ascx" />
@@ -111,9 +115,11 @@
     <Content Include="ManageCenter\Ascx\SysManager.ascx" />
     <Content Include="ManageCenter\Ascx\Term.ascx" />
     <Content Include="ManageCenter\Ascx\UserManage.ascx" />
+    <Content Include="ManageCenter\Ascx\wd_deptSetup.aspx" />
     <Content Include="ManageCenter\Chat.aspx" />
     <Content Include="ManageCenter\ConstructionPage.aspx" />
     <Content Include="ManageCenter\Dept.aspx" />
+    <Content Include="ManageCenter\DeptManage.aspx" />
     <Content Include="ManageCenter\DocumentCheckOut.aspx" />
     <Content Include="ManageCenter\DocumentCreate.aspx" />
     <Content Include="ManageCenter\DocumentDetail.aspx" />
@@ -451,6 +457,13 @@
     <Compile Include="ManageCenter\Ascx\Dept.ascx.designer.cs">
       <DependentUpon>Dept.ascx</DependentUpon>
     </Compile>
+    <Compile Include="ManageCenter\Ascx\DeptManage.ascx.cs">
+      <DependentUpon>DeptManage.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\Ascx\DeptManage.ascx.designer.cs">
+      <DependentUpon>DeptManage.ascx</DependentUpon>
+    </Compile>
     <Compile Include="ManageCenter\Ascx\DocumentCheckOut.ascx.cs">
       <DependentUpon>DocumentCheckOut.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -591,6 +604,13 @@
     <Compile Include="ManageCenter\Ascx\UserManage.ascx.designer.cs">
       <DependentUpon>UserManage.ascx</DependentUpon>
     </Compile>
+    <Compile Include="ManageCenter\Ascx\wd_deptSetup.aspx.cs">
+      <DependentUpon>wd_deptSetup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\Ascx\wd_deptSetup.aspx.designer.cs">
+      <DependentUpon>wd_deptSetup.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ManageCenter\Chat.aspx.cs">
       <DependentUpon>Chat.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -611,6 +631,13 @@
     </Compile>
     <Compile Include="ManageCenter\Dept.aspx.designer.cs">
       <DependentUpon>Dept.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\DeptManage.aspx.cs">
+      <DependentUpon>DeptManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\DeptManage.aspx.designer.cs">
+      <DependentUpon>DeptManage.aspx</DependentUpon>
     </Compile>
     <Compile Include="ManageCenter\DocumentCheckOut.aspx.cs">
       <DependentUpon>DocumentCheckOut.aspx</DependentUpon>
@@ -769,6 +796,10 @@
     <Folder Include="Temp\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Smart\SmartDBUtility\SmartDBUtility.csproj">
+      <Project>{40B79F71-57F3-4E04-8277-25A24CDCB7A5}</Project>
+      <Name>SmartDBUtility</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\..\Smart\SmartSecurity\SmartSecurity.csproj">
       <Project>{116EC11E-6812-48DF-BFD6-8B3FF66C884F}</Project>
       <Name>SmartSecurity</Name>
@@ -799,6 +830,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Ashx\VerificationCode.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Web.sitemap" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

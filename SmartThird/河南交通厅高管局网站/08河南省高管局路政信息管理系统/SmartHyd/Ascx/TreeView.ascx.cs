@@ -93,7 +93,7 @@ namespace SmartHyd.Ascx {
             DataTable dt = new DataTable();
             //获取部门数据源            
             BLL.BASE_ARTICLE_TYPE bll = new BLL.BASE_ARTICLE_TYPE();
-            Utility.UserSession _userSession = (Utility.UserSession)Session["user"];
+           Utility.UserSession _userSession = (Utility.UserSession)Session["user"];
             if (_userSession == null) {
                 Response.Redirect("~/AdminLogin.aspx", true);
             }

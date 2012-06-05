@@ -18,7 +18,7 @@
             <asp:Button ID="btnAddDept" runat="server" Text="新建" CssClass="BigButtonA" OnClick="btnAddDept_Click" />
         </div>
         <!--部门列表开始-->
-        <table class="TableList" width="100%">
+              <table class="TableList" width="100%">
             <asp:Repeater ID="RptList" runat="server">
                 <HeaderTemplate>
                     <tbody>
@@ -184,19 +184,16 @@
     <tr>
       <td nowrap="nowrap" class="TableContent"" align="center">授权范围：<br/>（人员）</td>
       <td class="TableData">
-        <input type="hidden" id="USER_ID" name="USER_ID" value=""/>
           <asp:HiddenField ID="HfUserID" runat="server" Value=""/>
-        <textarea id="txtUser" cols="40" name="USER_NAME" rows="8" class="BigStatic" wrap="yes" readonly="readonly"></textarea>
-        <a href="javascript:;" class="orgAdd" onclick="SelectUser('txtUser','#dialog')">选择</a>
-     <a href="javascript:;" class="orgClear" onclick="Clear('txtUser')">清空</a>
+        <textarea id="txtUsers" cols="40" name="USER_NAME" rows="8" class="BigStatic" wrap="yes" readonly="readonly" runat="server"></textarea>
+        <a href="javascript:;" class="orgAdd" onclick="SelectUser('txtUsers','#dialog')">选择</a>
+     <a href="javascript:;" class="orgClear" onclick="Clear('txtUsers')">清空</a>
       </td>
    </tr>
    <tr>
       <td nowrap="nowrap" class="TableContent"" align="center">授权范围：<br/>（角色）</td>
       <td class="TableData">
-        <input type="hidden" name="PRIV_ID" value=""/>
-        <asp:HiddenField ID="HfRoleID" runat="server" Value=""/>
-        <textarea id="txtRole" cols="40" name="ROLE_NAME" rows="8" class="BigStatic" wrap="yes" readonly="readonly"></textarea>
+        <textarea id="txtRole" cols="40" name="ROLE_NAME" rows="8" class="BigStatic" wrap="yes" readonly="readonly" runat="server"></textarea>
         <a href="javascript:;" class="orgAdd" onclick="SelectUser('txtRole','#dialog1')">选择</a>
         <a href="javascript:;" class="orgClear" onclick="Clear('txtRole')">清空</a>
       </td>
@@ -204,9 +201,8 @@
      <tr>
       <td nowrap="nowrap" class="TableContent"" align="center">授权范围：<br/>（菜单）</td>
       <td class="TableData">
-        <input type="hidden" name="DEPT_ID" value=""/>
         <asp:HiddenField ID="HfMenuID" runat="server" Value=""/>
-        <textarea id="TxtMenu" cols="40" name="Menu_NAME" rows="8" class="BigStatic" wrap="yes" readonly="readonly"></textarea>
+        <textarea id="TxtMenu" cols="40" name="Menu_NAME" rows="8" class="BigStatic" wrap="yes" readonly="readonly" runat="server"></textarea>
         <a href="javascript:;" class="orgAdd" onclick="SelectUser('TxtMenu','#dialog2')">添加</a>
         <a href="javascript:;" class="orgClear" onclick="ClearUser('TxtMenu')">清空</a>
       </td>
@@ -215,7 +211,7 @@
       <td nowrap="nowrap" class="TableContent"" align="center">授权范围：<br/>（动作）</td>
       <td class="TableData">
           <asp:HiddenField ID="HfActionID" runat="server" Value=""/>
-        <textarea id="TxtAction" cols="40" name="ACTION_NAME" rows="8" class="BigStatic" wrap="yes" readonly="readonly"></textarea>
+        <textarea id="TxtAction" cols="40" name="ACTION_NAME" rows="8" class="BigStatic" wrap="yes" readonly="readonly" runat="server"></textarea>
         <a href="javascript:;" class="orgAdd" onclick="SelectUser('TxtAction','#dialog3')">添加</a>
         <a href="javascript:;" class="orgClear" onclick="ClearUser('TxtAction')">清空</a>
       </td>

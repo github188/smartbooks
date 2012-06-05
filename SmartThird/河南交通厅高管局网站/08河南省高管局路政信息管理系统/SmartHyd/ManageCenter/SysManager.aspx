@@ -43,7 +43,10 @@
             $(dialogid).dialog("close"); //关闭dialog窗口；
         }
     </script>
+   
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <uc1:SysManager ID="SysManager1" runat="server" />
+ <asp:SiteMapPath ID="SiteMapPath1" runat="server" SiteMapProvider="XmlSiteMapProvider" RenderCurrentNodeAsLink="true" ShowToolTips="true" CssClass ="sitemap">
+    </asp:SiteMapPath>
+ <%--   <uc1:SysManager ID="SysManager1" runat="server" />--%>
 </asp:Content>
