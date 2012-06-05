@@ -44,7 +44,7 @@
                 <%=userSession.Department.DPTNAME %>
                 &gt; </span>
             <br />
-            <a href="#">系统首页</a><span> | </span><a href="#">设置 </a><span>- </span><a href="#">注销</a>
+            <a href="main.aspx" target="mainFrame">系统首页</a><span> | </span><a href="#">设置 </a><span>- </span><a href="#">注销</a>
         </div>
         <!--用户信息结束-->
         <!--反馈信息开始-->
@@ -52,8 +52,9 @@
             <a href="http://www.google.cn/chrome" style="color:Red;" target="_blank">推荐Google浏览器</a> | 
             <a>反馈建议</a> | 
             <a>帮助中心</a> |
-            <asp:LinkButton ID="linkBtnLoginOut" runat="server" Text="退出" OnClick="linkBtnLoginOut_Click">
-            </asp:LinkButton>
+            <a href="AdminLogout.aspx" target="_parent">退出</a> | 
+<%--            <asp:LinkButton ID="linkBtnLoginOut" runat="server" Text="退出" OnClick="linkBtnLoginOut_Click">
+            </asp:LinkButton>--%>
         </div>
         <!--反馈信息结束-->
         <!--文本搜索框开始-->
