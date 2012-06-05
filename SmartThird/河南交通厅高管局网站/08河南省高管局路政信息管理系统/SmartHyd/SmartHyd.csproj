@@ -115,7 +115,6 @@
     <Content Include="ManageCenter\Ascx\SysManager.ascx" />
     <Content Include="ManageCenter\Ascx\Term.ascx" />
     <Content Include="ManageCenter\Ascx\UserManage.ascx" />
-    <Content Include="ManageCenter\Ascx\wd_deptSetup.aspx" />
     <Content Include="ManageCenter\Chat.aspx" />
     <Content Include="ManageCenter\ConstructionPage.aspx" />
     <Content Include="ManageCenter\Dept.aspx" />
@@ -603,13 +602,6 @@
     </Compile>
     <Compile Include="ManageCenter\Ascx\UserManage.ascx.designer.cs">
       <DependentUpon>UserManage.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="ManageCenter\Ascx\wd_deptSetup.aspx.cs">
-      <DependentUpon>wd_deptSetup.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ManageCenter\Ascx\wd_deptSetup.aspx.designer.cs">
-      <DependentUpon>wd_deptSetup.aspx</DependentUpon>
     </Compile>
     <Compile Include="ManageCenter\Chat.aspx.cs">
       <DependentUpon>Chat.aspx</DependentUpon>

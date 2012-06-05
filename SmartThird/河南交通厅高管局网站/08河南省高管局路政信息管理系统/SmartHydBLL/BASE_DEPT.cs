@@ -75,5 +75,13 @@ namespace SmartHyd.BLL {
                 return false;
             }
         }
+        /// <summary>
+        /// 部门数据删除
+        /// </summary>
+        /// <returns></returns>
+        public bool del(decimal DEPTID)
+        {
+            return dal.Delete(DEPTID);
+        }
     }
 }

@@ -3,10 +3,16 @@
 <%@ Register Src="~/ManageCenter/Ascx/DeptManage.ascx" TagName="DeptManage" TagPrefix="uc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 <script type="text/javascript">
-    function childDept(deptid) {
-        alert("dddd");
-       // SmartHyd.ManageCenter.DeptManage.depturl(deptid);
-     }
+    function childDept() {
+        if (confirm('确定要删除该部门吗？')) {
+            SmartHyd.ManageCenter.DeptManage.delDept();
+            alert("deptid");
+            SmartHyd.ManageCenter.Ascx.DeptManage.delDept();
+            return true;
+        } else {
+            return false;
+        }
+    }
 </script>
 
 </asp:Content>

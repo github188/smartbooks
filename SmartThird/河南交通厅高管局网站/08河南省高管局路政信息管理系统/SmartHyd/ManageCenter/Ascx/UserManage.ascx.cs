@@ -21,17 +21,30 @@ namespace SmartHyd.ManageCenter.Ascx
         {
             if (!IsPostBack)
             {
-                BindUserList();
-
-                SetEntity(new Entity.BASE_USER());
+                if (null == Request.QueryString["deptid"] || "" == Request.QueryString["deptid"])
+                {
+                    BindUserList(4);//绑定用户列表
+                    BindAcceptUnit();//绑定单位部门
+                    SetEntity(new Entity.BASE_USER());
+                }
+                else
+                {
+                    decimal deptid = Convert.ToDecimal(Request.QueryString["deptid"]);
+                    BindUserList(deptid);//绑定用户列表
+                    BindAcceptUnit();//绑定单位部门
+                    SetEntity(new Entity.BASE_USER());
+                }
             }
         }
-
-        private void BindUserList()
+        /// <summary>
+        /// 用户数据绑定
+        /// </summary>
+        private void BindUserList(decimal DEPTID)
         {
             DataTable dt = new DataTable();
-            dt = bll.GetAllUser();
-            //dt = bll.GetList("1=1");
+           // dt = bll.GetAllUser();//获取全部用户
+            //dt = bll.GetList("1=1");//根据条件获取用户
+            dt = bll.GetList("DEPTID=" + DEPTID);
             //初始化分页数据
             AspNetPager1.RecordCount = dt.Rows.Count;
             PagedDataSource pds = new PagedDataSource();
@@ -134,6 +147,89 @@ namespace SmartHyd.ManageCenter.Ascx
 
             return true;
         }
+        //绑定单位部门
+        private void BindAcceptUnit()
+        {
+            DataTable dt = new DataTable();
+            //获取用户所属单位和下级部门
+
+
+            BLL.BASE_DEPT dept = new BLL.BASE_DEPT();
+            dt = dept.GetAllDep("STATUS=0");
+
+            foreach (DataRow dr in dt.Rows)
+            {
+                if (dr["PARENTID"].ToString().Equals("0"))
+                {
+                    TreeNode rootNode = new TreeNode();
+                    rootNode.Text = dr["DPTNAME"].ToString();
+                    rootNode.Value = dr["DEPTID"].ToString();
+                    rootNode.ToolTip = dr["DPTINFO"].ToString();
+                    rootNode.ShowCheckBox = false;//设置复选框是否显示
+                    rootNode.Expanded = false;
+                    rootNode.NavigateUrl = "../UserManage.aspx?deptid=" + dr["DEPTID"].ToString();//设置导航：绑定该部门下用户
+
+                    //递归子节点
+                    RecursiveBindAcceptUnit(rootNode, dt);
+
+                    //加入控件
+                    TreeViewAcceptUnit.Nodes.Add(rootNode);
+                }
+            }
+        }
+        /// <summary>
+        /// 填充部门树
+        /// </summary>
+        /// <param name="node">根节点</param>
+        /// <param name="dt">数据源</param>
+        private void RecursiveBindAcceptUnit(TreeNode node, DataTable dt)
+        {
+            foreach (DataRow dr in dt.Rows)
+            {
+                if (dr["PARENTID"].ToString().Equals(node.Value))
+                {
+                    //添加子节点
+                    TreeNode sub = new TreeNode();
+                    sub.Text = dr["DPTNAME"].ToString();
+                    sub.Value = dr["DEPTID"].ToString();
+                    sub.ToolTip = dr["DPTINFO"].ToString();
+                    sub.ShowCheckBox = false;//设置复选框是否显示
+                    sub.Expanded = false;
+                    sub.NavigateUrl = "../UserManage.aspx?deptid=" + dr["DEPTID"].ToString();//设置导航：绑定该部门下用户
+                    node.ChildNodes.Add(sub);
+
+                    //递归循环
+                    RecursiveBindAcceptUnit(sub, dt);
+                }
+            }
+        }
+        //校验选择的部门树
+        private bool CheckSelectDepartment()
+        {
+            bool res = false;
+            foreach (TreeNode node in TreeViewAcceptUnit.Nodes)
+            {
+                if (node.Checked)
+                {
+                    res = true;
+                }
+                RecursiveCheckNode(node, ref res);
+            }
+            return res;
+        }
+        //递归检查有无选中的节点
+        private void RecursiveCheckNode(TreeNode node, ref bool isSelected)
+        {
+            if (node.Checked)
+            {
+                isSelected = true;
+                return;
+            }
+            foreach (TreeNode sub in node.ChildNodes)
+            {
+                RecursiveCheckNode(sub, ref isSelected);
+            }
+        }
         #region 删除用户：Update()修改用户；DelUser()从用户表中删除用户
         /// <summary>
         /// 修改用户
@@ -226,7 +322,7 @@ namespace SmartHyd.ManageCenter.Ascx
         protected void AspNetPager1_PageChanging(object src, Wuqi.Webdiyer.PageChangingEventArgs e)
         {
             this.AspNetPager1.CurrentPageIndex = e.NewPageIndex;
-            BindUserList();
+            BindUserList(4);
         }
         #endregion
 
