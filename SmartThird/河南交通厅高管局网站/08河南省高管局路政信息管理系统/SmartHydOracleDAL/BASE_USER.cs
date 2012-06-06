@@ -45,9 +45,9 @@ namespace SmartHyd.OracleDAL {
         public void Add(Entity.BASE_USER model) {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("insert into BASE_USER(");
-            strSql.Append("USERID,IDNUMBER,JOBNUMBER,PHOTO,PROF,REMARK,STSTUS,PHONE,USERNAME,USERPWD,PARENTID,SEX,DEPTID,BIRTHDAY,DEGREE,FACE");
+            strSql.Append("USERID,IDNUMBER,JOBNUMBER,PHOTO,PROF,REMARK,STSTUS,PHONE,USERNAME,USERPWD,PARENTID,SEX,DEPTID,BIRTHDAY,DEGREE,FACE,REALNAME");
             strSql.Append(") values (");
-            strSql.Append(":USERID,:IDNUMBER,:JOBNUMBER,:PHOTO,:PROF,:REMARK,:STSTUS,:PHONE,:USERNAME,:USERPWD,:PARENTID,:SEX,:DEPTID,:BIRTHDAY,:DEGREE,:FACE");
+            strSql.Append(":USERID,:IDNUMBER,:JOBNUMBER,:PHOTO,:PROF,:REMARK,:STSTUS,:PHONE,:USERNAME,:USERPWD,:PARENTID,:SEX,:DEPTID,:BIRTHDAY,:DEGREE,:FACE,:REALNAME");
             strSql.Append(") ");
 
             OracleParameter[] parameters = {
@@ -66,8 +66,8 @@ namespace SmartHyd.OracleDAL {
                         new OracleParameter(":DEPTID", OracleType.Number,4) ,            
                         new OracleParameter(":BIRTHDAY", OracleType.DateTime) ,            
                         new OracleParameter(":DEGREE", OracleType.VarChar,50) ,            
-                        new OracleParameter(":FACE", OracleType.VarChar,50)             
-              
+                        new OracleParameter(":FACE", OracleType.VarChar,50),             
+                        new OracleParameter(":REALNAME", OracleType.VarChar,50)
             };
 
             parameters[0].Value = model.USERID;
@@ -86,6 +86,7 @@ namespace SmartHyd.OracleDAL {
             parameters[13].Value = model.BIRTHDAY;
             parameters[14].Value = model.DEGREE;
             parameters[15].Value = model.FACE;
+            parameters[16].Value = model.REALNAME;
             OracleHelper.ExecuteNonQuery(strSql.ToString(), parameters);
 
         }
@@ -113,7 +114,8 @@ namespace SmartHyd.OracleDAL {
             strSql.Append(" DEPTID = :DEPTID , ");
             strSql.Append(" BIRTHDAY = :BIRTHDAY , ");
             strSql.Append(" DEGREE = :DEGREE , ");
-            strSql.Append(" FACE = :FACE  ");
+            strSql.Append(" FACE = :FACE,");
+            strSql.Append(" REALNAME=:REALNAME ");
             strSql.Append(" where USERID=:USERID  ");
 
             OracleParameter[] parameters = {
@@ -132,7 +134,8 @@ namespace SmartHyd.OracleDAL {
                         new OracleParameter(":DEPTID", OracleType.Number,4) ,            
                         new OracleParameter(":BIRTHDAY", OracleType.DateTime) ,            
                         new OracleParameter(":DEGREE", OracleType.VarChar,50) ,            
-                        new OracleParameter(":FACE", OracleType.VarChar,50)             
+                        new OracleParameter(":FACE", OracleType.VarChar,50),
+                        new OracleParameter(":REALNAME",OracleType.VarChar,50)
               
             };
 
@@ -152,6 +155,7 @@ namespace SmartHyd.OracleDAL {
             parameters[13].Value = model.BIRTHDAY;
             parameters[14].Value = model.DEGREE;
             parameters[15].Value = model.FACE;
+            parameters[16].Value = model.REALNAME;
             int rows = OracleHelper.ExecuteNonQuery(strSql.ToString(), parameters);
             if (rows > 0) {
                 return true;

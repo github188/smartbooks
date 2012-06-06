@@ -2,13 +2,13 @@
     Inherits="SmartHyd.ManageCenter.Ascx.DeptManage" %>
 <div id="contents">
     <table width="100%" class="TableBlock">
-        <tr>
+        <tr class="TableHeader">
             <td width="12%">
-                <font size="+2">当前位置：</font>
+                <font size="+1">当前位置：</font>
             </td>
             <td width="88%">
-                <a href="../ManageCenter/SysManager.aspx"><font size="+2">系统管理</font></a>&gt;
-                <a href="../ManageCenter/DeptManage.aspx"><font size="+2">部门管理</font></a>&gt;
+                <a href="../ManageCenter/SysManager.aspx"><font size="+1">系统管理&gt;&gt;</font></a>
+                <a href="../ManageCenter/DeptManage.aspx"><font size="+1">部门管理&gt;&gt;</font></a>
             </td>
         </tr>
     </table>
@@ -30,12 +30,12 @@
                 </div>
             </td>
         </tr>
-        <tr>
+        <tr >
             <td>
                 <hr />
                 <asp:MultiView ID="MultiView1" runat="server">
                     <asp:View ID="View1" runat="server">
-                        <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center" id="Table1">
+                        <table width="100%" border="1" cellspacing="0" cellpadding="0" align="center" id="Table1">
                             <tr>
                                 <td>
                                     <h1>
@@ -47,7 +47,7 @@
                                             </td>
                                             <td>
                                                 <asp:HiddenField ID="hidPrimary" runat="server" Value="-1" />
-                                                <asp:TextBox ID="depname" runat="server"></asp:TextBox>
+                                                <asp:TextBox ID="depname" CssClass="input" runat="server"></asp:TextBox>
                                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="depname"
                                                     ErrorMessage="*"></asp:RequiredFieldValidator>
                                             </td>
@@ -57,7 +57,7 @@
                                                 部门描述：
                                             </td>
                                             <td>
-                                                <asp:TextBox ID="txtDptinfo" runat="server" Height="55px" TextMode="MultiLine" Width="154px"></asp:TextBox>
+                                                <asp:TextBox ID="txtDptinfo" CssClass="input" runat="server" Height="55px" TextMode="MultiLine" Width="154px"></asp:TextBox>
                                             </td>
                                         </tr>
                                     </table>

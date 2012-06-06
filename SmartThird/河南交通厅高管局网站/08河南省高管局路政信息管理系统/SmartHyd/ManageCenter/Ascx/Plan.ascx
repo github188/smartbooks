@@ -1,6 +1,17 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Plan.ascx.cs" Inherits="SmartHyd.ManageCenter.Ascx.Plan" %>
 <%@ Register Assembly="AspNetPager" Namespace="Wuqi.Webdiyer" TagPrefix="webdiyer" %>
 <div id="tab">
+ <table width="100%" class="TableBlock">
+        <tr class="TableHeader">
+            <td width="12%">
+                <font size="+1">当前位置：</font>
+            </td>
+            <td width="88%">
+                <a href="../ManageCenter/Office.aspx"><font size="+1">网络办公&gt;&gt;</font></a>
+                <a href="../ManageCenter/Plan.aspx"><font size="+1">事务提醒&gt;&gt;</font></a>
+            </td>
+        </tr>
+    </table>
     <ul id="menu">
         <li><a href="#tabs-1">添加事务提醒</a></li>
         <li><a href="#tabs-2">事务提醒管理</a></li>

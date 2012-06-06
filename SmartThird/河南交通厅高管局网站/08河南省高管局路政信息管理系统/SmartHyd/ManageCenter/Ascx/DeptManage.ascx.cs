@@ -129,7 +129,8 @@ namespace SmartHyd.ManageCenter.Ascx
             }
             else
             {
-                str.Append("<a href='DeptManage.aspx?deptid=4'>河南省交通运输厅高速公路管理局</a>&gt;");
+                str.Append("");
+               // str.Append("<a href='DeptManage.aspx?deptid=4'>河南省交通运输厅高速公路管理局</a>&gt;");
             }
             this.deptUrl.InnerHtml += str;
             
@@ -195,8 +196,17 @@ namespace SmartHyd.ManageCenter.Ascx
 
         protected void BtnDeptAdd_Click(object sender, EventArgs e)
         {
+            decimal deptid=0;
+            if (null == Request.QueryString["deptid"] || "" == Request.QueryString["deptid"])
+            {
+                deptid = 4;
+            }
+            else
+            {
+                deptid = Convert.ToDecimal(Request.QueryString["deptid"]);
+            }
             //获取实体
-            Entity.BASE_DEPT model = GetEntity(Convert.ToDecimal(Request.QueryString["deptid"]));
+            Entity.BASE_DEPT model = GetEntity(deptid);
 
             //添加数据
             bll.Add(model);

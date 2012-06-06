@@ -80,6 +80,10 @@ namespace SmartHyd.Entity {
         private string _PHONE;
 
         /// <summary>
+        /// 真实姓名
+        /// </summary>
+        private string _REALNAME;
+        /// <summary>
         /// 用户ID编号
         /// </summary>
         public decimal USERID {
@@ -190,6 +194,14 @@ namespace SmartHyd.Entity {
         public string PHONE {
             get { return _PHONE; }
             set { _PHONE = value; }
+        }
+        /// <summary>
+        /// 真实姓名
+        /// </summary>
+        public string REALNAME
+        {
+            get { return _REALNAME; }
+            set { _REALNAME = value; }
         }
     }
 }

@@ -1,6 +1,17 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="SysLog.ascx.cs" Inherits="SmartHyd.ManageCenter.Ascx.SysLog" %>
 <%@ Register Assembly="AspNetPager" Namespace="Wuqi.Webdiyer" TagPrefix="webdiyer" %>
 <div id="tab">
+     <table width="100%" class="TableBlock">
+        <tr class="TableHeader">
+            <td width="12%">
+                <font size="+1">当前位置：</font>
+            </td>
+            <td width="88%">
+                <a href="../ManageCenter/SysManager.aspx"><font size="+1">系统管理&gt;&gt;</font></a> <a
+                    href="../ManageCenter/SysLog.aspx"><font size="+1">日志管理&gt;&gt;</font></a>
+            </td>
+        </tr>
+    </table>
     <ul id="menu">
         <li><a href="#tabs-1">日志管理</a></li>
     </ul>

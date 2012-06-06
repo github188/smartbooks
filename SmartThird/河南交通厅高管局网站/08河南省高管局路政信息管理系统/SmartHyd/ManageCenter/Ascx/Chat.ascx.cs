@@ -17,15 +17,24 @@ namespace SmartHyd.ManageCenter.Ascx
         {
             if (!IsPostBack)
             {
-                dataBindToRepeater();
-                UserBind();//用户树绑定
+                if (null == Request.QueryString["state"] || "" == Request.QueryString["state"])
+                {
+                    dataBindToRepeater(0);
+                    UserBind();//用户树绑定
+                }
+                else
+                {
+                    decimal state = Convert.ToDecimal(Request.QueryString["state"]);
+                    dataBindToRepeater(state);
+                    UserBind();//用户树绑定
+                }
             }
         }
-        //使用dataBindToRepeater()方法绑定消息数据
-        private void dataBindToRepeater()
+        //使用dataBindToRepeater()方法绑定未读消息数据
+        private void dataBindToRepeater(decimal STATE)
         {
             DataTable dt = new DataTable();
-            dt = bll.GetList("1=1");
+            dt = bll.GetList("STATE=" + STATE);//状态：0未读；1已读；
 
             AspNetPager1.RecordCount = dt.Rows.Count;
 
@@ -158,7 +167,7 @@ namespace SmartHyd.ManageCenter.Ascx
         protected void AspNetPager1_PageChanging(object src, Wuqi.Webdiyer.PageChangingEventArgs e)
         {
             this.AspNetPager1.CurrentPageIndex = e.NewPageIndex;
-            dataBindToRepeater();
+            dataBindToRepeater(0);
         }
 
         //protected void Btn_submit_Click(object sender, EventArgs e)

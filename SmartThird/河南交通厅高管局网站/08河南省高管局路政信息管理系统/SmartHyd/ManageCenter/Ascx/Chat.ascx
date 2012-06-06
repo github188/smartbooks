@@ -2,12 +2,71 @@
 <%@ Register Assembly="AspNetPager" Namespace="Wuqi.Webdiyer" TagPrefix="webdiyer" %>
 <div id="tab">
 <ul>
-     <li><a href="#tabs-1">发送消息</a></li>
-     <li><a href="#tabs-2">消息列表</a></li>
+     <li><a href="#tabs-1">消息列表</a></li>
+     <li><a href="#tabs-2">发送消息</a></li>
 </ul>
-<!--发送消息开始-->
+<!--消息列表开始-->
 <div id="tabs-1">
-    <table class="TableHeader" width="600">
+     <table class="TableList" width="100%">
+            <asp:Repeater ID="RptList" runat="server">
+                <HeaderTemplate>
+                    <tbody>
+                        <tr class="TableHeader" align="center">
+                            <td>
+                                <asp:CheckBox ID="Checkall" runat="server" Text="全选" OnClick="javascript:selectall(this);" />
+                            </td>
+                            <td>
+                                发送人
+                            </td>
+                            <td>
+                                消息 
+                            </td>
+                            <td>
+                               发送时间
+                            </td>
+                            <td>
+                                状态
+                            </td>
+                        </tr>
+                </HeaderTemplate>
+                <ItemTemplate>
+                    <tr class="TableLine1">
+                        <td>
+                            <asp:CheckBox ID="CheckSingle" runat="server" />
+                            <asp:Label ID="MESSAGEID" runat="server" Text='<%#Eval("MESSAGEID") %>' Visible="false"></asp:Label>
+                            <asp:HiddenField ID="hidPrimary" runat="server" Value="-1" />
+                        </td>
+                        <td>
+                            <%# getUserName(Convert.ToInt32(Eval("SENDER")))%>
+                        </td>
+                        <td>
+                           <%# Eval("MESSAGEBODY")%>
+                        </td>
+                        <td>
+                             <%# Eval("SENDDATE")%>
+                        </td>
+                        <td>
+                            <%# TransState((decimal)Eval("STATE"))%>
+                        </td>
+                    </tr>
+                </ItemTemplate>
+                <FooterTemplate>
+                    </tbody>
+                </FooterTemplate>
+            </asp:Repeater>
+        </table>
+        <webdiyer:AspNetPager ID="AspNetPager1" runat="server" CustomInfoHTML="共%PageCount%页，当前为第%CurrentPageIndex%页"
+            FirstPageText="首页" LastPageText="尾页" NextPageText="下一页" PageIndexBoxType="TextBox"
+            PrevPageText="上一页" ShowCustomInfoSection="Right" ShowPageIndexBox="Auto" SubmitButtonText="Go"
+            TextAfterPageIndexBox="页" TextBeforePageIndexBox="转到" OnPageChanging="AspNetPager1_PageChanging">
+        </webdiyer:AspNetPager>
+    </div>
+    </div>
+    <!--消息列表结束-->
+    <!--发送消息开始-->
+    <div id="tabs-2">
+     
+     <table class="TableHeader" width="600">
         <tr>
             <td class="left">
             </td>
@@ -79,63 +138,5 @@
             <input type="button" id="btnsubmit" value="确定" onclick="javascript:btn_submit()" />
         </div>
         <!--dialog窗口结束-->
-    </div>
     <!--发送消息结束-->
-    <!--消息列表开始-->
-    <div id="tabs-2">
-       <table class="TableList" width="100%">
-            <asp:Repeater ID="RptList" runat="server">
-                <HeaderTemplate>
-                    <tbody>
-                        <tr class="TableHeader" align="center">
-                            <td>
-                                <asp:CheckBox ID="Checkall" runat="server" Text="全选" OnClick="javascript:selectall(this);" />
-                            </td>
-                            <td>
-                                发送人
-                            </td>
-                            <td>
-                                消息 
-                            </td>
-                            <td>
-                               发送时间
-                            </td>
-                            <td>
-                                状态
-                            </td>
-                        </tr>
-                </HeaderTemplate>
-                <ItemTemplate>
-                    <tr class="TableLine1">
-                        <td>
-                            <asp:CheckBox ID="CheckSingle" runat="server" />
-                            <asp:Label ID="MESSAGEID" runat="server" Text='<%#Eval("MESSAGEID") %>' Visible="false"></asp:Label>
-                            <asp:HiddenField ID="hidPrimary" runat="server" Value="-1" />
-                        </td>
-                        <td>
-                            <%# getUserName(Convert.ToInt32(Eval("SENDER")))%>
-                        </td>
-                        <td>
-                           <%# Eval("MESSAGEBODY")%>
-                        </td>
-                        <td>
-                             <%# Eval("SENDDATE")%>
-                        </td>
-                        <td>
-                            <%# TransState((decimal)Eval("STATE"))%>
-                        </td>
-                    </tr>
-                </ItemTemplate>
-                <FooterTemplate>
-                    </tbody>
-                </FooterTemplate>
-            </asp:Repeater>
-        </table>
-        <webdiyer:AspNetPager ID="AspNetPager1" runat="server" CustomInfoHTML="共%PageCount%页，当前为第%CurrentPageIndex%页"
-            FirstPageText="首页" LastPageText="尾页" NextPageText="下一页" PageIndexBoxType="TextBox"
-            PrevPageText="上一页" ShowCustomInfoSection="Right" ShowPageIndexBox="Auto" SubmitButtonText="Go"
-            TextAfterPageIndexBox="页" TextBeforePageIndexBox="转到" OnPageChanging="AspNetPager1_PageChanging">
-        </webdiyer:AspNetPager>
-    </div>
-    <!--消息列表结束-->
 </div>

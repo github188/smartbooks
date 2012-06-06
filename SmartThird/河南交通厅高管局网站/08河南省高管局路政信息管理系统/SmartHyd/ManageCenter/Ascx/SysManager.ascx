@@ -2,15 +2,14 @@
     Inherits="SmartHyd.ManageCenter.Ascx.SysManager" %>
 <%@ Register Assembly="AspNetPager" Namespace="Wuqi.Webdiyer" TagPrefix="webdiyer" %>
 <%@ Register Src="../../Ascx/Department.ascx" TagName="Department" TagPrefix="uc1" %>
-<link href="../../Css/tongdaoa.css" rel="stylesheet" type="text/css" />
 <div id="tab">
     <table width="100%" class="TableBlock">
-        <tr>
+        <tr class="TableHeader">
             <td width="12%">
-                <font size="+2">当前位置：</font>
+                <font size="+1">当前位置：</font>
             </td>
             <td width="88%">
-                <a href="../ManageCenter/SysManager.aspx"><font size="+2">系统管理&gt;</font></a>
+                <a href="../ManageCenter/SysManager.aspx"><font size="+1">系统管理&gt;&gt;</font></a>
             </td>
         </tr>
     </table>
@@ -34,10 +33,10 @@
         <tr>
             <td  align="center">
                 <p>
-                    <a href="../ManageCenter/DeptManage.aspx">
+                    <a href="../ManageCenter/Empower.aspx">
                         <img src="../../Images/user.png" alt="用户授权" /></a></p>
                 <p>
-                    <a href="../ManageCenter/DeptManage.aspx">用户授权</a></p>
+                    <a href="../ManageCenter/Empower.aspx">用户授权</a></p>
             </td>
             <td align="center">
                 <p>

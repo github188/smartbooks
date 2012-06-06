@@ -13,48 +13,111 @@ namespace SmartHyd.ManageCenter.Ascx {
     public partial class Empower {
         
         /// <summary>
-        /// RptList 控件。
+        /// HfUserID 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater RptList;
+        protected global::System.Web.UI.WebControls.HiddenField HfUserID;
         
         /// <summary>
-        /// AspNetPager1 控件。
+        /// txtUsers 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::Wuqi.Webdiyer.AspNetPager AspNetPager1;
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea txtUsers;
         
         /// <summary>
-        /// RBLRole 控件。
+        /// txtRole 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList RBLRole;
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea txtRole;
         
         /// <summary>
-        /// Tvmenu 控件。
+        /// HfMenuID 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TreeView Tvmenu;
+        protected global::System.Web.UI.WebControls.HiddenField HfMenuID;
         
         /// <summary>
-        /// TvAction 控件。
+        /// TxtMenu 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TreeView TvAction;
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea TxtMenu;
+        
+        /// <summary>
+        /// HfActionID 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField HfActionID;
+        
+        /// <summary>
+        /// TxtAction 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea TxtAction;
+        
+        /// <summary>
+        /// BtnEmpower 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BtnEmpower;
+        
+        /// <summary>
+        /// CBLUser 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBoxList CBLUser;
+        
+        /// <summary>
+        /// ChBLRole 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBoxList ChBLRole;
+        
+        /// <summary>
+        /// ChBLMenu 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBoxList ChBLMenu;
+        
+        /// <summary>
+        /// ChBLAction 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBoxList ChBLAction;
     }
 }
