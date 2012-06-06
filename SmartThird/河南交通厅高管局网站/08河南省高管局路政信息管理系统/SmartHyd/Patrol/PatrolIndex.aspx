@@ -15,7 +15,7 @@
 	}
     ul li{ margin:0; padding:0; border:0; list-style:none;}
     #menu{ height:35px; background-image:url(../Images/ui-hander-background-1.png); background-repeat:repeat-x; font-family:微软雅黑;}
-    #menu .patrolsitemap{ height:27px; line-height:27px; margin-top:8px; width:auto; color:#fff; font-size:12px; font-weight:bold; float:left;}
+    #menu .patrolsitemap{ height:27px; line-height:27px; margin-top:8px; width:auto; color:#f2a41e; font-size:12px; font-weight:bold; float:left;}
     #menu ul{ margin:0; float:right; padding-top:8px; height:27px; }
     #menu ul li{ width:140px; line-height:27px; float:left; margin-left:5px;}
 
@@ -39,7 +39,7 @@
             <td style="height:37px; line-height:37px;">
                 <div style="border-top:2px solid #e7eaef"></div>
                 <div id="menu">
-                    <div class="patrolsitemap">当前位置：路政巡逻管理中心</div>
+                    <div class="patrolsitemap"></div>
                         <ul>
                             <li id="menu_Title0" onclick="nTabs('menu',this,2)" class="actived"><a href="ArtificialPatrol.aspx" target="PatrolFrame"><span id="buttons"><img src="../Images/a_patrol.png" border="0"/>人工巡逻</span></a></li>
                             <li id="menu_Title1" onclick="nTabs('menu',this,2)" class="normal"><a href="ElectronicPatrol.aspx" target="PatrolFrame"><span id="buttons"><img src="../Images/e_patrol.png" border="0"/>电子巡逻</span></a></li>

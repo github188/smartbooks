@@ -1,16 +1,147 @@
-锘�<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ElectronicPatrol.aspx.cs" Inherits="SmartHyd.Patrol.ElectronicPatrol" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ElectronicPatrol.aspx.cs" Inherits="SmartHyd.Patrol.ElectronicPatrol" %>
+
+<%@ Register Assembly="AspNetPager" Namespace="Wuqi.Webdiyer" TagPrefix="webdiyer" %>
+
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+
+    <title>电子巡逻</title>
+    <link rel="stylesheet" type="text/css" href="../Css/tongdaoa.css" />
+    <link href="../Css/patrol.css" rel="stylesheet" type="text/css" />
+
+    <script src="../Scripts/jquery-ui-1.8.18.custom/js/jquery-1.7.1.min.js" type="text/javascript"></script>
+
+    <script src="../Scripts/My97DatePicker/WdatePicker.js" type="text/javascript"></script>
+
+    <script type="text/javascript" language="javascript">
+
+        /*打开/闭合查询条件设置面板*/
+        function showConditionPanel() {
+            if ($("#search_condition_panel").css("display") == "none") {
+                $("#search_condition_panel").css("display", "block");
+            } else {
+                $("#search_condition_panel").css("display", "none");
+            }
+        }
+
+        /*查询前 数据验证*/
+        function DataValidate() {
+
+        }
+    </script>
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
-    鐢靛瓙宸￠��
-    </div>
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+    </asp:ScriptManager>
+    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+        <ContentTemplate>
+            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="height:100%">
+                <tr>
+                    <td style="height:24px;">
+                        <div id="menu">
+                            <div class="OperateNote"><span id="buttons"><img src="../Images/branch.png" border="0" />当前位置：路政巡逻管理中心》电子巡逻日志管理</span></div>
+                            <ul>
+                                <li id="menu_Title0" onclick="nTabs('menu',this,1)" class="normal"><a href="ElectronicEdit.aspx" title="信息新增" target="PatrolFrame"><span id="buttons"><img src="../Images/add.png" border="0"/>&nbsp;新增日志</span></a></li>
+                               <%-- <li id="menu_Title1" onclick="nTabs('menu',this,4)" class="normal"><a href="#"><span id="buttons"><img src="../Images/edit.png" border="0"/>&nbsp;编辑</span></a></li>
+                                <li id="menu_Title2" onclick="nTabs('menu',this,4)" class="normal"><a href="#"><span id="buttons"><img src="../Images/delete.png" border="0"/>&nbsp;删除</span></a></li>
+                                <li id="menu_Title3" onclick="nTabs('menu',this,4)" class="normal">
+                                    <a href="javascript:showConditionPanel()">
+                                        <span id="buttons"><img src="../Images/search.png" border="0"/>&nbsp;查询</span>
+                                    </a>
+                                </li>--%>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+                <tr id="search_condition_panel" style="height:48px;border-bottom:1px solid #8cb2e2;">
+                    <td >
+                        <table id="PatrolSearch" width="480" border="0" cellspacing="0" cellpadding="0">
+                          <tr >
+                            <td width="80" height="24" align="right"><span id="PatrolSearch">单位部门：</span></td>
+                            <td width="120" height="24">
+                                <asp:DropDownList ID="ddl_unit" runat="server" Width="120">
+                                </asp:DropDownList>
+                            </td>
+                            <td width="80" height="24" align="right"><span id="PatrolSearch">巡查人员：</span></td>
+                            <td width="120" height="24">
+                                <asp:TextBox ID="txt_vehicleLicense" runat="server" class="controlstyle txtboxstyle"></asp:TextBox></td>
+                            <td width="80" height="24" align="right">&nbsp;</td>
+                          </tr>
+                          <tr>
+                            <td height="24" align="right"><span id="PatrolSearch">起始时间：</span></td>
+                            <td height="24">
+                                <asp:TextBox ID="txt_startTime" runat="server" class="Wdate" Width="120"  onFocus="WdatePicker({isShowClear:false,readOnly:true})"
+></asp:TextBox></td>
+                            <td height="24" align="right"><span id="PatrolSearch">截止时间：</span></td>
+                            <td height="24"><asp:TextBox ID="txt_endTime" runat="server"  class="Wdate controlstyle"  onFocus="WdatePicker({isShowClear:false,readOnly:true})"
+></asp:TextBox></td>
+                            <td width="80" height="24" align="center">
+                                <asp:Button ID="btn_ok" runat="server" Text="" CssClass="btn_search" 
+                                    onclick="btn_ok_Click" /></td>
+                          </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top">
+                        <asp:GridView ID="gv_electroniclist" runat="server" AutoGenerateColumns="False" 
+                            BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" 
+                            CellPadding="3" Width="100%">
+                            <Columns>
+                                <asp:CheckBoxField />
+                                <asp:BoundField DataField="DPTNAME" HeaderText="单位部门" />
+                                <asp:BoundField DataField="username" HeaderText="巡查人员" />
+                                <asp:BoundField DataField="WEATHER" HeaderText="天气状况" />
+                                <asp:BoundField DataField="BEGINTIME" HeaderText="开始时间" />
+                                <asp:BoundField DataField="ENDATE" HeaderText="结束时间" />
+                                <asp:CommandField DeleteImageUrl="~/Images/delete.png" 
+                                    EditImageUrl="~/Images/edit.png" ShowEditButton="True" />
+                                <asp:CommandField DeleteImageUrl="~/Images/delete.png" 
+                                    ShowDeleteButton="True" />
+                            </Columns>
+                            <FooterStyle BackColor="White" ForeColor="#000066" />
+                            <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
+                            <PagerStyle BackColor="White" ForeColor="#000066" HorizontalAlign="Left" />
+                            <RowStyle ForeColor="#000066" />
+                            <SelectedRowStyle BackColor="#669999" Font-Bold="True" ForeColor="White" />
+                            <SortedAscendingCellStyle BackColor="#F1F1F1" />
+                            <SortedAscendingHeaderStyle BackColor="#007DBB" />
+                            <SortedDescendingCellStyle BackColor="#CAC9C9" />
+                            <SortedDescendingHeaderStyle BackColor="#00547E" />
+                        </asp:GridView>
+                        <asp:Literal ID="litmsg" Visible="false" runat="server"></asp:Literal>
+                    </td>
+                </tr>
+            </table>
+
+            <webdiyer:AspNetPager ID="AspNetPager1" runat="server" CustomInfoHTML="共%PageCount%页，当前为第%CurrentPageIndex%页"
+                FirstPageText="首页" LastPageText="尾页" NextPageText="下一页" PageIndexBoxType="TextBox"
+                PrevPageText="上一页" ShowCustomInfoSection="Right" ShowPageIndexBox="Auto" SubmitButtonText="Go"
+                TextAfterPageIndexBox="页" TextBeforePageIndexBox="转到" OnPageChanging="AspNetPager1_PageChanging"
+                PageSize="20" CssClass="anpager" CurrentPageButtonClass="cpb">
+            </webdiyer:AspNetPager>
+        </ContentTemplate>
+    </asp:UpdatePanel>
     </form>
 </body>
 </html>
+<script type="text/javascript">
+    //tab效果通用函数
+    function nTabs(tabObj, obj, n) {
+        var tabList = document.getElementById(tabObj).getElementsByTagName("li");
+        for (i = 0; i < n; i++) {
+            if (tabList[i].id == obj.id) {
+                document.getElementById(tabObj + "_Title" + i).className = "actived";
+            } else {
+                document.getElementById(tabObj + "_Title" + i).className = "normal";
+            }
+        }
+    }
+
+</script>

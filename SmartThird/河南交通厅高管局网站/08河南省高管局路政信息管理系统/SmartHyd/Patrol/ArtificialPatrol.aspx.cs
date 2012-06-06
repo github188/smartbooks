@@ -50,5 +50,14 @@ namespace SmartHyd.Patrol {
             this.AspNetPager1.CurrentPageIndex = e.NewPageIndex;
             bindDeptLog();
         }
+
+        /// <summary>
+        /// 人工巡逻日志查询
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void btn_ok_Click(object sender, EventArgs e) {
+
+        }
     }
 }

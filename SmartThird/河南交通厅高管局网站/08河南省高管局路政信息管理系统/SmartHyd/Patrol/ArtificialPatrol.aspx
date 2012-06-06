@@ -1,108 +1,132 @@
-Ôªø<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ArtificialPatrol.aspx.cs" Inherits="SmartHyd.Patrol.ArtificialPatrol" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ArtificialPatrol.aspx.cs" Inherits="SmartHyd.Patrol.ArtificialPatrol" %>
 
 <%@ Register Assembly="AspNetPager" Namespace="Wuqi.Webdiyer" TagPrefix="webdiyer" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>‰∫∫Â∑•Â∑°ÈÄªÂàóË°®È°µ</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+
+    <title>»Àπ§—≤¬ﬂ¡–±Ì“≥</title>
+
     <link rel="stylesheet" type="text/css" href="../Css/tongdaoa.css" />
     <link href="../Css/patrol.css" rel="stylesheet" type="text/css" />
+
+    <script src="../Scripts/jquery-ui-1.8.18.custom/js/jquery-1.7.1.min.js" type="text/javascript"></script>
+
+    <script src="../Scripts/My97DatePicker/WdatePicker.js" type="text/javascript"></script>
+
+    <script type="text/javascript" language="javascript">
+
+        /*¥Úø™/±’∫œ≤È—ØÃıº˛…Ë÷√√Ê∞Â*/
+        function showConditionPanel() {
+            if ($("#search_condition_panel").css("display") == "none") {
+                $("#search_condition_panel").css("display", "block");
+            }else {
+                $("#search_condition_panel").css("display", "none");
+            }
+        }
+
+        /*≤È—Ø«∞  ˝æ›—È÷§*/
+        function DataValidate() {
+           
+        }
+    </script>
+
 </head>
 <body>
     <form id="form1" runat="server">
-    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="height:100%">
-        <tr>
-            <td style="height:30px;">
-                <div id="menu">
-                    <ul>
-                        <li id="menu_Title0" onclick="nTabs('menu',this,4)" class="actived"><a href="PatrolEdit.aspx" title="‰ø°ÊÅØÊñ∞Â¢û" target="PatrolFrame"><span id="buttons"><img src="../Images/add.png" border="0"/>Êñ∞Â¢û</span></a></li>
-                        <li id="menu_Title1" onclick="nTabs('menu',this,4)" class="normal"><a href="#"><span id="buttons"><img src="../Images/edit.png" border="0"/>ÁºñËæë</span></a></li>
-                        <li id="menu_Title2" onclick="nTabs('menu',this,4)" class="normal"><a href="#"><span id="Span1"><img src="../Images/delete.png" border="0"/>Âà†Èô§</span></a></li>
-                        <li id="Li1" onclick="nTabs('menu',this,4)" class="normal"><a href="#"><span id="Span2"><img src="../Images/search.png" border="0"/>Êü•ËØ¢</span></a></li>
-                    </ul>
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td valign="top">
-                <asp:GridView ID="gv_patrollist" runat="server" AutoGenerateColumns="False" 
-                    BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" 
-                    CellPadding="3" Width="100%">
-                    <Columns>
-                        <asp:CheckBoxField />
-                        <asp:BoundField DataField="dptname" HeaderText="Èö∂Â±ûÈÉ®Èó®" />
-                        <asp:BoundField DataField="username" HeaderText="Â∑°ÈÄª‰∫∫Âëò" />
-                        <asp:BoundField DataField="busnumber" HeaderText="ËΩ¶ÁâåÂè∑" />
-                        <asp:BoundField DataField="mileage" HeaderText="Â∑°Êü•ÈáåÁ®ã" />
-                        <asp:BoundField DataField="weather" HeaderText="Â§©Ê∞îÁä∂ÂÜµ" />
-                        <asp:BoundField DataField="ticktime" HeaderText="‰∫§Êé•Áè≠Êó∂Èó¥" />
-                        <asp:BoundField DataField="buskm" HeaderText="Êé•Áè≠Â∑°ÈÄªËΩ¶ÈáåÁ®ãË°®" />
-                        <asp:CommandField DeleteImageUrl="~/Images/delete.png" 
-                            EditImageUrl="~/Images/edit.png" ShowEditButton="True" />
-                        <asp:CommandField DeleteImageUrl="~/Images/delete.png" 
-                            ShowDeleteButton="True" />
-                    </Columns>
-                    <FooterStyle BackColor="White" ForeColor="#000066" />
-                    <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
-                    <PagerStyle BackColor="White" ForeColor="#000066" HorizontalAlign="Left" />
-                    <RowStyle ForeColor="#000066" />
-                    <SelectedRowStyle BackColor="#669999" Font-Bold="True" ForeColor="White" />
-                    <SortedAscendingCellStyle BackColor="#F1F1F1" />
-                    <SortedAscendingHeaderStyle BackColor="#007DBB" />
-                    <SortedDescendingCellStyle BackColor="#CAC9C9" />
-                    <SortedDescendingHeaderStyle BackColor="#00547E" />
-                </asp:GridView>
-                <asp:Literal ID="litmsg" Visible="false" runat="server"></asp:Literal>
-            </td>
-        </tr>
-    </table>
-    
-
-
-
-    <%--<table border="0" cellpadding="0" cellspacing="0" width="100%" style="height:100%">
-            <asp:Repeater ID="repList" runat="server">
-                <HeaderTemplate>
-                    <thead>
-                        <tr>
-                            <th>Âçï‰ΩçÈÉ®Èó®</th>
-                            <th>Â∑°ÈÄª‰∫∫Âëò</th>
-                            <th>Â∑°Êü•ËΩ¶ÁâåÂè∑</th>
-                            <th>Â∑°Êü•ÈáåÁ®ã</th>
-                            <th>Â§©Ê∞îÊÉÖÂÜµ</th>
-                            <th>‰∫§Êé•Áè≠Êó∂Èó¥</th>
-                            <th>Êé•Áè≠Â∑°ÈÄªËΩ¶ÈáåÁ®ãË°®ÔºàKMÔºâ</th>
-                        </tr>
-                    </thead>
-                </HeaderTemplate>
-                <ItemTemplate>
-                    <tbody>
-                        <tr>
-                            <td><%#Eval("dptname") %></td>
-                            <td><%#Eval("username") %></td>
-                            <td><%#Eval("busnumber") %>></td>
-                            <td><%#Eval("mileage") %></td>
-                            <td><%#Eval("weather") %>></td>
-                            <td><%#Eval("ticktime") %>></td>
-                            <td><%#Eval("buskm") %>></td>
-                        </tr>
-                    </tbody>
-                </ItemTemplate>
-            </asp:Repeater>
-        </table>--%>
-
-        <webdiyer:AspNetPager ID="AspNetPager1" runat="server" CustomInfoHTML="ÂÖ±%PageCount%È°µÔºåÂΩìÂâç‰∏∫Á¨¨%CurrentPageIndex%È°µ"
-            FirstPageText="È¶ñÈ°µ" LastPageText="Â∞æÈ°µ" NextPageText="‰∏ã‰∏ÄÈ°µ" PageIndexBoxType="TextBox"
-            PrevPageText="‰∏ä‰∏ÄÈ°µ" ShowCustomInfoSection="Right" ShowPageIndexBox="Auto" SubmitButtonText="Go"
-            TextAfterPageIndexBox="È°µ" TextBeforePageIndexBox="ËΩ¨Âà∞" OnPageChanging="AspNetPager1_PageChanging"
-            PageSize="20" CssClass="anpager" CurrentPageButtonClass="cpb">
-        </webdiyer:AspNetPager>
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+    </asp:ScriptManager>
+    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+        <ContentTemplate>
+            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="height:100%">
+                <tr>
+                    <td style="height:24px;">
+                        <div id="menu">
+                            <div class="OperateNote"><span id="buttons"><img src="../Images/branch.png" border="0" />µ±«∞Œª÷√£∫¬∑’˛—≤¬ﬂπ‹¿Ì÷––ƒ°∑»Àπ§—≤¬ﬂ»’÷æπ‹¿Ì</span></div>
+                            <ul>
+                                <li id="menu_Title0" onclick="nTabs('menu',this,1)" class="normal"><a href="PatrolEdit.aspx" title="–≈œ¢–¬‘ˆ" target="PatrolFrame"><span id="buttons"><img src="../Images/add.png" border="0"/>&nbsp;–¬‘ˆ»’÷æ</span></a></li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+                <tr id="search_condition_panel" style="height:48px;border-bottom:1px solid #8cb2e2;">
+                    <td >
+                        <table id="PatrolSearch" width="480" border="0" cellspacing="0" cellpadding="0">
+                          <tr >
+                            <td width="80" height="24" align="right"><span id="PatrolSearch">µ•Œª£∫</span></td>
+                            <td width="120" height="24">
+                                <asp:DropDownList ID="ddl_unit" runat="server" Width="120">
+                                </asp:DropDownList>
+                            </td>
+                            <td width="80" height="24" align="right"><span id="PatrolSearch">≥µ≈∆∫≈£∫</span></td>
+                            <td width="120" height="24">
+                                <asp:TextBox ID="txt_vehicleLicense" runat="server" class="controlstyle txtboxstyle"></asp:TextBox></td>
+                            <td width="80" height="24" align="right">&nbsp;</td>
+                          </tr>
+                          <tr>
+                            <td height="24" align="right"><span id="PatrolSearch">∆ º ±º‰£∫</span></td>
+                            <td height="24">
+                                <asp:TextBox ID="txt_startTime" runat="server" class="Wdate" Width="120"  onFocus="WdatePicker({isShowClear:false,readOnly:true})"
+></asp:TextBox></td>
+                            <td height="24" align="right"><span id="PatrolSearch">Ωÿ÷π ±º‰£∫</span></td>
+                            <td height="24"><asp:TextBox ID="txt_endTime" runat="server"  class="Wdate controlstyle"  onFocus="WdatePicker({isShowClear:false,readOnly:true})"
+></asp:TextBox></td>
+                            <td width="80" height="24" align="center">
+                                <asp:Button ID="btn_ok" runat="server" Text="" CssClass="btn_search" 
+                                    onclick="btn_ok_Click" /></td>
+                          </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top">
+                        <asp:GridView ID="gv_patrollist" runat="server" AutoGenerateColumns="False" 
+                            BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" 
+                            CellPadding="3" Width="100%">
+                            <Columns>
+                                <asp:CheckBoxField />
+                                <asp:BoundField DataField="dptname" HeaderText="¡• Ù≤ø√≈" />
+                                <asp:BoundField DataField="username" HeaderText="—≤¬ﬂ»À‘±" />
+                                <asp:BoundField DataField="busnumber" HeaderText="≥µ≈∆∫≈" />
+                                <asp:BoundField DataField="mileage" HeaderText="—≤≤È¿Ô≥Ã" />
+                                <asp:BoundField DataField="weather" HeaderText="ÃÏ∆¯◊¥øˆ" />
+                                <asp:BoundField DataField="ticktime" HeaderText="ΩªΩ”∞‡ ±º‰" />
+                                <asp:BoundField DataField="buskm" HeaderText="Ω”∞‡—≤¬ﬂ≥µ¿Ô≥Ã±Ì" />
+                                <asp:CommandField DeleteImageUrl="~/Images/delete.png" 
+                                    EditImageUrl="~/Images/edit.png" ShowEditButton="True" />
+                                <asp:CommandField DeleteImageUrl="~/Images/delete.png" 
+                                    ShowDeleteButton="True" />
+                            </Columns>
+                            <FooterStyle BackColor="White" ForeColor="#000066" />
+                            <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
+                            <PagerStyle BackColor="White" ForeColor="#000066" HorizontalAlign="Left" />
+                            <RowStyle ForeColor="#000066" />
+                            <SelectedRowStyle BackColor="#669999" Font-Bold="True" ForeColor="White" />
+                            <SortedAscendingCellStyle BackColor="#F1F1F1" />
+                            <SortedAscendingHeaderStyle BackColor="#007DBB" />
+                            <SortedDescendingCellStyle BackColor="#CAC9C9" />
+                            <SortedDescendingHeaderStyle BackColor="#00547E" />
+                        </asp:GridView>
+                        <asp:Literal ID="litmsg" Visible="false" runat="server"></asp:Literal>
+                    </td>
+                </tr>
+            </table>
+            <webdiyer:AspNetPager ID="AspNetPager1" runat="server" CustomInfoHTML="π≤%PageCount%“≥£¨µ±«∞Œ™µ⁄%CurrentPageIndex%“≥"
+                FirstPageText=" ◊“≥" LastPageText="Œ≤“≥" NextPageText="œ¬“ª“≥" PageIndexBoxType="TextBox"
+                PrevPageText="…œ“ª“≥" ShowCustomInfoSection="Right" ShowPageIndexBox="Auto" SubmitButtonText="Go"
+                TextAfterPageIndexBox="“≥" TextBeforePageIndexBox="◊™µΩ" OnPageChanging="AspNetPager1_PageChanging"
+                PageSize="20" CssClass="anpager" CurrentPageButtonClass="cpb">
+            </webdiyer:AspNetPager>
+        </ContentTemplate>
+    </asp:UpdatePanel>
     </form>
 </body>
 </html>
 <script type="text/javascript">
-    //tabÊïàÊûúÈÄöÁî®ÂáΩÊï∞
+    //tab–ßπ˚Õ®”√∫Ø ˝
     function nTabs(tabObj, obj, n) {
         var tabList = document.getElementById(tabObj).getElementsByTagName("li");
         for (i = 0; i < n; i++) {
