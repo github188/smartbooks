@@ -12,7 +12,7 @@
 <body>
     <form id="form1" runat="server">
     <div id="top_bar">
-        <div class="left">当前位置：系统首页>>路政工作动态</div>
+        <div class="left"><span id="img_postion"><img alt="" src="Images/branch.png" />&nbsp;当前位置：<a href="main.aspx" target="mainFrame">系统首页</a>》路政工作动态</span></div>
     </div>
     <div style=" height:20px;"></div>
     <div style="width:710px; overflow:hidden; margin:auto">
