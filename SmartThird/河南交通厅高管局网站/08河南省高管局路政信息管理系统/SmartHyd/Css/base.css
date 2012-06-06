@@ -67,6 +67,9 @@ form,div,p,img,hr,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6{
 
 
 /*【start】main.aspx页面样式2012-06-05*/
+
+#img_postion *{ vertical-align:middle;}
+
 dl dt a{color:Black; font-family:宋体; font-size:12px; text-decoration:none;}
 .laws dl dt{ background:url(../Images/new1_t.jpg) no-repeat; width:350px; height:30px; overflow:hidden;}
 .file dl dt{ background:url(../Images/new2_t.jpg) no-repeat; width:350px; height:30px; overflow:hidden;}
@@ -190,13 +193,13 @@ dl dt a{color:Black; font-family:宋体; font-size:12px; text-decoration:none;}
 .pad_lr30{ padding-left:30px; padding-right:3px;}
 
 /*浮动样式*/
-.left{ float:left;}
+.left{ float:left; font-size:12px; font-weight:bold; font-family:微软雅黑;}
+
 .right{ float:right;}
 .clear{ clear:both;}
 
 /*超链接样式*/
-a{font-size:12px;color:#00F;text-decoration:none;}
-a:hover{color:#00F;text-decoration:underline}
+
 
 /* 文本对齐方式 */
 .t_l{text-align:left;}
@@ -226,12 +229,15 @@ a:hover{color:#00F;text-decoration:underline}
 
 
 /*页面头部栏目导航*/
-#top_bar{ width:100%; height:26px; background:#e7eaef url(../images/daohang_ico.jpg) 10px center no-repeat; overflow:hidden;}
-#top_bar .left{ float:left; height:26px; line-height:26px; padding-left:30px;}
+#top_bar{ width:100%; height:26px; line-height:26px; background:#e7eaef url(../images/daohang_ico.jpg) 10px center no-repeat; overflow:hidden;}
+#top_bar .left{ float:left; height:26px; line-height:26px; padding-left:10px;}
 #top_bar .left span{ margin-left:5px; margin-right:5px; font-size:12px; font-weight:bold;}
+#top_bar .left span a{font-size:12px; font-weight:bold;font-family:微软雅黑;color:#000000; text-decoration:none;}
+
 #top_bar .right{ float:right; width:80px; height:26px; line-height:26px; text-align:left; background:url(../images/return_1.png) left top no-repeat; padding-left:20px;}
 
 #top_bar_new{ width:2063px; height:26px; background:#98d3fc url(../images/daohang_ico.jpg) 10px center no-repeat; overflow:hidden;}
+#top_bar_new .left{ float:left; height:26px; line-height:26px; padding-left:30px;}
 #top_bar_new .left{ float:left; height:26px; line-height:26px; padding-left:30px;}
 #top_bar_new .left span{ margin-left:5px; margin-right:5px; font-size:12px; font-weight:bold;}
 #top_bar_new .right{ float:right; width:80px; height:26px; line-height:26px; text-align:left; background:url(../images/return_1.png) left top no-repeat; padding-left:20px;}
