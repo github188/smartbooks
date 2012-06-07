@@ -2,49 +2,28 @@
     Inherits="SmartHyd.ManageCenter.Ascx.SysManager" %>
 <%@ Register Assembly="AspNetPager" Namespace="Wuqi.Webdiyer" TagPrefix="webdiyer" %>
 <%@ Register Src="../../Ascx/Department.ascx" TagName="Department" TagPrefix="uc1" %>
-<div id="tab">
-    <table width="100%" class="TableBlock">
-        <tr class="TableHeader">
-            <td width="12%">
-                <font size="+1">当前位置：</font>
-            </td>
-            <td width="88%">
-                <a href="../ManageCenter/SysManager.aspx"><font size="+1">系统管理&gt;&gt;</font></a>
-            </td>
-        </tr>
-    </table>
-    <table width="100%" border="0">
+
+
+<table border="0" cellpadding="0" cellspacing="0" style="height:100%; width:100%;">
         <tr>
-            <td width="50%" align="center">
-                <p>
-                    <a href="../ManageCenter/DeptManage.aspx">
-                        <img src="../../Images/Com.png" alt="部门管理" /></a></p>
-                <p>
-                    <a href="../ManageCenter/DeptManage.aspx">部门管理</a></p>
-            </td>
-            <td width="50%" align="center">
-                <p>
-                    <a href="../ManageCenter/UserManage.aspx">
-                        <img src="../../Images/user.png" alt="用户管理" /></a></p>
-                <p>
-                    <a href="../ManageCenter/UserManage.aspx">用户管理</a></p>
+            <td style="height:37px; line-height:37px;">
+                <div style="border-top:2px solid #e7eaef"></div>
+                <div id="menu">
+                    <div class="patrolsitemap"></div>
+                        <ul>
+                            <li id="menu_Title0" onclick="nTabs('menu',this,4)" class="actived"><a href="../ManageCenter/DeptManage.aspx" target="SysFrame"><span id="buttons"><img src="../Images/i_department.png" border="0"/>部门管理</span></a></li>
+                            <li id="menu_Title1" onclick="nTabs('menu',this,4)" class="normal"><a href="../ManageCenter/UserManage.aspx" target="SysFrame"><span id="buttons"><img src="../Images/i_user.png" border="0"/>用户管理</span></a></li>
+                            <li id="menu_Title2" onclick="nTabs('menu',this,5)" class="normal"><a href="javascript:void(0)" target="SysFrame"><span id="buttons"><img src="../Images/i_role.png" border="0"/>权限管理</span></a></li>
+                            <li id="menu_Title3" onclick="nTabs('menu',this,6)" class="normal"><a href="../ManageCenter/SysLog.aspx" target="SysFrame"><span id="buttons"><img src="../Images/i_log.png" border="0"/>系统日志</span></a></li>
+                        </ul>
+                </div>
             </td>
         </tr>
         <tr>
-            <td  align="center">
-                <p>
-                    <a href="../ManageCenter/Empower.aspx">
-                        <img src="../../Images/user.png" alt="用户授权" /></a></p>
-                <p>
-                    <a href="../ManageCenter/Empower.aspx">用户授权</a></p>
-            </td>
-            <td align="center">
-                <p>
-                    <a href="../ManageCenter/SysLog.aspx">
-                        <img src="../../Images/log.png" alt="日志管理" /></a></p>
-                <p>
-                    <a href="../ManageCenter/DeptManage.aspx">日志管理</a></p>
+            <td valign="top">
+            <iframe src="" name="SysFrame" id="SysFrame" frameborder="0" width="100%" height="100%" scrolling="auto"></iframe>
             </td>
         </tr>
     </table>
-</div>
+<div style=" height:20px;"></div>
+    

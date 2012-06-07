@@ -18,23 +18,28 @@ namespace SmartHyd.ManageCenter.Ascx
                 dataBindToRepeater();
             }
         }
+
         //使用dataBindToRepeater()方法绑定系统日志数据
         private void dataBindToRepeater()
         {
             DataTable dt = new DataTable();
             dt = bll.GetList("1=1");
+            if (dt != null && dt.Rows.Count > 0) {
+                AspNetPager1.RecordCount = dt.Rows.Count;
 
-            AspNetPager1.RecordCount = dt.Rows.Count;
+                PagedDataSource pds = new PagedDataSource();
+                pds.DataSource = dt.DefaultView;
+                pds.AllowPaging = true;
+                pds.CurrentPageIndex = AspNetPager1.CurrentPageIndex - 1;
+                pds.PageSize = AspNetPager1.PageSize;
 
-            PagedDataSource pds = new PagedDataSource();
-            pds.DataSource = dt.DefaultView;
-            pds.AllowPaging = true;
-            pds.CurrentPageIndex = AspNetPager1.CurrentPageIndex - 1;
-            pds.PageSize = AspNetPager1.PageSize;
-
-
-            this.RptList.DataSource = pds; //定义数据源
-            this.RptList.DataBind(); //绑定数据
+                this.gv_log.DataSource = pds; //定义数据源
+                this.gv_log.DataBind(); //绑定数据
+            }
+            else {
+                litmsg.Visible = true;
+                litmsg.Text = "<div style='font-size:16px; font-family:微软雅黑; color:red;font-weight:bold; text-align:center;'>无相关系统日志记录!</div>"; 
+            }
         }
     
         /// <summary>
@@ -46,6 +51,11 @@ namespace SmartHyd.ManageCenter.Ascx
         {
             this.AspNetPager1.CurrentPageIndex = e.NewPageIndex;
             dataBindToRepeater();
+        }
+
+        //数据查询
+        protected void btn_ok_Click(object sender, EventArgs e) {
+            
         }
     }
 }
