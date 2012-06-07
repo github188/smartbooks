@@ -79,6 +79,9 @@
     <Content Include="Images\700_c.jpg" />
     <Content Include="Images\add.png" />
     <Content Include="Images\addDocument.png" />
+    <Content Include="Images\addUnit.png" />
+    <Content Include="Images\add_user.png" />
+    <Content Include="Images\arrow.png" />
     <Content Include="Images\a_patrol.png" />
     <Content Include="Images\back.png" />
     <Content Include="Images\bg_a_hover.png" />
@@ -88,18 +91,23 @@
     <Content Include="Images\big_btn_a.png" />
     <Content Include="Images\branch.png" />
     <Content Include="Images\btn_search.gif" />
+    <Content Include="Images\chart_organisation.png" />
+    <Content Include="Images\chart_organisation_add.png" />
+    <Content Include="Images\chart_organisation_delete.png" />
     <Content Include="Images\close.png" />
     <Content Include="Images\closehelp.png" />
     <Content Include="Images\Com.png" />
     <Content Include="Images\Construction.png" />
     <Content Include="Images\del.jpg" />
     <Content Include="Images\delete.png" />
-    <Content Include="Images\doc_accept.png" />
+<<<<<<< .mine    <Content Include="Images\deleteUnit.png" />
+=======    <Content Include="Images\doc_accept.png" />
     <Content Include="Images\doc_publish.png" />
     <Content Include="Images\edit.jpg" />
-    <Content Include="Images\edit.png" />
-    <Content Include="Images\edit_big.jpg" />
-    <Content Include="Images\e_patrol.png" />
+>>>>>>> .theirs    <Content Include="Images\edit.png" />
+<<<<<<< .mine    <Content Include="Images\editUnit.png" />
+=======    <Content Include="Images\edit_big.jpg" />
+>>>>>>> .theirs    <Content Include="Images\e_patrol.png" />
     <Content Include="Images\FaceImage\7a90db67-6a95-4683-9adb-d3ba9938c413.jpg" />
     <Content Include="Images\FaceImage\f24c4f05-dcfe-4e76-8b2d-9d4506eb707d.png" />
     <Content Include="Images\falv_700.jpg" />
@@ -192,10 +200,14 @@
     <Content Include="ManageCenter\Term.aspx" />
     <Content Include="ManageCenter\UserEdit.aspx" />
     <Content Include="ManageCenter\UserManage.aspx" />
-    <Content Include="Official\OfficialAccept.aspx" />
+<<<<<<< .mine    <Content Include="ManageCenter\UserManager\UnitCenter.aspx" />
+    <Content Include="ManageCenter\UserManager\UnitEdit.aspx" />
+    <Content Include="ManageCenter\UserManager\UserCenter.aspx" />
+    <Content Include="ManageCenter\UserManager\UserEdit.aspx" />
+=======    <Content Include="Official\OfficialAccept.aspx" />
     <Content Include="Official\OfficialIndex.aspx" />
     <Content Include="Official\OfficialPublish.aspx" />
-    <Content Include="Patrol\ArtificialPatrol.aspx" />
+>>>>>>> .theirs    <Content Include="Patrol\ArtificialPatrol.aspx" />
     <Content Include="Patrol\ElectronicEdit.aspx" />
     <Content Include="Patrol\ElectronicPatrol.aspx" />
     <Content Include="Patrol\images\close.png" />
@@ -473,6 +485,7 @@
     <Compile Include="AdminTop.aspx.designer.cs">
       <DependentUpon>AdminTop.aspx</DependentUpon>
     </Compile>
+    <Content Include="App_Code\CommonFunction.cs" />
     <Compile Include="Ascx\Department.ascx.cs">
       <DependentUpon>Department.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -885,7 +898,35 @@
     <Compile Include="ManageCenter\UserManage.aspx.designer.cs">
       <DependentUpon>UserManage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Official\OfficialAccept.aspx.cs">
+<<<<<<< .mine    <Compile Include="ManageCenter\UserManager\UnitCenter.aspx.cs">
+      <DependentUpon>UnitCenter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\UserManager\UnitCenter.aspx.designer.cs">
+      <DependentUpon>UnitCenter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\UserManager\UnitEdit.aspx.cs">
+      <DependentUpon>UnitEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\UserManager\UnitEdit.aspx.designer.cs">
+      <DependentUpon>UnitEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\UserManager\UserCenter.aspx.cs">
+      <DependentUpon>UserCenter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\UserManager\UserCenter.aspx.designer.cs">
+      <DependentUpon>UserCenter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\UserManager\UserEdit.aspx.cs">
+      <DependentUpon>UserEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\UserManager\UserEdit.aspx.designer.cs">
+      <DependentUpon>UserEdit.aspx</DependentUpon>
+    </Compile>
+=======    <Compile Include="Official\OfficialAccept.aspx.cs">
       <DependentUpon>OfficialAccept.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
@@ -906,7 +947,7 @@
     <Compile Include="Official\OfficialPublish.aspx.designer.cs">
       <DependentUpon>OfficialPublish.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Patrol\ArtificialPatrol.aspx.cs">
+>>>>>>> .theirs    <Compile Include="Patrol\ArtificialPatrol.aspx.cs">
       <DependentUpon>ArtificialPatrol.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
