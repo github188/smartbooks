@@ -31,10 +31,10 @@
                                 <asp:CheckBox ID="CheckallAffiche" runat="server" Text="全选" OnClick="javascript:selectall(this);" />
                             </th>
                             <th>
-                                发布人
+                                标题
                             </th>
                             <th>
-                                标题
+                                发布人
                             </th>
                             <th>
                                 创建时间
@@ -56,10 +56,10 @@
                                 <asp:Label ID="AFFICHEID" runat="server" Text='<%#Eval("AFFICHEID") %>' Visible="false"></asp:Label>
                             </td>
                             <td align="center">
-                                <%# Eval("AFFICHER")%>
+                                <a href=""><%# Eval("AFFICHETITLE")%></a>
                             </td>
                             <td align="center">
-                                <%# Eval("AFFICHETITLE")%>
+                                <%# Eval("AFFICHER")%>
                             </td>
                             <td align="center">
                                 <%# Eval("AFFICHEDATE")%>
@@ -69,8 +69,7 @@
                             </td>
                             <td align="center">
                                 <a href="Affiche.aspx?aid=<%# Eval("AFFICHEID")%>">编辑</a>
-                                <%-- <a href="" id="delhref" runat="server"> 删除</a>
-                                 onclick="javascript:delete_notify(<%# Eval("AFFICHEID")%>)"--%>
+                                <a href="" id="delhref"> 删除</a>
                             </td>
                         </tr>
                     </tbody>
