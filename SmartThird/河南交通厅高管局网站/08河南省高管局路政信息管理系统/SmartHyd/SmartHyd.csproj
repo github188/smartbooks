@@ -90,10 +90,17 @@
     <Content Include="Images\btn_search.gif" />
     <Content Include="Images\close.png" />
     <Content Include="Images\closehelp.png" />
+    <Content Include="Images\Com.png" />
     <Content Include="Images\Construction.png" />
+    <Content Include="Images\del.jpg" />
     <Content Include="Images\delete.png" />
+    <Content Include="Images\doc_accept.png" />
+    <Content Include="Images\doc_publish.png" />
+    <Content Include="Images\edit.jpg" />
     <Content Include="Images\edit.png" />
+    <Content Include="Images\edit_big.jpg" />
     <Content Include="Images\e_patrol.png" />
+    <Content Include="Images\FaceImage\7a90db67-6a95-4683-9adb-d3ba9938c413.jpg" />
     <Content Include="Images\FaceImage\f24c4f05-dcfe-4e76-8b2d-9d4506eb707d.png" />
     <Content Include="Images\falv_700.jpg" />
     <Content Include="Images\guifa_700.jpg" />
@@ -102,6 +109,7 @@
     <Content Include="Images\i_role.png" />
     <Content Include="Images\i_user.png" />
     <Content Include="Images\loadingAnimation.gif" />
+    <Content Include="Images\log.png" />
     <Content Include="Images\lukuang_700.jpg" />
     <Content Include="Images\new1_t.jpg" />
     <Content Include="Images\new2_t.jpg" />
@@ -114,6 +122,7 @@
     <Content Include="Images\sale_manage.png" />
     <Content Include="Images\search.png" />
     <Content Include="Images\tongzhi_700.jpg" />
+    <Content Include="Images\ui-hander-background-1.png" />
     <Content Include="Images\ui-hander-background.png" />
     <Content Include="Images\ui-hander-logo.png" />
     <Content Include="Images\ui-hander-searchbox.png" />
@@ -127,6 +136,7 @@
     <Content Include="Images\ui-login-loginbackground.png" />
     <Content Include="Images\ui-login-logo.png" />
     <Content Include="Images\user-ico.jpg" />
+    <Content Include="Images\user.png" />
     <Content Include="main.aspx" />
     <Content Include="ManageCenter\Affiche.aspx" />
     <Content Include="ManageCenter\Area.aspx" />
@@ -143,6 +153,7 @@
     <Content Include="ManageCenter\Ascx\Empower.ascx" />
     <Content Include="ManageCenter\Ascx\ImportData.ascx" />
     <Content Include="ManageCenter\Ascx\MenuManage.ascx" />
+    <Content Include="ManageCenter\Ascx\MessageSend.ascx" />
     <Content Include="ManageCenter\Ascx\Observed.ascx" />
     <Content Include="ManageCenter\Ascx\Office.ascx" />
     <Content Include="ManageCenter\Ascx\Patrol.ascx" />
@@ -153,6 +164,7 @@
     <Content Include="ManageCenter\Ascx\SysLog.ascx" />
     <Content Include="ManageCenter\Ascx\SysManager.ascx" />
     <Content Include="ManageCenter\Ascx\Term.ascx" />
+    <Content Include="ManageCenter\Ascx\UserEdit.ascx" />
     <Content Include="ManageCenter\Ascx\UserManage.ascx" />
     <Content Include="ManageCenter\Chat.aspx" />
     <Content Include="ManageCenter\ConstructionPage.aspx" />
@@ -166,6 +178,7 @@
     <Content Include="ManageCenter\Empower.aspx" />
     <Content Include="ManageCenter\ImportData.aspx" />
     <Content Include="ManageCenter\MenuManage.aspx" />
+    <Content Include="ManageCenter\MessageSend.aspx" />
     <Content Include="ManageCenter\Observed.aspx" />
     <Content Include="ManageCenter\Office.aspx" />
     <Content Include="ManageCenter\Patrol.aspx" />
@@ -177,6 +190,7 @@
     <Content Include="ManageCenter\SysLog.aspx" />
     <Content Include="ManageCenter\SysManager.aspx" />
     <Content Include="ManageCenter\Term.aspx" />
+    <Content Include="ManageCenter\UserEdit.aspx" />
     <Content Include="ManageCenter\UserManage.aspx" />
     <Content Include="Official\OfficialAccept.aspx" />
     <Content Include="Official\OfficialIndex.aspx" />
@@ -598,6 +612,12 @@
     <Compile Include="ManageCenter\Ascx\MenuManage.ascx.designer.cs">
       <DependentUpon>MenuManage.ascx</DependentUpon>
     </Compile>
+    <Compile Include="ManageCenter\Ascx\MessageSend.ascx.cs">
+      <DependentUpon>MessageSend.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\Ascx\MessageSend.ascx.designer.cs">
+      <DependentUpon>MessageSend.ascx</DependentUpon>
+    </Compile>
     <Compile Include="ManageCenter\Ascx\Observed.ascx.cs">
       <DependentUpon>Observed.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -667,6 +687,12 @@
     </Compile>
     <Compile Include="ManageCenter\Ascx\Term.ascx.designer.cs">
       <DependentUpon>Term.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\Ascx\UserEdit.ascx.cs">
+      <DependentUpon>UserEdit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\Ascx\UserEdit.ascx.designer.cs">
+      <DependentUpon>UserEdit.ascx</DependentUpon>
     </Compile>
     <Compile Include="ManageCenter\Ascx\UserManage.ascx.cs">
       <DependentUpon>UserManage.ascx</DependentUpon>
@@ -766,6 +792,12 @@
     <Compile Include="ManageCenter\MenuManage.aspx.designer.cs">
       <DependentUpon>MenuManage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ManageCenter\MessageSend.aspx.cs">
+      <DependentUpon>MessageSend.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\MessageSend.aspx.designer.cs">
+      <DependentUpon>MessageSend.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ManageCenter\Observed.aspx.cs">
       <DependentUpon>Observed.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -835,6 +867,12 @@
     </Compile>
     <Compile Include="ManageCenter\Term.aspx.designer.cs">
       <DependentUpon>Term.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\UserEdit.aspx.cs">
+      <DependentUpon>UserEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\UserEdit.aspx.designer.cs">
+      <DependentUpon>UserEdit.aspx</DependentUpon>
     </Compile>
     <Compile Include="ManageCenter\UserManage.aspx.cs">
       <DependentUpon>UserManage.aspx</DependentUpon>
