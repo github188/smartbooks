@@ -44,7 +44,10 @@ namespace SmartHyd.Entity
         /// 事务类型
         /// </summary>		
         private string _CALENDARTYPE;
-	
+        /// <summary>
+        /// 事务状态
+        /// </summary>
+        private decimal _STATE;
 	        /// <summary>
         /// 日程信息编号
         /// </summary>
@@ -100,6 +103,11 @@ namespace SmartHyd.Entity
         {
             get { return _CALENDARTYPE; }
             set { _CALENDARTYPE = value; }
+        }
+        public decimal STATE
+        {
+            get { return _STATE; }
+            set { _STATE = value; }
         }
 	}
 }
