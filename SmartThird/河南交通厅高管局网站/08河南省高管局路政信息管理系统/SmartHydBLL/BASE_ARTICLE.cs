@@ -28,7 +28,7 @@ namespace SmartHyd.BLL {
         public void Add(Entity.BASE_ARTICLE model) {
             dal.Add(model);
         }
-
+        
         /// <summary>
         /// Get reply list data.
         /// </summary>
@@ -48,13 +48,22 @@ namespace SmartHyd.BLL {
         }
 
         /// <summary>
-        /// get this is department class list data.
+        /// 获取我的发文数据
         /// </summary>
         /// <param name="depCode">department code</param>
         /// <param name="typeCode">department class code.</param>
         /// <returns>return datatable result list.</returns>
         public DataTable GetPublishList(int depCode, int typeCode) {
             return dal.GetPublishList(depCode, typeCode);
+        }
+
+        /// <summary>
+        /// 获取我的收文数据
+        /// </summary>
+        /// <param name="depCode">部门编号</param>
+        /// <returns>我的收文数据</returns>
+        public DataTable GetAcceptList(int depCode) {
+            return dal.GetAcceptList(depCode);
         }
 
         /// <summary>

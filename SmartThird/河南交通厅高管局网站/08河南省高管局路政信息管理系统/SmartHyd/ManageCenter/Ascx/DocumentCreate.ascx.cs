@@ -205,7 +205,7 @@ namespace SmartHyd.ManageCenter.Ascx {
 
                 #region 上传附件
                 //此处实现上传附件
-                string serverPath = "~/";
+                string serverPath = "";
                 if (!string.IsNullOrEmpty(fileUpAnnex.FileName)) {
                     //服务器存储路径
                     string filePath = string.Format("{0}Document\\{1}\\",

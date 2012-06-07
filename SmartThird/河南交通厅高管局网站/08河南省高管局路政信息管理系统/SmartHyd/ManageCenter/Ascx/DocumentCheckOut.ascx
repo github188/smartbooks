@@ -1,18 +1,13 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="DocumentCheckOut.ascx.cs"
     Inherits="SmartHyd.ManageCenter.Ascx.DocumentCheckOut" %>
 <%@ Register Assembly="AspNetPager" Namespace="Wuqi.Webdiyer" TagPrefix="webdiyer" %>
-<div id="tab">
-    <ul id="menu">
-        <li><a href="#tabs-1">结贴页面</a></li>
-    </ul>
-    <!--结贴页面开始-->
-    <div id="tabs-1">
-        <table border="0" width="100%" cellspacing="0" class="small" align="center">
+
+<table border="0" width="100%" cellspacing="0" class="small" align="center">
             <tbody>
                 <!--导航按钮栏-->
                 <tr>
                     <td>
-                        <span class="big3" style=" margin-right:20px;">结贴操作</span>
+                        <span class="big3" style=" margin-right:20px;">考核操作</span>
                         <asp:Button ID="btnCheckOut" runat="server" Text="结贴" CssClass="BigButtonA" 
                             onclick="btnCheckOut_Click" />
                         <asp:Button ID="btnBacktrack" runat="server" Text="返回" 
@@ -80,6 +75,3 @@
                 </webdiyer:AspNetPager>
             </ContentTemplate>
         </asp:UpdatePanel>
-    </div>
-    <!--结贴页面结束-->
-</div>

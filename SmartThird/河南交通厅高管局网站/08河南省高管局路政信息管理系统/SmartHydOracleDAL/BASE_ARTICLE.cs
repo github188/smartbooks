@@ -337,6 +337,30 @@ namespace SmartHyd.OracleDAL {
             return OracleHelper.RunProcedure(procName, param).Tables[0];
         }
         /// <summary>
+        /// 获取我的收文数据
+        /// </summary>
+        /// <param name="depCode">部门编号</param>
+        /// <returns>我的收文数据</returns>
+        public DataTable GetAcceptList(int depCode) {
+            string procName = "PKG_ARTICLE_QUERY.proc_getacceptlist";
+            OracleParameter[] param = new OracleParameter[2];
+
+            param[0] = new OracleParameter();
+            param[1] = new OracleParameter();
+
+            param[0].Direction = ParameterDirection.Input;
+            param[0].OracleType = OracleType.Number;
+            param[0].ParameterName = "dptnum";
+            param[0].Value = depCode;
+
+            param[1].Direction = ParameterDirection.Output;
+            param[1].OracleType = OracleType.Cursor;
+            param[1].ParameterName = "out_cursor";
+
+            return OracleHelper.RunProcedure(procName, param).Tables[0];
+        }
+
+        /// <summary>
         /// checkout operation
         /// </summary>
         /// <param name="dictionary">key=id,value=score</param>

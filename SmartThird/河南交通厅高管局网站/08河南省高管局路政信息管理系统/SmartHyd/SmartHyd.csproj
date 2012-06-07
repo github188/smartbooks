@@ -138,7 +138,6 @@
     <Content Include="ManageCenter\Ascx\DocumentCheckOut.ascx" />
     <Content Include="ManageCenter\Ascx\DocumentCreate.ascx" />
     <Content Include="ManageCenter\Ascx\DocumentDetail.ascx" />
-    <Content Include="ManageCenter\Ascx\DocumentManage.ascx" />
     <Content Include="ManageCenter\Ascx\DocumentReply.ascx" />
     <Content Include="ManageCenter\Ascx\DocumentTypeManage.ascx" />
     <Content Include="ManageCenter\Ascx\Empower.ascx" />
@@ -162,7 +161,6 @@
     <Content Include="ManageCenter\DocumentCheckOut.aspx" />
     <Content Include="ManageCenter\DocumentCreate.aspx" />
     <Content Include="ManageCenter\DocumentDetail.aspx" />
-    <Content Include="ManageCenter\DocumentManage.aspx" />
     <Content Include="ManageCenter\DocumentReply.aspx" />
     <Content Include="ManageCenter\DocumentTypeManage.aspx" />
     <Content Include="ManageCenter\Empower.aspx" />
@@ -180,6 +178,9 @@
     <Content Include="ManageCenter\SysManager.aspx" />
     <Content Include="ManageCenter\Term.aspx" />
     <Content Include="ManageCenter\UserManage.aspx" />
+    <Content Include="Official\OfficialAccept.aspx" />
+    <Content Include="Official\OfficialIndex.aspx" />
+    <Content Include="Official\OfficialPublish.aspx" />
     <Content Include="Patrol\ArtificialPatrol.aspx" />
     <Content Include="Patrol\ElectronicEdit.aspx" />
     <Content Include="Patrol\ElectronicPatrol.aspx" />
@@ -562,13 +563,6 @@
     <Compile Include="ManageCenter\Ascx\DocumentDetail.ascx.designer.cs">
       <DependentUpon>DocumentDetail.ascx</DependentUpon>
     </Compile>
-    <Compile Include="ManageCenter\Ascx\DocumentManage.ascx.cs">
-      <DependentUpon>DocumentManage.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ManageCenter\Ascx\DocumentManage.ascx.designer.cs">
-      <DependentUpon>DocumentManage.ascx</DependentUpon>
-    </Compile>
     <Compile Include="ManageCenter\Ascx\DocumentReply.ascx.cs">
       <DependentUpon>DocumentReply.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -730,13 +724,6 @@
     <Compile Include="ManageCenter\DocumentDetail.aspx.designer.cs">
       <DependentUpon>DocumentDetail.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ManageCenter\DocumentManage.aspx.cs">
-      <DependentUpon>DocumentManage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ManageCenter\DocumentManage.aspx.designer.cs">
-      <DependentUpon>DocumentManage.aspx</DependentUpon>
-    </Compile>
     <Compile Include="ManageCenter\DocumentReply.aspx.cs">
       <DependentUpon>DocumentReply.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -855,6 +842,27 @@
     </Compile>
     <Compile Include="ManageCenter\UserManage.aspx.designer.cs">
       <DependentUpon>UserManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Official\OfficialAccept.aspx.cs">
+      <DependentUpon>OfficialAccept.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Official\OfficialAccept.aspx.designer.cs">
+      <DependentUpon>OfficialAccept.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Official\OfficialIndex.aspx.cs">
+      <DependentUpon>OfficialIndex.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Official\OfficialIndex.aspx.designer.cs">
+      <DependentUpon>OfficialIndex.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Official\OfficialPublish.aspx.cs">
+      <DependentUpon>OfficialPublish.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Official\OfficialPublish.aspx.designer.cs">
+      <DependentUpon>OfficialPublish.aspx</DependentUpon>
     </Compile>
     <Compile Include="Patrol\ArtificialPatrol.aspx.cs">
       <DependentUpon>ArtificialPatrol.aspx</DependentUpon>

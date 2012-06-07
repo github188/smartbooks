@@ -10,7 +10,8 @@
         $(function () {
             /*鼠标经过验证码自动刷新*/
             $('#code').click(function () {
-                $(this).attr("src", "ashx/VerificationCode.ashx");
+                var num = Math.random();
+                $(this).attr("src", "ashx/VerificationCode.ashx?id=" + num);
             });
         });
     </script>
