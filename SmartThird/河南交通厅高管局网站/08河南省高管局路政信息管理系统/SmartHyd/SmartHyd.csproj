@@ -614,6 +614,7 @@
     </Compile>
     <Compile Include="ManageCenter\Ascx\MessageSend.ascx.cs">
       <DependentUpon>MessageSend.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ManageCenter\Ascx\MessageSend.ascx.designer.cs">
       <DependentUpon>MessageSend.ascx</DependentUpon>
@@ -690,6 +691,7 @@
     </Compile>
     <Compile Include="ManageCenter\Ascx\UserEdit.ascx.cs">
       <DependentUpon>UserEdit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ManageCenter\Ascx\UserEdit.ascx.designer.cs">
       <DependentUpon>UserEdit.ascx</DependentUpon>
@@ -794,6 +796,7 @@
     </Compile>
     <Compile Include="ManageCenter\MessageSend.aspx.cs">
       <DependentUpon>MessageSend.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ManageCenter\MessageSend.aspx.designer.cs">
       <DependentUpon>MessageSend.aspx</DependentUpon>
@@ -870,6 +873,7 @@
     </Compile>
     <Compile Include="ManageCenter\UserEdit.aspx.cs">
       <DependentUpon>UserEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ManageCenter\UserEdit.aspx.designer.cs">
       <DependentUpon>UserEdit.aspx</DependentUpon>
