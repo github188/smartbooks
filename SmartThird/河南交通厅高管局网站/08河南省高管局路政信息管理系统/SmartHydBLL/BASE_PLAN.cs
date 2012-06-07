@@ -64,5 +64,14 @@ namespace SmartHyd.BLL
                 return false;
             }
         }
+        /// <summary>
+        /// 删除指定编号事务数据
+        /// </summary>
+        /// <param name="CALENDARID"></param>
+        /// <returns></returns>
+        public bool del(decimal CALENDARID)
+        {
+            return dal.Delete(CALENDARID);
+        }
     }
 }

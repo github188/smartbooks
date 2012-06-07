@@ -35,5 +35,23 @@ namespace SmartHyd.BLL
         {
             return Dal.GetList(strWhere).Tables[0];
         }
+        /// <summary>
+        /// 更新一条数据
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        public bool update(Entity.BASE_MESSAGE model)
+        {
+            return Dal.Update(model);
+        }
+        /// <summary>
+        /// 根据消息编号删除数据
+        /// </summary>
+        /// <param name="MESSAGEID"></param>
+        /// <returns></returns>
+        public bool del(decimal MESSAGEID)
+        {
+            return Dal.Delete(MESSAGEID);
+        }
     }
 }
