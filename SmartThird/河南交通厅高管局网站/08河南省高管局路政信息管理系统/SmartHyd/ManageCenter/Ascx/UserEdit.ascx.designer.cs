@@ -10,159 +10,159 @@
 namespace SmartHyd.ManageCenter.Ascx {
     
     
-    public partial class Empower {
+    public partial class UserEdit {
         
         /// <summary>
-        /// RadioButton1 控件。
+        /// LabName 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton RadioButton1;
+        protected global::System.Web.UI.WebControls.Label LabName;
         
         /// <summary>
-        /// RadioButton2 控件。
+        /// hidPrimary 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton RadioButton2;
+        protected global::System.Web.UI.WebControls.HiddenField hidPrimary;
         
         /// <summary>
-        /// RadioButton3 控件。
+        /// txtUserName 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton RadioButton3;
+        protected global::System.Web.UI.WebControls.TextBox txtUserName;
         
         /// <summary>
-        /// RadioButton4 控件。
+        /// TxtRealName 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton RadioButton4;
+        protected global::System.Web.UI.WebControls.TextBox TxtRealName;
         
         /// <summary>
-        /// BtnEmp 控件。
+        /// txtPassword 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnEmp;
+        protected global::System.Web.UI.WebControls.TextBox txtPassword;
         
         /// <summary>
-        /// HfUserID 控件。
+        /// Department1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField HfUserID;
+        protected global::SmartHyd.Ascx.Department Department1;
         
         /// <summary>
-        /// txtUsers 控件。
+        /// ddlSex 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTextArea txtUsers;
+        protected global::System.Web.UI.WebControls.DropDownList ddlSex;
         
         /// <summary>
-        /// txtRole 控件。
+        /// txtBIRTHDAY 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTextArea txtRole;
+        protected global::System.Web.UI.WebControls.TextBox txtBIRTHDAY;
         
         /// <summary>
-        /// HfMenuID 控件。
+        /// txtFACE 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField HfMenuID;
+        protected global::System.Web.UI.WebControls.TextBox txtFACE;
         
         /// <summary>
-        /// TxtMenu 控件。
+        /// txtIDNUMBER 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTextArea TxtMenu;
+        protected global::System.Web.UI.WebControls.TextBox txtIDNUMBER;
         
         /// <summary>
-        /// HfActionID 控件。
+        /// txtJOBNUMBER 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField HfActionID;
+        protected global::System.Web.UI.WebControls.TextBox txtJOBNUMBER;
         
         /// <summary>
-        /// TxtAction 控件。
+        /// txtPROF 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTextArea TxtAction;
+        protected global::System.Web.UI.WebControls.TextBox txtPROF;
         
         /// <summary>
-        /// BtnEmpower 控件。
+        /// txtPhone 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnEmpower;
+        protected global::System.Web.UI.WebControls.TextBox txtPhone;
         
         /// <summary>
-        /// CBLUser 控件。
+        /// txtRemark 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBoxList CBLUser;
+        protected global::System.Web.UI.WebControls.TextBox txtRemark;
         
         /// <summary>
-        /// ChBLRole 控件。
+        /// txtDEGREE 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBoxList ChBLRole;
+        protected global::System.Web.UI.WebControls.TextBox txtDEGREE;
         
         /// <summary>
-        /// ChBLMenu 控件。
+        /// fileupPhoto 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBoxList ChBLMenu;
+        protected global::System.Web.UI.WebControls.FileUpload fileupPhoto;
         
         /// <summary>
-        /// ChBLAction 控件。
+        /// btnSubmit 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBoxList ChBLAction;
+        protected global::System.Web.UI.WebControls.Button btnSubmit;
     }
 }

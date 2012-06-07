@@ -15,7 +15,7 @@
     <table width="100%" border="1">
         <tr>
             <td>
-                <span>当前部门：</span><div id="deptUrl" runat="server">
+                <div id="deptUrl" runat="server"><span>当前部门：</span>
                 </div>
             </td>
             <td>
@@ -32,7 +32,6 @@
         </tr>
         <tr >
             <td>
-                <hr />
                 <asp:MultiView ID="MultiView1" runat="server">
                     <asp:View ID="View1" runat="server">
                         <table width="100%" border="1" cellspacing="0" cellpadding="0" align="center" id="Table1">

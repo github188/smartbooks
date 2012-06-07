@@ -58,6 +58,7 @@ namespace SmartHyd.ManageCenter.Ascx
             model.CALENDARREMIND = DateTime.Parse(this.txtPrompt.Text);                  //提醒时间
             model.CALENDARCONTENT = this.txtContent.Text;//日程内容
             model.USERID=Convert.ToInt32(this.TxtUser.Text);//用户编号
+            model.STATE = 0;//事务状态（0：正常；1，删除）
             return model;
         }
         /// <summary>
@@ -75,6 +76,15 @@ namespace SmartHyd.ManageCenter.Ascx
             this.txtContent.Text=model.CALENDARCONTENT;//日程内容
             this.TxtUser.Text = usersession.USERID.ToString();//用户编号
 
+        }
+        private void delplan(decimal planid)
+        {
+            Entity.BASE_PLAN model = new Entity.BASE_PLAN();
+            model.CALENDARID=planid;
+            model.STATE=1;//更改事务状态为删除
+            bll.update(model);
+            //重新加载当前页
+            Response.Redirect(Request.Url.AbsoluteUri, true);
         }
         #region 页面功能按钮事件(必须重写基类虚方法，否则按钮的事件是无效的)
         /// <summary>

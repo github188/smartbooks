@@ -15,8 +15,20 @@
     <ul>
         <li><a href="#tabs-1">用户授权</a></li>
     </ul>
+    <!--6.7用户授权开始-->
+    <div>
+    <table>
+    <tr><td><asp:RadioButton ID="RadioButton1" runat="server" ValidationGroup="role" /> 系统管理员（拥有系统最高权限）</td></tr>
+        
+    <tr><td><asp:RadioButton ID="RadioButton2" runat="server" ValidationGroup="role" />管理员（拥有添加，删除，编辑的权限）</td></tr>
+    <tr><td><asp:RadioButton ID="RadioButton3" runat="server" ValidationGroup="role" />普通用户（拥有对下级或子单位收文，发文的权限）</td></tr>
+    <tr><td><asp:RadioButton ID="RadioButton4" runat="server" ValidationGroup="role" />浏览用户（拥有查看权限）</td></tr>
+    <tr><td><asp:Button ID="BtnEmp" runat="server" Text="授权" CssClass="BigButtonA" onclick="BtnEmp_Click" /></td></tr>
+    </table>
+    </div>
+    <!--6.7用户授权结束-->
     <!--用户授权开始-->
-    <div id="tabs-1">
+    <div id="tabs-1" style="display:none">
         <table class="TableBlock"  width="500" align="center" >
     <tr>
       <td nowrap="nowrap" class="TableContent"" align="center">授权范围：<br/>（人员）</td>
@@ -156,3 +168,5 @@
     </div>
     <!--用户授权结束-->
 </div>
+
+

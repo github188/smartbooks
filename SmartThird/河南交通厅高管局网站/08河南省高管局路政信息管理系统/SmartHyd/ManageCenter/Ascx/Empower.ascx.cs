@@ -23,17 +23,65 @@ namespace SmartHyd.ManageCenter.Ascx
         {
             if (!IsPostBack)
             {
+                #region 6.6前
                 //dataBindToRepeater();
                 //GetTreeAction();//动作权限树绑定
                 //GetTreeMenu();//菜单树绑定
                 //GetTreeRole();//角色树绑定
+                #endregion
+                #region 6.6当天
+                //UserBind();//授权用户绑定
+                //RoleBind();//角色绑定
+                //MenuBind();// 菜单绑定
+                //ActionBind(); // 动作绑定
+                #endregion
+                #region 6.7
+                if (null==Request.QueryString["userid"]||""==Request.QueryString["userid"])
+                {
+                    this.BtnEmp.Enabled = false;
+                    Response.Write("<div>你还未选择授权用户！<a href='UserManage.aspx'>点这里选用户</a></div>");
+                }
 
-                UserBind();//授权用户绑定
-                RoleBind();//角色绑定
-                MenuBind();// 菜单绑定
-                ActionBind(); // 动作绑定
+                #endregion
             }
         }
+        #region 6.7用户授权
+       
+        protected Entity.BASE_USER_ROLE GetModel(decimal userid, decimal ROLEID, decimal MENUID, decimal ACTIONID)
+        {
+            Entity.BASE_USER_ROLE Model = new Entity.BASE_USER_ROLE();
+             Model.USERROLEID =-1;//主键，ID
+            Model.USERID = userid;// 用户编号；
+            Model.ROLEID = ROLEID;//角色编号；
+            Model.MENUID = MENUID;//菜单编号；
+            Model.ACTIONID = ACTIONID;//动作编号；
+            return Model;
+        }
+        /// <summary>
+        /// 授权
+        /// </summary>
+        private void EmpowerAdd(decimal userid, decimal ROLEID)
+        {
+            decimal MENUID = 0;//菜单编号默认为0
+            decimal ACTIONID = 0;//动作编号默认为0
+            //判断用户是否拥有权限;如果已有权限，删除已有权限
+            if (userRolebll.ExistsUserid(userid))
+            {
+                string strwhere = "USERID=" + userid;
+                userRolebll.deletelist(strwhere);//删除已有权限
+                userRolebll.Add(GetModel(userid, ROLEID, MENUID, ACTIONID));//用户授权
+            }
+            else
+            {
+                userRolebll.Add(GetModel(userid, ROLEID, MENUID, ACTIONID));//用户授权
+            }
+
+        }
+        protected void BtnEmp_Click(object sender, EventArgs e)
+        {
+           
+        }
+        #endregion
         #region  用户授权
         /// <summary>
         /// 授权用户绑定
@@ -176,6 +224,10 @@ namespace SmartHyd.ManageCenter.Ascx
             //}
         }
         #endregion
+
+       
+
+       
         #region 6.6前页面代码
         ///// <summary>
         ///// 角色树绑定(为用户分配角色；每个角色对应一个菜单：menu；每个菜单下有n个动作：action)

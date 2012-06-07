@@ -15,6 +15,7 @@
         </tr>
     </table>
     <div id="content">
+        <a href="UserEdit.aspx?deptid=4&userid=">添加用户</a>
         <table class="TableBlock" width="100%" align="center">
             <tbody>
                 <!--首选行-->
@@ -23,7 +24,7 @@
                         部门
                     </td>
                     <td colspan="2">
-            用户
+                        用户
                     </td>
                 </tr>
                 <tr>
@@ -43,16 +44,20 @@
                                                         <asp:CheckBox ID="Checkall" runat="server" Text="全选" OnClick="javascript:selectall(this);" />
                                                     </td>
                                                     <td>
+                                                        登录账号
+                                                    </td>
+                                                    <td>
+                                                        工作证号
+                                                    </td>
+                                                    <td>
+                                                        真实姓名
+                                                    </td>
+                                                    <td>
+                                                       联系电话
+                                                    </td>
+                                                    <td>
                                                         操作
-                                                        <td>
-                                                            工作证号
-                                                        </td>
-                                                        <td>
-                                                            登录账号
-                                                        </td>
-                                                        <td>
-                                                            真实姓名
-                                                        </td>
+                                                    </td>
                                                 </tr>
                                             </HeaderTemplate>
                                             <ItemTemplate>
@@ -61,24 +66,32 @@
                                                         <asp:CheckBox ID="CheckSingle" runat="server" />
                                                     </td>
                                                     <td>
-                                                        <a href="#">
-                                                            <image src="../../Images/edit_big.jpg" alt="编辑"></image>
-                                                        </a>
+                                                        <%# Eval("username")%>
                                                     </td>
                                                     <td>
                                                         <%# Eval("jobnumber")%>
                                                     </td>
                                                     <td>
-                                                        <%# Eval("username")%>
+                                                        <%# Eval("realname")%>
                                                     </td>
                                                     <td>
-                                                        <%# Eval("username")%>
+                                                        <%# Eval("PHONE")%>
+                                                    </td>
+                                                    <td>
+                                                        <a href="UserEdit.aspx?deptid=<%# Eval("DEPTID")%>&userid=<%# Eval("userid")%>">
+                                                           编辑<%-- <image src="../../Images/edit_big.jpg" alt="编辑"></image>--%>
+                                                        </a><a href="Empower.aspx?userid=<%# Eval("userid")%>">
+                                                            授权<%--<image src="../../Images/edit_big.jpg" alt="授权"></image>--%>
+                                                        </a>
+                                                       <a href="UserManage.aspx?userid=<%# Eval("userid")%>">
+                                                           删除 <%--<image src="../../Images/delete.png" alt="删除"></image>--%>
+                                                        </a>
                                                     </td>
                                                 </tr>
                                             </ItemTemplate>
                                             <FooterTemplate>
                                                 <tr>
-                                                    <td colspan="4">
+                                                    <td colspan="6">
                                                         <asp:Label ID="labEmpty" runat="server" Text="该部门下暂无用户" Visible="<%#repList.Items.Count==0 %>"></asp:Label>
                                                     </td>
                                                 </tr>

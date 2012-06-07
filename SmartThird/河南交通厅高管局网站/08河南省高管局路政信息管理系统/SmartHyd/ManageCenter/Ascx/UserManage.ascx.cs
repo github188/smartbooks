@@ -23,16 +23,27 @@ namespace SmartHyd.ManageCenter.Ascx
             {
                 if (null == Request.QueryString["deptid"] || "" == Request.QueryString["deptid"])
                 {
-                    BindUserList(4);//绑定用户列表
                     BindAcceptUnit();//绑定单位部门
+                    BindUserList(4);//绑定用户列表
                    // SetEntity(new Entity.BASE_USER());
                 }
                 else
                 {
-                    decimal deptid = Convert.ToDecimal(Request.QueryString["deptid"]);
-                    BindUserList(deptid);//绑定用户列表
-                    BindAcceptUnit();//绑定单位部门
-                   // SetEntity(new Entity.BASE_USER());
+                    decimal deptid = Convert.ToDecimal(Request.QueryString["deptid"]);//获取部门编号
+                    if (null == Request.QueryString["userid"] || "" == Request.QueryString["userid"])
+                    {
+                        BindAcceptUnit();//绑定单位部门
+                        BindUserList(deptid);//绑定用户列表
+                        // SetEntity(new Entity.BASE_USER());
+
+                    }
+                    else
+                    {
+                        decimal userid = Convert.ToDecimal(Request.QueryString["userid"]);
+                        DelUser(userid);//删除用户
+                        BindAcceptUnit();//绑定单位部门
+                        BindUserList(deptid);//绑定用户列表
+                    }
                 }
             }
         }
