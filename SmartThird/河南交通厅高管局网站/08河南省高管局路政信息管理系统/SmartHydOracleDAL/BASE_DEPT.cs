@@ -41,8 +41,9 @@ namespace SmartHyd.OracleDAL {
 
         /// <summary>
         /// 增加一条数据
+        /// 2012-06-07修改，增加返回值
         /// </summary>
-        public void Add(Entity.BASE_DEPT entity) {
+        public int Add(Entity.BASE_DEPT entity) {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("insert into BASE_DEPT(");
             strSql.Append("DEPTID,DPTNAME,DPTINFO,PARENTID,STATUS");
@@ -64,7 +65,9 @@ namespace SmartHyd.OracleDAL {
             parameters[2].Value = entity.DPTINFO;
             parameters[3].Value = entity.PARENTID;
             parameters[4].Value = entity.STATUS;
-            OracleHelper.ExecuteNonQuery(strSql.ToString(), parameters);
+            
+            
+            return OracleHelper.ExecuteNonQuery(strSql.ToString(), parameters);
 
         }
 
@@ -79,15 +82,13 @@ namespace SmartHyd.OracleDAL {
             strSql.Append(" DEPTID = :DEPTID , ");
             strSql.Append(" DPTNAME = :DPTNAME , ");
             strSql.Append(" DPTINFO = :DPTINFO , ");
-            strSql.Append(" PARENTID = :PARENTID , ");
             strSql.Append(" STATUS = :STATUS  ");
             strSql.Append(" where DEPTID=:DEPTID  ");
 
             OracleParameter[] parameters = {
 			            new OracleParameter(":DEPTID", OracleType.Number,4) ,            
                         new OracleParameter(":DPTNAME", OracleType.VarChar,50) ,            
-                        new OracleParameter(":DPTINFO", OracleType.VarChar,50) ,            
-                        new OracleParameter(":PARENTID", OracleType.Number,4) ,            
+                        new OracleParameter(":DPTINFO", OracleType.VarChar,50) ,                       
                         new OracleParameter(":STATUS", OracleType.Number,4)             
               
             };
@@ -95,8 +96,7 @@ namespace SmartHyd.OracleDAL {
             parameters[0].Value = entity.DEPTID;
             parameters[1].Value = entity.DPTNAME;
             parameters[2].Value = entity.DPTINFO;
-            parameters[3].Value = entity.PARENTID;
-            parameters[4].Value = entity.STATUS;
+            parameters[3].Value = entity.STATUS;
             int rows = OracleHelper.ExecuteNonQuery(strSql.ToString(), parameters);
             if (rows > 0) {
                 return true;
