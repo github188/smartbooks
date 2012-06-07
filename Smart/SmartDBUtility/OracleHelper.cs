@@ -8,6 +8,10 @@ namespace Smart.DBUtility
     using System.Data.OracleClient;
     using System.Configuration;
 
+
+    /// <summary>
+    /// Oracle 数据访问
+    /// </summary>
     public abstract class OracleHelper
     {
         /// <summary>
