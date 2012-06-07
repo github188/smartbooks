@@ -19,6 +19,7 @@ namespace SmartHyd.Ascx {
         /// 默认：部门树
         /// </summary>
         private Utility.TreeEnum _TreeEnum;
+        private Utility.UserSession userSession;
 
         #region 方法定义
         /// <summary>
@@ -27,6 +28,9 @@ namespace SmartHyd.Ascx {
         /// <param name="sender"></param>
         /// <param name="e"></param>
         protected void Page_Load(object sender, EventArgs e) {
+            //获取用户Session
+            userSession = (Utility.UserSession)Session["user"];
+            
             if (!IsPostBack) {
             }
         }
@@ -61,7 +65,10 @@ namespace SmartHyd.Ascx {
             DataTable dt = new DataTable();
             //获取部门数据源
             BLL.BASE_DEPT bll = new BLL.BASE_DEPT();
-            dt = bll.GetAllDep("1=1");
+
+            /*获取当前用户所属部门和子部门*/
+            //dt = bll.GetAllDep("1=1");
+            dt = bll.GetUserWhereDepartment(userSession.USERNAME, -1);
 
             TreeNode rootNode = new TreeNode();
             rootNode.Text = "部门树";
@@ -77,7 +84,8 @@ namespace SmartHyd.Ascx {
             DataTable dt = new DataTable();
             //获取部门数据源
             BLL.BASE_DEPT bll = new BLL.BASE_DEPT();
-            dt = bll.GetAllDep("1=1");
+            //dt = bll.GetAllDep("1=1");
+            dt = bll.GetUserWhereDepartment(userSession.USERNAME, -1);
 
             TreeNode rootNode = new TreeNode();
             rootNode.Text = "部门用户树";

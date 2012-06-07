@@ -201,7 +201,7 @@ namespace SmartHyd.OracleDAL {
         /// 获取用户所属的部门和子部门
         /// </summary>
         /// <param name="userName">用户名称</param>
-        /// <param name="issubdept">0:包含子部门,其他:用户所属部门</param>
+        /// <param name="issubdept">-1:包含子部门,其他:用户所属部门</param>
         /// <returns>部门信息</returns>
         public DataTable GetUserWhereDepartment(string userName, int issubdept) {
             string procName = "PKG_USER_QUERY.proc_getdept";
