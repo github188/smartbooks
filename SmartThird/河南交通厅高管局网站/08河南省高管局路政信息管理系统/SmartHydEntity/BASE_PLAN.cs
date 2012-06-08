@@ -48,6 +48,10 @@ namespace SmartHyd.Entity
         /// 事务状态
         /// </summary>
         private decimal _STATE;
+        /// <summary>
+        /// 事务标题
+        /// </summary>
+        private string _TITLE;
 	        /// <summary>
         /// 日程信息编号
         /// </summary>
@@ -104,10 +108,21 @@ namespace SmartHyd.Entity
             get { return _CALENDARTYPE; }
             set { _CALENDARTYPE = value; }
         }
+        /// <summary>
+        /// 事务状态
+        /// </summary>
         public decimal STATE
         {
             get { return _STATE; }
             set { _STATE = value; }
+        }
+        /// <summary>
+        /// 事务标题
+        /// </summary>
+        public string TITLE
+        {
+            get { return _TITLE; }
+            set { _TITLE=value;}
         }
 	}
 }
