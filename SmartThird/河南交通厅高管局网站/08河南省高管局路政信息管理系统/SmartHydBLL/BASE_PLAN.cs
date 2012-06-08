@@ -23,6 +23,15 @@ namespace SmartHyd.BLL
             return ds.Tables[0];
         }
         /// <summary>
+        /// 获取事务实体数据
+        /// </summary>
+        /// <param name="Planid"></param>
+        /// <returns></returns>
+        public Entity.BASE_PLAN GetModel(decimal Planid)
+        {
+            return dal.GetEntity(Planid);
+        }
+        /// <summary>
         /// 新建日程信息
         /// </summary>
         /// <param name="model">日程信息实体</param>
