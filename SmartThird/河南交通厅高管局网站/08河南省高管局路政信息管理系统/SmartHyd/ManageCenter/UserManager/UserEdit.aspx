@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UserEdit.aspx.cs" Inherits="SmartHyd.ManageCenter.UserManager.UserEdit" %>
 
-<%@ Register src="../../Ascx/Department.ascx" tagname="Department" tagprefix="uc1" %>
+<%@ Register src="~/Ascx/Department.ascx" tagname="Department" tagprefix="uc1" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -25,7 +25,7 @@
                 <!--标题栏-->
                 <tr class="TableHeader">
                     <td colspan="4" style="height:24px; line-height:24px; border-bottom:4px double #045185;">
-                        <asp:Label ID="LabName" Visible="false"  runat="server" Text="用户信息编辑"></asp:Label>
+                        <asp:Label ID="LabName" runat="server" Text=""></asp:Label>
                        
                     </td>
                     
@@ -38,14 +38,14 @@
                         <asp:HiddenField ID="hidPrimary" runat="server" Value="-1" />
                         <asp:TextBox ID="txtUserName" runat="server" 
                             CssClass="input {required:true,minlength:5,maxlength:12}">
-                        </asp:TextBox>
+                        </asp:TextBox>*
                         <div class="validate ui-state-highlight ui-corner-all " style="border: none;"></div>
                     </td>
                     <td nowrap="nowrap" class="TableData" width="70">真实姓名:</td>
                     <td nowrap="nowrap" class="TableData" style="width:325px;">
                         <asp:TextBox ID="TxtRealName" runat="server" 
                             CssClass="input {required:true,minlength:3,maxlength:12}">
-                        </asp:TextBox>
+                        </asp:TextBox>*
                         <div class="validate ui-state-highlight ui-corner-all " style="border: none;"></div>
                     </td>
                 </tr>
@@ -56,7 +56,7 @@
                     <td nowrap="nowrap" class="TableData" style="width:325px;">
                         <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" 
                             CssClass="input {required:true,minlength:5,maxlength:12}">
-                        </asp:TextBox>
+                        </asp:TextBox>*
                         <div class="validate ui-state-highlight ui-corner-all" style="border: none;"></div>
                     </td>
                     <td nowrap="nowrap" class="TableData" width="70">所属单位:</td>

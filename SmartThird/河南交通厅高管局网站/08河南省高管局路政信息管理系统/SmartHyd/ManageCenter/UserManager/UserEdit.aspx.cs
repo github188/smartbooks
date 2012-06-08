@@ -7,18 +7,32 @@ using System.Web.UI.WebControls;
 using System.IO;
 using System.Collections;
 
-namespace SmartHyd.ManageCenter.UserManager {
-    public partial class UserEdit : System.Web.UI.Page {
+namespace SmartHyd.ManageCenter.UserManager
+{
+    public partial class UserEdit : System.Web.UI.Page
+    {
         private BLL.BASE_USER bll = new BLL.BASE_USER();
         private BLL.BASE_LOG logbll = new BLL.BASE_LOG();
-        protected void Page_Load(object sender, EventArgs e) {
-            if (!IsPostBack) {
-                if (null == Request.QueryString["deptid"] || "" == Request.QueryString["deptid"]) {
-                    //部门编号为空：提示并返回
-                } else {
-                    if (null == Request.QueryString["userid"] || "" == Request.QueryString["userid"]) {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!IsPostBack)
+            {
+                if (null == Request.QueryString["deptid"] || "" == Request.QueryString["deptid"])
+                {
+                    //单位编号为空：显示顶级单位
+                    this.LabName.Text = "添加用户";
+                }
+                else
+                {
+                    decimal deptid = Convert.ToDecimal(Request.QueryString["deptid"]);
+                    if (null == Request.QueryString["userid"] || "" == Request.QueryString["userid"])
+                    {
                         this.LabName.Text = "添加用户";
-                    } else {
+                        DropDownList ddr = (DropDownList)this.Department1.FindControl("ddlDepartment");//找到用户控件中的子控件
+                        ddr.SelectedValue = deptid.ToString();//绑定当前部门
+                    }
+                    else
+                    {
                         this.LabName.Text = "编辑用户";
                         int userid = Convert.ToInt32(Request.QueryString["userid"]);
                         Entity.BASE_USER model = bll.GetUser(userid);
@@ -27,7 +41,8 @@ namespace SmartHyd.ManageCenter.UserManager {
                 }
             }
         }
-        private Entity.BASE_USER GetEntity() {
+        private Entity.BASE_USER GetEntity()
+        {
             Entity.BASE_USER model = new Entity.BASE_USER();
 
             model.USERID = Convert.ToDecimal(this.hidPrimary.Value);                //主键，用户ID编号
@@ -52,7 +67,8 @@ namespace SmartHyd.ManageCenter.UserManager {
             return model;
         }
 
-        private void SetEntity(Entity.BASE_USER model) {
+        private void SetEntity(Entity.BASE_USER model)
+        {
             this.hidPrimary.Value = model.USERID.ToString();
             txtBIRTHDAY.Text = model.BIRTHDAY.ToString("yyyy-MM-dd");
             txtDEGREE.Text = model.DEGREE;
@@ -71,7 +87,8 @@ namespace SmartHyd.ManageCenter.UserManager {
         /// 上传用户照片
         /// </summary>
         /// <returns>照片存储在服务器的相对路径</returns>
-        private string UpLoadPhoto() {
+        private string UpLoadPhoto()
+        {
             string serverSavePath = "Images/FaceImage/";
 
             string tempFileName = string.Format("{0}{1}",
@@ -86,14 +103,17 @@ namespace SmartHyd.ManageCenter.UserManager {
         /// 校验用户提交的表单
         /// </summary>
         /// <returns>check result</returns>
-        private bool CheckUserSubmitFrom() {
+        private bool CheckUserSubmitFrom()
+        {
             //用户名校验
-            if (this.txtUserName.Text.Trim() == "") {
+            if (this.txtUserName.Text.Trim() == "")
+            {
                 Smart.Utility.Alerts.Alert("请填写用户名.");
                 return false;
             }
             //check file is null
-            if (!fileupPhoto.HasFile) {
+            if (!fileupPhoto.HasFile)
+            {
                 Smart.Utility.Alerts.Alert("图片不能为空.");
                 return false;
             }
@@ -104,13 +124,15 @@ namespace SmartHyd.ManageCenter.UserManager {
             exts.Add(".jpg");
             exts.Add(".gif");
             exts.Add(".jpeg");
-            if (!exts.Contains(Path.GetExtension(fileupPhoto.FileName))) {
+            if (!exts.Contains(Path.GetExtension(fileupPhoto.FileName)))
+            {
                 Smart.Utility.Alerts.Alert("只允许上传 *.png *.jpg *.gif *.jpeg 格式的图片");
                 return false;
             }
 
             //check file size
-            if (fileupPhoto.PostedFile.ContentLength > 3145728) {
+            if (fileupPhoto.PostedFile.ContentLength > 3145728)
+            {
                 Smart.Utility.Alerts.Alert("只允许上传3MB以内的图片文件.");
                 return false;
             }
@@ -122,9 +144,12 @@ namespace SmartHyd.ManageCenter.UserManager {
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        protected void btnSubmit_Click(object sender, EventArgs e) {
-            if (CheckUserSubmitFrom()) {
-                if (null == Request.QueryString["userid"] || "" == Request.QueryString["userid"]) {
+        protected void btnSubmit_Click(object sender, EventArgs e)
+        {
+            if (CheckUserSubmitFrom())
+            {
+                if (null == Request.QueryString["userid"] || "" == Request.QueryString["userid"])
+                {
                     //添加用户
                     Entity.BASE_USER model = GetEntity();
                     model.PHOTO = UpLoadPhoto();
@@ -137,7 +162,9 @@ namespace SmartHyd.ManageCenter.UserManager {
                     Response.Redirect(Request.Url.AbsoluteUri, true);
 
 
-                } else {
+                }
+                else
+                {
                     //修改用户
                     Entity.BASE_USER model = GetEntity();
                     model.PHOTO = UpLoadPhoto();
@@ -156,7 +183,8 @@ namespace SmartHyd.ManageCenter.UserManager {
         /// </summary>
         /// <param name="logtype">日志类型</param>
         /// <param name="description">日志信息内容</param>
-        private void LogAdd(string logtype, string description) {
+        private void LogAdd(string logtype, string description)
+        {
             Entity.BASE_LOG logmodel = new Entity.BASE_LOG();
             logmodel.LOGID = -1;                        //id,主键
             logmodel.LOGTYPE = logtype;                     //日志类型

@@ -147,8 +147,10 @@
     <Content Include="Images\user.png" />
     <Content Include="main.aspx" />
     <Content Include="ManageCenter\Affiche.aspx" />
+    <Content Include="ManageCenter\AfficheEdit.aspx" />
     <Content Include="ManageCenter\Area.aspx" />
     <Content Include="ManageCenter\Ascx\Affiche.ascx" />
+    <Content Include="ManageCenter\Ascx\AfficheEdit.ascx" />
     <Content Include="ManageCenter\Ascx\Area.ascx" />
     <Content Include="ManageCenter\Ascx\Chat.ascx" />
     <Content Include="ManageCenter\Ascx\Dept.ascx" />
@@ -172,7 +174,6 @@
     <Content Include="ManageCenter\Ascx\SysLog.ascx" />
     <Content Include="ManageCenter\Ascx\SysManager.ascx" />
     <Content Include="ManageCenter\Ascx\Term.ascx" />
-    <Content Include="ManageCenter\Ascx\UserEdit.ascx" />
     <Content Include="ManageCenter\Ascx\UserManage.ascx" />
     <Content Include="ManageCenter\Chat.aspx" />
     <Content Include="ManageCenter\ConstructionPage.aspx" />
@@ -198,12 +199,13 @@
     <Content Include="ManageCenter\SysLog.aspx" />
     <Content Include="ManageCenter\SysManager.aspx" />
     <Content Include="ManageCenter\Term.aspx" />
-    <Content Include="ManageCenter\UserEdit.aspx" />
     <Content Include="ManageCenter\UserManage.aspx" />
     <Content Include="ManageCenter\UserManager\UnitCenter.aspx" />
     <Content Include="ManageCenter\UserManager\UnitEdit.aspx" />
     <Content Include="ManageCenter\UserManager\UserCenter.aspx" />
     <Content Include="ManageCenter\UserManager\UserEdit.aspx" />
+    <Content Include="ManageCenter\WorkPlan\Plan.aspx" />
+    <Content Include="ManageCenter\WorkPlan\PlanEdit.aspx" />
     <Content Include="Official\OfficialAccept.aspx" />
     <Content Include="Official\OfficialIndex.aspx" />
     <Content Include="Official\OfficialPublish.aspx" />
@@ -527,6 +529,13 @@
     <Compile Include="ManageCenter\Affiche.aspx.designer.cs">
       <DependentUpon>Affiche.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ManageCenter\AfficheEdit.aspx.cs">
+      <DependentUpon>AfficheEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\AfficheEdit.aspx.designer.cs">
+      <DependentUpon>AfficheEdit.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ManageCenter\Area.aspx.cs">
       <DependentUpon>Area.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -540,6 +549,13 @@
     </Compile>
     <Compile Include="ManageCenter\Ascx\Affiche.ascx.designer.cs">
       <DependentUpon>Affiche.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\Ascx\AfficheEdit.ascx.cs">
+      <DependentUpon>AfficheEdit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\Ascx\AfficheEdit.ascx.designer.cs">
+      <DependentUpon>AfficheEdit.ascx</DependentUpon>
     </Compile>
     <Compile Include="ManageCenter\Ascx\Area.ascx.cs">
       <DependentUpon>Area.ascx</DependentUpon>
@@ -701,13 +717,6 @@
     </Compile>
     <Compile Include="ManageCenter\Ascx\Term.ascx.designer.cs">
       <DependentUpon>Term.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="ManageCenter\Ascx\UserEdit.ascx.cs">
-      <DependentUpon>UserEdit.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ManageCenter\Ascx\UserEdit.ascx.designer.cs">
-      <DependentUpon>UserEdit.ascx</DependentUpon>
     </Compile>
     <Compile Include="ManageCenter\Ascx\UserManage.ascx.cs">
       <DependentUpon>UserManage.ascx</DependentUpon>
@@ -884,13 +893,6 @@
     <Compile Include="ManageCenter\Term.aspx.designer.cs">
       <DependentUpon>Term.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ManageCenter\UserEdit.aspx.cs">
-      <DependentUpon>UserEdit.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ManageCenter\UserEdit.aspx.designer.cs">
-      <DependentUpon>UserEdit.aspx</DependentUpon>
-    </Compile>
     <Compile Include="ManageCenter\UserManage.aspx.cs">
       <DependentUpon>UserManage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -925,6 +927,20 @@
     </Compile>
     <Compile Include="ManageCenter\UserManager\UserEdit.aspx.designer.cs">
       <DependentUpon>UserEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\WorkPlan\Plan.aspx.cs">
+      <DependentUpon>Plan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\WorkPlan\Plan.aspx.designer.cs">
+      <DependentUpon>Plan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\WorkPlan\PlanEdit.aspx.cs">
+      <DependentUpon>PlanEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\WorkPlan\PlanEdit.aspx.designer.cs">
+      <DependentUpon>PlanEdit.aspx</DependentUpon>
     </Compile>
     <Compile Include="Official\OfficialAccept.aspx.cs">
       <DependentUpon>OfficialAccept.aspx</DependentUpon>

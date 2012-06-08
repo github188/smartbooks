@@ -1,82 +1,83 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Plan.ascx.cs" Inherits="SmartHyd.ManageCenter.Ascx.Plan" %>
 <%@ Register Assembly="AspNetPager" Namespace="Wuqi.Webdiyer" TagPrefix="webdiyer" %>
+<link href="../../Css/patrol.css" rel="stylesheet" type="text/css" />
 <div id="tab">
-    <table width="100%" class="TableBlock">
-        <tr class="TableHeader">
-            <td width="12%">
-                <font size="+1">当前位置：</font>
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="height: 100%">
+        <tr>
+            <td style="height: 24px;">
+                <div id="Div1">
+                    <div class="OperateNote">
+                        <span id="buttons">
+                            <img src="../../Images/branch.png" alt="" border="0" />当前位置：<a href="../ManageCenter/Office.aspx">网络办公&gt;&gt;</a><a href="">事务提醒</a></span></div>
+                </div>
             </td>
-            <td width="88%">
-                <a href="../ManageCenter/Office.aspx"><font size="+1">网络办公&gt;&gt;</font></a> <a
-                    href="../ManageCenter/Plan.aspx"><font size="+1">事务提醒&gt;&gt;</font></a>
+        </tr>
+        <tr id="search_condition_panel" style="height: 24px; border-bottom: 1px solid #8cb2e2;">
+            <td>
+                <table id="PatrolSearch0" width="480px" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td height="24" align="right">
+                            <span id="PatrolSearch1">起始时间：</span>
+                        </td>
+                        <td height="24">
+                            <asp:TextBox ID="txt_startTime" runat="server" class="Wdate" Width="120" onFocus="WdatePicker({isShowClear:false,readOnly:true})"></asp:TextBox>
+                        </td>
+                        <td height="24" align="right">
+                            <span id="PatrolSearch2">截止时间：</span>
+                        </td>
+                        <td height="24">
+                            <asp:TextBox ID="txt_endTime" runat="server" Width="120" class="Wdate" onFocus="WdatePicker({isShowClear:false,readOnly:true})"></asp:TextBox>
+                        </td>
+                        <td width="80" height="24" align="center">
+                            <asp:Button ID="btn_ok" runat="server" Text="" CssClass="btn_search" OnClick="btn_ok_Click" />
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+                <asp:GridView ID="gv_log" runat="server" AutoGenerateColumns="False" BackColor="White"
+                    BorderColor="#CCCCCC" BorderStyle="None" Font-Size="12px" BorderWidth="1px" CellPadding="3"
+                    Width="100%">
+                    <Columns>
+                        <asp:BoundField DataField="CALENDARID" HeaderText="事务编号">
+                            <ItemStyle Width="80px" />
+                        </asp:BoundField>
+                        <asp:BoundField DataField="CALENDARTYPE" HeaderText="事务类型">
+                            <ItemStyle Width="100px" />
+                        </asp:BoundField>
+                        <asp:BoundField DataField="START_DATE" HeaderText="开始时间">
+                            <ItemStyle Width="150px" />
+                        </asp:BoundField>
+                        <asp:BoundField DataField="END_DATE" HeaderText="结束时间">
+                            <ItemStyle Width="150px" />
+                        </asp:BoundField>
+                        <asp:BoundField DataField="CALENDARCONTENT" HeaderText="事务内容" />
+                        <asp:BoundField DataField="CALENDARREMIND" HeaderText="提醒时间">
+                            <ItemStyle Width="150px" />
+                        </asp:BoundField>
+                    </Columns>
+                    <FooterStyle BackColor="White" ForeColor="#000066" />
+                    <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="White" ForeColor="#000066" HorizontalAlign="Left" />
+                    <RowStyle ForeColor="#000066" />
+                    <SelectedRowStyle BackColor="#669999" Font-Bold="True" ForeColor="White" />
+                    <SortedAscendingCellStyle BackColor="#F1F1F1" />
+                    <SortedAscendingHeaderStyle BackColor="#007DBB" />
+                    <SortedDescendingCellStyle BackColor="#CAC9C9" />
+                    <SortedDescendingHeaderStyle BackColor="#00547E" />
+                </asp:GridView>
+                <asp:Literal ID="litmsg" Visible="false" runat="server"></asp:Literal>
+                <webdiyer:AspNetPager ID="AspNetPager1" CssClass="anpager" runat="server" CustomInfoHTML="共%PageCount%页，当前为第%CurrentPageIndex%页"
+                    FirstPageText="首页" LastPageText="尾页" NextPageText="下一页" PageIndexBoxType="TextBox"
+                    PrevPageText="上一页" ShowCustomInfoSection="Right" ShowPageIndexBox="Auto" SubmitButtonText="Go"
+                    TextAfterPageIndexBox="页" TextBeforePageIndexBox="转到" OnPageChanging="AspNetPager1_PageChanging">
+                </webdiyer:AspNetPager>
             </td>
         </tr>
     </table>
-    <ul id="menu">
-        <li><a href="#tabs-1">事务提醒管理</a></li>
-        <li><a href="#tabs-2">添加事务提醒</a></li>
-    </ul>
-    <!--事务提醒管理开始-->
-    <div id="tabs-1">
-        <table class="edit" width="100%" cellspacing="0" cellpadding="3">
-            <asp:Repeater ID="repList" runat="server">
-                <HeaderTemplate>
-                    <thead>
-                        <tr>
-                            <th>
-                                编号
-                            </th>
-                            <th>
-                                事务类型
-                            </th>
-                            <th>
-                                开始时间
-                            </th>
-                            <th>
-                                结束时间
-                            </th>
-                            <th>
-                                日程内容
-                            </th>
-                            <th>
-                                提醒时间
-                            </th>
-                        </tr>
-                    </thead>
-                </HeaderTemplate>
-                <ItemTemplate>
-                    <tbody>
-                        <tr class="TableLine1">
-                            <td align="center">
-                                <%#Eval("CALENDARID")%>
-                            </td>
-                            <td align="center">
-                                <%#Eval("CALENDARTYPE")%>
-                            </td>
-                            <td align="center">
-                                <%#Eval("START_DATE")%>
-                            </td>
-                            <td align="center">
-                                <%#Eval("END_DATE")%>
-                            </td>
-                            <td align="center">
-                                <%#Eval("CALENDARCONTENT")%>
-                            </td>
-                            <td align="center">
-                                <%#Eval("CALENDARREMIND")%>
-                            </td>
-                        </tr>
-                    </tbody>
-                </ItemTemplate>
-            </asp:Repeater>
-        </table>
-        <webdiyer:AspNetPager ID="AspNetPager1" runat="server" CustomInfoHTML="共%PageCount%页，当前为第%CurrentPageIndex%页"
-            FirstPageText="首页" LastPageText="尾页" NextPageText="下一页" PageIndexBoxType="TextBox"
-            PrevPageText="上一页" ShowCustomInfoSection="Right" ShowPageIndexBox="Auto" SubmitButtonText="Go"
-            TextAfterPageIndexBox="页" TextBeforePageIndexBox="转到" OnPageChanging="AspNetPager1_PageChanging">
-        </webdiyer:AspNetPager>
-    </div>
-    <!--事务提醒管理结束-->
+ 
     <!--添加事务提醒开始-->
     <div id="tabs-2">
         <table class="TableBlock" width="100%">

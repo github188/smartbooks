@@ -1,46 +1,33 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Office.ascx.cs" Inherits="SmartHyd.ManageCenter.Ascx.Office" %>
 <%@ Register Assembly="AspNetPager" Namespace="Wuqi.Webdiyer" TagPrefix="webdiyer" %>
-<%@ Register Src="../../Ascx/Department.ascx" TagName="Department" TagPrefix="uc1" %>
-<div id="tab">
-    <table width="100%" class="TableBlock">
-        <tr class="TableHeader">
-            <td width="12%">
-                <font size="+1">当前位置：</font>
-            </td>
-            <td width="88%">
-                <a href="../ManageCenter/Office.aspx"><font size="+1">网络办公&gt;&gt;</font></a>
-            </td>
-        </tr>
-    </table>
-    <table width="100%" border="0">
-        <tr>
-            
-        </tr>
-        <tr>
-        <td align="center">
-                <p>
-                    <a href="../ManageCenter/Chat.aspx">
-                        <img src="../../Images/user.png" alt="即时通讯" /></a></p>
-                <p>
-                    <a href="../ManageCenter/Chat.aspx">即时通讯</a></p>
-            </td>
-            <td align="center">
-                <p>
-                    <a href="../ManageCenter/Plan.aspx">
-                        <img src="../../Images/Alarm.png" alt="事务提醒" /></a></p>
-                <p>
-                    <a href="../ManageCenter/Plan.aspx">事务提醒</a></p>
-            </td>
-            <td align="center">
-                <p>
-                    <a href="../ManageCenter/Affiche.aspx">
-                        <img src="../../Images/log.png" alt="电子公告" /></a></p>
-                <p>
-                    <a href="../ManageCenter/Affiche.aspx">电子公告</a></p>
-            </td>
-        </tr>
-        <tr>
-            
-        </tr>
-    </table>
+   <table border="0" cellpadding="0" cellspacing="0" style="height: 100%; width: 100%;">
+    <tr>
+        <td style="height: 37px; line-height: 37px;">
+            <div style="border-top: 2px solid #e7eaef">
+            </div>
+            <div id="menu">
+                <div class="patrolsitemap">
+                </div>
+                <ul>
+                    <li id="menu_Title0" onclick="nTabs('menu',this,3)" class="actived"><a href="../../ManageCenter/WorkPlan/Plan.aspx"
+                        target="SysFrame"><span id="buttons0">
+                            <img src="../../Images/i_user.png" alt="" border="0" />事务提醒</span></a></li>
+                    <li id="menu_Title1" onclick="nTabs('menu',this,3)" class="normal"><a href="../../ManageCenter/Affiche.aspx"
+                        target="SysFrame"><span id="buttons1">
+                            <img src="../../Images/i_role.png" alt="" border="0" />电子公告</span></a></li>
+                    <li id="menu_Title2" onclick="nTabs('menu',this,3)" class="normal"><a href="../../ManageCenter/Chat.aspx"
+                        target="SysFrame"><span id="buttons2">
+                            <img src="../../Images/i_log.png" alt="" border="0" />即时通讯</span></a></li>
+                </ul>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td valign="top">
+            <iframe src="../../ManageCenter/WorkPlan/Plan.aspx" name="SysFrame" id="SysFrame" frameborder="0" width="100%"
+                height="100%" scrolling="auto"></iframe>
+        </td>
+    </tr>
+</table>
+<div style="height: 20px;">
 </div>

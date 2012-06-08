@@ -7,28 +7,37 @@
 // </自动生成>
 //------------------------------------------------------------------------------
 
-namespace SmartHyd.ManageCenter.Ascx {
+namespace SmartHyd.ManageCenter.WorkPlan {
     
     
-    public partial class Affiche {
+    public partial class Plan {
         
         /// <summary>
-        /// txt_title 控件。
+        /// form1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_title;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// txt_endTime 控件。
+        /// DDLType 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_endTime;
+        protected global::System.Web.UI.WebControls.DropDownList DDLType;
+        
+        /// <summary>
+        /// txt_Time 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_Time;
         
         /// <summary>
         /// btn_ok 控件。
@@ -40,13 +49,22 @@ namespace SmartHyd.ManageCenter.Ascx {
         protected global::System.Web.UI.WebControls.Button btn_ok;
         
         /// <summary>
-        /// RptAffiche 控件。
+        /// gv_log 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater RptAffiche;
+        protected global::System.Web.UI.WebControls.GridView gv_log;
+        
+        /// <summary>
+        /// litmsg 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litmsg;
         
         /// <summary>
         /// AspNetPager1 控件。

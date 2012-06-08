@@ -82,7 +82,7 @@ namespace SmartHyd.ManageCenter.Ascx
             bll.Add(model);
           
             //重新加载当前页
-            Response.Redirect(Request.Url.AbsoluteUri, true);
+            Response.Redirect("Chat.aspx", true);
         }
     }
 }

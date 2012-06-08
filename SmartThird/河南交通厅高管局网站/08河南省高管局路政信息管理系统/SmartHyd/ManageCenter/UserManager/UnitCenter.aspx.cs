@@ -10,10 +10,12 @@ namespace SmartHyd.ManageCenter.UserManager {
     public partial class UnitCenter : System.Web.UI.Page {
 
         private BLL.BASE_USER bll = new BLL.BASE_USER();
+        private BLL.BASE_DEPT deptbll = new BLL.BASE_DEPT();
         private BLL.BASE_LOG logbll = new BLL.BASE_LOG();
 
         protected void Page_Load(object sender, EventArgs e) {
             if (!IsPostBack) {
+               
                 BindAcceptUnit();//绑定单位部门
             }
         }
@@ -25,8 +27,7 @@ namespace SmartHyd.ManageCenter.UserManager {
             //获取用户所属单位和下级部门
 
 
-            BLL.BASE_DEPT dept = new BLL.BASE_DEPT();
-            dt = dept.GetAllDep("STATUS=0");
+            dt = deptbll.GetAllDep("STATUS=0");
 
             foreach (DataRow dr in dt.Rows) {
                 if (dr["PARENTID"].ToString().Equals("0")) {
@@ -37,7 +38,7 @@ namespace SmartHyd.ManageCenter.UserManager {
                     //rootNode.ShowCheckBox = false;//设置复选框是否显示
                     rootNode.Target = "UserFrame";
                     rootNode.Expanded = true;
-                    rootNode.NavigateUrl = "../UserCenter.aspx?deptid=" + dr["DEPTID"].ToString();//设置导航：绑定该部门下用户
+                    rootNode.NavigateUrl = "UserCenter.aspx?deptid=" + dr["DEPTID"].ToString();//设置导航：绑定该部门下用户
 
                     //递归子节点
                     RecursiveBindAcceptUnit(rootNode, dt);
@@ -66,7 +67,7 @@ namespace SmartHyd.ManageCenter.UserManager {
                     //sub.ShowCheckBox = false;//设置复选框是否显示
                     sub.Target = "UserFrame";
                     sub.Expanded = false;
-                    sub.NavigateUrl = "../UserCenter.aspx?deptid=" + dr["DEPTID"].ToString();//设置导航：绑定该部门下用户
+                    sub.NavigateUrl = "UserCenter.aspx?deptid=" + dr["DEPTID"].ToString();//设置导航：绑定该部门下用户
                     node.ChildNodes.Add(sub);
 
                     //递归循环
@@ -102,7 +103,11 @@ namespace SmartHyd.ManageCenter.UserManager {
             hfdUnitName.Value = TreeViewAcceptUnit.SelectedNode.Text;
 
         }
-
+        /// <summary>
+        /// 按钮事件：添加
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void btnAdd_Click(object sender, ImageClickEventArgs e) {
 
             string dptid = hfdUnitCode.Value;
@@ -114,7 +119,11 @@ namespace SmartHyd.ManageCenter.UserManager {
                 ScriptManager.RegisterStartupScript(UpdatePanel1, UpdatePanel1.GetType(), "", "window.showModalDialog('UnitEdit.aspx?action=add&parentId=" + hfdUnitCode.Value + "&p=" + DateTime.Now.Millisecond + "','单位信息添加','dialogWidth=550px;dialogHeight=200px;menubars=0;status=0');window.location.href='UnitCenter.aspx';", true);
             }
         }
-
+        /// <summary>
+        /// 按钮事件：编辑
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void btnEdit_Click(object sender, ImageClickEventArgs e) {
 
             if (hfdUnitName.Value=="" || hfdUnitCode.Value == "") {
@@ -127,9 +136,41 @@ namespace SmartHyd.ManageCenter.UserManager {
         protected void btnDelete_Click(object sender, ImageClickEventArgs e) {
            //单位删除
             string unitId = hfdUnitCode.Value;//单位编号
+            if (hfdUnitName.Value == "" || hfdUnitCode.Value == "")
+            {
+                AjaxAlert(UpdatePanel1, "请选择要删除单位的节点！");
+                return;
+            }
+            else {
+                this.btnDelete.Attributes.Add("onclick ", "return confirm( '你确定要删除该单位？ ') ");
+                //提示确认删除该记录；判断该记录下是否有子单位：先删除子单位；删除后该记录下用户不可用
+                delDept(Convert.ToDecimal(unitId));//执行删除
+            }
+           // ScriptManager.RegisterStartupScript(UpdatePanel1, UpdatePanel1.GetType(), "", "window.showModalDialog('UnitEdit.aspx?action=del&unitid=" + hfdUnitCode.Value + "&p=" + DateTime.Now.Millisecond + "','单位信息删除','dialogWidth=550px;dialogHeight=200px;menubars=0;status=0');window.location.href='UnitCenter.aspx';", true);
+      
 
         }
-
+        /// <summary>
+        ///删除部门信息
+        /// </summary>
+        public void delDept(decimal deptid)
+        {
+            if (deptbll.del(deptid))//删除数据
+            {
+                //重新加载当前页
+                Response.Redirect(Request.Url.AbsoluteUri, true);
+            }
+            //#region 删除数据：更新数据库数据状态
+            ////获取实体
+            //Entity.BASE_DEPT model = bll.GetEntity(deptid);
+            //model.STATUS = 1;//设置部门状态为1：部门关闭
+            //if (bll.update(model))
+            //{
+            //    //重新加载当前页
+            //    Response.Redirect(Request.Url.AbsoluteUri, true);
+            //}
+            //#endregion
+        }
         public void AjaxAlert(UpdatePanel uPanel, string strMsg) {
             ScriptManager.RegisterStartupScript(uPanel, uPanel.GetType(), "", "alert('" + strMsg + "');", true);
         }

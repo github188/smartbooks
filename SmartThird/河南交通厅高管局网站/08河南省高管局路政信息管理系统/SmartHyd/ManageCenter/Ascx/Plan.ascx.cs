@@ -31,7 +31,8 @@ namespace SmartHyd.ManageCenter.Ascx
         {
             DataTable dt = new DataTable();
             dt = bll.GetPlanList("1=1");
-
+            if (dt != null && dt.Rows.Count > 0)
+            {
             AspNetPager1.RecordCount = dt.Rows.Count;
 
             PagedDataSource pds = new PagedDataSource();
@@ -40,12 +41,16 @@ namespace SmartHyd.ManageCenter.Ascx
             pds.CurrentPageIndex = AspNetPager1.CurrentPageIndex - 1;
             pds.PageSize = AspNetPager1.PageSize;
 
-
-            this.repList.DataSource = pds; //定义数据源
-            this.repList.DataBind(); //绑定数据
+            this.gv_log.DataSource = pds; //定义数据源
+            this.gv_log.DataBind(); //绑定数据
+        }
+        else {
+                litmsg.Visible = true;
+                litmsg.Text = "<div style='font-size:16px; font-family:微软雅黑; color:red;font-weight:bold; text-align:center;'>无相关系统日志记录!</div>"; 
+            }
         }
         /// <summary>
-        /// 获取日志信息实体
+        /// 获取事务信息实体
         /// </summary>
         /// <returns></returns>
         private Entity.BASE_PLAN GetEntity()
@@ -173,6 +178,15 @@ namespace SmartHyd.ManageCenter.Ascx
             logbll.Add(logmodel);
             //重新加载当前页
             Response.Redirect(Request.Url.AbsoluteUri, true);
+        }
+        /// <summary>
+        /// 查询
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void btn_ok_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
