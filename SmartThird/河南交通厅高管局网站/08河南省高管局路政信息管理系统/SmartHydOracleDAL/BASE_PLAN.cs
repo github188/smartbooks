@@ -64,7 +64,8 @@ namespace SmartHyd.OracleDAL
                         new OracleParameter(":END_DATE", OracleType.DateTime) ,            
                         new OracleParameter(":CALENDARREMIND", OracleType.DateTime) ,            
                         new OracleParameter(":CALENDARTYPE", OracleType.VarChar,50),
-                        new OracleParameter(":STATE",OracleType.Number,4)
+                        new OracleParameter(":STATE",OracleType.Number,4),
+                            new OracleParameter(":TITLE",OracleType.VarChar,50)
               
             };
 
@@ -76,6 +77,7 @@ namespace SmartHyd.OracleDAL
             parameters[5].Value = entity.CALENDARREMIND;
             parameters[6].Value = entity.CALENDARTYPE;
             parameters[7].Value = entity.STATE;
+            parameters[8].Value = entity.TITLE;
             OracleHelper.ExecuteNonQuery(strSql.ToString(), parameters);
 
         }
@@ -95,8 +97,9 @@ namespace SmartHyd.OracleDAL
             strSql.Append(" START_DATE = :START_DATE , ");
             strSql.Append(" END_DATE = :END_DATE , ");
             strSql.Append(" CALENDARREMIND = :CALENDARREMIND , ");
-            strSql.Append(" CALENDARTYPE = :CALENDARTYPE  ");
-            strSql.Append(" STATE = :STATE  ");
+            strSql.Append(" CALENDARTYPE = :CALENDARTYPE  ,");
+            strSql.Append(" STATE = :STATE  ,");
+            strSql.Append(" TITLE=:TITLE ");
             strSql.Append(" where CALENDARID=:CALENDARID  ");
 
             OracleParameter[] parameters = {
@@ -107,8 +110,8 @@ namespace SmartHyd.OracleDAL
                         new OracleParameter(":END_DATE", OracleType.DateTime) ,            
                         new OracleParameter(":CALENDARREMIND", OracleType.DateTime) ,            
                         new OracleParameter(":CALENDARTYPE", OracleType.VarChar,50),
-                        new OracleParameter(":STATE",OracleType.Number,4)
-              
+                        new OracleParameter(":STATE",OracleType.Number,4),
+              new OracleParameter(":TITLE", OracleType.VarChar,50)
             };
 
             parameters[0].Value = entity.CALENDARID;
@@ -119,6 +122,7 @@ namespace SmartHyd.OracleDAL
             parameters[5].Value = entity.CALENDARREMIND;
             parameters[6].Value = entity.CALENDARTYPE;
             parameters[7].Value = entity.STATE;
+            parameters[8].Value = entity.TITLE;
             int rows = OracleHelper.ExecuteNonQuery(strSql.ToString(), parameters);
             if (rows > 0)
             {
@@ -165,7 +169,7 @@ namespace SmartHyd.OracleDAL
         {
 
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("select CALENDARID, USERID, CALENDARCONTENT, START_DATE, END_DATE, CALENDARREMIND, CALENDARTYPE ,STATE");
+            strSql.Append("select CALENDARID, USERID, CALENDARCONTENT, START_DATE, END_DATE, CALENDARREMIND, CALENDARTYPE ,STATE,TITLE");
             strSql.Append("  from BASE_PLAN ");
             strSql.Append(" where CALENDARID=:CALENDARID ");
             OracleParameter[] parameters = {
