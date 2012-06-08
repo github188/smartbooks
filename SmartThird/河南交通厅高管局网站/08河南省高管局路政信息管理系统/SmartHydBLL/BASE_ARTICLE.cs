@@ -28,6 +28,15 @@ namespace SmartHyd.BLL {
         public void Add(Entity.BASE_ARTICLE model) {
             dal.Add(model);
         }
+
+        /// <summary>
+        /// 更新公文
+        /// </summary>
+        /// <param name="model">公文实体</param>
+        /// <returns></returns>
+        public bool Update(Entity.BASE_ARTICLE model) {
+            return dal.Update(model);
+        }
         
         /// <summary>
         /// Get reply list data.

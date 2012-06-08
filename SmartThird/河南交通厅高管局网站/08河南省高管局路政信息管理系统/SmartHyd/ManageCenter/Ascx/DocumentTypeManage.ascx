@@ -6,7 +6,7 @@
 <div id="tab">
     <ul id="menu">
         <li><a href="#tabs-1">新建档案分类</a></li>
-        <li><a href="#tabs-2">档案分类浏览</a></li>
+        <li><a href="#tabs-2">档案分类管理</a></li>
     </ul>
     <!--新建档案分类开始-->
     <div id="tabs-1">

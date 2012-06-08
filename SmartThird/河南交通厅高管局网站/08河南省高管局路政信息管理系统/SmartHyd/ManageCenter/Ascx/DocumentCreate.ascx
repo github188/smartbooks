@@ -17,8 +17,9 @@
                 发文标题:
             </td>
             <td class="TableData" style="width: 100%;">
+                <asp:HiddenField ID="hidPrimary" runat="server" Value="-1" />
                 <asp:TextBox ID="txtTitle" runat="server" CssClass="input {required:true,minlength:1,maxlength:800}"
-                    Width="70%">
+                    Width="70%" MaxLength="80">
                 </asp:TextBox>
                 <div class="validate ui-state-highlight ui-corner-all " style="border: none;">
                 </div>
@@ -35,7 +36,7 @@
             </td>
             <td class="TableData">
                 <asp:TextBox ID="txtSendCode" runat="server" CssClass="input {required:true,minlength:1,maxlength:80}"
-                    Width="200"></asp:TextBox>
+                    Width="200" MaxLength="80"></asp:TextBox>
                 <div class="validate ui-state-highlight ui-corner-all " style="border: none;">
                 </div>
             </td>
@@ -47,7 +48,7 @@
             </td>
             <td class="TableData">
                 <asp:TextBox ID="txtContent" runat="server" CssClass="input {required:true,minlength:1,maxlength:4000}"
-                    TextMode="MultiLine">
+                    TextMode="MultiLine" MaxLength="4000" Width="100%" Height="200">
                 </asp:TextBox>
                 <div class="validate ui-state-highlight ui-corner-all " style="border: none;">
                 </div>
@@ -73,7 +74,6 @@
                     <asp:ListItem Text="年终考核" Value="0"></asp:ListItem>
                     <asp:ListItem Text="浮动考核" Value="0"></asp:ListItem>
                 </asp:DropDownList>
-
                 <a href="DocumentTypeManage.aspx">新建公文分类</a>
             </td>
         </tr>
@@ -84,7 +84,7 @@
             </td>
             <td class="TableData">
                 <asp:TextBox ID="txtSCORE" runat="server" CssClass="input {required:true,minlength:1,maxlength:3}"
-                    Width="75">0</asp:TextBox>
+                    Width="75" MaxLength="5">0</asp:TextBox>
                 <div class="validate ui-state-highlight ui-corner-all " style="border: none;">
                 </div>
             </td>
@@ -121,6 +121,7 @@
         <!--操作按钮-->
         <tr class="TableControl" align="center">
             <td colspan="3" nowrap="nowrap">
+                <asp:Literal ID="litmsg" Visible="false" runat="server"></asp:Literal>
                 <asp:Button ID="btnSubmit" runat="server" Text="提交" CssClass="BigButtonA" OnClick="btnSubmit_Click" />
             </td>
         </tr>

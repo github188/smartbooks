@@ -900,24 +900,28 @@
     </Compile>
     <Compile Include="ManageCenter\UserManager\UnitCenter.aspx.cs">
       <DependentUpon>UnitCenter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ManageCenter\UserManager\UnitCenter.aspx.designer.cs">
       <DependentUpon>UnitCenter.aspx</DependentUpon>
     </Compile>
     <Compile Include="ManageCenter\UserManager\UnitEdit.aspx.cs">
       <DependentUpon>UnitEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ManageCenter\UserManager\UnitEdit.aspx.designer.cs">
       <DependentUpon>UnitEdit.aspx</DependentUpon>
     </Compile>
     <Compile Include="ManageCenter\UserManager\UserCenter.aspx.cs">
       <DependentUpon>UserCenter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ManageCenter\UserManager\UserCenter.aspx.designer.cs">
       <DependentUpon>UserCenter.aspx</DependentUpon>
     </Compile>
     <Compile Include="ManageCenter\UserManager\UserEdit.aspx.cs">
       <DependentUpon>UserEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ManageCenter\UserManager\UserEdit.aspx.designer.cs">
       <DependentUpon>UserEdit.aspx</DependentUpon>

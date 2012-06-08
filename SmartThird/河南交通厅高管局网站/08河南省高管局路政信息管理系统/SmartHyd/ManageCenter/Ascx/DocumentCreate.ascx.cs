@@ -9,14 +9,13 @@ using System.Data;
 using System.IO;
 
 namespace SmartHyd.ManageCenter.Ascx {
-    public partial class DocumentCreate : UI.BaseUserControl {        
-        #region 私有字段
+    public partial class DocumentCreate : UI.BaseUserControl {
         private BLL.BASE_ARTICLE bll = new BLL.BASE_ARTICLE();
         private BLL.BASE_ARTICLE_TYPE bllType = new BLL.BASE_ARTICLE_TYPE();
         private Utility.UserSession userSession;
         private int inde = 0;
-        #endregion
 
+        //页面加载
         protected void Page_Load(object sender, EventArgs e) {
             userSession = (Utility.UserSession)Session["user"];
 
@@ -59,9 +58,9 @@ namespace SmartHyd.ManageCenter.Ascx {
                 ddlTypeId.SelectedIndex = 0;
             }
         }
-        //获取实体
-        private Entity.BASE_ARTICLE GetEntity() {            
 
+        //获取实体
+        private Entity.BASE_ARTICLE GetEntity() {
             Entity.BASE_ARTICLE model = new Entity.BASE_ARTICLE();
             model.CONTENT = txtContent.Text;    //内容            
             model.ISREPLY = Convert.ToInt32(rdoIsReply.SelectedValue);  //允许回复            
@@ -75,8 +74,12 @@ namespace SmartHyd.ManageCenter.Ascx {
             model.ANNEX = "";                   //附件
             model.USERID = userSession.USERID;  //用户编号
             model.DEPTID = userSession.DEPTID;  //所属部门
+
+            model.ID = Convert.ToInt32(hidPrimary.Value);   //主键
+
             return model;
         }
+
         //设置实体
         private void SetEntity(Entity.BASE_ARTICLE model) {
             if (model != null) {
@@ -87,6 +90,12 @@ namespace SmartHyd.ManageCenter.Ascx {
                 ddlStatus.SelectedValue = model.STATUS.ToString();      //发文状态
                 txtTitle.Text = model.TITLE;                            //标题
                 ddlTypeId.SelectedValue = model.TYPEID.ToString();      //公文类别
+                hidPrimary.Value = model.ID.ToString();                 //主键
+
+                //判断是否为编辑模式
+                if (model.ID == null || model.ID > -1) {
+                    TreeViewAcceptUnit.Enabled = false;
+                }
 
                 //model.PARENTID = 0;                 //父发文编号
                 //model.TIMESTAMP = DateTime.Now;     //时间戳
@@ -95,6 +104,7 @@ namespace SmartHyd.ManageCenter.Ascx {
                 //model.ANNEX = "";                   //附件
             }
         }
+
         //遍历每一个部门节点
         private void RecursiveSubNode(TreeNode node, int articleId) {
             if (node.Checked) {
@@ -111,6 +121,7 @@ namespace SmartHyd.ManageCenter.Ascx {
                 RecursiveSubNode(subNode, articleId);
             }
         }
+
         //绑定档案分类节点
         private void InitTreeNodes(DropDownList ddl, int parentId, DataTable dt, int indent) {
             foreach (DataRow dr in dt.Rows) {
@@ -128,6 +139,7 @@ namespace SmartHyd.ManageCenter.Ascx {
                 }
             }
         }
+
         //绑定收文单位
         private void BindAcceptUnit() {
             DataTable dt = new DataTable();
@@ -152,6 +164,7 @@ namespace SmartHyd.ManageCenter.Ascx {
                 }
             }
         }
+
         /// <summary>
         /// 填充部门树
         /// </summary>
@@ -174,6 +187,7 @@ namespace SmartHyd.ManageCenter.Ascx {
                 }
             }
         }
+
         //校验选择的部门树
         private bool CheckSelectDepartment() {
             bool res = false;
@@ -185,6 +199,58 @@ namespace SmartHyd.ManageCenter.Ascx {
             }
             return res;
         }
+
+        //检验提交表单
+        private bool CheckSubmitForm() {
+            //检验标题:长度/空值
+            if (string.IsNullOrWhiteSpace(txtTitle.Text)) {
+                litmsg.Visible = true;
+                litmsg.Text = "<div style='font-size:16px; font-family:微软雅黑; color:red;font-weight:bold; text-align:center;float:left;'>公文标题不能为空!</div>";
+                txtTitle.Focus();
+                return false;
+            }
+
+            //发文字号
+            if (string.IsNullOrWhiteSpace(txtSendCode.Text)) {
+                litmsg.Visible = true;
+                litmsg.Text = "<div style='font-size:16px; font-family:微软雅黑; color:red;font-weight:bold; text-align:center;float:left;'>发文字号不能为空!</div>";
+                txtSendCode.Focus();
+                return false;
+            }
+
+            //内容
+            if (string.IsNullOrWhiteSpace(txtContent.Text)) {
+                litmsg.Visible = true;
+                litmsg.Text = "<div style='font-size:16px; font-family:微软雅黑; color:red;font-weight:bold; text-align:center;float:left;'>公文内容不能为空!</div>";
+                txtContent.Focus();
+                return false;
+            }
+
+            //发文分值
+            try {
+                Convert.ToInt32(txtSCORE.Text);
+            }
+            catch {
+                litmsg.Visible = true;
+                litmsg.Text = "<div style='font-size:16px; font-family:微软雅黑; color:red;font-weight:bold; text-align:center; float:left;'>公文分值必须为有效数字!</div>";
+                txtSCORE.Focus();
+                return false;
+            }
+
+            /*编辑模式不校验接收部门*/
+            if (TreeViewAcceptUnit.Enabled) {
+                //校验是否选择了至少一个部门
+                if (!CheckSelectDepartment()) {
+                    litmsg.Visible = true;
+                    litmsg.Text = "<div style='font-size:16px; font-family:微软雅黑; color:red;font-weight:bold; text-align:center; float:left;'>请选择至少一个公文接收的部门!</div>";
+                    return false;
+                }
+            }
+
+            litmsg.Visible = false;
+            return true;
+        }
+
         //递归检查有无选中的节点
         private void RecursiveCheckNode(TreeNode node, ref bool isSelected) {
             if (node.Checked) {
@@ -195,60 +261,83 @@ namespace SmartHyd.ManageCenter.Ascx {
                 RecursiveCheckNode(sub, ref isSelected);
             }
         }
-        //添加公文
+
+        //提交操作
         protected void btnSubmit_Click(object sender, EventArgs e) {
-            //校验输入
-            if (CheckSelectDepartment()) {
-                //获取实体
-                Entity.BASE_ARTICLE model;
-                model = this.GetEntity();
+            litmsg.Visible = false;
 
-                #region 上传附件
-                //此处实现上传附件
-                string serverPath = "";
-                if (!string.IsNullOrEmpty(fileUpAnnex.FileName)) {
-                    //服务器存储路径
-                    string filePath = string.Format("{0}Document\\{1}\\",
-                        Server.MapPath("~/"),
-                        DateTime.Now.ToString("yyyyMMdd"));
-
-                    //服务器存储文件名
-                    string fileName = string.Format("{0}.{1}",
-                        Guid.NewGuid().ToString(),
-                        fileUpAnnex.FileName.Substring(fileUpAnnex.FileName.Length - 3, 3));
-
-                    //判断路径是否存在，如果不存在那么则创建这个路径
-                    if (!Directory.Exists(filePath)) {
-                        Directory.CreateDirectory(filePath);
-                    }
-
-                    //上传附件
-                    serverPath += string.Format("Document/{0}/{1}",
-                        DateTime.Now.ToString("yyyyMMdd"),
-                        fileName);
-                    fileUpAnnex.SaveAs(filePath + fileName);
-                }
-                //保存附件路径
-                model.ANNEX = serverPath;
-                #endregion
-
-                //保存公文到数据库
-                bll.Add(model);
-
-                //获取出刚添加的公文ID编号
-                string where = string.Format("TITLE='{0}'", model.TITLE);
-                int id = Convert.ToInt32(bll.GetList(where).Rows[0]["ID"].ToString());
-
-                //增加公文接收部门记录                
-                foreach (TreeNode node in TreeViewAcceptUnit.Nodes) {
-                    RecursiveSubNode(node, id);
-                }
-
-                //重新加载当前页
-                Response.Redirect("DocumentManage.aspx", true);
-            } else {
-                Smart.Utility.Alerts.Alert("请选择至少一个公文接收的部门");
+            //检验提交表单
+            if (!CheckSubmitForm()) {
+                return;
             }
+
+            //获取实体
+            Entity.BASE_ARTICLE model;
+            model = this.GetEntity();
+
+            /*大于等于0编辑模式，小于0新建模式*/
+            if (model.ID < 0) {
+                this.Create(model); //添加公文
+            }
+            else {
+                this.Update(model); //编辑公文
+            }
+
+            //重新加载当前页
+            Response.Redirect("~/Official/OfficialIndex.aspx", true);
+        }
+
+        //添加公文
+        private void Create(Entity.BASE_ARTICLE model) {
+            #region 上传附件
+            //此处实现上传附件
+            string serverPath = "";
+            if (!string.IsNullOrEmpty(fileUpAnnex.FileName)) {
+                //服务器存储路径
+                string filePath = string.Format("{0}Document\\{1}\\",
+                    Server.MapPath("~/"),
+                    DateTime.Now.ToString("yyyyMMdd"));
+
+                //服务器存储文件名
+                string fileName = string.Format("{0}.{1}",
+                    Guid.NewGuid().ToString(),
+                    fileUpAnnex.FileName.Substring(fileUpAnnex.FileName.Length - 3, 3));
+
+                //判断路径是否存在，如果不存在那么则创建这个路径
+                if (!Directory.Exists(filePath)) {
+                    Directory.CreateDirectory(filePath);
+                }
+
+                //上传附件
+                serverPath += string.Format("Document/{0}/{1}",
+                    DateTime.Now.ToString("yyyyMMdd"),
+                    fileName);
+                fileUpAnnex.SaveAs(filePath + fileName);
+            }
+            //保存附件路径
+            model.ANNEX = serverPath;
+            #endregion
+
+            //保存公文到数据库
+            bll.Add(model);
+
+            //获取出刚添加的公文ID编号
+            string where = string.Format("TITLE='{0}'", model.TITLE);
+            int id = Convert.ToInt32(bll.GetList(where).Rows[0]["ID"].ToString());
+
+            //增加公文接收部门记录                
+            foreach (TreeNode node in TreeViewAcceptUnit.Nodes) {
+                RecursiveSubNode(node, id);
+            }
+        }
+
+        //更新公文
+        private void Update(Entity.BASE_ARTICLE model) {
+            /*
+             * 说明:发送到单位不能更改，附件不更改。
+             */
+
+            bll.Update(model);
         }
     }
 }
