@@ -1,14 +1,16 @@
 -- Start of DDL Script for Table ORAHYD.BASE_PLAN
--- Generated 29-五月-2012 14:25:54 from ORAHYD@ORAHYD
+-- Generated 2012-6-9 下午 07:03:27 from ORAHYD@ORAHYD
 
-CREATE TABLE orahyd.base_plan
+CREATE TABLE base_plan
     (calendarid                     NUMBER NOT NULL,
     userid                         NUMBER NOT NULL,
     calendarcontent                VARCHAR2(200),
     start_date                     DATE DEFAULT sysdate,
     end_date                       DATE DEFAULT sysdate,
     calendarremind                 DATE DEFAULT sysdate NOT NULL,
-    calendartype                   VARCHAR2(50))
+    calendartype                   VARCHAR2(50),
+    state                          NUMBER DEFAULT 0 NOT NULL,
+    title                          VARCHAR2(50))
   PCTFREE     10
   INITRANS    1
   MAXTRANS    255
@@ -24,9 +26,9 @@ CREATE TABLE orahyd.base_plan
 
 
 
--- Constraints for ORAHYD.BASE_PLAN
+-- Constraints for BASE_PLAN
 
-ALTER TABLE orahyd.base_plan
+ALTER TABLE base_plan
 ADD CONSTRAINT pk_base_plan PRIMARY KEY (calendarid)
 USING INDEX
   PCTFREE     10
@@ -41,13 +43,13 @@ USING INDEX
 /
 
 
--- Triggers for ORAHYD.BASE_PLAN
+-- Triggers for BASE_PLAN
 
-CREATE OR REPLACE TRIGGER ORAHYD.TRG_BASE_PLAN
- BEFORE 
- INSERT
- ON BASE_PLAN
- REFERENCING OLD AS OLD NEW AS NEW
+CREATE OR REPLACE TRIGGER trg_base_plan
+ BEFORE
+  INSERT
+ ON base_plan
+REFERENCING NEW AS NEW OLD AS OLD
  FOR EACH ROW
 DECLARE
    integrity_error   EXCEPTION;
@@ -66,23 +68,27 @@ END;
 /
 
 
--- Comments for ORAHYD.BASE_PLAN
+-- Comments for BASE_PLAN
 
-COMMENT ON TABLE orahyd.base_plan IS '日程信息表'
+COMMENT ON TABLE base_plan IS '日程信息表'
 /
-COMMENT ON COLUMN orahyd.base_plan.calendarcontent IS '日程内容'
+COMMENT ON COLUMN base_plan.calendarcontent IS '日程内容'
 /
-COMMENT ON COLUMN orahyd.base_plan.calendarid IS '日程信息编号'
+COMMENT ON COLUMN base_plan.calendarid IS '日程信息编号'
 /
-COMMENT ON COLUMN orahyd.base_plan.calendarremind IS '提醒时间'
+COMMENT ON COLUMN base_plan.calendarremind IS '提醒时间'
 /
-COMMENT ON COLUMN orahyd.base_plan.calendartype IS '事务类型'
+COMMENT ON COLUMN base_plan.calendartype IS '事务类型'
 /
-COMMENT ON COLUMN orahyd.base_plan.end_date IS '结束时间'
+COMMENT ON COLUMN base_plan.end_date IS '结束时间'
 /
-COMMENT ON COLUMN orahyd.base_plan.start_date IS '开始时间'
+COMMENT ON COLUMN base_plan.start_date IS '开始时间'
 /
-COMMENT ON COLUMN orahyd.base_plan.userid IS '用户编号'
+COMMENT ON COLUMN base_plan.state IS '事务状态（0：正常；1：删除）'
+/
+COMMENT ON COLUMN base_plan.title IS '事务标题'
+/
+COMMENT ON COLUMN base_plan.userid IS '用户编号'
 /
 
 -- End of DDL Script for Table ORAHYD.BASE_PLAN

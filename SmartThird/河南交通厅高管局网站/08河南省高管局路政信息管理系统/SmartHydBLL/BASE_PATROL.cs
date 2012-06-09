@@ -22,9 +22,48 @@ namespace SmartHyd.BLL {
             
             return dal.GetDeptLog(beginTime, endTime, deptCode);
         }
-
+        /// <summary>
+        /// 根据条件获取巡逻日志
+        /// </summary>
+        /// <param name="strwhere"></param>
+        /// <returns></returns>
+        public DataTable GetPatrol(string strwhere)
+        {
+            return dal.GetList(strwhere).Tables[0];
+        }
+        /// <summary>
+        /// 获取人工巡逻日志信息实体
+        /// </summary>
+        /// <param name="PATROLID"></param>
+        /// <returns></returns>
+        public Entity.BASE_PATROL GetModel(decimal PATROLID)
+        {
+            return dal.GetEntity(PATROLID);
+        }
+        /// <summary>
+        /// 添加一条人工巡逻日志信息
+        /// </summary>
+        /// <param name="model"></param>
         public void Add(Entity.BASE_PATROL model) {
             dal.Add(model);
+        }
+        /// <summary>
+        /// 更新一条人工巡逻日志信息
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        public bool update(Entity.BASE_PATROL model)
+        {
+            return dal.Update(model);
+        }
+        /// <summary>
+        /// 根据日志编号删除
+        /// </summary>
+        /// <param name="patrol"></param>
+        /// <returns></returns>
+        public bool del(decimal patrolid)
+        {
+            return dal.Delete(patrolid);
         }
     }
 }

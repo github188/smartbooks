@@ -11,7 +11,11 @@ namespace SmartHyd.ManageCenter
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+           // AjaxPro.Utility.RegisterTypeForAjax(typeof(DeptManage));//对AjaxPro在页Page_Load事件中进行运行时注册;
+            if (!IsPostBack)
+            {
+                
+            }
         }
     }
 }

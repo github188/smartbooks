@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PatrolEdit.aspx.cs" Inherits="SmartHyd.Patrol.PatrolEdit" %>
 
-<%@ Register src="../Ascx/Department.ascx" tagname="Department" tagprefix="uc1" %>
+<%@ Register src="~/Ascx/Department.ascx" tagname="Department" tagprefix="uc1" %>
 
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -82,8 +82,9 @@
 <body>
     <form id="form1" runat="server">
     <div id="menu">
-        <div class="OperateNote"><span id="buttons"><img src="../Images/addDocument.png" border="0" />&nbsp;添加巡逻日志</span></div>
-        <div class="ReturnPreview"><span id="buttons" onclick="GoBack()"><img src="../Images/back.png" border="0" />返回上一页面</span></div>
+        <div class="OperateNote"><span id="buttons0"><img src="../Images/addDocument.png" alt="" border="0" />&nbsp;<asp:Label ID="LabName" runat="server"
+                Text=""></asp:Label></span></div>
+        <div class="ReturnPreview"><span id="buttons1" onclick="GoBack()"><img src="../Images/back.png" alt="" border="0" />返回上一页面</span></div>
     </div>
     <table class="edit" width="100%">
             <tbody>

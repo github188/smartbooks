@@ -42,6 +42,10 @@ namespace SmartHyd.Entity {
         /// 部门
         /// </summary>		
         private decimal _DEPTID;
+        /// <summary>
+        /// 状态
+        /// </summary>
+        private decimal _STATE;
 
         /// <summary>
         /// 电子巡逻日志编号
@@ -91,6 +95,13 @@ namespace SmartHyd.Entity {
         public decimal DEPTID {
             get { return _DEPTID; }
             set { _DEPTID = value; }
+        }
+        /// <summary>
+        /// 状态
+        /// </summary>
+        public decimal STATE {
+            get { return _STATE; }
+            set { _STATE = value; }
         }
     }
 }

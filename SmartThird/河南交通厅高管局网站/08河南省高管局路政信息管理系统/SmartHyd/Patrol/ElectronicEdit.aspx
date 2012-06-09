@@ -45,8 +45,9 @@
 <body>
     <form id="form1" runat="server">
     <div id="menu">
-        <div class="OperateNote"><span id="buttons"><img src="../Images/addDocument.png" border="0" />&nbsp;添加巡逻日志</span></div>
-        <div class="ReturnPreview"><span id="buttons" onclick="GoBack()"><img src="../Images/back.png" border="0" />返回上一页面</span></div>
+        <div class="OperateNote"><span id="buttons"><img src="../Images/addDocument.png" alt="" border="0" />&nbsp;<asp:Label ID="LabName"
+                runat="server" Text="Label"></asp:Label></span></div>
+        <div class="ReturnPreview"><span id="buttons" onclick="GoBack()"><img src="../Images/back.png" alt="" border="0" />返回上一页面</span></div>
     </div>
     <table class="edit" width="100%">
             <tbody>

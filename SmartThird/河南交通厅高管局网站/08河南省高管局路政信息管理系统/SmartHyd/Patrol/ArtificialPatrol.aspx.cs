@@ -21,12 +21,14 @@ namespace SmartHyd.Patrol {
         }
 
         private void bindDeptLog() {
-            DateTime beginTime = DateTime.Now.AddDays(-5);
+            //初始化数据
+            DateTime beginTime = DateTime.Now.AddDays(-10);
             DateTime endTime = DateTime.Now;
             int deptCode = 0;
             DataTable dt = new DataTable();
             dt = bll.GetDeptLog(beginTime, endTime, deptCode);
-
+            //获取全部人工巡逻日志
+            //dt = bll.GetPatrol("1=1");
             if (dt != null && dt.Rows.Count > 0) {
                 AspNetPager1.RecordCount = dt.Rows.Count;
 
@@ -35,7 +37,6 @@ namespace SmartHyd.Patrol {
                 pds.AllowPaging = true;
                 pds.CurrentPageIndex = AspNetPager1.CurrentPageIndex - 1;
                 pds.PageSize = AspNetPager1.PageSize;
-
 
                 this.gv_patrollist.DataSource = pds;
                 this.gv_patrollist.DataBind();
@@ -57,7 +58,32 @@ namespace SmartHyd.Patrol {
         /// <param name="sender"></param>
         /// <param name="e"></param>
         protected void btn_ok_Click(object sender, EventArgs e) {
-
+            string strwhere = string.Empty;
+            
+            if (this.txt_vehicleLicense.Text == "" && this.txt_startTime.Text == "" && this.txt_endTime.Text == "")
+            {
+                //按单位查询
+                strwhere = "";
+            }
+            else
+            { 
+                //综合查询
+                strwhere = "";
+            }
+            
+            if (this.txt_startTime.Text == "" && this.txt_endTime.Text == "")
+            {
+                //按巡逻单位+车牌号查询
+                strwhere = "";
+            }
+            else
+            {
+                //按巡逻单位+车牌号查询
+                strwhere = "";
+            }
+            //按巡逻单位+起始时间查询
+            //按截止时间查询
+            
         }
     }
 }

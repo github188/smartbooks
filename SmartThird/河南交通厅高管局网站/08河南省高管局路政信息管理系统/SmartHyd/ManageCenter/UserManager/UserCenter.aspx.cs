@@ -18,17 +18,17 @@ namespace SmartHyd.ManageCenter.UserManager
         {
             if (!IsPostBack)
             {
-                string aa = Request.QueryString["action"];
-                //if (null == Request.QueryString["deptid"] || "" == Request.QueryString["deptid"])
-                //{
-                //    //初始化用户列表：默认4代表河南省交通运输厅高速公路管理局下的用户
-                //    BindUserList(4);//绑定用户列表
-                //    ViewState["deptid"] = 4;//用于存储当前部门编号
-                //}
-                //else
-                //{
-                decimal deptid = 4;// Convert.ToDecimal(Request.QueryString["deptid"]);//获取部门编号
-                    //ViewState["deptid"] = deptid;//用于存储当前部门编号
+                // string aa = Request.QueryString["action"];
+                if (null == Request.QueryString["deptid"] || "" == Request.QueryString["deptid"])
+                {
+                    //初始化用户列表：默认4代表河南省交通运输厅高速公路管理局下的用户
+                    BindUserList(4);//绑定用户列表
+                    ViewState["deptid"] = 4;//用于存储当前部门编号
+                }
+                else
+                {
+                    decimal deptid = Convert.ToDecimal(Request.QueryString["deptid"]);//获取部门编号
+                    ViewState["deptid"] = deptid;//用于存储当前部门编号
                     if (null == Request.QueryString["userid"] || "" == Request.QueryString["userid"])
                     {
                         //判读用户编号是否为空；
@@ -36,15 +36,15 @@ namespace SmartHyd.ManageCenter.UserManager
                     }
                     else
                     {//不为空执行删除操作
-                        if (Request.QueryString["action"]=="del")
+                        if (Request.QueryString["action"] == "del")
                         {
-                            
+
                             int userid = Convert.ToInt32(Request.QueryString["userid"]);
                             Updatestate(userid);//删除用户
                             BindUserList(deptid);//绑定用户列表
                         }
                         BindUserList(deptid);//绑定用户列表
-                    //}
+                    }
                 }
             }
         }
@@ -96,7 +96,7 @@ namespace SmartHyd.ManageCenter.UserManager
         protected void btnAdd_Click(object sender, ImageClickEventArgs e)
         {
             //传递当前部门编号
-           // Response.Redirect("UserEdit.aspx?deptid=" + ViewState["deptid"]);
+            // Response.Redirect("UserEdit.aspx?deptid=" + ViewState["deptid"]);
             Response.Redirect("UserEdit.aspx");
         }
         public void AjaxAlert(UpdatePanel uPanel, string strMsg)

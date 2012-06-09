@@ -5,14 +5,16 @@
     <link href="../Css/patrol.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript">
     function childDept() {
-        if (confirm('确定要删除该部门吗？')) {
-            SmartHyd.ManageCenter.DeptManage.delDept();
-            alert("deptid");
-            SmartHyd.ManageCenter.Ascx.DeptManage.delDept();
-            return true;
-        } else {
-            return false;
-        }
+        alert("进");
+        SmartHyd.ManageCenter.DeptManage.test();
+        alert("出");
+//        if (confirm('确定要删除该部门吗？')) {
+//            SmartHyd.ManageCenter.DeptManage.delDept();
+//            alert("deptid");
+//            return true;
+//        } else {
+//            return false;
+//        }
     }
 
 

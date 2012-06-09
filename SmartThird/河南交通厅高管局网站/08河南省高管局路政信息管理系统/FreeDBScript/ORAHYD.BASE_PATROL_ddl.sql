@@ -1,7 +1,7 @@
 -- Start of DDL Script for Table ORAHYD.BASE_PATROL
--- Generated 29-五月-2012 14:24:23 from ORAHYD@ORAHYD
+-- Generated 2012-6-9 下午 07:04:16 from ORAHYD@ORAHYD
 
-CREATE TABLE orahyd.base_patrol
+CREATE TABLE base_patrol
     (patrolid                       NUMBER NOT NULL,
     deptid                         NUMBER NOT NULL,
     respuser                       VARCHAR2(20) NOT NULL,
@@ -21,7 +21,8 @@ CREATE TABLE orahyd.base_patrol
     acceptbusnumber                VARCHAR2(20) NOT NULL,
     ticktime                       DATE DEFAULT SYSDATE NOT NULL,
     buskm                          NUMBER DEFAULT 0 NOT NULL,
-    goods                          VARCHAR2(500) NOT NULL)
+    goods                          VARCHAR2(500) NOT NULL,
+    state                          NUMBER DEFAULT 0 NOT NULL)
   PCTFREE     10
   INITRANS    1
   MAXTRANS    255
@@ -37,9 +38,9 @@ CREATE TABLE orahyd.base_patrol
 
 
 
--- Constraints for ORAHYD.BASE_PATROL
+-- Constraints for BASE_PATROL
 
-ALTER TABLE orahyd.base_patrol
+ALTER TABLE base_patrol
 ADD CONSTRAINT pk_base_patrol PRIMARY KEY (patrolid)
 USING INDEX
   PCTFREE     10
@@ -54,13 +55,13 @@ USING INDEX
 /
 
 
--- Triggers for ORAHYD.BASE_PATROL
+-- Triggers for BASE_PATROL
 
-CREATE OR REPLACE TRIGGER ORAHYD.TRG_BASE_PATROL
- BEFORE 
- INSERT
- ON BASE_PATROL
- REFERENCING OLD AS OLD NEW AS NEW
+CREATE OR REPLACE TRIGGER trg_base_patrol
+ BEFORE
+  INSERT
+ ON base_patrol
+REFERENCING NEW AS NEW OLD AS OLD
  FOR EACH ROW
 DECLARE
    integrity_error   EXCEPTION;
@@ -79,49 +80,51 @@ END;
 /
 
 
--- Comments for ORAHYD.BASE_PATROL
+-- Comments for BASE_PATROL
 
-COMMENT ON TABLE orahyd.base_patrol IS '人工巡逻日志表'
+COMMENT ON TABLE base_patrol IS '人工巡逻日志表'
 /
-COMMENT ON COLUMN orahyd.base_patrol.accept IS '接收人'
+COMMENT ON COLUMN base_patrol.accept IS '接收人'
 /
-COMMENT ON COLUMN orahyd.base_patrol.acceptbusnumber IS '接班巡逻车牌号'
+COMMENT ON COLUMN base_patrol.acceptbusnumber IS '接班巡逻车牌号'
 /
-COMMENT ON COLUMN orahyd.base_patrol.acceptcaptain IS '接班中队长'
+COMMENT ON COLUMN base_patrol.acceptcaptain IS '接班中队长'
 /
-COMMENT ON COLUMN orahyd.base_patrol.begintime IS '巡查开始时间'
+COMMENT ON COLUMN base_patrol.begintime IS '巡查开始时间'
 /
-COMMENT ON COLUMN orahyd.base_patrol.buskm IS '接班巡逻车里程表（KM）'
+COMMENT ON COLUMN base_patrol.buskm IS '接班巡逻车里程表（KM）'
 /
-COMMENT ON COLUMN orahyd.base_patrol.busnumber IS '巡查车牌号'
+COMMENT ON COLUMN base_patrol.busnumber IS '巡查车牌号'
 /
-COMMENT ON COLUMN orahyd.base_patrol.deptid IS '巡查中队'
+COMMENT ON COLUMN base_patrol.deptid IS '巡查中队'
 /
-COMMENT ON COLUMN orahyd.base_patrol.endtime IS '巡查结束时间'
+COMMENT ON COLUMN base_patrol.endtime IS '巡查结束时间'
 /
-COMMENT ON COLUMN orahyd.base_patrol.goods IS '移交器材'
+COMMENT ON COLUMN base_patrol.goods IS '移交器材'
 /
-COMMENT ON COLUMN orahyd.base_patrol.log IS '巡查处理情况'
+COMMENT ON COLUMN base_patrol.log IS '巡查处理情况'
 /
-COMMENT ON COLUMN orahyd.base_patrol.mileage IS '巡查里程'
+COMMENT ON COLUMN base_patrol.mileage IS '巡查里程'
 /
-COMMENT ON COLUMN orahyd.base_patrol.nextwithin IS '移交下班处理事项'
+COMMENT ON COLUMN base_patrol.nextwithin IS '移交下班处理事项'
 /
-COMMENT ON COLUMN orahyd.base_patrol.patrolid IS '巡逻日志ID'
+COMMENT ON COLUMN base_patrol.patrolid IS '巡逻日志ID'
 /
-COMMENT ON COLUMN orahyd.base_patrol.patroluser IS '巡查人员'
+COMMENT ON COLUMN base_patrol.patroluser IS '巡查人员'
 /
-COMMENT ON COLUMN orahyd.base_patrol.respuser IS '巡查负责人'
+COMMENT ON COLUMN base_patrol.respuser IS '巡查负责人'
 /
-COMMENT ON COLUMN orahyd.base_patrol.shiftcaptain IS '交班中队长'
+COMMENT ON COLUMN base_patrol.shiftcaptain IS '交班中队长'
 /
-COMMENT ON COLUMN orahyd.base_patrol.ticktime IS '交接班时间'
+COMMENT ON COLUMN base_patrol.state IS '状态（0：正常，1：删除；）'
 /
-COMMENT ON COLUMN orahyd.base_patrol.transfer IS '移交人'
+COMMENT ON COLUMN base_patrol.ticktime IS '交接班时间'
 /
-COMMENT ON COLUMN orahyd.base_patrol.weather IS '天气'
+COMMENT ON COLUMN base_patrol.transfer IS '移交人'
 /
-COMMENT ON COLUMN orahyd.base_patrol.within IS '移交内业处理事项'
+COMMENT ON COLUMN base_patrol.weather IS '天气'
+/
+COMMENT ON COLUMN base_patrol.within IS '移交内业处理事项'
 /
 
 -- End of DDL Script for Table ORAHYD.BASE_PATROL

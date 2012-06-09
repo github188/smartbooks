@@ -18,13 +18,48 @@ namespace SmartHyd.BLL {
         public DataTable GetDeptLog(DateTime beginTime, DateTime endTime, int deptCode) {
             return dal.GetDeptLog(beginTime, endTime, deptCode);
         }
-
+        /// <summary>
+        /// 获取电子巡逻日志实体
+        /// </summary>
+        /// <param name="observedid"></param>
+        /// <returns></returns>
+        public Entity.BASE_OBSERVED GetModel(decimal observedid)
+        {
+            return dal.GetEntity(observedid);
+        }
         /// <summary>
         /// 添加
         /// </summary>
         /// <param name="model"></param>
         public void Add(Entity.BASE_OBSERVED model) {
             dal.Add(model);
+        }
+        /// <summary>
+        /// 根据条件获取巡逻日志
+        /// </summary>
+        /// <param name="strwhere"></param>
+        /// <returns></returns>
+        public DataTable GetObserved(string strwhere)
+        {
+            return dal.GetList(strwhere).Tables[0];
+        }
+        /// <summary>
+        /// 更新一条人工巡逻日志信息
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        public bool update(Entity.BASE_OBSERVED model)
+        {
+            return dal.Update(model);
+        }
+        /// <summary>
+        /// 根据日志编号删除
+        /// </summary>
+        /// <param name="patrol"></param>
+        /// <returns></returns>
+        public bool del(decimal patrolid)
+        {
+            return dal.Delete(patrolid);
         }
     }
 }

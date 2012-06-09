@@ -1,8 +1,7 @@
 <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ElectronicPatrol.aspx.cs" Inherits="SmartHyd.Patrol.ElectronicPatrol" %>
 
 <%@ Register Assembly="AspNetPager" Namespace="Wuqi.Webdiyer" TagPrefix="webdiyer" %>
-
-
+<%@ Register src="../Ascx/Department.ascx" tagname="Department" tagprefix="uc1" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -65,8 +64,7 @@
                           <tr >
                             <td width="80" height="24" align="right"><span id="PatrolSearch">单位部门：</span></td>
                             <td width="120" height="24">
-                                <asp:DropDownList ID="ddl_unit" runat="server" Width="120">
-                                </asp:DropDownList>
+                             <uc1:Department ID="Department1" runat="server" />
                             </td>
                             <td width="80" height="24" align="right"><span id="PatrolSearch">巡查人员：</span></td>
                             <td width="120" height="24">
@@ -92,18 +90,22 @@
                     <td valign="top">
                         <asp:GridView ID="gv_electroniclist" runat="server" AutoGenerateColumns="False" 
                             BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" 
-                            CellPadding="3" Width="100%">
+                            CellPadding="3" Width="100%" onrowcommand="gv_electroniclist_RowCommand">
                             <Columns>
                                 <asp:CheckBoxField />
                                 <asp:BoundField DataField="DPTNAME" HeaderText="单位部门" />
-                                <asp:BoundField DataField="username" HeaderText="巡查人员" />
+                                <asp:BoundField DataField="PATROLUSER" HeaderText="巡查人员" />
                                 <asp:BoundField DataField="WEATHER" HeaderText="天气状况" />
                                 <asp:BoundField DataField="BEGINTIME" HeaderText="开始时间" />
-                                <asp:BoundField DataField="ENDATE" HeaderText="结束时间" />
-                                <asp:CommandField DeleteImageUrl="~/Images/delete.png" 
-                                    EditImageUrl="~/Images/edit.png" ShowEditButton="True" />
-                                <asp:CommandField DeleteImageUrl="~/Images/delete.png" 
-                                    ShowDeleteButton="True" />
+                                <asp:BoundField DataField="ENDDATE" HeaderText="结束时间" />
+                                <asp:TemplateField HeaderText="操作选项">
+                            <ItemTemplate>
+                                <asp:LinkButton ID="Lbtview" runat="server" CommandName="view" CommandArgument='<%#Eval("OBSERVEDID") %>'>查看</asp:LinkButton>
+                                <asp:LinkButton ID="LbtEdit" runat="server" CommandName="edit" CommandArgument='<%#Eval("OBSERVEDID") %>'>编辑</asp:LinkButton>
+                                <asp:LinkButton ID="LbtDel" runat="server" CommandName="del" CommandArgument='<%#Eval("OBSERVEDID") %>'>删除</asp:LinkButton>
+                            </ItemTemplate>
+                            <ItemStyle Width="60" />
+                        </asp:TemplateField>
                             </Columns>
                             <FooterStyle BackColor="White" ForeColor="#000066" />
                             <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />

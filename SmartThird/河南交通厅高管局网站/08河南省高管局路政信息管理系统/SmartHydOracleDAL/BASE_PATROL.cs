@@ -44,9 +44,9 @@ namespace SmartHyd.OracleDAL {
         public void Add(Entity.BASE_PATROL entity) {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("insert into BASE_PATROL(");
-            strSql.Append("PATROLID,ENDTIME,TRANSFER,ACCEPT,WITHIN,NEXTWITHIN,ACCEPTCAPTAIN,SHIFTCAPTAIN,ACCEPTBUSNUMBER,TICKTIME,BUSKM,DEPTID,GOODS,RESPUSER,PATROLUSER,BUSNUMBER,MILEAGE,WEATHER,LOG,BEGINTIME");
+            strSql.Append("PATROLID,ENDTIME,TRANSFER,ACCEPT,WITHIN,NEXTWITHIN,ACCEPTCAPTAIN,SHIFTCAPTAIN,ACCEPTBUSNUMBER,TICKTIME,BUSKM,DEPTID,GOODS,RESPUSER,PATROLUSER,BUSNUMBER,MILEAGE,WEATHER,LOG,BEGINTIME，STATE");
             strSql.Append(") values (");
-            strSql.Append(":PATROLID,:ENDTIME,:TRANSFER,:ACCEPT,:WITHIN,:NEXTWITHIN,:ACCEPTCAPTAIN,:SHIFTCAPTAIN,:ACCEPTBUSNUMBER,:TICKTIME,:BUSKM,:DEPTID,:GOODS,:RESPUSER,:PATROLUSER,:BUSNUMBER,:MILEAGE,:WEATHER,:LOG,:BEGINTIME");
+            strSql.Append(":PATROLID,:ENDTIME,:TRANSFER,:ACCEPT,:WITHIN,:NEXTWITHIN,:ACCEPTCAPTAIN,:SHIFTCAPTAIN,:ACCEPTBUSNUMBER,:TICKTIME,:BUSKM,:DEPTID,:GOODS,:RESPUSER,:PATROLUSER,:BUSNUMBER,:MILEAGE,:WEATHER,:LOG,:BEGINTIME,:STATE");
             strSql.Append(") ");
 
             OracleParameter[] parameters = {
@@ -69,7 +69,8 @@ namespace SmartHyd.OracleDAL {
                         new OracleParameter(":MILEAGE", OracleType.Number,4) ,            
                         new OracleParameter(":WEATHER", OracleType.VarChar,50) ,            
                         new OracleParameter(":LOG", OracleType.VarChar,500) ,            
-                        new OracleParameter(":BEGINTIME", OracleType.DateTime)             
+                        new OracleParameter(":BEGINTIME", OracleType.DateTime),
+                        new OracleParameter(":STATE", OracleType.Number,4)
               
             };
 
@@ -93,6 +94,7 @@ namespace SmartHyd.OracleDAL {
             parameters[17].Value = entity.WEATHER;
             parameters[18].Value = entity.LOG;
             parameters[19].Value = entity.BEGINTIME;
+            parameters[20].Value = entity.STATE;
             OracleHelper.ExecuteNonQuery(strSql.ToString(), parameters);
 
         }
@@ -124,6 +126,7 @@ namespace SmartHyd.OracleDAL {
             strSql.Append(" WEATHER = :WEATHER , ");
             strSql.Append(" LOG = :LOG , ");
             strSql.Append(" BEGINTIME = :BEGINTIME  ");
+            strSql.Append(" STATE = :STATE  ");
             strSql.Append(" where PATROLID=:PATROLID  ");
 
             OracleParameter[] parameters = {
@@ -146,30 +149,32 @@ namespace SmartHyd.OracleDAL {
                         new OracleParameter(":MILEAGE", OracleType.Number,4) ,            
                         new OracleParameter(":WEATHER", OracleType.VarChar,50) ,            
                         new OracleParameter(":LOG", OracleType.VarChar,500) ,            
-                        new OracleParameter(":BEGINTIME", OracleType.DateTime)             
+                        new OracleParameter(":BEGINTIME", OracleType.DateTime),
+                        new OracleParameter(":STATE", OracleType.Number,4)
               
             };
 
-            parameters[20].Value = entity.PATROLID;
-            parameters[21].Value = entity.ENDTIME;
-            parameters[22].Value = entity.TRANSFER;
-            parameters[23].Value = entity.ACCEPT;
-            parameters[24].Value = entity.WITHIN;
-            parameters[25].Value = entity.NEXTWITHIN;
-            parameters[26].Value = entity.ACCEPTCAPTAIN;
-            parameters[27].Value = entity.SHIFTCAPTAIN;
-            parameters[28].Value = entity.ACCEPTBUSNUMBER;
-            parameters[29].Value = entity.TICKTIME;
-            parameters[30].Value = entity.BUSKM;
-            parameters[31].Value = entity.DEPTID;
-            parameters[32].Value = entity.GOODS;
-            parameters[33].Value = entity.RESPUSER;
-            parameters[34].Value = entity.PATROLUSER;
-            parameters[35].Value = entity.BUSNUMBER;
-            parameters[36].Value = entity.MILEAGE;
-            parameters[37].Value = entity.WEATHER;
-            parameters[38].Value = entity.LOG;
-            parameters[39].Value = entity.BEGINTIME;
+            parameters[0].Value = entity.PATROLID;
+            parameters[1].Value = entity.ENDTIME;
+            parameters[2].Value = entity.TRANSFER;
+            parameters[3].Value = entity.ACCEPT;
+            parameters[4].Value = entity.WITHIN;
+            parameters[5].Value = entity.NEXTWITHIN;
+            parameters[6].Value = entity.ACCEPTCAPTAIN;
+            parameters[7].Value = entity.SHIFTCAPTAIN;
+            parameters[8].Value = entity.ACCEPTBUSNUMBER;
+            parameters[9].Value = entity.TICKTIME;
+            parameters[10].Value = entity.BUSKM;
+            parameters[11].Value = entity.DEPTID;
+            parameters[12].Value = entity.GOODS;
+            parameters[13].Value = entity.RESPUSER;
+            parameters[14].Value = entity.PATROLUSER;
+            parameters[15].Value = entity.BUSNUMBER;
+            parameters[16].Value = entity.MILEAGE;
+            parameters[17].Value = entity.WEATHER;
+            parameters[18].Value = entity.LOG;
+            parameters[19].Value = entity.BEGINTIME;
+            parameters[20].Value = entity.STATE;
             int rows = OracleHelper.ExecuteNonQuery(strSql.ToString(), parameters);
             if (rows > 0) {
                 return true;
@@ -205,7 +210,7 @@ namespace SmartHyd.OracleDAL {
         public Entity.BASE_PATROL GetEntity(decimal PATROLID) {
 
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("select PATROLID, ENDTIME, TRANSFER, ACCEPT, WITHIN, NEXTWITHIN, ACCEPTCAPTAIN, SHIFTCAPTAIN, ACCEPTBUSNUMBER, TICKTIME, BUSKM, DEPTID, GOODS, RESPUSER, PATROLUSER, BUSNUMBER, MILEAGE, WEATHER, LOG, BEGINTIME  ");
+            strSql.Append("select PATROLID, ENDTIME, TRANSFER, ACCEPT, WITHIN, NEXTWITHIN, ACCEPTCAPTAIN, SHIFTCAPTAIN, ACCEPTBUSNUMBER, TICKTIME, BUSKM, DEPTID, GOODS, RESPUSER, PATROLUSER, BUSNUMBER, MILEAGE, WEATHER, LOG, BEGINTIME,STATE ");
             strSql.Append("  from BASE_PATROL ");
             strSql.Append(" where PATROLID=:PATROLID ");
             OracleParameter[] parameters = {
@@ -255,7 +260,10 @@ namespace SmartHyd.OracleDAL {
                 if (dt.Rows[0]["BEGINTIME"].ToString() != "") {
                     entity.BEGINTIME = DateTime.Parse(dt.Rows[0]["BEGINTIME"].ToString());
                 }
-
+                if (dt.Rows[0]["STATE"].ToString() != "")
+                {
+                entity.STATE = decimal.Parse(dt.Rows[0]["STATE"].ToString());
+                }
                 return entity;
             } else {
                 return null;

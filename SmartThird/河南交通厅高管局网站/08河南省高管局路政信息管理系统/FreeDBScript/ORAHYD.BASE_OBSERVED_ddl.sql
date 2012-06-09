@@ -1,14 +1,15 @@
 -- Start of DDL Script for Table ORAHYD.BASE_OBSERVED
--- Generated 29-五月-2012 14:24:04 from ORAHYD@ORAHYD
+-- Generated 2012-6-9 下午 07:03:42 from ORAHYD@ORAHYD
 
-CREATE TABLE orahyd.base_observed
+CREATE TABLE base_observed
     (observedid                     NUMBER DEFAULT 0 NOT NULL,
     patroluser                     VARCHAR2(50) NOT NULL,
     weather                        VARCHAR2(50) NOT NULL,
     begintime                      DATE DEFAULT SYSDATE NOT NULL,
     enddate                        DATE DEFAULT SYSDATE NOT NULL,
     log                            VARCHAR2(500) NOT NULL,
-    deptid                         NUMBER NOT NULL)
+    deptid                         NUMBER NOT NULL,
+    state                          NUMBER DEFAULT 0 NOT NULL)
   PCTFREE     10
   INITRANS    1
   MAXTRANS    255
@@ -24,9 +25,9 @@ CREATE TABLE orahyd.base_observed
 
 
 
--- Constraints for ORAHYD.BASE_OBSERVED
+-- Constraints for BASE_OBSERVED
 
-ALTER TABLE orahyd.base_observed
+ALTER TABLE base_observed
 ADD CONSTRAINT pk_base_observed PRIMARY KEY (observedid)
 USING INDEX
   PCTFREE     10
@@ -41,13 +42,13 @@ USING INDEX
 /
 
 
--- Triggers for ORAHYD.BASE_OBSERVED
+-- Triggers for BASE_OBSERVED
 
-CREATE OR REPLACE TRIGGER ORAHYD.TRG_BASE_OBSERVED
- BEFORE 
- INSERT
- ON BASE_OBSERVED
- REFERENCING OLD AS OLD NEW AS NEW
+CREATE OR REPLACE TRIGGER trg_base_observed
+ BEFORE
+  INSERT
+ ON base_observed
+REFERENCING NEW AS NEW OLD AS OLD
  FOR EACH ROW
 DECLARE
    integrity_error   EXCEPTION;
@@ -66,23 +67,25 @@ END;
 /
 
 
--- Comments for ORAHYD.BASE_OBSERVED
+-- Comments for BASE_OBSERVED
 
-COMMENT ON TABLE orahyd.base_observed IS '电子巡逻日志表'
+COMMENT ON TABLE base_observed IS '电子巡逻日志表'
 /
-COMMENT ON COLUMN orahyd.base_observed.begintime IS '巡查开始时间'
+COMMENT ON COLUMN base_observed.begintime IS '巡查开始时间'
 /
-COMMENT ON COLUMN orahyd.base_observed.deptid IS '部门'
+COMMENT ON COLUMN base_observed.deptid IS '部门'
 /
-COMMENT ON COLUMN orahyd.base_observed.enddate IS '巡查结束时间'
+COMMENT ON COLUMN base_observed.enddate IS '巡查结束时间'
 /
-COMMENT ON COLUMN orahyd.base_observed.log IS '巡查处理情况'
+COMMENT ON COLUMN base_observed.log IS '巡查处理情况'
 /
-COMMENT ON COLUMN orahyd.base_observed.observedid IS '电子巡逻日志编号'
+COMMENT ON COLUMN base_observed.observedid IS '电子巡逻日志编号'
 /
-COMMENT ON COLUMN orahyd.base_observed.patroluser IS '巡查人员'
+COMMENT ON COLUMN base_observed.patroluser IS '巡查人员'
 /
-COMMENT ON COLUMN orahyd.base_observed.weather IS '天气'
+COMMENT ON COLUMN base_observed.state IS '状态（0：正常，1：删除）'
+/
+COMMENT ON COLUMN base_observed.weather IS '天气'
 /
 
 -- End of DDL Script for Table ORAHYD.BASE_OBSERVED

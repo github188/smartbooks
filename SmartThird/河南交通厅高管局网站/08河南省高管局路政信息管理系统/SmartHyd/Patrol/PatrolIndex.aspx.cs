@@ -8,7 +8,10 @@ using System.Web.UI.WebControls;
 namespace SmartHyd.Patrol {
     public partial class PatrolIndex : System.Web.UI.Page {
         protected void Page_Load(object sender, EventArgs e) {
-
+            if (!IsPostBack)
+            {
+                
+            }
         }
     }
 }

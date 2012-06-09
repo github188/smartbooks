@@ -94,7 +94,10 @@ namespace SmartHyd.Entity {
         /// 移交器材
         /// </summary>		
         private string _GOODS;
-
+        /// <summary>
+        /// 状态
+        /// </summary>
+        private decimal _STATE;
         /// <summary>
         /// 巡逻日志ID
         /// </summary>
@@ -234,6 +237,14 @@ namespace SmartHyd.Entity {
         public string GOODS {
             get { return _GOODS; }
             set { _GOODS = value; }
+        }
+        /// <summary>
+        /// 状态
+        /// </summary>
+        public decimal STATE
+        {
+            get { return _STATE; }
+            set { _STATE = value; }
         }
     }
 }
