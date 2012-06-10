@@ -61,12 +61,12 @@
 				
 				<li>
 					<img src="images/ui-left-ico03.png" alt="路产管理"/>
-					<a href="ManageCenter/ConstructionPage.aspx" target="mainFrame">路产管理</a>
+                    <a href="ManageCenter/RoadTerm/RoadTermIndex.aspx" target="mainFrame">路产管理</a>
 				</li>
 				
 				<li>
 					<img src="images/ui-left-ico01.png" alt="超限治理"/>
-					<a href="ManageCenter/ConstructionPage.aspx" target="mainFrame">超限治理</a>					
+					<a href="ManageCenter/Overrun/OverrunIndex.aspx" target="mainFrame">超限治理</a>					
 				</li>
 				
 				<li>
