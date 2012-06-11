@@ -104,7 +104,8 @@ namespace SmartHyd {
             if (CheckFormSubmit()) {
                 string username = txtUserName.Text.Trim();
                 string password = txtPassword.Text.Trim();
-                password = Smart.Security.MD5.MD5Encrypt(password).ToUpper();
+
+                password = Smart.Security.Encrypter.Decrypt(password, ConfigurationManager.AppSettings["EncryptKey"]);
 
                 Entity.BASE_USER entity = bll.GetUser(username, password);
                 if (entity != null) {
