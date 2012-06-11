@@ -1,7 +1,7 @@
 <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RoadTermList.aspx.cs" Inherits="SmartHyd.ManageCenter.RoadTerm.RoadTermList" %>
 
 <%@ Register Assembly="AspNetPager" Namespace="Wuqi.Webdiyer" TagPrefix="webdiyer" %>
-<%@ Register Src="../../Ascx/Department.ascx" TagName="Department" TagPrefix="uc1" %>
+<%@ Register src="../../Ascx/Department.ascx" tagname="Department" tagprefix="uc1" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
@@ -52,39 +52,43 @@
                 </tr>
                 <tr id="search_condition_panel" style="height: 48px; border-bottom: 1px solid #8cb2e2;">
                     <td>
-                        <table id="PatrolSearch" width="480" border="0" cellspacing="0" cellpadding="0">
+                        <table id="PatrolSearch" border="0" cellspacing="0" cellpadding="0">
                             <tr>
-                                <td width="80" height="24" align="right">
-                                    路政<span id="PatrolSearch1">单位：</span>
+                                <td width="100" height="24" align="right" style="line-height: 24px;">
+                                    路政单位：
                                 </td>
-                                <td width="120" height="24">
+                                <td  height="24">
+                                    
                                     <uc1:Department ID="Department1" runat="server" />
+                                    
                                 </td>
-                                <td width="80" height="24" align="right">
-                                    <span id="PatrolSearch2">设备名称：</span>
+                                <td width="100" height="24" align="right">
+                                    设备类型：
                                 </td>
                                 <td width="120" height="24">
-                                    <asp:TextBox ID="txt_vehicleLicense" runat="server" class="controlstyle txtboxstyle"></asp:TextBox>
+                                    <asp:DropDownList ID="ddlTermType" runat="server" CssClass="input">
+                                    </asp:DropDownList>
                                 </td>
-                                <td width="80" height="24" align="right">
+                                <td width="100" height="24" align="right">
                                     &nbsp;
                                 </td>
                             </tr>
                             <tr>
                                 <td height="24" align="right">
-                                    <span id="PatrolSearch3">起始时间：</span>
+                                    开始时间：
                                 </td>
                                 <td height="24">
-                                    <asp:TextBox ID="txt_startTime" runat="server" class="Wdate" Width="120" onFocus="WdatePicker({isShowClear:false,readOnly:true})"></asp:TextBox>
+                                    <asp:TextBox ID="txtBeginTime" runat="server" class="Wdate" Width="120" onFocus="WdatePicker({isShowClear:false,readOnly:true})"></asp:TextBox>
                                 </td>
                                 <td height="24" align="right">
-                                    <span id="PatrolSearch4">截止时间：</span>
+                                    结束时间:
                                 </td>
                                 <td height="24">
-                                    <asp:TextBox ID="txt_endTime" runat="server" class="Wdate controlstyle" onFocus="WdatePicker({isShowClear:false,readOnly:true})"></asp:TextBox>
+                                    <asp:TextBox ID="txtEndTime" runat="server" class="Wdate controlstyle" onFocus="WdatePicker({isShowClear:false,readOnly:true})"></asp:TextBox>
                                 </td>
                                 <td width="80" height="24" align="center">
-                                    <asp:Button ID="btn_ok" runat="server" Text="" CssClass="btn_search" OnClick="btn_ok_Click" />
+                                    <asp:Button ID="btnSubmit" runat="server" CssClass="btn_search" 
+                                        onclick="btnSubmit_Click" />
                                 </td>
                             </tr>
                         </table>
@@ -92,15 +96,16 @@
                 </tr>
                 <tr>
                     <td valign="top">
-                        <asp:GridView ID="gv_patrollist" runat="server" AutoGenerateColumns="False" BackColor="White"
+                        <asp:GridView ID="dgvRoadList" runat="server" AutoGenerateColumns="False" BackColor="White"
                             BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" Width="100%">
                             <Columns>
-                                <asp:CheckBoxField />
-                                <asp:BoundField DataField="TYPENAME" HeaderText="设备类型" />
                                 <asp:BoundField DataField="ROADNAME" HeaderText="设备名称" />
-                                <asp:BoundField DataField="DPTNAME" HeaderText="所属部门" />
                                 <asp:BoundField DataField="LINENAME" HeaderText="高速公路" />
-                                <asp:BoundField DataField="STAKEK" HeaderText="桩号位置" />
+                                <asp:TemplateField HeaderText="桩号位置">
+                                    <ItemTemplate>
+                                        K:<%#Eval("STAKEK")%>+ M:<%#Eval("STAKEM")%>
+                                    </ItemTemplate>
+                                </asp:TemplateField>                                
                                 <asp:BoundField DataField="REGTIME" HeaderText="登记时间" />
                                 <asp:BoundField DataField="COMPTIME" HeaderText="竣工时间" />
                             </Columns>
@@ -141,5 +146,4 @@
             }
         }
     }
-
 </script>

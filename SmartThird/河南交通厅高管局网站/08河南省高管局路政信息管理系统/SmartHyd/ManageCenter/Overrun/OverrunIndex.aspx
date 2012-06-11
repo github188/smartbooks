@@ -147,8 +147,20 @@
                     <div class="patrolsitemap">
                     </div>
                     <ul>
-                        <li id="menu_Title0" onclick="nTabs('menu',this,1)" class="actived"><a href="../ImportData.aspx"
+                        <li id="menu_Title0" onclick="nTabs('menu',this,5)" class="actived"><a href=""
                             target="PatrolFrame"><span id="buttons">
+                                <img src="../../Images/doc_publish.png" border="0" />上报车辆</span></a></li>
+                        <li id="Li1" onclick="nTabs('menu',this,5)" class="actived"><a href=""
+                            target="PatrolFrame"><span id="Span1">
+                                <img src="../../Images/doc_publish.png" border="0" />超限查询</span></a></li>
+                        <li id="Li2" onclick="nTabs('menu',this,5)" class="actived"><a href=""
+                            target="PatrolFrame"><span id="Span2">
+                                <img src="../../Images/doc_publish.png" border="0" />超限汇总</span></a></li>
+                        <li id="Li3" onclick="nTabs('menu',this,5)" class="actived"><a href=""
+                            target="PatrolFrame"><span id="Span3">
+                                <img src="../../Images/doc_publish.png" border="0" />通行统计</span></a></li>
+                        <li id="Li4" onclick="nTabs('menu',this,5)" class="actived"><a href="../ImportData.aspx"
+                            target="PatrolFrame"><span id="Span4">
                                 <img src="../../Images/doc_publish.png" border="0" />导入数据</span></a></li>
                     </ul>
                 </div>
@@ -156,8 +168,8 @@
         </tr>
         <tr>
             <td valign="top">
-                <iframe src="" name="PatrolFrame" id="PatrolFrame" frameborder="0" width="100%" height="100%"
-                    scrolling="auto"></iframe>
+                <iframe src="../ImportData.aspx" name="PatrolFrame" id="PatrolFrame" frameborder="0"
+                    width="100%" height="100%" scrolling="auto"></iframe>
             </td>
         </tr>
     </table>

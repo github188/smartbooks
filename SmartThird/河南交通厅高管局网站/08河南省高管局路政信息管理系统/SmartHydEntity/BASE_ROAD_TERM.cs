@@ -41,11 +41,11 @@ namespace SmartHyd.Entity {
         /// <summary>
         /// 竣工时间
         /// </summary>		
-        private DateTime _COMPTIME;
+        private DateTime _COMPTIME = DateTime.Now;
         /// <summary>
         /// 登记时间
         /// </summary>		
-        private DateTime _REGTIME;
+        private DateTime _REGTIME = DateTime.Now;
         /// <summary>
         /// 设备照片
         /// </summary>		
@@ -68,7 +68,7 @@ namespace SmartHyd.Entity {
         private decimal _DEPTID;
 
         /// <summary>
-        /// 路产设别编号
+        /// 路产设备编号
         /// </summary>
         public decimal ID {
             get { return _ID; }

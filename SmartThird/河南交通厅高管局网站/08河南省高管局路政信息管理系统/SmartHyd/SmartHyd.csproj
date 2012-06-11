@@ -1019,6 +1019,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Document\" />
+    <Folder Include="Images\RoadImage\" />
     <Folder Include="Log\" />
     <Folder Include="ManageCenter\RoadProject\" />
     <Folder Include="Scripts\kindeditor-4.0.5\attached\" />

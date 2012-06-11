@@ -8,10 +8,10 @@ using System.Web.UI.WebControls;
 
 namespace SmartHyd.Ascx {
     public partial class Department : System.Web.UI.UserControl {
+        public event OnSelectedNodeChanged OnSelectedNodeChanged;
+
         private BLL.BASE_DEPT dept = new BLL.BASE_DEPT();
         private int inde = 0;
-
-        public event OnSelectedNodeChanged OnSelectedNodeChanged;
 
         protected void Page_Load(object sender, EventArgs e) {
             Utility.UserSession session = (Utility.UserSession)Session["user"];
@@ -21,6 +21,7 @@ namespace SmartHyd.Ascx {
                 dt = dept.GetUserWhereDepartment(session.USERNAME, 0);
                 BindingControl(this.ddlDepartment, dt);
                 ddlDepartment.SelectedValue = session.DEPTID.ToString();
+                Session["deptcode"] = session.DEPTID;
             }
         }
 

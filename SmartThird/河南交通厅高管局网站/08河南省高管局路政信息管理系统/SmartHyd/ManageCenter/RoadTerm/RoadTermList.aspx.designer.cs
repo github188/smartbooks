@@ -58,49 +58,49 @@ namespace SmartHyd.ManageCenter.RoadTerm {
         protected global::SmartHyd.Ascx.Department Department1;
         
         /// <summary>
-        /// txt_vehicleLicense 控件。
+        /// ddlTermType 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_vehicleLicense;
+        protected global::System.Web.UI.WebControls.DropDownList ddlTermType;
         
         /// <summary>
-        /// txt_startTime 控件。
+        /// txtBeginTime 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_startTime;
+        protected global::System.Web.UI.WebControls.TextBox txtBeginTime;
         
         /// <summary>
-        /// txt_endTime 控件。
+        /// txtEndTime 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_endTime;
+        protected global::System.Web.UI.WebControls.TextBox txtEndTime;
         
         /// <summary>
-        /// btn_ok 控件。
+        /// btnSubmit 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_ok;
+        protected global::System.Web.UI.WebControls.Button btnSubmit;
         
         /// <summary>
-        /// gv_patrollist 控件。
+        /// dgvRoadList 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gv_patrollist;
+        protected global::System.Web.UI.WebControls.GridView dgvRoadList;
         
         /// <summary>
         /// litmsg 控件。
