@@ -29,14 +29,30 @@ namespace SmartHyd.ManageCenter.Ascx {
                 InitTreeNodes(ddlTypeId, 0, dt, 0);
 
                 //获取编辑模式和ID
-                if (Request.QueryString["id"] != null) {
-                    int id = Convert.ToInt32(Request.QueryString["id"].ToString());
-                    //获取实体
+                if (Request.QueryString["id"] != null && Request.QueryString["m"] != null) {
+                    int id = Convert.ToInt32(Request.QueryString["id"].ToString());                    
                     Entity.BASE_ARTICLE model = new Entity.BASE_ARTICLE();
                     model = bll.GetEntity(id);
 
-                    //初始化实体到页面
-                    SetEntity(model);
+                    if (Request.QueryString["m"].Equals("edit")) {
+                        /*编辑模式*/
+                        SetEntity(model);
+                    }
+                    else {
+                        /*回复模式*/
+                        hidPrimary.Value = "-1";
+                        hidParentPrimary.Value = model.PARENTID.ToString();
+                        lblSourceTitle.Text = string.Format("[回复]:{0}", model.TITLE);
+
+                        txtTitle.Text = lblSourceTitle.Text;
+                        txtSendCode.Text = model.SENDCODE;
+                        txtSendCode.Enabled = false;
+                        txtSCORE.Enabled = false;
+                        rdoIsReply.Enabled = false;
+
+                        /*收文单位隐藏*/
+                        TreeViewAcceptUnit.Enabled = false;
+                    }
                 }
             }
 
@@ -76,6 +92,7 @@ namespace SmartHyd.ManageCenter.Ascx {
             model.DEPTID = userSession.DEPTID;  //所属部门
 
             model.ID = Convert.ToInt32(hidPrimary.Value);   //主键
+            model.PARENTID = Convert.ToInt32(hidParentPrimary.Value);   //父发文编号
 
             return model;
         }
@@ -91,13 +108,12 @@ namespace SmartHyd.ManageCenter.Ascx {
                 txtTitle.Text = model.TITLE;                            //标题
                 ddlTypeId.SelectedValue = model.TYPEID.ToString();      //公文类别
                 hidPrimary.Value = model.ID.ToString();                 //主键
+                hidParentPrimary.Value = model.PARENTID.ToString(); //父发文编号
 
                 //判断是否为编辑模式
-                if (model.ID == null || model.ID > -1) {
+                if (model.ID > -1) {
                     TreeViewAcceptUnit.Enabled = false;
-                }
-
-                //model.PARENTID = 0;                 //父发文编号
+                }             
                 //model.TIMESTAMP = DateTime.Now;     //时间戳
                 //model.USERID = userSession.USERID;  //用户编号
                 //model.DEPTID = userSession.Department[0].DEPTID;    //部门
@@ -277,14 +293,19 @@ namespace SmartHyd.ManageCenter.Ascx {
 
             /*大于等于0编辑模式，小于0新建模式*/
             if (model.ID < 0) {
-                this.Create(model); //添加公文
+                /*新建或着回复模式*/
+                this.Create(model);               
             }
             else {
                 this.Update(model); //编辑公文
             }
 
-            //重新加载当前页
-            Response.Redirect("~/Official/OfficialIndex.aspx", true);
+            if (!hidParentPrimary.Value.Equals("0")) {
+                 Response.Redirect("~/Official/OfficialPublish.aspx", true); 
+            }
+            else {
+                Response.Redirect("~/Official/OfficialAccept.aspx", true);
+            }
         }
 
         //添加公文
@@ -321,13 +342,16 @@ namespace SmartHyd.ManageCenter.Ascx {
             //保存公文到数据库
             bll.Add(model);
 
-            //获取出刚添加的公文ID编号
-            string where = string.Format("TITLE='{0}'", model.TITLE);
-            int id = Convert.ToInt32(bll.GetList(where).Rows[0]["ID"].ToString());
+            /*回复模式不需要添加收文单位*/
+            if (hidParentPrimary.Value.Equals("0")) {
+                //获取出刚添加的公文ID编号
+                string where = string.Format("TITLE='{0}'", model.TITLE);
+                int id = Convert.ToInt32(bll.GetList(where).Rows[0]["ID"].ToString());
 
-            //增加公文接收部门记录                
-            foreach (TreeNode node in TreeViewAcceptUnit.Nodes) {
-                RecursiveSubNode(node, id);
+                //增加公文接收部门记录                
+                foreach (TreeNode node in TreeViewAcceptUnit.Nodes) {
+                    RecursiveSubNode(node, id);
+                }
             }
         }
 

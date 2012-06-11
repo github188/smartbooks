@@ -5,7 +5,7 @@
         <!--首选行-->
         <tr class="TableHeader">
             <td colspan="2">
-                新建公文
+                <asp:Label ID="lblSourceTitle" runat="server" Text="新建公文"></asp:Label>
             </td>
             <td>
                 收文单位
@@ -18,6 +18,7 @@
             </td>
             <td class="TableData" style="width: 100%;">
                 <asp:HiddenField ID="hidPrimary" runat="server" Value="-1" />
+                <asp:HiddenField ID="hidParentPrimary" runat="server" Value="0" />                
                 <asp:TextBox ID="txtTitle" runat="server" CssClass="input {required:true,minlength:1,maxlength:800}"
                     Width="70%" MaxLength="80">
                 </asp:TextBox>

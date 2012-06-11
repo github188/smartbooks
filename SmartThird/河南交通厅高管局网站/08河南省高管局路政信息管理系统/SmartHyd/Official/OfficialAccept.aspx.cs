@@ -26,7 +26,8 @@ namespace SmartHyd.Official {
             switch (e.CommandName) {
                 /*跳转到回复页面*/
                 case "reply":
-                    Response.Redirect("~/ManageCenter/DocumentCreate.aspx?id=" + id.ToString(), true);
+                    string url = string.Format("~/ManageCenter/DocumentCreate.aspx?id={0}&m=edit",id.ToString());
+                    Response.Redirect(url, true);
                     break;
                 /*跳转到详情页面*/
                 case "view":
