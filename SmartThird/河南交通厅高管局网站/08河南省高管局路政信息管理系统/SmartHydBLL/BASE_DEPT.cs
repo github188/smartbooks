@@ -39,7 +39,7 @@ namespace SmartHyd.BLL {
         /// <param name="model">部门实体</param>
         public int Add(Entity.BASE_DEPT model)
         {
-            return dal.Add(model);
+           return dal.Add(model);
         }
         /// <summary>
         /// 确定记录是否存在

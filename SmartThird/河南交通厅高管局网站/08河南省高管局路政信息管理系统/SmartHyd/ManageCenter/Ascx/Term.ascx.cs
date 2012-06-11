@@ -15,29 +15,10 @@ namespace SmartHyd.ManageCenter.Ascx {
         protected void Page_Load(object sender, EventArgs e) {
             if (!IsPostBack) {
                 BindTermData();
-                BinfTermTypeData();
+               
             }
         }
-
-        //从页面获取实体
-        private Entity.BASE_TERM GetEntity() {
-            return null;
-        }
-
-        //初始化实体到页面
-        private void SetEntity(Entity.BASE_TERM model) {
-        }
-
-        //绑定装备类型数据
-        private void BinfTermTypeData() {
-            DataTable dt = new DataTable();
-            ddlTermType.Items.Clear();
-            foreach (DataRow dr in dt.Rows) {
-                ddlTermType.Items.Add(new ListItem(
-                    dr["TYPENAME"].ToString(),
-                    dr["TYPEID"].ToString()));
-            }
-        }
+     
 
         //绑定装备分页数据
         private void BindTermData() {
@@ -56,16 +37,6 @@ namespace SmartHyd.ManageCenter.Ascx {
             //绑定分页后的数据
             repList.DataSource = pds;
             repList.DataBind();
-        }
-
-        //提交
-        protected void btnSubmit_Click(object sender, EventArgs e) {
-            throw new Exception("添加装备抛异常测试。");
-        }
-
-        //取消
-        protected void btnCancel_Click(object sender, EventArgs e) {
-            SetEntity(new Entity.BASE_TERM());
         }
 
         //分页事件

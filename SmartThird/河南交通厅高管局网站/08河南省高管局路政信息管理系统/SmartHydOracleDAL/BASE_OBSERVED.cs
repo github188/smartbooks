@@ -230,7 +230,8 @@ namespace SmartHyd.OracleDAL {
         /// <param name="endTime">结束时间</param>
         /// <param name="deptCode">部门ID</param>
         /// <returns>电子巡逻日志数据</returns>
-        public DataTable GetDeptLog(DateTime beginTime, DateTime endTime, int deptCode) {
+        public DataTable GetDeptLog(DateTime beginTime, DateTime endTime, int deptCode)
+        {
             StringBuilder where = new StringBuilder();
             where.Append("SELECT b.observedid, a.dptname, b.patroluser, b.weather, b.begintime, b.enddate, b.LOG, b.deptid ");
             where.Append("FROM base_dept a, base_observed b ");
@@ -238,6 +239,21 @@ namespace SmartHyd.OracleDAL {
             where.AppendFormat("AND b.begintime >= TO_DATE ('{0}', 'yyyy-mm-dd') ", beginTime.ToString("yyyy-MM-dd"));
             where.AppendFormat("AND b.enddate <= TO_DATE ('{0}', 'yyyy-mm-dd') ", endTime.ToString("yyyy-MM-dd"));
             where.AppendFormat("AND b.deptid = {0}", deptCode.ToString());
+
+            return OracleHelper.Query(where.ToString()).Tables[0];
+        }
+        /// <summary>
+        /// 根据指定条件，获取某个部门下的电子巡逻日志数据
+        /// </summary>
+        /// <param name="strwhere"></param>
+        /// <returns></returns>
+        public DataTable GetLogObserved(string strwhere)
+        {
+            StringBuilder where = new StringBuilder();
+            where.Append("SELECT b.observedid, a.dptname, b.patroluser, b.weather, b.begintime, b.enddate, b.LOG, b.deptid ");
+            where.Append("FROM base_dept a, base_observed b ");
+            where.Append("WHERE a.deptid = b.deptid ");
+            where.AppendFormat("AND "+strwhere);
 
             return OracleHelper.Query(where.ToString()).Tables[0];
         }

@@ -19,6 +19,15 @@ namespace SmartHyd.BLL {
             return dal.GetDeptLog(beginTime, endTime, deptCode);
         }
         /// <summary>
+        /// 根据指定条件，获取部门下电子巡逻日志数据
+        /// </summary>
+        /// <param name="strwhere"></param>
+        /// <returns></returns>
+        public DataTable GetLogObserved(string strwhere)
+        {
+            return dal.GetLogObserved(strwhere);
+        }
+        /// <summary>
         /// 获取电子巡逻日志实体
         /// </summary>
         /// <param name="observedid"></param>

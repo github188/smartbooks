@@ -43,7 +43,8 @@ namespace SmartHyd.OracleDAL {
         /// 增加一条数据
         /// 2012-06-07修改，增加返回值
         /// </summary>
-        public int Add(Entity.BASE_DEPT entity) {
+        public int Add(Entity.BASE_DEPT entity)
+        {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("insert into BASE_DEPT(");
             strSql.Append("DEPTID,DPTNAME,DPTINFO,PARENTID,STATUS");
@@ -65,7 +66,6 @@ namespace SmartHyd.OracleDAL {
             parameters[2].Value = entity.DPTINFO;
             parameters[3].Value = entity.PARENTID;
             parameters[4].Value = entity.STATUS;
-            
             
             return OracleHelper.ExecuteNonQuery(strSql.ToString(), parameters);
 

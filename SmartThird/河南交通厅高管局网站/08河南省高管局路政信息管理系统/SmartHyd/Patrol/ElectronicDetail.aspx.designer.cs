@@ -10,7 +10,7 @@
 namespace SmartHyd.Patrol {
     
     
-    public partial class ArtificialPatrol {
+    public partial class ElectronicDetail {
         
         /// <summary>
         /// form1 控件。
@@ -22,84 +22,120 @@ namespace SmartHyd.Patrol {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// ScriptManager1 控件。
+        /// LabName 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.ScriptManager ScriptManager1;
+        protected global::System.Web.UI.WebControls.Label LabName;
         
         /// <summary>
-        /// UpdatePanel1 控件。
+        /// Label1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
+        protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// Department1 控件。
+        /// deptname 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::SmartHyd.Ascx.Department Department1;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl deptname;
         
         /// <summary>
-        /// txt_startTime 控件。
+        /// Label3 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_startTime;
+        protected global::System.Web.UI.WebControls.Label Label3;
         
         /// <summary>
-        /// txt_endTime 控件。
+        /// divuser 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_endTime;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divuser;
         
         /// <summary>
-        /// btn_ok 控件。
+        /// Label6 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_ok;
+        protected global::System.Web.UI.WebControls.Label Label6;
         
         /// <summary>
-        /// gv_patrollist 控件。
+        /// weather 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gv_patrollist;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl weather;
         
         /// <summary>
-        /// litmsg 控件。
+        /// Label14 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litmsg;
+        protected global::System.Web.UI.WebControls.Label Label14;
         
         /// <summary>
-        /// AspNetPager1 控件。
+        /// starttime 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::Wuqi.Webdiyer.AspNetPager AspNetPager1;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl starttime;
+        
+        /// <summary>
+        /// Label16 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label16;
+        
+        /// <summary>
+        /// endtime 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl endtime;
+        
+        /// <summary>
+        /// Label7 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label7;
+        
+        /// <summary>
+        /// result 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl result;
     }
 }

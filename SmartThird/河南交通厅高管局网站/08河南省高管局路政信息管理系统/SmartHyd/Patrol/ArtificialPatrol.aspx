@@ -2,7 +2,7 @@
     Inherits="SmartHyd.Patrol.ArtificialPatrol" %>
 
 <%@ Register Assembly="AspNetPager" Namespace="Wuqi.Webdiyer" TagPrefix="webdiyer" %>
-<%@ Register src="../Ascx/Department.ascx" tagname="Department" tagprefix="uc1" %>
+<%@ Register src="~/Ascx/Department.ascx" tagname="Department" tagprefix="uc1" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
@@ -58,15 +58,15 @@
                                 <td width="80" height="24" align="right">
                                     巡逻<span id="PatrolSearch1">单位：</span>
                                 </td>
-                                <td width="120" height="24">
+                                <td width="120" height="24" colspan="3">
                                  <uc1:Department ID="Department1" runat="server" />
                                 </td>
-                                <td width="80" height="24" align="right">
-                                    <span id="PatrolSearch2">车牌号：</span>
+                               <%--  <td width="80" height="24" align="right">
+                                   <span id="PatrolSearch2">车牌号：</span>
                                 </td>
                                 <td width="120" height="24">
-                                    <asp:TextBox ID="txt_vehicleLicense" runat="server" class="controlstyle txtboxstyle"></asp:TextBox>
-                                </td>
+                                   <asp:TextBox ID="txt_vehicleLicense" runat="server" class="controlstyle txtboxstyle"></asp:TextBox>
+                                </td>--%>
                                 <td width="80" height="24" align="right">
                                     &nbsp;
                                 </td>
@@ -94,7 +94,8 @@
                 <tr>
                     <td valign="top">
                         <asp:GridView ID="gv_patrollist" runat="server" AutoGenerateColumns="False" BackColor="White"
-                            BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" Width="100%">
+                            BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" 
+                            Width="100%" onrowcommand="gv_patrollist_RowCommand">
                             <Columns>
                                 <asp:CheckBoxField />
                                 <asp:BoundField DataField="dptname" HeaderText="隶属部门" />
@@ -104,9 +105,17 @@
                                 <asp:BoundField DataField="weather" HeaderText="天气状况" />
                                 <asp:BoundField DataField="ticktime" HeaderText="交接班时间" />
                                 <asp:BoundField DataField="buskm" HeaderText="接班巡逻车里程表" />
-                                <asp:CommandField DeleteImageUrl="~/Images/delete.png" EditImageUrl="~/Images/edit.png"
+                              <%--  <asp:CommandField DeleteImageUrl="~/Images/delete.png" EditImageUrl="~/Images/edit.png"
                                     ShowEditButton="True" />
-                                <asp:CommandField DeleteImageUrl="~/Images/delete.png" ShowDeleteButton="True" />
+                                <asp:CommandField DeleteImageUrl="~/Images/delete.png" ShowDeleteButton="True" />--%>
+                                 <asp:TemplateField HeaderText="操作选项">
+                                    <ItemTemplate>
+                                        <asp:LinkButton ID="Lbtview" runat="server" CommandName="view" CommandArgument='<%#Eval("PATROLID") %>'>查看</asp:LinkButton>
+                                        <asp:LinkButton ID="LbtEdit" runat="server" CommandName="edit" CommandArgument='<%#Eval("PATROLID") %>'>编辑</asp:LinkButton>
+                                        <asp:LinkButton ID="LbtDel" runat="server" CommandName="del" CommandArgument='<%#Eval("PATROLID") %>'>删除</asp:LinkButton>
+                                    </ItemTemplate>
+                                    <ItemStyle Width="90" />
+                                </asp:TemplateField>
                             </Columns>
                             <FooterStyle BackColor="White" ForeColor="#000066" />
                             <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />

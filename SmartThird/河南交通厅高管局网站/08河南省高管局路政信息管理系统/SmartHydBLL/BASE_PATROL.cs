@@ -23,6 +23,15 @@ namespace SmartHyd.BLL {
             return dal.GetDeptLog(beginTime, endTime, deptCode);
         }
         /// <summary>
+        /// 确定该记录是否存在
+        /// </summary>
+        /// <param name="PATROLID"></param>
+        /// <returns></returns>
+        public bool Exists(decimal PATROLID)
+        {
+            return dal.Exists(PATROLID);
+        }
+        /// <summary>
         /// 根据条件获取巡逻日志
         /// </summary>
         /// <param name="strwhere"></param>

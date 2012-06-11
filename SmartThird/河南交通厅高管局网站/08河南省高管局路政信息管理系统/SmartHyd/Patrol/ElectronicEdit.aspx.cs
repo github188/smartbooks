@@ -50,7 +50,7 @@ namespace SmartHyd.Patrol
         private void SetEntity(Entity.BASE_OBSERVED model)
         {
             DropDownList ddr = (DropDownList)this.Department1.FindControl("ddlDepartment");//找到用户控件中的子控件
-            if (model.DEPTID == null || model.DEPTID == 0)
+            if (model.DEPTID == 0)
             {
                 ddr.SelectedValue = "4";
             }
@@ -72,7 +72,14 @@ namespace SmartHyd.Patrol
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
             Entity.BASE_OBSERVED model = GetEntity();
-            bll.Add(model);
+            if (ViewState["id"] == null)
+            {
+                bll.Add(model);
+            }
+            else
+            {
+                bll.update(model);
+            }
             Response.Redirect("ElectronicPatrol.aspx", true);
         }
 
