@@ -105,7 +105,7 @@ namespace SmartHyd {
                 string username = txtUserName.Text.Trim();
                 string password = txtPassword.Text.Trim();
 
-                password = Smart.Security.Encrypter.Decrypt(password, ConfigurationManager.AppSettings["EncryptKey"]);
+                password = Smart.Security.Encrypter.Encrypt(password, ConfigurationManager.AppSettings["EncryptKey"]);
 
                 Entity.BASE_USER entity = bll.GetUser(username, password);
                 if (entity != null) {
