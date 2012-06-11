@@ -39,7 +39,7 @@
                             <td><%#Eval("SAVEPOINT")%></td>
                             <td><%#Eval("status")%></td>
                             <td>
-                            <a href="TermEdit.aspx?id=<%# %>">编辑</a>
+                            <a href="TermEdit.aspx?id=<%#Eval("termid")%>">编辑</a>
                             <a href="">删除</a>
                             </td>
                         </tr>

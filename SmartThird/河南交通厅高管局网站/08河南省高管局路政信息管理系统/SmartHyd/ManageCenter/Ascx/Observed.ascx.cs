@@ -24,10 +24,11 @@ namespace SmartHyd.ManageCenter.Ascx {
             DateTime beginTime = DateTime.Now.AddDays(-5);
             DateTime endTime = DateTime.Now;
             int deptCode = 0;
+            int state = 0;
             DataTable dt = new DataTable();
 
             //根据指定时间范围，获取某个部门下的电子巡逻日志数据
-            dt = bll.GetDeptLog(beginTime, endTime, deptCode);
+            dt = bll.GetDeptLog(beginTime, endTime, deptCode,state);
 
             //初始化分页数据
             AspNetPager1.RecordCount = dt.Rows.Count;

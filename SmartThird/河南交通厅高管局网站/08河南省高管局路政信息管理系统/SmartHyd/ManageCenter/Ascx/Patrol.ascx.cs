@@ -22,8 +22,9 @@ namespace SmartHyd.ManageCenter.Ascx {
             DateTime beginTime = DateTime.Now.AddDays(-5);
             DateTime endTime = DateTime.Now;
             int deptCode = 0;
+            int state = 0;
             DataTable dt = new DataTable();
-            dt = bll.GetDeptLog(beginTime, endTime, deptCode);
+            dt = bll.GetDeptLog(beginTime, endTime, deptCode,state);
 
             AspNetPager1.RecordCount = dt.Rows.Count;
 
