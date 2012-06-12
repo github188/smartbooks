@@ -43,7 +43,7 @@ namespace SmartHyd.OracleDAL {
         /// <summary>
         /// 增加一条数据
         /// </summary>
-        public void Add(Entity.BASE_OBSERVED entity) {
+        public int Add(Entity.BASE_OBSERVED entity) {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("insert into BASE_OBSERVED(");
             strSql.Append("OBSERVEDID,PATROLUSER,WEATHER,BEGINTIME,ENDDATE,LOG,DEPTID,STATE");
@@ -71,7 +71,7 @@ namespace SmartHyd.OracleDAL {
             parameters[5].Value = entity.LOG;
             parameters[6].Value = entity.DEPTID;
             parameters[7].Value = entity.STATE;
-            OracleHelper.ExecuteNonQuery(strSql.ToString(), parameters);
+            return OracleHelper.ExecuteNonQuery(strSql.ToString(), parameters);
 
         }
 
@@ -89,7 +89,7 @@ namespace SmartHyd.OracleDAL {
             strSql.Append(" BEGINTIME = :BEGINTIME , ");
             strSql.Append(" ENDDATE = :ENDDATE , ");
             strSql.Append(" LOG = :LOG , ");
-            strSql.Append(" DEPTID = :DEPTID  ");
+            strSql.Append(" DEPTID = :DEPTID,");
             strSql.Append(" STATE = :STATE  ");
             strSql.Append(" where OBSERVEDID=:OBSERVEDID  ");
 
@@ -230,7 +230,7 @@ namespace SmartHyd.OracleDAL {
         /// <param name="endTime">结束时间</param>
         /// <param name="deptCode">部门ID</param>
         /// <returns>电子巡逻日志数据</returns>
-        public DataTable GetDeptLog(DateTime beginTime, DateTime endTime, int deptCode)
+        public DataTable GetDeptLog(DateTime beginTime, DateTime endTime, int deptCode,int state)
         {
             StringBuilder where = new StringBuilder();
             where.Append("SELECT b.observedid, a.dptname, b.patroluser, b.weather, b.begintime, b.enddate, b.LOG, b.deptid ");
@@ -239,6 +239,7 @@ namespace SmartHyd.OracleDAL {
             where.AppendFormat("AND b.begintime >= TO_DATE ('{0}', 'yyyy-mm-dd') ", beginTime.ToString("yyyy-MM-dd"));
             where.AppendFormat("AND b.enddate <= TO_DATE ('{0}', 'yyyy-mm-dd') ", endTime.ToString("yyyy-MM-dd"));
             where.AppendFormat("AND b.deptid = {0}", deptCode.ToString());
+            where.AppendFormat("AND b.state = {0}", state.ToString());
 
             return OracleHelper.Query(where.ToString()).Tables[0];
         }

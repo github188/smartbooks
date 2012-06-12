@@ -41,10 +41,10 @@ namespace SmartHyd.OracleDAL {
         /// <summary>
         /// 增加一条数据
         /// </summary>
-        public void Add(Entity.BASE_PATROL entity) {
+        public int Add(Entity.BASE_PATROL entity) {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("insert into BASE_PATROL(");
-            strSql.Append("PATROLID,ENDTIME,TRANSFER,ACCEPT,WITHIN,NEXTWITHIN,ACCEPTCAPTAIN,SHIFTCAPTAIN,ACCEPTBUSNUMBER,TICKTIME,BUSKM,DEPTID,GOODS,RESPUSER,PATROLUSER,BUSNUMBER,MILEAGE,WEATHER,LOG,BEGINTIME，STATE");
+            strSql.Append("PATROLID,ENDTIME,TRANSFER,ACCEPT,WITHIN,NEXTWITHIN,ACCEPTCAPTAIN,SHIFTCAPTAIN,ACCEPTBUSNUMBER,TICKTIME,BUSKM,DEPTID,GOODS,RESPUSER,PATROLUSER,BUSNUMBER,MILEAGE,WEATHER,LOG,BEGINTIME,STATE");
             strSql.Append(") values (");
             strSql.Append(":PATROLID,:ENDTIME,:TRANSFER,:ACCEPT,:WITHIN,:NEXTWITHIN,:ACCEPTCAPTAIN,:SHIFTCAPTAIN,:ACCEPTBUSNUMBER,:TICKTIME,:BUSKM,:DEPTID,:GOODS,:RESPUSER,:PATROLUSER,:BUSNUMBER,:MILEAGE,:WEATHER,:LOG,:BEGINTIME,:STATE");
             strSql.Append(") ");
@@ -95,7 +95,7 @@ namespace SmartHyd.OracleDAL {
             parameters[18].Value = entity.LOG;
             parameters[19].Value = entity.BEGINTIME;
             parameters[20].Value = entity.STATE;
-            OracleHelper.ExecuteNonQuery(strSql.ToString(), parameters);
+           return OracleHelper.ExecuteNonQuery(strSql.ToString(), parameters);
 
         }
         
@@ -125,7 +125,7 @@ namespace SmartHyd.OracleDAL {
             strSql.Append(" MILEAGE = :MILEAGE , ");
             strSql.Append(" WEATHER = :WEATHER , ");
             strSql.Append(" LOG = :LOG , ");
-            strSql.Append(" BEGINTIME = :BEGINTIME  ");
+            strSql.Append(" BEGINTIME = :BEGINTIME,");
             strSql.Append(" STATE = :STATE  ");
             strSql.Append(" where PATROLID=:PATROLID  ");
 
@@ -316,14 +316,16 @@ namespace SmartHyd.OracleDAL {
         /// <param name="endTime">结束时间</param>
         /// <param name="deptCode">部门ID编号</param>
         /// <returns>日志数据</returns>
-        public DataTable GetDeptLog(DateTime beginTime, DateTime endTime, int deptCode) {
+        public DataTable GetDeptLog(DateTime beginTime, DateTime endTime, int deptCode, int state)
+        {
             string procName = "PKG_PATROL_QUERY.proc_getdeptlog";
-            OracleParameter[] param = new OracleParameter[4];
+            OracleParameter[] param = new OracleParameter[5];
 
             param[0] = new OracleParameter();
             param[1] = new OracleParameter();
             param[2] = new OracleParameter();
             param[3] = new OracleParameter();
+            param[4] = new OracleParameter();
 
             param[0].Direction = ParameterDirection.Input;
             param[0].OracleType = OracleType.DateTime;
@@ -340,9 +342,14 @@ namespace SmartHyd.OracleDAL {
             param[2].ParameterName = "dptcode";
             param[2].Value = deptCode;
 
-            param[3].Direction = ParameterDirection.Output;
-            param[3].OracleType = OracleType.Cursor;
-            param[3].ParameterName = "out_cursor";
+            param[3].Direction = ParameterDirection.Input;
+            param[3].OracleType = OracleType.Number;
+            param[3].ParameterName = "state";
+            param[3].Value = state;
+
+            param[4].Direction = ParameterDirection.Output;
+            param[4].OracleType = OracleType.Cursor;
+            param[4].ParameterName = "out_cursor";
 
             return OracleHelper.RunProcedure(procName, param).Tables[0];
         }

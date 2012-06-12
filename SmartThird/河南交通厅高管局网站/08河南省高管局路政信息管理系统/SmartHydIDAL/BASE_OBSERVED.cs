@@ -25,7 +25,7 @@ namespace SmartHyd.IDAL {
         /// <summary>
         /// 增加一条数据
         /// </summary>
-        void Add(Entity.BASE_OBSERVED entity);
+        int Add(Entity.BASE_OBSERVED entity);
 
         /// <summary>
         /// 更新一条数据
@@ -61,7 +61,7 @@ namespace SmartHyd.IDAL {
         /// <param name="endTime">结束时间</param>
         /// <param name="deptCode">部门ID</param>
         /// <returns>电子巡逻日志数据</returns>
-        DataTable GetDeptLog(DateTime beginTime, DateTime endTime, int deptCode);
+        DataTable GetDeptLog(DateTime beginTime, DateTime endTime, int deptCode,int state);
         #endregion
     }
 }
