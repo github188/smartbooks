@@ -45,7 +45,8 @@
     #PatrolSearch {
 	    font-size: 12px;
 	    font-weight: bold;
-    }
+    width: 540px;
+}
     .controlstyle{ width:100%;}
     .txtboxstyle{border:none; border-bottom:1px solid #065c8f;border-top:1px solid #065c8f;border-left:1px solid #065c8f;border-right:1px solid #065c8f;}
     

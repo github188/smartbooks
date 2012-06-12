@@ -49,13 +49,13 @@
 				<li>
 					<img src="images/ui-left-ico01.png" alt="路政巡逻" />
 					<%--<a href="ManageCenter/Patrol.aspx" target="mainFrame">路政巡逻</a>--%>
-                    <a href="Patrol/PatrolIndex.aspx" target="mainFrame">路政巡逻</a>
+                    <a href="ManageCenter/Patrol/PatrolIndex.aspx" target="mainFrame">路政巡逻</a>
                     <img src="images/ui-left-menustar.png" alt="新功能上线"/>
 				</li>
 				
 				<li>
 					<img src="images/ui-left-ico02.png" alt="人员装备"/>
-					<a href="ManageCenter/Term.aspx" target="mainFrame">人员装备</a>
+					<a href="ManageCenter/PersonTerm/PersonTerm.aspx" target="mainFrame">人员装备</a>
                     <img src="images/ui-left-menustar.png" alt="新功能上线"/>
 				</li>
 				
