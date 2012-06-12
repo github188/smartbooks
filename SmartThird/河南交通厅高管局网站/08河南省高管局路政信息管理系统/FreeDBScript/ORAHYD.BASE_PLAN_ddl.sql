@@ -1,5 +1,5 @@
 -- Start of DDL Script for Table ORAHYD.BASE_PLAN
--- Generated 12-六月-2012 9:25:45 from ORAHYD@ORAHYD
+-- Generated 12-六月-2012 10:09:58 from ORAHYD@ORAHYD
 
 CREATE TABLE base_plan
     (calendarid                     NUMBER NOT NULL,
@@ -10,7 +10,8 @@ CREATE TABLE base_plan
     calendarremind                 DATE DEFAULT sysdate NOT NULL,
     calendartype                   VARCHAR2(50),
     state                          NUMBER DEFAULT 0 NOT NULL,
-    title                          VARCHAR2(50))
+    title                          VARCHAR2(50),
+    remind                         NUMBER DEFAULT 0)
   PCTFREE     10
   INITRANS    1
   MAXTRANS    255
@@ -81,6 +82,8 @@ COMMENT ON COLUMN base_plan.calendarremind IS '提醒时间'
 COMMENT ON COLUMN base_plan.calendartype IS '事务类型'
 /
 COMMENT ON COLUMN base_plan.end_date IS '结束时间'
+/
+COMMENT ON COLUMN base_plan.remind IS '提醒方式（0：系统提醒；1：短信提醒）'
 /
 COMMENT ON COLUMN base_plan.start_date IS '开始时间'
 /
