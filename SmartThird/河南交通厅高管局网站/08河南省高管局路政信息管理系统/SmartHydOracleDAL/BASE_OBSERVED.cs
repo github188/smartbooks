@@ -46,9 +46,10 @@ namespace SmartHyd.OracleDAL {
         public int Add(Entity.BASE_OBSERVED entity) {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("insert into BASE_OBSERVED(");
-            strSql.Append("OBSERVEDID,PATROLUSER,WEATHER,BEGINTIME,ENDDATE,LOG,DEPTID,STATE");
+
+            strSql.Append("OBSERVEDID,PATROLUSER,WEATHER,BEGINTIME,ENDDATE,LOG,DEPTID,STATE,REMARK");
             strSql.Append(") values (");
-            strSql.Append(":OBSERVEDID,:PATROLUSER,:WEATHER,:BEGINTIME,:ENDDATE,:LOG,:DEPTID,:STATE");
+            strSql.Append(":OBSERVEDID,:PATROLUSER,:WEATHER,:BEGINTIME,:ENDDATE,:LOG,:DEPTID,:STATE,:REMARK");
             strSql.Append(") ");
 
             OracleParameter[] parameters = {
@@ -58,8 +59,9 @@ namespace SmartHyd.OracleDAL {
                         new OracleParameter(":BEGINTIME", OracleType.DateTime) ,            
                         new OracleParameter(":ENDDATE", OracleType.DateTime) ,            
                         new OracleParameter(":LOG", OracleType.VarChar,500) ,            
-                        new OracleParameter(":DEPTID", OracleType.Number,4), 
-                        new OracleParameter(":STATE", OracleType.Number,4)
+                        new OracleParameter(":DEPTID", OracleType.Number,4) ,            
+                        new OracleParameter(":STATE", OracleType.Number,4) ,            
+                        new OracleParameter(":REMARK", OracleType.VarChar,500)             
               
             };
 
@@ -71,6 +73,7 @@ namespace SmartHyd.OracleDAL {
             parameters[5].Value = entity.LOG;
             parameters[6].Value = entity.DEPTID;
             parameters[7].Value = entity.STATE;
+            parameters[8].Value = entity.REMARK; 
             return OracleHelper.ExecuteNonQuery(strSql.ToString(), parameters);
 
         }
@@ -90,7 +93,8 @@ namespace SmartHyd.OracleDAL {
             strSql.Append(" ENDDATE = :ENDDATE , ");
             strSql.Append(" LOG = :LOG , ");
             strSql.Append(" DEPTID = :DEPTID,");
-            strSql.Append(" STATE = :STATE  ");
+            strSql.Append(" STATE = :STATE,");
+            strSql.Append(" REMARK = :REMARK  ");  
             strSql.Append(" where OBSERVEDID=:OBSERVEDID  ");
 
             OracleParameter[] parameters = {
@@ -101,7 +105,8 @@ namespace SmartHyd.OracleDAL {
                         new OracleParameter(":ENDDATE", OracleType.DateTime) ,            
                         new OracleParameter(":LOG", OracleType.VarChar,500) ,            
                         new OracleParameter(":DEPTID", OracleType.Number,4), 
-                        new OracleParameter(":STATE", OracleType.Number,4)
+                        new OracleParameter(":STATE", OracleType.Number,4) ,            
+                        new OracleParameter(":REMARK", OracleType.VarChar,500)             
               
             };
 
@@ -113,6 +118,7 @@ namespace SmartHyd.OracleDAL {
             parameters[5].Value = entity.LOG;
             parameters[6].Value = entity.DEPTID;
             parameters[7].Value = entity.STATE;
+            parameters[8].Value = entity.REMARK; 
             int rows = OracleHelper.ExecuteNonQuery(strSql.ToString(), parameters);
             if (rows > 0) {
                 return true;
@@ -151,7 +157,7 @@ namespace SmartHyd.OracleDAL {
         public Entity.BASE_OBSERVED GetEntity(decimal OBSERVEDID) {
 
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("select OBSERVEDID, PATROLUSER, WEATHER, BEGINTIME, ENDDATE, LOG, DEPTID,STATE");
+            strSql.Append("select OBSERVEDID, PATROLUSER, WEATHER, BEGINTIME, ENDDATE, LOG, DEPTID,STATE,REMARK");
             strSql.Append("  from BASE_OBSERVED ");
             strSql.Append(" where OBSERVEDID=:OBSERVEDID ");
             OracleParameter[] parameters = {

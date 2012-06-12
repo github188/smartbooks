@@ -1,24 +1,25 @@
 -- Start of DDL Script for Table ORAHYD.BASE_USER
--- Generated 2012-6-9 下午 07:02:33 from ORAHYD@ORAHYD
+-- Generated 2012-6-12 上午 11:28:14 from ORAHYD@ORAHYD
 
 CREATE TABLE base_user
     (userid                         NUMBER DEFAULT 0 NOT NULL,
     username                       VARCHAR2(50) NOT NULL,
     userpwd                        VARCHAR2(32) NOT NULL,
-    parentid                       NUMBER DEFAULT 0 NOT NULL,
-    sex                            NUMBER DEFAULT 0 NOT NULL,
+    parentid                       NUMBER DEFAULT 0,
+    sex                            NUMBER DEFAULT 0,
     deptid                         NUMBER DEFAULT 0 NOT NULL,
-    birthday                       DATE DEFAULT SYSDATE NOT NULL,
-    degree                         VARCHAR2(50) NOT NULL,
+    birthday                       DATE DEFAULT SYSDATE,
+    degree                         VARCHAR2(50),
     face                           VARCHAR2(50),
     idnumber                       VARCHAR2(18),
     jobnumber                      VARCHAR2(50),
-    photo                          VARCHAR2(200) NOT NULL,
+    photo                          VARCHAR2(200),
     prof                           VARCHAR2(50),
     remark                         VARCHAR2(50) DEFAULT '无',
     ststus                         NUMBER DEFAULT 0 NOT NULL,
     phone                          VARCHAR2(50) NOT NULL,
-    realname                       VARCHAR2(50))
+    realname                       VARCHAR2(50) NOT NULL,
+    isline                         NUMBER DEFAULT 0)
   PCTFREE     10
   INITRANS    1
   MAXTRANS    255
@@ -89,6 +90,8 @@ COMMENT ON COLUMN base_user.deptid IS '用户所属部门'
 COMMENT ON COLUMN base_user.face IS '政治面貌'
 /
 COMMENT ON COLUMN base_user.idnumber IS '身份证号码'
+/
+COMMENT ON COLUMN base_user.isline IS '是否在线（0：离线；1：在线）'
 /
 COMMENT ON COLUMN base_user.jobnumber IS '工作证号'
 /

@@ -4,159 +4,174 @@
 // 文件名称:BASE_ROAD_TERM.cs
 // 功能描述:路产设备信息表 -- 实体定义
 //
-// 创建标识： 王 亚 2012-05-04
-namespace SmartHyd.Entity {
+// 创建标识： 付晓 2012-06-12
+namespace SmartHyd.Entity
+{
     using System;
     using System.Collections.Generic;
     using System.Text;
-
+	
     /// <summary>
     /// 路产设备信息表 -- 实体定义
     /// </summary>
-    public class BASE_ROAD_TERM {
-        /// <summary>
-        /// 路产设别编号
+    public class BASE_ROAD_TERM
+    {
+		/// <summary>
+        /// 路产设备编号
         /// </summary>		
         private decimal _ID;
-        /// <summary>
+		/// <summary>
         /// 路产设备名称
         /// </summary>		
         private string _ROADNAME;
-        /// <summary>
+		/// <summary>
         /// 高速公路名称
         /// </summary>		
         private string _LINENAME;
-        /// <summary>
+		/// <summary>
         /// 桩号（K）
         /// </summary>		
         private decimal _STAKEK;
-        /// <summary>
+		/// <summary>
         /// 桩号（M）
         /// </summary>		
         private decimal _STAKEM;
-        /// <summary>
+		/// <summary>
         /// 位置描述
         /// </summary>		
         private string _SUMMARY;
-        /// <summary>
+		/// <summary>
         /// 竣工时间
         /// </summary>		
-        private DateTime _COMPTIME = DateTime.Now;
-        /// <summary>
+        private DateTime _COMPTIME;
+		/// <summary>
         /// 登记时间
         /// </summary>		
-        private DateTime _REGTIME = DateTime.Now;
-        /// <summary>
+        private DateTime _REGTIME;
+		/// <summary>
         /// 设备照片
         /// </summary>		
         private string _PHOTO;
-        /// <summary>
+		/// <summary>
         /// 备注
         /// </summary>		
         private string _REMARK;
-        /// <summary>
+		/// <summary>
         /// 状态（0：正常，1删除）
         /// </summary>		
         private decimal _STATUS;
-        /// <summary>
+		/// <summary>
         /// 路产设备类型编号
         /// </summary>		
         private decimal _TYPEID;
-        /// <summary>
+		/// <summary>
         /// 部门编号
         /// </summary>		
         private decimal _DEPTID;
-
-        /// <summary>
+	
+	        /// <summary>
         /// 路产设备编号
         /// </summary>
-        public decimal ID {
+        public decimal ID
+        {
             get { return _ID; }
             set { _ID = value; }
         }
-        /// <summary>
+	        /// <summary>
         /// 路产设备名称
         /// </summary>
-        public string ROADNAME {
+        public string ROADNAME
+        {
             get { return _ROADNAME; }
             set { _ROADNAME = value; }
         }
-        /// <summary>
+	        /// <summary>
         /// 高速公路名称
         /// </summary>
-        public string LINENAME {
+        public string LINENAME
+        {
             get { return _LINENAME; }
             set { _LINENAME = value; }
         }
-        /// <summary>
+	        /// <summary>
         /// 桩号（K）
         /// </summary>
-        public decimal STAKEK {
+        public decimal STAKEK
+        {
             get { return _STAKEK; }
             set { _STAKEK = value; }
         }
-        /// <summary>
+	        /// <summary>
         /// 桩号（M）
         /// </summary>
-        public decimal STAKEM {
+        public decimal STAKEM
+        {
             get { return _STAKEM; }
             set { _STAKEM = value; }
         }
-        /// <summary>
+	        /// <summary>
         /// 位置描述
         /// </summary>
-        public string SUMMARY {
+        public string SUMMARY
+        {
             get { return _SUMMARY; }
             set { _SUMMARY = value; }
         }
-        /// <summary>
+	        /// <summary>
         /// 竣工时间
         /// </summary>
-        public DateTime COMPTIME {
+        public DateTime COMPTIME
+        {
             get { return _COMPTIME; }
             set { _COMPTIME = value; }
         }
-        /// <summary>
+	        /// <summary>
         /// 登记时间
         /// </summary>
-        public DateTime REGTIME {
+        public DateTime REGTIME
+        {
             get { return _REGTIME; }
             set { _REGTIME = value; }
         }
-        /// <summary>
+	        /// <summary>
         /// 设备照片
         /// </summary>
-        public string PHOTO {
+        public string PHOTO
+        {
             get { return _PHOTO; }
             set { _PHOTO = value; }
         }
-        /// <summary>
+	        /// <summary>
         /// 备注
         /// </summary>
-        public string REMARK {
+        public string REMARK
+        {
             get { return _REMARK; }
             set { _REMARK = value; }
         }
-        /// <summary>
+	        /// <summary>
         /// 状态（0：正常，1删除）
         /// </summary>
-        public decimal STATUS {
+        public decimal STATUS
+        {
             get { return _STATUS; }
             set { _STATUS = value; }
         }
-        /// <summary>
+	        /// <summary>
         /// 路产设备类型编号
         /// </summary>
-        public decimal TYPEID {
+        public decimal TYPEID
+        {
             get { return _TYPEID; }
             set { _TYPEID = value; }
         }
-        /// <summary>
+	        /// <summary>
         /// 部门编号
         /// </summary>
-        public decimal DEPTID {
+        public decimal DEPTID
+        {
             get { return _DEPTID; }
             set { _DEPTID = value; }
         }
-    }
+	}
 }

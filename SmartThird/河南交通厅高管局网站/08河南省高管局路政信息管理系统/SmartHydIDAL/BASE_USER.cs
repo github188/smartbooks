@@ -25,7 +25,7 @@ namespace SmartHyd.IDAL {
         /// <summary>
         /// 增加一条数据
         /// </summary>
-        void Add(Entity.BASE_USER entity);
+        int Add(Entity.BASE_USER entity);
 
         /// <summary>
         /// 更新一条数据

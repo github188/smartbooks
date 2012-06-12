@@ -4,38 +4,42 @@
 // 文件名称:BASE_ROAD_TERM_TYPE.cs
 // 功能描述:路产设备类型表 -- 实体定义
 //
-// 创建标识： 王 亚 2012-05-04
-namespace SmartHyd.Entity {
+// 创建标识： 付晓 2012-06-12
+namespace SmartHyd.Entity
+{
     using System;
     using System.Collections.Generic;
     using System.Text;
-
+	
     /// <summary>
     /// 路产设备类型表 -- 实体定义
     /// </summary>
-    public class BASE_ROAD_TERM_TYPE {
-        /// <summary>
+    public class BASE_ROAD_TERM_TYPE
+    {
+		/// <summary>
         /// 路产设备类型编号
         /// </summary>		
         private decimal _TYPEID;
-        /// <summary>
+		/// <summary>
         /// 路产设备类型名称
         /// </summary>		
         private string _TYPENAME;
-
-        /// <summary>
+	
+	        /// <summary>
         /// 路产设备类型编号
         /// </summary>
-        public decimal TYPEID {
+        public decimal TYPEID
+        {
             get { return _TYPEID; }
             set { _TYPEID = value; }
         }
-        /// <summary>
+	        /// <summary>
         /// 路产设备类型名称
         /// </summary>
-        public string TYPENAME {
+        public string TYPENAME
+        {
             get { return _TYPENAME; }
             set { _TYPENAME = value; }
         }
-    }
+	}
 }

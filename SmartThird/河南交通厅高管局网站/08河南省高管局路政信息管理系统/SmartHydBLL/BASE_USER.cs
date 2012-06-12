@@ -43,9 +43,9 @@ namespace SmartHyd.BLL
             return dal.GetAllList();
         }
 
-        public void Add(Entity.BASE_USER model)
+        public int Add(Entity.BASE_USER model)
         {
-            dal.Add(model);
+           return dal.Add(model);
         }
         /// <summary>
         /// 根据指定条件查询用户数据
