@@ -22,3 +22,7 @@ function selectall(chkcontrol) {
         }
     }
 }
+//返回上一页
+function GoBack() {
+    history.go(-1);
+}
