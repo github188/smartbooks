@@ -46,8 +46,9 @@ namespace SmartSpider.Config {
             if (r.TimeAsResult) {
                 return DateTime.Now.ToString();
             }
+
             //将固定值最为结果
-            if (r.ConstantAsResult) {
+            if (r.ConstantAsResult && !r.Static) {
                 return r.ConstantValue;
             }
             //记录当前网址
@@ -65,14 +66,12 @@ namespace SmartSpider.Config {
             result = Smart.Utility.StringHelper.SubString(result, r.PreviousFlag, r.FollowingFlag);
 
             //使用正则表达式采集结果
-            if (r.Static)
-            {
+            if (r.Static) {
                 //如果静态规则选中，则固定值值作为结果为正则表达式。
                 MatchCollection coll = Regex.Matches(result, r.ConstantValue);
                 result = string.Empty;
-                foreach (Match m in coll)
-                {
-                    result += m.Value + "\n";
+                foreach (Match m in coll) {
+                    result += m.Value;
                 }
             }
 
