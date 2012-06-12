@@ -17,10 +17,10 @@ namespace SmartHyd.BLL {
         /// <param name="endTime">结束时间</param>
         /// <param name="deptId">部门ID编号</param>
         /// <returns>日志数据</returns>
-        public DataTable GetDeptLog(DateTime beginTime, DateTime endTime, int deptCode) {
+        public DataTable GetDeptLog(DateTime beginTime, DateTime endTime, int deptCode,int state) {
             //校验开始、结束时间
-            
-            return dal.GetDeptLog(beginTime, endTime, deptCode);
+
+            return dal.GetDeptLog(beginTime, endTime, deptCode, state);
         }
         /// <summary>
         /// 确定该记录是否存在
@@ -53,8 +53,8 @@ namespace SmartHyd.BLL {
         /// 添加一条人工巡逻日志信息
         /// </summary>
         /// <param name="model"></param>
-        public void Add(Entity.BASE_PATROL model) {
-            dal.Add(model);
+        public int Add(Entity.BASE_PATROL model) {
+           return dal.Add(model);
         }
         /// <summary>
         /// 更新一条人工巡逻日志信息

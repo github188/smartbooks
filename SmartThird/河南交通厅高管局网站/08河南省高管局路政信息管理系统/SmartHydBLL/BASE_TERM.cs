@@ -50,5 +50,14 @@ namespace SmartHyd.BLL {
         {
             return termDal.GetList(strwhere).Tables[0];
         }
+        /// <summary>
+        /// 根据编号删除装备信息
+        /// </summary>
+        /// <param name="TERMID"></param>
+        /// <returns></returns>
+        public bool del(decimal TERMID)
+        {
+            return termDal.Delete(TERMID);
+        }
     }
 }
