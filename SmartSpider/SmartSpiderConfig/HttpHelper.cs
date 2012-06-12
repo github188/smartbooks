@@ -4,6 +4,7 @@
     using System.Text;
     using System.Net;
     using System.IO;
+    using System.IO.Compression;
 
     public class HttpHelper {
         #region 私有变量定义
@@ -84,7 +85,17 @@
                     this._WebRequest.GetRequestStream().Write(buffer, 0, buffer.Length);
                 }
                 this._WebResponse = (HttpWebResponse)this._WebRequest.GetResponse();
-                StreamReader read = new StreamReader(this._WebResponse.GetResponseStream(), this._encoding);
+
+                /*
+                 * gzip内容解压缩
+                 */
+                StreamReader read = null;
+                if (_WebResponse.ContentEncoding.ToUpper().Equals("GZIP")) {
+                    read = new StreamReader(new GZipStream(this._WebResponse.GetResponseStream(), CompressionMode.Decompress));
+                }
+                else {
+                    read = new StreamReader(this._WebResponse.GetResponseStream(), this._encoding);
+                }
                 //this._Cookie.Add(this._WebResponse.Cookies);
                 string htmlText = read.ReadToEnd();
                 read.Close();

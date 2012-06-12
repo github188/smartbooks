@@ -25,6 +25,11 @@ namespace SmartSpider.Config {
             string[] result = new string[_excRule.Count];
             for (int i = 0; i < this._excRule.Count; i++) {
                 result[i] = ExtractionColumn(this._excRule[i]);
+
+                //该字段内容不能为空,并且是唯一数据,放弃本条采集结果
+                if(string.IsNullOrEmpty(result[i]) && _excRule[i].DataUnique){
+                    return null;
+                }
             }
             return result;
         }
@@ -76,6 +81,13 @@ namespace SmartSpider.Config {
 
             //过滤Html标记
             result = FilterHtmlMark(result, r.ReservedHtmlMarks);
+
+            //过滤掉无效字符：空格、换行符、制表符
+            result = result.Replace(" ", "");
+            result = result.Replace("\t", "");
+            result = result.Replace("\n", "");
+            result = result.Replace("\r", "");
+            result = result.Trim();
 
             return result;
         }
