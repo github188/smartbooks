@@ -1,5 +1,5 @@
 -- Start of DDL Script for Table ORAHYD.BASE_OBSERVED
--- Generated 2012-6-9 下午 07:03:42 from ORAHYD@ORAHYD
+-- Generated 12-六月-2012 9:23:17 from ORAHYD@ORAHYD
 
 CREATE TABLE base_observed
     (observedid                     NUMBER DEFAULT 0 NOT NULL,
@@ -9,7 +9,8 @@ CREATE TABLE base_observed
     enddate                        DATE DEFAULT SYSDATE NOT NULL,
     log                            VARCHAR2(500) NOT NULL,
     deptid                         NUMBER NOT NULL,
-    state                          NUMBER DEFAULT 0 NOT NULL)
+    state                          NUMBER DEFAULT 0 NOT NULL,
+    remark                         VARCHAR2(500))
   PCTFREE     10
   INITRANS    1
   MAXTRANS    255
@@ -73,7 +74,7 @@ COMMENT ON TABLE base_observed IS '电子巡逻日志表'
 /
 COMMENT ON COLUMN base_observed.begintime IS '巡查开始时间'
 /
-COMMENT ON COLUMN base_observed.deptid IS '部门'
+COMMENT ON COLUMN base_observed.deptid IS '巡逻单位'
 /
 COMMENT ON COLUMN base_observed.enddate IS '巡查结束时间'
 /
@@ -82,6 +83,8 @@ COMMENT ON COLUMN base_observed.log IS '巡查处理情况'
 COMMENT ON COLUMN base_observed.observedid IS '电子巡逻日志编号'
 /
 COMMENT ON COLUMN base_observed.patroluser IS '巡查人员'
+/
+COMMENT ON COLUMN base_observed.remark IS '备注'
 /
 COMMENT ON COLUMN base_observed.state IS '状态（0：正常，1：删除）'
 /

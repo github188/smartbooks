@@ -1,5 +1,5 @@
 -- Start of DDL Script for Table ORAHYD.BASE_PLAN
--- Generated 2012-6-9 ÏÂÎç 07:03:27 from ORAHYD@ORAHYD
+-- Generated 12-ÁùÔÂ-2012 9:25:45 from ORAHYD@ORAHYD
 
 CREATE TABLE base_plan
     (calendarid                     NUMBER NOT NULL,

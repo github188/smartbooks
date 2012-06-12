@@ -1,5 +1,5 @@
 -- Start of DDL Script for Table ORAHYD.BASE_PATROL
--- Generated 2012-6-9 下午 07:04:16 from ORAHYD@ORAHYD
+-- Generated 12-六月-2012 9:24:55 from ORAHYD@ORAHYD
 
 CREATE TABLE base_patrol
     (patrolid                       NUMBER NOT NULL,
@@ -22,7 +22,9 @@ CREATE TABLE base_patrol
     ticktime                       DATE DEFAULT SYSDATE NOT NULL,
     buskm                          NUMBER DEFAULT 0 NOT NULL,
     goods                          VARCHAR2(500) NOT NULL,
-    state                          NUMBER DEFAULT 0 NOT NULL)
+    state                          NUMBER DEFAULT 0 NOT NULL,
+    attention                      VARCHAR2(500),
+    remark                         VARCHAR2(500))
   PCTFREE     10
   INITRANS    1
   MAXTRANS    255
@@ -90,6 +92,8 @@ COMMENT ON COLUMN base_patrol.acceptbusnumber IS '接班巡逻车牌号'
 /
 COMMENT ON COLUMN base_patrol.acceptcaptain IS '接班中队长'
 /
+COMMENT ON COLUMN base_patrol.attention IS '重点关注'
+/
 COMMENT ON COLUMN base_patrol.begintime IS '巡查开始时间'
 /
 COMMENT ON COLUMN base_patrol.buskm IS '接班巡逻车里程表（KM）'
@@ -111,6 +115,8 @@ COMMENT ON COLUMN base_patrol.nextwithin IS '移交下班处理事项'
 COMMENT ON COLUMN base_patrol.patrolid IS '巡逻日志ID'
 /
 COMMENT ON COLUMN base_patrol.patroluser IS '巡查人员'
+/
+COMMENT ON COLUMN base_patrol.remark IS '备注'
 /
 COMMENT ON COLUMN base_patrol.respuser IS '巡查负责人'
 /
