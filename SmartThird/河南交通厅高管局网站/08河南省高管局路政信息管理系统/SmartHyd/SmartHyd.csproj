@@ -158,7 +158,6 @@
     <Content Include="ManageCenter\Ascx\DocumentCheckOut.ascx" />
     <Content Include="ManageCenter\Ascx\DocumentCreate.ascx" />
     <Content Include="ManageCenter\Ascx\DocumentDetail.ascx" />
-    <Content Include="ManageCenter\Ascx\DocumentManage.ascx" />
     <Content Include="ManageCenter\Ascx\DocumentReply.ascx" />
     <Content Include="ManageCenter\Ascx\DocumentTypeManage.ascx" />
     <Content Include="ManageCenter\Ascx\Empower.ascx" />
@@ -182,7 +181,6 @@
     <Content Include="ManageCenter\DocumentCheckOut.aspx" />
     <Content Include="ManageCenter\DocumentCreate.aspx" />
     <Content Include="ManageCenter\DocumentDetail.aspx" />
-    <Content Include="ManageCenter\DocumentManage.aspx" />
     <Content Include="ManageCenter\DocumentReply.aspx" />
     <Content Include="ManageCenter\DocumentTypeManage.aspx" />
     <Content Include="ManageCenter\Empower.aspx" />
@@ -615,13 +613,6 @@
     <Compile Include="ManageCenter\Ascx\DocumentDetail.ascx.designer.cs">
       <DependentUpon>DocumentDetail.ascx</DependentUpon>
     </Compile>
-    <Compile Include="ManageCenter\Ascx\DocumentManage.ascx.cs">
-      <DependentUpon>DocumentManage.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ManageCenter\Ascx\DocumentManage.ascx.designer.cs">
-      <DependentUpon>DocumentManage.ascx</DependentUpon>
-    </Compile>
     <Compile Include="ManageCenter\Ascx\DocumentReply.ascx.cs">
       <DependentUpon>DocumentReply.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -782,13 +773,6 @@
     </Compile>
     <Compile Include="ManageCenter\DocumentDetail.aspx.designer.cs">
       <DependentUpon>DocumentDetail.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ManageCenter\DocumentManage.aspx.cs">
-      <DependentUpon>DocumentManage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ManageCenter\DocumentManage.aspx.designer.cs">
-      <DependentUpon>DocumentManage.aspx</DependentUpon>
     </Compile>
     <Compile Include="ManageCenter\DocumentReply.aspx.cs">
       <DependentUpon>DocumentReply.aspx</DependentUpon>

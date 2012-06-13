@@ -34,7 +34,7 @@
                                 <%#Eval("isread")%>
                             </td>
                             <td align="left">
-                                <a href='DocumentDetail.aspx?id=<%#Eval("articleid") %>'>
+                                <a href='DocumentDetail.aspx?id=<%#Eval("ID") %>'>
                                     <%#Eval("title")%>
                                 </a>
                             </td>

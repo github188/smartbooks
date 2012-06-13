@@ -29,16 +29,12 @@ namespace SmartHyd.ManageCenter.Ascx {
                 InitTreeNodes(ddlTypeId, 0, dt, 0);
 
                 //获取编辑模式和ID
-                if (Request.QueryString["id"] != null && Request.QueryString["m"] != null) {
+                if (Request.QueryString["id"] != null) {
                     int id = Convert.ToInt32(Request.QueryString["id"].ToString());                    
                     Entity.BASE_ARTICLE model = new Entity.BASE_ARTICLE();
                     model = bll.GetEntity(id);
 
-                    if (Request.QueryString["m"].Equals("edit")) {
-                        /*编辑模式*/
-                        SetEntity(model);
-                    }
-                    else {
+                    if (Request.QueryString["m"] != null && Request.QueryString["m"].Equals("edit")) {
                         /*回复模式*/
                         hidPrimary.Value = "-1";
                         hidParentPrimary.Value = model.PARENTID.ToString();
@@ -52,6 +48,10 @@ namespace SmartHyd.ManageCenter.Ascx {
 
                         /*收文单位隐藏*/
                         TreeViewAcceptUnit.Enabled = false;
+                    }
+                    else {
+                        /*编辑模式*/
+                        SetEntity(model);
                     }
                 }
             }
