@@ -17,7 +17,7 @@ namespace SmartHyd.ManageCenter.Official {
         //页面加载
         protected void Page_Load(object sender, EventArgs e) {
             //告诉表单如何格式化文件信息
-            Page.Form.Enctype = "multipart/form-data";  
+            Page.Form.Enctype = "multipart/form-data";
             userSession = (Utility.UserSession)Session["user"];
 
             if (!IsPostBack) {
@@ -163,7 +163,9 @@ namespace SmartHyd.ManageCenter.Official {
             DataTable dt = new DataTable();
             //获取用户所属单位和下级部门
             BLL.BASE_DEPT dept = new BLL.BASE_DEPT();
-            dt = dept.GetAllDep("STATUS=0");
+            //dt = dept.GetAllDep("STATUS=0");
+            /*当前用户所属部门和子部门*/
+            dt = dept.GetUserWhereDepartment(userSession.USERNAME, -1);
 
             foreach (DataRow dr in dt.Rows) {
                 if (dr["PARENTID"].ToString().Equals("0")) {
@@ -172,7 +174,7 @@ namespace SmartHyd.ManageCenter.Official {
                     rootNode.Value = dr["DEPTID"].ToString();
                     rootNode.ToolTip = dr["DPTINFO"].ToString();
                     rootNode.ShowCheckBox = true;
-                    rootNode.Expanded = false;
+                    rootNode.Expanded = true;
 
                     //递归子节点
                     RecursiveBindAcceptUnit(rootNode, dt);
@@ -279,6 +281,46 @@ namespace SmartHyd.ManageCenter.Official {
                 RecursiveCheckNode(sub, ref isSelected);
             }
         }
+
+        /// <summary>
+        /// 遍历选择部门节点
+        /// </summary>
+        /// <param name="node">部门节点</param>
+        /// <param name="method">0.全选 1.反选 3.运营单位 4.路政大队</param>
+        private void RecursiveNode(TreeNode node, int method) {
+            switch (method) {
+                //全选
+                case 0:
+                    node.Checked = true;
+                    break;
+                //反选
+                case 1:
+                    node.Checked = node.Checked ? false : true;
+                    break;
+                //运营单位
+                case 2:
+                    if (node.Depth == 1) {
+                        node.Checked = true;
+                    }
+                    else {
+                        node.Checked = false;
+                    }
+                    break;
+                //路政大队
+                case 3:
+                    if (node.Depth == 2) {
+                        node.Checked = true;
+                    }
+                    else {
+                        node.Checked = false;
+                    }
+                    break;
+            }
+            foreach (TreeNode sub in node.ChildNodes) {
+                RecursiveNode(sub, method);
+            }
+        }
+
         //添加公文
         private void Creates(Entity.BASE_ARTICLE model) {
             /*#region 上传附件
@@ -387,7 +429,31 @@ namespace SmartHyd.ManageCenter.Official {
         }
         //文单位节点选择状态改变
         protected void TreeViewAcceptUnit_SelectedNodeChanged(object sender, EventArgs e) {
-            
+
+        }
+        //全选
+        protected void lnkSelectAll_Click(object sender, EventArgs e) {
+            foreach (TreeNode node in TreeViewAcceptUnit.Nodes) {
+                RecursiveNode(node, 0);
+            }
+        }
+        //反选
+        protected void lnkSelectNoAll_Click(object sender, EventArgs e) {
+            foreach (TreeNode node in TreeViewAcceptUnit.Nodes) {
+                RecursiveNode(node, 1);
+            }
+        }
+        //选择运营单位
+        protected void lnkSelectUnit_Click(object sender, EventArgs e) {
+            foreach (TreeNode node in TreeViewAcceptUnit.Nodes) {
+                RecursiveNode(node, 2);
+            }
+        }
+        //选择路政大队
+        protected void lnkSelectGroup_Click(object sender, EventArgs e) {
+            foreach (TreeNode node in TreeViewAcceptUnit.Nodes) {
+                RecursiveNode(node, 3);
+            }
         }
     }
 }

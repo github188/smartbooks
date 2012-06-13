@@ -9,17 +9,14 @@
     <script src="../../Scripts/kindeditor-4.0.5/kindeditor-min.js" type="text/javascript"></script>
     <script src="../../Scripts/kindeditor-4.0.5/lang/zh_CN.js" type="text/javascript"></script>
     <script type="text/jscript">
-        $(function () {
-            /*编辑器*/
-            var editor;
-            KindEditor.ready(function (K) {
-                /*发文内容*/
-                editor = K.create('textarea[id="txtContent"]', {
-                    items: ['source', '|', 'undo', 'redo', '|', 'cut', 'copy',
+        /*编辑器*/
+        KindEditor.ready(function (K) {
+            /*发文内容*/
+            var editor = K.create('textarea[id="txtContent"]', {
+                items: ['source', '|', 'undo', 'redo', '|', 'cut', 'copy',
                             'paste', 'plainpaste', 'wordpaste'],
-                    width: "100%",
-                    height: "260px"
-                });
+                width: "100%",
+                height: "260px"
             });
         });
 
@@ -74,6 +71,8 @@
 </head>
 <body>
     <form id="form1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+    </asp:ScriptManager>
     <table class="TableBlock" width="100%" align="center" cellpadding="0" cellspacing="0">
         <tbody>
             <!--首选行-->
@@ -98,7 +97,7 @@
                 </td>
                 <td rowspan="5" valign="top">
                     <asp:TreeView ID="TreeViewAcceptUnit" runat="server" CssClass="treeview" ImageSet="Arrows"
-                        OnSelectedNodeChanged="TreeViewAcceptUnit_SelectedNodeChanged">
+                        OnSelectedNodeChanged="TreeViewAcceptUnit_SelectedNodeChanged" ShowLines="True">
                         <HoverNodeStyle Font-Underline="True" ForeColor="#5555DD" />
                         <NodeStyle Font-Names="Tahoma" Font-Size="10pt" ForeColor="Black" HorizontalPadding="5px"
                             NodeSpacing="0px" VerticalPadding="0px" />
@@ -134,7 +133,7 @@
                     附件文档:
                 </td>
                 <td class="TableData">
-                    <a id="addAttach_a" onclick="return addAttach(false);" href="#"  class="add_attach">添加附件</a>  
+                    <a id="addAttach_a" onclick="return addAttach(false);" href="#" class="add_attach">添加附件</a>
                     <div id="files">
                     </div>
                 </td>
@@ -161,6 +160,7 @@
                 <td class="TableData">
                     <asp:TextBox ID="txtSCORE" runat="server" CssClass="input" Width="40" MaxLength="5">0</asp:TextBox>
                     <asp:CheckBox ID="chkIsReply" runat="server" Text="允许回复" CssClass="input" Checked="true" />
+                    <asp:CheckBox ID="chkSMSAlert" runat="server" Text="短信通知" CssClass="input" />
                     <%--<asp:DropDownList ID="ddlStatus" runat="server" CssClass="input">
                         <asp:ListItem Text="0.已审核√" Value="0" Selected="True"></asp:ListItem>
                         <asp:ListItem Text="1.未审核×" Value="1"></asp:ListItem>
@@ -171,10 +171,11 @@
                     </asp:DropDownList>--%>
                 </td>
                 <td class="TableData" nowrap="nowrap">
-                    <asp:LinkButton ID="lnkSelectAll" runat="server">全选</asp:LinkButton>
-                    <asp:LinkButton ID="lnkSelectNoAll" runat="server">反选</asp:LinkButton>
-                    <asp:LinkButton ID="lnkSelectUnit" runat="server">运营单位</asp:LinkButton>
-                    <asp:LinkButton ID="lnkSelectGroup" runat="server">路政大队</asp:LinkButton>
+                    <asp:LinkButton ID="lnkSelectAll" runat="server" OnClick="lnkSelectAll_Click">全选</asp:LinkButton>
+                    <asp:LinkButton ID="lnkSelectNoAll" runat="server" OnClick="lnkSelectNoAll_Click">反选</asp:LinkButton>
+                    <asp:LinkButton ID="lnkSelectUnit" runat="server" OnClick="lnkSelectUnit_Click">运营单位</asp:LinkButton>
+                    <asp:LinkButton ID="lnkSelectGroup" runat="server" OnClick="lnkSelectGroup_Click">路政大队</asp:LinkButton>
+                    &nbsp;
                 </td>
             </tr>
             <!--操作按钮-->
