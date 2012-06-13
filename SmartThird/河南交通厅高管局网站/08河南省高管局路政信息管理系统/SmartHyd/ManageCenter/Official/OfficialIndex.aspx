@@ -1,4 +1,4 @@
-<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="OfficialIndex.aspx.cs" Inherits="SmartHyd.Official.OfficialIndex" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="OfficialIndex.aspx.cs" Inherits="SmartHyd.ManageCenter.Official.OfficialIndex" %>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
@@ -14,18 +14,18 @@
     height:100%;
 	}
     ul li{ margin:0; padding:0; border:0; list-style:none;}
-    #menu{ height:35px; background-image:url(../Images/ui-hander-background-1.png); background-repeat:repeat-x; font-family:微软雅黑;}
+    #menu{ height:35px; background-image:url(../../Images/ui-hander-background-1.png); background-repeat:repeat-x; font-family:微软雅黑;}
     #menu .patrolsitemap{ height:27px; line-height:27px; margin-top:8px; width:auto; color:#f2a41e; font-size:12px; font-weight:bold; float:left;}
     #menu ul{ margin:0; float:right; padding-top:8px; height:27px; }
     #menu ul li{ width:140px; line-height:27px; float:left; margin-left:5px;}
 
-    #menu .normal{ display:block; text-align:center; color:#FFF;  font-weight:bold; background:url(../images/btn_hover1.png) no-repeat; width:140px; height:27px; line-height:27px;  overflow:hidden; font-size:13px; text-decoration:none;color:#ffffff;}
-    #menu .normal a{ display:block; text-align:center; color:#FFF; font-size:13px;font-weight:bold; background:url(../images/btn_hover1.png) no-repeat; width:140px; height:27px; line-height:27px;  overflow:hidden;  text-decoration:none;color:#ffffff;}
+    #menu .normal{ display:block; text-align:center; color:#FFF;  font-weight:bold; background:url(../../images/btn_hover1.png) no-repeat; width:140px; height:27px; line-height:27px;  overflow:hidden; font-size:13px; text-decoration:none;color:#ffffff;}
+    #menu .normal a{ display:block; text-align:center; color:#FFF; font-size:13px;font-weight:bold; background:url(../../images/btn_hover1.png) no-repeat; width:140px; height:27px; line-height:27px;  overflow:hidden;  text-decoration:none;color:#ffffff;}
 
-    #menu ul li a:hover{ display:block; text-align:center; font-weight:bold; background:url(../Images/bg_a_hover.png) no-repeat;width:140px; color:#0c3a86;height:27px; line-height:27px; overflow:hidden;text-decoration:none;}
+    #menu ul li a:hover{ display:block; text-align:center; font-weight:bold; background:url(../../Images/bg_a_hover.png) no-repeat;width:140px; color:#0c3a86;height:27px; line-height:27px; overflow:hidden;text-decoration:none;}
 
-    #menu .actived{ display:block; text-align:center; font-weight:bold; background-color:#ffffff;  width:140px; color:#0c3a86;height:27px; line-height:27px; overflow:hidden;text-decoration:none;background:url(../Images/bg_li_hover.png) no-repeat;}
-    #menu .actived a{ display:block; text-align:center;  font-size:13px; text-decoration:none; font-weight:bold; background:url(../images/btn_hover1.png) no-repeat; width:140px; height:27px; line-height:27px;  overflow:hidden; font-size:13px; text-decoration:none;color:#0c3a86;}
+    #menu .actived{ display:block; text-align:center; font-weight:bold; background-color:#ffffff;  width:140px; color:#0c3a86;height:27px; line-height:27px; overflow:hidden;text-decoration:none;background:url(../../Images/bg_li_hover.png) no-repeat;}
+    #menu .actived a{ display:block; text-align:center;  font-size:13px; text-decoration:none; font-weight:bold; background:url(../../images/btn_hover1.png) no-repeat; width:140px; height:27px; line-height:27px;  overflow:hidden; font-size:13px; text-decoration:none;color:#0c3a86;}
 
     #buttons *{vertical-align:middle; text-align:center;}
 </style>
@@ -41,8 +41,8 @@
                 <div id="menu">
                     <div class="patrolsitemap"></div>
                         <ul>
-                            <li id="menu_Title0" onclick="nTabs('menu',this,2)" class="actived"><a href="OfficialPublish.aspx" target="PatrolFrame"><span id="buttons"><img src="../Images/doc_publish.png" border="0"/>发文管理</span></a></li>
-                            <li id="menu_Title1" onclick="nTabs('menu',this,2)" class="normal"><a href="OfficialAccept.aspx" target="PatrolFrame"><span id="buttons"><img src="../Images/doc_accept.png" border="0"/>收文管理</span></a></li>
+                            <li id="menu_Title0" onclick="nTabs('menu',this,2)" class="actived"><a href="OfficialPublish.aspx" target="PatrolFrame"><span id="buttons"><img src="../../Images/doc_publish.png" border="0"/>发文管理</span></a></li>
+                            <li id="menu_Title1" onclick="nTabs('menu',this,2)" class="normal"><a href="OfficialAccept.aspx" target="PatrolFrame"><span id="buttons"><img src="../../Images/doc_accept.png" border="0"/>收文管理</span></a></li>
                         </ul>
                 </div>
             </td>

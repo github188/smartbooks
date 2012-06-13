@@ -7,7 +7,7 @@
 // </自动生成>
 //------------------------------------------------------------------------------
 
-namespace SmartHyd.Official {
+namespace SmartHyd.ManageCenter.Official {
     
     
     public partial class OfficialIndex {

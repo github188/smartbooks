@@ -1,12 +1,12 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="OfficialAccept.aspx.cs"
-    Inherits="SmartHyd.Official.OfficialAccept" %>
+    Inherits="SmartHyd.ManageCenter.Official.OfficialAccept" %>
 
 <%@ Register Assembly="AspNetPager" Namespace="Wuqi.Webdiyer" TagPrefix="webdiyer" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
     <title>收文管理</title>
-    <link href="../Css/patrol.css" rel="stylesheet" type="text/css" />
+    <link href="../../Css/patrol.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <form id="form1" runat="server">
@@ -16,7 +16,7 @@
                 <div id="menu">
                     <div class="OperateNote">
                         <span id="buttons">
-                            <img src="../Images/branch.png" border="0" />当前位置：档案管理 > 收文管理 </span>
+                            <img src="../../Images/branch.png" border="0" />当前位置：档案管理 > 收文管理 </span>
                     </div>
                 </div>
             </td>

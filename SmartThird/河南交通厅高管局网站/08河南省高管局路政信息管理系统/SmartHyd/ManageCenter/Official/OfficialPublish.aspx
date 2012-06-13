@@ -1,13 +1,13 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="OfficialPublish.aspx.cs"
-    Inherits="SmartHyd.Official.OfficialPublish" %>
+    Inherits="SmartHyd.ManageCenter.Official.OfficialPublish" %>
 
 <%@ Register Assembly="AspNetPager" Namespace="Wuqi.Webdiyer" TagPrefix="webdiyer" %>
-<%@ Register Src="../Ascx/TreeView.ascx" TagName="TreeView" TagPrefix="uc1" %>
+<%@ Register Src="../../Ascx/TreeView.ascx" TagName="TreeView" TagPrefix="uc1" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>发文管理</title>
-    <link href="../Css/patrol.css" rel="stylesheet" type="text/css" />
+    <link href="../../Css/patrol.css" rel="stylesheet" type="text/css" />
     <style type="text/css">
         /*树控件*/
         .treeview
@@ -36,20 +36,20 @@
                         <div id="menu">
                             <div class="OperateNote">
                                 <span id="buttons">
-                                    <img src="../Images/branch.png" border="0" />当前位置：档案管理 > 发文管理</span></div>
+                                    <img src="../../Images/branch.png" border="0" />当前位置：档案管理 > 发文管理</span></div>
                             <ul>
                                 <li id="menu_Title0" onclick="nTabs('menu',this,1)" class="normal">
-                                    <a href="../ManageCenter/DocumentCreate.aspx" target="PatrolFrame">
+                                    <a href="../DocumentCreate.aspx" target="PatrolFrame">
                                         <span id="Span1">
-                                            <img src="../Images/add.png" border="0" />新建公文
+                                            <img src="../../Images/add.png" border="0" />新建公文
                                         </span>
                                     </a>
                                 </li>
 
                                 <li id="Li1" onclick="nTabs('menu',this,1)" class="normal">
-                                    <a href="../ManageCenter/DocumentTypeManage.aspx" target="PatrolFrame">
+                                    <a href="../DocumentTypeManage.aspx" target="PatrolFrame">
                                         <span id="Span3">
-                                            <img src="../Images/add.png" border="0" />新建分类
+                                            <img src="../../Images/add.png" border="0" />新建分类
                                         </span>
                                     </a>
                                 </li>
