@@ -67,6 +67,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Smart\SmartDBUtility\SmartDBUtility.csproj">
+      <Project>{40B79F71-57F3-4E04-8277-25A24CDCB7A5}</Project>
+      <Name>SmartDBUtility</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SmartHydEntity\SmartHydEntity.csproj">
       <Project>{084DC70E-F416-420D-AD6D-A74F004B3940}</Project>
       <Name>SmartHydEntity</Name>
