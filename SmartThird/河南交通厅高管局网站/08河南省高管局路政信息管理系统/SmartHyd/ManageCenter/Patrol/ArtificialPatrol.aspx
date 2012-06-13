@@ -2,7 +2,7 @@
     Inherits="SmartHyd.Patrol.ArtificialPatrol" %>
 
 <%@ Register Assembly="AspNetPager" Namespace="Wuqi.Webdiyer" TagPrefix="webdiyer" %>
-<%@ Register src="~/Ascx/Department.ascx" tagname="Department" tagprefix="uc1" %>
+<%@ Register Src="~/Ascx/Department.ascx" TagName="Department" TagPrefix="uc1" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
@@ -59,9 +59,9 @@
                                     <span id="PatrolSearch1">巡逻单位：</span>
                                 </td>
                                 <td width="120" height="24" colspan="3">
-                                 <uc1:Department ID="Department1" runat="server" />
+                                    <uc1:Department ID="Department1" runat="server" />
                                 </td>
-                               <%--  <td width="80" height="24" align="right">
+                                <%--  <td width="80" height="24" align="right">
                                    <span id="PatrolSearch2">车牌号：</span>
                                 </td>
                                 <td width="120" height="24">
@@ -76,13 +76,13 @@
                                     <span id="PatrolSearch3">起始时间：</span>
                                 </td>
                                 <td height="24">
-                                    <asp:TextBox ID="txt_startTime" runat="server" class="Wdate" Width="120" onFocus="WdatePicker({isShowClear:false,readOnly:true})"></asp:TextBox>
+                                    <asp:TextBox ID="txt_startTime" runat="server" class="Wdate" Width="120" onFocus="WdatePicker({isShowClear:false,startDate:'%y-%M-01 00:00:00',dateFmt:'yyyy-MM-dd HH:mm:ss',alwaysUseStartDate:true,readOnly:true})"></asp:TextBox>
                                 </td>
                                 <td height="24" align="right">
                                     <span id="PatrolSearch4">截止时间：</span>
                                 </td>
                                 <td height="24">
-                                    <asp:TextBox ID="txt_endTime" runat="server" class="Wdate controlstyle" onFocus="WdatePicker({isShowClear:false,readOnly:true})"></asp:TextBox>
+                                    <asp:TextBox ID="txt_endTime" runat="server" class="Wdate controlstyle" onFocus="WdatePicker({isShowClear:false,startDate:'%y-%M-01 00:00:00',dateFmt:'yyyy-MM-dd HH:mm:ss',alwaysUseStartDate:true,readOnly:true})"></asp:TextBox>
                                 </td>
                                 <td width="80" height="24" align="center">
                                     <asp:Button ID="btn_ok" runat="server" Text="" CssClass="btn_search" OnClick="btn_ok_Click" />
@@ -94,8 +94,8 @@
                 <tr>
                     <td valign="top">
                         <asp:GridView ID="gv_patrollist" runat="server" AutoGenerateColumns="False" BackColor="White"
-                            BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" 
-                            Width="100%" onrowcommand="gv_patrollist_RowCommand">
+                            BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" Width="100%"
+                            OnRowCommand="gv_patrollist_RowCommand">
                             <Columns>
                                 <asp:CheckBoxField />
                                 <asp:BoundField DataField="dptname" HeaderText="隶属部门" />
@@ -105,14 +105,15 @@
                                 <asp:BoundField DataField="weather" HeaderText="天气状况" />
                                 <asp:BoundField DataField="ticktime" HeaderText="交接班时间" />
                                 <asp:BoundField DataField="buskm" HeaderText="接班巡逻车里程表" />
-                              <%--  <asp:CommandField DeleteImageUrl="~/Images/delete.png" EditImageUrl="~/Images/edit.png"
+                                <%--  <asp:CommandField DeleteImageUrl="~/Images/delete.png" EditImageUrl="~/Images/edit.png"
                                     ShowEditButton="True" />
                                 <asp:CommandField DeleteImageUrl="~/Images/delete.png" ShowDeleteButton="True" />--%>
-                                 <asp:TemplateField HeaderText="操作选项">
+                                <asp:TemplateField HeaderText="操作选项">
                                     <ItemTemplate>
                                         <asp:LinkButton ID="Lbtview" runat="server" CommandName="view" CommandArgument='<%#Eval("patrolid") %>'>查看</asp:LinkButton>
                                         <asp:LinkButton ID="LbtEdit" runat="server" CommandName="edit" CommandArgument='<%#Eval("patrolid") %>'>编辑</asp:LinkButton>
-                                        <asp:LinkButton ID="LbtDel" runat="server" OnClientClick="return confirm('确定删除该日志吗？')" CommandName="del" CommandArgument='<%#Eval("patrolid") %>'>删除</asp:LinkButton>
+                                        <asp:LinkButton ID="LbtDel" runat="server" OnClientClick="return confirm('确定删除该日志吗？')"
+                                            CommandName="del" CommandArgument='<%#Eval("patrolid") %>'>删除</asp:LinkButton>
                                     </ItemTemplate>
                                     <ItemStyle Width="90" />
                                 </asp:TemplateField>
