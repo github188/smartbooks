@@ -24,7 +24,7 @@ public partial class index : System.Web.UI.Page
           rptLZFG.DataSource = dtLZFG;//路政法规
           rptLZFG.DataBind();
 
-          DataTable dtGZDT = NewsInfoService.Get_NewsViewList(depart.RD_ID, 1, 7);//1代表是工作动态
+          DataTable dtGZDT = NewsInfoService.Get_NewsViewList(depart.RD_ID, 1, 3);//1代表是工作动态
           rptGZDT.DataSource = dtGZDT;//工作动态
           rptGZDT.DataBind();
 

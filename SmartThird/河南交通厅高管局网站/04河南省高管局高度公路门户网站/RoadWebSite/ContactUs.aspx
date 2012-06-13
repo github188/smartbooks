@@ -15,6 +15,7 @@
         单位传真：<%=depart.RD_Fax %><br />
         电子信箱：<%=depart.RD_Email %><br />
         邮政编码：<%=depart.RD_PostCode %><br />
+        举报电话：<%=depart.RD_Report %><br />
         单位地址：<%=depart.RD_Address %>
    </div>
 </div>
