@@ -4,8 +4,6 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
 
     <title>河南省高速公路路政信息管理系统</title>
 
@@ -20,9 +18,10 @@
     <script src="Scripts/ext/adapter/ext/ext-base.js" type="text/javascript"></script>
     <script src="Scripts/ext/ext-all.js" type="text/javascript"></script>
 
+
     <script src="Scripts/system/ALLEvents.js" type="text/javascript"></script>
     <script src="Scripts/system/layout.js" type="text/javascript"></script>
-
+    
     <script type="text/javascript">
         ///IE9下兼容性解决
         if ((typeof Range !== "undefined") && !Range.prototype.createContextualFragment) {

@@ -58,6 +58,6 @@ namespace SmartHyd.IDAL {
         /// </summary>
         /// <param name="parentId"></param>
         /// <returns></returns>
-        DataTable GetMenuList();
+        DataTable GetMenuList(int parentId);
     }
 }

@@ -57,7 +57,7 @@ QM.ui.MenuPanel = Ext.extend(Ext.Panel, {
             this.store = new Ext.data.JsonStore({
                 url: this.url,
                 root: this.root,
-                fields: ['code', 'name', 'parentcode', 'iconCls', 'href']
+                fields: ['id', 'text', 'parentid', 'iconCls', 'href']
             });
         }
         this.store.load({
@@ -67,10 +67,11 @@ QM.ui.MenuPanel = Ext.extend(Ext.Panel, {
     },
     loadTrees: function(records, o, s){
         var pnodes, trees = [], tree;
-        this.store.sort('code');
+        this.store.sort('id');
         for (var i = 0; i < records.length; i++) {
             var record = records[i];
-            if (!record.get('parentcode')) {
+            //if (!record.get('parentid')) {
+            if (record.get('parentid')=="0") {
                 tree = this.creatTreeConfig(record);
                 trees.push(tree);
                 pnodes = [];
@@ -78,7 +79,7 @@ QM.ui.MenuPanel = Ext.extend(Ext.Panel, {
             }
             else {
                 var next_record = records[i + 1];
-                var isLeaf = !next_record || next_record.get('parentcode') != record.get('code');
+                var isLeaf = !next_record || next_record.get('parentid') != record.get('id');
                 this.addTreeNode(pnodes, record, isLeaf);
             }
         }
@@ -119,13 +120,13 @@ QM.ui.MenuPanel = Ext.extend(Ext.Panel, {
             autoScroll: true,
             rootVisible: false,
             lines: false,
-            title: record.get('name'),
+            title: record.get('text'),
             iconCls: record.get('iconCls'),
 			border:false,
             root: {
                 nodeType: 'async',
                 expanded: true,
-                id: record.get('code'),
+                id: record.get('id'),
                 children: []
             },
             listeners: {
@@ -139,14 +140,14 @@ QM.ui.MenuPanel = Ext.extend(Ext.Panel, {
     addTreeNode: function(pnodes, record, isLeaf){
         var len = pnodes.length;
         for (var i = len - 1; i >= 0; i--) {
-            if (pnodes[i].id != record.get('parentcode')) {
+            if (pnodes[i].id != record.get('parentid')) {
                 pnodes.pop();
             }
             else {
                 var parent = pnodes[i].children;
                 var node = {
-                    text: record.get('name'),
-                    id: record.get('code'),
+                    text: record.get('text'),
+                    id: record.get('id'),
                     iconCls: record.get('iconCls'),
                     href: record.get('href'),
                     leaf: isLeaf

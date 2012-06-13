@@ -22,20 +22,19 @@ namespace SmartHyd.BLL {
             return dal.GetList(strwhere).Tables[0];
         }
 
-        public string GetMenuJSON() {
+        public string GetMenuJSON(int parentId) {
             string menuJSON = "";
 
             TreeJsonHelper treeJson = new TreeJsonHelper();
             treeJson.success = true;
-            DataTable dtMenu = dal.GetMenuList();
+            DataTable dtMenu = dal.GetMenuList(parentId);
             try {
                 foreach (DataRow dr in dtMenu.Rows) {
                     treeJson.AddItem("id", dr["MENUID"].ToString());
                     treeJson.AddItem("text", dr["MENUNAME"].ToString());
                     treeJson.AddItem("parentid", dr["PARENTID"].ToString());
                     treeJson.AddItem("iconCls", dr["ICONCLS"].ToString());
-                    //treeJson.AddItem("leaf", dr["ISLEAF"].ToString());
-                    treeJson.AddItem("href", "");
+                    treeJson.AddItem("leaf", dr["ISLEAF"].ToString());
                     treeJson.ItemOk();
                 }
                 menuJSON = treeJson.ToString();
