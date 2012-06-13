@@ -7,6 +7,7 @@ using System.Runtime.Serialization;
 
 namespace Smart.DBUtility {
     public class JsonHelper {
+
         //对应JSON的singleInfo成员
         public string singleInfo = string.Empty;
         protected string _error = string.Empty;

@@ -141,16 +141,12 @@ namespace Smart.DBUtility
         /// <param name="commandText">SQL语句</param>
         /// <param name="commandParameters">参数数组</param>
         /// <returns></returns>
-        public static int ExecuteNonQuery(string commandText, params OracleParameter[] commandParameters)
-        {
+        public static int ExecuteNonQuery(string commandText, params OracleParameter[] commandParameters) {
 
-            using (OracleConnection conn = new OracleConnection(ConnectionString))
-            {
+            using (OracleConnection conn = new OracleConnection(ConnectionString)) {
                 OracleCommand cmd = new OracleCommand();
-                try
-                {
-                    if (conn.State != ConnectionState.Open)
-                    {
+                try {
+                    if (conn.State != ConnectionState.Open) {
                         conn.Open();
                     }
                     cmd = BuildCommand(conn, commandText, commandParameters);
@@ -158,27 +154,20 @@ namespace Smart.DBUtility
                     cmd.Parameters.Clear();
                     conn.Close();
                     return val;
-                }
-                catch (System.Data.OracleClient.OracleException ex)
-                {
-                    if (conn.State != ConnectionState.Closed)
-                    {
+                } catch (System.Data.OracleClient.OracleException ex) {
+                    if (conn.State != ConnectionState.Closed) {
                         conn.Close();
                     }
                     throw new Exception(ex.Message);
-                }
-                finally
-                {
-                    if (conn.State != ConnectionState.Closed)
-                    {
+                } finally {
+                    if (conn.State != ConnectionState.Closed) {
                         conn.Close();
                     }
                     cmd.Dispose();
                 }
             }
-
-
         }
+
         /// <summary>
         /// 执行SQL语句操作数据库
         /// </summary>
