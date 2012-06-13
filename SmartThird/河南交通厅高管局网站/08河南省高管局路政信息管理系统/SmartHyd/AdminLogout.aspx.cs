@@ -8,11 +8,8 @@ using System.Web.UI.WebControls;
 namespace SmartHyd {
     public partial class AdminLogout : System.Web.UI.Page {
         protected void Page_Load(object sender, EventArgs e) {
-            if (!IsPostBack) {
-                Session.Clear();
-            
-                Response.Redirect("AdminLogout.aspx");
-            }
+            Session["user"] = null;
+            Response.Redirect("~/AdminLogin.aspx");
         }
     }
 }
