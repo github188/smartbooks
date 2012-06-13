@@ -52,5 +52,12 @@ namespace SmartHyd.IDAL {
         /// 获得前几行数据
         /// </summary>
         DataSet GetList(int Top, string strWhere, string filedOrder);
+
+        /// <summary>
+        /// 为菜单JSON数据体统数据源
+        /// </summary>
+        /// <param name="parentId"></param>
+        /// <returns></returns>
+        DataTable GetMenuList();
     }
 }
