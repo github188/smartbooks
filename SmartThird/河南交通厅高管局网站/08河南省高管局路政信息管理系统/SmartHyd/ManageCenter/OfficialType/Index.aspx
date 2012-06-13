@@ -25,7 +25,7 @@
                 <a class="nav" target="main" href="Create.aspx">新建分类</a>
             </td>
             <td valign="top" height="100%">
-                <iframe name="main" id="main" frameborder="0" width="100%" height="100%" src="Accept.aspx"
+                <iframe name="main" id="main" frameborder="0" width="100%" height="100%" src="List.aspx"
                     scrolling="auto"></iframe>
             </td>
         </tr>
