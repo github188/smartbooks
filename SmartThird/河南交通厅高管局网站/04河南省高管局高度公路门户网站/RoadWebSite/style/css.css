@@ -47,9 +47,13 @@ a:hover{ color:#F90; text-decoration:underline;}
 
 /*简介&联系方式*/
 #jianjie dt{ background:url(../images/jianjie_t.jpg) no-repeat; height:42px; overflow:hidden;}
-#contact dt{ background:url(../images/contact_t.jpg) no-repeat; height:42px; overflow:hidden;}
+
+#contact dt{ background:url(../images/gonggaogongshi.jpg) no-repeat; height:42px; overflow:hidden;}
+
 .jianjie_l{ background:url(../images/jianjie_l.jpg) left center no-repeat; height:198px; overflow:hidden;}
 .jianjie_r{ background:url(../images/jianjie_r.jpg) right center no-repeat; height:198px; overflow:hidden;}
+.jianjie_l ul{overflow:hidden;}
+.jianjie_l ul li{background:url(../images/0_96.jpg) left center no-repeat; line-height:24px; height:45px; padding-left:1em; overflow:hidden;}
 #jianjie dd,#contact dd{ background:url(../images/jianjie_bg.jpg) repeat-x; height:198px; overflow:hidden;}
 
 
