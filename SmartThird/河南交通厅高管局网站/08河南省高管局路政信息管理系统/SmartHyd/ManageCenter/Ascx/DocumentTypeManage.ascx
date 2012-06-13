@@ -3,150 +3,63 @@
 <%@ Register Assembly="AspNetPager" Namespace="Wuqi.Webdiyer" TagPrefix="webdiyer" %>
 <%@ Register Src="../../Ascx/Department.ascx" TagName="Department" TagPrefix="uc1" %>
 <%@ Register src="../../Ascx/TreeView.ascx" tagname="TreeView" tagprefix="uc2" %>
-<div id="tab">
-    <ul id="menu">
-        <li><a href="#tabs-1">新建档案分类</a></li>
-        <li><a href="#tabs-2">档案分类管理</a></li>
-    </ul>
-    <!--新建档案分类开始-->
-    <div id="tabs-1">
-        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-            <ContentTemplate>
-                <span class="big3">新建分类</span>                
-                <table class="TableBlock" width="100%" align="center">
-                    <tbody>
-                        <!--首选行-->
-                        <tr class="TableHeader">
-                            <td colspan="2">
-                                新建档案分类
-                            </td>
-                        </tr>
-                        <!--所属部门-->
-                        <tr>
-                            <td nowrap="nowrap" class="TableData" width="70">
-                                所属部门:
-                            </td>
-                            <td class="TableData">
-                                <asp:HiddenField ID="hidPrimary" runat="server" Value="-1" />
-                                <uc1:Department ID="Department1" runat="server" />
-                            </td>
-                        </tr>
-                        <!--父级节点-->
-                        <tr>
-                            <td nowrap="nowrap" class="TableData">
-                                父级节点:
-                            </td>
-                            <td class="TableData">
-                                <asp:DropDownList ID="ddlParentNode" runat="server" CssClass="input">
-                                </asp:DropDownList>
-                            </td>
-                        </tr>
-                        <!--分类名称-->
-                        <tr>
-                            <td nowrap="nowrap" class="TableData">
-                                分类名称:
-                            </td>
-                            <td class="TableData">
-                                <asp:TextBox ID="txtTypeName" runat="server" CssClass="input {required:true,minlength:1,maxlength:50}"
-                                    Width="350">
-                                </asp:TextBox>
-                                <div class="validate ui-state-highlight ui-corner-all " style="border: none;">
-                                </div>
-                            </td>
-                        </tr>
-                        <!--分类描述-->
-                        <tr>
-                            <td nowrap="nowrap" class="TableData">
-                                类别描述:
-                            </td>
-                            <td class="TableData">
-                                <asp:TextBox ID="txtSummary" runat="server" CssClass="input {required:true,minlength:1,maxlength:50}"
-                                    Height="81px" TextMode="MultiLine" Width="350">
-                                </asp:TextBox>
-                                <div class="validate ui-state-highlight ui-corner-all " style="border: none;">
-                                </div>
-                            </td>
-                        </tr>
-                        <!--排序-->
-                        <tr>
-                            <td nowrap="nowrap" class="TableData">
-                                排序:
-                            </td>
-                            <td class="TableData">
-                                <asp:TextBox ID="txtSort" runat="server" Width="25" CssClass="input {required:true,minlength:1,maxlength:2}"
-                                    Text="0">
-                                </asp:TextBox>
-                                <div class="validate ui-state-highlight ui-corner-all " style="border: none;">
-                                </div>
-                            </td>
-                        </tr>
-                        <!--分类节点状态-->
-                        <tr>
-                            <td nowrap="nowrap" class="TableData">
-                                状态:
-                            </td>
-                            <td class="TableData">
-                                <asp:DropDownList ID="ddlState" runat="server" CssClass="input">
-                                    <asp:ListItem Text="正常" Value="0" Selected="True"></asp:ListItem>
-                                    <asp:ListItem Text="删除" Value="1"></asp:ListItem>
-                                </asp:DropDownList>
-                            </td>
-                        </tr>
 
-                        <!--按钮栏-->
-                        <tr class="TableControl" align="center">
-                            <td colspan="2" nowrap="nowrap">
-                                <asp:Button ID="btnSubmit" runat="server" Text="添加" CssClass="BigButtonA" 
-                                    onclick="btnSubmit_Click" />
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </ContentTemplate>
-        </asp:UpdatePanel>
-    </div>
-    <!--新建档案分类结束-->
-    <!--档案分类管理开始-->
-    <div id="tabs-2">
-        <asp:UpdatePanel ID="UpdatePanel2" runat="server">
-            <ContentTemplate>
-                <span class="big3">选择单位或部门:</span>
-                <uc1:Department ID="Department2" runat="server" />
-                <table class="TableList" width="100%">
+
+
+<link href="../../Css/patrol.css" rel="stylesheet" type="text/css" />
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%" style="height: 100%">
+    <tr>
+        <td style="height: 24px;">
+            <div id="menu">
+                <div class="OperateNote">
+                    <span id="buttons">
+                        <img src="../../Images/branch.png" alt="" border="0" />当前位置：<a href="../Official/OfficialIndex.aspx">发文管理</a>》档案分类管理</span></div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td  style="height: 24px; line-height:24px; font-size:13px; border-bottom: 1px solid #8cb2e2;">
+        <div style="float:left;width:auto;">
+        选择单位或部门：
+        <uc1:Department ID="Department2" width="300" runat="server" />   
+        </div>
+        <div style="float:right; width:100px;">
+            <asp:ImageButton ID="btn_addDtype" runat="server" 
+                ImageUrl="~/Images/adddtype.png" onclick="btn_addDtype_Click" />
+            </div> 
+        </td>
+    </tr>
+    <tr>
+        <td valign="top">
+           <table width="100%" border="0" cellpadding="0" cellspacing="1" style="background-color: #006699">
                     <asp:Repeater ID="RptList" runat="server" OnItemCommand="RptList_ItemCommand">
                         <HeaderTemplate>
                             <tbody>
-                                <tr class="TableHeader" align="center">
+                                <tr style="color:#ffffff; font-weight:bold; font-size:12px; height:24px; line-height:24px;" align="center">
                                     <td>操作</td>
-                                    <td >
-                                        分类名称
-                                    </td>
-                                    <td>
-                                        分类描述
-                                    </td>
-                                    <td>
-                                        排序
-                                    </td>
-                                    <td>
-                                        状态
-                                    </td>
+                                    <td >分类名称</td>
+                                    <td>分类描述</td>
+                                    <td>排序</td>
+                                    <td>状态</td>
                                 </tr>
                         </HeaderTemplate>
                         <ItemTemplate>
                             <tr class="TableLine1" align="center">
-                                <td>
-                                    <asp:Button runat="server" CommandName="delete" Text="删除" CssClass="BigButtonA" CommandArgument='<%#Eval("id")%>' />
+                                <td style="background-color: #ffffff;font-size:12px; width:180px">
+                                    <asp:Button ID="Button1" runat="server" CommandName="delete" Text="删除" CssClass="BigButtonA" CommandArgument='<%#Eval("id")%>' />
+                                    <asp:Button ID="Button2" runat="server" CommandName="update" Text="编辑" CssClass="BigButtonA" CommandArgument='<%#Eval("id")%>' />
                                 </td>
-                                <td>
+                                <td style="background-color: #ffffff;font-size:12px; width:150px; font-weight:bold;">
                                     <%# Eval("TYPENAME")%>
                                 </td>
-                                <td align="left">
+                                <td align="left"  style="background-color: #ffffff;font-size:12px;">
                                     <%# Eval("SUMMARY")%>
                                 </td>
-                                <td>
+                                <td style="background-color: #ffffff;font-size:12px;width:80px">
                                     <%# Eval("SORT")%>
                                 </td>
-                                <td>
+                                <td style="background-color: #ffffff;font-size:12px; width:100px">
                                     <%# Eval("STATUS").ToString().Equals("0") ? "正常" : "删除"%>
                                 </td>
                             </tr>
@@ -156,13 +69,14 @@
                         </FooterTemplate>
                     </asp:Repeater>
                 </table>
+                <asp:Literal ID="litmsg" Visible="false" runat="server"></asp:Literal>
                 <webdiyer:AspNetPager ID="AspNetPager1" runat="server" CustomInfoHTML="共%PageCount%页，当前为第%CurrentPageIndex%页"
                     FirstPageText="首页" LastPageText="尾页" NextPageText="下一页" PageIndexBoxType="TextBox"
                     PrevPageText="上一页" ShowCustomInfoSection="Right" ShowPageIndexBox="Auto" SubmitButtonText="Go"
-                    TextAfterPageIndexBox="页" TextBeforePageIndexBox="转到" OnPageChanging="AspNetPager1_PageChanging">
+                    TextAfterPageIndexBox="页" CssClass="anpager" TextBeforePageIndexBox="转到" OnPageChanging="AspNetPager1_PageChanging">
                 </webdiyer:AspNetPager>
-            </ContentTemplate>
-        </asp:UpdatePanel>
-    </div>
-    <!--档案分类管理结束-->
-</div>
+            
+
+        </td>
+    </tr>
+</table>

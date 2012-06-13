@@ -256,11 +256,11 @@ input.SmallButtonE{width:245px;height:21px;color:#36434E;background:url("../imag
 input.SmallButtonE:hover{background-position:0 -21px;}
 
 input.BigButtonAHover{width:60px;height:30px;height:27px !important;padding-bottom:3px;color:#000000;background:url("../images/big_btn_a.png") no-repeat;border:0px;cursor:pointer;font-size:12pt;background-position:0 -30px;}
-input.BigButtonA{width:60px;height:30px;height:27px !important;padding-bottom:3px;color:#36434E;background:url("../images/big_btn_a.png") no-repeat;border:0px;cursor:pointer;font-size:12pt;}
+input.BigButtonA{width:60px;height:30px;height:27px !important;padding-bottom:3px;color:#36434E;background:url("../images/big_btn_a.png") no-repeat;border:0px;cursor:pointer;font-size:12px; font-weight:bold;}
 input.BigButtonA:hover{background-position:0 -30px;}
 
-input.BigButtonBHover{width:84px;height:30px;height:27px !important;padding-bottom:3px;color:#000000;background:url("../images/big_btn_b.png") no-repeat;border:0px;cursor:pointer;font-size:12pt;background-position:0 -30px;}
-input.BigButtonB{width:84px;height:30px;height:27px !important;padding-bottom:3px;color:#36434E;background:url("../images/big_btn_b.png") no-repeat;border:0px;cursor:pointer;font-size:12pt;}
+input.BigButtonBHover{width:84px;height:30px;height:27px !important;padding-bottom:3px;color:#000000;background:url("../images/big_btn_b.png") no-repeat;border:0px;cursor:pointer;font-size:12px;background-position:0 -30px;}
+input.BigButtonB{width:84px;height:30px;height:27px !important;padding-bottom:3px;color:#36434E;background:url("../images/big_btn_b.png") no-repeat;border:0px;cursor:pointer;font-size:12px;}
 input.BigButtonB:hover{background-position:0 -30px;}
 
 input.BigButtonCHover{width:125px;height:30px;height:27px !important;padding-bottom:3px;color:#000000;background:url("../images/big_btn_c.png") no-repeat;border:0px;cursor:pointer;font-size:12pt;background-position:0 -30px;}

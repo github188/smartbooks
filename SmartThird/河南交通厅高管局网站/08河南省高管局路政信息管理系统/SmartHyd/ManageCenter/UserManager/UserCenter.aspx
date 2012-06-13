@@ -5,7 +5,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>用户管理</title>
-    <script type="text/javascript" src="../../Scripts/base.js"></script>
     <style type="text/css">
         body
         {
@@ -20,6 +19,22 @@
             color: #ffffff;
         }
     </style>
+
+    <script type="text/javascript">
+        //全选
+        function selectall(chkcontrol) {
+            var chkall = chkcontrol;
+            State = chkall.checked;
+            elem = document.getElementsByTagName("input");
+            for (i = 0; i < elem.length; i++) {
+                if (elem[i].type == "checkbox" && elem[i] != chkall.id) {
+                    if (elem[i].checked != State) {
+                        elem[i].click();
+                    }
+                }
+            }
+        }
+    </script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -30,7 +45,7 @@
             <table width="100%" border="0" cellpadding="0" cellspacing="1" style="background-color: #006699">
                 <thead>
                     <tr>
-                        <td colspan="6" style="height: 22px; line-height: 22px; text-align: right; background-color: #FFFFFF;
+                        <td colspan="6" style="height: 22px; line-height: 22px; text-align: left; background-color: #FFFFFF;
                             border-bottom: 4px double #F09B17">
                             <asp:ImageButton ID="btnAdd" runat="server" ImageUrl="~/Images/add_user.png" OnClick="btnAdd_Click" />
                         </td>
@@ -78,10 +93,9 @@
                                     <%# Eval("PHONE")%>
                                 </td>
                                 <td style="background-color: #ffffff;">
-                                    <a href="UserEdit.aspx?deptid=<%# Eval("DEPTID")%>&userid=<%# Eval("userid")%>">编辑<%-- <image src="../../Images/edit_big.jpg" alt="编辑"></image>--%></a>&nbsp;
-                                    <a href="../../ManageCenter/Empower.aspx?userid=<%# Eval("userid")%>&name=<%# Eval("username")%>">授权<%--<image src="../../Images/edit_big.jpg" alt="授权"></image>--%></a>&nbsp;
+                                    <a href="UserEdit.aspx?action=update&deptid=<%# Eval("DEPTID")%>&userid=<%# Eval("userid")%>">编辑</a>&nbsp;
+                                    <a href="../../ManageCenter/Empower.aspx?userid=<%# Eval("userid")%>&name=<%# Eval("username")%>">授权</a>&nbsp;
                                     <a href="UserCenter.aspx?action=del&userid=<%# Eval("userid")%>">删除
-                                        <%--<image src="../../Images/delete.png" alt="删除"></image>--%>
                                     </a>
                                 </td>
                             </tr>
@@ -90,6 +104,8 @@
                     <tr>
                         <td>
                             <asp:Literal ID="litmsg" Visible="false" runat="server"></asp:Literal>
+                            <asp:HiddenField ID="hfdUnitName" runat="server" />
+                            <asp:HiddenField ID="hfdUnitID" runat="server" />
                         </td>
                     </tr>
                 </tbody>

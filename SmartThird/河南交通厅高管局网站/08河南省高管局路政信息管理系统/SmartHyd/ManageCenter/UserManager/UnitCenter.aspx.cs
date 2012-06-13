@@ -38,7 +38,7 @@ namespace SmartHyd.ManageCenter.UserManager {
                     //rootNode.ShowCheckBox = false;//设置复选框是否显示
                     rootNode.Target = "UserFrame";
                     rootNode.Expanded = true;
-                    rootNode.NavigateUrl = "UserCenter.aspx?deptid=" + dr["DEPTID"].ToString();//设置导航：绑定该部门下用户
+                    rootNode.NavigateUrl = "UserCenter.aspx?deptid=" + dr["DEPTID"].ToString() + "&deptName=" + dr["DPTNAME"].ToString();//设置导航：绑定该部门下用户
 
                     //递归子节点
                     RecursiveBindAcceptUnit(rootNode, dt);
@@ -67,7 +67,7 @@ namespace SmartHyd.ManageCenter.UserManager {
                     //sub.ShowCheckBox = false;//设置复选框是否显示
                     sub.Target = "UserFrame";
                     sub.Expanded = false;
-                    sub.NavigateUrl = "UserCenter.aspx?deptid=" + dr["DEPTID"].ToString();//设置导航：绑定该部门下用户
+                    sub.NavigateUrl = "UserCenter.aspx?deptid=" + dr["DEPTID"].ToString() + "&deptName=" + dr["DPTNAME"].ToString();//设置导航：绑定该部门下用户
                     node.ChildNodes.Add(sub);
 
                     //递归循环
@@ -116,7 +116,7 @@ namespace SmartHyd.ManageCenter.UserManager {
                 AjaxAlert(UpdatePanel1, "请选中添加单位的上级节点");
                 return;
             } else {
-                ScriptManager.RegisterStartupScript(UpdatePanel1, UpdatePanel1.GetType(), "", "window.showModalDialog('UnitEdit.aspx?action=add&parentId=" + hfdUnitCode.Value + "&p=" + DateTime.Now.Millisecond + "','单位信息添加','dialogWidth=550px;dialogHeight=200px;menubars=0;status=0');window.location.href='UnitCenter.aspx';", true);
+                ScriptManager.RegisterStartupScript(UpdatePanel1, UpdatePanel1.GetType(), "", "window.showModalDialog('UnitEdit.aspx?action=add&parentId=" + hfdUnitCode.Value + "&p=" + DateTime.Now.Millisecond + "','单位信息添加','dialogWidth=400px;dialogHeight=200px;menubars=0;status=0');window.location.href='UnitCenter.aspx';", true);
             }
         }
         /// <summary>
@@ -130,7 +130,7 @@ namespace SmartHyd.ManageCenter.UserManager {
                 AjaxAlert(UpdatePanel1, "请选择要编辑单位的节点！");
                 return;
             }
-            ScriptManager.RegisterStartupScript(UpdatePanel1, UpdatePanel1.GetType(), "", "window.showModalDialog('UnitEdit.aspx?action=update&unitid=" + hfdUnitCode.Value + "&p=" + DateTime.Now.Millisecond + "','单位信息编辑','dialogWidth=550px;dialogHeight=200px;menubars=0;status=0');window.location.href='UnitCenter.aspx';", true);
+            ScriptManager.RegisterStartupScript(UpdatePanel1, UpdatePanel1.GetType(), "", "window.showModalDialog('UnitEdit.aspx?action=update&unitid=" + hfdUnitCode.Value + "&p=" + DateTime.Now.Millisecond + "','单位信息编辑','dialogWidth=400px;dialogHeight=200px;menubars=0;status=0');window.location.href='UnitCenter.aspx';", true);
         }
 
         protected void btnDelete_Click(object sender, ImageClickEventArgs e) {

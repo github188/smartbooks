@@ -120,7 +120,8 @@ namespace SmartHyd {
                     Response.Cookies.Add(new HttpCookie("dpt", session.DEPTID.ToString()));
 
                     //301页面跳转
-                    Response.Redirect("~/AdminDefault.aspx", true);
+                    //Response.Redirect("~/AdminDefault.aspx", true);
+                    Response.Redirect("~/index.aspx", true);
                 } else {
                     //登录失败
                     ResetForm();

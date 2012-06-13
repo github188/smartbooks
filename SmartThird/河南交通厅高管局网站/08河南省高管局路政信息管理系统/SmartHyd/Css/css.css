@@ -1,0 +1,357 @@
+﻿
+
+
+/*按钮样式*/
+.btn {
+ BORDER-RIGHT: #7b9ebd 1px solid; PADDING-RIGHT: 2px; BORDER-TOP: #7b9ebd 1px solid; PADDING-LEFT: 2px; FONT-SIZE: 12px; FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#ffffff, EndColorStr=#cecfde); BORDER-LEFT: #7b9ebd 1px solid; CURSOR: hand; COLOR: black; PADDING-TOP: 2px; BORDER-BOTTOM: #7b9ebd 1px solid;
+filter : progid:DXImageTransform.Microsoft.gradient(startColorStr=#96CDCD,endColorStr=#FFFFFF);
+}
+.aaaaa
+{
+	 background-color:Red;
+}
+/*添加 删除 修改icon样式*/
+.hotelmanageicon
+{
+	background-image: url(../Images/icons/systemset.png) !important;		
+}
+.addicon
+{
+	background-image: url(../Images/icons/add.png) !important;
+}
+.editicon
+{
+	background-image: url(../Images/icons/edit.png) !important;
+}
+.deleteicon
+{
+	background-image: url(../Images/icons/delete.png) !important;
+}
+.refreshicon
+{
+	background-image: url(../Images/icons/refresh.png) !important;
+}
+.roomtypeicon
+{
+	background-image: url(../Images/icons/roomtypeicon.gif) !important;
+}
+.indexicon
+{
+	background-image: url(../Images/icons/indexicon.png) !important;
+}
+.todaypriceicon
+{
+	background-image: url(../Images/icons/todaypriceicon.gif) !important;
+	
+}
+.roomtypeseeicon
+{
+	background-image: url(../Images/icons/roomtypeseeicon.png) !important;
+	
+}
+.closetabone
+{
+	background-image: url(../Images/icons/closetabone.gif) !important;
+	
+}
+.closetaball
+{
+	background-image: url(../Images/icons/closetaball.gif) !important;
+	
+}
+.gonggao
+{
+	background-image: url(../Images/icons/gonggao.gif) !important;
+}
+.serchopenroomrecord
+{
+	
+	background-image: url(../Images/icons/serchopenroomrecord.png) !important;
+}
+
+.homemanage
+{
+	background-image: url(../Images/icons/homemanage.gif) !important;
+}
+
+.sysmanagemenu
+{
+	background-image: url(../Images/icons/sysmanagemenu.png) !important;
+}
+
+.allmanagemenu
+{
+	background-image: url(../Images/icons/allmanagemenu.png) !important;
+}
+
+
+.setuseridicon
+{
+	background-image: url(../Images/icons/setuseridicon.png) !important;
+}
+.openroomicon
+{
+	background-image: url(../Images/icons/openroomicons.gif) !important;
+}
+.openroomiconinfo
+{
+	background-image: url(../Images/icons/openroomiconinfo.gif) !important;
+}
+.roomicons
+{
+	background-image: url(../Images/icons/roomicons.gif) !important;
+}
+.guesticon
+{
+	background-image: url(../Images/icons/guesticon.png) !important;
+}
+.roolrecordicon
+{
+	background-image: url(../Images/icons/roolrecordicon.png) !important;
+}
+.roolrecordicons
+{
+	background-image: url(../Images/icons/roolrecordicon.png) !important;
+}
+.totalicon
+{
+	background-image: url(../Images/icons/totalicon.png) !important;
+}
+
+.usericon
+{
+	background-image: url(../Images/icons/usericon.png) !important;
+}
+.publishicon
+{
+	background-image: url(../Images/icons/publishicon.png) !important;
+}
+.searchicon
+{
+	background-image: url(../Images/icons/search.png) !important;
+}
+.statisticsicon
+{
+	background-image: url(../Images/icons/statistics.png) !important;
+}
+
+#topContainer
+{
+	background-color:#243b70;
+}
+
+.loginicon
+{
+	background-image: url(../Images/icons/door_arrow.png) !important
+}
+.cancelicon
+{
+	background-image: url(../Images/icons/cross_circle.png) !important
+}
+.saveicon
+{
+	background-image: url(../Images/icons/save.png) !important
+}
+.reseticon
+{
+	background-image: url(../Images/icons/reset.png) !important
+}
+.bankicon
+{
+	background-image: url(../Images/icons/bank.png) !important
+}
+.cityicon
+{
+	background-image: url(../Images/icons/city.png) !important
+}
+.districticon
+{
+	background-image: url(../Images/icons/district.png) !important
+}
+.homeicon
+{
+	background-image: url(../Images/icons/home.png) !important
+}
+.branchicon
+{
+	background-image: url(../Images/icons/branch.png) !important
+}
+.peopleicon
+{
+	background-image: url(../Images/icons/people.png) !important
+}
+.personicon
+{
+	background-image: url(../Images/icons/person.png) !important
+}
+
+.typesicon
+{
+	background-image: url(../Images/icons/types.png) !important
+}
+.labelicon
+{
+	background-image: url(../Images/icons/label.png) !important
+}
+.othericon
+{
+	background-image: url(../Images/icons/tables.png) !important
+}
+.selfserviceicon
+{
+	background-image: url(../Images/icons/selfservice.png) !important
+}
+.atmicon
+{
+	background-image: url(../Images/icons/atm.png) !important
+}
+.properties
+{
+	background-image: url(../Images/icons/databases.png) !important
+}
+.jobicon
+{
+	background-image: url(../Images/icons/job.png) !important
+}
+.departicon
+{
+	background-image: url(../Images/icons/department.png) !important
+}
+.uniticon
+{
+	background-image: url(../Images/icons/units.png) !important
+}
+.farwayicon
+{
+	background-image: url(../Images/icons/farway.png) !important
+}
+.competionicon
+{
+	background-image: url(../Images/icons/competion.png) !important
+}
+
+.systemseticon
+{
+	background-image: url(../Images/icons/gear.png) !important
+}
+.pwdicon
+{
+	background-image: url(../Images/icons/password.png) !important
+}
+.permissionsicon
+{
+	background-image: url(../Images/icons/permissions.png) !important
+}
+.basicseticon
+{
+	 background-image: url(../Images/icons/basicset.png) !important
+}
+.helpicon
+{
+	 background-image: url(../Images/icons/help.png) !important
+}
+
+.searchicon
+{
+	background-image: url(../Images/icons/magnifier.png) !important
+}
+
+.analysisicon
+{
+	background-image: url(../Images/icons/analyze.png) !important
+}
+.customersicon
+{
+	background-image: url(../Images/icons/customers.png) !important
+}
+.companyicon
+{
+	background-image: url(../Images/icons/company.png) !important
+}
+.streeticon
+{
+	background-image: url(../Images/icons/street.png) !important
+}
+.govicon
+{
+	background-image: url(../Images/icons/flag.png) !important
+}
+.supermarketicon
+{
+	background-image: url(../Images/icons/supermarket.png) !important
+}
+.hotelicon
+{
+	background-image: url(../Images/icons/hotel.png) !important
+}
+.hospitalicon
+{
+	background-image: url(../Images/icons/hospital.png) !important
+}
+
+.layericon
+{
+	background-image: url(../Images/icons/layer.png) !important
+}
+.bcicon
+{
+	background-image: url(../Images/icons/bc_ico.png) !important
+}
+.controlpanelicon
+{
+	background-image: url(../Images/icons/controlpanel.png) !important
+}
+.schoolicon
+{
+	background-image: url(../Images/icons/school.png) !important
+}
+.downloadicon
+{
+	background-image: url(../Images/icons/download.png) !important
+}
+.charticon
+{
+	background-image: url(../Images/icons/chart.png) !important
+}
+
+
+.securityicon
+{
+	background-image: url(../Images/icons/security16.png) !important
+}
+.workbenchicon
+{
+	background-image: url(../Images/icons/display16.png) !important
+}
+.netoaicon
+{
+	background-image: url(../Images/icons/netoa.png) !important
+}
+.filesicon
+{
+	background-image: url(../Images/icons/files.png) !important
+}
+.roadpatrolicon
+{
+	background-image: url(../Images/icons/roadpatrol.png) !important
+}
+.chaoxianicon
+{
+	background-image: url(../Images/icons/chaoxian.png) !important
+}
+.xukeicon
+{
+	background-image: url(../Images/icons/xuke.png) !important
+}
+.trafficcondition
+{
+	background-image: url(../Images/icons/trafficcondition.png) !important
+}
+.luchanicon
+{
+	background-image: url(../Images/icons/luchan.png) !important
+}
+.navigationicon
+{
+	background-image: url(../Images/icons/navigation.png) !important
+}

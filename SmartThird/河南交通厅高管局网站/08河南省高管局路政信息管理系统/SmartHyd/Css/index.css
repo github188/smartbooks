@@ -1,0 +1,161 @@
+﻿body 
+{
+	margin:0px;
+	padding:0px;
+	font-size:12px;
+}
+
+
+/*
+ *顶部内容
+ */
+.ui-hander-content {
+	height: 80px;
+	width: 100%;
+	padding:0px;
+	margin:0px;
+	float: left;
+	background-image:url("../images/ui-hander-background.png");
+	background-repeat:repeat-x;
+	overflow: hidden;
+	color:#d6e0ea;
+}
+/*
+ * 系统Logo
+ */
+.ui-hander-logo {
+	width: 426px;
+	height: 80px;
+	background-image:url("../images/ui-hander-logo.png");
+	background-repeat:no-repeat;
+	float: left;
+}
+/*
+ * 用户信息区域
+ */
+.ui-hander-userinfo {
+	height: 80px;
+	float: left;
+	padding-top:20px;
+}
+/*
+ * 用户昵称和部门
+ */
+.ui-hander-userinfo span
+ {
+ 	height: 25px;
+	line-height: 25px;
+ }
+.ui-hander-userinfo a{
+
+	color: #d6e0ea;
+	text-decoration:none;
+}
+/*
+ * 反馈信息
+ */
+.ui-hander-feedback {
+	height: 30px;
+	line-height: 30px;
+	float: right;
+	padding-top: 10px;
+	padding-right: 11px;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+}
+
+.ui-hander-feedback  a{
+	color: #d6e0ea;
+	text-decoration:none;
+}
+
+/*
+ * 搜索框
+ */
+.ui-hander-searchbox{
+	height:21px;
+	line-height: 21px;
+	width: 252px;
+	border:none;
+	float: right;
+	overflow:hidden;
+	margin-right: 11px;
+	padding-left:25px;
+	position: absolute;
+	top: 43px;
+	right: 0px;
+	color:#999999;
+	background-image: url("../images/ui-hander-searchbox.png");
+}
+
+
+.moduletitle
+{
+	color:#15428b;font-weight:bold;font-family:微软雅黑;font-size:12px;
+}
+
+.position{ text-align:center;}
+
+
+#title
+{
+	height:30px;
+	line-height:30px;
+	font-size:12px;
+	font-weight:bold;
+	font-family:微软雅黑;
+	border-bottom:1px solid #15428b;
+}
+#title .welcome
+{
+	width:auto;
+	float:left;
+	padding-left:10px;
+}
+#title .weather
+{
+	width:auto;
+	float:right;
+	padding-right:10px;
+}
+#work
+{
+	height:400px;
+	line-height:400px;
+}
+
+#files{ width:230px; height:500px;}
+
+#files span {
+	    display: block;
+	    font-weight: bold;
+		width:230px;
+	    height:37px;
+	    line-height:37px;
+	    font-size:12px;
+	    font-weight:bold;
+	    color: #263e74;
+	    cursor: hand;
+    }
+    
+    #files a {
+	    padding: 5px 30px;
+	    display: block;
+	    height:24px;
+	    line-height:24px;
+	    width:100%;
+	    color: #263e74;
+	    text-decoration:none;
+	    font-size:13px;
+    }
+    #files a.current {
+	    background : #ccc;
+    }
+    #files a:hover 
+    {
+    	background-color:#263e74;
+	    color: #fff;
+	    text-decoration: none;
+		padding: 5px 30px;
+    }

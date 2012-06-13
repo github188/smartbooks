@@ -22,7 +22,7 @@
             <div>
                 <table border="0" cellpadding="0" cellspacing="0" width="100%"  height="100%" >
                     <tr>
-                        <td align="right" style="height:22px; background-color:#ffffff; border-bottom:4px double #F09B17;">
+                        <td align="left" style="height:22px; background-color:#ffffff; border-bottom:4px double #F09B17;">
                             &nbsp;<asp:ImageButton ID="btnAdd" runat="server" ImageUrl="~/Images/addUnit.png" 
                                 onclick="btnAdd_Click" />
                             <asp:ImageButton ID="btnEdit" runat="server" ImageUrl="~/Images/editUnit.png" 

@@ -19,13 +19,15 @@
         });
     </script>
     <style type="text/css">
+        body{margin:0px; padding:0px;}
         #ContentPlaceHolder1_DocumentCreate1_TreeViewAcceptUnit
         {
-            overflow: scroll;
+            overflow-y: scroll;
             width: 270px;
-            height: 100%;
+            height: 400px;
             float: right;
             border: 1px solid #A6C9E2;
+            font-size:12px;
         }
     </style>
 </asp:Content>

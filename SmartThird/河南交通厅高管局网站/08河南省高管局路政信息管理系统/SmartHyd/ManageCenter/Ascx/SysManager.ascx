@@ -10,13 +10,13 @@
                 <div class="patrolsitemap">
                 </div>
                 <ul>
-                    <li id="menu_Title0" onclick="nTabs('menu',this,3)" class="actived"><a href="../../ManageCenter/UserManage.aspx"
+                    <li id="menu_Title0" onclick="nTabs('menu',this,2)" class="actived"><a href="../../ManageCenter/UserManage.aspx"
                         target="SysFrame"><span id="buttons0">
                             <img src="../../Images/i_user.png" alt="" border="0" />用户管理</span></a></li>
-                    <li id="menu_Title1" onclick="nTabs('menu',this,3)" class="normal"><a href="../../ManageCenter/Empower.aspx"
+<%--                    <li id="menu_Title1" onclick="nTabs('menu',this,3)" class="normal"><a href="../../ManageCenter/Empower.aspx"
                         target="SysFrame"><span id="buttons1">
-                            <img src="../../Images/i_role.png" alt="" border="0" />权限管理</span></a></li>
-                    <li id="menu_Title2" onclick="nTabs('menu',this,3)" class="normal"><a href="../../ManageCenter/SysLog.aspx"
+                            <img src="../../Images/i_role.png" alt="" border="0" />权限管理</span></a></li>--%>
+                    <li id="menu_Title1" onclick="nTabs('menu',this,2)" class="normal"><a href="../../ManageCenter/SysLog.aspx"
                         target="SysFrame"><span id="buttons2">
                             <img src="../../Images/i_log.png" alt="" border="0" />系统日志</span></a></li>
                 </ul>
