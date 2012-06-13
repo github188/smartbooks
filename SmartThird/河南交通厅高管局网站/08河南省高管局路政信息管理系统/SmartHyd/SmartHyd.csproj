@@ -340,7 +340,6 @@
     <Content Include="ManageCenter\Patrol\PatrolDetail.aspx" />
     <Content Include="ManageCenter\Patrol\PatrolEdit.aspx" />
     <Content Include="ManageCenter\Patrol\PatrolIndex.aspx" />
-    <Content Include="readme.txt" />
     <Content Include="Scripts\base.js" />
     <Content Include="Scripts\DD_belatedPNG_0.0.8a.js" />
     <Content Include="Scripts\ext\adapter\ext\ext-base.js" />
