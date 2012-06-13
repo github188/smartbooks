@@ -16,6 +16,8 @@ namespace SmartHyd.ManageCenter.Official {
 
         //页面加载
         protected void Page_Load(object sender, EventArgs e) {
+            //告诉表单如何格式化文件信息
+            Page.Form.Enctype = "multipart/form-data";  
             userSession = (Utility.UserSession)Session["user"];
 
             if (!IsPostBack) {
@@ -279,8 +281,8 @@ namespace SmartHyd.ManageCenter.Official {
         }
         //添加公文
         private void Creates(Entity.BASE_ARTICLE model) {
-            #region 上传附件
-            //此处实现上传附件
+            /*#region 上传附件
+            //此处实现上传附件            
             string serverPath = "";
             if (!string.IsNullOrEmpty(fileUpAnnex.FileName)) {
                 //服务器存储路径
@@ -307,6 +309,15 @@ namespace SmartHyd.ManageCenter.Official {
             //保存附件路径
             model.ANNEX = serverPath;
             #endregion
+
+            //上传多个附件演示
+            
+            for (int index = 0; index < Request.Files.Count; index++) {
+                if (!string.IsNullOrEmpty(Request.Files[index].FileName)) {
+                    Request.Files[index].SaveAs(Path.Combine(Server.MapPath("Files"), 
+                        System.IO.Path.GetFileName(Request.Files[index].FileName)));
+                }
+            }*/
 
             //保存公文到数据库
             bll.Add(model);

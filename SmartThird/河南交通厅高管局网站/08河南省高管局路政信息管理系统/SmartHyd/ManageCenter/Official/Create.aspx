@@ -22,6 +22,29 @@
                 });
             });
         });
+
+        var MAXFILES = 5;        //文件计数器         
+        var fileCount = 0;
+        function addAttach(noAlert) {
+            if (fileCount >= MAXFILES && !noAlert) { alert("最多只能添加" + MAXFILES + "个附件！"); return; }
+
+            var fileSectionDiv = document.getElementById("files");
+            var fileItemDiv = document.createElement("div");
+            fileCount++;
+            var content = "<input type='file' onchange='return addAttach(true);' name='fileUpload'" + fileCount + "> <a href='#' onclick='return delAttach(\"" + fileCount + "\")' class='delete_attach' >移除附件</a>";
+            fileItemDiv.id = "fileItemDiv" + fileCount;
+            fileItemDiv.innerHTML = content;
+            fileSectionDiv.appendChild(fileItemDiv);
+            return false;
+        }
+
+        function delAttach(fileIndex) {
+            var fileSectionDiv = document.getElementById("files");
+            var fileItemDiv = document.getElementById("fileItemDiv" + fileIndex);
+            fileSectionDiv.removeChild(fileItemDiv);
+            fileCount--;
+            return false;
+        } 
     </script>
     <style type="text/css">
         #TreeViewAcceptUnit
@@ -31,6 +54,21 @@
             height: 100%;
             float: right;
             border: 1px solid #A6C9E2;
+        }
+        .delete_attach
+        {
+            padding-left: 18px;
+            background: url(../images/deleteattch_icon.gif) no-repeat left top;
+            margin-left: 7px;
+            width: 90px;
+            color: #002f76;
+        }
+        .add_attach
+        {
+            padding-left: 22px;
+            background: url(../images/attach.gif) no-repeat left center;
+            width: 90px;
+            color: #002f76;
         }
     </style>
 </head>
@@ -59,15 +97,14 @@
                     </asp:TextBox>
                 </td>
                 <td rowspan="5" valign="top">
-                    <asp:TreeView ID="TreeViewAcceptUnit" runat="server" CssClass="treeview" 
-                        ImageSet="Arrows" 
-                        onselectednodechanged="TreeViewAcceptUnit_SelectedNodeChanged">
+                    <asp:TreeView ID="TreeViewAcceptUnit" runat="server" CssClass="treeview" ImageSet="Arrows"
+                        OnSelectedNodeChanged="TreeViewAcceptUnit_SelectedNodeChanged">
                         <HoverNodeStyle Font-Underline="True" ForeColor="#5555DD" />
-                        <NodeStyle Font-Names="Tahoma" Font-Size="10pt" ForeColor="Black" 
-                            HorizontalPadding="5px" NodeSpacing="0px" VerticalPadding="0px" />
+                        <NodeStyle Font-Names="Tahoma" Font-Size="10pt" ForeColor="Black" HorizontalPadding="5px"
+                            NodeSpacing="0px" VerticalPadding="0px" />
                         <ParentNodeStyle Font-Bold="False" />
-                        <SelectedNodeStyle Font-Underline="True" HorizontalPadding="0px" 
-                            VerticalPadding="0px" ForeColor="#5555DD" />
+                        <SelectedNodeStyle Font-Underline="True" HorizontalPadding="0px" VerticalPadding="0px"
+                            ForeColor="#5555DD" />
                     </asp:TreeView>
                 </td>
             </tr>
@@ -86,7 +123,8 @@
                     发文内容:
                 </td>
                 <td class="TableData">
-                    <asp:TextBox ID="txtContent" runat="server" CssClass="input" TextMode="MultiLine" MaxLength="4000" Width="100%" Height="200">
+                    <asp:TextBox ID="txtContent" runat="server" CssClass="input" TextMode="MultiLine"
+                        MaxLength="4000" Width="100%" Height="200">
                     </asp:TextBox>
                 </td>
             </tr>
@@ -96,7 +134,9 @@
                     附件文档:
                 </td>
                 <td class="TableData">
-                    <asp:FileUpload ID="fileUpAnnex" runat="server" CssClass="input" />
+                    <a id="addAttach_a" onclick="return addAttach(false);" href="#"  class="add_attach">添加附件</a>  
+                    <div id="files">
+                    </div>
                 </td>
             </tr>
             <!--所属分类-->

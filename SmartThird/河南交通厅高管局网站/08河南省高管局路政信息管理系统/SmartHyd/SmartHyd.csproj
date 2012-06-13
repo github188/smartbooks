@@ -1348,6 +1348,7 @@
     </Compile>
     <Compile Include="Ascx\SystemModuleJSON.ascx.cs">
       <DependentUpon>SystemModuleJSON.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Ascx\SystemModuleJSON.ascx.designer.cs">
       <DependentUpon>SystemModuleJSON.ascx</DependentUpon>
