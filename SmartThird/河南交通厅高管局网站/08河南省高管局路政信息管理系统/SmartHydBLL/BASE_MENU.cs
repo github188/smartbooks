@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Data;
 
+using Smart.DBUtility;
+
 namespace SmartHyd.BLL {
     public class BASE_MENU {
         private OracleDAL.BASE_MENU dal = new OracleDAL.BASE_MENU();
@@ -19,5 +21,31 @@ namespace SmartHyd.BLL {
         {
             return dal.GetList(strwhere).Tables[0];
         }
+
+        public string GetMenuJSON() {
+            string menuJSON = "";
+
+            TreeJsonHelper treeJson = new TreeJsonHelper();
+            treeJson.success = true;
+            DataTable dtMenu = dal.GetMenuList();
+            try {
+                foreach (DataRow dr in dtMenu.Rows) {
+                    treeJson.AddItem("id", dr["MENUID"].ToString());
+                    treeJson.AddItem("text", dr["MENUNAME"].ToString());
+                    treeJson.AddItem("parentid", dr["PARENTID"].ToString());
+                    treeJson.AddItem("iconCls", dr["ICONCLS"].ToString());
+                    //treeJson.AddItem("leaf", dr["ISLEAF"].ToString());
+                    treeJson.AddItem("href", "");
+                    treeJson.ItemOk();
+                }
+                menuJSON = treeJson.ToString();
+            } catch (Exception EX) {
+                throw EX;
+            }
+
+            return menuJSON;
+        }
+
+        
     }
 }
