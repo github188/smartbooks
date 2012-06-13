@@ -1,7 +1,7 @@
 ﻿body
 {
-    margin:0px;
-    padding:0px;
+    margin: 0px;
+    padding: 0px;
 }
 table.content
 {
@@ -10,7 +10,7 @@ table.content
 }
 #main
 {
-    border:none;
+    border: none;
     border-left: solid 1px #a3bae9;
 }
 a.nav
@@ -22,15 +22,81 @@ a.nav
     text-align: center;
     cursor: pointer;
     color: #15428b;
-    font-weight:800;
+    font-weight: 800;
     overflow: hidden;
     text-decoration: none;
 }
 a.navselected
 {
-    background-image:url("../Images/cp_nav.png");
+    background-image: url("../Images/cp_nav.png");
 }
 a.nav:hover
 {
-    background-image:url("../Images/cp_nav.png");
+    background-image: url("../Images/cp_nav.png");
+}
+
+
+.TableBlock
+{
+    border: 1px solid #4686c6;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+.TableHeader
+{
+    background-color: #5d99da;
+    color: #ffffff;
+    height: 28px;
+    line-height: 28px;
+    margin: 0px;
+    padding: 2px 4px 2px 4px;
+    font-weight: 600;
+    font-size: 12px;
+}
+.TableData
+{
+    background-color: #ffffff;
+    border-right: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
+    padding: 2px 4px 2px 4px;
+    margin: 0px;
+    height: 28px;
+    font-size: 12px;
+}
+.TableControl
+{
+    background-color: #e7f0fb;
+    padding: 2px 4px 2px 4px;
+    margin: 0px;
+    height: 24px;
+    font-size: 12px;
+    line-height: 28px;
+}
+.Button
+{
+    width: 60px;
+    height: 30px;
+    height: 27px !important;
+    padding-bottom: 3px;
+    color: #36434E;
+    background: url("../images/big_btn_a.png") no-repeat;
+    border: 0px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+}
+.Button:hover
+{
+    width: 60px;
+    height: 30px;
+    height: 27px !important;
+    padding-bottom: 3px;
+    color: #000000;
+    background: url("../images/big_btn_a.png") no-repeat;
+    border: 0px;
+    cursor: pointer;
+    font-size: 12px;
+    background-position: 0 -30px;
 }
