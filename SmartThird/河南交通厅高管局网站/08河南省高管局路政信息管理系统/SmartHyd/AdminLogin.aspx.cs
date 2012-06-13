@@ -71,8 +71,8 @@ namespace SmartHyd {
             }
 
             //验证码正确性校验
-            if (Request.Cookies["code"] != null) {
-                if (!Request.Cookies["code"].Value.ToUpper().Equals(txtCode.Text.Trim().ToUpper())) {
+            if (Session["code"] != null) {
+                if (!Session["code"].ToString().ToUpper().Equals(txtCode.Text.Trim().ToUpper())) {
                     litMessage.Text = "验证码错误!";
                     txtCode.Text = string.Empty;
                     txtCode.Focus();                   
