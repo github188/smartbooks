@@ -189,6 +189,9 @@
     <Content Include="ManageCenter\MessageSend.aspx" />
     <Content Include="ManageCenter\Observed.aspx" />
     <Content Include="ManageCenter\Office.aspx" />
+    <Content Include="ManageCenter\Official\OfficialAccept.aspx" />
+    <Content Include="ManageCenter\Official\OfficialIndex.aspx" />
+    <Content Include="ManageCenter\Official\OfficialPublish.aspx" />
     <Content Include="ManageCenter\Overrun\OverrunIndex.aspx" />
     <Content Include="ManageCenter\Patrol.aspx" />
     <Content Include="ManageCenter\PersonTerm\PersonTerm.aspx" />
@@ -211,9 +214,6 @@
     <Content Include="ManageCenter\UserManager\UserEdit.aspx" />
     <Content Include="ManageCenter\WorkPlan\Plan.aspx" />
     <Content Include="ManageCenter\WorkPlan\PlanEdit.aspx" />
-    <Content Include="Official\OfficialAccept.aspx" />
-    <Content Include="Official\OfficialIndex.aspx" />
-    <Content Include="Official\OfficialPublish.aspx" />
     <Content Include="ManageCenter\Patrol\ArtificialPatrol.aspx" />
     <Content Include="ManageCenter\Patrol\ElectronicDetail.aspx" />
     <Content Include="ManageCenter\Patrol\ElectronicEdit.aspx" />
@@ -837,6 +837,27 @@
     <Compile Include="ManageCenter\Office.aspx.designer.cs">
       <DependentUpon>Office.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ManageCenter\Official\OfficialAccept.aspx.cs">
+      <DependentUpon>OfficialAccept.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\Official\OfficialAccept.aspx.designer.cs">
+      <DependentUpon>OfficialAccept.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\Official\OfficialIndex.aspx.cs">
+      <DependentUpon>OfficialIndex.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\Official\OfficialIndex.aspx.designer.cs">
+      <DependentUpon>OfficialIndex.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\Official\OfficialPublish.aspx.cs">
+      <DependentUpon>OfficialPublish.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\Official\OfficialPublish.aspx.designer.cs">
+      <DependentUpon>OfficialPublish.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ManageCenter\Overrun\OverrunIndex.aspx.cs">
       <DependentUpon>OverrunIndex.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -983,27 +1004,6 @@
     </Compile>
     <Compile Include="ManageCenter\WorkPlan\PlanEdit.aspx.designer.cs">
       <DependentUpon>PlanEdit.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Official\OfficialAccept.aspx.cs">
-      <DependentUpon>OfficialAccept.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Official\OfficialAccept.aspx.designer.cs">
-      <DependentUpon>OfficialAccept.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Official\OfficialIndex.aspx.cs">
-      <DependentUpon>OfficialIndex.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Official\OfficialIndex.aspx.designer.cs">
-      <DependentUpon>OfficialIndex.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Official\OfficialPublish.aspx.cs">
-      <DependentUpon>OfficialPublish.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Official\OfficialPublish.aspx.designer.cs">
-      <DependentUpon>OfficialPublish.aspx</DependentUpon>
     </Compile>
     <Compile Include="ManageCenter\Patrol\ArtificialPatrol.aspx.cs">
       <DependentUpon>ArtificialPatrol.aspx</DependentUpon>
