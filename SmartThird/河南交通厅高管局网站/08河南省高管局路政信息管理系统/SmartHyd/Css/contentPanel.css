@@ -1,0 +1,36 @@
+﻿body
+{
+    margin:0px;
+    padding:0px;
+}
+table.content
+{
+    border: solid 1px #a3bae9;
+    background-color: #f5f8fb;
+}
+#main
+{
+    border:none;
+    border-left: solid 1px #a3bae9;
+}
+a.nav
+{
+    width: 120px;
+    height: 35px;
+    line-height: 35px;
+    float: left;
+    text-align: center;
+    cursor: pointer;
+    color: #15428b;
+    font-weight:800;
+    overflow: hidden;
+    text-decoration: none;
+}
+a.navselected
+{
+    background-image:url("../Images/cp_nav.png");
+}
+a.nav:hover
+{
+    background-image:url("../Images/cp_nav.png");
+}

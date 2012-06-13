@@ -42,7 +42,7 @@ namespace SmartHyd.OracleDAL {
         /// <summary>
         /// 增加一条数据
         /// </summary>
-        public void Add(Entity.BASE_USER model) {
+        public int Add(Entity.BASE_USER model) {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("insert into BASE_USER(");
             strSql.Append("IDNUMBER,JOBNUMBER,PHOTO,PROF,REMARK,STSTUS,PHONE,USERNAME,USERPWD,PARENTID,SEX,DEPTID,BIRTHDAY,DEGREE,FACE,REALNAME");
@@ -84,8 +84,7 @@ namespace SmartHyd.OracleDAL {
             parameters[13].Value = model.DEGREE;
             parameters[14].Value = model.FACE;
             parameters[15].Value = model.REALNAME;
-            OracleHelper.ExecuteNonQuery(strSql.ToString(), parameters);
-
+            return OracleHelper.ExecuteNonQuery(strSql.ToString(), parameters);
         }
 
 

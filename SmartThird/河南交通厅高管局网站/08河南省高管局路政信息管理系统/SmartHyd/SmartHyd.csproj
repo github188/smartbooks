@@ -65,8 +65,11 @@
     <Content Include="AdminTop.aspx" />
     <Content Include="Ascx\Department.ascx" />
     <Content Include="Ascx\TreeView.ascx" />
+    <Content Include="bin\AspNetPager.dll" />
+    <Content Include="bin\System.Data.OracleClient.dll" />
     <Content Include="Css\base.css" />
     <Content Include="Css\basemain.css" />
+    <Content Include="Css\contentPanel.css" />
     <Content Include="Css\css.css" />
     <Content Include="Css\index.css" />
     <Content Include="Css\Loading.css" />
@@ -106,6 +109,7 @@
     <Content Include="Images\closehelp.png" />
     <Content Include="Images\Com.png" />
     <Content Include="Images\Construction.png" />
+    <Content Include="Images\cp_nav.png" />
     <Content Include="Images\del.jpg" />
     <Content Include="Images\delete.png" />
     <Content Include="Images\deleteUnit.png" />
@@ -259,7 +263,6 @@
     <Content Include="ManageCenter\Ascx\AfficheEdit.ascx" />
     <Content Include="ManageCenter\Ascx\Area.ascx" />
     <Content Include="ManageCenter\Ascx\Chat.ascx" />
-    <Content Include="ManageCenter\Ascx\Dept.ascx" />
     <Content Include="ManageCenter\Ascx\DeptManage.ascx" />
     <Content Include="ManageCenter\Ascx\DocumentCheckOut.ascx" />
     <Content Include="ManageCenter\Ascx\DocumentCreate.ascx" />
@@ -282,7 +285,6 @@
     <Content Include="ManageCenter\Ascx\UserManage.ascx" />
     <Content Include="ManageCenter\Chat.aspx" />
     <Content Include="ManageCenter\ConstructionPage.aspx" />
-    <Content Include="ManageCenter\Dept.aspx" />
     <Content Include="ManageCenter\DeptManage.aspx" />
     <Content Include="ManageCenter\DocumentCheckOut.aspx" />
     <Content Include="ManageCenter\DocumentCreate.aspx" />
@@ -295,8 +297,20 @@
     <Content Include="ManageCenter\MessageSend.aspx" />
     <Content Include="ManageCenter\Observed.aspx" />
     <Content Include="ManageCenter\Office.aspx" />
+    <Content Include="ManageCenter\OfficialType\Create.aspx" />
+    <Content Include="ManageCenter\OfficialType\Index.aspx" />
+    <Content Include="ManageCenter\OfficialType\List.aspx" />
+    <Content Include="ManageCenter\Official\Accept.aspx" />
+    <Content Include="ManageCenter\Official\BeenSent.aspx" />
+    <Content Include="ManageCenter\Official\DraftsBox.aspx" />
+    <Content Include="ManageCenter\Official\Index.aspx" />
+    <Content Include="ManageCenter\Official\Create.aspx" />
+    <Content Include="ManageCenter\Official\Reply.aspx" />
+    <Content Include="ManageCenter\Official\Trash.aspx" />
     <Content Include="ManageCenter\Overrun\OverrunIndex.aspx" />
     <Content Include="ManageCenter\Patrol.aspx" />
+    <Content Include="ManageCenter\PersonTerm\PersonTerm.aspx" />
+    <Content Include="ManageCenter\PersonTerm\Term.aspx" />
     <Content Include="ManageCenter\Plan.aspx" />
     <Content Include="ManageCenter\readme.txt" />
     <Content Include="ManageCenter\RoadProject.aspx" />
@@ -307,6 +321,7 @@
     <Content Include="ManageCenter\SysLog.aspx" />
     <Content Include="ManageCenter\SysManager.aspx" />
     <Content Include="ManageCenter\Term.aspx" />
+    <Content Include="ManageCenter\PersonTerm\TermEdit.aspx" />
     <Content Include="ManageCenter\UserManage.aspx" />
     <Content Include="ManageCenter\UserManager\UnitCenter.aspx" />
     <Content Include="ManageCenter\UserManager\UnitEdit.aspx" />
@@ -314,19 +329,16 @@
     <Content Include="ManageCenter\UserManager\UserEdit.aspx" />
     <Content Include="ManageCenter\WorkPlan\Plan.aspx" />
     <Content Include="ManageCenter\WorkPlan\PlanEdit.aspx" />
-    <Content Include="workbench.aspx" />
-    <Content Include="Official\DocumentEdit.aspx" />
-    <Content Include="Official\OfficialAccept.aspx" />
-    <Content Include="Official\OfficialIndex.aspx" />
-    <Content Include="Official\OfficialPublish.aspx" />
-    <Content Include="Patrol\ArtificialPatrol.aspx" />
-    <Content Include="Patrol\ElectronicEdit.aspx" />
-    <Content Include="Patrol\ElectronicPatrol.aspx" />
-    <Content Include="Patrol\images\close.png" />
-    <Content Include="Patrol\images\closeHelp.png" />
-    <Content Include="Patrol\images\loadingAnimation.gif" />
-    <Content Include="Patrol\PatrolEdit.aspx" />
-    <Content Include="Patrol\PatrolIndex.aspx" />
+    <Content Include="ManageCenter\Patrol\ArtificialPatrol.aspx" />
+    <Content Include="ManageCenter\Patrol\ElectronicDetail.aspx" />
+    <Content Include="ManageCenter\Patrol\ElectronicEdit.aspx" />
+    <Content Include="ManageCenter\Patrol\ElectronicPatrol.aspx" />
+    <Content Include="ManageCenter\Patrol\images\close.png" />
+    <Content Include="ManageCenter\Patrol\images\closeHelp.png" />
+    <Content Include="ManageCenter\Patrol\images\loadingAnimation.gif" />
+    <Content Include="ManageCenter\Patrol\PatrolDetail.aspx" />
+    <Content Include="ManageCenter\Patrol\PatrolEdit.aspx" />
+    <Content Include="ManageCenter\Patrol\PatrolIndex.aspx" />
     <Content Include="readme.txt" />
     <Content Include="Scripts\base.js" />
     <Content Include="Scripts\DD_belatedPNG_0.0.8a.js" />
@@ -1293,6 +1305,7 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
+    <Content Include="workbench.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdminDefault.aspx.cs">
@@ -1329,6 +1342,76 @@
     </Compile>
     <Compile Include="AdminTop.aspx.designer.cs">
       <DependentUpon>AdminTop.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\OfficialType\Create.aspx.cs">
+      <DependentUpon>Create.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\OfficialType\Create.aspx.designer.cs">
+      <DependentUpon>Create.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\OfficialType\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\OfficialType\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\OfficialType\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\OfficialType\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\Official\Accept.aspx.cs">
+      <DependentUpon>Accept.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\Official\Accept.aspx.designer.cs">
+      <DependentUpon>Accept.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\Official\BeenSent.aspx.cs">
+      <DependentUpon>BeenSent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\Official\BeenSent.aspx.designer.cs">
+      <DependentUpon>BeenSent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\Official\DraftsBox.aspx.cs">
+      <DependentUpon>DraftsBox.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\Official\DraftsBox.aspx.designer.cs">
+      <DependentUpon>DraftsBox.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\Official\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\Official\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\Official\Reply.aspx.cs">
+      <DependentUpon>Reply.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\Official\Reply.aspx.designer.cs">
+      <DependentUpon>Reply.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\Official\Trash.aspx.cs">
+      <DependentUpon>Trash.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\Official\Trash.aspx.designer.cs">
+      <DependentUpon>Trash.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="workbench.aspx.cs">
+      <DependentUpon>workbench.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="workbench.aspx.designer.cs">
+      <DependentUpon>workbench.aspx</DependentUpon>
     </Compile>
     <Content Include="App_Code\CommonFunction.cs" />
     <Compile Include="Ascx\Department.ascx.cs">
@@ -1420,13 +1503,6 @@
     </Compile>
     <Compile Include="ManageCenter\Ascx\Chat.ascx.designer.cs">
       <DependentUpon>Chat.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="ManageCenter\Ascx\Dept.ascx.cs">
-      <DependentUpon>Dept.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ManageCenter\Ascx\Dept.ascx.designer.cs">
-      <DependentUpon>Dept.ascx</DependentUpon>
     </Compile>
     <Compile Include="ManageCenter\Ascx\DeptManage.ascx.cs">
       <DependentUpon>DeptManage.ascx</DependentUpon>
@@ -1582,13 +1658,6 @@
     <Compile Include="ManageCenter\ConstructionPage.aspx.designer.cs">
       <DependentUpon>ConstructionPage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ManageCenter\Dept.aspx.cs">
-      <DependentUpon>Dept.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ManageCenter\Dept.aspx.designer.cs">
-      <DependentUpon>Dept.aspx</DependentUpon>
-    </Compile>
     <Compile Include="ManageCenter\DeptManage.aspx.cs">
       <DependentUpon>DeptManage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1680,6 +1749,13 @@
     <Compile Include="ManageCenter\Office.aspx.designer.cs">
       <DependentUpon>Office.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ManageCenter\Official\Create.aspx.cs">
+      <DependentUpon>Create.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\Official\Create.aspx.designer.cs">
+      <DependentUpon>Create.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ManageCenter\Overrun\OverrunIndex.aspx.cs">
       <DependentUpon>OverrunIndex.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1693,6 +1769,20 @@
     </Compile>
     <Compile Include="ManageCenter\Patrol.aspx.designer.cs">
       <DependentUpon>Patrol.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\PersonTerm\PersonTerm.aspx.cs">
+      <DependentUpon>PersonTerm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\PersonTerm\PersonTerm.aspx.designer.cs">
+      <DependentUpon>PersonTerm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\PersonTerm\Term.aspx.cs">
+      <DependentUpon>Term.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\PersonTerm\Term.aspx.designer.cs">
+      <DependentUpon>Term.aspx</DependentUpon>
     </Compile>
     <Compile Include="ManageCenter\Plan.aspx.cs">
       <DependentUpon>Plan.aspx</DependentUpon>
@@ -1757,6 +1847,13 @@
     <Compile Include="ManageCenter\Term.aspx.designer.cs">
       <DependentUpon>Term.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ManageCenter\PersonTerm\TermEdit.aspx.cs">
+      <DependentUpon>TermEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\PersonTerm\TermEdit.aspx.designer.cs">
+      <DependentUpon>TermEdit.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ManageCenter\UserManage.aspx.cs">
       <DependentUpon>UserManage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1806,74 +1903,53 @@
     <Compile Include="ManageCenter\WorkPlan\PlanEdit.aspx.designer.cs">
       <DependentUpon>PlanEdit.aspx</DependentUpon>
     </Compile>
-    <Compile Include="workbench.aspx.cs">
-      <DependentUpon>workbench.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="workbench.aspx.designer.cs">
-      <DependentUpon>workbench.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Official\DocumentEdit.aspx.cs">
-      <DependentUpon>DocumentEdit.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Official\DocumentEdit.aspx.designer.cs">
-      <DependentUpon>DocumentEdit.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Official\OfficialAccept.aspx.cs">
-      <DependentUpon>OfficialAccept.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Official\OfficialAccept.aspx.designer.cs">
-      <DependentUpon>OfficialAccept.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Official\OfficialIndex.aspx.cs">
-      <DependentUpon>OfficialIndex.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Official\OfficialIndex.aspx.designer.cs">
-      <DependentUpon>OfficialIndex.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Official\OfficialPublish.aspx.cs">
-      <DependentUpon>OfficialPublish.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Official\OfficialPublish.aspx.designer.cs">
-      <DependentUpon>OfficialPublish.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Patrol\ArtificialPatrol.aspx.cs">
+    <Compile Include="ManageCenter\Patrol\ArtificialPatrol.aspx.cs">
       <DependentUpon>ArtificialPatrol.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Patrol\ArtificialPatrol.aspx.designer.cs">
+    <Compile Include="ManageCenter\Patrol\ArtificialPatrol.aspx.designer.cs">
       <DependentUpon>ArtificialPatrol.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Patrol\ElectronicEdit.aspx.cs">
+    <Compile Include="ManageCenter\Patrol\ElectronicDetail.aspx.cs">
+      <DependentUpon>ElectronicDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\Patrol\ElectronicDetail.aspx.designer.cs">
+      <DependentUpon>ElectronicDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\Patrol\ElectronicEdit.aspx.cs">
       <DependentUpon>ElectronicEdit.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Patrol\ElectronicEdit.aspx.designer.cs">
+    <Compile Include="ManageCenter\Patrol\ElectronicEdit.aspx.designer.cs">
       <DependentUpon>ElectronicEdit.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Patrol\ElectronicPatrol.aspx.cs">
+    <Compile Include="ManageCenter\Patrol\ElectronicPatrol.aspx.cs">
       <DependentUpon>ElectronicPatrol.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Patrol\ElectronicPatrol.aspx.designer.cs">
+    <Compile Include="ManageCenter\Patrol\ElectronicPatrol.aspx.designer.cs">
       <DependentUpon>ElectronicPatrol.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Patrol\PatrolEdit.aspx.cs">
+    <Compile Include="ManageCenter\Patrol\PatrolDetail.aspx.cs">
+      <DependentUpon>PatrolDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\Patrol\PatrolDetail.aspx.designer.cs">
+      <DependentUpon>PatrolDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\Patrol\PatrolEdit.aspx.cs">
       <DependentUpon>PatrolEdit.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Patrol\PatrolEdit.aspx.designer.cs">
+    <Compile Include="ManageCenter\Patrol\PatrolEdit.aspx.designer.cs">
       <DependentUpon>PatrolEdit.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Patrol\PatrolIndex.aspx.cs">
+    <Compile Include="ManageCenter\Patrol\PatrolIndex.aspx.cs">
       <DependentUpon>PatrolIndex.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Patrol\PatrolIndex.aspx.designer.cs">
+    <Compile Include="ManageCenter\Patrol\PatrolIndex.aspx.designer.cs">
       <DependentUpon>PatrolIndex.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -1881,6 +1957,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Document\" />
+    <Folder Include="Images\RoadImage\" />
     <Folder Include="Log\" />
     <Folder Include="ManageCenter\RoadProject\" />
     <Folder Include="Scripts\kindeditor-4.0.5\attached\" />

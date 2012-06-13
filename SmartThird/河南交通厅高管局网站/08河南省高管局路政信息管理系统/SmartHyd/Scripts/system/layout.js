@@ -157,7 +157,7 @@ var center = new Ext.TabPanel({
             id: "index",
             iconCls: "workbenchicon",
             title: "我的工作台-路政工作动态",
-            html: "<iframe src='workbench.aspx' scrolling='no' id='mainFame' name='mainFrame' frameborder=0 width=100% height=100%></iframe>"
+            html: "<iframe src='workbench.aspx' scrolling='no' id='sysFrame' name='sysFrame' frameborder=0 width=100% height=100%></iframe>"
 
         }],
     plugins: new Ext.ux.TabCloseMenu()

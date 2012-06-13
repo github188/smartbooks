@@ -99,7 +99,7 @@
 				
 				<li>
 					<img src="images/ui-left-ico01.png" alt="档案管理"/>
-					<a href="Official/OfficialIndex.aspx" target="mainFrame">档案管理</a>
+					<a href="ManageCenter/Official/OfficialIndex.aspx" target="mainFrame">档案管理</a>
                     <img src="images/ui-left-menustar.png" alt="新功能上线"/>
 				</li>
 				
