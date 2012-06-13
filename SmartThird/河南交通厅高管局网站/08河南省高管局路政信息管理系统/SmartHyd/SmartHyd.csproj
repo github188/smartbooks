@@ -64,6 +64,7 @@
     <Content Include="AdminLogout.aspx" />
     <Content Include="AdminTop.aspx" />
     <Content Include="Ascx\Department.ascx" />
+    <Content Include="Ascx\SystemModuleJSON.ascx" />
     <Content Include="Ascx\TreeView.ascx" />
     <Content Include="bin\AspNetPager.dll" />
     <Content Include="bin\System.Data.OracleClient.dll" />
@@ -359,6 +360,8 @@
     <Content Include="Scripts\ext\jQuery\jquery.slideviewer.1.1.js" />
     <Content Include="Scripts\ext\jQuery\jquery.tooltip.js" />
     <Content Include="Scripts\ext\local\ext-lang-zh_CN.js" />
+    <Content Include="Scripts\ext\plugin\AccordinTreePanel.js" />
+    <Content Include="Scripts\ext\plugin\TabCloseMenu.js" />
     <Content Include="Scripts\ext\resources\css\borders.css" />
     <Content Include="Scripts\ext\resources\css\box.css" />
     <Content Include="Scripts\ext\resources\css\button.css" />
@@ -1343,6 +1346,12 @@
     <Compile Include="AdminTop.aspx.designer.cs">
       <DependentUpon>AdminTop.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Ascx\SystemModuleJSON.ascx.cs">
+      <DependentUpon>SystemModuleJSON.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Ascx\SystemModuleJSON.ascx.designer.cs">
+      <DependentUpon>SystemModuleJSON.ascx</DependentUpon>
+    </Compile>
     <Compile Include="ManageCenter\OfficialType\Create.aspx.cs">
       <DependentUpon>Create.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1959,9 +1968,13 @@
     <Folder Include="Document\" />
     <Folder Include="Images\RoadImage\" />
     <Folder Include="Log\" />
+    <Folder Include="ManageCenter\Overload\" />
     <Folder Include="ManageCenter\RoadProject\" />
+    <Folder Include="ManageCenter\Security\" />
+    <Folder Include="ManageCenter\Traffic\" />
     <Folder Include="Scripts\kindeditor-4.0.5\attached\" />
     <Folder Include="Temp\" />
+    <Folder Include="WorkLog\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\Smart\SmartDBUtility\SmartDBUtility.csproj">
@@ -2013,7 +2026,6 @@
     <None Include="Scripts\ext\resources\resources.jsb" />
     <None Include="Scripts\My97DatePicker\skin\default\vssver2.scc" />
     <None Include="Scripts\My97DatePicker\skin\whyGreen\vssver2.scc" />
-    <None Include="WorkLog\工作日志.doc" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
