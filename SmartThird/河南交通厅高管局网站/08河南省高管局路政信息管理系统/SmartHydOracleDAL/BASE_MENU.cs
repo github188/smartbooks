@@ -210,6 +210,19 @@ namespace SmartHyd.OracleDAL {
         }
 
 
+
+        /// <summary>
+        /// comment:    为菜单JSON数据提供数据源
+        /// date:       2012-06-13
+        /// author:     hyw
+        /// </summary>
+        /// <param name="parentId"></param>
+        /// <returns></returns>
+        public DataTable GetMenuList() {
+            string strSql = "SELECT MENUID,PARENTID,MENUNAME,ICONCLS,ISLEAF FROM BASE_MENU  ORDER BY SEQUENCE";
+
+            return OracleHelper.Query(strSql).Tables[0];
+        }
     }
 }
 
