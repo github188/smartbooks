@@ -1368,6 +1368,7 @@
     </Compile>
     <Compile Include="ManageCenter\Ascx\Handling.ascx.cs">
       <DependentUpon>Handling.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ManageCenter\Ascx\Handling.ascx.designer.cs">
       <DependentUpon>Handling.ascx</DependentUpon>
