@@ -63,6 +63,7 @@ namespace SmartHyd.Patrol
             //txtLog.Text = model.LOG;
             txtWEATHER.Text = model.WEATHER;
         }
+
         /// <summary>
         /// 验证提交
         /// </summary>
