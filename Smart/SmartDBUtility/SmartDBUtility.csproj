@@ -37,7 +37,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Data.OracleClient" />
     <Reference Include="System.Web.Extensions">
-      <HintPath>..\..\SmartThird\河南交通厅高管局网站\08河南省高管局路政信息管理系统\FreeThirdControle\System.Web.Extensions.dll</HintPath>
+      <HintPath>bin\Debug\System.Web.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml" />
   </ItemGroup>
