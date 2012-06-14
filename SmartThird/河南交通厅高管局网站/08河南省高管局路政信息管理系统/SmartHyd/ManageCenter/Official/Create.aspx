@@ -49,7 +49,7 @@
         {
             overflow: scroll;
             width: 270px;
-            height: 600px;
+            height: 400px;
             float: right;
             border: 1px solid #A6C9E2;
         }
