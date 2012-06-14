@@ -283,6 +283,7 @@
     <Content Include="ManageCenter\Ascx\Chat.ascx" />
     <Content Include="ManageCenter\Ascx\DeptManage.ascx" />
     <Content Include="ManageCenter\Ascx\Empower.ascx" />
+    <Content Include="ManageCenter\Ascx\Handling.ascx" />
     <Content Include="ManageCenter\Ascx\ImportData.ascx" />
     <Content Include="ManageCenter\Ascx\Office.ascx" />
     <Content Include="ManageCenter\Ascx\Plan.ascx" />
@@ -1357,6 +1358,13 @@
     </Compile>
     <Compile Include="Handle\SystemJSON.aspx.designer.cs">
       <DependentUpon>SystemJSON.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\Ascx\Handling.ascx.cs">
+      <DependentUpon>Handling.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\Ascx\Handling.ascx.designer.cs">
+      <DependentUpon>Handling.ascx</DependentUpon>
     </Compile>
     <Compile Include="ManageCenter\ControlArea\Add.aspx.cs">
       <DependentUpon>Add.aspx</DependentUpon>
