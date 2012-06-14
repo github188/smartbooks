@@ -284,7 +284,6 @@
     <Content Include="ManageCenter\Ascx\DeptManage.ascx" />
     <Content Include="ManageCenter\Ascx\Empower.ascx" />
     <Content Include="ManageCenter\Ascx\ImportData.ascx" />
-    <Content Include="ManageCenter\Ascx\MessageSend.ascx" />
     <Content Include="ManageCenter\Ascx\Office.ascx" />
     <Content Include="ManageCenter\Ascx\Plan.ascx" />
     <Content Include="ManageCenter\Ascx\Role.ascx" />
@@ -297,9 +296,10 @@
     <Content Include="ManageCenter\DeptManage.aspx" />
     <Content Include="ManageCenter\Empower.aspx" />
     <Content Include="ManageCenter\ImportData.aspx" />
+    <Content Include="ManageCenter\IM\Add.aspx" />
+    <Content Include="ManageCenter\IM\List.aspx" />
     <Content Include="ManageCenter\MenuManage\Add.aspx" />
     <Content Include="ManageCenter\MenuManage\List.aspx" />
-    <Content Include="ManageCenter\MessageSend.aspx" />
     <Content Include="ManageCenter\Office.aspx" />
     <Content Include="ManageCenter\OfficialType\Create.aspx" />
     <Content Include="ManageCenter\OfficialType\List.aspx" />
@@ -1372,6 +1372,20 @@
     <Compile Include="ManageCenter\ControlArea\List.aspx.designer.cs">
       <DependentUpon>List.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ManageCenter\IM\Add.aspx.cs">
+      <DependentUpon>Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\IM\Add.aspx.designer.cs">
+      <DependentUpon>Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\IM\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\IM\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ManageCenter\MenuManage\Add.aspx.cs">
       <DependentUpon>Add.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1554,13 +1568,6 @@
     <Compile Include="ManageCenter\Ascx\ImportData.ascx.designer.cs">
       <DependentUpon>ImportData.ascx</DependentUpon>
     </Compile>
-    <Compile Include="ManageCenter\Ascx\MessageSend.ascx.cs">
-      <DependentUpon>MessageSend.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ManageCenter\Ascx\MessageSend.ascx.designer.cs">
-      <DependentUpon>MessageSend.ascx</DependentUpon>
-    </Compile>
     <Compile Include="ManageCenter\Ascx\Office.ascx.cs">
       <DependentUpon>Office.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1637,13 +1644,6 @@
     </Compile>
     <Compile Include="ManageCenter\ManageCenter.Master.designer.cs">
       <DependentUpon>ManageCenter.Master</DependentUpon>
-    </Compile>
-    <Compile Include="ManageCenter\MessageSend.aspx.cs">
-      <DependentUpon>MessageSend.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ManageCenter\MessageSend.aspx.designer.cs">
-      <DependentUpon>MessageSend.aspx</DependentUpon>
     </Compile>
     <Compile Include="ManageCenter\Office.aspx.cs">
       <DependentUpon>Office.aspx</DependentUpon>
