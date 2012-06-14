@@ -28,19 +28,14 @@ var moduleTreePanel = new Ext.tree.TreePanel({
     lines: true,
     enableDD: true,
     containerScroll: true,
-    listeners:
-    {
-        "click": function (node, event) {
-            //叶子节点点击不进入链接
-            if (node.isLeaf()) {
-                // 显示叶子节点菜单
+    listeners: {
+        "click": function (node, event) {//叶子节点点击不进入链接
+            if (node.isLeaf()) {// 显示叶子节点菜单
+                LoadModule(node); //加载模块首页
                 event.stopEvent();
-                ALLEvents(node);
             } else {
-                //不是叶子节点不触发事件
-                event.stopEvent();
-                //点击时展开
-                node.toggle();
+                event.stopEvent(); //不是叶子节点不触发事件
+                node.toggle(); //点击时展开
             }
 
         }
@@ -76,7 +71,7 @@ var south = new Ext.Panel({
 var west = new Ext.Panel({
     region: "west",
     split: true,
-    width: 230,
+    width: 200,
     iconCls: "navigationicon",
     title: "<span class='moduletitle position'>高速路政系统导航</a>",
     collapsible: true,
