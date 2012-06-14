@@ -27,8 +27,8 @@ namespace SmartHyd.Ashx {
                 rd.Next(0, 9).ToString());
 
             //加入cookie
-            //context.Response.Cookies.Add(new HttpCookie("code", code));
-            context.Session["code"] = code;
+            context.Response.Cookies.Add(new HttpCookie("code", code));
+            //context.Session["code"] = code;
 
             verificationCode.CreateImageOnPage(code, context);
         }
