@@ -16,7 +16,7 @@
             var editor = K.create('textarea[id="txtContent"]', {
                 items: ['source', '|', 'undo', 'redo', '|', 'cut', 'copy',
                             'paste', 'plainpaste', 'wordpaste'],
-                width: "100%",
+                width: "99%",
                 height: "260px"
             });
         });
@@ -139,7 +139,7 @@
                 </td>
                 <td class="TableData">
                     <asp:TextBox ID="txtContent" runat="server" CssClass="input" TextMode="MultiLine"
-                        MaxLength="4000" Width="100%" Height="200">
+                        MaxLength="4000" Width="99%" Height="200">
                     </asp:TextBox>
                 </td>
             </tr>
