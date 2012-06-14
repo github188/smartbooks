@@ -291,10 +291,15 @@
     <Content Include="ManageCenter\Ascx\SysLog.ascx" />
     <Content Include="ManageCenter\Ascx\SysManager.ascx" />
     <Content Include="ManageCenter\Ascx\UserManage.ascx" />
+    <Content Include="ManageCenter\AssessType\List.aspx" />
+    <Content Include="ManageCenter\Assess\List.aspx" />
+    <Content Include="ManageCenter\Case\List.aspx" />
     <Content Include="ManageCenter\Chat.aspx" />
     <Content Include="ManageCenter\ControlArea\Add.aspx" />
     <Content Include="ManageCenter\ControlArea\List.aspx" />
     <Content Include="ManageCenter\DeptManage.aspx" />
+    <Content Include="ManageCenter\DocumentType\List.aspx" />
+    <Content Include="ManageCenter\Document\List.aspx" />
     <Content Include="ManageCenter\Empower.aspx" />
     <Content Include="ManageCenter\ImportData.aspx" />
     <Content Include="ManageCenter\IM\Add.aspx" />
@@ -317,9 +322,11 @@
     <Content Include="ManageCenter\PersonTerm\Term.aspx" />
     <Content Include="ManageCenter\Plan.aspx" />
     <Content Include="ManageCenter\readme.txt" />
+    <Content Include="ManageCenter\RoadLicense\List.aspx" />
     <Content Include="ManageCenter\RoadTerm\RoadTermAdd.aspx" />
     <Content Include="ManageCenter\RoadTerm\RoadTermList.aspx" />
     <Content Include="ManageCenter\Role.aspx" />
+    <Content Include="ManageCenter\SignLicense\List.aspx" />
     <Content Include="ManageCenter\SysLog.aspx" />
     <Content Include="ManageCenter\SysManager.aspx" />
     <Content Include="ManageCenter\PersonTerm\TermEdit.aspx" />
@@ -1361,10 +1368,30 @@
     </Compile>
     <Compile Include="ManageCenter\Ascx\Handling.ascx.cs">
       <DependentUpon>Handling.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ManageCenter\Ascx\Handling.ascx.designer.cs">
       <DependentUpon>Handling.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\AssessType\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\AssessType\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\Assess\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\Assess\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\Case\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\Case\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
     </Compile>
     <Compile Include="ManageCenter\ControlArea\Add.aspx.cs">
       <DependentUpon>Add.aspx</DependentUpon>
@@ -1378,6 +1405,20 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ManageCenter\ControlArea\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\DocumentType\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\DocumentType\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\Document\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\Document\List.aspx.designer.cs">
       <DependentUpon>List.aspx</DependentUpon>
     </Compile>
     <Compile Include="ManageCenter\IM\Add.aspx.cs">
@@ -1470,6 +1511,20 @@
     </Compile>
     <Compile Include="ManageCenter\Official\Trash.aspx.designer.cs">
       <DependentUpon>Trash.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\RoadLicense\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\RoadLicense\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\SignLicense\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\SignLicense\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
     </Compile>
     <Compile Include="workbench.aspx.cs">
       <DependentUpon>workbench.aspx</DependentUpon>
