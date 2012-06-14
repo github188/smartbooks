@@ -132,14 +132,18 @@
     <Content Include="Images\icons\allmanagemenu.png" />
     <Content Include="Images\icons\analyze.png" />
     <Content Include="Images\icons\aroundsearch.png" />
+    <Content Include="Images\icons\artificialpatrol.png" />
     <Content Include="Images\icons\atm.png" />
     <Content Include="Images\icons\bank.png" />
     <Content Include="Images\icons\basicmap.png" />
     <Content Include="Images\icons\basicset.png" />
     <Content Include="Images\icons\bc_ico.png" />
+    <Content Include="Images\icons\bell.png" />
+    <Content Include="Images\icons\bin.png" />
     <Content Include="Images\icons\books.png" />
     <Content Include="Images\icons\branch.png" />
     <Content Include="Images\icons\card_address.png" />
+    <Content Include="Images\icons\case.png" />
     <Content Include="Images\icons\chaoxian.png" />
     <Content Include="Images\icons\chart.png" />
     <Content Include="Images\icons\city.png" />
@@ -157,11 +161,14 @@
     <Content Include="Images\icons\department.png" />
     <Content Include="Images\icons\display16.png" />
     <Content Include="Images\icons\district.png" />
+    <Content Include="Images\icons\documentmanager.png" />
     <Content Include="Images\icons\door_arrow.png" />
     <Content Include="Images\icons\download.png" />
     <Content Include="Images\icons\edit.png" />
+    <Content Include="Images\icons\electronicpatrol.png" />
     <Content Include="Images\icons\farway.png" />
     <Content Include="Images\icons\files.png" />
+    <Content Include="Images\icons\filesmanager.png" />
     <Content Include="Images\icons\flag.png" />
     <Content Include="Images\icons\gear.png" />
     <Content Include="Images\icons\gonggao.gif" />
@@ -174,6 +181,7 @@
     <Content Include="Images\icons\hotelmanage.png" />
     <Content Include="Images\icons\indexicon.gif" />
     <Content Include="Images\icons\indexicon.png" />
+    <Content Include="Images\icons\instantmessaging.png" />
     <Content Include="Images\icons\job.png" />
     <Content Include="Images\icons\label.png" />
     <Content Include="Images\icons\layer.png" />
@@ -183,10 +191,14 @@
     <Content Include="Images\icons\magnifier.png" />
     <Content Include="Images\icons\map.png" />
     <Content Include="Images\icons\market.png" />
+    <Content Include="Images\icons\minus_circle_frame.png" />
     <Content Include="Images\icons\navigation.png" />
     <Content Include="Images\icons\netoa.png" />
     <Content Include="Images\icons\openroomiconinfo.gif" />
     <Content Include="Images\icons\openroomicons.gif" />
+    <Content Include="Images\icons\overloadreported.png" />
+    <Content Include="Images\icons\overloadsearch.png" />
+    <Content Include="Images\icons\overloadsummary.png" />
     <Content Include="Images\icons\password.png" />
     <Content Include="Images\icons\people.png" />
     <Content Include="Images\icons\permissions.png" />
@@ -194,8 +206,10 @@
     <Content Include="Images\icons\planning.png" />
     <Content Include="Images\icons\publishicon.png" />
     <Content Include="Images\icons\refresh.png" />
+    <Content Include="Images\icons\remind.png" />
     <Content Include="Images\icons\reset.png" />
     <Content Include="Images\icons\roadpatrol.png" />
+    <Content Include="Images\icons\roadproject.png" />
     <Content Include="Images\icons\roolrecordicon.png" />
     <Content Include="Images\icons\roomicons.gif" />
     <Content Include="Images\icons\roomtypeicon.gif" />
@@ -209,18 +223,22 @@
     <Content Include="Images\icons\serchopenroomrecord.png" />
     <Content Include="Images\icons\setuseridicon.png" />
     <Content Include="Images\icons\star.png" />
+    <Content Include="Images\icons\starmanager.png" />
     <Content Include="Images\icons\statistics.png" />
     <Content Include="Images\icons\street.png" />
     <Content Include="Images\icons\supermarket.png" />
     <Content Include="Images\icons\sysmanagemenu.png" />
     <Content Include="Images\icons\systemset.png" />
     <Content Include="Images\icons\tables.png" />
+    <Content Include="Images\icons\tags_label.png" />
     <Content Include="Images\icons\todaypriceicon.gif" />
     <Content Include="Images\icons\totalicon.png" />
     <Content Include="Images\icons\trafficcondition.png" />
+    <Content Include="Images\icons\trafficcount.png" />
     <Content Include="Images\icons\types.png" />
     <Content Include="Images\icons\units.png" />
     <Content Include="Images\icons\usericon.png" />
+    <Content Include="Images\icons\wrench_screwdriver.png" />
     <Content Include="Images\icons\xuke.png" />
     <Content Include="Images\i_department.png" />
     <Content Include="Images\i_log.png" />
@@ -1368,7 +1386,6 @@
     </Compile>
     <Compile Include="ManageCenter\OfficialType\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ManageCenter\OfficialType\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>

@@ -35,6 +35,7 @@ namespace SmartHyd.BLL {
                     treeJson.AddItem("parentid", dr["PARENTID"].ToString());
                     treeJson.AddItem("iconCls", dr["ICONCLS"].ToString());
                     treeJson.AddItem("leaf", dr["ISLEAF"].ToString());
+                    treeJson.AddItem("href",dr["MENUURL"].ToString());
                     treeJson.ItemOk();
                 }
                 menuJSON = treeJson.ToString();

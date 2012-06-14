@@ -428,3 +428,7 @@ filter : progid:DXImageTransform.Microsoft.gradient(startColorStr=#96CDCD,endCol
 {
 	background-image: url(../Images/icons/trafficcount.png) !important
 }
+.roadproject
+{
+	background-image: url(../Images/icons/roadproject.png) !important
+}

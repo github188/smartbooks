@@ -16,7 +16,7 @@ LoadModule = function (node) {
         var pnlArtificialPatrol = new Ext.Panel({
             border: false,
             defaults: { bodyStyle: 'margin:0;padding:0;' },
-            html: "<iframe src='ManageCenter/Patrol/ArtificialPatrol.aspx' scrolling='no' id='ArtificialPatrolFrame' name='ArtificialPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
+            html: "<iframe src='" + node.attributes.href + "' scrolling='no' id='ArtificialPatrolFrame' name='ArtificialPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
         });
         LoadModuleMain(node, pnlArtificialPatrol, '');
     } else if (moduleId == 75) {
@@ -25,7 +25,7 @@ LoadModule = function (node) {
 
             border: false,
             defaults: { bodyStyle: 'margin:0;padding:0;' },
-            html: "<iframe src='ManageCenter/Patrol/ElectronicPatrol.aspx' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
+            html: "<iframe src='" + node.attributes.href + "' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
         });
         LoadModuleMain(node, pnlElectronicPatrol, '');
     } else if (moduleId == 76) {
@@ -34,7 +34,7 @@ LoadModule = function (node) {
 
             border: false,
             defaults: { bodyStyle: 'margin:0;padding:0;' },
-            html: "<iframe src='main.aspx' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
+            html: "<iframe src='" + node.attributes.href + "' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
         });
         LoadModuleMain(node, pnlInstantMessaging, '');
     } else if (moduleId == 77) {
@@ -43,7 +43,7 @@ LoadModule = function (node) {
 
             border: false,
             defaults: { bodyStyle: 'margin:0;padding:0;' },
-            html: "<iframe src='main.aspx' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
+            html: "<iframe src='" + node.attributes.href + "' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
         });
         LoadModuleMain(node, pnlRemind, '');
     } else if (moduleId == 78) {
@@ -52,7 +52,7 @@ LoadModule = function (node) {
 
             border: false,
             defaults: { bodyStyle: 'margin:0;padding:0;' },
-            html: "<iframe src='main.aspx' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
+            html: "<iframe src='" + node.attributes.href + "' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
         });
         LoadModuleMain(node, pnlEAnnouncement, '');
     } else if (moduleId == 79) {
@@ -64,7 +64,7 @@ LoadModule = function (node) {
 
             border: false,
             defaults: { bodyStyle: 'margin:0;padding:0;' },
-            html: "<iframe src='main.aspx' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
+            html: "<iframe src='" + node.attributes.href + "' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
         });
         LoadModuleMain(node, pnlFilesType, '');
     } else if (moduleId == 81) {
@@ -73,7 +73,7 @@ LoadModule = function (node) {
 
             border: false,
             defaults: { bodyStyle: 'margin:0;padding:0;' },
-            html: "<iframe src='main.aspx' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
+            html: "<iframe src='" + node.attributes.href + "' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
         });
         LoadModuleMain(node, pnlFilesManager, '');
     } else if (moduleId == 82) {
@@ -82,7 +82,7 @@ LoadModule = function (node) {
 
             border: false,
             defaults: { bodyStyle: 'margin:0;padding:0;' },
-            html: "<iframe src='main.aspx' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
+            html: "<iframe src='" + node.attributes.href + "' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
         });
         LoadModuleMain(node, pnlEvaluationProject, '');
     } else if (moduleId == 83) {
@@ -91,7 +91,7 @@ LoadModule = function (node) {
 
             border: false,
             defaults: { bodyStyle: 'margin:0;padding:0;' },
-            html: "<iframe src='main.aspx' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
+            html: "<iframe src='" + node.attributes.href + "' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
         });
         LoadModuleMain(node, pnlpnlEvaluationManager, '');
     } else if (moduleId == 84) {
@@ -100,7 +100,7 @@ LoadModule = function (node) {
 
             border: false,
             defaults: { bodyStyle: 'margin:0;padding:0;' },
-            html: "<iframe src='main.aspx' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
+            html: "<iframe src='" + node.attributes.href + "' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
         });
         LoadModuleMain(node, pnlRoadProperty, '');
     } else if (moduleId == 85) {
@@ -109,7 +109,7 @@ LoadModule = function (node) {
 
             border: false,
             defaults: { bodyStyle: 'margin:0;padding:0;' },
-            html: "<iframe src='main.aspx' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
+            html: "<iframe src='" + node.attributes.href + "' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
         });
         LoadModuleMain(node, pnlViolation, '');
     } else if (moduleId == 86) {
@@ -118,7 +118,7 @@ LoadModule = function (node) {
 
             border: false,
             defaults: { bodyStyle: 'margin:0;padding:0;' },
-            html: "<iframe src='main.aspx' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
+            html: "<iframe src='" + node.attributes.href + "' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
         });
         LoadModuleMain(node, pnlRoadCase, '');
     } else if (moduleId == 87) {
@@ -127,7 +127,7 @@ LoadModule = function (node) {
 
             border: false,
             defaults: { bodyStyle: 'margin:0;padding:0;' },
-            html: "<iframe src='main.aspx' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
+            html: "<iframe src='" + node.attributes.href + "' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
         });
         LoadModuleMain(node, pnlOverloadSummary, '');
     } else if (moduleId == 88) {
@@ -136,7 +136,7 @@ LoadModule = function (node) {
 
             border: false,
             defaults: { bodyStyle: 'margin:0;padding:0;' },
-            html: "<iframe src='main.aspx' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
+            html: "<iframe src='" + node.attributes.href + "' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
         });
         LoadModuleMain(node, pnlTrafficCount, '');
     } else if (moduleId == 89) {
@@ -145,7 +145,7 @@ LoadModule = function (node) {
 
             border: false,
             defaults: { bodyStyle: 'margin:0;padding:0;' },
-            html: "<iframe src='main.aspx' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
+            html: "<iframe src='" + node.attributes.href + "' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
         });
         LoadModuleMain(node, pnlOverLoadSearch, '');
     } else if (moduleId == 90) {
@@ -154,7 +154,7 @@ LoadModule = function (node) {
 
             border: false,
             defaults: { bodyStyle: 'margin:0;padding:0;' },
-            html: "<iframe src='main.aspx' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
+            html: "<iframe src='" + node.attributes.href + "' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
         });
         LoadModuleMain(node, pnlOverloadReported, '');
     } else if (moduleId == 91) {
@@ -163,7 +163,7 @@ LoadModule = function (node) {
 
             border: false,
             defaults: { bodyStyle: 'margin:0;padding:0;' },
-            html: "<iframe src='main.aspx' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
+            html: "<iframe src='" + node.attributes.href + "' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
         });
         LoadModuleMain(node, pnlRoadProject, '');
     } else if (moduleId == 92) {
@@ -172,7 +172,7 @@ LoadModule = function (node) {
 
             border: false,
             defaults: { bodyStyle: 'margin:0;padding:0;' },
-            html: "<iframe src='main.aspx' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
+            html: "<iframe src='" + node.attributes.href + "' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
         });
         LoadModuleMain(node, pnlNonRoadSign, '');
     } else if (moduleId == 93) {
@@ -181,7 +181,7 @@ LoadModule = function (node) {
 
             border: false,
             defaults: { bodyStyle: 'margin:0;padding:0;' },
-            html: "<iframe src='main.aspx' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
+            html: "<iframe src='" + node.attributes.href + "' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
         });
         LoadModuleMain(node, pnlSecurity, '');
     } else if (moduleId == 94) {
@@ -190,7 +190,7 @@ LoadModule = function (node) {
 
             border: false,
             defaults: { bodyStyle: 'margin:0;padding:0;' },
-            html: "<iframe src='main.aspx' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
+            html: "<iframe src='" + node.attributes.href + "' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
         });
         LoadModuleMain(node, pnlTraffic, '');
     } else if (moduleId == 95) {
@@ -199,7 +199,7 @@ LoadModule = function (node) {
 
             border: false,
             defaults: { bodyStyle: 'margin:0;padding:0;' },
-            html: "<iframe src='main.aspx' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
+            html: "<iframe src='" + node.attributes.href + "' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
         });
         LoadModuleMain(node, pnlTrafficReported, '');
     } else if (moduleId == 96) {
@@ -208,7 +208,7 @@ LoadModule = function (node) {
 
             border: false,
             defaults: { bodyStyle: 'margin:0;padding:0;' },
-            html: "<iframe src='main.aspx' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
+            html: "<iframe src='" + node.attributes.href + "' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
         });
         LoadModuleMain(node, pnlTrafficSearch, '');
     } else if (moduleId == 97) {
@@ -217,7 +217,7 @@ LoadModule = function (node) {
 
             border: false,
             defaults: { bodyStyle: 'margin:0;padding:0;' },
-            html: "<iframe src='main.aspx' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
+            html: "<iframe src='" + node.attributes.href + "' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
         });
         LoadModuleMain(node, pnlEquipment, '');
     } else if (moduleId == 98) {
@@ -226,7 +226,7 @@ LoadModule = function (node) {
 
             border: false,
             defaults: { bodyStyle: 'margin:0;padding:0;' },
-            html: "<iframe src='main.aspx' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
+            html: "<iframe src='" + node.attributes.href + "' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
         });
         LoadModuleMain(node, pnlUserManager, '');
     } else if (moduleId == 99) {
@@ -235,7 +235,7 @@ LoadModule = function (node) {
 
             border: false,
             defaults: { bodyStyle: 'margin:0;padding:0;' },
-            html: "<iframe src='main.aspx' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
+            html: "<iframe src='" + node.attributes.href + "' scrolling='no' id='SystemLogFrame' name='SystemLogFrame' frameborder=0 width=100% height=100%></iframe>"
         });
         LoadModuleMain(node, pnlSystemLog, '');
     } else if (moduleId == 111) {
@@ -244,7 +244,7 @@ LoadModule = function (node) {
 
             border: false,
             defaults: { bodyStyle: 'margin:0;padding:0;' },
-            html: "<iframe src='main.aspx' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
+            html: "<iframe src='" + node.attributes.href + "' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
         });
         LoadModuleMain(node, pnlDocumentSend, '');
     } else if (moduleId == 112) {
@@ -253,7 +253,7 @@ LoadModule = function (node) {
 
             border: false,
             defaults: { bodyStyle: 'margin:0;padding:0;' },
-            html: "<iframe src='main.aspx' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
+            html: "<iframe src='" + node.attributes.href + "' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
         });
         LoadModuleMain(node, pnlEAnnouncement, '');
     } else if (moduleId == 113) {
@@ -262,7 +262,7 @@ LoadModule = function (node) {
 
             border: false,
             defaults: { bodyStyle: 'margin:0;padding:0;' },
-            html: "<iframe src='main.aspx' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
+            html: "<iframe src='" + node.attributes.href + "' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
         });
         LoadModuleMain(node, pnlEvaluationReply, '');
     } else if (moduleId == 114) {
@@ -271,7 +271,7 @@ LoadModule = function (node) {
 
             border: false,
             defaults: { bodyStyle: 'margin:0;padding:0;' },
-            html: "<iframe src='main.aspx' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
+            html: "<iframe src='" + node.attributes.href + "' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
         });
         LoadModuleMain(node, pnlSended, '');
     } else if (moduleId == 115) {
@@ -280,7 +280,7 @@ LoadModule = function (node) {
 
             border: false,
             defaults: { bodyStyle: 'margin:0;padding:0;' },
-            html: "<iframe src='main.aspx' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
+            html: "<iframe src='" + node.attributes.href + "' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
         });
         LoadModuleMain(node, pnlDrafts, '');
     } else if (moduleId == 116) {
@@ -289,7 +289,7 @@ LoadModule = function (node) {
 
             border: false,
             defaults: { bodyStyle: 'margin:0;padding:0;' },
-            html: "<iframe src='main.aspx' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
+            html: "<iframe src='" + node.attributes.href + "' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
         });
         LoadModuleMain(node, pnlTrashcan, '');
     }

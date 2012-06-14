@@ -219,7 +219,7 @@ namespace SmartHyd.OracleDAL {
         /// <param name="parentId"></param>
         /// <returns></returns>
         public DataTable GetMenuList(int parentId) {
-            string strSql = "SELECT MENUID,PARENTID,MENUNAME,ICONCLS,ISLEAF FROM BASE_MENU WHERE PARENTID=:PARENTID ORDER BY SEQUENCE";
+            string strSql = "SELECT MENUID,PARENTID,MENUNAME,MENUURL,ICONCLS,ISLEAF FROM BASE_MENU WHERE PARENTID=:PARENTID ORDER BY SEQUENCE";
 
             OracleParameter[] parameters = {
 					new OracleParameter(":PARENTID", OracleType.Number,4)			};
