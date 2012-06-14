@@ -107,9 +107,9 @@
                                 <asp:CheckBoxField />
                                 <asp:BoundField DataField="DPTNAME" HeaderText="单位部门" />
                                 <asp:BoundField DataField="PATROLUSER" HeaderText="巡查人员" />
-                                <asp:BoundField DataField="WEATHER" HeaderText="天气状况" />
+                                <asp:BoundField DataField="WEATHER" HeaderText="天气状况" /><%--
                                 <asp:BoundField DataField="BEGINTIME" HeaderText="开始时间" />
-                                <asp:BoundField DataField="ENDDATE" HeaderText="结束时间" />
+                                <asp:BoundField DataField="ENDDATE" HeaderText="结束时间" />--%>
                                 <asp:TemplateField HeaderText="操作选项">
                                     <ItemTemplate>
                                         <asp:LinkButton ID="Lbtview" runat="server" CommandName="view" CommandArgument='<%#Eval("OBSERVEDID") %>'>查看</asp:LinkButton>
