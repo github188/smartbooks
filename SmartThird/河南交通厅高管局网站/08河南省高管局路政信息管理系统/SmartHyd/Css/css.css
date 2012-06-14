@@ -118,10 +118,7 @@ filter : progid:DXImageTransform.Microsoft.gradient(startColorStr=#96CDCD,endCol
 	background-image: url(../Images/icons/totalicon.png) !important;
 }
 
-.usericon
-{
-	background-image: url(../Images/icons/usericon.png) !important;
-}
+
 .publishicon
 {
 	background-image: url(../Images/icons/publishicon.png) !important;
@@ -431,4 +428,32 @@ filter : progid:DXImageTransform.Microsoft.gradient(startColorStr=#96CDCD,endCol
 .roadproject
 {
 	background-image: url(../Images/icons/roadproject.png) !important
+}
+.nonroadsignicon
+{
+	background-image: url(../Images/icons/nonroadsign.png) !important
+}
+.securityicon
+{
+	background-image: url(../Images/icons/security.png) !important
+}
+.trafficsearch
+{
+	background-image: url(../Images/icons/trafficsearch.png) !important
+}
+.trafficreported
+{
+	background-image: url(../Images/icons/trafficreport.png) !important
+}
+.equipmenticon
+{
+	background-image: url(../Images/icons/hammer_screwdriver.png) !important
+}
+.usericon
+{
+	background-image: url(../Images/icons/usericon.png) !important;
+}
+.logicon
+{
+	background-image: url(../Images/icons/clipboard_text.png) !important;
 }
