@@ -80,6 +80,7 @@
     <Content Include="Css\tongdaoa.css" />
     <Content Include="Error.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="Handle\SystemJSON.aspx" />
     <Content Include="Images\585214.png" />
     <Content Include="Images\585216.png" />
     <Content Include="Images\700_b.jpg" />
@@ -1351,6 +1352,13 @@
     </Compile>
     <Compile Include="Ascx\SystemModuleJSON.ascx.designer.cs">
       <DependentUpon>SystemModuleJSON.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Handle\SystemJSON.aspx.cs">
+      <DependentUpon>SystemJSON.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Handle\SystemJSON.aspx.designer.cs">
+      <DependentUpon>SystemJSON.aspx</DependentUpon>
     </Compile>
     <Compile Include="ManageCenter\OfficialType\Create.aspx.cs">
       <DependentUpon>Create.aspx</DependentUpon>

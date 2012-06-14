@@ -339,17 +339,15 @@ namespace SmartHyd.ManageCenter.Official {
                     annex.STATUS = 0;                                   //存储状态:0正常
                     annex.UPAUTHOR = userSession.USERID;                //上传者用户ID
                     annex.UPTIME = DateTime.Now;                        //文件上传时间
-                    annex.SERVERPATH = string.Format("{0}Document\\{1}\\",
-                        Server.MapPath("~/"),                           //服务器跟路径
-                        DateTime.Now.ToString("yyyyMMdd"));             //当前日期
+                    annex.SERVERPATH = string.Format("Document\\{0}\\", DateTime.Now.ToString("yyyyMMdd"));
 
                     //判断服务器存储目录路径是否存在
-                    if (!Directory.Exists(annex.SERVERPATH)) {
-                        Directory.CreateDirectory(annex.SERVERPATH);
+                    if (!Directory.Exists(Server.MapPath("~/") + annex.SERVERPATH)) {
+                        Directory.CreateDirectory(Server.MapPath("~/") + annex.SERVERPATH);
                     }
 
                     //保存附件（服务器存储路径）
-                    Request.Files[index].SaveAs(annex.SERVERPATH);
+                    Request.Files[index].SaveAs(Server.MapPath("~/") + annex.SERVERPATH + annex.SERVERNAME + annex.EXTENSION);
 
                     //加入数据库
                     bllAnnex.Add(annex);
@@ -408,12 +406,8 @@ namespace SmartHyd.ManageCenter.Official {
                 this.Update(model); //编辑公文
             }
 
-            if (!hidParentPrimary.Value.Equals("0")) {
-                Response.Redirect("~/Official/OfficialPublish.aspx", true);
-            }
-            else {
-                Response.Redirect("~/Official/OfficialAccept.aspx", true);
-            }
+            /*跳转到发件箱*/
+            Response.Redirect("~/ManageCenter/Official/BeenSent.aspx", true);
         }
         //存草稿
         protected void btnSave_Click(object sender, EventArgs e) {
