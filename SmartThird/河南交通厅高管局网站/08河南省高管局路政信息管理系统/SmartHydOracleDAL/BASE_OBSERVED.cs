@@ -229,6 +229,22 @@ OracleParameter[] parameters = {
 			return OracleHelper.Query(strSql.ToString());
 		}
 
+
+        /// <summary>
+        /// 根据指定条件，获取某个部门下的电子巡逻日志数据
+        /// </summary>
+        /// <param name="strwhere"></param>
+        /// <returns></returns>
+        public DataTable GetLogObserved(string strwhere)
+        {
+            StringBuilder where = new StringBuilder();
+            where.Append("SELECT b.observedid, a.dptname, b.patroluser, b.weather, b.deptid ");
+            where.Append("FROM base_dept a, base_observed b ");
+            where.Append("WHERE a.deptid = b.deptid ");
+            where.AppendFormat("AND " + strwhere);
+
+            return OracleHelper.Query(where.ToString()).Tables[0];
+        }
    
 	}
 }

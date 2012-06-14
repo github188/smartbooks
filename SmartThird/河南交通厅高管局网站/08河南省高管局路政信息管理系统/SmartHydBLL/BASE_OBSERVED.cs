@@ -25,7 +25,7 @@ namespace SmartHyd.BLL {
         /// <returns></returns>
         public DataTable GetLogObserved(string strwhere)
         {
-            return null;// dal.GetLogObserved(strwhere);
+            return dal.GetLogObserved(strwhere);
         }
         /// <summary>
         /// 获取电子巡逻日志实体
