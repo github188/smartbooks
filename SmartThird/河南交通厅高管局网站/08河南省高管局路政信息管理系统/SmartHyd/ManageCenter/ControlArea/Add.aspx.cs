@@ -5,8 +5,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace SmartHyd.ManageCenter {
-    public partial class ConstructionPage : System.Web.UI.Page {
+namespace SmartHyd.ManageCenter.ControlArea {
+    public partial class Add : System.Web.UI.Page {
         protected void Page_Load(object sender, EventArgs e) {
 
         }
