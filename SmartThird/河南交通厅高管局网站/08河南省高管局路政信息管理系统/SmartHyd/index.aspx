@@ -86,15 +86,7 @@
     </div>
     </div>
 
-    
-    <div id="files">
-        <span><img src="Images/shouwen.png" alt=""/><img src="Images/shouwen.png" alt=""/></span>
-        <a href="ManageCenter/Official/Index.aspx" target="sysFrame">收文箱</a>
-        <a href="javascript:void(0)" target="F1">发文箱</a>
-        <a href="javascript:void(0)" target="F1">草稿箱</a>
-        <a href="javascript:void(0)" target="F1">已发送</a>
-        <a href="javascript:void(0)" target="F1">通讯录</a>
-    </div>
+
     </form>
 </body>
 </html>
