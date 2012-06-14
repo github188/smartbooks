@@ -108,7 +108,7 @@
                 <td class="TableData" style="width: 100%;">
                     <asp:HiddenField ID="hidPrimary" runat="server" Value="-1" />
                     <asp:HiddenField ID="hidParentPrimary" runat="server" Value="0" />
-                    <asp:TextBox ID="txtTitle" runat="server" CssClass="input" Width="100%" MaxLength="80">
+                    <asp:TextBox ID="txtTitle" runat="server" CssClass="input" Width="99%" MaxLength="80">
                     </asp:TextBox>
                 </td>
                 <td rowspan="5" valign="top">
@@ -129,7 +129,7 @@
                     发文字号:
                 </td>
                 <td class="TableData">
-                    <asp:TextBox ID="txtSendCode" runat="server" CssClass="input" Width="100%" MaxLength="80"></asp:TextBox>
+                    <asp:TextBox ID="txtSendCode" runat="server" CssClass="input" Width="99%" MaxLength="80"></asp:TextBox>
                 </td>
             </tr>
             <!--发文内容-->
