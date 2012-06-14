@@ -31,6 +31,24 @@ namespace SmartHyd.Patrol {
         protected global::System.Web.UI.WebControls.Label LabName;
         
         /// <summary>
+        /// Label1 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label1;
+        
+        /// <summary>
+        /// Department1 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::SmartHyd.Ascx.Department Department1;
+        
+        /// <summary>
         /// Label2 控件。
         /// </summary>
         /// <remarks>
@@ -40,15 +58,6 @@ namespace SmartHyd.Patrol {
         protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
-        /// hidPrimary 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hidPrimary;
-        
-        /// <summary>
         /// txtRESPUSER 控件。
         /// </summary>
         /// <remarks>
@@ -56,6 +65,15 @@ namespace SmartHyd.Patrol {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtRESPUSER;
+        
+        /// <summary>
+        /// hidPrimary 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hidPrimary;
         
         /// <summary>
         /// Label3 控件。
@@ -130,22 +148,76 @@ namespace SmartHyd.Patrol {
         protected global::System.Web.UI.WebControls.TextBox txtWEATHER;
         
         /// <summary>
-        /// Label7 控件。
+        /// Label16 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label7;
+        protected global::System.Web.UI.WebControls.Label Label16;
         
         /// <summary>
-        /// txtLog 控件。
+        /// LabName1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtLog;
+        protected global::System.Web.UI.WebControls.Label LabName1;
+        
+        /// <summary>
+        /// liname 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl liname;
+        
+        /// <summary>
+        /// LabName2 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabName2;
+        
+        /// <summary>
+        /// Handling1 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::SmartHyd.ManageCenter.Ascx.Handling Handling1;
+        
+        /// <summary>
+        /// tabs_2 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl tabs_2;
+        
+        /// <summary>
+        /// Handling2 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::SmartHyd.ManageCenter.Ascx.Handling Handling2;
+        
+        /// <summary>
+        /// divShift 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divShift;
         
         /// <summary>
         /// Label8 控件。
@@ -265,31 +337,13 @@ namespace SmartHyd.Patrol {
         protected global::System.Web.UI.WebControls.Label Label14;
         
         /// <summary>
-        /// txtBEGINTIME 控件。
+        /// txtTickTime 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtBEGINTIME;
-        
-        /// <summary>
-        /// Label16 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label16;
-        
-        /// <summary>
-        /// txtENDTIME 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtENDTIME;
+        protected global::System.Web.UI.WebControls.TextBox txtTickTime;
         
         /// <summary>
         /// Label15 控件。

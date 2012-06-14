@@ -67,8 +67,8 @@ namespace SmartHyd.Patrol {
                     rootNode.Text = dr["DPTNAME"].ToString();
                     rootNode.Value = dr["DEPTID"].ToString();
                     rootNode.ToolTip = dr["DPTINFO"].ToString();
-                    rootNode.ShowCheckBox = true;
-                    rootNode.Expanded = false;
+                    rootNode.ShowCheckBox = false;
+                    rootNode.Expanded = true;
 
                     //递归子节点
                     RecursiveBindAcceptUnit(rootNode, dt);
@@ -95,7 +95,7 @@ namespace SmartHyd.Patrol {
                     sub.Text = dr["DPTNAME"].ToString();
                     sub.Value = dr["DEPTID"].ToString();
                     sub.ToolTip = dr["DPTINFO"].ToString();
-                    sub.ShowCheckBox = true;
+                    sub.ShowCheckBox = false;
                     sub.Expanded = false;
                     node.ChildNodes.Add(sub);
 

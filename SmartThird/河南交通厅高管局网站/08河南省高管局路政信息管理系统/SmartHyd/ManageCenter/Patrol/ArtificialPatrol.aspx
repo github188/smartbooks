@@ -38,22 +38,30 @@
         <ContentTemplate>
             <table border="0" cellpadding="0" cellspacing="0" width="100%" style="height: 100%">
                 <tr>
-                    <td colspan="2" style="height: 24px;" >
+                    <td colspan="2" style="height: 24px;">
                         <div id="menu">
                             <div class="OperateNote">
                                 <span id="buttons0">
                                     <img src="../../Images/branch.png" alt="" border="0" />当前位置：路政巡逻管理中心》人工巡逻日志管理</span></div>
                             <ul>
                                 <li id="menu_Title0" onclick="nTabs('menu',this,1)" class="normal"><a href="PatrolEdit.aspx"
-                                    title="信息新增" target="PatrolFrame"><span id="buttons1">
+                                    title="信息新增" target="patrolFrame"><span id="buttons1">
                                         <img src="../../Images/add.png" alt="" border="0" />&nbsp;新增日志</span></a></li>
                             </ul>
                         </div>
                     </td>
                 </tr>
                 <tr>
-                    <td>
-                        <asp:TreeView ID="TreeViewAcceptUnit" runat="server">
+                    <td valign="top" style="border:1px">
+                        <asp:TreeView ID="TreeViewAcceptUnit" CssClass="treeview" ShowLines="True" 
+                            runat="server" BorderColor="#3333FF">
+                            <HoverNodeStyle Font-Underline="True" ForeColor="#5555DD" />
+                           
+                            <NodeStyle Font-Names="Tahoma" Font-Size="10pt" ForeColor="Black" HorizontalPadding="5px"
+                                NodeSpacing="0px" VerticalPadding="0px" />
+                            <ParentNodeStyle Font-Bold="False" />
+                            <SelectedNodeStyle Font-Underline="True" HorizontalPadding="0px" VerticalPadding="0px"
+                                ForeColor="#5555DD" />
                         </asp:TreeView>
                     </td>
                     <td>
@@ -61,7 +69,7 @@
                             <tr id="search_condition_panel" style="height: 48px; border-bottom: 1px solid #8cb2e2;">
                                 <td>
                                     <table id="PatrolSearch" width="480" border="0" cellspacing="0" cellpadding="0">
-                                       <%--  <tr>
+                                        <%--  <tr>
                                             <td width="80" height="24" align="right">
                                                 <span id="PatrolSearch1">巡逻单位：</span>
                                             </td>
@@ -105,14 +113,14 @@
                                         OnRowCommand="gv_patrollist_RowCommand">
                                         <Columns>
                                             <asp:CheckBoxField />
-                                            <asp:BoundField DataField="dptname" HeaderText="巡查中队" />
-                                            <asp:BoundField DataField="busnumber" HeaderText="车牌号" />
-                                            <asp:BoundField DataField="mileage" HeaderText="巡查里程" />
-                                            <asp:BoundField DataField="username" HeaderText="负责人" />
-                                            <asp:BoundField DataField="weather" HeaderText="天气状况" />
-                                            <asp:BoundField DataField="weather" HeaderText="接班中队长" />
-                                            <asp:BoundField DataField="ticktime" HeaderText="交接班时间" />
-                                            <asp:BoundField DataField="buskm" HeaderText="接班巡逻车里程表" />
+                                            <asp:BoundField DataField="DEPTID" HeaderText="巡查中队" />
+                                            <asp:BoundField DataField="BUSNUMBER" HeaderText="车牌号" />
+                                            <asp:BoundField DataField="MILEAGE" HeaderText="巡查里程" />
+                                            <asp:BoundField DataField="RESPUSER" HeaderText="负责人" />
+                                            <asp:BoundField DataField="WEATHER" HeaderText="天气状况" />
+                                            <asp:BoundField DataField="ACCEPTCAPTAIN" HeaderText="接班中队长" />
+                                            <asp:BoundField DataField="TICKTIME" HeaderText="交接班时间" />
+                                            <asp:BoundField DataField="BUSKM" HeaderText="接班巡逻车里程表" />
                                             <%--  <asp:CommandField DeleteImageUrl="~/Images/delete.png" EditImageUrl="~/Images/edit.png"
                                     ShowEditButton="True" />
                                 <asp:CommandField DeleteImageUrl="~/Images/delete.png" ShowDeleteButton="True" />--%>

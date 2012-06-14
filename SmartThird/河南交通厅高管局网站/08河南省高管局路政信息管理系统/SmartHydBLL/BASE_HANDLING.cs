@@ -3,19 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Data;
-
 namespace SmartHyd.BLL
 {
-    public class BASE_LOG
+   public class BASE_HANDLING
     {
-        private OracleDAL.BASE_LOG dal = new OracleDAL.BASE_LOG();
-
-        /// <summary>
-        /// 获取日志列表
-        /// </summary>
-        /// <param name="strwhere">获取日志列表的条件</param>
-        /// <returns>日志数据Table</returns>
-
+       private OracleDAL.BASE_HANDLING dal = new OracleDAL.BASE_HANDLING();
+       /// <summary>
+       /// 根据指定条件获取巡查处理情况列表
+       /// </summary>
+       /// <param name="strwhere"></param>
+       /// <returns></returns>
         public DataTable GetList(string strwhere)
         {
             //
@@ -23,21 +20,21 @@ namespace SmartHyd.BLL
             return ds.Tables[0];
         }
         /// <summary>
-        /// 添加日志
+        /// 添加巡查处理情况
         /// </summary>
-        /// <param name="model">日志实体</param>
-        public int Add(Entity.BASE_LOG model)
+        /// <param name="model">巡查处理情况实体</param>
+        public int Add(Entity.BASE_HANDLING model)
         {
-           return dal.Add(model);
+            return dal.Add(model);
         }
         /// <summary>
         /// 确定记录是否存在
         /// </summary>
-        /// <param name="FTID"></param>
+        /// <param name="HID"></param>
         /// <returns></returns>
-        public bool Exists(decimal LOGID)
+        public bool Exists(decimal HID)
         {
-            if (dal.Exists(LOGID))
+            if (dal.Exists(HID))
             {
                 return true;
 
@@ -48,20 +45,20 @@ namespace SmartHyd.BLL
             }
         }
         /// <summary>
-        /// 根据LOGID获取日志实体数据
+        /// 根据HID获取巡查处理情况实体数据
         /// </summary>
-        /// <param name="LOGID">日志编号</param>
+        /// <param name="HID">巡查处理情况编号</param>
         /// <returns></returns>
-        public Entity.BASE_LOG Getmodel(decimal LOGID)
+        public Entity.BASE_HANDLING Getmodel(decimal HID)
         {
-            return dal.GetEntity(LOGID);
+            return dal.GetEntity(HID);
         }
         /// <summary>
         /// 更新数据
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        public bool update(Entity.BASE_LOG model)
+        public bool update(Entity.BASE_HANDLING model)
         {
             if (dal.Update(model))
             {
@@ -76,11 +73,11 @@ namespace SmartHyd.BLL
         /// <summary>
         /// 删除日志数据
         /// </summary>
-        /// <param name="LOGID"></param>
+        /// <param name="HID"></param>
         /// <returns></returns>
-        public bool Del(decimal LOGID)
+        public bool Del(decimal HID)
         {
-            return dal.Delete(LOGID);
+            return dal.Delete(HID);
         }
     }
 }

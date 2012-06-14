@@ -23,6 +23,15 @@ namespace SmartHyd.BLL {
             return null;
         }
         /// <summary>
+        /// 获取最大ID编号
+        /// </summary>
+        /// <returns></returns>
+        public decimal GetMaxID()
+        {
+            return dal.GetMaxID();
+        }
+
+        /// <summary>
         /// 确定该记录是否存在
         /// </summary>
         /// <param name="PATROLID"></param>

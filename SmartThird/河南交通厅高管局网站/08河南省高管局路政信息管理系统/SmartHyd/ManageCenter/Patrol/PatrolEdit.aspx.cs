@@ -5,17 +5,32 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace SmartHyd.Patrol {
-    public partial class PatrolEdit : System.Web.UI.Page {
+namespace SmartHyd.Patrol
+{
+    public partial class PatrolEdit : System.Web.UI.Page
+    {
         private BLL.BASE_PATROL bll = new BLL.BASE_PATROL();
+        private BLL.BASE_HANDLING handlingbll = new BLL.BASE_HANDLING();
         private BLL.BASE_LOG logbll = new BLL.BASE_LOG();
-        protected void Page_Load(object sender, EventArgs e) {
+        protected void Page_Load(object sender, EventArgs e)
+        {
             if (!IsPostBack)
             {
                 if (null == Request.QueryString["id"] || "" == Request.QueryString["id"])
                 {
                     //添加状态页面
                     this.LabName.Text = "添加人工巡逻日志";
+                    //判断第几次巡逻
+                    if (1==1)
+                    {
+                         // string id = "2";
+                            this.liname.Style.Add("display","block");
+                            //追加巡查情况选项也米昂
+                            this.tabs_2.Style.Add("display", "block");
+                            //this.tab.InnerHtml += "<div id=\"tabs-" + id + "\">";
+                            //this.tab.InnerHtml += " <uc2:Handling ID=\"Handling" + id + "\" runat=\"server\"></uc2:Handling>";
+                            //this.tab.InnerHtml += "</div>";
+                    }
                 }
                 else
                 {
@@ -24,11 +39,16 @@ namespace SmartHyd.Patrol {
                     decimal pid = Convert.ToDecimal(Request.QueryString["id"]);
                     ViewState["id"] = Request.QueryString["id"];
                     Entity.BASE_PATROL model = bll.GetModel(pid);
-                    SetEntity(model);
+                    SetPatrolEntity(model);
                 }
             }
         }
-        private Entity.BASE_PATROL GetEntity()
+        #region 人工巡逻日志
+        /// <summary>
+        /// 获取人工巡逻日志实体数据
+        /// </summary>
+        /// <returns></returns>
+        private Entity.BASE_PATROL GetPartolEntity()
         {
             Entity.BASE_PATROL model = new Entity.BASE_PATROL();
             model.PATROLID = Convert.ToInt32(hidPrimary.Value);     //id,主键
@@ -46,7 +66,7 @@ namespace SmartHyd.Patrol {
             model.BUSNUMBER = txtBUSNUMBER.Text;                    //巡逻车牌号
             model.MILEAGE = Convert.ToInt32(txtMILEAGE.Text);       //巡查里程
             model.WEATHER = txtWEATHER.Text;                        //天气
-           // model.LOG = txtLog.Text;                                //巡查处理情况
+            // model.LOG = txtLog.Text;                                //巡查处理情况
             model.WITHIN = txtWITHIN.Text;                          //移交内业处理事项
             model.NEXTWITHIN = txtNEXTWITHIN.Text;                  //移交下班处理事项
             model.GOODS = txtGOODS.Text;                            //移交器材
@@ -55,15 +75,15 @@ namespace SmartHyd.Patrol {
             model.ACCEPTBUSNUMBER = txtACCEPTBUSNUMBER.Text;        //接班巡逻车牌号            
             //model.BEGINTIME = DateTime.Parse(txtBEGINTIME.Text);    //巡查开始时间
             //model.ENDTIME = DateTime.Parse(txtENDTIME.Text);        //巡查结束时间
-            model.TICKTIME = DateTime.Parse(txtENDTIME.Text);       //交接班时间
+            //model.TICKTIME = DateTime.Parse(this.txtTickTime.Text);       //交接班时间
             model.BUSKM = Convert.ToInt32(txtBUSKM.Text);           //接班巡逻车里程表
-           // model.ACCEPT = 0;               //接收人
-           // model.TRANSFER = 0;             //移交人
+            // model.ACCEPT = 0;               //接收人
+            // model.TRANSFER = 0;             //移交人
 
             return model;
         }
 
-        private void SetEntity(Entity.BASE_PATROL model)
+        private void SetPatrolEntity(Entity.BASE_PATROL model)
         {
             hidPrimary.Value = model.PATROLID.ToString();
             //DropDownList ddr = (DropDownList)this.Department1.FindControl("ddlDepartment");//找到用户控件中的子控件
@@ -79,8 +99,8 @@ namespace SmartHyd.Patrol {
             txtPATROLUSER.Text = model.PATROLUSER;
             txtBUSNUMBER.Text = model.BUSNUMBER;
             txtMILEAGE.Text = model.MILEAGE.ToString();
-           // txtWEATHER.Text = model.LOG;
-           // txtLog.Text = model.LOG;
+            // txtWEATHER.Text = model.LOG;
+            // txtLog.Text = model.LOG;
             txtWITHIN.Text = model.WITHIN;
             txtNEXTWITHIN.Text = model.NEXTWITHIN;
             txtGOODS.Text = model.GOODS;
@@ -88,17 +108,51 @@ namespace SmartHyd.Patrol {
             txtACCEPTCAPTAIN.Text = model.ACCEPTCAPTAIN;
             txtACCEPTBUSNUMBER.Text = model.ACCEPTBUSNUMBER;
             //txtBEGINTIME.Text = model.BEGINTIME.ToString("yyyy-MM-dd");
-           // txtENDTIME.Text = model.ENDTIME.ToString("yyyy-MM-dd");
+            // txtENDTIME.Text = model.ENDTIME.ToString("yyyy-MM-dd");
             txtBUSKM.Text = model.BUSKM.ToString();
 
         }
-        protected void btnSubmit_Click(object sender, EventArgs e) {
-            Entity.BASE_PATROL model = GetEntity();
+        #endregion
+        #region 巡查处理情况
+        private Entity.BASE_HANDLING GetHandlingEntity(decimal pid)
+        {
+            Entity.BASE_HANDLING model = new Entity.BASE_HANDLING();
+            model.HID = -1;//主键，巡查处理情况编号
+            model.PATROLTYPE = "人工巡逻";//巡逻类型；
+            model.TIMES = 3;//巡逻次数；
+            //model.BEGINTIME=Convert.ToDateTime(this.Handling1.FindControl("txtBEGINTIME")..Text);//开始时间
+            //model.ENDTIME = Convert.ToDateTime(this.txtENDTIME.Text);//结束时间
+            //model.CONTENT = this.txtLog.Text;//处理情况内容；
+            //model.PID = pid;
+            //model.REMARK = this.txtRemark.Text;//备注
+            return model;
+        }
+        private void SetHandlingEntity(Entity.BASE_HANDLING model)
+        {
+            //txtLog.Text = model.CONTENT;
+            //txtBEGINTIME.Text = model.BEGINTIME.ToString("yyyy-MM-dd hh:mm:ss");
+            //txtENDTIME.Text = model.ENDTIME.ToString("yyyy-MM-dd hh:mm:ss");
+            //this.txtRemark.Text = model.REMARK;
+        }
+        #endregion
+
+        protected void btnSubmit_Click(object sender, EventArgs e)
+        {
+            Entity.BASE_PATROL model = GetPartolEntity();
+
             if (model != null)
             {
                 if (ViewState["id"] == null)
                 {
-                    bll.Add(model);
+                    if (bll.Add(model) > 0)
+                    {
+                        decimal Pid = bll.GetMaxID();//获取最新添加的巡逻日志编号
+                        Entity.BASE_HANDLING handlingmodel = GetHandlingEntity(Pid);
+                        if (handlingbll.Add(handlingmodel) > 0)//添加巡查处理情况
+                        {
+                          
+                        }
+                    }
                 }
                 else
                 {
@@ -116,8 +170,9 @@ namespace SmartHyd.Patrol {
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        protected void btnCancel_Click(object sender, EventArgs e) {
-            SetEntity(new Entity.BASE_PATROL());
+        protected void btnCancel_Click(object sender, EventArgs e)
+        {
+            SetPatrolEntity(new Entity.BASE_PATROL());
         }
         /// <summary>
         /// 捕获页面处理过程中发生的而没有处理的异常

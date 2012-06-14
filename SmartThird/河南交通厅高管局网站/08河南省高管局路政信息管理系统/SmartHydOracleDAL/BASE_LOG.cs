@@ -45,7 +45,7 @@ namespace SmartHyd.OracleDAL
 		/// <summary>
 		/// 增加一条数据
 		/// </summary>
-		public void Add(Entity.BASE_LOG entity)
+		public int Add(Entity.BASE_LOG entity)
 		{
 			StringBuilder strSql=new StringBuilder();
 			strSql.Append("insert into BASE_LOG(");			
@@ -70,7 +70,7 @@ namespace SmartHyd.OracleDAL
             parameters[3].Value = entity.OPERATORID;                        
             parameters[4].Value = entity.DESCRIPTION;                        
             parameters[5].Value = entity.IPADDRESS;                        
-			            OracleHelper.ExecuteNonQuery(strSql.ToString(),parameters);
+			return OracleHelper.ExecuteNonQuery(strSql.ToString(),parameters);
             			
 		}
 		
