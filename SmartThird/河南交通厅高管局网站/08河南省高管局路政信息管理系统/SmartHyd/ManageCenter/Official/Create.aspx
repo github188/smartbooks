@@ -47,8 +47,8 @@
     <style type="text/css">
         #TreeViewAcceptUnit
         {
-            overflow: scroll;
-            width: 270px;
+            overflow-y: scroll;
+            width: 300px;
             height: 400px;
             float: right;
             border: 1px solid #A6C9E2;
