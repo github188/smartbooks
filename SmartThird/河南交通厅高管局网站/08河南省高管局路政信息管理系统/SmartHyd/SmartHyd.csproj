@@ -305,7 +305,6 @@
     <Content Include="ManageCenter\Official\Accept.aspx" />
     <Content Include="ManageCenter\Official\BeenSent.aspx" />
     <Content Include="ManageCenter\Official\DraftsBox.aspx" />
-    <Content Include="ManageCenter\Official\Index.aspx" />
     <Content Include="ManageCenter\Official\Create.aspx" />
     <Content Include="ManageCenter\Official\Reply.aspx" />
     <Content Include="ManageCenter\Official\Trash.aspx" />
@@ -1401,13 +1400,6 @@
     </Compile>
     <Compile Include="ManageCenter\Official\DraftsBox.aspx.designer.cs">
       <DependentUpon>DraftsBox.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ManageCenter\Official\Index.aspx.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ManageCenter\Official\Index.aspx.designer.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
     <Compile Include="ManageCenter\Official\Reply.aspx.cs">
       <DependentUpon>Reply.aspx</DependentUpon>
