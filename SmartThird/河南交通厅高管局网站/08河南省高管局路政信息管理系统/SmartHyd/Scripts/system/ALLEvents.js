@@ -18,16 +18,17 @@ LoadModule = function (node) {
             defaults: { bodyStyle: 'margin:0;padding:0;' },
             html: "<iframe src='" + node.attributes.href + "' scrolling='no' id='ArtificialPatrolFrame' name='ArtificialPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
         });
-        LoadModuleMain(node, pnlArtificialPatrol, '');
+        LoadModuleMain(node, pnlArtificialPatrol, node.attributes.iconCls);
     } else if (moduleId == 75) {
         /*电子巡逻*/
+
         var pnlElectronicPatrol = new Ext.Panel({
 
             border: false,
             defaults: { bodyStyle: 'margin:0;padding:0;' },
             html: "<iframe src='" + node.attributes.href + "' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
         });
-        LoadModuleMain(node, pnlElectronicPatrol, '');
+        LoadModuleMain(node, pnlElectronicPatrol, node.attributes.iconCls);
     } else if (moduleId == 76) {
         /*即时通讯*/
         var pnlInstantMessaging = new Ext.Panel({
@@ -36,7 +37,7 @@ LoadModule = function (node) {
             defaults: { bodyStyle: 'margin:0;padding:0;' },
             html: "<iframe src='" + node.attributes.href + "' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
         });
-        LoadModuleMain(node, pnlInstantMessaging, '');
+        LoadModuleMain(node, pnlInstantMessaging, node.attributes.iconCls);
     } else if (moduleId == 77) {
         /*事务提醒*/
         var pnlRemind = new Ext.Panel({
@@ -45,7 +46,7 @@ LoadModule = function (node) {
             defaults: { bodyStyle: 'margin:0;padding:0;' },
             html: "<iframe src='" + node.attributes.href + "' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
         });
-        LoadModuleMain(node, pnlRemind, '');
+        LoadModuleMain(node, pnlRemind, node.attributes.iconCls);
     } else if (moduleId == 78) {
         /*电子公告*/
         var pnlEAnnouncement = new Ext.Panel({
@@ -54,7 +55,7 @@ LoadModule = function (node) {
             defaults: { bodyStyle: 'margin:0;padding:0;' },
             html: "<iframe src='" + node.attributes.href + "' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
         });
-        LoadModuleMain(node, pnlEAnnouncement, '');
+        LoadModuleMain(node, pnlEAnnouncement, node.attributes.iconCls);
     } else if (moduleId == 79) {
         /*公文管理*/
 
@@ -66,7 +67,7 @@ LoadModule = function (node) {
             defaults: { bodyStyle: 'margin:0;padding:0;' },
             html: "<iframe src='" + node.attributes.href + "' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
         });
-        LoadModuleMain(node, pnlFilesType, '');
+        LoadModuleMain(node, pnlFilesType, node.attributes.iconCls);
     } else if (moduleId == 81) {
         /*档案管理*/
         var pnlFilesManager = new Ext.Panel({
@@ -75,7 +76,7 @@ LoadModule = function (node) {
             defaults: { bodyStyle: 'margin:0;padding:0;' },
             html: "<iframe src='" + node.attributes.href + "' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
         });
-        LoadModuleMain(node, pnlFilesManager, '');
+        LoadModuleMain(node, pnlFilesManager, node.attributes.iconCls);
     } else if (moduleId == 82) {
         /*考评项目*/
         var pnlEvaluationProject = new Ext.Panel({
@@ -84,7 +85,7 @@ LoadModule = function (node) {
             defaults: { bodyStyle: 'margin:0;padding:0;' },
             html: "<iframe src='" + node.attributes.href + "' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
         });
-        LoadModuleMain(node, pnlEvaluationProject, '');
+        LoadModuleMain(node, pnlEvaluationProject, node.attributes.iconCls);
     } else if (moduleId == 83) {
         /*考评管理*/
         var pnlpnlEvaluationManager = new Ext.Panel({
@@ -93,7 +94,7 @@ LoadModule = function (node) {
             defaults: { bodyStyle: 'margin:0;padding:0;' },
             html: "<iframe src='" + node.attributes.href + "' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
         });
-        LoadModuleMain(node, pnlpnlEvaluationManager, '');
+        LoadModuleMain(node, pnlpnlEvaluationManager, node.attributes.iconCls);
     } else if (moduleId == 84) {
         /*路产设备*/
         var pnlRoadProperty = new Ext.Panel({
@@ -102,7 +103,7 @@ LoadModule = function (node) {
             defaults: { bodyStyle: 'margin:0;padding:0;' },
             html: "<iframe src='" + node.attributes.href + "' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
         });
-        LoadModuleMain(node, pnlRoadProperty, '');
+        LoadModuleMain(node, pnlRoadProperty, node.attributes.iconCls);
     } else if (moduleId == 85) {
         /*违章管理*/
         var pnlViolation = new Ext.Panel({
@@ -111,7 +112,7 @@ LoadModule = function (node) {
             defaults: { bodyStyle: 'margin:0;padding:0;' },
             html: "<iframe src='" + node.attributes.href + "' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
         });
-        LoadModuleMain(node, pnlViolation, '');
+        LoadModuleMain(node, pnlViolation, node.attributes.iconCls);
     } else if (moduleId == 86) {
         /*路产案件*/
         var pnlRoadCase = new Ext.Panel({
@@ -120,7 +121,7 @@ LoadModule = function (node) {
             defaults: { bodyStyle: 'margin:0;padding:0;' },
             html: "<iframe src='" + node.attributes.href + "' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
         });
-        LoadModuleMain(node, pnlRoadCase, '');
+        LoadModuleMain(node, pnlRoadCase, node.attributes.iconCls);
     } else if (moduleId == 87) {
         /*超限车辆汇总*/
         var pnlOverloadSummary = new Ext.Panel({
@@ -129,7 +130,7 @@ LoadModule = function (node) {
             defaults: { bodyStyle: 'margin:0;padding:0;' },
             html: "<iframe src='" + node.attributes.href + "' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
         });
-        LoadModuleMain(node, pnlOverloadSummary, '');
+        LoadModuleMain(node, pnlOverloadSummary, node.attributes.iconCls);
     } else if (moduleId == 88) {
         /*车辆通行次数统计*/
         var pnlTrafficCount = new Ext.Panel({
@@ -138,7 +139,7 @@ LoadModule = function (node) {
             defaults: { bodyStyle: 'margin:0;padding:0;' },
             html: "<iframe src='" + node.attributes.href + "' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
         });
-        LoadModuleMain(node, pnlTrafficCount, '');
+        LoadModuleMain(node, pnlTrafficCount, node.attributes.iconCls);
     } else if (moduleId == 89) {
         /*超限信息查询*/
         var pnlOverLoadSearch = new Ext.Panel({
@@ -147,7 +148,7 @@ LoadModule = function (node) {
             defaults: { bodyStyle: 'margin:0;padding:0;' },
             html: "<iframe src='" + node.attributes.href + "' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
         });
-        LoadModuleMain(node, pnlOverLoadSearch, '');
+        LoadModuleMain(node, pnlOverLoadSearch, node.attributes.iconCls);
     } else if (moduleId == 90) {
         /*非法超限车辆上报*/
         var pnlOverloadReported = new Ext.Panel({
@@ -156,16 +157,16 @@ LoadModule = function (node) {
             defaults: { bodyStyle: 'margin:0;padding:0;' },
             html: "<iframe src='" + node.attributes.href + "' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
         });
-        LoadModuleMain(node, pnlOverloadReported, '');
+        LoadModuleMain(node, pnlOverloadReported, node.attributes.iconCls);
     } else if (moduleId == 91) {
         /*涉路工程*/
-        var pnlRoadProject= new Ext.Panel({
+        var pnlRoadProject = new Ext.Panel({
 
             border: false,
             defaults: { bodyStyle: 'margin:0;padding:0;' },
             html: "<iframe src='" + node.attributes.href + "' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
         });
-        LoadModuleMain(node, pnlRoadProject, '');
+        LoadModuleMain(node, pnlRoadProject, node.attributes.iconCls);
     } else if (moduleId == 92) {
         /*非公路标志*/
         var pnlNonRoadSign = new Ext.Panel({
@@ -174,7 +175,7 @@ LoadModule = function (node) {
             defaults: { bodyStyle: 'margin:0;padding:0;' },
             html: "<iframe src='" + node.attributes.href + "' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
         });
-        LoadModuleMain(node, pnlNonRoadSign, '');
+        LoadModuleMain(node, pnlNonRoadSign, node.attributes.iconCls);
     } else if (moduleId == 93) {
         /*应急安全*/
         var pnlSecurity = new Ext.Panel({
@@ -183,7 +184,7 @@ LoadModule = function (node) {
             defaults: { bodyStyle: 'margin:0;padding:0;' },
             html: "<iframe src='" + node.attributes.href + "' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
         });
-        LoadModuleMain(node, pnlSecurity, '');
+        LoadModuleMain(node, pnlSecurity, node.attributes.iconCls);
     } else if (moduleId == 94) {
         /*路况信息*/
         var pnlTraffic = new Ext.Panel({
@@ -192,7 +193,7 @@ LoadModule = function (node) {
             defaults: { bodyStyle: 'margin:0;padding:0;' },
             html: "<iframe src='" + node.attributes.href + "' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
         });
-        LoadModuleMain(node, pnlTraffic, '');
+        LoadModuleMain(node, pnlTraffic, node.attributes.iconCls);
     } else if (moduleId == 95) {
         /*路况上报*/
         var pnlTrafficReported = new Ext.Panel({
@@ -201,7 +202,7 @@ LoadModule = function (node) {
             defaults: { bodyStyle: 'margin:0;padding:0;' },
             html: "<iframe src='" + node.attributes.href + "' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
         });
-        LoadModuleMain(node, pnlTrafficReported, '');
+        LoadModuleMain(node, pnlTrafficReported, node.attributes.iconCls);
     } else if (moduleId == 96) {
         /*路况信息查询*/
         var pnlTrafficSearch = new Ext.Panel({
@@ -210,7 +211,7 @@ LoadModule = function (node) {
             defaults: { bodyStyle: 'margin:0;padding:0;' },
             html: "<iframe src='" + node.attributes.href + "' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
         });
-        LoadModuleMain(node, pnlTrafficSearch, '');
+        LoadModuleMain(node, pnlTrafficSearch, node.attributes.iconCls);
     } else if (moduleId == 97) {
         /*装备管理*/
         var pnlEquipment = new Ext.Panel({
@@ -219,7 +220,7 @@ LoadModule = function (node) {
             defaults: { bodyStyle: 'margin:0;padding:0;' },
             html: "<iframe src='" + node.attributes.href + "' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
         });
-        LoadModuleMain(node, pnlEquipment, '');
+        LoadModuleMain(node, pnlEquipment, node.attributes.iconCls);
     } else if (moduleId == 98) {
         /*用户管理*/
         var pnlUserManager = new Ext.Panel({
@@ -228,7 +229,7 @@ LoadModule = function (node) {
             defaults: { bodyStyle: 'margin:0;padding:0;' },
             html: "<iframe src='" + node.attributes.href + "' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
         });
-        LoadModuleMain(node, pnlUserManager, '');
+        LoadModuleMain(node, pnlUserManager, node.attributes.iconCls);
     } else if (moduleId == 99) {
         /*系统日志*/
         var pnlSystemLog = new Ext.Panel({
@@ -237,7 +238,7 @@ LoadModule = function (node) {
             defaults: { bodyStyle: 'margin:0;padding:0;' },
             html: "<iframe src='" + node.attributes.href + "' scrolling='no' id='SystemLogFrame' name='SystemLogFrame' frameborder=0 width=100% height=100%></iframe>"
         });
-        LoadModuleMain(node, pnlSystemLog, '');
+        LoadModuleMain(node, pnlSystemLog, node.attributes.iconCls);
     } else if (moduleId == 111) {
         /*公文发送*/
         var pnlDocumentSend = new Ext.Panel({
@@ -246,7 +247,7 @@ LoadModule = function (node) {
             defaults: { bodyStyle: 'margin:0;padding:0;' },
             html: "<iframe src='" + node.attributes.href + "' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
         });
-        LoadModuleMain(node, pnlDocumentSend, '');
+        LoadModuleMain(node, pnlDocumentSend, node.attributes.iconCls);
     } else if (moduleId == 112) {
         /*公文接收*/
         var pnlEAnnouncement = new Ext.Panel({
@@ -255,7 +256,7 @@ LoadModule = function (node) {
             defaults: { bodyStyle: 'margin:0;padding:0;' },
             html: "<iframe src='" + node.attributes.href + "' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
         });
-        LoadModuleMain(node, pnlEAnnouncement, '');
+        LoadModuleMain(node, pnlEAnnouncement, node.attributes.iconCls);
     } else if (moduleId == 113) {
         /*考评回复*/
         var pnlEvaluationReply = new Ext.Panel({
@@ -264,7 +265,7 @@ LoadModule = function (node) {
             defaults: { bodyStyle: 'margin:0;padding:0;' },
             html: "<iframe src='" + node.attributes.href + "' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
         });
-        LoadModuleMain(node, pnlEvaluationReply, '');
+        LoadModuleMain(node, pnlEvaluationReply, node.attributes.iconCls);
     } else if (moduleId == 114) {
         /*已发送*/
         var pnlSended = new Ext.Panel({
@@ -273,7 +274,7 @@ LoadModule = function (node) {
             defaults: { bodyStyle: 'margin:0;padding:0;' },
             html: "<iframe src='" + node.attributes.href + "' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
         });
-        LoadModuleMain(node, pnlSended, '');
+        LoadModuleMain(node, pnlSended, node.attributes.iconCls);
     } else if (moduleId == 115) {
         /*草稿箱*/
         var pnlDrafts = new Ext.Panel({
@@ -282,7 +283,7 @@ LoadModule = function (node) {
             defaults: { bodyStyle: 'margin:0;padding:0;' },
             html: "<iframe src='" + node.attributes.href + "' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
         });
-        LoadModuleMain(node, pnlDrafts, '');
+        LoadModuleMain(node, pnlDrafts, node.attributes.iconCls);
     } else if (moduleId == 116) {
         /*垃圾箱*/
         var pnlTrashcan = new Ext.Panel({
@@ -291,7 +292,7 @@ LoadModule = function (node) {
             defaults: { bodyStyle: 'margin:0;padding:0;' },
             html: "<iframe src='" + node.attributes.href + "' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
         });
-        LoadModuleMain(node, pnlTrashcan, '');
+        LoadModuleMain(node, pnlTrashcan, node.attributes.iconCls);
     }
 }
 
