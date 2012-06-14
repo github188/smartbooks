@@ -29,24 +29,22 @@
     </asp:ScriptManager>
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
-            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="height: 100%">
-                <tr>
-                    <td colspan="2" style="height: 24px;">
-                        <div id="menu">
-                            <div class="OperateNote">
-                                <span id="buttons">
-                                    <img src="../../Images/branch.png" border="0" />当前位置：档案管理 > 发文管理</span></div>
-                            <ul>
-                                <li id="menu_Title0" onclick="nTabs('menu',this,1)" class="normal"><a href="Create.aspx"
-                                    target="PatrolFrame"><span id="Span1">
-                                        <img src="../../Images/add.png" border="0" />新建公文 </span></a></li>
-                                <li id="Li1" onclick="nTabs('menu',this,1)" class="normal"><a href="../DocumentTypeManage.aspx"
-                                    target="PatrolFrame"><span id="Span3">
-                                        <img src="../../Images/add.png" border="0" />新建分类 </span></a></li>
-                            </ul>
-                        </div>
-                    </td>
-                </tr>
+        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="height: 100%">
+        <tr>
+            <td style="height: 24px;">
+                <div id="menu">
+                    <div class="OperateNote">
+                        <span id="buttons">
+                            <img src="../../Images/branch.png" border="0" />当前位置：公文管理 > 已发送 </span>
+                    </div>
+                    <div class="ReturnPreview">
+                        <span id="buttons1" onclick="javascript:history.go(-1);">
+                            <img src="../../Images/back.png" alt="" border="0" />返回上一页面</span></div>
+                </div>
+            </td>
+        </tr>
+    </table>
+            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="height: 100%">                
                 <tr id="search_condition_panel" style="height: 24px; border-bottom: 1px solid #8cb2e2;">
                     <td>
                         <table style="height: 100%; width: 100%;">

@@ -8,6 +8,10 @@ namespace SmartHyd.BLL {
     public class BASE_ARTICLE_TYPE {
         private OracleDAL.BASE_ARTICLE_TYPE dal = new OracleDAL.BASE_ARTICLE_TYPE();
 
+        public void Update(Entity.BASE_ARTICLE_TYPE model) {
+            dal.Update(model);
+        }
+
         public DataTable GetList(string where) {
             return dal.GetList(where).Tables[0];
         }

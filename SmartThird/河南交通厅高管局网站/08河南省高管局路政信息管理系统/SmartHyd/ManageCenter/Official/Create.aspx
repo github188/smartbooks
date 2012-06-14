@@ -5,6 +5,7 @@
 <head runat="server">
     <title>新建公文</title>
     <link href="../../Css/contentPanel.css" rel="stylesheet" type="text/css" />
+    <link href="../../Css/patrol.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="../../Scripts/jquery-ui-1.8.18.custom/js/jquery-1.7.1.min.js"></script>
     <script src="../../Scripts/kindeditor-4.0.5/kindeditor-min.js" type="text/javascript"></script>
     <script src="../../Scripts/kindeditor-4.0.5/lang/zh_CN.js" type="text/javascript"></script>
@@ -73,6 +74,21 @@
     <form id="form1" runat="server">
     <asp:ScriptManager ID="ScriptManager1" runat="server">
     </asp:ScriptManager>
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="height: 100%">
+        <tr>
+            <td style="height: 24px;">
+                <div id="menu">
+                    <div class="OperateNote">
+                        <span id="buttons">
+                            <img src="../../Images/branch.png" border="0" />当前位置：公文管理 > 新建公文 </span>
+                    </div>
+                    <div class="ReturnPreview">
+                        <span id="buttons1" onclick="javascript:history.go(-1);">
+                            <img src="../../Images/back.png" alt="" border="0" />返回上一页面</span></div>
+                </div>
+            </td>
+        </tr>
+    </table>
     <table class="TableBlock" width="100%" align="center" cellpadding="0" cellspacing="0">
         <tbody>
             <!--首选行-->

@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>人工巡逻详情</title>
-       <link href="../../Css/patrol.css" rel="stylesheet" type="text/css" />
+    <link href="../../Css/patrol.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../Css/base.css" />
     <link rel="stylesheet" type="text/css" href="../../Css/tongdaoa.css" />
     <link rel="stylesheet" type="text/css" href="../../Scripts/jquery-ui-1.8.18.custom/css/redmond/jquery-ui-1.8.18.custom.css" />
@@ -18,7 +18,7 @@
                 <img src="../../Images/addDocument.png" alt="" border="0" />&nbsp;<asp:Label ID="LabName"
                     runat="server" Text="人工巡逻日志详情"></asp:Label></span></div>
         <div class="ReturnPreview">
-            <span id="buttons1" onclick="GoBack()">
+            <span id="buttons1" onclick="javascript:history.go(-1);">
                 <img src="../../Images/back.png" alt="" border="0" />返回上一页面</span></div>
     </div>
     <table class="edit" width="100%">

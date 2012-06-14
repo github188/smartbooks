@@ -15,11 +15,16 @@
                 <div id="menu">
                     <div class="OperateNote">
                         <span id="buttons">
-                            <img src="../../Images/branch.png" border="0" />当前位置：公文管理 > 草稿箱 </span>
+                            <img src="../../Images/branch.png" border="0" />当前位置：公文管理 > 垃圾箱 </span>
                     </div>
+                    <div class="ReturnPreview">
+                        <span id="buttons1" onclick="javascript:history.go(-1);">
+                            <img src="../../Images/back.png" alt="" border="0" />返回上一页面</span></div>
                 </div>
             </td>
         </tr>
+    </table>
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="height: 100%">
         <tr>
             <td valign="top">
                 <asp:GridView ID="grvAcceptList" runat="server" AutoGenerateColumns="False" BackColor="White"
