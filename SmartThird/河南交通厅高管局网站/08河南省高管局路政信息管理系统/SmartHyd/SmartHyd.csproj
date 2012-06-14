@@ -1301,6 +1301,7 @@
     <Content Include="Scripts\My97DatePicker\skin\whyGreen\datepicker.css" />
     <Content Include="Scripts\My97DatePicker\skin\whyGreen\img.gif" />
     <Content Include="Scripts\My97DatePicker\WdatePicker.js" />
+    <Content Include="Scripts\QDRegEx.js" />
     <Content Include="Scripts\system\ALLEvents.js" />
     <Content Include="Scripts\system\layout.js" />
     <Content Include="Scripts\thickbox.js" />
