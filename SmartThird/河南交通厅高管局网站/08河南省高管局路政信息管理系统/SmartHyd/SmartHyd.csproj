@@ -257,6 +257,7 @@
     <Content Include="Images\pbar-ani.gif" />
     <Content Include="Images\sale_manage.png" />
     <Content Include="Images\search.png" />
+    <Content Include="Images\searching.gif" />
     <Content Include="Images\shouwen.png" />
     <Content Include="Images\tongzhi_700.jpg" />
     <Content Include="Images\ui-hander-background-1.png" />
