@@ -367,6 +367,24 @@ namespace SmartHyd.ManageCenter.Official {
         //存草稿
         protected void btnSave_Click(object sender, EventArgs e) {
             //不保存收文单位
+            litmsg.Visible = false;
+
+            //检验提交表单
+            if (!CheckSubmitForm()) {
+                return;
+            }
+
+            //获取实体
+            Entity.BASE_ARTICLE model;
+            model = this.GetEntity();
+
+            //存草稿
+            model.STATUS = 2;
+
+            bll.Add(model);
+
+            
+            Response.Redirect("DraftsBox.aspx", true);
         }
         //打印
         protected void btnPrint_Click(object sender, EventArgs e) {
