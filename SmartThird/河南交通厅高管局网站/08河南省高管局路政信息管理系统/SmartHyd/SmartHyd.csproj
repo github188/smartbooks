@@ -318,7 +318,6 @@
     <Content Include="ManageCenter\Observed.aspx" />
     <Content Include="ManageCenter\Office.aspx" />
     <Content Include="ManageCenter\OfficialType\Create.aspx" />
-    <Content Include="ManageCenter\OfficialType\Index.aspx" />
     <Content Include="ManageCenter\OfficialType\List.aspx" />
     <Content Include="ManageCenter\Official\Accept.aspx" />
     <Content Include="ManageCenter\Official\BeenSent.aspx" />
@@ -1383,12 +1382,6 @@
     </Compile>
     <Compile Include="ManageCenter\OfficialType\Create.aspx.designer.cs">
       <DependentUpon>Create.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ManageCenter\OfficialType\Index.aspx.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ManageCenter\OfficialType\Index.aspx.designer.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
     <Compile Include="ManageCenter\OfficialType\List.aspx.cs">
       <DependentUpon>List.aspx</DependentUpon>
