@@ -38,9 +38,9 @@ namespace SmartHyd.Patrol
             DropDownList ddr = (DropDownList)this.Department1.FindControl("ddlDepartment");//找到用户控件中的子控件
             model.DEPTID = Convert.ToInt32(ddr.SelectedValue);
             model.PATROLUSER = txtPATROLUSER.Text.Trim();
-            model.BEGINTIME = DateTime.Parse(txtBEGINTIME.Text.Trim());
-            model.ENDDATE = DateTime.Parse(txtENDTIME.Text.Trim());
-            model.LOG = txtLog.Text.Trim();
+            //model.BEGINTIME = DateTime.Parse(txtBEGINTIME.Text.Trim());
+            //model.ENDDATE = DateTime.Parse(txtENDTIME.Text.Trim());
+            //model.LOG = txtLog.Text.Trim();
             model.WEATHER = txtWEATHER.Text.Trim();
 
             return model;
@@ -58,9 +58,9 @@ namespace SmartHyd.Patrol
                 ddr.SelectedValue = model.DEPTID.ToString();
             }
             txtPATROLUSER.Text = model.PATROLUSER;
-            txtBEGINTIME.Text = model.BEGINTIME.ToString("yyyy-MM-dd");
-            txtENDTIME.Text = model.ENDDATE.ToString("yyyy-MM-dd");
-            txtLog.Text = model.LOG;
+            //txtBEGINTIME.Text = model.BEGINTIME.ToString("yyyy-MM-dd");
+            //txtENDTIME.Text = model.ENDDATE.ToString("yyyy-MM-dd");
+            //txtLog.Text = model.LOG;
             txtWEATHER.Text = model.WEATHER;
         }
         /// <summary>

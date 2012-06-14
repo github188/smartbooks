@@ -40,13 +40,13 @@ namespace SmartHyd.Patrol {
         protected global::System.Web.UI.UpdatePanel UpdatePanel1;
         
         /// <summary>
-        /// Department1 控件。
+        /// TreeViewAcceptUnit 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::SmartHyd.Ascx.Department Department1;
+        protected global::System.Web.UI.WebControls.TreeView TreeViewAcceptUnit;
         
         /// <summary>
         /// txt_startTime 控件。

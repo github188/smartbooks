@@ -63,7 +63,7 @@
                 &lt;
                 <%=userSession.Department.DPTNAME %>
                 &gt; 
-            </span><br>
+            </span><br/>
             <span>
                 <a href="main.aspx" target="mainFrame">系统首页</a> | <a href="#">密码修改 </a>
                 - <a href="#">注销</a>
@@ -88,7 +88,7 @@
 
     
     <div id="files">
-        <span><img src="Images/shouwen.png"/><img src="Images/shouwen.png"/></span>
+        <span><img src="Images/shouwen.png" alt=""/><img src="Images/shouwen.png" alt=""/></span>
         <a href="ManageCenter/Official/Index.aspx" target="sysFrame">收文箱</a>
         <a href="javascript:void(0)" target="F1">发文箱</a>
         <a href="javascript:void(0)" target="F1">草稿箱</a>

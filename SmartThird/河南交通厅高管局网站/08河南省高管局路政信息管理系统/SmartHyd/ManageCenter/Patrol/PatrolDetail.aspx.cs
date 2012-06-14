@@ -33,9 +33,9 @@ namespace SmartHyd.Patrol
                     this.Mileage.InnerHtml = model.MILEAGE.ToString();//巡查里程
                     this.busNumber.InnerHtml = model.BUSNUMBER;//巡逻车牌号
                     this.BUSKM.InnerHtml=model.BUSKM.ToString();//接班巡逻车里程表
-                    this.starttime.InnerHtml = model.BEGINTIME.ToShortDateString();
-                    this.endtime.InnerHtml = model.ENDTIME.ToShortDateString();
-                    this.result.InnerHtml = model.LOG;
+                    //this.starttime.InnerHtml = model.BEGINTIME.ToShortDateString();
+                    //this.endtime.InnerHtml = model.ENDTIME.ToShortDateString();
+                    //this.result.InnerHtml = model.LOG;
                 }
             }
         }

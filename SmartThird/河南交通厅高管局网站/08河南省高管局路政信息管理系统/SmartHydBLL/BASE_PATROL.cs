@@ -20,7 +20,7 @@ namespace SmartHyd.BLL {
         public DataTable GetDeptLog(DateTime beginTime, DateTime endTime, int deptCode,int state) {
             //校验开始、结束时间
 
-            return dal.GetDeptLog(beginTime, endTime, deptCode, state);
+            return null;
         }
         /// <summary>
         /// 确定该记录是否存在

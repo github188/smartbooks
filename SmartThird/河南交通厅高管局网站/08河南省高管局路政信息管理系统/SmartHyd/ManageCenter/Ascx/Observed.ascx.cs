@@ -61,9 +61,9 @@ namespace SmartHyd.ManageCenter.Ascx {
             Entity.BASE_OBSERVED model = new Entity.BASE_OBSERVED();
             //model.DEPTID = Convert.ToInt32(ddldept.SelectedValue);
             model.PATROLUSER = txtPATROLUSER.Text.Trim();
-            model.BEGINTIME = DateTime.Parse(txtBEGINTIME.Text.Trim());
-            model.ENDDATE = DateTime.Parse(txtENDTIME.Text.Trim());
-            model.LOG = txtLog.Text.Trim();
+            //model.BEGINTIME = DateTime.Parse(txtBEGINTIME.Text.Trim());
+            //model.ENDDATE = DateTime.Parse(txtENDTIME.Text.Trim());
+            //model.LOG = txtLog.Text.Trim();
             model.WEATHER = txtWEATHER.Text.Trim();
 
 
@@ -73,9 +73,9 @@ namespace SmartHyd.ManageCenter.Ascx {
         private void SetEntity(Entity.BASE_OBSERVED model) {
             //ddldept.SelectedValue = model.DEPTID.ToString();
             txtPATROLUSER.Text = model.PATROLUSER;
-            txtBEGINTIME.Text = model.BEGINTIME.ToString("yyyy-MM-dd");
-            txtENDTIME.Text = model.ENDDATE.ToString("yyyy-MM-dd");
-            txtLog.Text = model.LOG;
+            //txtBEGINTIME.Text = model.BEGINTIME.ToString("yyyy-MM-dd");
+            //txtENDTIME.Text = model.ENDDATE.ToString("yyyy-MM-dd");
+            //txtLog.Text = model.LOG;
             txtWEATHER.Text = model.WEATHER;
         }
         //分页按钮事件

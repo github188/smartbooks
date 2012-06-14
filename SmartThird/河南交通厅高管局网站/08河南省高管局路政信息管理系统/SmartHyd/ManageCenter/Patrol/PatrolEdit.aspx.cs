@@ -32,33 +32,33 @@ namespace SmartHyd.Patrol {
         {
             Entity.BASE_PATROL model = new Entity.BASE_PATROL();
             model.PATROLID = Convert.ToInt32(hidPrimary.Value);     //id,主键
-            DropDownList ddr = (DropDownList)this.Department1.FindControl("ddlDepartment");//找到用户控件中的子控件
-            if (ViewState["id"] != null)
-            {
-                model.DEPTID = 4;//默认单位编号
-            }
-            else
-            {
-                model.DEPTID = Convert.ToInt32(ddr.SelectedValue);  //巡查中队
-            }
+            //DropDownList ddr = (DropDownList)this.Department1.FindControl("ddlDepartment");//找到用户控件中的子控件
+            //if (ViewState["id"] != null)
+            //{
+            //    model.DEPTID = 4;//默认单位编号
+            //}
+            //else
+            //{
+            //    model.DEPTID = Convert.ToInt32(ddr.SelectedValue);  //巡查中队
+            //}
             model.RESPUSER = txtRESPUSER.Text;                      //巡查负责人
             model.PATROLUSER = txtPATROLUSER.Text;                  //巡查人员
             model.BUSNUMBER = txtBUSNUMBER.Text;                    //巡逻车牌号
             model.MILEAGE = Convert.ToInt32(txtMILEAGE.Text);       //巡查里程
             model.WEATHER = txtWEATHER.Text;                        //天气
-            model.LOG = txtLog.Text;                                //巡查处理情况
+           // model.LOG = txtLog.Text;                                //巡查处理情况
             model.WITHIN = txtWITHIN.Text;                          //移交内业处理事项
             model.NEXTWITHIN = txtNEXTWITHIN.Text;                  //移交下班处理事项
             model.GOODS = txtGOODS.Text;                            //移交器材
             model.SHIFTCAPTAIN = txtSHIFTCAPTAIN.Text;              //交班中队长
             model.ACCEPTCAPTAIN = txtACCEPTCAPTAIN.Text;            //接班中对长
             model.ACCEPTBUSNUMBER = txtACCEPTBUSNUMBER.Text;        //接班巡逻车牌号            
-            model.BEGINTIME = DateTime.Parse(txtBEGINTIME.Text);    //巡查开始时间
-            model.ENDTIME = DateTime.Parse(txtENDTIME.Text);        //巡查结束时间
+            //model.BEGINTIME = DateTime.Parse(txtBEGINTIME.Text);    //巡查开始时间
+            //model.ENDTIME = DateTime.Parse(txtENDTIME.Text);        //巡查结束时间
             model.TICKTIME = DateTime.Parse(txtENDTIME.Text);       //交接班时间
             model.BUSKM = Convert.ToInt32(txtBUSKM.Text);           //接班巡逻车里程表
-            model.ACCEPT = 0;               //接收人
-            model.TRANSFER = 0;             //移交人
+           // model.ACCEPT = 0;               //接收人
+           // model.TRANSFER = 0;             //移交人
 
             return model;
         }
@@ -66,29 +66,29 @@ namespace SmartHyd.Patrol {
         private void SetEntity(Entity.BASE_PATROL model)
         {
             hidPrimary.Value = model.PATROLID.ToString();
-            DropDownList ddr = (DropDownList)this.Department1.FindControl("ddlDepartment");//找到用户控件中的子控件
-            if (model.DEPTID == 0)
-            {
-                ddr.SelectedValue = "4";
-            }
-            else
-            {
-                ddr.SelectedValue = model.DEPTID.ToString();
-            }
+            //DropDownList ddr = (DropDownList)this.Department1.FindControl("ddlDepartment");//找到用户控件中的子控件
+            //if (model.DEPTID == 0)
+            //{
+            //    ddr.SelectedValue = "4";
+            //}
+            //else
+            //{
+            //    ddr.SelectedValue = model.DEPTID.ToString();
+            //}
             txtRESPUSER.Text = model.RESPUSER;
             txtPATROLUSER.Text = model.PATROLUSER;
             txtBUSNUMBER.Text = model.BUSNUMBER;
             txtMILEAGE.Text = model.MILEAGE.ToString();
-            txtWEATHER.Text = model.LOG;
-            txtLog.Text = model.LOG;
+           // txtWEATHER.Text = model.LOG;
+           // txtLog.Text = model.LOG;
             txtWITHIN.Text = model.WITHIN;
             txtNEXTWITHIN.Text = model.NEXTWITHIN;
             txtGOODS.Text = model.GOODS;
             txtSHIFTCAPTAIN.Text = model.SHIFTCAPTAIN;
             txtACCEPTCAPTAIN.Text = model.ACCEPTCAPTAIN;
             txtACCEPTBUSNUMBER.Text = model.ACCEPTBUSNUMBER;
-            txtBEGINTIME.Text = model.BEGINTIME.ToString("yyyy-MM-dd");
-            txtENDTIME.Text = model.ENDTIME.ToString("yyyy-MM-dd");
+            //txtBEGINTIME.Text = model.BEGINTIME.ToString("yyyy-MM-dd");
+           // txtENDTIME.Text = model.ENDTIME.ToString("yyyy-MM-dd");
             txtBUSKM.Text = model.BUSKM.ToString();
 
         }

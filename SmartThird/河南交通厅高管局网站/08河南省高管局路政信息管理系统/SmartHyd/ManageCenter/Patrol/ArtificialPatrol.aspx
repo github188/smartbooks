@@ -38,7 +38,7 @@
         <ContentTemplate>
             <table border="0" cellpadding="0" cellspacing="0" width="100%" style="height: 100%">
                 <tr>
-                    <td style="height: 24px;">
+                    <td colspan="2" style="height: 24px;" >
                         <div id="menu">
                             <div class="OperateNote">
                                 <span id="buttons0">
@@ -51,84 +51,95 @@
                         </div>
                     </td>
                 </tr>
-                <tr id="search_condition_panel" style="height: 48px; border-bottom: 1px solid #8cb2e2;">
+                <tr>
                     <td>
-                        <table id="PatrolSearch" width="480" border="0" cellspacing="0" cellpadding="0">
-                            <tr>
-                                <td width="80" height="24" align="right">
-                                    <span id="PatrolSearch1">巡逻单位：</span>
-                                </td>
-                                <td width="120" height="24" colspan="3">
-                                    <uc1:Department ID="Department1" runat="server" />
-                                </td>
-                                <%--  <td width="80" height="24" align="right">
+                        <asp:TreeView ID="TreeViewAcceptUnit" runat="server">
+                        </asp:TreeView>
+                    </td>
+                    <td>
+                        <table>
+                            <tr id="search_condition_panel" style="height: 48px; border-bottom: 1px solid #8cb2e2;">
+                                <td>
+                                    <table id="PatrolSearch" width="480" border="0" cellspacing="0" cellpadding="0">
+                                       <%--  <tr>
+                                            <td width="80" height="24" align="right">
+                                                <span id="PatrolSearch1">巡逻单位：</span>
+                                            </td>
+                                            <td width="120" height="24" colspan="3">
+                                                <uc1:Department ID="Department1" runat="server" />
+                                            </td>
+                                             <td width="80" height="24" align="right">
                                    <span id="PatrolSearch2">车牌号：</span>
                                 </td>
                                 <td width="120" height="24">
                                    <asp:TextBox ID="txt_vehicleLicense" runat="server" class="controlstyle txtboxstyle"></asp:TextBox>
-                                </td>--%>
-                                <td width="80" height="24" align="right">
-                                    &nbsp;
+                                </td>
+                                            <td width="80" height="24" align="right">
+                                                &nbsp;
+                                            </td>
+                                        </tr>--%>
+                                        <tr>
+                                            <td height="24" align="right">
+                                                <span id="PatrolSearch3">起始时间：</span>
+                                            </td>
+                                            <td height="24">
+                                                <asp:TextBox ID="txt_startTime" runat="server" class="Wdate" Width="120" onFocus="WdatePicker({isShowClear:false,startDate:'%y-%M-01 00:00:00',dateFmt:'yyyy-MM-dd HH:mm:ss',alwaysUseStartDate:true,readOnly:true})"></asp:TextBox>
+                                            </td>
+                                            <td height="24" align="right">
+                                                <span id="PatrolSearch4">截止时间：</span>
+                                            </td>
+                                            <td height="24">
+                                                <asp:TextBox ID="txt_endTime" runat="server" class="Wdate controlstyle" onFocus="WdatePicker({isShowClear:false,startDate:'%y-%M-01 00:00:00',dateFmt:'yyyy-MM-dd HH:mm:ss',alwaysUseStartDate:true,readOnly:true})"></asp:TextBox>
+                                            </td>
+                                            <td width="80" height="24" align="center">
+                                                <asp:Button ID="btn_ok" runat="server" Text="" CssClass="btn_search" OnClick="btn_ok_Click" />
+                                            </td>
+                                        </tr>
+                                    </table>
                                 </td>
                             </tr>
                             <tr>
-                                <td height="24" align="right">
-                                    <span id="PatrolSearch3">起始时间：</span>
-                                </td>
-                                <td height="24">
-                                    <asp:TextBox ID="txt_startTime" runat="server" class="Wdate" Width="120" onFocus="WdatePicker({isShowClear:false,startDate:'%y-%M-01 00:00:00',dateFmt:'yyyy-MM-dd HH:mm:ss',alwaysUseStartDate:true,readOnly:true})"></asp:TextBox>
-                                </td>
-                                <td height="24" align="right">
-                                    <span id="PatrolSearch4">截止时间：</span>
-                                </td>
-                                <td height="24">
-                                    <asp:TextBox ID="txt_endTime" runat="server" class="Wdate controlstyle" onFocus="WdatePicker({isShowClear:false,startDate:'%y-%M-01 00:00:00',dateFmt:'yyyy-MM-dd HH:mm:ss',alwaysUseStartDate:true,readOnly:true})"></asp:TextBox>
-                                </td>
-                                <td width="80" height="24" align="center">
-                                    <asp:Button ID="btn_ok" runat="server" Text="" CssClass="btn_search" OnClick="btn_ok_Click" />
+                                <td valign="top">
+                                    <asp:GridView ID="gv_patrollist" runat="server" AutoGenerateColumns="False" BackColor="White"
+                                        BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" Width="100%"
+                                        OnRowCommand="gv_patrollist_RowCommand">
+                                        <Columns>
+                                            <asp:CheckBoxField />
+                                            <asp:BoundField DataField="dptname" HeaderText="巡查中队" />
+                                            <asp:BoundField DataField="busnumber" HeaderText="车牌号" />
+                                            <asp:BoundField DataField="mileage" HeaderText="巡查里程" />
+                                            <asp:BoundField DataField="username" HeaderText="负责人" />
+                                            <asp:BoundField DataField="weather" HeaderText="天气状况" />
+                                            <asp:BoundField DataField="weather" HeaderText="接班中队长" />
+                                            <asp:BoundField DataField="ticktime" HeaderText="交接班时间" />
+                                            <asp:BoundField DataField="buskm" HeaderText="接班巡逻车里程表" />
+                                            <%--  <asp:CommandField DeleteImageUrl="~/Images/delete.png" EditImageUrl="~/Images/edit.png"
+                                    ShowEditButton="True" />
+                                <asp:CommandField DeleteImageUrl="~/Images/delete.png" ShowDeleteButton="True" />--%>
+                                            <asp:TemplateField HeaderText="操作选项">
+                                                <ItemTemplate>
+                                                    <asp:LinkButton ID="Lbtview" runat="server" CommandName="view" CommandArgument='<%#Eval("patrolid") %>'>查看</asp:LinkButton>
+                                                    <asp:LinkButton ID="LbtEdit" runat="server" CommandName="edit" CommandArgument='<%#Eval("patrolid") %>'>编辑</asp:LinkButton>
+                                                    <asp:LinkButton ID="LbtDel" runat="server" OnClientClick="return confirm('确定删除该日志吗？')"
+                                                        CommandName="del" CommandArgument='<%#Eval("patrolid") %>'>删除</asp:LinkButton>
+                                                </ItemTemplate>
+                                                <ItemStyle Width="90" />
+                                            </asp:TemplateField>
+                                        </Columns>
+                                        <FooterStyle BackColor="White" ForeColor="#000066" />
+                                        <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
+                                        <PagerStyle BackColor="White" ForeColor="#000066" HorizontalAlign="Left" />
+                                        <RowStyle ForeColor="#000066" />
+                                        <SelectedRowStyle BackColor="#669999" Font-Bold="True" ForeColor="White" />
+                                        <SortedAscendingCellStyle BackColor="#F1F1F1" />
+                                        <SortedAscendingHeaderStyle BackColor="#007DBB" />
+                                        <SortedDescendingCellStyle BackColor="#CAC9C9" />
+                                        <SortedDescendingHeaderStyle BackColor="#00547E" />
+                                    </asp:GridView>
+                                    <asp:Literal ID="litmsg" Visible="false" runat="server"></asp:Literal>
                                 </td>
                             </tr>
                         </table>
-                    </td>
-                </tr>
-                <tr>
-                    <td valign="top">
-                        <asp:GridView ID="gv_patrollist" runat="server" AutoGenerateColumns="False" BackColor="White"
-                            BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" Width="100%"
-                            OnRowCommand="gv_patrollist_RowCommand">
-                            <Columns>
-                                <asp:CheckBoxField />
-                                <asp:BoundField DataField="dptname" HeaderText="隶属部门" />
-                                <asp:BoundField DataField="username" HeaderText="巡逻人员" />
-                                <asp:BoundField DataField="busnumber" HeaderText="车牌号" />
-                                <asp:BoundField DataField="mileage" HeaderText="巡查里程" />
-                                <asp:BoundField DataField="weather" HeaderText="天气状况" />
-                                <asp:BoundField DataField="ticktime" HeaderText="交接班时间" />
-                                <asp:BoundField DataField="buskm" HeaderText="接班巡逻车里程表" />
-                                <%--  <asp:CommandField DeleteImageUrl="~/Images/delete.png" EditImageUrl="~/Images/edit.png"
-                                    ShowEditButton="True" />
-                                <asp:CommandField DeleteImageUrl="~/Images/delete.png" ShowDeleteButton="True" />--%>
-                                <asp:TemplateField HeaderText="操作选项">
-                                    <ItemTemplate>
-                                        <asp:LinkButton ID="Lbtview" runat="server" CommandName="view" CommandArgument='<%#Eval("patrolid") %>'>查看</asp:LinkButton>
-                                        <asp:LinkButton ID="LbtEdit" runat="server" CommandName="edit" CommandArgument='<%#Eval("patrolid") %>'>编辑</asp:LinkButton>
-                                        <asp:LinkButton ID="LbtDel" runat="server" OnClientClick="return confirm('确定删除该日志吗？')"
-                                            CommandName="del" CommandArgument='<%#Eval("patrolid") %>'>删除</asp:LinkButton>
-                                    </ItemTemplate>
-                                    <ItemStyle Width="90" />
-                                </asp:TemplateField>
-                            </Columns>
-                            <FooterStyle BackColor="White" ForeColor="#000066" />
-                            <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
-                            <PagerStyle BackColor="White" ForeColor="#000066" HorizontalAlign="Left" />
-                            <RowStyle ForeColor="#000066" />
-                            <SelectedRowStyle BackColor="#669999" Font-Bold="True" ForeColor="White" />
-                            <SortedAscendingCellStyle BackColor="#F1F1F1" />
-                            <SortedAscendingHeaderStyle BackColor="#007DBB" />
-                            <SortedDescendingCellStyle BackColor="#CAC9C9" />
-                            <SortedDescendingHeaderStyle BackColor="#00547E" />
-                        </asp:GridView>
-                        <asp:Literal ID="litmsg" Visible="false" runat="server"></asp:Literal>
                     </td>
                 </tr>
             </table>

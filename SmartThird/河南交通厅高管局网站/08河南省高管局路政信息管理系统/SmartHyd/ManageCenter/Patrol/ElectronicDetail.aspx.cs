@@ -23,9 +23,9 @@ namespace SmartHyd.Patrol
                     this.deptname.InnerHtml=getDeptName(model.DEPTID);
                     this.divuser.InnerHtml = model.PATROLUSER;
                     this.weather.InnerHtml = model.WEATHER;
-                    this.starttime.InnerHtml = model.BEGINTIME.ToShortDateString();
-                    this.endtime.InnerHtml = model.ENDDATE.ToShortDateString();
-                    this.result.InnerHtml = model.LOG;
+                    //this.starttime.InnerHtml = model.BEGINTIME.ToShortDateString();
+                    //this.endtime.InnerHtml = model.ENDDATE.ToShortDateString();
+                    //this.result.InnerHtml = model.LOG;
                 }
             }
         }

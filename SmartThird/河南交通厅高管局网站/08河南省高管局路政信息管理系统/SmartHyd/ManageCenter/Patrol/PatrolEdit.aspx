@@ -85,13 +85,14 @@
     <table class="edit" width="100%">
         <tbody>
             <tr height="38">
-                <td>
+                <%--<td>
                     <asp:Label ID="Label1" runat="server" Text="巡查中队:"></asp:Label>
                     <asp:HiddenField ID="hidPrimary" runat="server" Value="-1" />
                     <uc1:Department ID="Department1" runat="server" />
-                </td>
+                </td>--%>
                 <td>
-                    <asp:Label ID="Label2" runat="server" Text="负责人员:"></asp:Label>
+                    <asp:Label ID="Label2" runat="server" Text="负责人:"></asp:Label>
+                    <asp:HiddenField ID="hidPrimary" runat="server" Value="-1" />
                     <asp:TextBox ID="txtRESPUSER" runat="server" CssClass="input {required:true}"></asp:TextBox>
                     <div class="validate ui-state-highlight ui-corner-all" style="border: none;">
                     </div>
@@ -105,13 +106,13 @@
             </tr>
             <tr height="38">
                 <td>
-                    <asp:Label ID="Label4" runat="server" Text="车牌号码:"></asp:Label>
+                    <asp:Label ID="Label4" runat="server" Text="巡逻车牌号码:"></asp:Label>
                     <asp:TextBox ID="txtBUSNUMBER" runat="server" CssClass="input {required:true}"></asp:TextBox>
                     <div class="validate ui-state-highlight ui-corner-all" style="border: none;">
                     </div>
                 </td>
                 <td>
-                    <asp:Label ID="Label5" runat="server" Text="巡查里程:"></asp:Label>
+                    <asp:Label ID="Label5" runat="server" Text="巡查里程(KM):"></asp:Label>
                     <asp:TextBox ID="txtMILEAGE" runat="server" CssClass="input {required:true}" Text="1000"></asp:TextBox>
                     <div class="validate ui-state-highlight ui-corner-all" style="border: none;">
                     </div>
@@ -153,13 +154,13 @@
             </tr>
             <tr height="38">
                 <td>
-                    <asp:Label ID="Label11" runat="server" Text="交班中队:"></asp:Label>
+                    <asp:Label ID="Label11" runat="server" Text="交班中队长:"></asp:Label>
                     <asp:TextBox ID="txtSHIFTCAPTAIN" runat="server" CssClass="input {required:true}"></asp:TextBox>
                     <div class="validate ui-state-highlight ui-corner-all" style="border: none;">
                     </div>
                 </td>
                 <td>
-                    <asp:Label ID="Label12" runat="server" Text="接班中队:"></asp:Label>
+                    <asp:Label ID="Label12" runat="server" Text="接班中队长:"></asp:Label>
                     <asp:TextBox ID="txtACCEPTCAPTAIN" runat="server" CssClass="input {required:true}"></asp:TextBox>
                     <div class="validate ui-state-highlight ui-corner-all" style="border: none;">
                     </div>

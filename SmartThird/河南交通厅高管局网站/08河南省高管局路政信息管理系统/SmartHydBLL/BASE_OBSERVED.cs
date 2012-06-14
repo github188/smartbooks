@@ -16,7 +16,7 @@ namespace SmartHyd.BLL {
         /// <param name="deptCode">部门ID</param>
         /// <returns>电子巡逻日志数据</returns>
         public DataTable GetDeptLog(DateTime beginTime, DateTime endTime, int deptCode,int state) {
-            return dal.GetDeptLog(beginTime, endTime, deptCode, state);
+            return null;//dal.GetDeptLog(beginTime, endTime, deptCode, state);
         }
         /// <summary>
         /// 根据指定条件，获取部门下电子巡逻日志数据
@@ -25,7 +25,7 @@ namespace SmartHyd.BLL {
         /// <returns></returns>
         public DataTable GetLogObserved(string strwhere)
         {
-            return dal.GetLogObserved(strwhere);
+            return null;// dal.GetLogObserved(strwhere);
         }
         /// <summary>
         /// 获取电子巡逻日志实体

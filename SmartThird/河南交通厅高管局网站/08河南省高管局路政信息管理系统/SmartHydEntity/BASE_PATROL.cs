@@ -4,7 +4,7 @@
 // 文件名称:BASE_PATROL.cs
 // 功能描述:人工巡逻日志表 -- 实体定义
 //
-// 创建标识： 付晓 2012-06-12
+// 创建标识： 付晓 2012-06-14
 namespace SmartHyd.Entity
 {
     using System;
@@ -44,26 +44,6 @@ namespace SmartHyd.Entity
         /// 天气
         /// </summary>		
         private string _WEATHER;
-		/// <summary>
-        /// 巡查处理情况
-        /// </summary>		
-        private string _LOG;
-		/// <summary>
-        /// 巡查开始时间
-        /// </summary>		
-        private DateTime _BEGINTIME;
-		/// <summary>
-        /// 巡查结束时间
-        /// </summary>		
-        private DateTime _ENDTIME;
-		/// <summary>
-        /// 移交人
-        /// </summary>		
-        private decimal _TRANSFER;
-		/// <summary>
-        /// 接收人
-        /// </summary>		
-        private decimal _ACCEPT;
 		/// <summary>
         /// 移交内业处理事项
         /// </summary>		
@@ -164,46 +144,6 @@ namespace SmartHyd.Entity
         {
             get { return _WEATHER; }
             set { _WEATHER = value; }
-        }
-	        /// <summary>
-        /// 巡查处理情况
-        /// </summary>
-        public string LOG
-        {
-            get { return _LOG; }
-            set { _LOG = value; }
-        }
-	        /// <summary>
-        /// 巡查开始时间
-        /// </summary>
-        public DateTime BEGINTIME
-        {
-            get { return _BEGINTIME; }
-            set { _BEGINTIME = value; }
-        }
-	        /// <summary>
-        /// 巡查结束时间
-        /// </summary>
-        public DateTime ENDTIME
-        {
-            get { return _ENDTIME; }
-            set { _ENDTIME = value; }
-        }
-	        /// <summary>
-        /// 移交人
-        /// </summary>
-        public decimal TRANSFER
-        {
-            get { return _TRANSFER; }
-            set { _TRANSFER = value; }
-        }
-	        /// <summary>
-        /// 接收人
-        /// </summary>
-        public decimal ACCEPT
-        {
-            get { return _ACCEPT; }
-            set { _ACCEPT = value; }
         }
 	        /// <summary>
         /// 移交内业处理事项
