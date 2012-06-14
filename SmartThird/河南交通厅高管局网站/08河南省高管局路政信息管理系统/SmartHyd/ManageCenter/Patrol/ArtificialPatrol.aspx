@@ -29,6 +29,9 @@
 
         }
     </script>
+     <style type="text/css">
+        .treeViewStyle{ height:100%; overflow-y:scroll; color:#000000; }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -52,17 +55,19 @@
                     </td>
                 </tr>
                 <tr>
-                    <td valign="top" style="border:1px">
-                        <asp:TreeView ID="TreeViewAcceptUnit" CssClass="treeview" ShowLines="True" 
-                            runat="server" BorderColor="#3333FF">
-                            <HoverNodeStyle Font-Underline="True" ForeColor="#5555DD" />
-                           
-                            <NodeStyle Font-Names="Tahoma" Font-Size="10pt" ForeColor="Black" HorizontalPadding="5px"
-                                NodeSpacing="0px" VerticalPadding="0px" />
+                    <td valign="top">
+                        <asp:TreeView ID="TreeViewAcceptUnit" 
+                                runat="server" CssClass="treeViewStyle" ImageSet="BulletedList4" 
+                                ShowExpandCollapse="true" Width="300px" 
+                               ShowCheckBoxes="All" ShowLines="True">
+                            <HoverNodeStyle Font-Underline="True" ForeColor="#000000" />
+                            <NodeStyle Font-Names="Tahoma" Font-Size="10pt" ForeColor="#000000" 
+                                HorizontalPadding="5px" NodeSpacing="0px" VerticalPadding="0px" />
                             <ParentNodeStyle Font-Bold="False" />
-                            <SelectedNodeStyle Font-Underline="True" HorizontalPadding="0px" VerticalPadding="0px"
-                                ForeColor="#5555DD" />
-                        </asp:TreeView>
+                            <RootNodeStyle ImageUrl="~/Images/chart_organisation.png" />
+                            <SelectedNodeStyle Font-Underline="True" ForeColor="#000000" 
+                                HorizontalPadding="0px" VerticalPadding="0px" BackColor="#0066CC" />
+                            </asp:TreeView>
                     </td>
                     <td>
                         <table>
