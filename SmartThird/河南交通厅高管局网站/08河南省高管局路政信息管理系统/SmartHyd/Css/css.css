@@ -314,7 +314,7 @@ filter : progid:DXImageTransform.Microsoft.gradient(startColorStr=#96CDCD,endCol
 	background-image: url(../Images/icons/chart.png) !important
 }
 
-
+/*路政系统图标*/
 .securityicon
 {
 	background-image: url(../Images/icons/security16.png) !important
@@ -330,6 +330,10 @@ filter : progid:DXImageTransform.Microsoft.gradient(startColorStr=#96CDCD,endCol
 .filesicon
 {
 	background-image: url(../Images/icons/files.png) !important
+}
+.filesmanagericon
+{
+	background-image: url(../Images/icons/filesmanager.png) !important
 }
 .roadpatrolicon
 {
@@ -354,4 +358,73 @@ filter : progid:DXImageTransform.Microsoft.gradient(startColorStr=#96CDCD,endCol
 .navigationicon
 {
 	background-image: url(../Images/icons/navigation.png) !important
+}
+
+.electronicpatrolicon
+{
+	background-image: url(../Images/icons/electronicpatrol.png) !important
+}
+.artificialpatrolicon
+{
+	background-image: url(../Images/icons/artificialpatrol.png) !important
+}
+.instantmessagingicon
+{
+	background-image: url(../Images/icons/instantmessaging.png) !important
+}
+.documentmanagericon
+{
+	background-image: url(../Images/icons/documentmanager.png) !important
+}
+.binicon
+{
+	background-image: url(../Images/icons/bin.png) !important
+}
+.bellicon
+{
+	background-image: url(../Images/icons/bell.png) !important
+}
+.remindicon
+{
+	background-image: url(../Images/icons/remind.png) !important
+}
+.filestypeicon
+{
+	background-image: url(../Images/icons/tags_label.png) !important
+}
+.evaluationproject
+{
+	background-image: url(../Images/icons/star.png) !important
+}
+.evaluationmanager
+{
+	background-image: url(../Images/icons/starmanager.png) !important
+}
+.roadequipmenticon
+{
+	background-image: url(../Images/icons/wrench_screwdriver.png) !important
+}
+.violationicon
+{
+	background-image: url(../Images/icons/minus_circle_frame.png) !important
+}
+.caseicon
+{
+	background-image: url(../Images/icons/case.png) !important
+}
+.overloadsummary
+{
+	background-image: url(../Images/icons/overloadsummary.png) !important
+}
+.overloadreported
+{
+	background-image: url(../Images/icons/overloadreported.png) !important
+}
+.overloadsearch
+{
+	background-image: url(../Images/icons/overloadsearch.png) !important
+}
+.trafficcount
+{
+	background-image: url(../Images/icons/trafficcount.png) !important
 }
