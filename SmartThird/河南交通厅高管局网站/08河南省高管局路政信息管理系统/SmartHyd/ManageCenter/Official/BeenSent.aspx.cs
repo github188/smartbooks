@@ -37,9 +37,6 @@ namespace SmartHyd.ManageCenter.Official {
             /*发文列表数据*/
             dt = bll.GetPublishList(Convert.ToInt32(userSession.DEPTID), typeId);
 
-            /*收文列表数据*/
-            //dt = bll.GetAcceptList(Convert.ToInt32(userSession.DEPTID));
-
 
             //初始化分页数据
             AspNetPager1.RecordCount = dt.Rows.Count;
@@ -59,7 +56,7 @@ namespace SmartHyd.ManageCenter.Official {
             /*查询结果提示信息*/
             if (dt == null || dt.Rows.Count <= 0) {
                 litmsg.Visible = true;
-                litmsg.Text = "<div style='font-size:16px; font-family:微软雅黑; color:red;font-weight:bold; text-align:center;'>无相关记录!</div>";
+                litmsg.Text = "<div style='font-size:16px; font-family:微软雅黑; color:red;font-weight:bold; text-align:center;'>无公文数据!</div>";
             }
             else {
                 litmsg.Visible = false;

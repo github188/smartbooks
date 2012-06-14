@@ -50,8 +50,12 @@ namespace SmartHyd.ManageCenter.Official {
             /*发文列表数据*/
             //dt = bll.GetPublishList(Convert.ToInt32(userSession.DEPTID), typeId);
 
-            /*收文列表数据*/
+            /*收文列表数据(部门下收文数据)*/
             dt = bll.GetAcceptList(Convert.ToInt32(userSession.DEPTID));
+
+            /*当前用户,parentid不等于0*/
+            //dt = bll.GetList(string.Format("USERID={0} AND STATUS=0 AND PARENTID<>0 ORDER BY TIMESTAMP DESC", userSession.USERID));
+            //BLL.BASE_ARTICLE_UNIT
 
 
             //初始化分页数据
@@ -72,7 +76,7 @@ namespace SmartHyd.ManageCenter.Official {
             /*查询结果提示信息*/
             if (dt == null || dt.Rows.Count <= 0) {
                 litmsg.Visible = true;
-                litmsg.Text = "<div style='font-size:16px; font-family:微软雅黑; color:red;font-weight:bold; text-align:center;'>没有收文数据!</div>";
+                litmsg.Text = "<div style='font-size:16px; font-family:微软雅黑; color:red;font-weight:bold; text-align:center;'>没有公文数据!</div>";
             }
             else {
                 litmsg.Visible = false;
