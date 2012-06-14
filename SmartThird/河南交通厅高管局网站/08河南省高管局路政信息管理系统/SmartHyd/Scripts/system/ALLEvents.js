@@ -245,7 +245,7 @@ LoadModule = function (node) {
 
             border: false,
             defaults: { bodyStyle: 'margin:0;padding:0;' },
-            html: "<iframe src='" + node.attributes.href + "' scrolling='no' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
+            html: "<iframe src='" + node.attributes.href + "' scrolling='auto' id='ElectronicPatrolFrame' name='ElectronicPatrolFrame' frameborder=0 width=100% height=100%></iframe>"
         });
         LoadModuleMain(node, pnlDocumentSend, node.attributes.iconCls);
     } else if (moduleId == 112) {
