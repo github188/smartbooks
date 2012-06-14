@@ -21,7 +21,7 @@ namespace SmartHyd.ManageCenter.OfficialType {
 
         private void BindingType() {
             DataTable dt = new DataTable();
-            dt = bll.GetList("1=1");
+            dt = bll.GetList(string.Format("DEPTID={0}", userSession.DEPTID.ToString()));
 
             RecursiveTree(ddlTypeId, dt, 0);
         }

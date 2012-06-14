@@ -24,5 +24,9 @@ namespace SmartHyd.BLL {
                 return -1;
             }
         }
+
+        public Entity.BASE_ARTICLE_ANNEX GetModel(int id) {
+            return dal.GetEntity(id);
+        }
     }
 }

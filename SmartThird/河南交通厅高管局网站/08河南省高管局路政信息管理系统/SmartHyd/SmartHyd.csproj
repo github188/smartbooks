@@ -321,6 +321,8 @@
     <Content Include="ManageCenter\OfficialType\List.aspx" />
     <Content Include="ManageCenter\Official\Accept.aspx" />
     <Content Include="ManageCenter\Official\BeenSent.aspx" />
+    <Content Include="ManageCenter\Official\CheckOut.aspx" />
+    <Content Include="ManageCenter\Official\Detail.aspx" />
     <Content Include="ManageCenter\Official\DraftsBox.aspx" />
     <Content Include="ManageCenter\Official\Create.aspx" />
     <Content Include="ManageCenter\Official\Reply.aspx" />
@@ -1403,6 +1405,20 @@
     </Compile>
     <Compile Include="ManageCenter\Official\BeenSent.aspx.designer.cs">
       <DependentUpon>BeenSent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\Official\CheckOut.aspx.cs">
+      <DependentUpon>CheckOut.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\Official\CheckOut.aspx.designer.cs">
+      <DependentUpon>CheckOut.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\Official\Detail.aspx.cs">
+      <DependentUpon>Detail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\Official\Detail.aspx.designer.cs">
+      <DependentUpon>Detail.aspx</DependentUpon>
     </Compile>
     <Compile Include="ManageCenter\Official\DraftsBox.aspx.cs">
       <DependentUpon>DraftsBox.aspx</DependentUpon>

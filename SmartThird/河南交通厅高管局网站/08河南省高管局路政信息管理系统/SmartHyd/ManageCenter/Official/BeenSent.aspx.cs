@@ -79,33 +79,25 @@ namespace SmartHyd.ManageCenter.Official {
 
         protected void grvPublishList_RowCommand(object sender, GridViewCommandEventArgs e) {
             int id = Convert.ToInt32(e.CommandArgument.ToString());
-            switch (e.CommandName) {
-                /*跳转到编辑页面*/
-                case "edit":
-                    Response.Redirect("~/ManageCenter/DocumentCreate.aspx?id=" + id.ToString(), true);
-                    break;
+            switch (e.CommandName) {                
                 /*更新公文状态为删除*/
                 case "delete":
                     bll.UpdateState(3, id);
-                    Response.Redirect("~/Official/OfficialPublish.aspx", true);
+                    Response.Redirect("~/ManageCenter/Official/BeenSent.aspx", true);
                     break;
                 /*跳转到结贴页面*/
                 case "checkout":
-                    Response.Redirect("~/ManageCenter/DocumentCheckOut.aspx?id=" + id.ToString(), true);
+                    Response.Redirect("~/ManageCenter/Official/CheckOut.aspx?id=" + id.ToString(), true);
                     break;
                 /*跳转到详情页面*/
                 case "detail":
-                    Response.Redirect("~/ManageCenter/DocumentDetail.aspx?id=" + id.ToString(), true);
+                    Response.Redirect("~/ManageCenter/Official/Detail.aspx?id=" + id.ToString(), true);
                     break;
                 /*发文查阅状态*/
                 case "isread":
-                    Response.Redirect("~/ManageCenter/DocumentReply.aspx?id=" + id.ToString(), true);
+                    Response.Redirect("~/ManageCenter/Official/CheckOut.aspx?id=" + id.ToString(), true);
                     break;
             }
-        }
-        /*search*/
-        protected void btnSearch_Click(object sender, EventArgs e) {
-
         }
     }
 }

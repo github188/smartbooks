@@ -161,9 +161,6 @@
                 </td>
                 <td class="TableData">
                     <asp:DropDownList ID="ddlTypeId" runat="server" CssClass="input">
-                        <asp:ListItem Text="公告通知" Value="0" Selected="True"></asp:ListItem>
-                        <asp:ListItem Text="年终考核" Value="0"></asp:ListItem>
-                        <asp:ListItem Text="浮动考核" Value="0"></asp:ListItem>
                     </asp:DropDownList>
                     <a href="../OfficialType/Create.aspx">新建公文分类</a>
                 </td>

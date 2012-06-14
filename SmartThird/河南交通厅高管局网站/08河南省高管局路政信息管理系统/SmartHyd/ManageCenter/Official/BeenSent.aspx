@@ -54,16 +54,7 @@
                                     <uc1:TreeView ID="TreeView1" runat="server" TreeEnum="DocuemntClass" />
                                 </td>
                                 <!--数据-->
-                                <td valign="top">
-                                    <table id="PatrolSearch" width="480px" border="0" cellspacing="0" cellpadding="0">
-                                        <tr>
-                                            <td height="24">
-                                                <span id="Span2">公文标题:</span>
-                                                <asp:TextBox ID="txt_title" runat="server" class="Wdate" Width="250"></asp:TextBox>
-                                                <asp:Button ID="btnSearch" runat="server" CssClass="btn_search" OnClick="btnSearch_Click" />
-                                            </td>
-                                        </tr>
-                                    </table>
+                                <td valign="top">                                    
                                     <asp:GridView ID="grvPublishList" runat="server" AutoGenerateColumns="False" BackColor="White"
                                         BorderColor="#CCCCCC" BorderStyle="None" Font-Size="12px" BorderWidth="1px" CellPadding="3"
                                         Width="100%" OnRowCommand="grvPublishList_RowCommand">
@@ -83,11 +74,10 @@
                                             </asp:BoundField>
                                             <asp:TemplateField HeaderText="操作选项">
                                                 <ItemTemplate>
-                                                    <asp:LinkButton ID="LinkButton1" runat="server" CommandName="edit" CommandArgument='<%#Eval("id") %>'>编辑</asp:LinkButton>
-                                                    <asp:LinkButton ID="LinkButton2" runat="server" CommandName="delete" CommandArgument='<%#Eval("id") %>'>删除</asp:LinkButton>
-                                                    <asp:LinkButton ID="LinkButton3" runat="server" CommandName="checkout" CommandArgument='<%#Eval("id") %>'>考核</asp:LinkButton>
-                                                    <asp:LinkButton ID="LinkButton4" runat="server" CommandName="detail" CommandArgument='<%#Eval("id") %>'>详情</asp:LinkButton>
-                                                    <asp:LinkButton ID="LinkButton5" runat="server" CommandName="isread" CommandArgument='<%#Eval("id") %>'>追踪</asp:LinkButton>
+                                                    <asp:LinkButton  runat="server" CommandName="delete" CommandArgument='<%#Eval("id") %>'>删除</asp:LinkButton>
+                                                    <asp:LinkButton  runat="server" CommandName="checkout" CommandArgument='<%#Eval("id") %>'>考核</asp:LinkButton>
+                                                    <asp:LinkButton  runat="server" CommandName="detail" CommandArgument='<%#Eval("id") %>'>详情</asp:LinkButton>
+                                                    <asp:LinkButton  runat="server" CommandName="isread" CommandArgument='<%#Eval("id") %>'>追踪</asp:LinkButton>
                                                 </ItemTemplate>
                                                 <ItemStyle Width="150" />
                                             </asp:TemplateField>

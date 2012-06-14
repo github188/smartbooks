@@ -12,7 +12,6 @@ namespace SmartHyd.ManageCenter.Official {
         private BLL.BASE_ARTICLE bll = new BLL.BASE_ARTICLE();
         private BLL.BASE_ARTICLE_TYPE bllType = new BLL.BASE_ARTICLE_TYPE();
         private Utility.UserSession userSession;
-        private int inde = 0;
 
         //页面加载
         protected void Page_Load(object sender, EventArgs e) {
@@ -21,59 +20,35 @@ namespace SmartHyd.ManageCenter.Official {
             userSession = (Utility.UserSession)Session["user"];
 
             if (!IsPostBack) {
-                BindType();     //绑定公文分类
-                BindAcceptUnit();   //绑定收文部门
-
-                //绑定公文类别
-                DataTable dt = bllType.GetDeptNodeData(Convert.ToInt32(userSession.DEPTID)); //默认采用13部门
-                ddlTypeId.Items.Clear();
-                InitTreeNodes(ddlTypeId, 0, dt, 0);
-
-                //获取编辑模式和ID
-                if (Request.QueryString["id"] != null) {
-                    int id = Convert.ToInt32(Request.QueryString["id"].ToString());
-                    Entity.BASE_ARTICLE model = new Entity.BASE_ARTICLE();
-                    model = bll.GetEntity(id);
-
-                    if (Request.QueryString["m"] != null && Request.QueryString["m"].Equals("edit")) {
-                        /*回复模式*/
-                        hidPrimary.Value = "-1";
-                        hidParentPrimary.Value = model.PARENTID.ToString();
-                        lblSourceTitle.Text = string.Format("[回复]:{0}", model.TITLE);
-
-                        txtTitle.Text = lblSourceTitle.Text;
-                        txtSendCode.Text = model.SENDCODE;
-                        txtSendCode.Enabled = false;
-                        txtSCORE.Enabled = false;
-                        chkIsReply.Enabled = false;
-
-
-                        /*收文单位隐藏*/
-                        TreeViewAcceptUnit.Enabled = false;
-                    }
-                    else {
-                        /*编辑模式*/
-                        SetEntity(model);
-                    }
-                }
+                BindingType();     //绑定公文分类
+                BindAcceptUnit();   //绑定收文部门                
             }
 
-            //获取用户Session
-            userSession = (Utility.UserSession)Session["user"];
+            //获取编辑模式ID
+            if (Request.QueryString["id"] != null) {
+                int id = Convert.ToInt32(Request.QueryString["id"].ToString());
+                Entity.BASE_ARTICLE model = new Entity.BASE_ARTICLE();
+                model = bll.GetEntity(id);
+                SetEntity(model);
+            }
         }
 
-        //绑定公文类别
-        private void BindType() {
+        private void BindingType() {
             DataTable dt = new DataTable();
+            dt = bllType.GetList(string.Format("DEPTID={0}", userSession.DEPTID.ToString()));
 
-            ddlTypeId.Items.Clear();
+            RecursiveTree(ddlTypeId, dt, 0);
+        }
+
+        private void RecursiveTree(DropDownList dropDownControl, DataTable dt, int rootId) {
             foreach (DataRow row in dt.Rows) {
-                ddlTypeId.Items.Add(new ListItem(
+                if (row["PARENT"].ToString().Equals(rootId.ToString())) {
+                    dropDownControl.Items.Add(new ListItem(
                     row["TYPENAME"].ToString(),
                     row["ID"].ToString()));
-            }
-            if (ddlTypeId.Items.Count != 0) {
-                ddlTypeId.SelectedIndex = 0;
+
+                    RecursiveTree(dropDownControl, dt, Convert.ToInt32(row["ID"].ToString()));
+                }
             }
         }
 
@@ -144,31 +119,11 @@ namespace SmartHyd.ManageCenter.Official {
                 RecursiveSubNode(subNode, articleId);
             }
         }
-
-        //绑定档案分类节点
-        private void InitTreeNodes(DropDownList ddl, int parentId, DataTable dt, int indent) {
-            foreach (DataRow dr in dt.Rows) {
-                if (dr["PARENT"].ToString() == parentId.ToString()) {
-                    inde += indent;
-                    ListItem item = new ListItem();
-                    for (int i = 0; i < inde; i++) {
-                        item.Text += "-";
-                    }
-                    item.Text += dr["TYPENAME"].ToString();
-                    item.Value = dr["ID"].ToString();
-                    ddl.Items.Add(item);
-                    InitTreeNodes(ddl, Convert.ToInt32(dr["ID"].ToString()), dt, 2);
-                    inde -= 2;
-                }
-            }
-        }
-
+        
         //绑定收文单位
         private void BindAcceptUnit() {
             DataTable dt = new DataTable();
-            //获取用户所属单位和下级部门
             BLL.BASE_DEPT dept = new BLL.BASE_DEPT();
-            //dt = dept.GetAllDep("STATUS=0");
             /*当前用户所属部门和子部门*/
             dt = dept.GetUserWhereDepartment(userSession.USERNAME, -1);
 
@@ -339,7 +294,7 @@ namespace SmartHyd.ManageCenter.Official {
                     annex.STATUS = 0;                                   //存储状态:0正常
                     annex.UPAUTHOR = userSession.USERID;                //上传者用户ID
                     annex.UPTIME = DateTime.Now;                        //文件上传时间
-                    annex.SERVERPATH = string.Format("Document\\{0}\\", DateTime.Now.ToString("yyyyMMdd"));
+                    annex.SERVERPATH = string.Format("Document/{0}/", DateTime.Now.ToString("yyyyMMdd"));
 
                     //判断服务器存储目录路径是否存在
                     if (!Directory.Exists(Server.MapPath("~/") + annex.SERVERPATH)) {
