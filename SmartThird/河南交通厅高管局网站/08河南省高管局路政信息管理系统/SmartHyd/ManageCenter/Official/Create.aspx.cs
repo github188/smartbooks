@@ -123,7 +123,7 @@ namespace SmartHyd.ManageCenter.Official {
             }
         }
 
-        //遍历每一个部门节点
+        //遍历每一个部门节点(增加公文收文单位)
         private void RecursiveSubNode(TreeNode node, int articleId) {
             if (node.Checked) {
                 BLL.BASE_ARTICLE_UNIT unitBll = new BLL.BASE_ARTICLE_UNIT();
@@ -133,6 +133,11 @@ namespace SmartHyd.ManageCenter.Official {
                 unitmodel.ISREAD = 0;   //未查阅
                 unitmodel.READTIME = DateTime.Now;  //发文时间
                 unitBll.Add(unitmodel);
+
+                /*短信通知*/
+                if (chkSMSAlert.Checked) {
+                    //给该部门负责人发送短信通知
+                }
             }
 
             foreach (TreeNode subNode in node.ChildNodes) {
@@ -323,44 +328,38 @@ namespace SmartHyd.ManageCenter.Official {
 
         //添加公文
         private void Creates(Entity.BASE_ARTICLE model) {
-            /*#region 上传附件
-            //此处实现上传附件            
-            string serverPath = "";
-            if (!string.IsNullOrEmpty(fileUpAnnex.FileName)) {
-                //服务器存储路径
-                string filePath = string.Format("{0}Document\\{1}\\",
-                    Server.MapPath("~/"),
-                    DateTime.Now.ToString("yyyyMMdd"));
-
-                //服务器存储文件名
-                string fileName = string.Format("{0}.{1}",
-                    Guid.NewGuid().ToString(),
-                    fileUpAnnex.FileName.Substring(fileUpAnnex.FileName.Length - 3, 3));
-
-                //判断路径是否存在，如果不存在那么则创建这个路径
-                if (!Directory.Exists(filePath)) {
-                    Directory.CreateDirectory(filePath);
-                }
-
-                //上传附件
-                serverPath += string.Format("Document/{0}/{1}",
-                    DateTime.Now.ToString("yyyyMMdd"),
-                    fileName);
-                fileUpAnnex.SaveAs(filePath + fileName);
-            }
-            //保存附件路径
-            model.ANNEX = serverPath;
-            #endregion
-
-            //上传多个附件演示
-            
+            #region 上传附件
+            BLL.BASE_ARTICLE_ANNEX bllAnnex = new BLL.BASE_ARTICLE_ANNEX();
             for (int index = 0; index < Request.Files.Count; index++) {
                 if (!string.IsNullOrEmpty(Request.Files[index].FileName)) {
-                    Request.Files[index].SaveAs(Path.Combine(Server.MapPath("Files"), 
-                        System.IO.Path.GetFileName(Request.Files[index].FileName)));
-                }
-            }*/
+                    Entity.BASE_ARTICLE_ANNEX annex = new Entity.BASE_ARTICLE_ANNEX();
+                    annex.SERVERNAME = Guid.NewGuid().ToString();       //服务器存储文件名                    
+                    annex.SOURCENAME = Path.GetFileName(Request.Files[index].FileName); //原文件名称
+                    annex.EXTENSION = Path.GetExtension(Request.Files[index].FileName); //文件扩展名
+                    annex.STATUS = 0;                                   //存储状态:0正常
+                    annex.UPAUTHOR = userSession.USERID;                //上传者用户ID
+                    annex.UPTIME = DateTime.Now;                        //文件上传时间
+                    annex.SERVERPATH = string.Format("{0}Document\\{1}\\",
+                        Server.MapPath("~/"),                           //服务器跟路径
+                        DateTime.Now.ToString("yyyyMMdd"));             //当前日期
 
+                    //判断服务器存储目录路径是否存在
+                    if (!Directory.Exists(annex.SERVERPATH)) {
+                        Directory.CreateDirectory(annex.SERVERPATH);
+                    }
+
+                    //保存附件（服务器存储路径）
+                    Request.Files[index].SaveAs(annex.SERVERPATH);
+
+                    //加入数据库
+                    bllAnnex.Add(annex);
+
+                    //公文附件示例：12,56,87,96,56
+                    model.ANNEX += bllAnnex.GetMaxId().ToString() + ",";
+                }
+            }
+            #endregion
+                        
             //保存公文到数据库
             bll.Add(model);
 
@@ -386,6 +385,7 @@ namespace SmartHyd.ManageCenter.Official {
             bll.Update(model);
         }
 
+        #region 按钮事件
         //提交操作
         protected void btnSubmit_Click(object sender, EventArgs e) {
             litmsg.Visible = false;
@@ -427,7 +427,10 @@ namespace SmartHyd.ManageCenter.Official {
         protected void btnCancel_Click(object sender, EventArgs e) {
             Response.Redirect("Accept.aspx", true);
         }
-        //文单位节点选择状态改变
+        #endregion
+
+        #region 树节点选择
+        //收文单位节点选择状态改变
         protected void TreeViewAcceptUnit_SelectedNodeChanged(object sender, EventArgs e) {
 
         }
@@ -455,5 +458,6 @@ namespace SmartHyd.ManageCenter.Official {
                 RecursiveNode(node, 3);
             }
         }
+        #endregion
     }
 }
