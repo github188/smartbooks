@@ -321,6 +321,8 @@
     <Content Include="ManageCenter\Official\ReplySource.aspx" />
     <Content Include="ManageCenter\Official\Trash.aspx" />
     <Content Include="ManageCenter\Overrun\OverrunIndex.aspx" />
+    <Content Include="ManageCenter\Patrol\DeptTree.aspx" />
+    <Content Include="ManageCenter\Patrol\Electronic.aspx" />
     <Content Include="ManageCenter\PersonTerm\PersonTerm.aspx" />
     <Content Include="ManageCenter\PersonTerm\Term.aspx" />
     <Content Include="ManageCenter\Plan.aspx" />
@@ -1531,6 +1533,20 @@
     </Compile>
     <Compile Include="ManageCenter\Official\Trash.aspx.designer.cs">
       <DependentUpon>Trash.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\Patrol\DeptTree.aspx.cs">
+      <DependentUpon>DeptTree.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\Patrol\DeptTree.aspx.designer.cs">
+      <DependentUpon>DeptTree.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\Patrol\Electronic.aspx.cs">
+      <DependentUpon>Electronic.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\Patrol\Electronic.aspx.designer.cs">
+      <DependentUpon>Electronic.aspx</DependentUpon>
     </Compile>
     <Compile Include="ManageCenter\RoadLicense\List.aspx.cs">
       <DependentUpon>List.aspx</DependentUpon>

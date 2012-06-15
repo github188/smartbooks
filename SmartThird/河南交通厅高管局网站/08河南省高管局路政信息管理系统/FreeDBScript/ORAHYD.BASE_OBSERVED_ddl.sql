@@ -1,13 +1,10 @@
 -- Start of DDL Script for Table ORAHYD.BASE_OBSERVED
--- Generated 12-六月-2012 9:23:17 from ORAHYD@ORAHYD
+-- Generated 2012-6-15 下午 07:06:37 from ORAHYD@ORAHYD
 
 CREATE TABLE base_observed
     (observedid                     NUMBER DEFAULT 0 NOT NULL,
     patroluser                     VARCHAR2(50) NOT NULL,
     weather                        VARCHAR2(50) NOT NULL,
-    begintime                      DATE DEFAULT SYSDATE NOT NULL,
-    enddate                        DATE DEFAULT SYSDATE NOT NULL,
-    log                            VARCHAR2(500) NOT NULL,
     deptid                         NUMBER NOT NULL,
     state                          NUMBER DEFAULT 0 NOT NULL,
     remark                         VARCHAR2(500))
@@ -72,13 +69,7 @@ END;
 
 COMMENT ON TABLE base_observed IS '电子巡逻日志表'
 /
-COMMENT ON COLUMN base_observed.begintime IS '巡查开始时间'
-/
 COMMENT ON COLUMN base_observed.deptid IS '巡逻单位'
-/
-COMMENT ON COLUMN base_observed.enddate IS '巡查结束时间'
-/
-COMMENT ON COLUMN base_observed.log IS '巡查处理情况'
 /
 COMMENT ON COLUMN base_observed.observedid IS '电子巡逻日志编号'
 /

@@ -26,7 +26,7 @@ namespace SmartHyd.BLL {
         /// 获取最大ID编号
         /// </summary>
         /// <returns></returns>
-        public decimal GetMaxID()
+        public string GetMaxID()
         {
             return dal.GetMaxID();
         }

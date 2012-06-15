@@ -277,21 +277,28 @@ OracleParameter[] parameters = {
         /// 获取最大ID编号
         /// </summary>
         /// <returns></returns>
-        public decimal GetMaxID()
+        public string GetMaxID()
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("select max(PATROLID) as ID");
             strSql.Append("  from BASE_PATROL ");
             Entity.BASE_PATROL entity = new Entity.BASE_PATROL();
             DataTable dt = OracleHelper.Query(CommandType.Text, strSql.ToString());
-            decimal id = -1;
+            string id = string.Empty;
             if (dt.Rows.Count > 0)
             {
-                id= Convert.ToDecimal(dt.Rows[0]["ID"]);
+                if ( null == dt.Rows[0]["ID"]||""== dt.Rows[0]["ID"].ToString())
+                {
+                    id = "-1";
+                }
+                else
+                {
+                    id = dt.Rows[0]["ID"].ToString();
+                }
             }
             else
             {
-                id = -1;
+                id = "-1";
             }
             return id;
         }

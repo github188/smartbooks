@@ -1,5 +1,5 @@
 -- Start of DDL Script for Table ORAHYD.BASE_USER
--- Generated 2012-6-12 ионГ 11:28:14 from ORAHYD@ORAHYD
+-- Generated 2012-6-15 обнГ 07:03:17 from ORAHYD@ORAHYD
 
 CREATE TABLE base_user
     (userid                         NUMBER DEFAULT 0 NOT NULL,

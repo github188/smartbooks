@@ -204,7 +204,7 @@ namespace SmartHyd.Patrol
 
         private void PatrolAdd(Entity.BASE_PATROL model)
         {
-            decimal Pid = bll.GetMaxID();//获取最新添加的巡逻日志编号
+            decimal Pid =Convert.ToDecimal(bll.GetMaxID());//获取最新添加的巡逻日志编号
             string sqlwhere = "1=1 and PID=" + Pid + " and to_char(BEGINTIME,'yyyy-MM-dd')=to_char(sysdate,'yyyy-MM-dd')";//查询当前巡逻日志下是否有巡查处理情况
             if (handlingbll.GetList(sqlwhere).Rows.Count > 0)
             {
@@ -216,7 +216,7 @@ namespace SmartHyd.Patrol
                 int a = bll.Add(model);//添加人工巡逻日志
                 if (a > 0)
                 {
-                    decimal newPid = bll.GetMaxID();//获取最新添加的巡逻日志编号
+                    decimal newPid = Convert.ToDecimal(bll.GetMaxID());//获取最新添加的巡逻日志编号
                     Entity.BASE_HANDLING handlingmodel = GetHandlingEntity(newPid, 3);
                     handlingbll.Add(handlingmodel);//添加巡查处理情况
                 }

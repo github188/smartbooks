@@ -1,5 +1,5 @@
 -- Start of DDL Script for Table ORAHYD.BASE_PATROL
--- Generated 12-六月-2012 9:24:55 from ORAHYD@ORAHYD
+-- Generated 2012-6-15 下午 07:06:12 from ORAHYD@ORAHYD
 
 CREATE TABLE base_patrol
     (patrolid                       NUMBER NOT NULL,
@@ -7,21 +7,16 @@ CREATE TABLE base_patrol
     respuser                       VARCHAR2(20) NOT NULL,
     patroluser                     VARCHAR2(20) NOT NULL,
     busnumber                      VARCHAR2(20) NOT NULL,
-    mileage                        NUMBER DEFAULT 0 NOT NULL,
-    weather                        VARCHAR2(50) NOT NULL,
-    log                            VARCHAR2(500) DEFAULT '无' NOT NULL,
-    begintime                      DATE DEFAULT SYSDATE NOT NULL,
-    endtime                        DATE DEFAULT SYSDATE NOT NULL,
-    transfer                       NUMBER NOT NULL,
-    accept                         NUMBER NOT NULL,
-    within                         VARCHAR2(500) DEFAULT '无' NOT NULL,
-    nextwithin                     VARCHAR2(500) DEFAULT '无' NOT NULL,
-    acceptcaptain                  VARCHAR2(20) NOT NULL,
-    shiftcaptain                   VARCHAR2(20) NOT NULL,
-    acceptbusnumber                VARCHAR2(20) NOT NULL,
-    ticktime                       DATE DEFAULT SYSDATE NOT NULL,
-    buskm                          NUMBER DEFAULT 0 NOT NULL,
-    goods                          VARCHAR2(500) NOT NULL,
+    mileage                        NUMBER DEFAULT 0,
+    weather                        VARCHAR2(50),
+    within                         VARCHAR2(500) DEFAULT '无',
+    nextwithin                     VARCHAR2(500) DEFAULT '无',
+    acceptcaptain                  VARCHAR2(20),
+    shiftcaptain                   VARCHAR2(20),
+    acceptbusnumber                VARCHAR2(20),
+    ticktime                       DATE DEFAULT SYSDATE,
+    buskm                          NUMBER DEFAULT 0,
+    goods                          VARCHAR2(500),
     state                          NUMBER DEFAULT 0 NOT NULL,
     attention                      VARCHAR2(500),
     remark                         VARCHAR2(500))
@@ -86,15 +81,11 @@ END;
 
 COMMENT ON TABLE base_patrol IS '人工巡逻日志表'
 /
-COMMENT ON COLUMN base_patrol.accept IS '接收人'
-/
 COMMENT ON COLUMN base_patrol.acceptbusnumber IS '接班巡逻车牌号'
 /
 COMMENT ON COLUMN base_patrol.acceptcaptain IS '接班中队长'
 /
 COMMENT ON COLUMN base_patrol.attention IS '重点关注'
-/
-COMMENT ON COLUMN base_patrol.begintime IS '巡查开始时间'
 /
 COMMENT ON COLUMN base_patrol.buskm IS '接班巡逻车里程表（KM）'
 /
@@ -102,11 +93,7 @@ COMMENT ON COLUMN base_patrol.busnumber IS '巡查车牌号'
 /
 COMMENT ON COLUMN base_patrol.deptid IS '巡查中队'
 /
-COMMENT ON COLUMN base_patrol.endtime IS '巡查结束时间'
-/
 COMMENT ON COLUMN base_patrol.goods IS '移交器材'
-/
-COMMENT ON COLUMN base_patrol.log IS '巡查处理情况'
 /
 COMMENT ON COLUMN base_patrol.mileage IS '巡查里程'
 /
@@ -125,8 +112,6 @@ COMMENT ON COLUMN base_patrol.shiftcaptain IS '交班中队长'
 COMMENT ON COLUMN base_patrol.state IS '状态（0：正常，1：删除；）'
 /
 COMMENT ON COLUMN base_patrol.ticktime IS '交接班时间'
-/
-COMMENT ON COLUMN base_patrol.transfer IS '移交人'
 /
 COMMENT ON COLUMN base_patrol.weather IS '天气'
 /

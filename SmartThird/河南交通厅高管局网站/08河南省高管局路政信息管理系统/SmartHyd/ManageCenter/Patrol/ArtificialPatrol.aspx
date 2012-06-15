@@ -29,7 +29,6 @@
 
         }
     </script>
-   
 </head>
 <body>
     <form id="form1" runat="server">
@@ -39,32 +38,6 @@
         <ContentTemplate>
             <table border="0" cellpadding="0" cellspacing="0" width="100%" style="height: 740px">
                 <tr>
-                    <td style="height: 24px;">
-                        <div id="menu">
-                            <div class="OperateNote">
-                                <span id="buttons0">
-                                    <img src="../../Images/branch.png" alt="" border="0" />当前位置：路政巡逻管理中心》人工巡逻日志管理</span></div>
-                            <ul>
-                                <li id="menu_Title0" onclick="nTabs('menu',this,1)" class="normal"><a href="PatrolEdit.aspx"
-                                    title="信息新增" target="patrolFrame"><span id="buttons1">
-                                        <img src="../../Images/add.png" alt="" border="0" />&nbsp;新增日志</span></a></li>
-                            </ul>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <%--<td valign="top">
-                        <asp:TreeView ID="TreeViewAcceptUnit" runat="server" CssClass="treeViewStyle" ImageSet="BulletedList4"
-                            ShowExpandCollapse="true" Width="300px" ShowCheckBoxes="All" ShowLines="True">
-                            <HoverNodeStyle Font-Underline="True" ForeColor="#000000" />
-                            <NodeStyle Font-Names="Tahoma" Font-Size="10pt" ForeColor="#000000" HorizontalPadding="5px"
-                                NodeSpacing="0px" VerticalPadding="0px" />
-                            <ParentNodeStyle Font-Bold="False" />
-                            <RootNodeStyle ImageUrl="~/Images/chart_organisation.png" />
-                            <SelectedNodeStyle Font-Underline="True" ForeColor="#000000" HorizontalPadding="0px"
-                                VerticalPadding="0px" BackColor="#0066CC" />
-                        </asp:TreeView>
-                    </td>--%>
                     <td valign="top">
                         <table class="edit" border="0" cellpadding="0" cellspacing="0" width="100%">
                             <tr id="search_condition_panel" style="height: 48px; border-bottom: 1px solid #8cb2e2;">

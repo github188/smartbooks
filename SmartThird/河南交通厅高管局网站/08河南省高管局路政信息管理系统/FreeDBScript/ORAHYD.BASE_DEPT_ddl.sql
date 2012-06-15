@@ -1,5 +1,5 @@
 -- Start of DDL Script for Table ORAHYD.BASE_DEPT
--- Generated 2012-6-9 обнГ 07:04:01 from ORAHYD@ORAHYD
+-- Generated 2012-6-15 обнГ 07:07:05 from ORAHYD@ORAHYD
 
 CREATE TABLE base_dept
     (deptid                         NUMBER NOT NULL,

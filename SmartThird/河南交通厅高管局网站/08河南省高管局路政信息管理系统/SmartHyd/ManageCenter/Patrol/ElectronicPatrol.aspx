@@ -45,40 +45,8 @@
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
             <table border="0" cellpadding="0" cellspacing="0" width="100%" style="height: 740px">
+               
                 <tr>
-                    <td colspan="2" style="height: 24px;">
-                        <div id="menu">
-                            <div class="OperateNote">
-                                <span id="buttons">
-                                    <img src="../../Images/branch.png" alt="" border="0" />当前位置：路政巡逻管理中心&gt;&gt;电子巡逻日志管理</span></div>
-                            <ul>
-                                <li id="menu_Title0" onclick="nTabs('menu',this,1)" class="normal"><a href="ElectronicEdit.aspx"
-                                    title="信息新增" target="PatrolFrame"><span id="buttons">
-                                        <img src="../../Images/add.png" border="0" />&nbsp;新增日志</span></a></li>
-                                <%-- <li id="menu_Title1" onclick="nTabs('menu',this,4)" class="normal"><a href="#"><span id="buttons"><img src="../Images/edit.png" border="0"/>&nbsp;编辑</span></a></li>
-                                <li id="menu_Title2" onclick="nTabs('menu',this,4)" class="normal"><a href="#"><span id="buttons"><img src="../Images/delete.png" border="0"/>&nbsp;删除</span></a></li>
-                                <li id="menu_Title3" onclick="nTabs('menu',this,4)" class="normal">
-                                    <a href="javascript:showConditionPanel()">
-                                        <span id="buttons"><img src="../Images/search.png" border="0"/>&nbsp;查询</span>
-                                    </a>
-                                </li>--%>
-                            </ul>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td valign="top">
-                        <asp:TreeView ID="TreeViewAcceptUnit" runat="server" CssClass="treeViewStyle" ImageSet="BulletedList4"
-                            ShowExpandCollapse="true" Width="300px" ShowCheckBoxes="All" ShowLines="True">
-                            <HoverNodeStyle Font-Underline="True" ForeColor="#000000" />
-                            <NodeStyle Font-Names="Tahoma" Font-Size="10pt" ForeColor="#000000" HorizontalPadding="5px"
-                                NodeSpacing="0px" VerticalPadding="0px" />
-                            <ParentNodeStyle Font-Bold="False" />
-                            <RootNodeStyle ImageUrl="~/Images/chart_organisation.png" />
-                            <SelectedNodeStyle Font-Underline="True" ForeColor="#000000" HorizontalPadding="0px"
-                                VerticalPadding="0px" BackColor="#0066CC" />
-                        </asp:TreeView>
-                    </td>
                     <td valign="top">
                         <table class="edit" border="0" cellpadding="0" cellspacing="0" width="100%">
                             <tr id="search_condition_panel" style="height: 48px; border-bottom: 1px solid #8cb2e2;">

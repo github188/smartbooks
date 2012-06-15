@@ -7,10 +7,10 @@
 // </自动生成>
 //------------------------------------------------------------------------------
 
-namespace SmartHyd.Patrol {
+namespace SmartHyd.ManageCenter.Patrol {
     
     
-    public partial class PatrolIndex {
+    public partial class Electronic {
         
         /// <summary>
         /// form1 控件。

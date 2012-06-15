@@ -1,10 +1,10 @@
-<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PatrolIndex.aspx.cs" Inherits="SmartHyd.Patrol.PatrolIndex" %>
+ï»¿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Electronic.aspx.cs" Inherits="SmartHyd.ManageCenter.Patrol.Electronic" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
-    <title>Â·ÕşÑ²Âß¹ÜÀíÖĞĞÄ</title>
+    <title>ç”µå­å·¡é€»æ—¥å¿—</title>
      <link href="../../Css/tongdaoa.css" rel="stylesheet" type="text/css" />
     <link href="../../Css/patrol.css" rel="stylesheet" type="text/css" />
     <script src="../../Scripts/jquery-ui-1.8.18.custom/js/jquery-1.7.1.min.js" type="text/javascript"></script>
@@ -21,17 +21,18 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <table border="0" cellpadding="0" cellspacing="0" style="height: 740px; width: 100%;">
+    <div>
+     <table border="0" cellpadding="0" cellspacing="0" style="height: 740px; width: 100%;">
         <tr>
             <td colspan="2" style="height: 24px;">
                 <div id="menu">
                     <div class="OperateNote">
                         <span id="buttons0">
-                            <img src="../../Images/branch.png" alt="" border="0" />µ±Ç°Î»ÖÃ£ºÂ·ÕşÑ²Âß¹ÜÀíÖĞĞÄ&gt;&gt;ÈË¹¤Ñ²ÂßÈÕÖ¾¹ÜÀí</span></div>
+                            <img src="../../Images/branch.png" alt="" border="0" />å½“å‰ä½ç½®ï¼šè·¯æ”¿å·¡é€»ç®¡ç†ä¸­å¿ƒ&gt;&gt;ç”µå­å·¡é€»æ—¥å¿—ç®¡ç†</span></div>
                     <ul>
-                        <li id="menu_Title0" onclick="nTabs('menu',this,1)" class="normal"><a href="PatrolEdit.aspx"
-                            title="ĞÅÏ¢ĞÂÔö" target="PatrolFrame"><span id="buttons1">
-                                <img src="../../Images/add.png" alt="" border="0" />&nbsp;ĞÂÔöÈÕÖ¾</span></a></li>
+                        <li id="menu_Title0" onclick="nTabs('menu',this,1)" class="normal"><a href="ElectronicEdit.aspx"
+                            title="ä¿¡æ¯æ–°å¢" target="PatrolFrame"><span id="buttons1">
+                                <img src="../../Images/add.png" alt="" border="0" />&nbsp;æ–°å¢æ—¥å¿—</span></a></li>
                     </ul>
                 </div>
             </td>
@@ -42,16 +43,18 @@
                 </iframe>
             </td>
             <td valign="top">
-                <iframe src="ArtificialPatrol.aspx" name="PatrolFrame" id="PatrolFrame" frameborder="0"
+                <iframe src="ElectronicPatrol.aspx" name="PatrolFrame" id="PatrolFrame" frameborder="0"
                     width="100%" height="100%"></iframe>
             </td>
         </tr>
     </table>
+    </div>
     </form>
 </body>
 </html>
+
 <script type="text/javascript">
-    //tabĞ§¹ûÍ¨ÓÃº¯Êı
+    //tabæ•ˆæœé€šç”¨å‡½æ•°
     function nTabs(tabObj, obj, n) {
         var tabList = document.getElementById(tabObj).getElementsByTagName("li");
         for (i = 0; i < n; i++) {
@@ -62,4 +65,5 @@
             }
         }
     }
+
 </script>
