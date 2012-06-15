@@ -40,31 +40,31 @@ namespace SmartHyd.ManageCenter.IM {
         protected global::System.Web.UI.ScriptManager ScriptManager1;
         
         /// <summary>
-        /// litSendName 控件。
+        /// litTime 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litSendName;
+        protected global::System.Web.UI.WebControls.Literal litTime;
         
         /// <summary>
-        /// litTIme 控件。
+        /// hidPrimary 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litTIme;
+        protected global::System.Web.UI.WebControls.HiddenField hidPrimary;
         
         /// <summary>
-        /// litContent 控件。
+        /// txtContent 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litContent;
+        protected global::System.Web.UI.WebControls.TextBox txtContent;
         
         /// <summary>
         /// btnReply 控件。

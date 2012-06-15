@@ -37,32 +37,25 @@
             </tr>
             <tr>
                 <td nowrap="nowrap" class="TableData" width="30">
-                   姓名:
+                    时间:
                 </td>
                 <td nowrap="nowrap" class="TableData" align="left">
-                    <asp:Literal ID="litSendName" runat="server"></asp:Literal>
-                 </td>
+                    <asp:Literal ID="litTime" runat="server"></asp:Literal>
+                    <asp:HiddenField ID="hidPrimary" runat="server" Value="-1" />
+                </td>
             </tr>
             <tr>
                 <td nowrap="nowrap" class="TableData" width="30">
-                   时间:
-                </td>
-                <td nowrap="nowrap" class="TableData" align="left">
-                    <asp:Literal ID="litTIme" runat="server"></asp:Literal>
-                 </td>
-            </tr>
-            <tr>
-                <td nowrap="nowrap" class="TableData" width="30">
-                   正文:
+                    正文:
                 </td>
                 <td nowrap="nowrap" class="TableData">
-                    <asp:Literal ID="litContent" runat="server"></asp:Literal>
+                    <asp:TextBox ID="txtContent" runat="server" TextMode="MultiLine" Width="99%" Height="120"></asp:TextBox>
                 </td>
             </tr>
             <!--操作按钮-->
             <tr class="TableControl" align="center">
                 <td nowrap="nowrap" colspan="2">
-                    <asp:Button ID="btnReply" runat="server" Text="回复" CssClass="Button" />
+                    <asp:Button ID="btnReply" runat="server" Text="回复" CssClass="Button" OnClick="btnReply_Click" />
                 </td>
             </tr>
         </tbody>

@@ -14,6 +14,17 @@ namespace SmartHyd.ManageCenter.IM {
 
         protected void Page_Load(object sender, EventArgs e) {
             userSession = (Utility.UserSession)Session["user"];
+
+            if (Request.QueryString["id"] != null) {
+                int id = Convert.ToInt32(Request.QueryString["id"]);
+                Entity.BASE_MESSAGE m = new Entity.BASE_MESSAGE();
+                m = bll.GetEntity(id);
+
+                Entity.BASE_USER userModel = new Entity.BASE_USER();
+                userModel = bllUser.GetUser(Convert.ToInt32(m.SENDER));
+
+                txtAccept.Text = userModel.USERNAME;
+            }
         }
 
         private bool CheckInput() {
