@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartHydUI", "SmartHydUI\Sm
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartHydUtility", "SmartHydUtility\SmartHydUtility.csproj", "{3C1180E0-2514-49EB-9436-E6C6D8615AE3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartSms", "..\..\..\Smart\SmartSms\SmartSms\SmartSms.csproj", "{D72D9001-F40F-4C5E-8F44-9E1980B36A07}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,10 @@ Global
 		{3C1180E0-2514-49EB-9436-E6C6D8615AE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3C1180E0-2514-49EB-9436-E6C6D8615AE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3C1180E0-2514-49EB-9436-E6C6D8615AE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D72D9001-F40F-4C5E-8F44-9E1980B36A07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D72D9001-F40F-4C5E-8F44-9E1980B36A07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D72D9001-F40F-4C5E-8F44-9E1980B36A07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D72D9001-F40F-4C5E-8F44-9E1980B36A07}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -77,5 +83,6 @@ Global
 		{40B79F71-57F3-4E04-8277-25A24CDCB7A5} = {C091C5D7-C459-4D7D-94F1-422A3841FDB9}
 		{116EC11E-6812-48DF-BFD6-8B3FF66C884F} = {C091C5D7-C459-4D7D-94F1-422A3841FDB9}
 		{B7456CA5-DDD6-47D7-9618-9C4A5F7C8D6B} = {C091C5D7-C459-4D7D-94F1-422A3841FDB9}
+		{D72D9001-F40F-4C5E-8F44-9E1980B36A07} = {C091C5D7-C459-4D7D-94F1-422A3841FDB9}
 	EndGlobalSection
 EndGlobal

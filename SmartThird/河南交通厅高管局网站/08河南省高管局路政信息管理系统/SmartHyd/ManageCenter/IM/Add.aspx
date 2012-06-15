@@ -31,20 +31,41 @@
         <tbody>
             <!--首选行-->
             <tr class="TableHeader">
-                <td>
+                <td colspan="2">
                     新建消息
                 </td>
             </tr>
             <tr>
+                <td nowrap="nowrap" class="TableData" width="30">
+                   接收:
+                </td>
+                <td nowrap="nowrap" class="TableData" align="left">
+                    <asp:TextBox ID="txtAccept" runat="server" Width="99%" TextMode="MultiLine"></asp:TextBox>
+                 </td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap" class="TableData" width="30">
+                   正文:
+                </td>
                 <td nowrap="nowrap" class="TableData">
-                   
+                    <asp:TextBox ID="txtContent" runat="server" Width="100%" Height="120" TextMode="MultiLine"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap" class="TableData" width="30">
+                   选项:
+                </td>
+                <td nowrap="nowrap" class="TableData">
+                    <asp:CheckBox ID="chkSMSAlert" runat="server" Text="短信提醒" />
                 </td>
             </tr>
             <!--操作按钮-->
             <tr class="TableControl" align="center">
-                <td nowrap="nowrap">
-                    <asp:Button ID="btnSend" runat="server" Text="发送" CssClass="Button"  />
-                    <asp:Button ID="btnCancel" runat="server" Text="取消" CssClass="Button" />
+                <td nowrap="nowrap" colspan="2">
+                    <asp:Button ID="btnSend" runat="server" Text="发送" CssClass="Button" 
+                        onclick="btnSend_Click"  />
+                    <asp:Button ID="btnCancel" runat="server" Text="取消" CssClass="Button" 
+                        onclick="btnCancel_Click" />
                 </td>
             </tr>
         </tbody>
