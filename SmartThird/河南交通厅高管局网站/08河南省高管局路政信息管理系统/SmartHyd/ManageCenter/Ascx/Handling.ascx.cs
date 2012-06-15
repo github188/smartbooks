@@ -11,7 +11,11 @@ namespace SmartHyd.ManageCenter.Ascx
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                this.txtBEGINDate.Text = DateTime.Now.ToString("yyyy-MM-dd");
+                this.txtENDDate.Text = DateTime.Now.ToString("yyyy-MM-dd");
+            }
         }
     }
 }

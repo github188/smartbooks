@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
 
 namespace SmartHyd.Patrol
 {
@@ -20,16 +21,43 @@ namespace SmartHyd.Patrol
                 {
                     //添加状态页面
                     this.LabName.Text = "添加人工巡逻日志";
-                    //判断第几次巡逻
-                    if (1==1)
+                    //判断第几次巡逻:如果巡逻开始日期不是当前日期为第一次巡逻；
+                             //如果当前日期下有一条数据则为第二次巡逻；
+                             //如果当前日期下数据记录总数与巡逻次数相同：显示下班，交接班内容
+                    string sqlwhere="1=1 AND to_char(BEGINTIME,'yyyy-MM-dd')=to_char(sysdate,'yyyy-MM-dd')";
+                    DataTable dt=handlingbll.GetList(sqlwhere);
+                    if (dt.Rows.Count > 0)
                     {
-                         // string id = "2";
-                            this.liname.Style.Add("display","block");
-                            //追加巡查情况选项也米昂
-                            this.tabs_2.Style.Add("display", "block");
-                            //this.tab.InnerHtml += "<div id=\"tabs-" + id + "\">";
-                            //this.tab.InnerHtml += " <uc2:Handling ID=\"Handling" + id + "\" runat=\"server\"></uc2:Handling>";
-                            //this.tab.InnerHtml += "</div>";
+                        //巡逻次数
+                        int times=Convert.ToInt32(dt.Rows[0]["TIMES"]);
+                        if (handlingbll.getCount() == times)
+                        {
+                            this.divShift.Style.Add("display", "block");
+                        }
+                        else
+                        {
+                            //追加巡查情况选项卡
+                            if (dt.Rows.Count == 1)
+                            {
+                                this.liname2.Style.Add("display", "block");
+                                this.tabs_2.Style.Add("display", "block");
+                            }
+                            if (dt.Rows.Count == 2)
+                            {
+                                this.liname3.Style.Add("display", "block");
+                                this.tabs_3.Style.Add("display", "block");
+                            }
+                            if (dt.Rows.Count == 3)
+                            {
+                                this.liname3.Style.Add("display", "block");
+                                this.tabs_3.Style.Add("display", "block");
+                            }
+                        }
+                    }
+                    else
+                    {
+                       // this.liname.Style.Add("display", "none");
+                        //this.tabs_2.Style.Add("display", "none");
                     }
                 }
                 else
@@ -114,25 +142,41 @@ namespace SmartHyd.Patrol
         }
         #endregion
         #region 巡查处理情况
-        private Entity.BASE_HANDLING GetHandlingEntity(decimal pid)
+        /// <summary>
+        /// 获取处理情况实体数据
+        /// </summary>
+        /// <param name="pid">巡逻日志编号</param>
+        /// <param name="times">巡逻次数</param>
+        /// <returns></returns>
+        private Entity.BASE_HANDLING GetHandlingEntity(decimal pid,decimal times)
         {
             Entity.BASE_HANDLING model = new Entity.BASE_HANDLING();
             model.HID = -1;//主键，巡查处理情况编号
             model.PATROLTYPE = "人工巡逻";//巡逻类型；
-            model.TIMES = 3;//巡逻次数；
-            //model.BEGINTIME=Convert.ToDateTime(this.Handling1.FindControl("txtBEGINTIME")..Text);//开始时间
-            //model.ENDTIME = Convert.ToDateTime(this.txtENDTIME.Text);//结束时间
-            //model.CONTENT = this.txtLog.Text;//处理情况内容；
-            //model.PID = pid;
-            //model.REMARK = this.txtRemark.Text;//备注
+            model.TIMES = times;//巡逻次数；
+            TextBox tb1 = (TextBox)this.Handling1.FindControl("txtBEGINTIME");
+
+            model.BEGINTIME = Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd")+" "+tb1.Text);//开始时间
+            TextBox tb2 = (TextBox)this.Handling1.FindControl("txtENDTIME");
+            model.ENDTIME = Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd") + " " + tb2.Text);//结束时间
+            TextBox txtLog = (TextBox)this.Handling1.FindControl("txtLog");
+            model.CONTENT = txtLog.Text;//处理情况内容；
+            model.PID = pid;
+            TextBox txtRemark = (TextBox)this.Handling1.FindControl("txtRemark");
+            model.REMARK = txtRemark.Text;//备注
             return model;
         }
         private void SetHandlingEntity(Entity.BASE_HANDLING model)
         {
-            //txtLog.Text = model.CONTENT;
-            //txtBEGINTIME.Text = model.BEGINTIME.ToString("yyyy-MM-dd hh:mm:ss");
-            //txtENDTIME.Text = model.ENDTIME.ToString("yyyy-MM-dd hh:mm:ss");
-            //this.txtRemark.Text = model.REMARK;
+            TextBox tb1 = (TextBox)this.Handling1.FindControl("txtBEGINTIME");
+
+            tb1.Text=model.BEGINTIME.ToString("yyyy-MM-dd hh:mm:ss");//开始时间
+            TextBox tb2 = (TextBox)this.Handling1.FindControl("txtENDTIME");
+            tb2.Text = model.ENDTIME.ToString("yyyy-MM-dd hh:mm:ss");//结束时间
+            TextBox txtLog = (TextBox)this.Handling1.FindControl("txtLog");
+             txtLog.Text=model.CONTENT;//处理情况内容；
+            TextBox txtRemark = (TextBox)this.Handling1.FindControl("txtRemark");
+            txtRemark.Text=model.REMARK;//备注
         }
         #endregion
 
@@ -144,15 +188,7 @@ namespace SmartHyd.Patrol
             {
                 if (ViewState["id"] == null)
                 {
-                    if (bll.Add(model) > 0)
-                    {
-                        decimal Pid = bll.GetMaxID();//获取最新添加的巡逻日志编号
-                        Entity.BASE_HANDLING handlingmodel = GetHandlingEntity(Pid);
-                        if (handlingbll.Add(handlingmodel) > 0)//添加巡查处理情况
-                        {
-                          
-                        }
-                    }
+                    PatrolAdd(model);//添加人工巡逻日志
                 }
                 else
                 {
@@ -163,6 +199,31 @@ namespace SmartHyd.Patrol
             else
             {
                 return;
+            }
+        }
+
+        private void PatrolAdd(Entity.BASE_PATROL model)
+        {
+            decimal Pid = bll.GetMaxID();//获取最新添加的巡逻日志编号
+            string sqlwhere = "1=1 and PID=" + Pid + " and to_char(BEGINTIME,'yyyy-MM-dd')=to_char(sysdate,'yyyy-MM-dd')";//查询当前巡逻日志下是否有巡查处理情况
+            if (handlingbll.GetList(sqlwhere).Rows.Count > 0)
+            {
+                Entity.BASE_HANDLING handlingmodel = GetHandlingEntity(Pid, 3);
+                handlingbll.Add(handlingmodel);//添加巡查处理情况
+            }
+            else
+            {
+                int a = bll.Add(model);//添加人工巡逻日志
+                if (a > 0)
+                {
+                    decimal newPid = bll.GetMaxID();//获取最新添加的巡逻日志编号
+                    Entity.BASE_HANDLING handlingmodel = GetHandlingEntity(newPid, 3);
+                    handlingbll.Add(handlingmodel);//添加巡查处理情况
+                }
+                else
+                {
+                    //提示添加巡逻日志失败
+                }
             }
         }
         /// <summary>

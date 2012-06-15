@@ -19,6 +19,14 @@ namespace SmartHyd.BLL
             DataSet ds = dal.GetList(strwhere);
             return ds.Tables[0];
         }
+       /// <summary>
+       /// 获取当前日期下记录的数量
+       /// </summary>
+       /// <returns></returns>
+        public int getCount()
+        {
+            return dal.GetCount();
+        }
         /// <summary>
         /// 添加巡查处理情况
         /// </summary>

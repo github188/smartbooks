@@ -29,9 +29,7 @@
 
         }
     </script>
-     <style type="text/css">
-        .treeViewStyle{ height:100%; overflow-y:scroll; color:#000000; }
-    </style>
+   
 </head>
 <body>
     <form id="form1" runat="server">
@@ -39,9 +37,9 @@
     </asp:ScriptManager>
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
-            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="height: 100%">
+            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="height: 740px">
                 <tr>
-                    <td colspan="2" style="height: 24px;">
+                    <td style="height: 24px;">
                         <div id="menu">
                             <div class="OperateNote">
                                 <span id="buttons0">
@@ -55,22 +53,20 @@
                     </td>
                 </tr>
                 <tr>
-                    <td valign="top">
-                        <asp:TreeView ID="TreeViewAcceptUnit" 
-                                runat="server" CssClass="treeViewStyle" ImageSet="BulletedList4" 
-                                ShowExpandCollapse="true" Width="300px" 
-                               ShowCheckBoxes="All" ShowLines="True">
+                    <%--<td valign="top">
+                        <asp:TreeView ID="TreeViewAcceptUnit" runat="server" CssClass="treeViewStyle" ImageSet="BulletedList4"
+                            ShowExpandCollapse="true" Width="300px" ShowCheckBoxes="All" ShowLines="True">
                             <HoverNodeStyle Font-Underline="True" ForeColor="#000000" />
-                            <NodeStyle Font-Names="Tahoma" Font-Size="10pt" ForeColor="#000000" 
-                                HorizontalPadding="5px" NodeSpacing="0px" VerticalPadding="0px" />
+                            <NodeStyle Font-Names="Tahoma" Font-Size="10pt" ForeColor="#000000" HorizontalPadding="5px"
+                                NodeSpacing="0px" VerticalPadding="0px" />
                             <ParentNodeStyle Font-Bold="False" />
                             <RootNodeStyle ImageUrl="~/Images/chart_organisation.png" />
-                            <SelectedNodeStyle Font-Underline="True" ForeColor="#000000" 
-                                HorizontalPadding="0px" VerticalPadding="0px" BackColor="#0066CC" />
-                            </asp:TreeView>
-                    </td>
-                    <td>
-                        <table>
+                            <SelectedNodeStyle Font-Underline="True" ForeColor="#000000" HorizontalPadding="0px"
+                                VerticalPadding="0px" BackColor="#0066CC" />
+                        </asp:TreeView>
+                    </td>--%>
+                    <td valign="top">
+                        <table class="edit" border="0" cellpadding="0" cellspacing="0" width="100%">
                             <tr id="search_condition_panel" style="height: 48px; border-bottom: 1px solid #8cb2e2;">
                                 <td>
                                     <table id="PatrolSearch" width="480" border="0" cellspacing="0" cellpadding="0">
@@ -153,15 +149,15 @@
                                 </td>
                             </tr>
                         </table>
+                        <webdiyer:AspNetPager ID="AspNetPager1" runat="server" CustomInfoHTML="共%PageCount%页，当前为第%CurrentPageIndex%页"
+                            FirstPageText="首页" LastPageText="尾页" NextPageText="下一页" PageIndexBoxType="TextBox"
+                            PrevPageText="上一页" ShowCustomInfoSection="Right" ShowPageIndexBox="Auto" SubmitButtonText="Go"
+                            TextAfterPageIndexBox="页" TextBeforePageIndexBox="转到" OnPageChanging="AspNetPager1_PageChanging"
+                            PageSize="20" CssClass="anpager" CurrentPageButtonClass="cpb">
+                        </webdiyer:AspNetPager>
                     </td>
                 </tr>
             </table>
-            <webdiyer:AspNetPager ID="AspNetPager1" runat="server" CustomInfoHTML="共%PageCount%页，当前为第%CurrentPageIndex%页"
-                FirstPageText="首页" LastPageText="尾页" NextPageText="下一页" PageIndexBoxType="TextBox"
-                PrevPageText="上一页" ShowCustomInfoSection="Right" ShowPageIndexBox="Auto" SubmitButtonText="Go"
-                TextAfterPageIndexBox="页" TextBeforePageIndexBox="转到" OnPageChanging="AspNetPager1_PageChanging"
-                PageSize="20" CssClass="anpager" CurrentPageButtonClass="cpb">
-            </webdiyer:AspNetPager>
         </ContentTemplate>
     </asp:UpdatePanel>
     </form>

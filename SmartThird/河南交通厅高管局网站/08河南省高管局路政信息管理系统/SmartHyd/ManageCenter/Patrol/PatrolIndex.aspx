@@ -134,27 +134,29 @@
             vertical-align: middle;
             text-align: center;
         }
+        .treeViewStyle
+        {
+            height: 740px;
+            overflow-y: scroll;
+            color: #000000;
+        }
     </style>
 </head>
 <body scroll="no">
     <form id="form1" runat="server">
-    <table border="0" cellpadding="0" cellspacing="0" style="height: 100%; width: 100%;">
+    <table border="0" cellpadding="0" cellspacing="0" style="height: 740px; width: 100%;">
         <tr>
-            <td style="height: 37px; line-height: 37px;">
-                <div style="border-top: 2px solid #e7eaef">
-                </div>
-                <div id="menu">
-                    <div class="patrolsitemap">
-                    </div>
-                    <ul>
-                        <li id="menu_Title0" onclick="nTabs('menu',this,2)" class="actived"><a href="ArtificialPatrol.aspx"
-                            target="PatrolFrame"><span id="buttons">
-                                <img src="../../Images/a_patrol.png" alt="" border="0" />人工巡逻</span></a></li>
-                        <li id="menu_Title1" onclick="nTabs('menu',this,2)" class="normal"><a href="ElectronicPatrol.aspx"
-                            target="PatrolFrame"><span id="buttons">
-                                <img src="../../Images/e_patrol.png" alt="" border="0" />电子巡逻</span></a></li>
-                    </ul>
-                </div>
+            <td valign="top">
+                <asp:TreeView ID="TreeViewAcceptUnit" runat="server" CssClass="treeViewStyle" ImageSet="BulletedList4"
+                    ShowExpandCollapse="true" Width="300px" ShowCheckBoxes="All" ShowLines="True">
+                    <HoverNodeStyle Font-Underline="True" ForeColor="#000000" />
+                    <NodeStyle Font-Names="Tahoma" Font-Size="10pt" ForeColor="#000000" HorizontalPadding="5px"
+                        NodeSpacing="0px" VerticalPadding="0px" />
+                    <ParentNodeStyle Font-Bold="False" />
+                    <RootNodeStyle ImageUrl="~/Images/chart_organisation.png" />
+                    <SelectedNodeStyle Font-Underline="True" ForeColor="#000000" HorizontalPadding="0px"
+                        VerticalPadding="0px" BackColor="#0066CC" />
+                </asp:TreeView>
             </td>
         </tr>
         <tr>

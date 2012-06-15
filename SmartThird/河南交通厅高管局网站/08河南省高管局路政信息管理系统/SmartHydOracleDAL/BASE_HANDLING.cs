@@ -41,9 +41,18 @@ namespace SmartHyd.OracleDAL
                 return false;
             }
 		}
-		
-				
-		
+        /// <summary>
+        /// 获取当期日期下记录总数
+        /// </summary>
+        /// <returns></returns>
+        public int GetCount()
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("select count(*) as counts from BASE_HANDLING where  1=1 and to_char(BEGINTIME,'yyyy-MM-dd')=to_char(sysdate,'yyyy-MM-dd')");
+            DataSet ds = OracleHelper.Query(strSql.ToString());
+            int counts = Convert.ToInt32(ds.Tables[0].Rows[0]["counts"]);
+            return counts;
+        }
 		/// <summary>
 		/// 增加一条数据
 		/// </summary>
