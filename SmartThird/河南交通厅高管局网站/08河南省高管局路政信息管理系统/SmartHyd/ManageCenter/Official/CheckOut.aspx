@@ -29,7 +29,7 @@
             <td valign="top">
                 <asp:GridView ID="grvList" runat="server" AutoGenerateColumns="False" BackColor="White"
                     BorderColor="#CCCCCC" BorderStyle="None" Font-Size="12px" BorderWidth="1px" CellPadding="3"
-                    Width="100%" OnRowCommand="grvList_RowCommand">
+                    Width="100%" OnRowEditing="grvList_RowEditing">
                     <Columns>
                         <asp:BoundField DataField="dptname" HeaderText="部门名称">
                             <ItemStyle Width="180" />
@@ -49,7 +49,7 @@
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="操作">
                             <ItemTemplate>
-                                <asp:LinkButton runat="server" CommandName="up" CommandArgument='<%#Eval("id") %>'>更新</asp:LinkButton>
+                                <asp:LinkButton runat="server" CommandName="edit" CommandArgument='<%#Eval("id") %>'>更新</asp:LinkButton>
                             </ItemTemplate>
                             <ItemStyle Width="30" />
                         </asp:TemplateField>

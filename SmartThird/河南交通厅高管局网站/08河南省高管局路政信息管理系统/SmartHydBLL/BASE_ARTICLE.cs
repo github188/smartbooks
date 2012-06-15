@@ -91,5 +91,14 @@ namespace SmartHyd.BLL {
         public void UpdateState(int state, int id) {
             dal.UpdateState(state, id);
         }
+
+        /// <summary>
+        ///更新公文分数
+        /// </summary>
+        /// <param name="id">公文编号</param>
+        /// <param name="score">分值</param>
+        public bool UpdateSocre(int id, int score) {
+            return dal.UpdateSocre(id, score);
+        }
     }
 }

@@ -26,8 +26,8 @@ namespace SmartHyd.ManageCenter.Official {
             switch (e.CommandName) {
                 /*还原*/
                 case "back":
-                    /*还原为未审核*/
-                    bll.UpdateState(1, id);                    
+                    /*还原为草稿*/
+                    bll.UpdateState(2, id);                   
                     break;
                 /*彻底删除*/
                 case "del":

@@ -145,5 +145,19 @@ namespace SmartHyd.OracleDAL {
                 state, id);
             OracleHelper.ExecuteNonQuery(update);
         }
+
+        /// <summary>
+        ///更新公文分数
+        /// </summary>
+        /// <param name="id">公文编号</param>
+        /// <param name="score">分值</param>
+        public bool UpdateSocre(int id, int score) {
+            string update = string.Format("update base_article set SCORE={0} where id={1}",
+                score, id);
+            if (OracleHelper.ExecuteNonQuery(update) < 0) {
+                return false;
+            }
+            return true;
+        }
     }
 }

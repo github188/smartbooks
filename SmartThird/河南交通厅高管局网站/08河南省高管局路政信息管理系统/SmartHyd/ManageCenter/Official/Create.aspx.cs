@@ -80,17 +80,12 @@ namespace SmartHyd.ManageCenter.Official {
                 txtContent.Text = model.CONTENT;                        //内容
                 chkIsReply.Checked = model.ISREPLY.ToString().Equals("0") ? true : false;    //允许回复
                 txtSCORE.Text = model.SCORE.ToString();                 //分值
-                txtSendCode.Text = model.SENDCODE;                      //发文字号
-                //ddlStatus.SelectedValue = model.STATUS.ToString();      //发文状态
+                txtSendCode.Text = model.SENDCODE;                      //发文字号                
                 txtTitle.Text = model.TITLE;                            //标题
                 ddlTypeId.SelectedValue = model.TYPEID.ToString();      //公文类别
                 hidPrimary.Value = model.ID.ToString();                 //主键
                 hidParentPrimary.Value = model.PARENTID.ToString(); //父发文编号
-
-                //判断是否为编辑模式
-                if (model.ID > -1) {
-                    TreeViewAcceptUnit.Enabled = false;
-                }
+                //ddlStatus.SelectedValue = model.STATUS.ToString();      //发文状态
                 //model.TIMESTAMP = DateTime.Now;     //时间戳
                 //model.USERID = userSession.USERID;  //用户编号
                 //model.DEPTID = userSession.Department[0].DEPTID;    //部门
@@ -216,7 +211,12 @@ namespace SmartHyd.ManageCenter.Official {
                 txtSCORE.Focus();
                 return false;
             }
+            litmsg.Visible = false;
+            return true;
+        }
 
+        //校验是否选择了收文单位
+        private bool CheckAcceptUnit() {
             /*编辑模式不校验接收部门*/
             if (TreeViewAcceptUnit.Enabled) {
                 //校验是否选择了至少一个部门
@@ -226,8 +226,6 @@ namespace SmartHyd.ManageCenter.Official {
                     return false;
                 }
             }
-
-            litmsg.Visible = false;
             return true;
         }
 
@@ -347,6 +345,10 @@ namespace SmartHyd.ManageCenter.Official {
             if (!CheckSubmitForm()) {
                 return;
             }
+            /*收文单位*/
+            if (!CheckAcceptUnit()) {
+                return;
+            }
 
             //获取实体
             Entity.BASE_ARTICLE model;
@@ -366,10 +368,9 @@ namespace SmartHyd.ManageCenter.Official {
         }
         //存草稿
         protected void btnSave_Click(object sender, EventArgs e) {
-            //不保存收文单位
             litmsg.Visible = false;
 
-            //检验提交表单
+            //检验提交表单,不校验收文单位
             if (!CheckSubmitForm()) {
                 return;
             }
@@ -381,9 +382,12 @@ namespace SmartHyd.ManageCenter.Official {
             //存草稿
             model.STATUS = 2;
 
-            bll.Add(model);
-
-            
+            if (model.ID < 0) {
+                bll.Add(model);/*添加新草稿*/
+            }
+            else {
+                bll.Update(model);/*修改草稿*/
+            }
             Response.Redirect("DraftsBox.aspx", true);
         }
         //打印
