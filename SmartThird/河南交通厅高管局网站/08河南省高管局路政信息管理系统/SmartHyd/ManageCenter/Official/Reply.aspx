@@ -28,19 +28,26 @@
         <tr>
             <td valign="top">
                 <asp:GridView ID="grvAcceptList" runat="server" AutoGenerateColumns="False" BackColor="White"
-                    BorderColor="#CCCCCC" BorderStyle="None" Font-Size="12px" BorderWidth="1px" CellPadding="3"
-                    Width="100%">
+                    BorderColor="#CCCCCC" BorderStyle="None" Font-Size="12px" 
+                    BorderWidth="1px" CellPadding="3"
+                    Width="100%" onrowcommand="grvAcceptList_RowCommand">
                     <Columns>
                         <asp:BoundField DataField="title" HeaderText="回复标题"></asp:BoundField>
                         <asp:BoundField DataField="sendcode" HeaderText="发文字号">
-                            <ItemStyle Width="120" />
+                            <ItemStyle Width="140" />
                         </asp:BoundField>
                         <asp:BoundField DataField="TIMESTAMP" HeaderText="回复时间">
-                            <ItemStyle Width="120" />
+                            <ItemStyle Width="110" />
                         </asp:BoundField>
-                        <asp:BoundField DataField="SCORE" HeaderText="回复得分">
-                            <ItemStyle Width="80" />
+                        <asp:BoundField DataField="SCORE" HeaderText="得分">
+                            <ItemStyle Width="30" />
                         </asp:BoundField>
+                        <asp:TemplateField HeaderText="操作">
+                            <ItemTemplate>
+                                <asp:LinkButton runat="server" CommandName="view" CommandArgument='<%#Eval("id") %>'>查看</asp:LinkButton>
+                            </ItemTemplate>
+                            <ItemStyle Width="30" />
+                        </asp:TemplateField>
                     </Columns>
                     <FooterStyle BackColor="White" ForeColor="#000066" />
                     <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />

@@ -317,6 +317,7 @@
     <Content Include="ManageCenter\Official\DraftsBox.aspx" />
     <Content Include="ManageCenter\Official\Create.aspx" />
     <Content Include="ManageCenter\Official\Reply.aspx" />
+    <Content Include="ManageCenter\Official\ReplySource.aspx" />
     <Content Include="ManageCenter\Official\Trash.aspx" />
     <Content Include="ManageCenter\Overrun\OverrunIndex.aspx" />
     <Content Include="ManageCenter\PersonTerm\PersonTerm.aspx" />
@@ -1507,6 +1508,13 @@
     </Compile>
     <Compile Include="ManageCenter\Official\Reply.aspx.designer.cs">
       <DependentUpon>Reply.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\Official\ReplySource.aspx.cs">
+      <DependentUpon>ReplySource.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\Official\ReplySource.aspx.designer.cs">
+      <DependentUpon>ReplySource.aspx</DependentUpon>
     </Compile>
     <Compile Include="ManageCenter\Official\Trash.aspx.cs">
       <DependentUpon>Trash.aspx</DependentUpon>

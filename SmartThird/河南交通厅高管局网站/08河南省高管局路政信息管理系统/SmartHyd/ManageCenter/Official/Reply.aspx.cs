@@ -58,5 +58,15 @@ namespace SmartHyd.ManageCenter.Official {
                 litmsg.Visible = false;
             }
         }
+
+        protected void grvAcceptList_RowCommand(object sender, GridViewCommandEventArgs e) {
+            int id = Convert.ToInt32(e.CommandArgument.ToString());
+            switch (e.CommandName) {
+                /*跳转到详情页面*/
+                case "view":
+                    Response.Redirect("~/ManageCenter/Official/Detail.aspx?id=" + id.ToString(), true);
+                    break;
+            }
+        }
     }
 }

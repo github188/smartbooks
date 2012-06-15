@@ -52,11 +52,11 @@
                                     </tr>
                                     <!--标题行-->
                                     <tr class="TableControl">                                       
-                                        <td width="798">
+                                        <td>
                                             <span style="float: left;">
                                                 <%=mdoel.SENDCODE %>
                                             </span>
-                                            <span style="float: left; margin-left:20px;">创建时间：
+                                            <span style="float: right; margin-left:20px;">
                                                 <%=mdoel.TIMESTAMP.ToLongDateString() + mdoel.TIMESTAMP.ToLongTimeString()%>
                                             </span>
                                             <span style="float: right; margin: 0px 6px 0px 6px;">分值:
@@ -69,6 +69,7 @@
                                         <td width="758" valign="top" style="padding: 20px; overflow: hidden;">
                                             <p><%=mdoel.CONTENT %></p>
                                             <div style="color: #002D93; float: left; border: 1px #4686C6 solid;margin: 10px; padding:4px;">
+                                            <h3>附件:</h3>
                                                 <%
                                                     SmartHyd.BLL.BASE_ARTICLE_ANNEX bllAnnex = new SmartHyd.BLL.BASE_ARTICLE_ANNEX();
                                                     string[] annex = mdoel.ANNEX.Split(',');

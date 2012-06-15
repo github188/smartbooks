@@ -31,16 +31,27 @@
                     BorderColor="#CCCCCC" BorderStyle="None" Font-Size="12px" BorderWidth="1px" CellPadding="3"
                     Width="100%" OnRowCommand="grvList_RowCommand">
                     <Columns>
-                        <asp:BoundField DataField="title" HeaderText="部门名称"></asp:BoundField>
+                        <asp:BoundField DataField="dptname" HeaderText="部门名称">
+                            <ItemStyle Width="180" />
+                        </asp:BoundField>
                         <asp:BoundField DataField="title" HeaderText="回复标题"></asp:BoundField>
-                        <asp:BoundField DataField="title" HeaderText="回文字号"></asp:BoundField>
-                        <asp:BoundField DataField="title" HeaderText="回文时间"></asp:BoundField>
-                        <asp:BoundField DataField="title" HeaderText="考核分数"></asp:BoundField>
-                        <asp:TemplateField HeaderText="操作选项">
+                        <asp:BoundField DataField="sendcode" HeaderText="回文字号">
+                            <ItemStyle Width="140" />
+                        </asp:BoundField>
+                        <asp:BoundField DataField="TIMESTAMP" HeaderText="回文时间">
+                            <ItemStyle Width="110" />
+                        </asp:BoundField>
+                        <asp:TemplateField HeaderText="分值">
+                            <ItemTemplate>
+                                <asp:TextBox runat="server" Text='<%#Eval("score") %>' Width="60"></asp:TextBox>
+                            </ItemTemplate>
+                            <HeaderStyle Width="60px" />
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="操作">
                             <ItemTemplate>
                                 <asp:LinkButton runat="server" CommandName="up" CommandArgument='<%#Eval("id") %>'>更新</asp:LinkButton>
                             </ItemTemplate>
-                            <ItemStyle Width="70" />
+                            <ItemStyle Width="30" />
                         </asp:TemplateField>
                     </Columns>
                     <FooterStyle BackColor="White" ForeColor="#000066" />

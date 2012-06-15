@@ -83,18 +83,14 @@ namespace SmartHyd.ManageCenter.Official {
                 /*更新公文状态为删除*/
                 case "delete":
                     bll.UpdateState(3, id);
-                    Response.Redirect("~/ManageCenter/Official/BeenSent.aspx", true);
-                    break;
-                /*跳转到结贴页面*/
-                case "checkout":
-                    Response.Redirect("~/ManageCenter/Official/CheckOut.aspx?id=" + id.ToString(), true);
-                    break;
+                    Response.Redirect("~/ManageCenter/Official/Trash.aspx", true);/*垃圾箱*/
+                    break;                
                 /*跳转到详情页面*/
                 case "detail":
                     Response.Redirect("~/ManageCenter/Official/Detail.aspx?id=" + id.ToString(), true);
                     break;
-                /*发文查阅状态*/
-                case "isread":
+                /*跳转到结贴页面*/
+                case "checkout":
                     Response.Redirect("~/ManageCenter/Official/CheckOut.aspx?id=" + id.ToString(), true);
                     break;
             }

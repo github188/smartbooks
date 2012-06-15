@@ -27,12 +27,12 @@ namespace SmartHyd.ManageCenter.Official {
             switch (e.CommandName) {
                 /*跳转到回复页面*/
                 case "reply":
-                    string url = string.Format("~/ManageCenter/DocumentCreate.aspx?id={0}&m=edit", id.ToString());
+                    string url = string.Format("~/ManageCenter/Official/ReplySource.aspx?id={0}", id.ToString());
                     Response.Redirect(url, true);
                     break;
                 /*跳转到详情页面*/
                 case "view":
-                    Response.Redirect("~/ManageCenter/DocumentDetail.aspx?id=" + id.ToString(), true);
+                    Response.Redirect("~/ManageCenter/Official/Detail.aspx?id=" + id.ToString(), true);
                     break;
             }
         }

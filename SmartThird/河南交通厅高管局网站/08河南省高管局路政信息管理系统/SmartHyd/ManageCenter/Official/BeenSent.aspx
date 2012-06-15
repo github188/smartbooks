@@ -61,25 +61,24 @@
                                         <Columns>
                                             <asp:BoundField DataField="title" HeaderText="公文标题"></asp:BoundField>
                                             <asp:BoundField DataField="sendcode" HeaderText="公文字号">
-                                                <ItemStyle Width="120" />
+                                                <ItemStyle Width="140" />
                                             </asp:BoundField>
                                             <asp:BoundField DataField="TIMESTAMP" HeaderText="发文时间">
-                                                <ItemStyle Width="120" />
+                                                <ItemStyle Width="110" />
                                             </asp:BoundField>
-                                            <asp:BoundField DataField="score" HeaderText="考核分值">
-                                                <ItemStyle Width="55" />
+                                            <asp:BoundField DataField="score" HeaderText="分值">
+                                                <ItemStyle Width="30" />
                                             </asp:BoundField>
-                                            <asp:BoundField DataField="status" HeaderText="公文状态">
-                                                <ItemStyle Width="55" />
+                                            <asp:BoundField DataField="status" HeaderText="状态">
+                                                <ItemStyle Width="40" />
                                             </asp:BoundField>
                                             <asp:TemplateField HeaderText="操作选项">
                                                 <ItemTemplate>
                                                     <asp:LinkButton  runat="server" CommandName="delete" CommandArgument='<%#Eval("id") %>'>删除</asp:LinkButton>
                                                     <asp:LinkButton  runat="server" CommandName="checkout" CommandArgument='<%#Eval("id") %>'>考核</asp:LinkButton>
                                                     <asp:LinkButton  runat="server" CommandName="detail" CommandArgument='<%#Eval("id") %>'>详情</asp:LinkButton>
-                                                    <asp:LinkButton  runat="server" CommandName="isread" CommandArgument='<%#Eval("id") %>'>追踪</asp:LinkButton>
                                                 </ItemTemplate>
-                                                <ItemStyle Width="150" />
+                                                <ItemStyle Width="80" />
                                             </asp:TemplateField>
                                         </Columns>
                                         <FooterStyle BackColor="White" ForeColor="#000066" />

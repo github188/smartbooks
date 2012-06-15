@@ -33,20 +33,20 @@
                     Width="100%" onrowcommand="grvAcceptList_RowCommand">
                     <Columns>
                         <asp:BoundField DataField="dptname" HeaderText="发文单位">
-                            <ItemStyle Width="250" />
+                            <ItemStyle Width="180" />
                         </asp:BoundField>
                         <asp:BoundField DataField="title" HeaderText="公文标题"></asp:BoundField>
                         <asp:BoundField DataField="sendcode" HeaderText="发文字号">
-                            <ItemStyle Width="120" />
+                            <ItemStyle Width="140" />
                         </asp:BoundField>
                         <asp:BoundField DataField="TIMESTAMP" HeaderText="发文时间">
-                            <ItemStyle Width="120" />
+                            <ItemStyle Width="110" />
                         </asp:BoundField>
-                        <asp:BoundField DataField="score" HeaderText="公文分值">
-                            <ItemStyle Width="60" />
+                        <asp:BoundField DataField="score" HeaderText="分值">
+                            <ItemStyle Width="30" />
                         </asp:BoundField>
-                        <asp:BoundField DataField="status" HeaderText="公文状态">
-                            <ItemStyle Width="60" />
+                        <asp:BoundField DataField="status" HeaderText="状态">
+                            <ItemStyle Width="40" />
                         </asp:BoundField>
                         <asp:TemplateField HeaderText="操作选项">
                             <ItemTemplate>
