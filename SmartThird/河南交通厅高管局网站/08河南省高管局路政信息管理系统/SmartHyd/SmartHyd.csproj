@@ -305,6 +305,7 @@
     <Content Include="ManageCenter\ImportData.aspx" />
     <Content Include="ManageCenter\IM\Add.aspx" />
     <Content Include="ManageCenter\IM\List.aspx" />
+    <Content Include="ManageCenter\IM\View.aspx" />
     <Content Include="ManageCenter\MenuManage\Add.aspx" />
     <Content Include="ManageCenter\MenuManage\List.aspx" />
     <Content Include="ManageCenter\Office.aspx" />
@@ -1439,6 +1440,13 @@
     </Compile>
     <Compile Include="ManageCenter\IM\List.aspx.designer.cs">
       <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\IM\View.aspx.cs">
+      <DependentUpon>View.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\IM\View.aspx.designer.cs">
+      <DependentUpon>View.aspx</DependentUpon>
     </Compile>
     <Compile Include="ManageCenter\MenuManage\Add.aspx.cs">
       <DependentUpon>Add.aspx</DependentUpon>

@@ -42,22 +42,19 @@
                     BorderColor="#CCCCCC" BorderStyle="None" Font-Size="12px" BorderWidth="1px" CellPadding="3"
                     Width="100%" onrowcommand="grvList_RowCommand">
                     <Columns>
-                        <asp:BoundField DataField="title" HeaderText="发送者">
+                        <asp:BoundField DataField="REALNAME" HeaderText="发送者">
                             <ItemStyle Width="120" />
                         </asp:BoundField>
-                        <asp:BoundField DataField="TIMESTAMP" HeaderText="发送时间">
+                        <asp:BoundField DataField="SENDDATE" HeaderText="发送时间">
                             <ItemStyle Width="110" />
                         </asp:BoundField>
-                        <asp:BoundField DataField="sendcode" HeaderText="内容预览">                            
-                        </asp:BoundField>
-                        
-                        <asp:BoundField DataField="score" HeaderText="状态">
-                            <ItemStyle Width="30" />
+                        <asp:BoundField DataField="MESSAGEBODY" HeaderText="内容预览">                            
+                        <ItemStyle Wrap="True" />
                         </asp:BoundField>
                         <asp:TemplateField HeaderText="操作">
-                            <ItemTemplate>
-                                <asp:LinkButton runat="server" CommandName="reply" CommandArgument='<%#Eval("id") %>'>回复</asp:LinkButton>
-                                <asp:LinkButton runat="server" CommandName="view" CommandArgument='<%#Eval("id") %>'>查看</asp:LinkButton>
+                            <ItemTemplate>                               
+                                <asp:LinkButton runat="server" CommandName="view" CommandArgument='<%#Eval("MESSAGEID") %>'>查看</asp:LinkButton>
+                                 <asp:LinkButton ID="LinkButton1" runat="server" CommandName="reply" CommandArgument='<%#Eval("MESSAGEID") %>'>回复</asp:LinkButton>
                             </ItemTemplate>
                             <ItemStyle Width="60" />
                         </asp:TemplateField>

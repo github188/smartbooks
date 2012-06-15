@@ -56,6 +56,7 @@ namespace SmartHyd.Utility {
             BLL.BASE_DEPT deptBLL = new BLL.BASE_DEPT();
             _Department = deptBLL.GetEntity(userModel.DEPTID);
 
+            /*
             #region 绑定角色信息
             var roles = userRoleBLL.Query(
                 string.Format("SELECT distinct ROLEID FROM base_user_role WHERE userid = {0}",
@@ -109,6 +110,7 @@ namespace SmartHyd.Utility {
                 UserRole.Add(role); //角色组加入集合中
             }
             #endregion
+            */
         }
 
         /// <summary>

@@ -4,26 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Data;
 
-namespace SmartHyd.BLL
-{
-    public class BASE_MESSAGE
-    {
+namespace SmartHyd.BLL {
+    public class BASE_MESSAGE {
         private OracleDAL.BASE_MESSAGE Dal = new OracleDAL.BASE_MESSAGE();
 
-        public bool Exists(decimal MESSAGEID)
-        { 
+        public bool Exists(decimal MESSAGEID) {
             return Dal.Exists(MESSAGEID);
         }
-        public Entity.BASE_MESSAGE GetEntity(int MESSAGEID)
-        {
+        public Entity.BASE_MESSAGE GetEntity(int MESSAGEID) {
             return Dal.GetEntity(MESSAGEID);
         }
         /// <summary>
         /// 存储消息
         /// </summary>
         /// <param name="model"></param>
-        public void Add(Entity.BASE_MESSAGE model)
-        {
+        public void Add(Entity.BASE_MESSAGE model) {
             Dal.Add(model);
         }
         /// <summary>
@@ -31,8 +26,7 @@ namespace SmartHyd.BLL
         /// </summary>
         /// <param name="strWhere"></param>
         /// <returns></returns>
-        public DataTable GetList(string strWhere)
-        {
+        public DataTable GetList(string strWhere) {
             return Dal.GetList(strWhere).Tables[0];
         }
         /// <summary>
@@ -40,8 +34,7 @@ namespace SmartHyd.BLL
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        public bool update(Entity.BASE_MESSAGE model)
-        {
+        public bool update(Entity.BASE_MESSAGE model) {
             return Dal.Update(model);
         }
         /// <summary>
@@ -49,9 +42,17 @@ namespace SmartHyd.BLL
         /// </summary>
         /// <param name="MESSAGEID"></param>
         /// <returns></returns>
-        public bool del(decimal MESSAGEID)
-        {
+        public bool del(decimal MESSAGEID) {
             return Dal.Delete(MESSAGEID);
+        }
+
+        /// <summary>
+        /// 获取我的消息
+        /// </summary>
+        /// <param name="uid"></param>
+        /// <returns></returns>
+        public DataTable GetMyMessage(int uid) {
+            return Dal.GetMyMessage(uid);
         }
     }
 }

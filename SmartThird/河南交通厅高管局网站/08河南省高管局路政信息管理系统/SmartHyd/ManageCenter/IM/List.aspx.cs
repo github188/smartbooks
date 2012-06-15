@@ -22,8 +22,15 @@ namespace SmartHyd.ManageCenter.IM {
         private void BindMyMessage() {
             DataTable dt = new DataTable();
 
-            /*收文列表数据(部门下收文数据)*/
-            dt = bll.GetList("");
+            dt = bll.GetMyMessage(Convert.ToInt32(userSession.USERID));
+
+            if (dt != null && dt.Rows.Count > 0) {
+                foreach (DataRow row in dt.Rows) {
+                    if (row["MESSAGEBODY"].ToString().Length > 32) {
+                        row["MESSAGEBODY"] = row["MESSAGEBODY"].ToString().Substring(0, 50) + "...>>点击查看详情";
+                    }
+                }
+            }
 
             //初始化分页数据
             AspNetPager1.RecordCount = dt.Rows.Count;
@@ -51,7 +58,18 @@ namespace SmartHyd.ManageCenter.IM {
         }
 
         protected void grvList_RowCommand(object sender, GridViewCommandEventArgs e) {
-
+            int id = Convert.ToInt32(e.CommandArgument.ToString());
+            string url;
+            switch (e.CommandName) {
+                case "view":
+                    url = string.Format("View.aspx?id={0}", id.ToString());
+                    Response.Redirect(url, true);
+                    break;
+                case "reply":
+                    url = string.Format("Add.aspx?id={0}", id.ToString());
+                    Response.Redirect(url, true);
+                    break;
+            }
         }
     }
 }
