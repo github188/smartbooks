@@ -6,6 +6,7 @@
 <head runat="server">
     <title>事务编辑</title>
 <link href="../../Css/patrol.css" rel="stylesheet" type="text/css" />
+ <link rel="stylesheet" type="text/css" href="../../Css/tongdaoa.css" />
 </head>
 <body>
     <form id="form1" runat="server">

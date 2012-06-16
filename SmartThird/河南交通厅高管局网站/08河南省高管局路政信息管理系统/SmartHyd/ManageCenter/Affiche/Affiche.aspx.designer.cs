@@ -7,10 +7,10 @@
 // </自动生成>
 //------------------------------------------------------------------------------
 
-namespace SmartHyd.Patrol {
+namespace SmartHyd.ManageCenter.Affiche {
     
     
-    public partial class ElectronicPatrol {
+    public partial class Affiche {
         
         /// <summary>
         /// form1 控件。
@@ -22,31 +22,13 @@ namespace SmartHyd.Patrol {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// ScriptManager1 控件。
+        /// txt_title 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.ScriptManager ScriptManager1;
-        
-        /// <summary>
-        /// UpdatePanel1 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
-        
-        /// <summary>
-        /// txt_startTime 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_startTime;
+        protected global::System.Web.UI.WebControls.TextBox txt_title;
         
         /// <summary>
         /// txt_endTime 控件。
@@ -67,22 +49,13 @@ namespace SmartHyd.Patrol {
         protected global::System.Web.UI.WebControls.Button btn_ok;
         
         /// <summary>
-        /// gv_electroniclist 控件。
+        /// RptAffiche 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gv_electroniclist;
-        
-        /// <summary>
-        /// litmsg 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litmsg;
+        protected global::System.Web.UI.WebControls.Repeater RptAffiche;
         
         /// <summary>
         /// AspNetPager1 控件。

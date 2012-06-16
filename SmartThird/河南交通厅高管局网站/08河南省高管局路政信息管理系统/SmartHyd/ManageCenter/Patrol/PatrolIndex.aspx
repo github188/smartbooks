@@ -38,7 +38,7 @@
         </tr>
         <tr>
             <td style="border-right: 4px double #045185; width: 28%" valign="top">
-                <iframe src="DeptTree.aspx" name="TreeFrame" id="TreeFrame" frameborder="0" height="100%">
+                <iframe src="DeptTree.aspx?type=0" name="TreeFrame" id="TreeFrame" frameborder="0" height="100%">
                 </iframe>
             </td>
             <td valign="top">

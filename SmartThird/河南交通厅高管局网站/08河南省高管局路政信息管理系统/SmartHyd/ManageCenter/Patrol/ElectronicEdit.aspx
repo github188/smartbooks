@@ -1,6 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ElectronicEdit.aspx.cs"
     Inherits="SmartHyd.Patrol.ElectronicEdit" ValidateRequest="false" %>
 
+<%@ Register Src="~/ManageCenter/Ascx/Handling.ascx" TagName="Handling" TagPrefix="uc2" %>
 <%@ Register Src="~/Ascx/Department.ascx" TagName="Department" TagPrefix="uc1" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -25,7 +26,7 @@
             var editor;
             KindEditor.ready(function (K) {
                 /*巡查处理情况*/
-                editor = K.create('textarea[id="txtLog"]', {
+                editor = K.create('textarea[id="Handling1_txtLog"]', {
                     items: ['source', '|', 'undo', 'redo', '|', 'cut', 'copy',
                             'paste', 'plainpaste', 'wordpaste'],
                     width: "100%",
@@ -36,6 +37,21 @@
             /*开始、结束时间*/
             $("#txtBEGINTIME").datepicker();
             $("#txtENDTIME").datepicker();
+            /*开始、结束时间*/
+            $("#Handling1_txtBEGINTIME").timepicker({
+                showSecond: true,
+                changeMonth: true,
+                changeYear: true,
+                timeFormat: 'hh:mm:ss',
+                dateFormat: 'yy-mm-dd'
+            });
+            $("#Handling1_txtENDTIME").timepicker({
+                showSecond: true,
+                changeMonth: true,
+                changeYear: true,
+                timeFormat: 'hh:mm:ss',
+                dateFormat: 'yy-mm-dd'
+            });
         });
     </script>
 </head>
@@ -75,7 +91,7 @@
                             </div>
                         </td>
                     </tr>
-                    <tr height="38">
+                    <%--  <tr height="38">
                         <td>
                             <asp:Label ID="Label14" runat="server" Text="开始时间:"></asp:Label>
                             <asp:TextBox ID="txtBEGINTIME" runat="server" CssClass="input {required:true}"></asp:TextBox>
@@ -90,12 +106,23 @@
                         </td>
                         <td>
                         </td>
-                    </tr>
+                    </tr>--%>
                     <tr>
                         <td colspan="3">
                             <asp:Label ID="Label7" runat="server" Text="巡查处理情况:"></asp:Label>
-                            <asp:TextBox ID="txtLog" runat="server" CssClass="input" TextMode="MultiLine">
-                            </asp:TextBox>
+                            <%--<asp:TextBox ID="txtLog" runat="server" CssClass="input" TextMode="MultiLine">
+                            </asp:TextBox>--%>
+                            <div id="tab">
+                                <ul>
+                                    <li id="liname1"><a href="#tabs_1">
+                                        <asp:Label ID="LabheadName" runat="server" Text=""></asp:Label></a></li>
+                                </ul>
+                                <!--第一巡查开始-->
+                                <div id="tabs_1">
+                                    <uc2:Handling ID="Handling1" runat="server"></uc2:Handling>
+                                </div>
+                                <!--第一次巡查结束-->
+                            </div>
                         </td>
                     </tr>
                 </tbody>

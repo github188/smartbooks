@@ -21,16 +21,16 @@ namespace SmartHyd.ManageCenter.UserManager
             {
                 string deptId=Request.QueryString["deptid"];
                 string deptName = Request.QueryString["deptName"];
-
+                string userid = Request.QueryString["userid"];
 
                 if (null == deptId || "" == deptId)
                 {
-                    //初始化用户列表：默认4代表河南省交通运输厅高速公路管理局下的用户
-                    BindUserList(4);//绑定用户列表
-                    ViewState["deptid"] = 4;//用于存储当前部门编号
+                    //初始化用户列表：默认0代表河南省交通运输厅高速公路管理局下的用户
+                    BindUserList(1);//绑定用户列表
+                    ViewState["deptid"] = 1;//用于存储当前部门编号
 
                     hfdUnitName.Value = "河南省交通运输厅高速公路管理局";
-                    hfdUnitID.Value = "4";
+                    hfdUnitID.Value = "1";
                 }
                 else
                 {
@@ -39,21 +39,25 @@ namespace SmartHyd.ManageCenter.UserManager
 
                     decimal deptid = Convert.ToDecimal(deptId);//获取部门编号
                     ViewState["deptid"] = deptid;//用于存储当前部门编号
-                    if (null == deptId || "" == deptId)
+                    if (null == userid || "" == userid)
                     {
                         //判读用户编号是否为空；
                         BindUserList(deptid);//绑定用户列表
                     }
                     else
-                    {//不为空执行删除操作
+                    {//用户编号不为空执行删除操作
                         if (Request.QueryString["action"] == "del")
                         {
-
-                            int userid = Convert.ToInt32(Request.QueryString["userid"]);
-                            Updatestate(userid);//删除用户
+                            int id = Convert.ToInt32(userid);
+                            // int userid = Convert.ToInt32(Request.QueryString["userid"]);
+                            //Updatestate(id);//删除用户
+                            DelUser(id);//删除用户
                             BindUserList(deptid);//绑定用户列表
                         }
-                        BindUserList(deptid);//绑定用户列表
+                        else
+                        {
+                            BindUserList(deptid);//绑定用户列表
+                        }
                     }
                 }
             }
@@ -96,7 +100,7 @@ namespace SmartHyd.ManageCenter.UserManager
         protected void AspNetPager1_PageChanging(object src, Wuqi.Webdiyer.PageChangingEventArgs e)
         {
             this.AspNetPager1.CurrentPageIndex = e.NewPageIndex;
-            BindUserList(4);
+            BindUserList(1);
         }
         /// <summary>
         /// 按钮事件：跳转到添加用户页面

@@ -52,6 +52,15 @@ namespace SmartHyd.BLL
                 return false;
             }
         }
+       /// <summary>
+       /// 确定日志编号PID下是否有记录存在
+       /// </summary>
+       /// <param name="PID"></param>
+       /// <returns></returns>
+        public bool ExistsPid(decimal PID)
+        {
+            return dal.ExistsPid(PID);
+        }
         /// <summary>
         /// 根据HID获取巡查处理情况实体数据
         /// </summary>
@@ -79,13 +88,22 @@ namespace SmartHyd.BLL
             }
         }
         /// <summary>
-        /// 删除日志数据
+        /// 删除日志数据:根据处理情况编号
         /// </summary>
         /// <param name="HID"></param>
         /// <returns></returns>
         public bool Del(decimal HID)
         {
             return dal.Delete(HID);
+        }
+       /// <summary>
+        /// 根据巡逻日志编号PID删除处理情况数据
+        /// </summary>
+        /// <param name="PID">巡逻日志编号</param>
+        /// <returns></returns>
+        public bool DelByPID(decimal PID)
+        {
+            return dal.DelByPID(PID);
         }
     }
 }

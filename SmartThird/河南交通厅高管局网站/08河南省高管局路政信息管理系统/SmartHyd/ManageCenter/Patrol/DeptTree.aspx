@@ -4,6 +4,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <style type="text/css">
+        .treeViewStyle
+        {
+            height: 740px;
+            overflow-y: scroll;
+            color: #000000;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -12,7 +20,7 @@
         </asp:ScriptManager>
         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
             <ContentTemplate>
-                <table border="0" cellpadding="0" cellspacing="0" width="100%" height="100%">
+                <table border="0" cellpadding="0" cellspacing="0" width="100%" height="740px">
                     <tr>
                         <td valign="top">
                            <asp:TreeView ID="TreeViewAcceptUnit" runat="server" CssClass="treeViewStyle" ImageSet="BulletedList4"

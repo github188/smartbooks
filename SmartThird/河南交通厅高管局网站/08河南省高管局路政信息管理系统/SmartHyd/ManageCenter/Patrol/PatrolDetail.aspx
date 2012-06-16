@@ -21,7 +21,7 @@
             <span id="buttons1" onclick="javascript:history.go(-1);">
                 <img src="../../Images/back.png" alt="" border="0" />返回上一页面</span></div>
     </div>
-    <table class="edit" width="100%">
+    <table class="edit" width="100%" border="1">
         <tbody>
             <tr height="38">
                 <td>
@@ -103,16 +103,16 @@
                 </td>
             </tr>
             <tr height="38">
-                <td>
-                    <asp:Label ID="Label14" runat="server" Text="开始时间:"></asp:Label>
+                <td colspan="2">
+                    <asp:Label ID="Label14" runat="server" Text="交接班时间:"></asp:Label>
                     <div id="starttime" runat="server">
                     </div>
                 </td>
-                <td>
+               <%-- <td>
                     <asp:Label ID="Label16" runat="server" Text="结束时间:"></asp:Label>
                     <div id="endtime" runat="server">
                     </div>
-                </td>
+                </td>--%>
                 <td>
                     <asp:Label ID="Label15" runat="server" Text="里程表数:"></asp:Label>
                     <div id="BUSKM" runat="server">

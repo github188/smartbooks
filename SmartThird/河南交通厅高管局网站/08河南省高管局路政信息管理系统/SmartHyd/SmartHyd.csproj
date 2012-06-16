@@ -277,16 +277,13 @@
     <Content Include="Images\user.png" />
     <Content Include="index.aspx" />
     <Content Include="main.aspx" />
-    <Content Include="ManageCenter\Affiche.aspx" />
-    <Content Include="ManageCenter\AfficheEdit.aspx" />
-    <Content Include="ManageCenter\Ascx\Affiche.ascx" />
-    <Content Include="ManageCenter\Ascx\AfficheEdit.ascx" />
+    <Content Include="ManageCenter\Affiche\Affiche.aspx" />
+    <Content Include="ManageCenter\Affiche\AfficheEdit.aspx" />
     <Content Include="ManageCenter\Ascx\Chat.ascx" />
     <Content Include="ManageCenter\Ascx\DeptManage.ascx" />
     <Content Include="ManageCenter\Ascx\Empower.ascx" />
     <Content Include="ManageCenter\Ascx\Handling.ascx" />
     <Content Include="ManageCenter\Ascx\ImportData.ascx" />
-    <Content Include="ManageCenter\Ascx\Office.ascx" />
     <Content Include="ManageCenter\Ascx\Plan.ascx" />
     <Content Include="ManageCenter\Ascx\Role.ascx" />
     <Content Include="ManageCenter\Ascx\SysLog.ascx" />
@@ -314,7 +311,6 @@
     <Content Include="ManageCenter\IM\View.aspx" />
     <Content Include="ManageCenter\MenuManage\Add.aspx" />
     <Content Include="ManageCenter\MenuManage\List.aspx" />
-    <Content Include="ManageCenter\Office.aspx" />
     <Content Include="ManageCenter\OfficialType\Create.aspx" />
     <Content Include="ManageCenter\OfficialType\List.aspx" />
     <Content Include="ManageCenter\Official\Accept.aspx" />
@@ -1382,6 +1378,20 @@
     <Compile Include="Handle\SystemJSON.aspx.designer.cs">
       <DependentUpon>SystemJSON.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ManageCenter\Affiche\Affiche.aspx.cs">
+      <DependentUpon>Affiche.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\Affiche\Affiche.aspx.designer.cs">
+      <DependentUpon>Affiche.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\Affiche\AfficheEdit.aspx.cs">
+      <DependentUpon>AfficheEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\Affiche\AfficheEdit.aspx.designer.cs">
+      <DependentUpon>AfficheEdit.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ManageCenter\Ascx\Handling.ascx.cs">
       <DependentUpon>Handling.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1683,34 +1693,6 @@
     <Compile Include="main.aspx.designer.cs">
       <DependentUpon>main.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ManageCenter\Affiche.aspx.cs">
-      <DependentUpon>Affiche.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ManageCenter\Affiche.aspx.designer.cs">
-      <DependentUpon>Affiche.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ManageCenter\AfficheEdit.aspx.cs">
-      <DependentUpon>AfficheEdit.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ManageCenter\AfficheEdit.aspx.designer.cs">
-      <DependentUpon>AfficheEdit.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ManageCenter\Ascx\Affiche.ascx.cs">
-      <DependentUpon>Affiche.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ManageCenter\Ascx\Affiche.ascx.designer.cs">
-      <DependentUpon>Affiche.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="ManageCenter\Ascx\AfficheEdit.ascx.cs">
-      <DependentUpon>AfficheEdit.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ManageCenter\Ascx\AfficheEdit.ascx.designer.cs">
-      <DependentUpon>AfficheEdit.ascx</DependentUpon>
-    </Compile>
     <Compile Include="ManageCenter\Ascx\Chat.ascx.cs">
       <DependentUpon>Chat.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1738,13 +1720,6 @@
     </Compile>
     <Compile Include="ManageCenter\Ascx\ImportData.ascx.designer.cs">
       <DependentUpon>ImportData.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="ManageCenter\Ascx\Office.ascx.cs">
-      <DependentUpon>Office.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ManageCenter\Ascx\Office.ascx.designer.cs">
-      <DependentUpon>Office.ascx</DependentUpon>
     </Compile>
     <Compile Include="ManageCenter\Ascx\Plan.ascx.cs">
       <DependentUpon>Plan.ascx</DependentUpon>
@@ -1815,13 +1790,6 @@
     </Compile>
     <Compile Include="ManageCenter\ManageCenter.Master.designer.cs">
       <DependentUpon>ManageCenter.Master</DependentUpon>
-    </Compile>
-    <Compile Include="ManageCenter\Office.aspx.cs">
-      <DependentUpon>Office.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ManageCenter\Office.aspx.designer.cs">
-      <DependentUpon>Office.aspx</DependentUpon>
     </Compile>
     <Compile Include="ManageCenter\Official\Create.aspx.cs">
       <DependentUpon>Create.aspx</DependentUpon>

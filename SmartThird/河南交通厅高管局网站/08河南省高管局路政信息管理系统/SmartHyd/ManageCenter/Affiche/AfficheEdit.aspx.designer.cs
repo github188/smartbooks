@@ -7,10 +7,10 @@
 // </自动生成>
 //------------------------------------------------------------------------------
 
-namespace SmartHyd.Patrol {
+namespace SmartHyd.ManageCenter.Affiche {
     
     
-    public partial class ElectronicPatrol {
+    public partial class AfficheEdit {
         
         /// <summary>
         /// form1 控件。
@@ -22,75 +22,66 @@ namespace SmartHyd.Patrol {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// ScriptManager1 控件。
+        /// LbHeadName 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.ScriptManager ScriptManager1;
+        protected global::System.Web.UI.WebControls.Label LbHeadName;
         
         /// <summary>
-        /// UpdatePanel1 控件。
+        /// hidPrimary 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
+        protected global::System.Web.UI.WebControls.HiddenField hidPrimary;
         
         /// <summary>
-        /// txt_startTime 控件。
+        /// TxtTitle 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_startTime;
+        protected global::System.Web.UI.WebControls.TextBox TxtTitle;
         
         /// <summary>
-        /// txt_endTime 控件。
+        /// TxtTime 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_endTime;
+        protected global::System.Web.UI.WebControls.TextBox TxtTime;
         
         /// <summary>
-        /// btn_ok 控件。
+        /// TxtContent 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_ok;
+        protected global::System.Web.UI.WebControls.TextBox TxtContent;
         
         /// <summary>
-        /// gv_electroniclist 控件。
+        /// Btn_Send 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gv_electroniclist;
+        protected global::System.Web.UI.WebControls.Button Btn_Send;
         
         /// <summary>
-        /// litmsg 控件。
+        /// Btn_Save 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litmsg;
-        
-        /// <summary>
-        /// AspNetPager1 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::Wuqi.Webdiyer.AspNetPager AspNetPager1;
+        protected global::System.Web.UI.WebControls.Button Btn_Save;
     }
 }

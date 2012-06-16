@@ -20,21 +20,6 @@
         }
     </style>
 
-    <script type="text/javascript">
-        //全选
-        function selectall(chkcontrol) {
-            var chkall = chkcontrol;
-            State = chkall.checked;
-            elem = document.getElementsByTagName("input");
-            for (i = 0; i < elem.length; i++) {
-                if (elem[i].type == "checkbox" && elem[i] != chkall.id) {
-                    if (elem[i].checked != State) {
-                        elem[i].click();
-                    }
-                }
-            }
-        }
-    </script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -95,7 +80,7 @@
                                 <td style="background-color: #ffffff;">
                                     <a href="UserEdit.aspx?action=update&deptid=<%# Eval("DEPTID")%>&userid=<%# Eval("userid")%>">编辑</a>&nbsp;
                                     <a href="../../ManageCenter/Empower.aspx?userid=<%# Eval("userid")%>&name=<%# Eval("username")%>">授权</a>&nbsp;
-                                    <a href="UserCenter.aspx?action=del&userid=<%# Eval("userid")%>">删除
+                                    <a href="UserCenter.aspx?action=del&deptid=<%# Eval("DEPTID")%>&userid=<%# Eval("userid")%>">删除
                                     </a>
                                 </td>
                             </tr>

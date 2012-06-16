@@ -207,7 +207,35 @@ OracleParameter[] parameters = {
 			}
 			return OracleHelper.Query(strSql.ToString());
 		}
-		
+        /// <summary>
+        /// 获取最大ID编号
+        /// </summary>
+        /// <returns></returns>
+        public string GetMaxID()
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("select max(OBSERVEDID) as ID");
+            strSql.Append("  from BASE_OBSERVED ");
+            Entity.BASE_OBSERVED entity = new Entity.BASE_OBSERVED();
+            DataTable dt = OracleHelper.Query(CommandType.Text, strSql.ToString());
+            string id = string.Empty;
+            if (dt.Rows.Count > 0)
+            {
+                if (null == dt.Rows[0]["ID"] || "" == dt.Rows[0]["ID"].ToString())
+                {
+                    id = "-1";
+                }
+                else
+                {
+                    id = dt.Rows[0]["ID"].ToString();
+                }
+            }
+            else
+            {
+                id = "-1";
+            }
+            return id;
+        }
 		/// <summary>
 		/// 获得前几行数据
 		/// </summary>

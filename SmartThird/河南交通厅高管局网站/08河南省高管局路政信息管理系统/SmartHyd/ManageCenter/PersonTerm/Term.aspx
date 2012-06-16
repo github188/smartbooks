@@ -22,7 +22,7 @@
                                 <img src="../../Images/branch.png" alt="" border="0" />当前位置：人员装备管理中心&gt;&gt;装备管理</span></div>
                         <ul>
                             <li id="menu_Title0" onclick="nTabs('menu',this,1)" class="normal"><a href="TermEdit.aspx"
-                                title="装备新增" target="PatrolFrame"><span id="buttons1">
+                                title="装备新增" target="mainFrame"><span id="buttons1">
                                     <img src="../../Images/add.png" alt="" border="0" />&nbsp;新增装备</span> </a>
                             </li>
                         </ul>

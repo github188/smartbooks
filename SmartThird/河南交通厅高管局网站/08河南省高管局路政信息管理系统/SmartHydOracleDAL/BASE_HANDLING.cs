@@ -42,6 +42,29 @@ namespace SmartHyd.OracleDAL
             }
 		}
         /// <summary>
+        /// 确定日志编号PID下是否有记录存在
+        /// </summary>
+        /// <param name="PID"></param>
+        /// <returns></returns>
+        public bool ExistsPid(decimal PID)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("select count(1) from BASE_HANDLING");
+            strSql.Append(" where ");
+            strSql.Append(" PID = :PID  ");
+            OracleParameter[] parameters = {
+					new OracleParameter(":PID", OracleType.Number,4)			};
+            parameters[0].Value = PID;
+            if (OracleHelper.ExecuteNonQuery(strSql.ToString(), parameters) > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        /// <summary>
         /// 获取当期日期下记录总数
         /// </summary>
         /// <returns></returns>
@@ -141,7 +164,7 @@ OracleParameter[] parameters = {
 		
 		
 		/// <summary>
-		/// 删除一条数据
+		/// 删除一条数据：根据处理情况编号
 		/// </summary>
 		public bool Delete(decimal HID)
 		{
@@ -164,6 +187,31 @@ OracleParameter[] parameters = {
 				return false;
 			}
 		}
+        /// <summary>
+        /// 根据巡逻日志编号PID删除处理情况数据
+        /// </summary>
+        /// <param name="PID">巡逻日志编号</param>
+        /// <returns></returns>
+        public bool DelByPID(decimal PID)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("delete from BASE_HANDLING ");
+            strSql.Append(" where PID=:PID ");
+            OracleParameter[] parameters = {
+					new OracleParameter(":PID", OracleType.Number,4)			};
+            parameters[0].Value = PID;
+
+
+            int rows = OracleHelper.ExecuteNonQuery(strSql.ToString(), parameters);
+            if (rows > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 		
 				
 		

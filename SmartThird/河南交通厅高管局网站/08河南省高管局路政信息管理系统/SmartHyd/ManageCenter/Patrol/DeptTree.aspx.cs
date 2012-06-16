@@ -13,14 +13,31 @@ namespace SmartHyd.ManageCenter.Patrol
         {
             if (!IsPostBack)
             {
-                BindAcceptUnit();
+                if (null == Request.QueryString["type"] || "" == Request.QueryString["type"])
+                {
+
+                }
+                else
+                {
+                    string type = Request.QueryString["type"];//0代表人工巡逻；1代表电子巡逻
+                    BindAcceptUnit(type);
+                }
             }
         }
         /// <summary>
         /// 绑定单位信息
         /// </summary>
-        private void BindAcceptUnit()
+        private void BindAcceptUnit(string type)
         {
+            string url = string.Empty;
+            if (type == "0")
+            {
+                url = "ArtificialPatrol.aspx";
+            }
+            else
+            {
+                url = "ElectronicPatrol.aspx";
+            }
             DataTable dt = new DataTable();
             //获取用户所属单位和下级部门
             BLL.BASE_DEPT dept = new BLL.BASE_DEPT();
@@ -37,11 +54,12 @@ namespace SmartHyd.ManageCenter.Patrol
                     rootNode.ShowCheckBox = false;
                     rootNode.Expanded = true;
                     rootNode.Target = "PatrolFrame";
-                    rootNode.NavigateUrl = "ArtificialPatrol.aspx?deptid=" + dr["DEPTID"].ToString() + "&deptName=" + dr["DPTNAME"].ToString();//设置导航：绑定该部门下巡逻日志
+                    
+                    rootNode.NavigateUrl = url+"?deptid=" + dr["DEPTID"].ToString() + "&deptName=" + dr["DPTNAME"].ToString();//设置导航：绑定该部门下巡逻日志
 
 
                     //递归子节点
-                    RecursiveBindAcceptUnit(rootNode, dt);
+                    RecursiveBindAcceptUnit(rootNode, dt, url);
 
                     //加入控件
                     TreeViewAcceptUnit.Nodes.Add(rootNode);
@@ -54,7 +72,7 @@ namespace SmartHyd.ManageCenter.Patrol
         /// </summary>
         /// <param name="node">根节点</param>
         /// <param name="dt">数据源</param>
-        private void RecursiveBindAcceptUnit(TreeNode node, DataTable dt)
+        private void RecursiveBindAcceptUnit(TreeNode node, DataTable dt, string url)
         {
             foreach (DataRow dr in dt.Rows)
             {
@@ -68,12 +86,12 @@ namespace SmartHyd.ManageCenter.Patrol
                     sub.ShowCheckBox = false;
                     sub.Expanded = false;
                     sub.Target = "PatrolFrame";
-                    sub.NavigateUrl = "ArtificialPatrol.aspx?deptid=" + dr["DEPTID"].ToString() + "&deptName=" + dr["DPTNAME"].ToString();//设置导航：绑定该部门下巡逻日志
+                    sub.NavigateUrl = url+"?deptid=" + dr["DEPTID"].ToString() + "&deptName=" + dr["DPTNAME"].ToString();//设置导航：绑定该部门下巡逻日志
 
                     node.ChildNodes.Add(sub);
 
                     //递归循环
-                    RecursiveBindAcceptUnit(sub, dt);
+                    RecursiveBindAcceptUnit(sub, dt, url);
                 }
             }
         }

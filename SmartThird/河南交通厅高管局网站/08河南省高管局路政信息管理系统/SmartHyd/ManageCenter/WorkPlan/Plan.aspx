@@ -16,11 +16,11 @@
                     <div id="menu">
                         <div class="OperateNote">
                             <span id="buttons">
-                                <img src="../../Images/branch.png" alt="" border="0" />当前位置：<a href="../ManageCenter/Office.aspx">网络办公&gt;&gt;</a><a
+                                <img src="../../Images/branch.png" alt="" border="0" />当前位置：<a href="Plan.aspx">网络办公&gt;&gt;</a><a
                                     href="">事务提醒</a></span></div>
                                     <ul>
                                 <li id="menu_Title0" class="normal">
-                                    <a href="PlanEdit.aspx" target="PatrolFrame">
+                                    <a href="PlanEdit.aspx" target="sysFrame">
                                         <span id="Span1">
                                             <img src="../../Images/add.png" alt="" border="0" />新建事务
                                         </span>

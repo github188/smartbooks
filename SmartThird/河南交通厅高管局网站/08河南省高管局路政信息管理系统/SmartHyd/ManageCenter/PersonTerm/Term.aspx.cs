@@ -27,7 +27,7 @@ namespace SmartHyd.ManageCenter.PersonTerm
         private void BindTermData()
         {
             DataTable dt = new DataTable();
-            int deptId = 0; //当前用户所属部门编号
+            int deptId = 1; //当前用户所属部门编号
             dt = bll.GetTermList(deptId);
             if (dt != null && dt.Rows.Count > 0)
             {
@@ -64,7 +64,7 @@ namespace SmartHyd.ManageCenter.PersonTerm
         /// <param name="e"></param>
         protected void btn_ok_Click(object sender, EventArgs e)
         {
-
+            BindTermData();
         }
 
         protected void gv_patrollist_RowCommand(object sender, GridViewCommandEventArgs e)

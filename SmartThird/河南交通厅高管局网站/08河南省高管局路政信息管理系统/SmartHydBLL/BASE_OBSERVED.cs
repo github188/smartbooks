@@ -37,6 +37,15 @@ namespace SmartHyd.BLL {
             return dal.GetEntity(observedid);
         }
         /// <summary>
+        /// 获取最大ID编号
+        /// </summary>
+        /// <returns></returns>
+        public string GetMaxID()
+        {
+            return dal.GetMaxID();
+        }
+
+        /// <summary>
         /// 添加
         /// </summary>
         /// <param name="model"></param>

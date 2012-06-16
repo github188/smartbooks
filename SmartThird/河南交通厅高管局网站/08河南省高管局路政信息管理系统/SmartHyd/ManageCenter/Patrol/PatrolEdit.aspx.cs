@@ -21,44 +21,7 @@ namespace SmartHyd.Patrol
                 {
                     //添加状态页面
                     this.LabName.Text = "添加人工巡逻日志";
-                    //判断第几次巡逻:如果巡逻开始日期不是当前日期为第一次巡逻；
-                             //如果当前日期下有一条数据则为第二次巡逻；
-                             //如果当前日期下数据记录总数与巡逻次数相同：显示下班，交接班内容
-                    string sqlwhere="1=1 AND to_char(BEGINTIME,'yyyy-MM-dd')=to_char(sysdate,'yyyy-MM-dd')";
-                    DataTable dt=handlingbll.GetList(sqlwhere);
-                    if (dt.Rows.Count > 0)
-                    {
-                        //巡逻次数
-                        int times=Convert.ToInt32(dt.Rows[0]["TIMES"]);
-                        if (handlingbll.getCount() == times)
-                        {
-                            this.divShift.Style.Add("display", "block");
-                        }
-                        else
-                        {
-                            //追加巡查情况选项卡
-                            if (dt.Rows.Count == 1)
-                            {
-                                this.liname2.Style.Add("display", "block");
-                                this.tabs_2.Style.Add("display", "block");
-                            }
-                            if (dt.Rows.Count == 2)
-                            {
-                                this.liname3.Style.Add("display", "block");
-                                this.tabs_3.Style.Add("display", "block");
-                            }
-                            if (dt.Rows.Count == 3)
-                            {
-                                this.liname3.Style.Add("display", "block");
-                                this.tabs_3.Style.Add("display", "block");
-                            }
-                        }
-                    }
-                    else
-                    {
-                       // this.liname.Style.Add("display", "none");
-                        //this.tabs_2.Style.Add("display", "none");
-                    }
+                    ShowTimes();
                 }
                 else
                 {
@@ -71,6 +34,40 @@ namespace SmartHyd.Patrol
                 }
             }
         }
+        /// <summary>
+        /// 显示巡逻处理情况的次数
+        /// </summary>
+        private void ShowTimes()
+        {
+            //判断第几次巡逻:如果巡逻开始日期不是当前日期为第一次巡逻；
+            //如果当前日期下有一条数据则为第二次巡逻；
+            //如果当前日期下数据记录总数与巡逻次数相同：显示下班，交接班内容
+            string sqlwhere = "1=1 AND PATROLTYPE='人工巡逻' AND to_char(BEGINTIME,'yyyy-MM-dd')=to_char(sysdate,'yyyy-MM-dd')";
+            DataTable dt = handlingbll.GetList(sqlwhere);
+            if (dt.Rows.Count > 0)
+            {
+                //巡逻次数
+                int times = Convert.ToInt32(dt.Rows[0]["TIMES"]);
+                int counts = handlingbll.getCount()+1;//当前记录数的下一记录
+                if (counts < times)
+                {
+                    int count = dt.Rows.Count + 1;
+                    this.LabheadName.Text = "第" + count + "次巡查";
+                }
+                else
+                {
+                    this.LabheadName.Text = "第" + times + "次巡查";
+                    this.divShift.Style.Add("display", "block");
+                }
+                decimal pid = Convert.ToDecimal(dt.Rows[0]["PID"]);
+                Entity.BASE_PATROL model = bll.GetModel(pid);
+                SetPatrolEntity(model);
+            }
+            else
+            {
+                this.LabheadName.Text = "第1次巡查";
+            }
+        }
         #region 人工巡逻日志
         /// <summary>
         /// 获取人工巡逻日志实体数据
@@ -80,15 +77,15 @@ namespace SmartHyd.Patrol
         {
             Entity.BASE_PATROL model = new Entity.BASE_PATROL();
             model.PATROLID = Convert.ToInt32(hidPrimary.Value);     //id,主键
-            //DropDownList ddr = (DropDownList)this.Department1.FindControl("ddlDepartment");//找到用户控件中的子控件
-            //if (ViewState["id"] != null)
-            //{
-            //    model.DEPTID = 4;//默认单位编号
-            //}
-            //else
-            //{
-            //    model.DEPTID = Convert.ToInt32(ddr.SelectedValue);  //巡查中队
-            //}
+            DropDownList ddr = (DropDownList)this.Department1.FindControl("ddlDepartment");//找到用户控件中的子控件
+            if (ViewState["id"] != null)
+            {
+                model.DEPTID = 1;//默认单位编号
+            }
+            else
+            {
+                model.DEPTID = Convert.ToInt32(ddr.SelectedValue);  //巡查中队
+            }
             model.RESPUSER = txtRESPUSER.Text;                      //巡查负责人
             model.PATROLUSER = txtPATROLUSER.Text;                  //巡查人员
             model.BUSNUMBER = txtBUSNUMBER.Text;                    //巡逻车牌号
@@ -114,15 +111,15 @@ namespace SmartHyd.Patrol
         private void SetPatrolEntity(Entity.BASE_PATROL model)
         {
             hidPrimary.Value = model.PATROLID.ToString();
-            //DropDownList ddr = (DropDownList)this.Department1.FindControl("ddlDepartment");//找到用户控件中的子控件
-            //if (model.DEPTID == 0)
-            //{
-            //    ddr.SelectedValue = "4";
-            //}
-            //else
-            //{
-            //    ddr.SelectedValue = model.DEPTID.ToString();
-            //}
+            DropDownList ddr = (DropDownList)this.Department1.FindControl("ddlDepartment");//找到用户控件中的子控件
+            if (model.DEPTID == 0)
+            {
+                ddr.SelectedValue = "1";
+            }
+            else
+            {
+                ddr.SelectedValue = model.DEPTID.ToString();
+            }
             txtRESPUSER.Text = model.RESPUSER;
             txtPATROLUSER.Text = model.PATROLUSER;
             txtBUSNUMBER.Text = model.BUSNUMBER;
@@ -148,7 +145,7 @@ namespace SmartHyd.Patrol
         /// <param name="pid">巡逻日志编号</param>
         /// <param name="times">巡逻次数</param>
         /// <returns></returns>
-        private Entity.BASE_HANDLING GetHandlingEntity(decimal pid,decimal times)
+        private Entity.BASE_HANDLING GetHandlingEntity(decimal pid, decimal times)
         {
             Entity.BASE_HANDLING model = new Entity.BASE_HANDLING();
             model.HID = -1;//主键，巡查处理情况编号
@@ -156,7 +153,7 @@ namespace SmartHyd.Patrol
             model.TIMES = times;//巡逻次数；
             TextBox tb1 = (TextBox)this.Handling1.FindControl("txtBEGINTIME");
 
-            model.BEGINTIME = Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd")+" "+tb1.Text);//开始时间
+            model.BEGINTIME = Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd") + " " + tb1.Text);//开始时间
             TextBox tb2 = (TextBox)this.Handling1.FindControl("txtENDTIME");
             model.ENDTIME = Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd") + " " + tb2.Text);//结束时间
             TextBox txtLog = (TextBox)this.Handling1.FindControl("txtLog");
@@ -170,13 +167,13 @@ namespace SmartHyd.Patrol
         {
             TextBox tb1 = (TextBox)this.Handling1.FindControl("txtBEGINTIME");
 
-            tb1.Text=model.BEGINTIME.ToString("yyyy-MM-dd hh:mm:ss");//开始时间
+            tb1.Text = model.BEGINTIME.ToString("yyyy-MM-dd hh:mm:ss");//开始时间
             TextBox tb2 = (TextBox)this.Handling1.FindControl("txtENDTIME");
             tb2.Text = model.ENDTIME.ToString("yyyy-MM-dd hh:mm:ss");//结束时间
             TextBox txtLog = (TextBox)this.Handling1.FindControl("txtLog");
-             txtLog.Text=model.CONTENT;//处理情况内容；
+            txtLog.Text = model.CONTENT;//处理情况内容；
             TextBox txtRemark = (TextBox)this.Handling1.FindControl("txtRemark");
-            txtRemark.Text=model.REMARK;//备注
+            txtRemark.Text = model.REMARK;//备注
         }
         #endregion
 
@@ -204,12 +201,17 @@ namespace SmartHyd.Patrol
 
         private void PatrolAdd(Entity.BASE_PATROL model)
         {
-            decimal Pid =Convert.ToDecimal(bll.GetMaxID());//获取最新添加的巡逻日志编号
+            decimal Pid = Convert.ToDecimal(bll.GetMaxID());//获取最新添加的巡逻日志编号
             string sqlwhere = "1=1 and PID=" + Pid + " and to_char(BEGINTIME,'yyyy-MM-dd')=to_char(sysdate,'yyyy-MM-dd')";//查询当前巡逻日志下是否有巡查处理情况
             if (handlingbll.GetList(sqlwhere).Rows.Count > 0)
             {
                 Entity.BASE_HANDLING handlingmodel = GetHandlingEntity(Pid, 3);
                 handlingbll.Add(handlingmodel);//添加巡查处理情况
+
+                if (this.divShift.Style.Value == "block")
+                {
+                    bll.update(model);
+                }
             }
             else
             {

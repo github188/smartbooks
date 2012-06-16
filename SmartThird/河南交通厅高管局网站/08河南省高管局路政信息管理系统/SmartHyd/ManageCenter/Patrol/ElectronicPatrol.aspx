@@ -52,7 +52,7 @@
                             <tr id="search_condition_panel" style="height: 48px; border-bottom: 1px solid #8cb2e2;">
                                 <td>
                                     <table id="PatrolSearch" width="480" border="0" cellspacing="0" cellpadding="0">
-                                        <tr>
+                                        <%--<tr>
                                             <td width="80" height="24" align="right">
                                                 <span id="PatrolSearch0">单位部门：</span>
                                             </td>
@@ -68,7 +68,7 @@
                                             <td width="80" height="24" align="right">
                                                 &nbsp;
                                             </td>
-                                        </tr>
+                                        </tr>--%>
                                         <tr>
                                             <td height="24" align="right">
                                                 <span id="PatrolSearch2">起始时间：</span>
