@@ -12,6 +12,8 @@ namespace SmartHyd.BLL {
 
         private OracleDAL.BASE_BUS_OVERRUN dal = new OracleDAL.BASE_BUS_OVERRUN();
 
+
+
         /// <summary>
         /// 获取预览数据
         /// </summary>
@@ -39,6 +41,36 @@ namespace SmartHyd.BLL {
             if (On_CompleteSingle != null) {
                 On_CompleteSingle(size, count);
             }
-        }        
+        }
+
+
+        /// <summary>
+        /// 获取地市列表
+        /// </summary>
+        /// <returns></returns>
+        public DataTable GetCityList() {
+            return dal.GetCityList();
+        }
+
+        /// <summary>
+        /// 获取高速列表
+        /// </summary>
+        /// <returns></returns>
+        public DataTable GetHighwayList() {
+            return dal.GetHighwayList();
+        }
+
+        /// <summary>
+        /// 获取单位信息列表
+        /// </summary>
+        /// <returns></returns>
+        public DataTable GetUnitList() {
+            return dal.GetUnitList();
+        }
+
+
+        public DataTable GetOverloadRate(string _sql) {
+            return dal.GetOverloadRate(_sql);
+        }
     }
 }
