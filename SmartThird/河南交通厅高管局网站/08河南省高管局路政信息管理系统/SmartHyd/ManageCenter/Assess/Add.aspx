@@ -38,19 +38,9 @@
 
             <tr>
                 <td nowrap="nowrap" class="TableData" width="30">
-                    案件编号:
+                   
                 </td>
                 <td nowrap="nowrap" class="TableData" align="left">
-                    <asp:TextBox ID="txtTitle" runat="server" ></asp:TextBox>
-                </td>
-            </tr>
-
-            <tr>
-                <td nowrap="nowrap" class="TableData" width="30">
-                    案件名称:
-                </td>
-                <td nowrap="nowrap" class="TableData" align="left">
-                    <asp:TextBox ID="TextBox1" runat="server" ></asp:TextBox>
                 </td>
             </tr>
 
@@ -58,8 +48,8 @@
             <!--操作按钮-->
             <tr class="TableControl" align="center">
                 <td nowrap="nowrap" colspan="2">
-                    <asp:Button ID="btnSend" runat="server" Text="提交" CssClass="Button" OnClick="btnSend_Click" />
-                    <asp:Button ID="btnCancel" runat="server" Text="取消" CssClass="Button" OnClick="btnCancel_Click" />
+                    <asp:Button ID="btnSend" runat="server" Text="提交" CssClass="Button"  />
+                    <asp:Button ID="btnCancel" runat="server" Text="取消" CssClass="Button"  />
                 </td>
             </tr>
         </tbody>

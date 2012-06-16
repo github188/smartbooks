@@ -1,8 +1,9 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Add.aspx.cs" Inherits="SmartHyd.ManageCenter.Case.Add" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
-    <title>单位加分</title>
+    <title>新增案件</title>
     <link href="../../Css/contentPanel.css" rel="stylesheet" type="text/css" />
     <link href="../../Css/patrol.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="../../Scripts/jquery-ui-1.8.18.custom/js/jquery-1.7.1.min.js"></script>
@@ -17,7 +18,7 @@
                 <div id="menu">
                     <div class="OperateNote">
                         <span id="buttons">
-                            <img src="../../Images/branch.png" border="0" />当前位置：考评管理 > 单位加分 </span>
+                            <img src="../../Images/branch.png" border="0" />当前位置：路产案件 > 新增案件 </span>
                     </div>
                     <div class="ReturnPreview">
                         <span id="buttons1" onclick="javascript:history.go(-1);">
@@ -31,34 +32,20 @@
             <!--首选行-->
             <tr class="TableHeader">
                 <td colspan="2">
-                    单位加分
+                    新增案件
                 </td>
             </tr>
-
             <tr>
                 <td nowrap="nowrap" class="TableData" width="30">
-                    案件编号:
                 </td>
                 <td nowrap="nowrap" class="TableData" align="left">
-                    <asp:TextBox ID="txtTitle" runat="server" ></asp:TextBox>
                 </td>
             </tr>
-
-            <tr>
-                <td nowrap="nowrap" class="TableData" width="30">
-                    案件名称:
-                </td>
-                <td nowrap="nowrap" class="TableData" align="left">
-                    <asp:TextBox ID="TextBox1" runat="server" ></asp:TextBox>
-                </td>
-            </tr>
-
-
             <!--操作按钮-->
             <tr class="TableControl" align="center">
                 <td nowrap="nowrap" colspan="2">
-                    <asp:Button ID="btnSend" runat="server" Text="提交" CssClass="Button" OnClick="btnSend_Click" />
-                    <asp:Button ID="btnCancel" runat="server" Text="取消" CssClass="Button" OnClick="btnCancel_Click" />
+                    <asp:Button ID="btnSend" runat="server" Text="提交" CssClass="Button" />
+                    <asp:Button ID="btnCancel" runat="server" Text="取消" CssClass="Button" />
                 </td>
             </tr>
         </tbody>

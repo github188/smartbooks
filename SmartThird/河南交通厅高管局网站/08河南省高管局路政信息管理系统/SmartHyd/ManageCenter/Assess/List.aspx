@@ -22,7 +22,7 @@
                     </div>
                     <ul>
                         <li id="menu_Title0" onclick="nTabs('menu',this,1)" class="normal"><a href="Add.aspx"
-                            target="RoadPropertyFrame"><span id="Span1">
+                            target="EvaluationManagerFrame"><span id="Span1">
                                 <img src="../../Images/add.png" alt="" border="0" />单位加分</span></a></li>
                     </ul>
                 </div>
@@ -40,8 +40,9 @@
             <tr>
                 <td nowrap="nowrap" class="TableData">
                    <asp:GridView ID="grvList" runat="server" AutoGenerateColumns="False" BackColor="White"
-                        BorderColor="#CCCCCC" BorderStyle="None" Font-Size="12px" BorderWidth="1px" CellPadding="3"
-                        Width="100%">
+                        BorderColor="#CCCCCC" BorderStyle="None" Font-Size="12px" 
+                        BorderWidth="1px" CellPadding="3"
+                        Width="100%" onrowcommand="grvList_RowCommand">
                         <Columns>
                             <asp:BoundField DataField="title" HeaderText="案件名称"></asp:BoundField>
                             <asp:BoundField DataField="sendcode" HeaderText="案件编号">
@@ -73,7 +74,7 @@
                     <webdiyer:AspNetPager ID="AspNetPager1" CssClass="anpager" runat="server" CustomInfoHTML="共%PageCount%页，当前为第%CurrentPageIndex%页"
                         FirstPageText="首页" LastPageText="尾页" NextPageText="下一页" PageIndexBoxType="TextBox"
                         PrevPageText="上一页" ShowCustomInfoSection="Right" ShowPageIndexBox="Auto" SubmitButtonText="Go"
-                        TextAfterPageIndexBox="页" TextBeforePageIndexBox="转到">
+                        TextAfterPageIndexBox="页" TextBeforePageIndexBox="转到" onpagechanging="AspNetPager1_PageChanging">
                     </webdiyer:AspNetPager>
                 </td>
             </tr>
