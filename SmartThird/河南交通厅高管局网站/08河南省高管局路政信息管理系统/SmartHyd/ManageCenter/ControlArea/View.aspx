@@ -28,73 +28,97 @@
         </tr>
     </table>
     <table class="TableBlock" width="100%" align="center" cellpadding="0" cellspacing="0">
-        <tbody>
-            <!--首选行-->
-            <tr class="TableHeader">
-                <td colspan="2">
-                    查看违章信息
-                </td>
-            </tr>
-            <tr>
-                <td nowrap="nowrap" class="TableData">
-                    高速公路:
-                </td>
-                <td class="TableData" style="width: 100%;">
-                    <asp:HiddenField ID="hidPrimary" runat="server" Value="-1" />
-                    <asp:Label ID="lblRoadName" runat="server"></asp:Label>
-                </td>
-            </tr>
-            <tr>
-                <td nowrap="nowrap" class="TableData">
-                    设备名称:
-                </td>
-                <td class="TableData" style="width: 100%;">
-                    <asp:Label ID="lblDriverName" runat="server"></asp:Label>
-                </td>
-            </tr>
-            <tr>
-                <td nowrap="nowrap" class="TableData">
-                    桩号位置:
-                </td>
-                <td class="TableData" style="width: 100%;">
-                    <asp:Label ID="lblPoint" runat="server"></asp:Label>
-                </td>
-            </tr>
-            <tr>
-                <td nowrap="nowrap" class="TableData">
-                    位置描述:
-                </td>
-                <td class="TableData" style="width: 100%;">
-                    <asp:Label ID="lblPointSummary" runat="server"></asp:Label>
-                </td>
-            </tr>
-            <tr>
-                <td nowrap="nowrap" class="TableData">
-                    时间信息:
-                </td>
-                <td class="TableData" style="width: 100%;">
-                    <asp:Label ID="Label1" runat="server" Text="登记时间"></asp:Label>
-                    <asp:TextBox ID="txtBeginTime" runat="server"></asp:TextBox>
-                    <asp:Label ID="Label2" runat="server" Text="竣工时间"></asp:Label>
-                    <asp:TextBox ID="txtEndTime" runat="server"></asp:TextBox>
-                </td>
-            </tr>
-            <tr>
-                <td nowrap="nowrap" class="TableData">
-                    设备照片:
-                </td>
-                <td class="TableData" style="width: 100%;">
-                    <asp:Literal ID="litPic" runat="server"></asp:Literal>
-                </td>
-            </tr>
-            <!--操作按钮-->
-            <tr class="TableControl" align="center">
-                <td colspan="2" nowrap="nowrap">
-                    <asp:Button ID="btnDel" runat="server" Text="删除" CssClass="Button" />
-                    <asp:Button ID="btnCancel" runat="server" Text="返回" CssClass="Button" />
-                </td>
-            </tr>
-        </tbody>
+        <!--首选行-->
+        <tr class="TableHeader">
+            <td colspan="2">
+                查看违章信息
+            </td>
+        </tr>
+        <tr>
+            <td nowrap="nowrap" class="TableData">
+                违章名称:
+            </td>
+            <td class="TableData" style="width: 100%;">
+                <asp:Label ID="lblAreaName" runat="server"></asp:Label>
+            </td>
+        </tr>
+        <tr>
+            <td nowrap="nowrap" class="TableData">
+                高速公路:
+            </td>
+            <td class="TableData" style="width: 100%;">
+                <asp:HiddenField ID="hidPrimary" runat="server" Value="-1" />
+                <asp:Label ID="lblLineName" runat="server"></asp:Label>
+            </td>
+        </tr>
+        <tr>
+            <td nowrap="nowrap" class="TableData">
+                桩号位置:
+            </td>
+            <td class="TableData" style="width: 100%;">
+                <asp:Label ID="lblPoint" runat="server"></asp:Label>
+            </td>
+        </tr>
+        <tr>
+            <td nowrap="nowrap" class="TableData">
+                位置描述:
+            </td>
+            <td class="TableData" style="width: 100%;">
+                <asp:Label ID="lblPointSummary" runat="server"></asp:Label>
+            </td>
+        </tr>
+        <tr>
+            <td nowrap="nowrap" class="TableData">
+                时间信息:
+            </td>
+            <td class="TableData" style="width: 100%;">
+                <asp:Label ID="Label1" runat="server" Text="登记时间"></asp:Label>
+                <asp:TextBox ID="txtBeginTime" runat="server"></asp:TextBox>
+                <asp:Label ID="Label2" runat="server" Text="竣工时间"></asp:Label>
+                <asp:TextBox ID="txtEndTime" runat="server"></asp:TextBox>
+            </td>
+        </tr>
+        <tr>
+            <td nowrap="nowrap" class="TableData">
+                现场照片:
+            </td>
+            <td class="TableData" style="width: 100%;">
+                <asp:Literal ID="litPic" runat="server"></asp:Literal>
+            </td>
+        </tr>
+        <tr>
+            <td nowrap="nowrap" class="TableData">
+                详细描述:
+            </td>
+            <td class="TableData" style="width: 100%;">
+                <asp:TextBox ID="txtDETAILED" runat="server" TextMode="MultiLine" Height="75" Width="99%"></asp:TextBox>
+            </td>
+        </tr>
+        <tr>
+            <td nowrap="nowrap" class="TableData">
+                现状描述:
+            </td>
+            <td class="TableData" style="width: 100%;">
+                <asp:TextBox ID="txtSTATUS" runat="server" TextMode="MultiLine" Height="75" Width="99%"></asp:TextBox>
+            </td>
+        </tr>
+        <tr>
+            <td nowrap="nowrap" class="TableData">
+                备注信息:
+            </td>
+            <td class="TableData" style="width: 100%;">
+                <asp:TextBox ID="txtREMARK" runat="server" TextMode="MultiLine" Height="75" Width="99%"></asp:TextBox>
+            </td>
+        </tr>
+        <!--操作按钮-->
+        <tr class="TableControl" align="center">
+            <td colspan="2" nowrap="nowrap">
+                <asp:Button ID="btnDel" runat="server" Text="删除" CssClass="Button" 
+                    onclick="btnDel_Click" />
+                <asp:Button ID="btnCancel" runat="server" Text="返回" CssClass="Button" 
+                    onclick="btnCancel_Click" />
+            </td>
+        </tr>
     </table>
     <asp:Literal ID="litmsg" Visible="false" runat="server"></asp:Literal>
     </form>

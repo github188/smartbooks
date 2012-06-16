@@ -27,7 +27,7 @@
                                     <img src="../../Images/branch.png" alt="" border="0" />当前位置：路产设备管理 > 路产查询</span></div>
                             <ul>
                                 <li id="menu_Title0" onclick="nTabs('menu',this,1)" class="normal"><a href="RoadTermAdd.aspx"
-                                    title="新增路产" target="ElectronicPatrolFrame"><span id="buttons">
+                                    title="新增路产" target="RoadPropertyFrame"><span id="buttons">
                                         <img src="../../Images/add.png" alt="" border="0" />新增路产</span></a></li>
                             </ul>
                         </div>

@@ -20,5 +20,9 @@ namespace SmartHyd.BLL {
         public bool Delete(int id) {
             return dal.Delete(id);
         }
+
+        public Entity.BASE_AREA GetModel(int id) {
+            return dal.GetEntity(id);
+        }
     }
 }

@@ -40,6 +40,15 @@ namespace SmartHyd.ManageCenter.ControlArea {
         protected global::System.Web.UI.ScriptManager ScriptManager1;
         
         /// <summary>
+        /// lblAreaName 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblAreaName;
+        
+        /// <summary>
         /// hidPrimary 控件。
         /// </summary>
         /// <remarks>
@@ -49,22 +58,13 @@ namespace SmartHyd.ManageCenter.ControlArea {
         protected global::System.Web.UI.WebControls.HiddenField hidPrimary;
         
         /// <summary>
-        /// lblRoadName 控件。
+        /// lblLineName 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblRoadName;
-        
-        /// <summary>
-        /// lblDriverName 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDriverName;
+        protected global::System.Web.UI.WebControls.Label lblLineName;
         
         /// <summary>
         /// lblPoint 控件。
@@ -128,6 +128,33 @@ namespace SmartHyd.ManageCenter.ControlArea {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal litPic;
+        
+        /// <summary>
+        /// txtDETAILED 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDETAILED;
+        
+        /// <summary>
+        /// txtSTATUS 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtSTATUS;
+        
+        /// <summary>
+        /// txtREMARK 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtREMARK;
         
         /// <summary>
         /// btnDel 控件。

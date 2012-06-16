@@ -24,7 +24,7 @@
                     </div>
                     <ul>
                         <li id="menu_Title0" onclick="nTabs('menu',this,1)" class="normal"><a href="Add.aspx"
-                            title="新增路产" target="ElectronicPatrolFrame"><span id="Span1">
+                            title="新增路产" target="ViolationFrame"><span id="Span1">
                                 <img src="../../Images/add.png" alt="" border="0" />添加信息</span></a></li>
                     </ul>
                 </div>

@@ -9,44 +9,44 @@ using System.Web.UI.WebControls;
 namespace SmartHyd.Ascx {
     public partial class Department : System.Web.UI.UserControl {
         public event OnSelectedNodeChanged OnSelectedNodeChanged;
-
         private BLL.BASE_DEPT dept = new BLL.BASE_DEPT();
-        private int inde = 0;
+        private Utility.UserSession userSession;
 
         protected void Page_Load(object sender, EventArgs e) {
-            Utility.UserSession session = (Utility.UserSession)Session["user"];
+            userSession = (Utility.UserSession)Session["user"];
 
             if (!IsPostBack) {
+                //获取数据源
                 DataTable dt = new DataTable();
-                dt = dept.GetUserWhereDepartment(session.USERNAME, 0);
-                BindingControl(this.ddlDepartment, dt);
-                ddlDepartment.SelectedValue = session.DEPTID.ToString();
-                Session["deptcode"] = session.DEPTID;
+                dt = dept.GetUserWhereDepartment(userSession.USERNAME, -1);
+
+                //递归部门列表
+                ddlDepartment.Items.Clear();
+                RecursiveNode(ddlDepartment, dt, Convert.ToInt32(userSession.DEPTID), 0);
+
+                ddlDepartment.SelectedValue = userSession.DEPTID.ToString();
+                Session["deptcode"] = userSession.DEPTID;
             }
         }
 
-        private void BindingControl(DropDownList ddl, DataTable dt) {
-            ddl.Items.Clear();
-            InitTreeNodes(ddl, 0, dt, 0);
-            if (ddlDepartment.Items.Count != 0) {
-                ddlDepartment.SelectedIndex = 0;
-                Session["deptcode"] = ddlDepartment.SelectedValue;
-            }
-        }
-
-        private void InitTreeNodes(DropDownList ddl, int parentId, DataTable dt, int indent) {            
-            foreach (DataRow dr in dt.Rows) {
-                if (dr["PARENTID"].ToString() == parentId.ToString()) {
-                    inde += indent;
+        private void RecursiveNode(DropDownList ddl, DataTable dt, int rootId, int indent) {
+            foreach (DataRow row in dt.Rows) {
+                if (row["PARENTID"].ToString().Equals(rootId.ToString())) {
                     ListItem item = new ListItem();
-                    for (int i = 0; i < inde; i++) {
-                        item.Text += "-";
+                    for (int i = 0; i < indent; i++) {
+                        if (i % 2 == 0) {
+                            item.Text += "◆";
+                        }
+                        else {
+                            item.Text += "--";
+                        }
                     }
-                    item.Text += dr["DPTNAME"].ToString();
-                    item.Value = dr["DEPTID"].ToString();
+                    item.Text += row["DPTNAME"].ToString();
+                    item.Value = row["DEPTID"].ToString();
                     ddl.Items.Add(item);
-                    InitTreeNodes(ddl, Convert.ToInt32(dr["DEPTID"].ToString()), dt, 2);
-                    inde -= 2;
+
+                    RecursiveNode(ddl, dt, Convert.ToInt32(item.Value), indent += 2);
+                    indent -= 2;
                 }
             }
         }
