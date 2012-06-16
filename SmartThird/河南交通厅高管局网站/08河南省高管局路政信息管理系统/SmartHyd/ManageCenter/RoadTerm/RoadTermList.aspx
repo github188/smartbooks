@@ -46,7 +46,7 @@
                                 <td width="100" height="24" align="right">
                                     设备类型：
                                 </td>
-                                <td width="120" height="24">
+                                <td height="24">
                                     <asp:DropDownList ID="ddlTermType" runat="server" CssClass="input">
                                     </asp:DropDownList>
                                 </td>
