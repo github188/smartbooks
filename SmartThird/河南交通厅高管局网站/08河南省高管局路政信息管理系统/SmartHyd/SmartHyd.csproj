@@ -292,15 +292,20 @@
     <Content Include="ManageCenter\Ascx\SysLog.ascx" />
     <Content Include="ManageCenter\Ascx\SysManager.ascx" />
     <Content Include="ManageCenter\Ascx\UserManage.ascx" />
+    <Content Include="ManageCenter\AssessType\Add.aspx" />
     <Content Include="ManageCenter\AssessType\List.aspx" />
+    <Content Include="ManageCenter\Assess\Add.aspx" />
     <Content Include="ManageCenter\Assess\List.aspx" />
+    <Content Include="ManageCenter\Case\Add.aspx" />
     <Content Include="ManageCenter\Case\List.aspx" />
     <Content Include="ManageCenter\Chat.aspx" />
     <Content Include="ManageCenter\ControlArea\Add.aspx" />
     <Content Include="ManageCenter\ControlArea\List.aspx" />
     <Content Include="ManageCenter\ControlArea\View.aspx" />
     <Content Include="ManageCenter\DeptManage.aspx" />
+    <Content Include="ManageCenter\DocumentType\Add.aspx" />
     <Content Include="ManageCenter\DocumentType\List.aspx" />
+    <Content Include="ManageCenter\Document\Add.aspx" />
     <Content Include="ManageCenter\Document\List.aspx" />
     <Content Include="ManageCenter\Empower.aspx" />
     <Content Include="ManageCenter\ImportData.aspx" />
@@ -328,11 +333,13 @@
     <Content Include="ManageCenter\PersonTerm\Term.aspx" />
     <Content Include="ManageCenter\Plan.aspx" />
     <Content Include="ManageCenter\readme.txt" />
+    <Content Include="ManageCenter\RoadLicense\Add.aspx" />
     <Content Include="ManageCenter\RoadLicense\List.aspx" />
     <Content Include="ManageCenter\RoadTerm\RoadTermAdd.aspx" />
     <Content Include="ManageCenter\RoadTerm\RoadTermList.aspx" />
     <Content Include="ManageCenter\RoadTerm\View.aspx" />
     <Content Include="ManageCenter\Role.aspx" />
+    <Content Include="ManageCenter\SignLicense\Add.aspx" />
     <Content Include="ManageCenter\SignLicense\List.aspx" />
     <Content Include="ManageCenter\SysLog.aspx" />
     <Content Include="ManageCenter\SysManager.aspx" />
@@ -1382,6 +1389,13 @@
     <Compile Include="ManageCenter\Ascx\Handling.ascx.designer.cs">
       <DependentUpon>Handling.ascx</DependentUpon>
     </Compile>
+    <Compile Include="ManageCenter\AssessType\Add.aspx.cs">
+      <DependentUpon>Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\AssessType\Add.aspx.designer.cs">
+      <DependentUpon>Add.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ManageCenter\AssessType\List.aspx.cs">
       <DependentUpon>List.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1389,12 +1403,26 @@
     <Compile Include="ManageCenter\AssessType\List.aspx.designer.cs">
       <DependentUpon>List.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ManageCenter\Assess\Add.aspx.cs">
+      <DependentUpon>Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\Assess\Add.aspx.designer.cs">
+      <DependentUpon>Add.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ManageCenter\Assess\List.aspx.cs">
       <DependentUpon>List.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ManageCenter\Assess\List.aspx.designer.cs">
       <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\Case\Add.aspx.cs">
+      <DependentUpon>Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\Case\Add.aspx.designer.cs">
+      <DependentUpon>Add.aspx</DependentUpon>
     </Compile>
     <Compile Include="ManageCenter\Case\List.aspx.cs">
       <DependentUpon>List.aspx</DependentUpon>
@@ -1424,12 +1452,26 @@
     <Compile Include="ManageCenter\ControlArea\View.aspx.designer.cs">
       <DependentUpon>View.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ManageCenter\DocumentType\Add.aspx.cs">
+      <DependentUpon>Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\DocumentType\Add.aspx.designer.cs">
+      <DependentUpon>Add.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ManageCenter\DocumentType\List.aspx.cs">
       <DependentUpon>List.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ManageCenter\DocumentType\List.aspx.designer.cs">
       <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\Document\Add.aspx.cs">
+      <DependentUpon>Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\Document\Add.aspx.designer.cs">
+      <DependentUpon>Add.aspx</DependentUpon>
     </Compile>
     <Compile Include="ManageCenter\Document\List.aspx.cs">
       <DependentUpon>List.aspx</DependentUpon>
@@ -1557,6 +1599,13 @@
     <Compile Include="ManageCenter\Patrol\Electronic.aspx.designer.cs">
       <DependentUpon>Electronic.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ManageCenter\RoadLicense\Add.aspx.cs">
+      <DependentUpon>Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\RoadLicense\Add.aspx.designer.cs">
+      <DependentUpon>Add.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ManageCenter\RoadLicense\List.aspx.cs">
       <DependentUpon>List.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1570,6 +1619,13 @@
     </Compile>
     <Compile Include="ManageCenter\RoadTerm\View.aspx.designer.cs">
       <DependentUpon>View.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\SignLicense\Add.aspx.cs">
+      <DependentUpon>Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\SignLicense\Add.aspx.designer.cs">
+      <DependentUpon>Add.aspx</DependentUpon>
     </Compile>
     <Compile Include="ManageCenter\SignLicense\List.aspx.cs">
       <DependentUpon>List.aspx</DependentUpon>
