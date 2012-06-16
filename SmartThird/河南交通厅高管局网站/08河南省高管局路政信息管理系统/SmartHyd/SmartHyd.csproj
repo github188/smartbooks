@@ -103,7 +103,10 @@
     <Content Include="Images\bg_tabbar.png" />
     <Content Include="Images\big_btn_a.png" />
     <Content Include="Images\branch.png" />
+    <Content Include="Images\btn_excel.png" />
     <Content Include="Images\btn_search.gif" />
+    <Content Include="Images\btn_search.png" />
+    <Content Include="Images\btn_summary.png" />
     <Content Include="Images\chart_organisation.png" />
     <Content Include="Images\chart_organisation_add.png" />
     <Content Include="Images\chart_organisation_delete.png" />
@@ -322,6 +325,11 @@
     <Content Include="ManageCenter\Official\Reply.aspx" />
     <Content Include="ManageCenter\Official\ReplySource.aspx" />
     <Content Include="ManageCenter\Official\Trash.aspx" />
+    <Content Include="ManageCenter\Overload\IllegalOverloadManage.aspx" />
+    <Content Include="ManageCenter\Overload\IntegratedQuery.aspx" />
+    <Content Include="ManageCenter\Overload\IntegratedQueryResult.aspx" />
+    <Content Include="ManageCenter\Overload\OverloadSummary.aspx" />
+    <Content Include="ManageCenter\Overload\PassageCountSummary.aspx" />
     <Content Include="ManageCenter\Overrun\OverrunIndex.aspx" />
     <Content Include="ManageCenter\Patrol\DeptTree.aspx" />
     <Content Include="ManageCenter\Patrol\Electronic.aspx" />
@@ -1595,6 +1603,41 @@
     <Compile Include="ManageCenter\Official\Trash.aspx.designer.cs">
       <DependentUpon>Trash.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ManageCenter\Overload\IllegalOverloadManage.aspx.cs">
+      <DependentUpon>IllegalOverloadManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\Overload\IllegalOverloadManage.aspx.designer.cs">
+      <DependentUpon>IllegalOverloadManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\Overload\IntegratedQuery.aspx.cs">
+      <DependentUpon>IntegratedQuery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\Overload\IntegratedQuery.aspx.designer.cs">
+      <DependentUpon>IntegratedQuery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\Overload\IntegratedQueryResult.aspx.cs">
+      <DependentUpon>IntegratedQueryResult.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\Overload\IntegratedQueryResult.aspx.designer.cs">
+      <DependentUpon>IntegratedQueryResult.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\Overload\OverloadSummary.aspx.cs">
+      <DependentUpon>OverloadSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\Overload\OverloadSummary.aspx.designer.cs">
+      <DependentUpon>OverloadSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\Overload\PassageCountSummary.aspx.cs">
+      <DependentUpon>PassageCountSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\Overload\PassageCountSummary.aspx.designer.cs">
+      <DependentUpon>PassageCountSummary.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ManageCenter\Patrol\DeptTree.aspx.cs">
       <DependentUpon>DeptTree.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1973,7 +2016,6 @@
     <Folder Include="Document\" />
     <Folder Include="Images\RoadImage\" />
     <Folder Include="Log\" />
-    <Folder Include="ManageCenter\Overload\" />
     <Folder Include="ManageCenter\RoadProject\" />
     <Folder Include="ManageCenter\Security\" />
     <Folder Include="ManageCenter\Traffic\" />

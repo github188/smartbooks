@@ -10,6 +10,11 @@
     <link rel="stylesheet" type="text/css" href="../../Css/tongdaoa.css" />
     <link rel="stylesheet" type="text/css" href="../../Scripts/jquery-ui-1.8.18.custom/css/redmond/jquery-ui-1.8.18.custom.css" />
     <script src="../../Scripts/base.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        function GoBack() {
+            history.go(-1);
+        }
+    </script>
 </head>
 <body>
     <form id="form1" runat="server">
