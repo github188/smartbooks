@@ -330,6 +330,7 @@
     <Content Include="ManageCenter\RoadLicense\List.aspx" />
     <Content Include="ManageCenter\RoadTerm\RoadTermAdd.aspx" />
     <Content Include="ManageCenter\RoadTerm\RoadTermList.aspx" />
+    <Content Include="ManageCenter\RoadTerm\View.aspx" />
     <Content Include="ManageCenter\Role.aspx" />
     <Content Include="ManageCenter\SignLicense\List.aspx" />
     <Content Include="ManageCenter\SysLog.aspx" />
@@ -1554,6 +1555,13 @@
     </Compile>
     <Compile Include="ManageCenter\RoadLicense\List.aspx.designer.cs">
       <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\RoadTerm\View.aspx.cs">
+      <DependentUpon>View.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\RoadTerm\View.aspx.designer.cs">
+      <DependentUpon>View.aspx</DependentUpon>
     </Compile>
     <Compile Include="ManageCenter\SignLicense\List.aspx.cs">
       <DependentUpon>List.aspx</DependentUpon>

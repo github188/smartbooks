@@ -11,7 +11,7 @@ namespace SmartHyd.ManageCenter.RoadTerm {
         private BLL.BASE_ROAD_TERM bll = new BLL.BASE_ROAD_TERM();
         private BLL.BASE_ROAD_TERM_TYPE bllRoadType = new BLL.BASE_ROAD_TERM_TYPE();
         private Utility.UserSession session;
-        
+
         //加载
         protected void Page_Load(object sender, EventArgs e) {
             session = (Utility.UserSession)Session["user"];
@@ -36,7 +36,13 @@ namespace SmartHyd.ManageCenter.RoadTerm {
             DataTable dt = new DataTable();
 
             int typeCode = Convert.ToInt32(ddlTermType.SelectedValue);
-            int deptCode = Convert.ToInt32(Session["deptcode"]);
+            int deptCode;
+            if (Session["deptcode"] != null) {
+                deptCode = Convert.ToInt32(Session["deptcode"]);
+            }
+            else {
+                deptCode = Convert.ToInt32(session.DEPTID);
+            }
             DateTime beginTime = DateTime.Parse(txtBeginTime.Text.Trim());
             DateTime endTime = DateTime.Parse(txtEndTime.Text.Trim());
 
@@ -58,7 +64,7 @@ namespace SmartHyd.ManageCenter.RoadTerm {
             //绑定分页后的数据
             dgvRoadList.DataSource = pds;
             dgvRoadList.DataBind();
-            
+
             litmsg.Visible = false;
             if (dt == null || dt.Rows.Count == 0) {
                 litmsg.Visible = true;
@@ -83,6 +89,21 @@ namespace SmartHyd.ManageCenter.RoadTerm {
 
         //查询
         protected void btnSubmit_Click(object sender, EventArgs e) {
+            BingrRoadList();
+        }
+
+        protected void dgvRoadList_RowCommand(object sender, GridViewCommandEventArgs e) {
+            int id = Convert.ToInt32(e.CommandArgument.ToString());
+            switch (e.CommandName) {
+                case "view":
+                    Response.Redirect(string.Format("View.aspx?id={0}", id.ToString()), true);
+                    break;
+                case "del":
+                    bll.UpdateStatusAsDelete(id);
+                    break;
+            }
+
+            /*重新绑定数据*/
             BingrRoadList();
         }
     }

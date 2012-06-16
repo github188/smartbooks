@@ -10,7 +10,7 @@
 namespace SmartHyd.ManageCenter.RoadTerm {
     
     
-    public partial class RoadTermList {
+    public partial class View {
         
         /// <summary>
         /// Head1 控件。
@@ -40,31 +40,49 @@ namespace SmartHyd.ManageCenter.RoadTerm {
         protected global::System.Web.UI.ScriptManager ScriptManager1;
         
         /// <summary>
-        /// UpdatePanel1 控件。
+        /// hidPrimary 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
+        protected global::System.Web.UI.WebControls.HiddenField hidPrimary;
         
         /// <summary>
-        /// Department1 控件。
+        /// lblRoadName 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::SmartHyd.Ascx.Department Department1;
+        protected global::System.Web.UI.WebControls.Label lblRoadName;
         
         /// <summary>
-        /// ddlTermType 控件。
+        /// lblDriverName 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlTermType;
+        protected global::System.Web.UI.WebControls.Label lblDriverName;
+        
+        /// <summary>
+        /// lblPoint 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPoint;
+        
+        /// <summary>
+        /// lblPointSummary 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPointSummary;
         
         /// <summary>
         /// txtBeginTime 控件。
@@ -85,31 +103,31 @@ namespace SmartHyd.ManageCenter.RoadTerm {
         protected global::System.Web.UI.WebControls.TextBox txtEndTime;
         
         /// <summary>
-        /// btnSubmit 控件。
+        /// litPic 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSubmit;
+        protected global::System.Web.UI.WebControls.Literal litPic;
         
         /// <summary>
-        /// dgvRoadList 控件。
+        /// btnDel 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView dgvRoadList;
+        protected global::System.Web.UI.WebControls.Button btnDel;
         
         /// <summary>
-        /// AspNetPager1 控件。
+        /// btnCancel 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::Wuqi.Webdiyer.AspNetPager AspNetPager1;
+        protected global::System.Web.UI.WebControls.Button btnCancel;
         
         /// <summary>
         /// litmsg 控件。

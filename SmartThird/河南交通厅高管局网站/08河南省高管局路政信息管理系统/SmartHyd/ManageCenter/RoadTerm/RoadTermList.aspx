@@ -1,33 +1,16 @@
 <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RoadTermList.aspx.cs" Inherits="SmartHyd.ManageCenter.RoadTerm.RoadTermList" %>
 
 <%@ Register Assembly="AspNetPager" Namespace="Wuqi.Webdiyer" TagPrefix="webdiyer" %>
-<%@ Register src="../../Ascx/Department.ascx" tagname="Department" tagprefix="uc1" %>
+<%@ Register Src="../../Ascx/Department.ascx" TagName="Department" TagPrefix="uc1" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
     <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
     <title>路产设备列表页</title>
-    <link rel="stylesheet" type="text/css" href="../Css/tongdaoa.css" />
+    <link href="../../Css/contentPanel.css" rel="stylesheet" type="text/css" />
     <link href="../../Css/patrol.css" rel="stylesheet" type="text/css" />
     <script src="../../Scripts/jquery-ui-1.8.18.custom/js/jquery-1.7.1.min.js" type="text/javascript"></script>
-    <script src="../../Scripts/My97DatePicker/WdatePicker.js" type="text/javascript"></script>
-    <script type="text/javascript" language="javascript">
-
-        /*打开/闭合查询条件设置面板*/
-        function showConditionPanel() {
-            if ($("#search_condition_panel").css("display") == "none") {
-                $("#search_condition_panel").css("display", "block");
-            } else {
-                $("#search_condition_panel").css("display", "none");
-            }
-        }
-
-        /*查询前 数据验证*/
-        function DataValidate() {
-
-        }
-    </script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -57,10 +40,8 @@
                                 <td width="100" height="24" align="right" style="line-height: 24px;">
                                     路政单位：
                                 </td>
-                                <td  height="24">
-                                    
+                                <td height="24">
                                     <uc1:Department ID="Department1" runat="server" />
-                                    
                                 </td>
                                 <td width="100" height="24" align="right">
                                     设备类型：
@@ -87,8 +68,7 @@
                                     <asp:TextBox ID="txtEndTime" runat="server" class="Wdate controlstyle" onFocus="WdatePicker({isShowClear:false,readOnly:true})"></asp:TextBox>
                                 </td>
                                 <td width="80" height="24" align="center">
-                                    <asp:Button ID="btnSubmit" runat="server" CssClass="btn_search" 
-                                        onclick="btnSubmit_Click" />
+                                    <asp:Button ID="btnSubmit" runat="server" CssClass="btn_search" OnClick="btnSubmit_Click" />
                                 </td>
                             </tr>
                         </table>
@@ -97,7 +77,8 @@
                 <tr>
                     <td valign="top">
                         <asp:GridView ID="dgvRoadList" runat="server" AutoGenerateColumns="False" BackColor="White"
-                            BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" Width="100%">
+                            BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" 
+                            Width="100%" onrowcommand="dgvRoadList_RowCommand">
                             <Columns>
                                 <asp:BoundField DataField="ROADNAME" HeaderText="设备名称" />
                                 <asp:BoundField DataField="LINENAME" HeaderText="高速公路" />
@@ -105,9 +86,16 @@
                                     <ItemTemplate>
                                         K:<%#Eval("STAKEK")%>+ M:<%#Eval("STAKEM")%>
                                     </ItemTemplate>
-                                </asp:TemplateField>                                
+                                </asp:TemplateField>
                                 <asp:BoundField DataField="REGTIME" HeaderText="登记时间" />
                                 <asp:BoundField DataField="COMPTIME" HeaderText="竣工时间" />
+                                <asp:TemplateField HeaderText="操作">
+                                    <ItemTemplate>
+                                        <asp:LinkButton runat="server" CommandName="view" CommandArgument='<%#Eval("id") %>'>查看</asp:LinkButton>
+                                        <asp:LinkButton runat="server" CommandName="del" CommandArgument='<%#Eval("id") %>'>删除</asp:LinkButton>
+                                    </ItemTemplate>
+                                    <ItemStyle Width="80" />
+                                </asp:TemplateField>
                             </Columns>
                             <FooterStyle BackColor="White" ForeColor="#000066" />
                             <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
@@ -119,7 +107,6 @@
                             <SortedDescendingCellStyle BackColor="#CAC9C9" />
                             <SortedDescendingHeaderStyle BackColor="#00547E" />
                         </asp:GridView>
-                        <asp:Literal ID="litmsg" Visible="false" runat="server"></asp:Literal>
                     </td>
                 </tr>
             </table>
@@ -129,21 +116,9 @@
                 TextAfterPageIndexBox="页" TextBeforePageIndexBox="转到" OnPageChanging="AspNetPager1_PageChanging"
                 PageSize="20" CssClass="anpager" CurrentPageButtonClass="cpb">
             </webdiyer:AspNetPager>
+            <asp:Literal ID="litmsg" Visible="false" runat="server"></asp:Literal>
         </ContentTemplate>
     </asp:UpdatePanel>
     </form>
 </body>
 </html>
-<script type="text/javascript">
-    //tab效果通用函数
-    function nTabs(tabObj, obj, n) {
-        var tabList = document.getElementById(tabObj).getElementsByTagName("li");
-        for (i = 0; i < n; i++) {
-            if (tabList[i].id == obj.id) {
-                document.getElementById(tabObj + "_Title" + i).className = "actived";
-            } else {
-                document.getElementById(tabObj + "_Title" + i).className = "normal";
-            }
-        }
-    }
-</script>

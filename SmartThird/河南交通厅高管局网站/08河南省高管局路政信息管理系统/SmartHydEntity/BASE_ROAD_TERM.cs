@@ -43,11 +43,11 @@ namespace SmartHyd.Entity
 		/// <summary>
         /// 竣工时间
         /// </summary>		
-        private DateTime _COMPTIME;
+        private DateTime _COMPTIME = DateTime.Now;
 		/// <summary>
         /// 登记时间
         /// </summary>		
-        private DateTime _REGTIME;
+        private DateTime _REGTIME = DateTime.Now;
 		/// <summary>
         /// 设备照片
         /// </summary>		

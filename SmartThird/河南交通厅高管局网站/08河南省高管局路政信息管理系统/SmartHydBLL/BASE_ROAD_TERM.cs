@@ -35,5 +35,19 @@ namespace SmartHyd.BLL {
                 endTime.ToString("yyyy-MM-dd"));
             return dal.GetList(where).Tables[0];
         }
+
+        public void Delete(int id) {
+            dal.Delete(id);            
+        }
+
+        public void UpdateStatusAsDelete(int id) {
+            string sec = string.Format("update BASE_ROAD_TERM set STATUS=1 where ID={0}", id.ToString());
+            dal.Query(sec);
+        }
+
+
+        public Entity.BASE_ROAD_TERM GetModel(int id) {
+            return dal.GetEntity(id);
+        }
     }
 }

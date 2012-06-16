@@ -101,12 +101,7 @@ namespace SmartHyd.ManageCenter.RoadTerm {
             //刷新页面
             litmsg.Visible = true;
             litmsg.Text = "<div style='font-size:16px; font-family:微软雅黑; color:red;font-weight:bold; text-align:center;'>添加成功</div>";
-            //Response.Redirect("RoadTermAdd.aspx", true);
-            SetEntity(new Entity.BASE_ROAD_TERM());
-        }
 
-        //cancel
-        protected void btnCancel_Click(object sender, EventArgs e) {
             SetEntity(new Entity.BASE_ROAD_TERM());
         }
 

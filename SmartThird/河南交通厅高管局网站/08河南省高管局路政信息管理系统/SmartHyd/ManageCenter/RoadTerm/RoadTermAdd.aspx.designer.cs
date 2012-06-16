@@ -85,22 +85,22 @@ namespace SmartHyd.ManageCenter.RoadTerm {
         protected global::System.Web.UI.WebControls.DropDownList ddlTermType;
         
         /// <summary>
-        /// Label8 控件。
+        /// Label11 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label8;
+        protected global::System.Web.UI.WebControls.Label Label11;
         
         /// <summary>
-        /// txtRoadName 控件。
+        /// ddlStatus 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRoadName;
+        protected global::System.Web.UI.WebControls.DropDownList ddlStatus;
         
         /// <summary>
         /// Label14 控件。
@@ -119,6 +119,24 @@ namespace SmartHyd.ManageCenter.RoadTerm {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtLINENAME;
+        
+        /// <summary>
+        /// Label8 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label8;
+        
+        /// <summary>
+        /// txtRoadName 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtRoadName;
         
         /// <summary>
         /// Label16 控件。
@@ -166,24 +184,6 @@ namespace SmartHyd.ManageCenter.RoadTerm {
         protected global::System.Web.UI.WebControls.TextBox txtSTAKEM;
         
         /// <summary>
-        /// Label2 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
-        
-        /// <summary>
-        /// txtSUMMARY 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSUMMARY;
-        
-        /// <summary>
         /// Label4 控件。
         /// </summary>
         /// <remarks>
@@ -220,22 +220,22 @@ namespace SmartHyd.ManageCenter.RoadTerm {
         protected global::System.Web.UI.WebControls.TextBox txtCOMPTIME;
         
         /// <summary>
-        /// Label7 控件。
+        /// Label2 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label7;
+        protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
-        /// txtREMARK 控件。
+        /// txtSUMMARY 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtREMARK;
+        protected global::System.Web.UI.WebControls.TextBox txtSUMMARY;
         
         /// <summary>
         /// Label9 控件。
@@ -256,22 +256,22 @@ namespace SmartHyd.ManageCenter.RoadTerm {
         protected global::System.Web.UI.WebControls.FileUpload fileupPhoto;
         
         /// <summary>
-        /// Label11 控件。
+        /// Label7 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label11;
+        protected global::System.Web.UI.WebControls.Label Label7;
         
         /// <summary>
-        /// ddlStatus 控件。
+        /// txtREMARK 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlStatus;
+        protected global::System.Web.UI.WebControls.TextBox txtREMARK;
         
         /// <summary>
         /// btnSubmit 控件。
@@ -281,15 +281,6 @@ namespace SmartHyd.ManageCenter.RoadTerm {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnSubmit;
-        
-        /// <summary>
-        /// btnCancel 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCancel;
         
         /// <summary>
         /// litmsg 控件。

@@ -255,7 +255,9 @@ namespace SmartHyd.OracleDAL {
             return OracleHelper.Query(strSql.ToString());
         }
 
-
+        public void Query(string sqlString) {
+            OracleHelper.Query(sqlString);            
+        }
     }
 }
 
