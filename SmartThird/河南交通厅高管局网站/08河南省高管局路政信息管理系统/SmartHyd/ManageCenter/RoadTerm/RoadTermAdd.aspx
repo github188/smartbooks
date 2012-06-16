@@ -64,11 +64,6 @@
             }
         }
 
-        /*查询前 数据验证*/
-        function DataValidate() {
-
-        }
-
         function GoBack() {
             history.go(-1);
         }

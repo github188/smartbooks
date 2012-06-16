@@ -266,6 +266,10 @@ namespace SmartHyd.OracleDAL {
         }
 
 
+
+        public DataTable Query(string sqlString) {
+            return OracleHelper.Query(sqlString).Tables[0];
+        }
     }
 }
 

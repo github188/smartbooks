@@ -14,7 +14,6 @@ namespace SmartHyd.ManageCenter.RoadTerm {
         private Utility.UserSession session;
 
         protected void Page_Load(object sender, EventArgs e) {
-
             session = (Utility.UserSession)Session["user"];
 
             if (!IsPostBack) {

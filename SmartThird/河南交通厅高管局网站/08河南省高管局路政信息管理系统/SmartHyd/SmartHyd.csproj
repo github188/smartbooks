@@ -298,6 +298,7 @@
     <Content Include="ManageCenter\Chat.aspx" />
     <Content Include="ManageCenter\ControlArea\Add.aspx" />
     <Content Include="ManageCenter\ControlArea\List.aspx" />
+    <Content Include="ManageCenter\ControlArea\View.aspx" />
     <Content Include="ManageCenter\DeptManage.aspx" />
     <Content Include="ManageCenter\DocumentType\List.aspx" />
     <Content Include="ManageCenter\Document\List.aspx" />
@@ -1415,6 +1416,13 @@
     </Compile>
     <Compile Include="ManageCenter\ControlArea\List.aspx.designer.cs">
       <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\ControlArea\View.aspx.cs">
+      <DependentUpon>View.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\ControlArea\View.aspx.designer.cs">
+      <DependentUpon>View.aspx</DependentUpon>
     </Compile>
     <Compile Include="ManageCenter\DocumentType\List.aspx.cs">
       <DependentUpon>List.aspx</DependentUpon>
