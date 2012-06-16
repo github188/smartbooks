@@ -21,12 +21,13 @@
     #menu .ReturnPreview
     {
         float:right;
-        width:100px;        
+        width:auto;        
         font-weight:bold;
         font-size:12px;
         font-family:微软雅黑;
         color:#065c8f;
         cursor:hand;
+        margin-right:10px;
     }
     
     #menu ul{ margin:0; padding-top:2px; height:20px;  float:right}
@@ -49,10 +50,25 @@
 }
     .controlstyle{ width:100%;}
     .txtboxstyle{border:none; border-bottom:1px solid #065c8f;border-top:1px solid #065c8f;border-left:1px solid #065c8f;border-right:1px solid #065c8f;}
-    
-    .btn_search{ width:70px; height:24px; line-height:24px; background:url(../Images/btn_search.gif) no-repeat; border:none; margin:0px; padding:0px;cursor:hand;}
+    .btn_search{ width:86px; height:24px; line-height:24px; background:url(../Images/btn_search.png) no-repeat; border:none; margin:0px; padding:0px;cursor:hand;}
+    .btn_export{ width:86px; height:24px; line-height:24px; background:url(../Images/btn_excel.png) no-repeat; border:none; margin:0px; padding:0px;cursor:hand;}
+    .btn_summary{ width:86px; height:24px; line-height:24px; background:url(../Images/btn_summary.png) no-repeat; border:none; margin:0px; padding:0px;cursor:hand;}
+    /*超载车辆汇总*/
+	.czclhz_tit{ font-size:24px; height:40px; line-height:40px; text-align:center; font-weight:bold;}
+	.czclhz_tab{ width:830px; border-collapse:collapse; text-align:center;}
+	.czclhz_tab td{ height:25px; border:1px solid #000;}
+	.czclhz_tab .tit{ height:40px; border:1px solid #000; font-weight:bold;}
     
     .anpager { margin-top:10px; font-size:12px; }
-.anpager .cpb {background:#1F3A87 none repeat scroll 0 0;border:1px solid #CCCCCC;color:#FFFFFF;font-weight:bold;margin:-6px 4px 0 0;padding:0px 5px 0; width:20px; height:21px;}
-.anpager a {background:#FFFFFF none repeat scroll 0 0;border:1px solid #CCCCCC;color:#1F3A87;margin:5px 4px 0 0;padding:4px 5px 0;text-decoration:none}
-.anpager a:hover{background:#1F3A87 none repeat scroll 0 0;border:1px solid #1F3A87;color:#FFFFFF;}
+	.anpager .cpb {background:#1F3A87 none repeat scroll 0 0;border:1px solid #CCCCCC;color:#FFFFFF;font-weight:bold;margin:-6px 4px 0 0;padding:0px 5px 0; width:20px; height:21px;}
+	.anpager a {background:#FFFFFF none repeat scroll 0 0;border:1px solid #CCCCCC;color:#1F3A87;margin:5px 4px 0 0;padding:4px 5px 0;text-decoration:none}
+	.anpager a:hover{background:#1F3A87 none repeat scroll 0 0;border:1px solid #1F3A87;color:#FFFFFF;}
+
+
+	.page
+	{
+		font-size:12px;
+		font-family:"微软雅黑";
+	}
+	
+	.msg{font-size:14px; font-family:微软雅黑; color:red;font-weight:bold; text-align:center;}
