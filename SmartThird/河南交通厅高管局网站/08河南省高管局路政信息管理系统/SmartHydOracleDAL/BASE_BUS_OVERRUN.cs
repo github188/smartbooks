@@ -22,6 +22,7 @@ namespace SmartHyd.OracleDAL {
     public partial class BASE_BUS_OVERRUN : IBASE_BUS_OVERRUN {
         public event OnCompleteSingle On_CompleteSingle;
 
+        #region 数据基本操作
         /// <summary>
         /// 确定记录是否存在
         /// </summary>
@@ -269,6 +270,7 @@ namespace SmartHyd.OracleDAL {
             strSql.Append(" order by " + filedOrder);
             return OracleHelper.Query(strSql.ToString());
         }
+        #endregion 
 
         #region 自定义查询
 
@@ -363,6 +365,78 @@ namespace SmartHyd.OracleDAL {
                 }
                 #endregion
             }
+        }
+        #endregion
+
+        #region 车辆通行记录综合查询
+
+        /// <summary>
+        /// 获取单位信息列表
+        /// </summary>
+        /// <returns></returns>
+        public DataTable GetUnitList() {
+            string sqlStr = "SELECT DISTINCT(TS_COMPANY) FROM BASE_TOLLSTATION ORDER BY TS_COMPANY";
+            DataTable dt = OracleHelper.Query(sqlStr).Tables[0];
+
+            return dt;
+        }
+
+
+        /// <summary>
+        /// 获取地市列表
+        /// </summary>
+        /// <returns></returns>
+        public DataTable GetCityList() {
+            string sqlStr = "SELECT DISTINCT(TS_CITY) FROM BASE_TOLLSTATION ORDER BY TS_CITY";
+            DataTable dt = OracleHelper.Query(sqlStr).Tables[0];
+            return dt;
+        }
+
+        /// <summary>
+        /// 获取高速列表
+        /// </summary>
+        /// <returns></returns>
+        public DataTable GetHighwayList() {
+            string sqlStr = "SELECT DISTINCT(TS_HIGHWAY) FROM BASE_TOLLSTATION ORDER BY TS_HIGHWAY";
+            DataTable dt = OracleHelper.Query(sqlStr).Tables[0];
+
+            return dt;
+        }
+
+        /// <summary>
+        /// 车辆通行综合查询
+        /// </summary>
+        /// <param name="_condition"></param>
+        /// <returns></returns>
+        public DataTable GetOverloadRate(string _condition) {
+            StringBuilder sqlstr = new StringBuilder();
+            //SELECT * FROM 
+            //(
+            //SELECT A.*, ROWNUM RN 
+            //FROM (SELECT * FROM base_tollstation) A 
+            //WHERE ROWNUM <= 20
+            //)
+            //WHERE RN >= 0
+
+            sqlstr.Append("SELECT * FROM (");
+            sqlstr.Append("SELECT A.*,ROWNUM RN FROM (");
+            sqlstr.Append("SELECT VEHICLELICENSE 车牌号");
+            sqlstr.Append(",ENTRYSTATIONNAME 入口站名");
+            sqlstr.Append(",ENTRYTIME 入站时间");
+            sqlstr.Append(",EXITSTATIONNAME 出口站名");
+            sqlstr.Append(",EXITTIME 出口时间");
+            sqlstr.Append(",PAYTYPE 支付形式");
+            sqlstr.Append(",AXISNUM 轴数");
+            sqlstr.Append(",OVERLOADRATE 超载率");
+            sqlstr.Append(",TOTALWEIGHT 车货总重");
+            sqlstr.Append(",TOTALTOLL 金额");
+            sqlstr.Append(",DISTANCE 里程");
+            sqlstr.Append("FROM "+_condition);
+            sqlstr.Append(" ORDER BY ENTRYTIME");
+            sqlstr.Append(") A WHERE ROWNUM<=20) WHERE RN>=0");
+
+
+            return OracleHelper.Query(sqlstr.ToString()).Tables[0];
         }
         #endregion
     }
