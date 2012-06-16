@@ -220,31 +220,22 @@ namespace SmartHyd.ManageCenter.Overload {
         protected global::System.Web.UI.WebControls.TextBox txt_emileage;
         
         /// <summary>
-        /// btnSearch 控件。
+        /// ImgBtnSearch 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSearch;
+        protected global::System.Web.UI.WebControls.ImageButton ImgBtnSearch;
         
         /// <summary>
-        /// btnExport 控件。
+        /// ImgBtnExport 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnExport;
-        
-        /// <summary>
-        /// btnClear 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnClear;
+        protected global::System.Web.UI.WebControls.ImageButton ImgBtnExport;
         
         /// <summary>
         /// litMsg 控件。

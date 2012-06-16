@@ -6,7 +6,7 @@
 <head runat="server">
      <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
      <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
-    <title>综合查询-超限治理</title>
+    <title>车辆通行综合查询-超限治理</title>
     <script src="../../Scripts/My97DatePicker/WdatePicker.js" type="text/javascript"></script>
     <script src="../../Scripts/jquery-ui-1.8.18.custom/js/jquery-1.7.1.min.js" type="text/javascript"></script>
     <script src="../../Scripts/QDRegEx.js" type="text/javascript"></script>
@@ -104,7 +104,7 @@
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
         <div id="menu">
-            <span id="buttons"><img src="../../Images/branch.png" alt="" border="0" />当前位置：超限治理》综合查询</span>
+            <span id="buttons"><img src="../../Images/branch.png" alt="" border="0" />当前位置：超限治理》车辆通行综合查询</span>
         </div>
           <div style=" border:5px double #0e2f5c; margin:auto; text-align:center;">
           <table width="740px" border="0" cellspacing="0" cellpadding="0" align="center" style="font-size:12px; font-weight:bold;">
@@ -185,11 +185,13 @@
           </tr>
           <tr>
             <td height="30" colspan="6" align="center" valign="middle">
-            <span class="mar_l5"><asp:Button ID="btnSearch" runat="server" Text=" " CssClass="btn_search_new" OnClientClick="DateValidate()" onclick="btnSearch_Click" /></span>
-              <span class="mar_l30">
-              <asp:Button ID="btnExport" runat="server" Text=" "  CssClass="btn_export_new" onclick="btnExport_Click" />
-              <%--<input id="btnExcel"  type="button" value="" class="btn_export" onclick="ExcelReport()" />--%></span>
-              <span class="mar_l30"><asp:Button ID="btnClear" runat="server" Text=" " CssClass="btn_truncate" OnClientClick="return ClearForm();" onclick="btnClear_Click"/></span>
+            <span class="mar_l5">
+            <asp:ImageButton ID="ImgBtnSearch" runat="server"  OnClientClick="DateValidate()" 
+                    onclick="btnSearch_Click" ImageUrl="~/Images/btn_search.png" /> 
+              &nbsp;&nbsp;
+              <asp:ImageButton ID="ImgBtnExport" runat="server" 
+                    onclick="btnExport_Click" ImageUrl="~/Images/btn_excel.png" /> 
+              
             </td>
           </tr>
         </table>
@@ -200,7 +202,7 @@
             </span>
           </ContentTemplate>
           <Triggers>
-            <asp:AsyncPostBackTrigger ControlID="btnExport" EventName="Click" />
+            <asp:AsyncPostBackTrigger ControlID="ImgBtnExport" EventName="Click" />
             <%--<asp:AsyncPostBackTrigger ControlID="btnSearch" EventName="Click" />
             <asp:AsyncPostBackTrigger ControlID="btnClear" EventName="Click" />--%>
           </Triggers>
