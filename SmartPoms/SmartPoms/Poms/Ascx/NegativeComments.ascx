@@ -26,7 +26,7 @@
             </td>
             <td>
                 <asp:TextBox ID="txtSiteName" runat="server" Width="490" Height="35" TextMode="MultiLine"
-                    Text="腾讯网,新华网,新浪网">
+                    Text="腾讯网,新华网,新浪网,搜狐新闻,人民网,凤凰网,网易新闻,光明网">
                 </asp:TextBox>
             </td>
             <td>
