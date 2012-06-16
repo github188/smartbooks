@@ -38,9 +38,9 @@
             </tr>
             <tr>
                 <td nowrap="nowrap" class="TableData">
-                    <asp:GridView ID="grvAcceptList" runat="server" AutoGenerateColumns="False" BackColor="White"
+                    <asp:GridView ID="grvList" runat="server" AutoGenerateColumns="False" BackColor="White"
                         BorderColor="#CCCCCC" BorderStyle="None" Font-Size="12px" BorderWidth="1px" CellPadding="3"
-                        Width="100%" OnRowCommand="grvAcceptList_RowCommand">
+                        Width="100%">
                         <Columns>
                             <asp:BoundField DataField="title" HeaderText="档案名称"></asp:BoundField>
                             <asp:BoundField DataField="sendcode" HeaderText="档案编号">
