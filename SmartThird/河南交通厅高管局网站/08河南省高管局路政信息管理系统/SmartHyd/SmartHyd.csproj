@@ -104,6 +104,7 @@
     <Content Include="Images\big_btn_a.png" />
     <Content Include="Images\branch.png" />
     <Content Include="Images\btn_excel.png" />
+    <Content Include="Images\btn_return.png" />
     <Content Include="Images\btn_search.gif" />
     <Content Include="Images\btn_search.png" />
     <Content Include="Images\btn_summary.png" />
@@ -150,6 +151,7 @@
     <Content Include="Images\icons\chaoxian.png" />
     <Content Include="Images\icons\chart.png" />
     <Content Include="Images\icons\city.png" />
+    <Content Include="Images\icons\clipboard_text.png" />
     <Content Include="Images\icons\closeTabAll.gif" />
     <Content Include="Images\icons\closeTabOne.gif" />
     <Content Include="Images\icons\company.png" />
@@ -169,6 +171,7 @@
     <Content Include="Images\icons\download.png" />
     <Content Include="Images\icons\edit.png" />
     <Content Include="Images\icons\electronicpatrol.png" />
+    <Content Include="Images\icons\excel.png" />
     <Content Include="Images\icons\farway.png" />
     <Content Include="Images\icons\files.png" />
     <Content Include="Images\icons\filesmanager.png" />
@@ -222,12 +225,16 @@
     <Content Include="Images\icons\school.png" />
     <Content Include="Images\icons\search.png" />
     <Content Include="Images\icons\security16.png" />
+    <Content Include="Images\icons\securitymatrial.png" />
+    <Content Include="Images\icons\securitysearch.png" />
+    <Content Include="Images\icons\securityteam.png" />
     <Content Include="Images\icons\selfservice.png" />
     <Content Include="Images\icons\serchopenroomrecord.png" />
     <Content Include="Images\icons\setuseridicon.png" />
     <Content Include="Images\icons\star.png" />
     <Content Include="Images\icons\starmanager.png" />
     <Content Include="Images\icons\statistics.png" />
+    <Content Include="Images\icons\store.png" />
     <Content Include="Images\icons\street.png" />
     <Content Include="Images\icons\supermarket.png" />
     <Content Include="Images\icons\sysmanagemenu.png" />
@@ -238,6 +245,8 @@
     <Content Include="Images\icons\totalicon.png" />
     <Content Include="Images\icons\trafficcondition.png" />
     <Content Include="Images\icons\trafficcount.png" />
+    <Content Include="Images\icons\trafficreport.png" />
+    <Content Include="Images\icons\trafficsearch.png" />
     <Content Include="Images\icons\types.png" />
     <Content Include="Images\icons\units.png" />
     <Content Include="Images\icons\usericon.png" />
@@ -247,9 +256,24 @@
     <Content Include="Images\i_log.png" />
     <Content Include="Images\i_role.png" />
     <Content Include="Images\i_user.png" />
+    <Content Include="Images\list.jpg" />
+    <Content Include="Images\list_a.jpg" />
+    <Content Include="Images\list_bg.jpg" />
     <Content Include="Images\loadingAnimation.gif" />
     <Content Include="Images\log.png" />
     <Content Include="Images\lukuang_700.jpg" />
+    <Content Include="Images\maptool\arrow_circle_double.png" />
+    <Content Include="Images\maptool\cross.png" />
+    <Content Include="Images\maptool\image_resize.png" />
+    <Content Include="Images\maptool\magnifier_pan.png" />
+    <Content Include="Images\maptool\magnifier_zoom.png" />
+    <Content Include="Images\maptool\magnifier_zoom_fit.png" />
+    <Content Include="Images\maptool\magnifier_zoom_out.png" />
+    <Content Include="Images\maptool\pin.png" />
+    <Content Include="Images\maptool\pin_plus.png" />
+    <Content Include="Images\maptool\ruler.png" />
+    <Content Include="Images\maptool\ruler_crop.png" />
+    <Content Include="Images\map_search.jpg" />
     <Content Include="Images\new1_t.jpg" />
     <Content Include="Images\new2_t.jpg" />
     <Content Include="Images\new3_t.jpg" />
@@ -262,6 +286,7 @@
     <Content Include="Images\search.png" />
     <Content Include="Images\searching.gif" />
     <Content Include="Images\shouwen.png" />
+    <Content Include="Images\submit1.jpg" />
     <Content Include="Images\tongzhi_700.jpg" />
     <Content Include="Images\ui-hander-background-1.png" />
     <Content Include="Images\ui-hander-background.png" />
@@ -278,6 +303,160 @@
     <Content Include="Images\ui-login-logo.png" />
     <Content Include="Images\user-ico.jpg" />
     <Content Include="Images\user.png" />
+    <Content Include="img\20120229015943657_easyicon_cn_24.png" />
+    <Content Include="img\a0.png" />
+    <Content Include="img\bank.png" />
+    <Content Include="img\blank.gif" />
+    <Content Include="img\blue_branch.png" />
+    <Content Include="img\blue_branchMarker.gif" />
+    <Content Include="img\blue_branchMarker.png" />
+    <Content Include="img\blue_pin.gif" />
+    <Content Include="img\blue_pin.png" />
+    <Content Include="img\blu_1.png" />
+    <Content Include="img\ckr.png" />
+    <Content Include="img\cloud-popup-relative.png" />
+    <Content Include="img\cloud-popup-relative1.png" />
+    <Content Include="img\cloud-popup-relative2.png" />
+    <Content Include="img\cloud-popup-relative3.png" />
+    <Content Include="img\construncation.png" />
+    <Content Include="img\drag-rectangle-off.png" />
+    <Content Include="img\drag-rectangle-on.png" />
+    <Content Include="img\dwr.png" />
+    <Content Include="img\east-mini.png" />
+    <Content Include="img\east-mini1.png" />
+    <Content Include="img\east-mini2.png" />
+    <Content Include="img\Flag_blue.png" />
+    <Content Include="img\flag_orange.gif" />
+    <Content Include="img\flash.gif" />
+    <Content Include="img\flash2.gif" />
+    <Content Include="img\grepin.png" />
+    <Content Include="img\layer-switcher-maximize.png" />
+    <Content Include="img\layer-switcher-maximize1.png" />
+    <Content Include="img\layer-switcher-minimize.png" />
+    <Content Include="img\layer-switcher-minimize1.png" />
+    <Content Include="img\layer\atm.png" />
+    <Content Include="img\layer\blue_bc.png" />
+    <Content Include="img\layer\company.png" />
+    <Content Include="img\layer\customers.png" />
+    <Content Include="img\layer\flag.png" />
+    <Content Include="img\layer\hospital.png" />
+    <Content Include="img\layer\hotel.png" />
+    <Content Include="img\layer\jianhang.png" />
+    <Content Include="img\layer\pan_panel.png" />
+    <Content Include="img\layer\red_bc.png" />
+    <Content Include="img\layer\school.png" />
+    <Content Include="img\layer\ssb.png" />
+    <Content Include="img\layer\street.png" />
+    <Content Include="img\layer\supermarket.png" />
+    <Content Include="img\layer\yiyuan.png" />
+    <Content Include="img\layer\youzheng.png" />
+    <Content Include="img\mark.png" />
+    <Content Include="img\mark1.png" />
+    <Content Include="img\mark2.png" />
+    <Content Include="img\mark3.png" />
+    <Content Include="img\mark4.jpg" />
+    <Content Include="img\mark4.png" />
+    <Content Include="img\marker-blue.png" />
+    <Content Include="img\marker-gold.png" />
+    <Content Include="img\marker-green.png" />
+    <Content Include="img\marker.png" />
+    <Content Include="img\measuring-stick-off.png" />
+    <Content Include="img\measuring-stick-on.png" />
+    <Content Include="img\menu\around.png" />
+    <Content Include="img\menu\around_hover.png" />
+    <Content Include="img\menu\detail.png" />
+    <Content Include="img\menu\detail_hover.png" />
+    <Content Include="img\menu\hover.png" />
+    <Content Include="img\menu\image.png" />
+    <Content Include="img\menu\image_hover.png" />
+    <Content Include="img\menu\transport.png" />
+    <Content Include="img\menu\transport_hover.png" />
+    <Content Include="img\n1.png" />
+    <Content Include="img\n2.png" />
+    <Content Include="img\north-mini.png" />
+    <Content Include="img\north-mini1.png" />
+    <Content Include="img\north-mini2.png" />
+    <Content Include="img\number1\blu_1.png" />
+    <Content Include="img\number1\blu_10.png" />
+    <Content Include="img\number1\blu_2.png" />
+    <Content Include="img\number1\blu_3.png" />
+    <Content Include="img\number1\blu_4.png" />
+    <Content Include="img\number1\blu_5.png" />
+    <Content Include="img\number1\blu_6.png" />
+    <Content Include="img\number1\blu_7.png" />
+    <Content Include="img\number1\blu_8.png" />
+    <Content Include="img\number1\blu_9.png" />
+    <Content Include="img\number1\red_0.png" />
+    <Content Include="img\number1\red_1.png" />
+    <Content Include="img\number1\red_10.png" />
+    <Content Include="img\number1\red_11.png" />
+    <Content Include="img\number1\red_12.png" />
+    <Content Include="img\number1\red_13.png" />
+    <Content Include="img\number1\red_14.png" />
+    <Content Include="img\number1\red_15.png" />
+    <Content Include="img\number1\red_16.png" />
+    <Content Include="img\number1\red_17.png" />
+    <Content Include="img\number1\red_18.png" />
+    <Content Include="img\number1\red_19.png" />
+    <Content Include="img\number1\red_2.png" />
+    <Content Include="img\number1\red_20.png" />
+    <Content Include="img\number1\red_3.png" />
+    <Content Include="img\number1\red_4.png" />
+    <Content Include="img\number1\red_5.png" />
+    <Content Include="img\number1\red_6.png" />
+    <Content Include="img\number1\red_7.png" />
+    <Content Include="img\number1\red_8.png" />
+    <Content Include="img\number1\red_9.png" />
+    <Content Include="img\number\blu_1.png" />
+    <Content Include="img\number\blu_10.png" />
+    <Content Include="img\number\blu_2.png" />
+    <Content Include="img\number\blu_3.png" />
+    <Content Include="img\number\blu_4.png" />
+    <Content Include="img\number\blu_5.png" />
+    <Content Include="img\number\blu_6.png" />
+    <Content Include="img\number\blu_7.png" />
+    <Content Include="img\number\blu_8.png" />
+    <Content Include="img\number\blu_9.png" />
+    <Content Include="img\number\red_1.png" />
+    <Content Include="img\number\red_10.png" />
+    <Content Include="img\number\red_2.png" />
+    <Content Include="img\number\red_3.png" />
+    <Content Include="img\number\red_4.png" />
+    <Content Include="img\number\red_5.png" />
+    <Content Include="img\number\red_6.png" />
+    <Content Include="img\number\red_7.png" />
+    <Content Include="img\number\red_8.png" />
+    <Content Include="img\number\red_9.png" />
+    <Content Include="img\panning-hand-off.png" />
+    <Content Include="img\panning-hand-on.png" />
+    <Content Include="img\pin.gif" />
+    <Content Include="img\pin.png" />
+    <Content Include="img\red_1.png" />
+    <Content Include="img\red_branch.png" />
+    <Content Include="img\red_branchMarker.gif" />
+    <Content Include="img\red_branchMarker.png" />
+    <Content Include="img\red_pin.gif" />
+    <Content Include="img\red_pin.png" />
+    <Content Include="img\slider.png" />
+    <Content Include="img\slider1.png" />
+    <Content Include="img\south-mini.png" />
+    <Content Include="img\south-mini1.png" />
+    <Content Include="img\squad.png" />
+    <Content Include="img\storage.png" />
+    <Content Include="img\tip.gif" />
+    <Content Include="img\tuli.jpg" />
+    <Content Include="img\west-mini.png" />
+    <Content Include="img\west-mini1.png" />
+    <Content Include="img\zoom-minus-mini.png" />
+    <Content Include="img\zoom-minus-mini1.png" />
+    <Content Include="img\zoom-minus-mini3.png" />
+    <Content Include="img\zoom-plus-mini.png" />
+    <Content Include="img\zoom-plus-mini2.png" />
+    <Content Include="img\zoom-world-mini.png" />
+    <Content Include="img\zoombar.png" />
+    <Content Include="img\zoombar18.png" />
+    <Content Include="img\复件 %282%29 zoombar.png" />
+    <Content Include="img\复件 zoombar.png" />
     <Content Include="index.aspx" />
     <Content Include="main.aspx" />
     <Content Include="ManageCenter\Affiche\Affiche.aspx" />
@@ -325,6 +504,7 @@
     <Content Include="ManageCenter\Official\Reply.aspx" />
     <Content Include="ManageCenter\Official\ReplySource.aspx" />
     <Content Include="ManageCenter\Official\Trash.aspx" />
+    <Content Include="ManageCenter\Overload\EditIlleglOverload.aspx" />
     <Content Include="ManageCenter\Overload\IllegalOverloadManage.aspx" />
     <Content Include="ManageCenter\Overload\IntegratedQuery.aspx" />
     <Content Include="ManageCenter\Overload\IntegratedQueryResult.aspx" />
@@ -343,11 +523,15 @@
     <Content Include="ManageCenter\RoadTerm\RoadTermList.aspx" />
     <Content Include="ManageCenter\RoadTerm\View.aspx" />
     <Content Include="ManageCenter\Role.aspx" />
+    <Content Include="ManageCenter\Security\Security.aspx" />
     <Content Include="ManageCenter\SignLicense\Add.aspx" />
     <Content Include="ManageCenter\SignLicense\List.aspx" />
     <Content Include="ManageCenter\SysLog.aspx" />
     <Content Include="ManageCenter\SysManager.aspx" />
     <Content Include="ManageCenter\PersonTerm\TermEdit.aspx" />
+    <Content Include="ManageCenter\Traffic\Traffic.aspx" />
+    <Content Include="ManageCenter\Traffic\TrafficManager.aspx" />
+    <Content Include="ManageCenter\Traffic\TrafficReported.aspx" />
     <Content Include="ManageCenter\UserManage.aspx" />
     <Content Include="ManageCenter\UserManager\UnitCenter.aspx" />
     <Content Include="ManageCenter\UserManager\UnitEdit.aspx" />
@@ -365,6 +549,61 @@
     <Content Include="ManageCenter\Patrol\PatrolDetail.aspx" />
     <Content Include="ManageCenter\Patrol\PatrolEdit.aspx" />
     <Content Include="ManageCenter\Patrol\PatrolIndex.aspx" />
+    <Content Include="MapEngine.aspx" />
+    <Content Include="MapFrame.aspx" />
+    <Content Include="Openlayers-2.10\AddMaker.js" />
+    <Content Include="Openlayers-2.10\Map.js" />
+    <Content Include="Openlayers-2.10\MapExtendTools.js" />
+    <Content Include="Openlayers-2.10\MapOperate.js" />
+    <Content Include="Openlayers-2.10\OpenLayers.js" />
+    <Content Include="Openlayers-2.10\OpenLayers1.js" />
+    <Content Include="Openlayers-2.10\OpenLayers2.js" />
+    <Content Include="Openlayers-2.10\theme\default\framedCloud.css" />
+    <Content Include="Openlayers-2.10\theme\default\google.css" />
+    <Content Include="Openlayers-2.10\theme\default\ie6-style.css" />
+    <Content Include="Openlayers-2.10\theme\default\img\404.png" />
+    <Content Include="Openlayers-2.10\theme\default\img\add_point_off.png" />
+    <Content Include="Openlayers-2.10\theme\default\img\add_point_on.png" />
+    <Content Include="Openlayers-2.10\theme\default\img\blank.gif" />
+    <Content Include="Openlayers-2.10\theme\default\img\close.png" />
+    <Content Include="Openlayers-2.10\theme\default\img\close1.gif" />
+    <Content Include="Openlayers-2.10\theme\default\img\closeBtn.png" />
+    <Content Include="Openlayers-2.10\theme\default\img\closeBtn1.png" />
+    <Content Include="Openlayers-2.10\theme\default\img\drag-rectangle-off.png" />
+    <Content Include="Openlayers-2.10\theme\default\img\drag-rectangle-on.png" />
+    <Content Include="Openlayers-2.10\theme\default\img\draw_line_off.png" />
+    <Content Include="Openlayers-2.10\theme\default\img\draw_line_on.png" />
+    <Content Include="Openlayers-2.10\theme\default\img\draw_point_off.png" />
+    <Content Include="Openlayers-2.10\theme\default\img\draw_point_on.png" />
+    <Content Include="Openlayers-2.10\theme\default\img\draw_polygon_off.png" />
+    <Content Include="Openlayers-2.10\theme\default\img\draw_polygon_on.png" />
+    <Content Include="Openlayers-2.10\theme\default\img\editing_tool_bar.png" />
+    <Content Include="Openlayers-2.10\theme\default\img\move_feature_off.png" />
+    <Content Include="Openlayers-2.10\theme\default\img\move_feature_on.png" />
+    <Content Include="Openlayers-2.10\theme\default\img\navigation_history.png" />
+    <Content Include="Openlayers-2.10\theme\default\img\overview_replacement.gif" />
+    <Content Include="Openlayers-2.10\theme\default\img\pan-panel-NOALPHA.png" />
+    <Content Include="Openlayers-2.10\theme\default\img\pan-panel-NOALPHA1.png" />
+    <Content Include="Openlayers-2.10\theme\default\img\pan-panel.png" />
+    <Content Include="Openlayers-2.10\theme\default\img\pan-panel1.png" />
+    <Content Include="Openlayers-2.10\theme\default\img\pan-panel2.png" />
+    <Content Include="Openlayers-2.10\theme\default\img\pan-panel3.png" />
+    <Content Include="Openlayers-2.10\theme\default\img\panning-hand-off.png" />
+    <Content Include="Openlayers-2.10\theme\default\img\panning-hand-on.png" />
+    <Content Include="Openlayers-2.10\theme\default\img\pan_off.png" />
+    <Content Include="Openlayers-2.10\theme\default\img\pan_on.png" />
+    <Content Include="Openlayers-2.10\theme\default\img\remove_point_off.png" />
+    <Content Include="Openlayers-2.10\theme\default\img\remove_point_on.png" />
+    <Content Include="Openlayers-2.10\theme\default\img\ruler.png" />
+    <Content Include="Openlayers-2.10\theme\default\img\save_features_off.png" />
+    <Content Include="Openlayers-2.10\theme\default\img\save_features_on.png" />
+    <Content Include="Openlayers-2.10\theme\default\img\view_next_off.png" />
+    <Content Include="Openlayers-2.10\theme\default\img\view_next_on.png" />
+    <Content Include="Openlayers-2.10\theme\default\img\view_previous_off.png" />
+    <Content Include="Openlayers-2.10\theme\default\img\view_previous_on.png" />
+    <Content Include="Openlayers-2.10\theme\default\img\zoom-panel-NOALPHA.png" />
+    <Content Include="Openlayers-2.10\theme\default\img\zoom-panel.png" />
+    <Content Include="Openlayers-2.10\theme\default\style.css" />
     <Content Include="Scripts\base.js" />
     <Content Include="Scripts\DD_belatedPNG_0.0.8a.js" />
     <Content Include="Scripts\ext\adapter\ext\ext-base.js" />
@@ -1305,6 +1544,7 @@
     <Content Include="Scripts\kindeditor-4.0.5\themes\default\default.css" />
     <Content Include="Scripts\kindeditor-4.0.5\themes\default\default.png" />
     <Content Include="Scripts\kindeditor-4.0.5\themes\simple\simple.css" />
+    <Content Include="Scripts\MapInterface.js" />
     <Content Include="Scripts\My97DatePicker\calendar.js" />
     <Content Include="Scripts\My97DatePicker\config.js" />
     <Content Include="Scripts\My97DatePicker\lang\en.js" />
@@ -1603,6 +1843,13 @@
     <Compile Include="ManageCenter\Official\Trash.aspx.designer.cs">
       <DependentUpon>Trash.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ManageCenter\Overload\EditIlleglOverload.aspx.cs">
+      <DependentUpon>EditIlleglOverload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\Overload\EditIlleglOverload.aspx.designer.cs">
+      <DependentUpon>EditIlleglOverload.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ManageCenter\Overload\IllegalOverloadManage.aspx.cs">
       <DependentUpon>IllegalOverloadManage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1673,6 +1920,13 @@
     <Compile Include="ManageCenter\RoadTerm\View.aspx.designer.cs">
       <DependentUpon>View.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ManageCenter\Security\Security.aspx.cs">
+      <DependentUpon>Security.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\Security\Security.aspx.designer.cs">
+      <DependentUpon>Security.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ManageCenter\SignLicense\Add.aspx.cs">
       <DependentUpon>Add.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1686,6 +1940,41 @@
     </Compile>
     <Compile Include="ManageCenter\SignLicense\List.aspx.designer.cs">
       <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\Traffic\Traffic.aspx.cs">
+      <DependentUpon>Traffic.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\Traffic\Traffic.aspx.designer.cs">
+      <DependentUpon>Traffic.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\Traffic\TrafficManager.aspx.cs">
+      <DependentUpon>TrafficManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\Traffic\TrafficManager.aspx.designer.cs">
+      <DependentUpon>TrafficManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\Traffic\TrafficReported.aspx.cs">
+      <DependentUpon>TrafficReported.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCenter\Traffic\TrafficReported.aspx.designer.cs">
+      <DependentUpon>TrafficReported.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MapEngine.aspx.cs">
+      <DependentUpon>MapEngine.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MapEngine.aspx.designer.cs">
+      <DependentUpon>MapEngine.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MapFrame.aspx.cs">
+      <DependentUpon>MapFrame.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MapFrame.aspx.designer.cs">
+      <DependentUpon>MapFrame.aspx</DependentUpon>
     </Compile>
     <Compile Include="workbench.aspx.cs">
       <DependentUpon>workbench.aspx</DependentUpon>
@@ -2017,8 +2306,6 @@
     <Folder Include="Images\RoadImage\" />
     <Folder Include="Log\" />
     <Folder Include="ManageCenter\RoadProject\" />
-    <Folder Include="ManageCenter\Security\" />
-    <Folder Include="ManageCenter\Traffic\" />
     <Folder Include="Scripts\kindeditor-4.0.5\attached\" />
     <Folder Include="Temp\" />
     <Folder Include="WorkLog\" />
@@ -2064,6 +2351,9 @@
     <Content Include="Ashx\VerificationCode.ashx" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="img\cloud.psd" />
+    <None Include="img\网点图标.psd" />
+    <None Include="img\网点图标1.psd" />
     <None Include="Scripts\ext\resources\images\default\form\clear-trigger.psd" />
     <None Include="Scripts\ext\resources\images\default\form\date-trigger.psd" />
     <None Include="Scripts\ext\resources\images\default\form\search-trigger.psd" />

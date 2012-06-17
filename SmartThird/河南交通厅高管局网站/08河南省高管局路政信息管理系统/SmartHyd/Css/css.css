@@ -457,3 +457,20 @@ filter : progid:DXImageTransform.Microsoft.gradient(startColorStr=#96CDCD,endCol
 {
 	background-image: url(../Images/icons/clipboard_text.png) !important;
 }
+
+.securitysearchicon
+{
+	background-image: url(../Images/icons/securitysearch.png) !important;
+}
+.securityteamicon
+{
+	background-image: url(../Images/icons/securityteam.png) !important;
+}
+.securitystoreicon
+{
+	background-image: url(../Images/icons/store.png) !important;
+}
+.securitymatrialicon
+{
+	background-image: url(../Images/icons/securitymatrial.png) !important;
+}

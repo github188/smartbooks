@@ -183,7 +183,7 @@ Ext.onReady(function () {
 					        id: 'mapPanel',
 					        deferredRender: true,
 					        border: true,
-					        html: '<iframe id="mapContainer" width="100%" src="../../MapEngine.aspx" height=100% name="mapContainer"  frameborder="0" scrolling="no" style="border:0px none; background-color:#BBBBBB; "></iframe>'
+					        html: '<iframe id="mapContainer" width="100%" src="MapEngine.aspx" height=100% name="mapContainer"  frameborder="0" scrolling="no" style="border:0px none; background-color:#BBBBBB; "></iframe>'
 					    }]
     });
 });
