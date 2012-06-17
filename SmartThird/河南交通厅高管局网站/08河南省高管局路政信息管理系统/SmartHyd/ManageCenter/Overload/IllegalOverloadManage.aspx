@@ -31,6 +31,12 @@
     </style>
 
     <link href="../../Css/patrol.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript">
+        function IllageOverloadReport() {
+            window.location.href = "EditIlleglOverload.aspx";
+        }
+    </script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -39,7 +45,7 @@
         <ContentTemplate>
         <div id="menu">
              <div class="OperateNote"><span id="buttons"><img src="../../Images/branch.png" alt="" border="0" />当前位置：超限治理》非法超载车辆信息管理</span></div>
-             <div class="ReturnPreview"><span id="buttons" onclick=""><img src="../../Images/icons/overloadreported.png" alt="" border="0" />非法超载车辆上报</span></div>
+             <div class="ReturnPreview"><span id="buttons" onclick="IllageOverloadReport()" style="cursor:hand;"><img src="../../Images/icons/overloadreported.png" alt="" border="0" />非法超载车辆上报</span></div>
         </div>
         <table width="100%" border="0" cellpadding="0" cellspacing="1" style="background-color: #045185">
                     <tr class="TableHeader" align="center">
