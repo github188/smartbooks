@@ -45,7 +45,7 @@
                             </td>
                             <td>
                                 <asp:Label ID="Label3" runat="server" Text="装备类型:"></asp:Label>
-                                <asp:DropDownList ID="ddlTermType" runat="server" CssClass="input">
+                                <asp:DropDownList ID="ddlTermType" runat="server" CssClass="input" Width="160px">
                                 </asp:DropDownList>
                             </td>
                             <td>
