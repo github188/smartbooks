@@ -9,6 +9,11 @@
     <link href="../../Css/patrol.css" rel="stylesheet" type="text/css" />
     <script src="../../Scripts/jquery-ui-1.8.18.custom/js/jquery-1.7.1.min.js" type="text/javascript"></script>
     <script src="../../Scripts/My97DatePicker/WdatePicker.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        function EditEquip() {
+            window.location.href = "TermEdit.aspx";
+        }
+    </script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -21,8 +26,8 @@
                             <span id="buttons0">
                                 <img src="../../Images/branch.png" alt="" border="0" />当前位置：人员装备管理中心&gt;&gt;装备管理</span></div>
                         <ul>
-                            <li id="menu_Title0" onclick="nTabs('menu',this,1)" class="normal"><a href="TermEdit.aspx"
-                                title="装备新增" target="mainFrame"><span id="buttons1">
+                            <li id="menu_Title0"  class="normal"><a href="TermEdit.aspx"
+                                title="装备新增" onclick="EditEquip()"><span id="buttons1">
                                     <img src="../../Images/add.png" alt="" border="0" />&nbsp;新增装备</span> </a>
                             </li>
                         </ul>
