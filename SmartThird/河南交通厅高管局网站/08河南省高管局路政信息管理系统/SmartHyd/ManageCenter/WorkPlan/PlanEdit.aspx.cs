@@ -96,5 +96,10 @@ namespace SmartHyd.ManageCenter.WorkPlan
             this.TxtTitle.Text = model.TITLE;//事务标题
             
         }
+
+        protected void btnBack_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Plan.aspx");
+        }
     }
 }

@@ -93,6 +93,8 @@
                 <tr>
                     <td colspan="2" style="text-align: center;">
                         <asp:Button ID="btnSubmit" runat="server" Text="提交" CssClass="BigButtonA" OnClick="btnSubmit_Click" />
+                        <asp:Button ID="btnBack" runat="server" Text="返回" CssClass="BigButtonA" 
+                            onclick="btnBack_Click" />
                     </td>
                 </tr>
             </tfoot>

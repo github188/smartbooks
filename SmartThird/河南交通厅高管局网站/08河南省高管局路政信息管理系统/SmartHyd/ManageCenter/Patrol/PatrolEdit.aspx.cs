@@ -42,7 +42,7 @@ namespace SmartHyd.Patrol
             //判断第几次巡逻:如果巡逻开始日期不是当前日期为第一次巡逻；
             //如果当前日期下有一条数据则为第二次巡逻；
             //如果当前日期下数据记录总数与巡逻次数相同：显示下班，交接班内容
-            string sqlwhere = "1=1 AND DEPTID=" + deptid + " AND PATROLTYPE='人工巡逻' AND to_char(BEGINTIME,'yyyy-MM-dd')=to_char(sysdate,'yyyy-MM-dd')";
+            string sqlwhere = "1=1 AND PATROLTYPE='人工巡逻' AND to_char(BEGINTIME,'yyyy-MM-dd')=to_char(sysdate,'yyyy-MM-dd')";
             DataTable dt = handlingbll.GetList(sqlwhere);
             if (dt.Rows.Count > 0)
             {

@@ -16,13 +16,13 @@
             <table id="PatrolSearch0" width="480px" border="0" cellspacing="0" cellpadding="0">
                 <tr>
                     <td height="24" align="right">
-                        <span id="PatrolSearch1">起始时间：</span>
+                        <span id="PatrolSearch">起始时间：</span>
                     </td>
                     <td height="24">
                         <asp:TextBox ID="txt_startTime" runat="server" class="Wdate" Width="120" onFocus="WdatePicker({isShowClear:false,readOnly:true})"></asp:TextBox>
                     </td>
                     <td height="24" align="right">
-                        <span id="PatrolSearch2">截止时间：</span>
+                        <span id="PatrolSearch">截止时间：</span>
                     </td>
                     <td height="24">
                         <asp:TextBox ID="txt_endTime" runat="server" Width="120" class="Wdate" onFocus="WdatePicker({isShowClear:false,readOnly:true})"></asp:TextBox>
