@@ -45,6 +45,8 @@
     <Compile Include="BASE_AREA_TYPE.cs" />
     <Compile Include="BASE_ARTICLE_ANNEX.cs" />
     <Compile Include="BASE_ARTICLE_UNIT.cs" />
+    <Compile Include="BASE_ASSESS.cs" />
+    <Compile Include="BASE_ASSESS_TYPE.cs" />
     <Compile Include="BASE_BUS_OVERRUN.cs" />
     <Compile Include="BASE_BUS_OVERRUN_SUBMIT.cs" />
     <Compile Include="BASE_CASE.cs" />
