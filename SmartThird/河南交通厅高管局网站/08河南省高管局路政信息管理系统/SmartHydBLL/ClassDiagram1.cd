@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SmartHyd.BLL.BASE_ACTION" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>BASE_ACTION.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartHyd.BLL.BASE_AFFICHE" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIgAIAAAAAAAAAAAAAAgAAACAAAAAAAAAAAAAEEAAA=</HashCode>
+      <FileName>BASE_AFFICHE.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartHyd.BLL.BASE_AREA" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIgAAAAAACAAAAAAAgAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BASE_AREA.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartHyd.BLL.BASE_AREA_TYPE" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BASE_AREA_TYPE.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartHyd.BLL.BASE_ARTICLE" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYgAAAAAAAABAAgAAABAIEAAAABAAAAAAAABgAAAAI=</HashCode>
+      <FileName>BASE_ARTICLE.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartHyd.BLL.BASE_ARTICLE_ANNEX" Collapsed="true">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIggAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BASE_ARTICLE_ANNEX.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartHyd.BLL.BASE_ARTICLE_TYPE" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYgAAAAAAIAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>BASE_ARTICLE_TYPE.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartHyd.BLL.BASE_ARTICLE_UNIT" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BASE_ARTICLE_UNIT.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartHyd.BLL.BASE_ASSESS" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAcgAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>BASE_ASSESS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartHyd.BLL.BASE_ASSESS_TYPE" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAcgAAAAAAAAAACAAAABAAAAAAAAAAAAAAAAAAAgAAA=</HashCode>
+      <FileName>BASE_ASSESS_TYPE.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartHyd.BLL.BASE_BUS_OVERRUN" Collapsed="true">
+    <Position X="7.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAiIAAEAAAAAAAAAAAAAAEAAEAAAAAAAEAAAEAAAAQ=</HashCode>
+      <FileName>BASE_BUS_OVERRUN.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartHyd.BLL.BASE_DEPT" Collapsed="true">
+    <Position X="9.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIgAAAAAAAAAAAAAAABgAAAAQAAEAAAAAAAAAEEAAA=</HashCode>
+      <FileName>BASE_DEPT.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartHyd.BLL.BASE_DOCUMENT_TYPE" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYgAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>BASE_DOCUMENT_TYPE.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartHyd.BLL.BASE_FAWEN" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIgAIAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAEEAAA=</HashCode>
+      <FileName>BASE_FAWEN.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartHyd.BLL.BASE_FILETYPE" Collapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIgAIAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAEEAAA=</HashCode>
+      <FileName>BASE_FILETYPE.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartHyd.BLL.BASE_HANDLING" Collapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIgIKAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAEEAAI=</HashCode>
+      <FileName>BASE_HANDLING.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartHyd.BLL.BASE_LICENSE_ACCEPT" Collapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIgAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEEAAI=</HashCode>
+      <FileName>BASE_LICENSE_ACCEPT.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartHyd.BLL.BASE_LOG" Collapsed="true">
+    <Position X="9.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIgAIAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAEEAAI=</HashCode>
+      <FileName>BASE_LOG.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartHyd.BLL.BASE_MENU" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIgAAAAAABAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>BASE_MENU.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartHyd.BLL.BASE_MESSAGE" Collapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAIAAAAAAAAAABgAAAAAAAEAAAAAAAAAEEAAI=</HashCode>
+      <FileName>BASE_MESSAGE.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartHyd.BLL.BASE_OBSERVED" Collapsed="true">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIgAAAAAACAAAIAAAAAgAYAAAAAAAAAAAEAAAAEAAA=</HashCode>
+      <FileName>BASE_OBSERVED.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartHyd.BLL.BASE_PATROL" Collapsed="true">
+    <Position X="5.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIgAAAAAACAAAAAAAAAgAYAAAQAAAAAAAAAAAEEAAA=</HashCode>
+      <FileName>BASE_PATROL.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartHyd.BLL.BASE_PLAN" Collapsed="true">
+    <Position X="7.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIoAAAAAACAAAAAAAAAgAAAAAAAAAAAAAAAAAEEAAA=</HashCode>
+      <FileName>BASE_PLAN.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartHyd.BLL.BASE_ROAD_TERM" Collapsed="true">
+    <Position X="9.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAMgAAAAAACAAAAAAAAAAAAAAAEAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>BASE_ROAD_TERM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartHyd.BLL.BASE_ROAD_TERM_TYPE" Collapsed="true">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIgAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BASE_ROAD_TERM_TYPE.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartHyd.BLL.BASE_ROLE" Collapsed="true">
+    <Position X="2.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAQAAAAAAABAAAAAAAAAAAAAAAAAAAEAAI=</HashCode>
+      <FileName>BASE_ROLE.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartHyd.BLL.BASE_SHOUWEN" Collapsed="true">
+    <Position X="4" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIgAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAEEAAA=</HashCode>
+      <FileName>BASE_SHOUWEN.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartHyd.BLL.BASE_TERM" Collapsed="true">
+    <Position X="5.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAIAAAAAAAAAAAAAAgJAAAACAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>BASE_TERM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartHyd.BLL.BASE_TERM_TYPE" Collapsed="true">
+    <Position X="7.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIgAIAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAEAAA=</HashCode>
+      <FileName>BASE_TERM_TYPE.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartHyd.BLL.BASE_USER" Collapsed="true">
+    <Position X="9.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYggAAAAAAAAACAAAAAAAAAAIAAAAAAEQAAAAAAAAI=</HashCode>
+      <FileName>BASE_USER.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartHyd.BLL.BASE_USER_ROLE" Collapsed="true">
+    <Position X="0.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIgAAAACAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAACAI=</HashCode>
+      <FileName>BASE_USER_ROLE.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Delegate Name="SmartHyd.BLL.OnCompleteSingle" Collapsed="true">
+    <Position X="0.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAACAAAAAAAAAA=</HashCode>
+      <FileName>BASE_BUS_OVERRUN.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Font Name="宋体" Size="9" />
+</ClassDiagram>

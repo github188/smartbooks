@@ -46,9 +46,9 @@ namespace SmartHyd.OracleDAL {
         public void Add(Entity.BASE_DOCUMENT_TYPE model) {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("insert into BASE_DOCUMENT_TYPE(");
-            strSql.Append("ID,NAME,SUMMARY,STATUS,SORT,DEPTCODE,ISSHARE");
+            strSql.Append("ID,NAME,SUMMARY,STATUS,SORT,DEPTCODE,ISSHARE,PARENTID");
             strSql.Append(") values (");
-            strSql.Append(":ID,:NAME,:SUMMARY,:STATUS,:SORT,:DEPTCODE,:ISSHARE");
+            strSql.Append(":ID,:NAME,:SUMMARY,:STATUS,:SORT,:DEPTCODE,:ISSHARE,:PARENTID");
             strSql.Append(") ");
 
             OracleParameter[] parameters = {
@@ -58,7 +58,8 @@ namespace SmartHyd.OracleDAL {
                         new OracleParameter(":STATUS", OracleType.Number,4) ,            
                         new OracleParameter(":SORT", OracleType.Number,4) ,            
                         new OracleParameter(":DEPTCODE", OracleType.Number,4) ,            
-                        new OracleParameter(":ISSHARE", OracleType.Number,4)             
+                        new OracleParameter(":ISSHARE", OracleType.Number,4) ,            
+                        new OracleParameter(":PARENTID", OracleType.Number,4)             
               
             };
 
@@ -69,6 +70,7 @@ namespace SmartHyd.OracleDAL {
             parameters[4].Value = model.SORT;
             parameters[5].Value = model.DEPTCODE;
             parameters[6].Value = model.ISSHARE;
+            parameters[7].Value = model.PARENTID;
             OracleHelper.ExecuteNonQuery(strSql.ToString(), parameters);
 
         }
@@ -87,7 +89,8 @@ namespace SmartHyd.OracleDAL {
             strSql.Append(" STATUS = :STATUS , ");
             strSql.Append(" SORT = :SORT , ");
             strSql.Append(" DEPTCODE = :DEPTCODE , ");
-            strSql.Append(" ISSHARE = :ISSHARE  ");
+            strSql.Append(" ISSHARE = :ISSHARE , ");
+            strSql.Append(" PARENTID = :PARENTID  ");
             strSql.Append(" where ID=:ID  ");
 
             OracleParameter[] parameters = {
@@ -97,17 +100,19 @@ namespace SmartHyd.OracleDAL {
                         new OracleParameter(":STATUS", OracleType.Number,4) ,            
                         new OracleParameter(":SORT", OracleType.Number,4) ,            
                         new OracleParameter(":DEPTCODE", OracleType.Number,4) ,            
-                        new OracleParameter(":ISSHARE", OracleType.Number,4)             
+                        new OracleParameter(":ISSHARE", OracleType.Number,4) ,            
+                        new OracleParameter(":PARENTID", OracleType.Number,4)             
               
             };
 
-            parameters[7].Value = model.ID;
-            parameters[8].Value = model.NAME;
-            parameters[9].Value = model.SUMMARY;
-            parameters[10].Value = model.STATUS;
-            parameters[11].Value = model.SORT;
-            parameters[12].Value = model.DEPTCODE;
-            parameters[13].Value = model.ISSHARE;
+            parameters[8].Value = model.ID;
+            parameters[9].Value = model.NAME;
+            parameters[10].Value = model.SUMMARY;
+            parameters[11].Value = model.STATUS;
+            parameters[12].Value = model.SORT;
+            parameters[13].Value = model.DEPTCODE;
+            parameters[14].Value = model.ISSHARE;
+            parameters[15].Value = model.PARENTID;
             int rows = OracleHelper.ExecuteNonQuery(strSql.ToString(), parameters);
             if (rows > 0) {
                 return true;
@@ -148,7 +153,7 @@ namespace SmartHyd.OracleDAL {
         public Entity.BASE_DOCUMENT_TYPE GetEntity(decimal ID) {
 
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("select ID, NAME, SUMMARY, STATUS, SORT, DEPTCODE, ISSHARE  ");
+            strSql.Append("select ID, NAME, SUMMARY, STATUS, SORT, DEPTCODE, ISSHARE, PARENTID  ");
             strSql.Append("  from BASE_DOCUMENT_TYPE ");
             strSql.Append(" where ID=:ID ");
             OracleParameter[] parameters = {
@@ -176,6 +181,9 @@ namespace SmartHyd.OracleDAL {
                 }
                 if (dt.Rows[0]["ISSHARE"].ToString() != "") {
                     entity.ISSHARE = decimal.Parse(dt.Rows[0]["ISSHARE"].ToString());
+                }
+                if (dt.Rows[0]["PARENTID"].ToString() != "") {
+                    entity.PARENTID = decimal.Parse(dt.Rows[0]["PARENTID"].ToString());
                 }
 
                 return entity;

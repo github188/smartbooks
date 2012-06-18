@@ -42,6 +42,10 @@ namespace SmartHyd.Entity {
         /// 共享:0不共享,1共享给上级单位,2共享给下级单位,3共享给上级和下级单位
         /// </summary>		
         private decimal _ISSHARE;
+        /// <summary>
+        /// 父级分类
+        /// </summary>		
+        private decimal _PARENTID;
 
         /// <summary>
         /// 主键，自增
@@ -91,6 +95,13 @@ namespace SmartHyd.Entity {
         public decimal ISSHARE {
             get { return _ISSHARE; }
             set { _ISSHARE = value; }
+        }
+        /// <summary>
+        /// 父级分类
+        /// </summary>
+        public decimal PARENTID {
+            get { return _PARENTID; }
+            set { _PARENTID = value; }
         }
     }
 }

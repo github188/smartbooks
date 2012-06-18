@@ -51,6 +51,7 @@
     <Compile Include="BASE_ASSESS_TYPE.cs" />
     <Compile Include="BASE_BUS_OVERRUN.cs" />
     <Compile Include="BASE_DEPT.cs" />
+    <Compile Include="BASE_DOCUMENT_TYPE.cs" />
     <Compile Include="BASE_FAWEN.cs" />
     <Compile Include="BASE_FILETYPE.cs" />
     <Compile Include="BASE_HANDLING.cs" />
@@ -88,6 +89,9 @@
       <Project>{22F152C9-47EB-42D5-A003-E0C0E741F5E1}</Project>
       <Name>SmartHydOracleDAL</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
