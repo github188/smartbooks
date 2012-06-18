@@ -466,6 +466,7 @@
     <Content Include="ManageCenter\Ascx\Empower.ascx" />
     <Content Include="ManageCenter\Ascx\Handling.ascx" />
     <Content Include="ManageCenter\Ascx\ImportData.ascx" />
+    <Content Include="ManageCenter\Ascx\Office.ascx" />
     <Content Include="ManageCenter\Ascx\Plan.ascx" />
     <Content Include="ManageCenter\Ascx\Role.ascx" />
     <Content Include="ManageCenter\Ascx\SysLog.ascx" />
@@ -493,6 +494,7 @@
     <Content Include="ManageCenter\IM\View.aspx" />
     <Content Include="ManageCenter\MenuManage\Add.aspx" />
     <Content Include="ManageCenter\MenuManage\List.aspx" />
+    <Content Include="ManageCenter\Office.aspx" />
     <Content Include="ManageCenter\OfficialType\Create.aspx" />
     <Content Include="ManageCenter\OfficialType\List.aspx" />
     <Content Include="ManageCenter\Official\Accept.aspx" />
@@ -1647,6 +1649,12 @@
     <Compile Include="ManageCenter\Ascx\Handling.ascx.designer.cs">
       <DependentUpon>Handling.ascx</DependentUpon>
     </Compile>
+    <Compile Include="ManageCenter\Ascx\Office.ascx.cs">
+      <DependentUpon>Office.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\Ascx\Office.ascx.designer.cs">
+      <DependentUpon>Office.ascx</DependentUpon>
+    </Compile>
     <Compile Include="ManageCenter\AssessType\Add.aspx.cs">
       <DependentUpon>Add.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1772,6 +1780,12 @@
     </Compile>
     <Compile Include="ManageCenter\MenuManage\List.aspx.designer.cs">
       <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\Office.aspx.cs">
+      <DependentUpon>Office.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCenter\Office.aspx.designer.cs">
+      <DependentUpon>Office.aspx</DependentUpon>
     </Compile>
     <Compile Include="ManageCenter\OfficialType\Create.aspx.cs">
       <DependentUpon>Create.aspx</DependentUpon>
@@ -2303,6 +2317,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Document\" />
+    <Folder Include="Images\AreaImage\" />
     <Folder Include="Images\RoadImage\" />
     <Folder Include="Log\" />
     <Folder Include="ManageCenter\RoadProject\" />
