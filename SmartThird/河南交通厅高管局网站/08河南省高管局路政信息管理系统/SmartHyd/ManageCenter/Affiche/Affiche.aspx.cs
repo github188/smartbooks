@@ -17,7 +17,24 @@ namespace SmartHyd.ManageCenter.Affiche
             if (!IsPostBack)
             {
 
-                dataBindToRepeater();//绑定电子公告数据
+                if (null == Request.QueryString["Action"] || "" == Request.QueryString["Action"])
+                {
+                    dataBindToRepeater();//绑定电子公告数据
+                }
+                else
+                {
+                    if (null == Request.QueryString["id"] || "" == Request.QueryString["id"])
+                    {
+                        //提示未选择要删除的项
+                       // Response.Redirect();
+                    }
+                    else
+                    { 
+                        //执行删除操作
+                        DEl(Convert.ToDecimal(Request.QueryString["id"]));
+                        dataBindToRepeater();//绑定电子公告数据
+                    }
+                }
             }
         }
         //使用dataBindToRepeater()方法绑定电子公告数据
@@ -25,7 +42,8 @@ namespace SmartHyd.ManageCenter.Affiche
         {
             DataTable dt = new DataTable();
             dt = bll.GetAfficheList("1=1");
-
+            if (dt.Rows.Count>0)
+            {
             AspNetPager1.RecordCount = dt.Rows.Count;
 
             PagedDataSource pds = new PagedDataSource();
@@ -37,14 +55,30 @@ namespace SmartHyd.ManageCenter.Affiche
 
             this.RptAffiche.DataSource = pds; //定义数据源
             this.RptAffiche.DataBind(); //绑定数据
+            }
         }
-
-
         /// <summary>
-        /// 删除公告
+        /// 状态转为文字
+        /// </summary>
+        /// <param name="state"></param>
+        /// <returns></returns>
+        protected string TransState(decimal state)
+        {
+            if (state == 0)
+            {
+                return "未读";
+            }
+            else
+            {
+                return "已读";
+            }
+
+        }
+        /// <summary>
+        /// 修改状态
         /// </summary>
         /// <param name="AFFICHEID"></param>
-        protected void DEl(decimal AFFICHEID)
+        private void updateState(decimal AFFICHEID)
         {
             Entity.BASE_AFFICHE model = bll.Getmodel(AFFICHEID);
             model.STATES = 2;//设置状态为已删除
@@ -58,13 +92,48 @@ namespace SmartHyd.ManageCenter.Affiche
             }
         }
         /// <summary>
+        /// 删除公告
+        /// </summary>
+        /// <param name="AFFICHEID"></param>
+        protected void DEl(decimal AFFICHEID)
+        {
+            if (bll.del(AFFICHEID))
+           {
+               Response.Write("<script type='text/javascript'>alert('删除成功！');</script>");
+           }
+            else
+            {
+                Response.Write("<script type='text/javascript'>alert('删除失败！');</script>");
+            }
+        }
+        /// <summary>
         /// 查询
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         protected void btn_ok_Click(object sender, EventArgs e)
         {
-
+            string sqlwhere = string.Empty;
+            if ("" == this.txt_title.Text && "" == this.txtTime.Text)
+            {
+                sqlwhere = "1=1";
+            }
+            else
+            {
+                sqlwhere = "";
+            }
+            if ("" == this.txt_title.Text)
+            {
+                if ("" == this.txtTime.Text)
+                {
+                    sqlwhere = "1=1";
+                }
+                else
+                {
+                    sqlwhere = " AFFICHEDATE=to_char(" + this.txtTime.Text + ",'yyyy-MM-dd')";
+                }
+            }
+            bll.GetAfficheList(sqlwhere);
         }
 
         protected void AspNetPager1_PageChanging(object src, Wuqi.Webdiyer.PageChangingEventArgs e)

@@ -73,5 +73,22 @@ namespace SmartHyd.BLL
                 return false;
             }
         }
+        /// <summary>
+        /// 删除一条公告
+        /// </summary>
+        /// <param name="AFFICHEID"></param>
+        /// <returns></returns>
+        public bool del(decimal AFFICHEID)
+        {
+            if (dal.Delete(AFFICHEID))
+            {
+                return true;
+
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

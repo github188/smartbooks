@@ -1,17 +1,25 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AfficheEdit.aspx.cs" Inherits="SmartHyd.ManageCenter.Affiche.AfficheEdit" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>电子公告编辑</title>
-<link href="../../Css/patrol.css" rel="stylesheet" type="text/css" />
- <link rel="stylesheet" type="text/css" href="../../Css/tongdaoa.css" />
+    <link href="../../Css/patrol.css" rel="stylesheet" type="text/css" />
+    <link href="../../Css/tongdaoa.css" rel="stylesheet" type="text/css" />
+    <link href="../../Css/base.css" rel="Stylesheet" type="text/css" />
+    <script type="text/javascript" src="../../Scripts/base.js"></script>
+    <script type="text/javascript" src="../../Scripts/jquery-ui-1.8.18.custom/js/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="../../Scripts/jquery-ui-1.8.18.custom/js/jquery-ui-1.8.18.custom.min.js"></script>
+    <script type="text/javascript" src="../../Scripts/jquery-ui-1.8.18.custom/js/jquery.ui.datepicker-zh-CN.js"></script>
+    <script type="text/javascript" src="../../Scripts/kindeditor-4.0.5/kindeditor-min.js"></script>
+    <script type="text/javascript" src="../../Scripts/kindeditor-4.0.5/lang/zh_CN.js"></script>
+    <script type="text/javascript" src="../../Scripts/jquery-validation-1.9.0/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="../../Scripts/jquery-validation-1.9.0/messages_cn.js"></script>
+    <script type="text/javascript" src="../../Scripts/jquery-validation-1.9.0/jquery.metadata.js"></script>
+    <script src="../../Scripts/My97DatePicker/WdatePicker.js" type="text/javascript"></script>
     <script type="text/jscript">
         $(function () {
-
             /*公告内容编辑器*/
-
             var editor;
             KindEditor.ready(function (k) {
                 editor = k.create('textarea[id="TxtContent"]', {
@@ -151,7 +159,7 @@
 <body>
     <form id="form1" runat="server">
     <div>
-    <table border="0" width="100%" cellspacing="0" cellpadding="3" class="TableBlock">
+        <table border="0" width="100%" cellspacing="0" cellpadding="3" class="TableBlock">
             <thead>
                 <tr class="TableHeader">
                     <th colspan="3" align="center">
@@ -206,18 +214,18 @@
                             for="SMS_REMIND">发送事务提醒消息</label>&nbsp;&nbsp;
                     </td>
                 </tr>
-                <tr align="center" class="TableControl">
-                    <td colspan="2" nowrap="nowrap">
+                <tr class="TableControl">
+                    <td colspan="2" align="center" nowrap="nowrap">
                         <input type="hidden" name="PUBLISH" value="" />
                         <input type="hidden" name="SUBJECT_COLOR" value="" />
                         <input type="hidden" name="OP" value="" />
                         <input type="hidden" name="OP1" value="" />
                         <input type="hidden" name="TOP_FLAG" value="0" />
-                        <asp:Button ID="Btn_Send" runat="server" Text="发布" class="BigButton" 
-                            onclick="Btn_Send_Click"  />
-                        <asp:Button ID="Btn_Save" runat="server" Text="保存" class="BigButton" 
-                            onclick="Btn_Save_Click" />
-                        <%-- <asp:Button ID="BtnBack" runat="server" Text="返回" class="BigButton" OnClick="BtnBack_Click" />--%>
+                        <asp:Button ID="Btn_Send" runat="server" Text="发布" class="BigButton" OnClick="Btn_Send_Click" />
+                        <asp:Button ID="Btn_Save" runat="server" Text="保存" class="BigButton" OnClick="Btn_Save_Click" />
+                        <asp:Button ID="BtnBack" runat="server" Text="返回" class="BigButton" 
+                            onclick="BtnBack_Click"/>
+                      
                     </td>
                 </tr>
             </tbody>

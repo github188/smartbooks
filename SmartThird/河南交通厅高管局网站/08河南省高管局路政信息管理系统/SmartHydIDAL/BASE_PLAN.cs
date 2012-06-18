@@ -2,9 +2,9 @@
 // 版权所有。 
 //
 // 文件名称:IBASE_PLAN.cs
-// 功能描述:日程信息表 -- 接口定义
+// 功能描述:事务信息表 -- 接口定义
 //
-// 创建标识：付晓 2012-05-15
+// 创建标识：付晓 2012-06-18
 namespace SmartHyd.IDAL
 {
 	using System;
@@ -15,7 +15,7 @@ namespace SmartHyd.IDAL
 	using Entity;
 	
  	/// <summary>
-	/// 日程信息表 -- 接口定义
+	/// 事务信息表 -- 接口定义
 	/// </summary>
 	public interface IBASE_PLAN
 	{
@@ -27,7 +27,7 @@ namespace SmartHyd.IDAL
 		/// <summary>
 		/// 增加一条数据
 		/// </summary>
-		void Add(Entity.BASE_PLAN entity);
+		int Add(Entity.BASE_PLAN entity);
 		
 		/// <summary>
 		/// 更新一条数据

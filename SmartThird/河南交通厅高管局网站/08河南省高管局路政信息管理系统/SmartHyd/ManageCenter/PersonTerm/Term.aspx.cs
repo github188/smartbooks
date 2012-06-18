@@ -18,7 +18,7 @@ namespace SmartHyd.ManageCenter.PersonTerm
             if (!IsPostBack)
             {
                 BindTermData();
-
+                BinfTermTypeData();//绑定装备类型
             }
         }
 
@@ -27,7 +27,7 @@ namespace SmartHyd.ManageCenter.PersonTerm
         private void BindTermData()
         {
             DataTable dt = new DataTable();
-            int deptId = 1; //当前用户所属部门编号
+            int deptId = 2; //当前用户所属部门编号
             dt = bll.GetTermList(deptId);
             if (dt != null && dt.Rows.Count > 0)
             {
@@ -50,7 +50,19 @@ namespace SmartHyd.ManageCenter.PersonTerm
             
             }
         }
-
+        //绑定装备类型数据
+        private void BinfTermTypeData()
+        {
+            DataTable dt = new DataTable();
+            dt = typebll.GetAllList();
+            DdrType.Items.Clear();
+            foreach (DataRow dr in dt.Rows)
+            {
+                DdrType.Items.Add(new ListItem(
+                    dr["TYPENAME"].ToString(),
+                    dr["TYPEID"].ToString()));
+            }
+        }
         //分页事件
         protected void AspNetPager1_PageChanging(object src, Wuqi.Webdiyer.PageChangingEventArgs e)
         {

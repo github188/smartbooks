@@ -104,16 +104,16 @@ namespace SmartHyd.ManageCenter.WorkPlan
         /// <param name="?"></param>
         private void del(decimal id)
         {
-            //if (bll.del(id))
-            //{
-            //    Response.Redirect("plan.aspx");
-            //}
-            Entity.BASE_PLAN model = bll.GetModel(id);
-            model.STATE = 1;
-            if (bll.update(model))
+            if (bll.del(id))
             {
                 Response.Redirect("plan.aspx");
             }
+            //Entity.BASE_PLAN model = bll.GetModel(id);
+            //model.STATE = 1;
+            //if (bll.update(model))
+            //{
+            //    Response.Redirect("plan.aspx");
+            //}
         }
     }
 }

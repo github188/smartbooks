@@ -11,8 +11,10 @@ namespace SmartHyd.ManageCenter.Affiche
     {
         private BLL.BASE_AFFICHE bll = new BLL.BASE_AFFICHE();
         private BLL.BASE_LOG logbll = new BLL.BASE_LOG();
+        private Utility.UserSession userSession;
         protected void Page_Load(object sender, EventArgs e)
         {
+            userSession = (Utility.UserSession)Session["user"];
             if (!IsPostBack)
             {
                 if ("" == Request.QueryString["aid"] || null == Request.QueryString["aid"])
@@ -53,7 +55,7 @@ namespace SmartHyd.ManageCenter.Affiche
             Entity.BASE_AFFICHE model = new Entity.BASE_AFFICHE();
             model.AFFICHEID = Convert.ToInt32(this.hidPrimary.Value);     //id,主键
             model.AFFICHETITLE = this.TxtTitle.Text;                      //公告标题
-            model.AFFICHER = "admin";                                     //公告发布人
+            model.AFFICHER = userSession.USERNAME;                                     //公告发布人
             model.AFFICHEDATE = DateTime.Parse(this.TxtTime.Text);         //公告发布时间
             model.AFFICHECONTENTS = this.TxtContent.Text;                  //公告内容
             model.STATES = states;                                              //公告状态0:已保存；1：已发布；2：已删除；
@@ -68,7 +70,7 @@ namespace SmartHyd.ManageCenter.Affiche
         {
             this.hidPrimary.Value = model.AFFICHEID.ToString();        //id,主键
             this.TxtTitle.Text = model.AFFICHETITLE;                    //公告标题
-            //model.AFFICHER = "admin";                                //公告发布人
+            model.AFFICHER = userSession.USERNAME;                                //公告发布人
             this.TxtTime.Text = model.AFFICHEDATE.ToString("yyyy-MM-dd");             //公告发布时间
             this.TxtContent.Text = model.AFFICHECONTENTS;                  //公告内容
             //model.STATES = 0;                                   //公告状态0:已保存；1：已发布；2：已删除；
@@ -94,12 +96,11 @@ namespace SmartHyd.ManageCenter.Affiche
             logmodel.LOGTYPE = "电子公告";                     //日志类型
             logmodel.CREATEDATE = DateTime.Now;                   //日志创建时间
             logmodel.DESCRIPTION = "添加公告";                             //日志信息内容
-            logmodel.OPERATORID = 23;                    //操作人
+            logmodel.OPERATORID = userSession.USERID;                    //操作人
             logmodel.IPADDRESS = Smart.Utility.IpAddress.GetLocationIpAddress();                 //ip地址
-
             logbll.Add(logmodel);
-            //重新加载当前页
-            Response.Redirect(Request.Url.AbsoluteUri, true);
+            /*日志结束***********/
+            Response.Redirect("Affiche.aspx", true);
         }
         /// <summary>
         /// 按钮事件：发布
@@ -108,7 +109,28 @@ namespace SmartHyd.ManageCenter.Affiche
         /// <param name="e"></param>
         protected void Btn_Send_Click(object sender, EventArgs e)
         {
+            //获取实体
+            Entity.BASE_AFFICHE model = GetEntity(1);
 
+            //添加数据
+            bll.Add(model);
+            //日志..............添加
+            Entity.BASE_LOG logmodel = new Entity.BASE_LOG();
+
+            logmodel.LOGID = -1;                        //id,主键
+            logmodel.LOGTYPE = "电子公告";                     //日志类型
+            logmodel.CREATEDATE = DateTime.Now;                   //日志创建时间
+            logmodel.DESCRIPTION = "发布公告";                             //日志信息内容
+            logmodel.OPERATORID = userSession.USERID;                    //操作人
+            logmodel.IPADDRESS = Smart.Utility.IpAddress.GetLocationIpAddress();                 //ip地址
+            logbll.Add(logmodel);
+            /*日志结束***********/
+            Response.Redirect("Affiche.aspx", true);
+        }
+
+        protected void BtnBack_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Affiche.aspx", true);
         }
     }
 }

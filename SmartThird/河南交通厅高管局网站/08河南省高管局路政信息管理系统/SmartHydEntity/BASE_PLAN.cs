@@ -2,9 +2,9 @@
 // 版权所有。 
 //
 // 文件名称:BASE_PLAN.cs
-// 功能描述:日程信息表 -- 实体定义
+// 功能描述:事务信息表 -- 实体定义
 //
-// 创建标识： 付晓 2012-05-15
+// 创建标识： 付晓 2012-06-18
 namespace SmartHyd.Entity
 {
     using System;
@@ -12,12 +12,12 @@ namespace SmartHyd.Entity
     using System.Text;
 	
     /// <summary>
-    /// 日程信息表 -- 实体定义
+    /// 事务信息表 -- 实体定义
     /// </summary>
     public class BASE_PLAN
     {
 		/// <summary>
-        /// 日程信息编号
+        /// 事务信息编号
         /// </summary>		
         private decimal _CALENDARID;
 		/// <summary>
@@ -25,7 +25,7 @@ namespace SmartHyd.Entity
         /// </summary>		
         private decimal _USERID;
 		/// <summary>
-        /// 日程内容
+        /// 事务内容
         /// </summary>		
         private string _CALENDARCONTENT;
 		/// <summary>
@@ -44,16 +44,21 @@ namespace SmartHyd.Entity
         /// 事务类型
         /// </summary>		
         private string _CALENDARTYPE;
-        /// <summary>
-        /// 事务状态
-        /// </summary>
+		/// <summary>
+        /// 事务状态（0：正常；1：删除）
+        /// </summary>		
         private decimal _STATE;
-        /// <summary>
+		/// <summary>
         /// 事务标题
-        /// </summary>
+        /// </summary>		
         private string _TITLE;
+		/// <summary>
+        /// 提醒方式（0：系统提醒；1：短信提醒）
+        /// </summary>		
+        private decimal _REMIND;
+	
 	        /// <summary>
-        /// 日程信息编号
+        /// 事务信息编号
         /// </summary>
         public decimal CALENDARID
         {
@@ -69,7 +74,7 @@ namespace SmartHyd.Entity
             set { _USERID = value; }
         }
 	        /// <summary>
-        /// 日程内容
+        /// 事务内容
         /// </summary>
         public string CALENDARCONTENT
         {
@@ -108,21 +113,29 @@ namespace SmartHyd.Entity
             get { return _CALENDARTYPE; }
             set { _CALENDARTYPE = value; }
         }
-        /// <summary>
-        /// 事务状态
+	        /// <summary>
+        /// 事务状态（0：正常；1：删除）
         /// </summary>
         public decimal STATE
         {
             get { return _STATE; }
             set { _STATE = value; }
         }
-        /// <summary>
+	        /// <summary>
         /// 事务标题
         /// </summary>
         public string TITLE
         {
             get { return _TITLE; }
-            set { _TITLE=value;}
+            set { _TITLE = value; }
+        }
+	        /// <summary>
+        /// 提醒方式（0：系统提醒；1：短信提醒）
+        /// </summary>
+        public decimal REMIND
+        {
+            get { return _REMIND; }
+            set { _REMIND = value; }
         }
 	}
 }

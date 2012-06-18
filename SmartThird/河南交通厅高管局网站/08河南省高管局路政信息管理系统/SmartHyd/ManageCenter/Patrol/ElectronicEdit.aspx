@@ -35,8 +35,8 @@
             });
 
             /*开始、结束时间*/
-            $("#txtBEGINTIME").datepicker();
-            $("#txtENDTIME").datepicker();
+           // $("#txtBEGINTIME").datepicker();
+           // $("#txtENDTIME").datepicker();
             /*开始、结束时间*/
             $("#Handling1_txtBEGINTIME").timepicker({
                 showSecond: true,
@@ -54,6 +54,12 @@
             });
         });
     </script>
+    <style type="text/css">
+        .style1
+        {
+            width: 358px;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -73,10 +79,10 @@
             <table class="edit" width="100%">
                 <tbody>
                     <tr height="38">
-                        <td>
+                        <td style="width:265px">
                             <asp:Label ID="Label1" runat="server" Text="巡查中队:"></asp:Label>
-                            <asp:HiddenField ID="hidPrimary" runat="server" Value="-1" />
                             <uc1:Department ID="Department1" runat="server" />
+                            <%-- <asp:HiddenField ID="hidPrimary" runat="server" Value="-1" />--%>
                         </td>
                         <td>
                             <asp:Label ID="Label3" runat="server" Text="巡查人员:"></asp:Label>

@@ -31,13 +31,13 @@ namespace SmartHyd.ManageCenter.Affiche {
         protected global::System.Web.UI.WebControls.TextBox txt_title;
         
         /// <summary>
-        /// txt_endTime 控件。
+        /// txtTime 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_endTime;
+        protected global::System.Web.UI.WebControls.TextBox txtTime;
         
         /// <summary>
         /// btn_ok 控件。

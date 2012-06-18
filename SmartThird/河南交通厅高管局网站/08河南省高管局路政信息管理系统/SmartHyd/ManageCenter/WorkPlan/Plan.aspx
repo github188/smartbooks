@@ -20,7 +20,7 @@
                                     href="">事务提醒</a></span></div>
                                     <ul>
                                 <li id="menu_Title0" class="normal">
-                                    <a href="PlanEdit.aspx" target="sysFrame">
+                                    <a href="PlanEdit.aspx">
                                         <span id="Span1">
                                             <img src="../../Images/add.png" alt="" border="0" />新建事务
                                         </span>
@@ -63,7 +63,7 @@
                         BorderWidth="1px" CellPadding="3"
                         Width="100%" onrowcommand="gv_log_RowCommand">
                         <Columns>
-                            <asp:BoundField DataField="CALENDARID" HeaderText="事务编号">
+                            <asp:BoundField DataField="TITLE" HeaderText="标题">
                                 <ItemStyle Width="80px" />
                             </asp:BoundField>
                             <asp:BoundField DataField="CALENDARTYPE" HeaderText="事务类型">

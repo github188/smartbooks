@@ -80,7 +80,7 @@
                                 <ItemTemplate>
                                     <asp:LinkButton ID="Lbtview" runat="server" CommandName="view" CommandArgument='<%#Eval("termid") %>'>查看</asp:LinkButton>
                                     <asp:LinkButton ID="LbtEdit" runat="server" CommandName="edit" CommandArgument='<%#Eval("termid") %>'>编辑</asp:LinkButton>
-                                    <asp:LinkButton ID="LbtDel" runat="server" OnClientClick="return confirm('确定删除该日志吗？')"
+                                    <asp:LinkButton ID="LbtDel" runat="server" OnClientClick="return confirm('确定删除该装备信息吗？')"
                                         CommandName="del" CommandArgument='<%#Eval("termid") %>'>删除</asp:LinkButton>
                                 </ItemTemplate>
                                 <ItemStyle Width="90" />

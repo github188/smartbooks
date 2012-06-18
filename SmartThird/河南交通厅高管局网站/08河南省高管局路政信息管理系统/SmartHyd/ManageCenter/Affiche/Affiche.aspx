@@ -7,6 +7,8 @@
     <title>电子公告</title>
     <link href="../../Css/patrol.css" rel="stylesheet" type="text/css" />
     <link href="../../Css/tongdaoa.css" rel="stylesheet" type="text/css" />
+    <script src="../../Scripts/My97DatePicker/WdatePicker.js" type="text/jscript"></script>
+    <script src="../../Scripts/base.js" type="text/jscript" language="jscript"></script>
     <script type="text/jscript">
         $(function () {
 
@@ -24,7 +26,7 @@
                 });
             });
             /*时间*/
-            $("#ctl00_ContentPlaceHolder1_Affiche1_TxtTime").datepicker();
+           // $("#txtTime").datepicker();
         });
 
 
@@ -86,11 +88,12 @@
             window.open(URL, "read_notify", "height=250,width=600,status=0,toolbar=no,menubar=no,location=no,scrollbars=yes,top=150,left=" + myleft + ",resizable=yes");
         }
         //删除公告
-        //        function delete_notify(notify_id) {
-        //            msg = '删除后将不可恢复，确认要删除该条公告吗？';
-        //            if (window.confirm(msg))
-        //            window.location = "Affiche.aspx";
-        //        }
+                function delete_notify(notify_id) {
+                    msg = '删除后将不可恢复，确认要删除该条公告吗？';
+                    if (window.confirm(msg))
+                        alert("Affiche.aspx?Action=del&id=" + notify_id);
+                        window.location = "Affiche.aspx?Action=del&id=" + notify_id;
+                }
         function delete_all() {
             msg = '确认要删除所有公告通知吗？\n删除后将不可恢复，确认删除请输入大写字母“OK”';
             if (window.prompt(msg, "") == "OK") {
@@ -159,7 +162,7 @@
                             <span id="buttons">
                                 <img src="../../Images/branch.png" alt="" border="0" />当前位置：<a href="">网络办公&gt;&gt;</a>电子公告</span></div>
                         <ul>
-                            <li id="menu_Title0" class="normal"><a href="AfficheEdit.aspx" target="sysFrame">
+                            <li id="menu_Title0" class="normal"><a href="AfficheEdit.aspx">
                                 <span id="Span1">
                                     <img src="../../Images/add.png" alt="" border="0" />新建公告 </span></a></li>
                         </ul>
@@ -180,7 +183,7 @@
                                 <span id="PatrolSearch2">时间：</span>
                             </td>
                             <td height="24">
-                                <asp:TextBox ID="txt_endTime" runat="server" Width="120" class="Wdate" onFocus="WdatePicker({isShowClear:false,readOnly:true})"></asp:TextBox>
+                                <asp:TextBox ID="txtTime" runat="server" Width="120" class="Wdate" onFocus="WdatePicker({isShowClear:false,readOnly:true})"></asp:TextBox>
                             </td>
                             <td width="80" height="24" align="center">
                                 <asp:Button ID="btn_ok" runat="server" Text="" CssClass="btn_search" OnClick="btn_ok_Click" />
@@ -225,8 +228,7 @@
                                             <asp:Label ID="AFFICHEID" runat="server" Text='<%#Eval("AFFICHEID") %>' Visible="false"></asp:Label>
                                         </td>
                                         <td align="center">
-                                            <a href="">
-                                                <%# Eval("AFFICHETITLE")%></a>
+                                                <%# Eval("AFFICHETITLE")%>
                                         </td>
                                         <td align="center">
                                             <%# Eval("AFFICHER")%>
@@ -235,10 +237,12 @@
                                             <%# Eval("AFFICHEDATE")%>
                                         </td>
                                         <td align="center">
-                                            <%# Eval("STATES")%>
+                                            <%#TransState(Convert.ToDecimal(Eval("STATES")))%>
                                         </td>
                                         <td align="center">
-                                            <a href="AfficheEdit.aspx?aid=<%# Eval("AFFICHEID")%>">编辑</a> <a href="" id="delhref">
+                                           <%-- <a href="AfficheEdit.aspx?aid=<%# Eval("AFFICHEID")%>">编辑</a>--%>
+                                           <%--onclick="javascript:delete_notify(<%# Eval("AFFICHEID")%>)"--%>
+                                             <a href="Affiche.aspx?Action=del&id=<%# Eval("AFFICHEID")%>" id="delhref">
                                                 删除</a>
                                         </td>
                                     </tr>

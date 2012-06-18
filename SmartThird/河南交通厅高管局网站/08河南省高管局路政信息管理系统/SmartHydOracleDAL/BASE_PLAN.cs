@@ -47,13 +47,13 @@ namespace SmartHyd.OracleDAL
         /// <summary>
         /// 增加一条数据
         /// </summary>
-        public void Add(Entity.BASE_PLAN entity)
+        public int Add(Entity.BASE_PLAN entity)
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("insert into BASE_PLAN(");
-            strSql.Append("CALENDARID,USERID,CALENDARCONTENT,START_DATE,END_DATE,CALENDARREMIND,CALENDARTYPE,STATE");
+            strSql.Append("CALENDARID,USERID,CALENDARCONTENT,START_DATE,END_DATE,CALENDARREMIND,CALENDARTYPE,STATE,TITLE,REMIND");
             strSql.Append(") values (");
-            strSql.Append(":CALENDARID,:USERID,:CALENDARCONTENT,:START_DATE,:END_DATE,:CALENDARREMIND,:CALENDARTYPE,:STATE");
+            strSql.Append(":CALENDARID,:USERID,:CALENDARCONTENT,:START_DATE,:END_DATE,:CALENDARREMIND,:CALENDARTYPE,:STATE,:TITLE,:REMIND");
             strSql.Append(") ");
 
             OracleParameter[] parameters = {
@@ -63,9 +63,10 @@ namespace SmartHyd.OracleDAL
                         new OracleParameter(":START_DATE", OracleType.DateTime) ,            
                         new OracleParameter(":END_DATE", OracleType.DateTime) ,            
                         new OracleParameter(":CALENDARREMIND", OracleType.DateTime) ,            
-                        new OracleParameter(":CALENDARTYPE", OracleType.VarChar,50),
-                        new OracleParameter(":STATE",OracleType.Number,4),
-                            new OracleParameter(":TITLE",OracleType.VarChar,50)
+                        new OracleParameter(":CALENDARTYPE", OracleType.VarChar,50) ,            
+                        new OracleParameter(":STATE", OracleType.Number,4) ,            
+                        new OracleParameter(":TITLE", OracleType.VarChar,50) ,            
+                        new OracleParameter(":REMIND", OracleType.Number,4)             
               
             };
 
@@ -78,7 +79,8 @@ namespace SmartHyd.OracleDAL
             parameters[6].Value = entity.CALENDARTYPE;
             parameters[7].Value = entity.STATE;
             parameters[8].Value = entity.TITLE;
-            OracleHelper.ExecuteNonQuery(strSql.ToString(), parameters);
+            parameters[9].Value = entity.REMIND;  
+            return OracleHelper.ExecuteNonQuery(strSql.ToString(), parameters);
 
         }
 
@@ -97,21 +99,24 @@ namespace SmartHyd.OracleDAL
             strSql.Append(" START_DATE = :START_DATE , ");
             strSql.Append(" END_DATE = :END_DATE , ");
             strSql.Append(" CALENDARREMIND = :CALENDARREMIND , ");
-            strSql.Append(" CALENDARTYPE = :CALENDARTYPE  ,");
-            strSql.Append(" STATE = :STATE  ,");
-            strSql.Append(" TITLE=:TITLE ");
+            strSql.Append(" CALENDARTYPE = :CALENDARTYPE , ");
+            strSql.Append(" STATE = :STATE , ");
+            strSql.Append(" TITLE = :TITLE , ");
+            strSql.Append(" REMIND = :REMIND  ");
             strSql.Append(" where CALENDARID=:CALENDARID  ");
 
             OracleParameter[] parameters = {
-			            new OracleParameter(":CALENDARID", OracleType.Number,4) ,            
+			         		            new OracleParameter(":CALENDARID", OracleType.Number,4) ,            
                         new OracleParameter(":USERID", OracleType.Number,4) ,            
                         new OracleParameter(":CALENDARCONTENT", OracleType.VarChar,200) ,            
                         new OracleParameter(":START_DATE", OracleType.DateTime) ,            
                         new OracleParameter(":END_DATE", OracleType.DateTime) ,            
                         new OracleParameter(":CALENDARREMIND", OracleType.DateTime) ,            
-                        new OracleParameter(":CALENDARTYPE", OracleType.VarChar,50),
-                        new OracleParameter(":STATE",OracleType.Number,4),
-              new OracleParameter(":TITLE", OracleType.VarChar,50)
+                        new OracleParameter(":CALENDARTYPE", OracleType.VarChar,50) ,            
+                        new OracleParameter(":STATE", OracleType.Number,4) ,            
+                        new OracleParameter(":TITLE", OracleType.VarChar,50) ,            
+                        new OracleParameter(":REMIND", OracleType.Number,4)             
+              
             };
 
             parameters[0].Value = entity.CALENDARID;
@@ -123,6 +128,7 @@ namespace SmartHyd.OracleDAL
             parameters[6].Value = entity.CALENDARTYPE;
             parameters[7].Value = entity.STATE;
             parameters[8].Value = entity.TITLE;
+            parameters[9].Value = entity.REMIND; 
             int rows = OracleHelper.ExecuteNonQuery(strSql.ToString(), parameters);
             if (rows > 0)
             {
@@ -161,7 +167,6 @@ namespace SmartHyd.OracleDAL
         }
 
 
-
         /// <summary>
         /// 得到一个对象实体
         /// </summary>
@@ -169,7 +174,7 @@ namespace SmartHyd.OracleDAL
         {
 
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("select CALENDARID, USERID, CALENDARCONTENT, START_DATE, END_DATE, CALENDARREMIND, CALENDARTYPE ,STATE,TITLE");
+            strSql.Append("select CALENDARID, USERID, CALENDARCONTENT, START_DATE, END_DATE, CALENDARREMIND, CALENDARTYPE, STATE, TITLE, REMIND  ");
             strSql.Append("  from BASE_PLAN ");
             strSql.Append(" where CALENDARID=:CALENDARID ");
             OracleParameter[] parameters = {
@@ -208,6 +213,12 @@ namespace SmartHyd.OracleDAL
                 {
                     entity.STATE = decimal.Parse(dt.Rows[0]["STATE"].ToString());
                 }
+                entity.TITLE = dt.Rows[0]["TITLE"].ToString();
+                if (dt.Rows[0]["REMIND"].ToString() != "")
+                {
+                    entity.REMIND = decimal.Parse(dt.Rows[0]["REMIND"].ToString());
+                }
+
                 return entity;
             }
             else
@@ -215,6 +226,7 @@ namespace SmartHyd.OracleDAL
                 return null;
             }
         }
+		
 
 
         /// <summary>
