@@ -1,5 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="List.aspx.cs" Inherits="SmartHyd.ManageCenter.Assess.List" %>
 <%@ Register Assembly="AspNetPager" Namespace="Wuqi.Webdiyer" TagPrefix="webdiyer" %>
+<%@ Register src="../../Ascx/Department.ascx" tagname="Department" tagprefix="uc1" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
@@ -7,6 +8,7 @@
     <link href="../../Css/contentPanel.css" rel="stylesheet" type="text/css" />
     <link href="../../Css/patrol.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="../../Scripts/jquery-ui-1.8.18.custom/js/jquery-1.7.1.min.js"></script>
+    <script src="../../Scripts/My97DatePicker/WdatePicker.js" type="text/javascript"></script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -39,25 +41,62 @@
             </tr>
             <tr>
                 <td nowrap="nowrap" class="TableData">
+                    
+                    <table cellpadding="0" cellspacing="0" style="float:left;" class="TableBlock">
+                        <tr>
+                            <td width="60" nowrap="nowrap" class="TableData">选择部门:</td>
+                            <td nowrap="nowrap" class="TableData">
+                                <uc1:Department ID="Department1" runat="server" />
+                            </td>
+                            <td width="60" nowrap="nowrap" class="TableData">考评项目:</td>
+                            <td nowrap="nowrap" class="TableData">
+                                <asp:DropDownList ID="ddlParentType" runat="server" CssClass="input {required:true}" Width="190">
+                                </asp:DropDownList>
+                            </td>
+                            <td nowrap="nowrap" class="TableData"></td>
+                        </tr>
+                        <tr>
+                            <td width="60" nowrap="nowrap" class="TableData">开始时间:</td>
+                            <td nowrap="nowrap" class="TableData">
+                                <asp:TextBox ID="txtBeginTime" runat="server" CssClass="input Wdate" Width="120" onFocus="WdatePicker({isShowClear:false,readOnly:true})"></asp:TextBox>
+                            </td>
+                            <td width="60" nowrap="nowrap" class="TableData">结束时间:</td>
+                            <td nowrap="nowrap" class="TableData">
+                                <asp:TextBox ID="txtEndTime" runat="server" CssClass="input Wdate" Width="120" onFocus="WdatePicker({isShowClear:false,readOnly:true})"></asp:TextBox>
+                            </td>
+                            <td nowrap="nowrap" class="TableData">
+                                <asp:Button ID="btnSubmit" runat="server" Text="查询" CssClass="Button" 
+                                    onclick="btnSubmit_Click" />
+                            </td>
+                        </tr>
+                    </table>
+                    
+                </td>
+            </tr>
+            <tr>
+                <td nowrap="nowrap" class="TableData">
                    <asp:GridView ID="grvList" runat="server" AutoGenerateColumns="False" BackColor="White"
                         BorderColor="#CCCCCC" BorderStyle="None" Font-Size="12px" 
                         BorderWidth="1px" CellPadding="3"
                         Width="100%" onrowcommand="grvList_RowCommand">
                         <Columns>
-                            <asp:BoundField DataField="title" HeaderText="案件名称"></asp:BoundField>
-                            <asp:BoundField DataField="sendcode" HeaderText="案件编号">
-                                <ItemStyle Width="140" />
-                            </asp:BoundField>
-                            <asp:BoundField DataField="TIMESTAMP" HeaderText="创建时间">
+                            <asp:BoundField DataField="TICKTIME" HeaderText="日期时间">
                                 <ItemStyle Width="110" />
                             </asp:BoundField>
+
+                            <asp:BoundField DataField="SCORE" HeaderText="考评分值">
+                                <ItemStyle Width="60" />
+                            </asp:BoundField>
+
+                            <asp:BoundField DataField="REASON" HeaderText="考评原因" />
+
+
                             <asp:TemplateField HeaderText="操作选项">
-                                <ItemTemplate>
-                                    <asp:LinkButton ID="LinkButton1" runat="server" CommandName="view" CommandArgument='<%#Eval("id") %>'>查看</asp:LinkButton>
-                                    <asp:LinkButton ID="LinkButton2" runat="server" CommandName="edit" CommandArgument='<%#Eval("id") %>'>编辑</asp:LinkButton>
-                                    <asp:LinkButton ID="LinkButton3" runat="server" CommandName="del" CommandArgument='<%#Eval("id") %>'>删除</asp:LinkButton>
+                                <ItemTemplate>                                    
+                                    <asp:LinkButton runat="server" CommandName="edit" CommandArgument='<%#Eval("id") %>'>编辑</asp:LinkButton>
+                                    <asp:LinkButton runat="server" CommandName="del" CommandArgument='<%#Eval("id") %>'>删除</asp:LinkButton>
                                 </ItemTemplate>
-                                <ItemStyle Width="90" />
+                                <ItemStyle Width="60" />
                             </asp:TemplateField>
                         </Columns>
                         <FooterStyle BackColor="White" ForeColor="#000066" />

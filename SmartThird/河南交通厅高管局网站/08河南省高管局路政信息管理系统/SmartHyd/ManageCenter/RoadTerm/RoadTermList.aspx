@@ -11,6 +11,7 @@
     <link href="../../Css/contentPanel.css" rel="stylesheet" type="text/css" />
     <link href="../../Css/patrol.css" rel="stylesheet" type="text/css" />
     <script src="../../Scripts/jquery-ui-1.8.18.custom/js/jquery-1.7.1.min.js" type="text/javascript"></script>
+    <script src="../../Scripts/My97DatePicker/WdatePicker.js" type="text/javascript"></script>
 </head>
 <body>
     <form id="form1" runat="server">

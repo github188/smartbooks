@@ -25,7 +25,7 @@ namespace SmartHyd.Entity {
         /// <summary>
         /// 分值：正数或负数
         /// </summary>		
-        private decimal _SCORE;
+        private decimal _SCORE = 1;
         /// <summary>
         /// 加减分原因
         /// </summary>		

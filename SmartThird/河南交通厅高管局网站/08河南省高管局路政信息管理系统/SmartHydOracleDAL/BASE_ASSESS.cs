@@ -78,7 +78,6 @@ namespace SmartHyd.OracleDAL {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("update BASE_ASSESS set ");
 
-            strSql.Append(" ID = :ID , ");
             strSql.Append(" DEPTCODE = :DEPTCODE , ");
             strSql.Append(" SCORE = :SCORE , ");
             strSql.Append(" REASON = :REASON , ");
@@ -88,23 +87,25 @@ namespace SmartHyd.OracleDAL {
             strSql.Append(" where ID=:ID  ");
 
             OracleParameter[] parameters = {
-			            new OracleParameter(":ID", OracleType.Number,4) ,            
                         new OracleParameter(":DEPTCODE", OracleType.Number,4) ,            
                         new OracleParameter(":SCORE", OracleType.Number,4) ,            
                         new OracleParameter(":REASON", OracleType.VarChar,200) ,            
                         new OracleParameter(":TYPEID", OracleType.Number,4) ,            
                         new OracleParameter(":TICKTIME", OracleType.DateTime) ,            
-                        new OracleParameter(":STATUS", OracleType.Number,4)             
+                        new OracleParameter(":STATUS", OracleType.Number,4) ,
+                        new OracleParameter(":ID", OracleType.Number,4) 
               
             };
 
-            parameters[7].Value = model.ID;
-            parameters[8].Value = model.DEPTCODE;
-            parameters[9].Value = model.SCORE;
-            parameters[10].Value = model.REASON;
-            parameters[11].Value = model.TYPEID;
-            parameters[12].Value = model.TICKTIME;
-            parameters[13].Value = model.STATUS;
+            
+            parameters[0].Value = model.DEPTCODE;
+            parameters[1].Value = model.SCORE;
+            parameters[2].Value = model.REASON;
+            parameters[3].Value = model.TYPEID;
+            parameters[4].Value = model.TICKTIME;
+            parameters[5].Value = model.STATUS;
+            parameters[6].Value = model.ID;
+
             int rows = OracleHelper.ExecuteNonQuery(strSql.ToString(), parameters);
             if (rows > 0) {
                 return true;
@@ -210,6 +211,10 @@ namespace SmartHyd.OracleDAL {
             }
             strSql.Append(" order by " + filedOrder);
             return OracleHelper.Query(strSql.ToString());
+        }
+
+        public void Query(string sqlString) {
+            OracleHelper.Query(sqlString);
         }
     }
 }
