@@ -25,7 +25,7 @@
     <script type="text/jscript">
         $(function () {
             /*向页面注册表单验证全局*/
-            $("#aspnetForm").validate({
+            $("#form1").validate({
                 errorPlacement: function (error, element) {
                     error.appendTo(element.siblings("div:first"));
                 }

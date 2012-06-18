@@ -45,17 +45,43 @@ namespace SmartHyd.ManageCenter.Ascx
                 {
                     ViewState["userid"] = Request.QueryString["userid"];//视图状态：保存用户编号；
                     this.LabUser.Text = Request.QueryString["name"];
+                    RoleBind();
                 }
 
                 #endregion
             }
         }
+        /// <summary>
+        /// 角色绑定
+        /// </summary>
+        private void RoleBind()
+        {
+            DataTable dt = new DataTable();
+            dt = rolebll.GetList("1=1");
+            if (null != dt || dt.Rows.Count > 0)
+            {
+                this.RptList.DataSource = dt;
+                this.RptList.DataBind();
+            }
+            //if (null != dt || dt.Rows.Count > 0)
+            //{
+            //    for (int i = 0; i < dt.Rows.Count; i++)
+            //    {
+            //        this.divList.InnerHtml += "<asp:RadioButton ID=\"RadioButton" + i + 1 + "\" runat=\"server\" ValidationGroup=\"role\" GroupName=\"role\" />" + dt.Rows[i]["ROLENAME"] + "<br/>";
+            //    }
+
+            //}
+            //else
+            //{
+            //    this.divList.InnerHtml = "暂无可用角色！";
+            //}
+        }
         #region 6.7用户授权
-       
+
         protected Entity.BASE_USER_ROLE GetModel(decimal userid, decimal ROLEID, decimal MENUID, decimal ACTIONID)
         {
             Entity.BASE_USER_ROLE Model = new Entity.BASE_USER_ROLE();
-             Model.USERROLEID =-1;//主键，ID
+            Model.USERROLEID = -1;//主键，ID
             Model.USERID = userid;// 用户编号；
             Model.ROLEID = ROLEID;//角色编号；
             Model.MENUID = MENUID;//菜单编号；
@@ -91,24 +117,26 @@ namespace SmartHyd.ManageCenter.Ascx
         /// <param name="e"></param>
         protected void BtnEmp_Click(object sender, EventArgs e)
         {
-            decimal userid=Convert.ToDecimal(ViewState["userid"]);
+            decimal userid = Convert.ToDecimal(ViewState["userid"]);
             decimal roleid = 0;
-            if (this.RadioButton1.Checked)
+            DataTable dt = new DataTable();
+            dt = rolebll.GetList("1=1");
+            
+            if (null != dt || dt.Rows.Count > 0)
             {
-                roleid = 1;
+                
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    RadioButton rb=(RadioButton)this.RptList.FindControl("RadioButton1");
+                    rb.GroupName = "role";
+                    Label lb=(Label)this.RptList.FindControl("ROLEID");
+                    if (rb.Checked)
+                    {
+                        roleid = Convert.ToDecimal(lb.Text);
+                    }
+                }
             }
-            if (this.RadioButton2.Checked)
-            {
-                roleid = 2;
-            }
-            if (this.RadioButton3.Checked)
-            {
-                roleid = 3;
-            }
-            if (this.RadioButton4.Checked)
-            {
-                roleid = 4;
-            }
+
             EmpowerAdd(userid, roleid);
         }
         #endregion

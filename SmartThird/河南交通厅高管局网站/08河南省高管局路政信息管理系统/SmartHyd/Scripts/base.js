@@ -8,7 +8,12 @@
     //$('#alert').hide();
 });
 
-
+/*向页面注册表单验证全局*/
+$("#form1").validate({
+    errorPlacement: function (error, element) {
+        error.appendTo(element.siblings("div:first"));
+    }
+});
 //全选
 function selectall(chkcontrol) {
     var chkall = chkcontrol;

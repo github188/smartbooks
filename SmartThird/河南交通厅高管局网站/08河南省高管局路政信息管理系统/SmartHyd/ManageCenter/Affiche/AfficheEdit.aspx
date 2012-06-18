@@ -33,6 +33,12 @@
             });
             /*时间*/
             $("#TxtTime").datepicker();
+            /*向页面注册表单验证全局*/
+            $("#form1").validate({
+                errorPlacement: function (error, element) {
+                    error.appendTo(element.siblings("div:first"));
+                }
+            });
         });
 
 
@@ -223,9 +229,7 @@
                         <input type="hidden" name="TOP_FLAG" value="0" />
                         <asp:Button ID="Btn_Send" runat="server" Text="发布" class="BigButton" OnClick="Btn_Send_Click" />
                         <asp:Button ID="Btn_Save" runat="server" Text="保存" class="BigButton" OnClick="Btn_Save_Click" />
-                        <asp:Button ID="BtnBack" runat="server" Text="返回" class="BigButton" 
-                            onclick="BtnBack_Click"/>
-                      
+                        <asp:Button ID="BtnBack" runat="server" Text="返回" class="BigButton" OnClick="BtnBack_Click" />
                     </td>
                 </tr>
             </tbody>

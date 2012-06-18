@@ -19,6 +19,16 @@
     <script type="text/javascript" src="../../Scripts/jquery-validation-1.9.0/messages_cn.js"></script>
     <script type="text/javascript" src="../../Scripts/jquery-validation-1.9.0/jquery.metadata.js"></script>
     <script src="../../Scripts/base.js" type="text/javascript"></script>
+    <script type="text/jscript">
+        $(function () {
+            /*向页面注册表单验证全局*/
+            $("#form1").validate({
+                errorPlacement: function (error, element) {
+                    error.appendTo(element.siblings("div:first"));
+                }
+            });
+        });
+   </script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -112,8 +122,8 @@
                     <tfoot>
                         <tr>
                             <td align="center" colspan="3" style="text-align: center;">
-                                <asp:Button ID="btnSubmit" runat="server" Text="提交" OnClick="btnSubmit_Click" />
-                                <asp:Button ID="btnCancel" runat="server" Text="重置" OnClick="btnCancel_Click" />
+                                <asp:Button ID="btnSubmit" runat="server" Text="提交" CssClass="BigButtonA" OnClick="btnSubmit_Click" />
+                                <asp:Button ID="btnCancel" runat="server" Text="重置" CssClass="BigButtonA" OnClick="btnCancel_Click" />
                             </td>
                         </tr>
                     </tfoot>

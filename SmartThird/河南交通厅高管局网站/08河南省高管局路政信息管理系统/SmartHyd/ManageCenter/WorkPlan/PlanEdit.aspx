@@ -17,6 +17,16 @@
     <script type="text/javascript" src="../../Scripts/jquery-validation-1.9.0/messages_cn.js"></script>
     <script type="text/javascript" src="../../Scripts/jquery-validation-1.9.0/jquery.metadata.js"></script>
     <script type="text/javascript" src="../../Scripts/My97DatePicker/WdatePicker.js"></script>
+   <script type="text/jscript">
+       $(function () {
+           /*向页面注册表单验证全局*/
+           $("#form1").validate({
+               errorPlacement: function (error, element) {
+                   error.appendTo(element.siblings("div:first"));
+               }
+           });
+       });
+   </script>
 </head>
 <body>
     <form id="form1" runat="server">

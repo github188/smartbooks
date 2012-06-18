@@ -72,8 +72,26 @@ namespace SmartHyd.ManageCenter.WorkPlan
             {
             strwhere="CALENDARTYPE='"+this.DDLType.SelectedValue+"' and START_DATE=to_date('"+this.txt_Time.Text+"','yyyy-MM-dd')";
             }
-            bll.GetPlanList(strwhere);
-                
+            DataTable dt = new DataTable();
+           dt= bll.GetPlanList(strwhere);
+            if (dt != null && dt.Rows.Count > 0)
+            {
+                AspNetPager1.RecordCount = dt.Rows.Count;
+
+                PagedDataSource pds = new PagedDataSource();
+                pds.DataSource = dt.DefaultView;
+                pds.AllowPaging = true;
+                pds.CurrentPageIndex = AspNetPager1.CurrentPageIndex - 1;
+                pds.PageSize = AspNetPager1.PageSize;
+
+                this.gv_log.DataSource = pds; //定义数据源
+                this.gv_log.DataBind(); //绑定数据
+            }
+            else
+            {
+                litmsg.Visible = true;
+                litmsg.Text = "<div style='font-size:16px; font-family:微软雅黑; color:red;font-weight:bold; text-align:center;'>无相关系统日志记录!</div>";
+            }    
         }
 
         protected void AspNetPager1_PageChanging(object src, Wuqi.Webdiyer.PageChangingEventArgs e)

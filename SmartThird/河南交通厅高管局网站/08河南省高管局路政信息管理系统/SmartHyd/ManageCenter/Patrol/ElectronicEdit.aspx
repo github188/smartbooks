@@ -52,6 +52,12 @@
                 timeFormat: 'hh:mm:ss',
                 dateFormat: 'yy-mm-dd'
             });
+            /*向页面注册表单验证全局*/
+            $("#form1").validate({
+                errorPlacement: function (error, element) {
+                    error.appendTo(element.siblings("div:first"));
+                }
+            });
         });
     </script>
     <style type="text/css">
