@@ -44,20 +44,20 @@
                         BorderWidth="1px" CellPadding="3"
                         Width="100%" onrowcommand="grvList_RowCommand" >
                         <Columns>
-                            <asp:BoundField DataField="title" HeaderText="案件名称"></asp:BoundField>
-                            <asp:BoundField DataField="sendcode" HeaderText="案件编号">
-                                <ItemStyle Width="140" />
+                            <asp:BoundField DataField="NAME" HeaderText="考评项目">
+                                <ItemStyle Width="200" />
                             </asp:BoundField>
-                            <asp:BoundField DataField="TIMESTAMP" HeaderText="创建时间">
-                                <ItemStyle Width="110" />
+                            <asp:BoundField DataField="SCORE" HeaderText="初始分值">
+                                <ItemStyle Width="60" />
+                            </asp:BoundField>
+                            <asp:BoundField DataField="SUMMARY" HeaderText="描述信息">  
                             </asp:BoundField>
                             <asp:TemplateField HeaderText="操作选项">
                                 <ItemTemplate>
-                                    <asp:LinkButton ID="LinkButton1" runat="server" CommandName="view" CommandArgument='<%#Eval("id") %>'>查看</asp:LinkButton>
-                                    <asp:LinkButton ID="LinkButton2" runat="server" CommandName="edit" CommandArgument='<%#Eval("id") %>'>编辑</asp:LinkButton>
-                                    <asp:LinkButton ID="LinkButton3" runat="server" CommandName="del" CommandArgument='<%#Eval("id") %>'>删除</asp:LinkButton>
+                                    <asp:LinkButton runat="server" CommandName="edit" CommandArgument='<%#Eval("ID") %>'>编辑</asp:LinkButton>
+                                    <asp:LinkButton runat="server" CommandName="del" CommandArgument='<%#Eval("ID") %>'>删除</asp:LinkButton>
                                 </ItemTemplate>
-                                <ItemStyle Width="90" />
+                                <ItemStyle Width="60" />
                             </asp:TemplateField>
                         </Columns>
                         <FooterStyle BackColor="White" ForeColor="#000066" />

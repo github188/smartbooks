@@ -14,56 +14,7 @@
     <script type="text/javascript" src="../../Scripts/jquery-validation-1.9.0/messages_cn.js"></script>
     <script type="text/javascript" src="../../Scripts/jquery-validation-1.9.0/jquery.metadata.js"></script>
     <script src="../../Scripts/My97DatePicker/WdatePicker.js" type="text/javascript"></script>
-    <style type="text/css">
-        /*通用input元素样式--文本框*/
-        .input
-        {
-            border: #C1C1C1 1px solid;
-            background-color: #FBFBFB;
-            color: #444;
-            padding: 4px 5px 4px;
-            float: left;
-        }
-        .input:hover
-        {
-            background-color: #FFC;
-            border: 1px solid #d5ae4f;
-        }
-        span, input
-        {
-            float: left;
-            padding: 4px 5px 4px;
-        }
-        body
-        {
-            font-size: 12px;
-            font-family: Verdana,arial,sans-serif;
-            padding: 0px;
-            margin: 0px;
-        }
-        /*验证元素提示框*/
-        .validate
-        {
-            float: left;
-            width: 55px;
-            font-size: 12px;
-            color: Red;
-            height: 28px;
-            line-height: 28px;
-            margin-left: 4px;
-        }
-    </style>
     <script type="text/javascript" language="javascript">
-
-        /*打开/闭合查询条件设置面板*/
-        function showConditionPanel() {
-            if ($("#search_condition_panel").css("display") == "none") {
-                $("#search_condition_panel").css("display", "block");
-            } else {
-                $("#search_condition_panel").css("display", "none");
-            }
-        }
-
         function GoBack() {
             history.go(-1);
         }

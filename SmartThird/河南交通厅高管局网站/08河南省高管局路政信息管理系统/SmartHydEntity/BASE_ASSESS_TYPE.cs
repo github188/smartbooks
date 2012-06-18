@@ -37,15 +37,15 @@ namespace SmartHyd.Entity {
         /// <summary>
         /// 排序
         /// </summary>		
-        private decimal _SORT;
+        private decimal _SORT = 0;
         /// <summary>
         /// 状态:0正常,1删除
         /// </summary>		
-        private decimal _STATUS;
+        private decimal _STATUS = 0;
         /// <summary>
         /// 初始分值，默认100
         /// </summary>		
-        private decimal _SCORE;
+        private decimal _SCORE = 100;
 
         /// <summary>
         /// 主键，自增
