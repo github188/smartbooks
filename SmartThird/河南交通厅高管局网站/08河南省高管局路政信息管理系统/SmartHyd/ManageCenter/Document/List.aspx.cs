@@ -49,12 +49,15 @@ namespace SmartHyd.ManageCenter.Document {
 
         protected void grvList_RowCommand(object sender, GridViewCommandEventArgs e) {
             decimal id = Convert.ToDecimal(e.CommandArgument.ToString());
+            string url = string.Empty;
             switch (e.CommandName) {
                 case "view":
-                    Response.Redirect(string.Format("View.aspx?id=", id.ToString(), true));
+                    url = string.Format("View.aspx?id={0}", id.ToString());
+                    Response.Redirect(url, true);
                     break;
                 case "edit":
-                    Response.Redirect(string.Format("Add.aspx?id=", id.ToString(), true));
+                    url = string.Format("Add.aspx?id={0}", id.ToString());
+                    Response.Redirect(url, true);
                     break;
                 case "del":
                     bll.Del(id);

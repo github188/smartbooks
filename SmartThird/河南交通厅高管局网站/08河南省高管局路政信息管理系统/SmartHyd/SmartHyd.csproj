@@ -41,6 +41,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\AspNetPager.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.7\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -1620,6 +1623,9 @@
     <Compile Include="Ascx\SystemModuleJSON.ascx.designer.cs">
       <DependentUpon>SystemModuleJSON.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Ashx\Annex.ashx.cs">
+      <DependentUpon>Annex.ashx</DependentUpon>
+    </Compile>
     <Compile Include="Handle\SystemJSON.aspx.cs">
       <DependentUpon>SystemJSON.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2360,9 +2366,11 @@
     <Content Include="Ashx\VerificationCode.ashx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Ashx\Annex.ashx" />
     <None Include="img\cloud.psd" />
     <None Include="img\网点图标.psd" />
     <None Include="img\网点图标1.psd" />
+    <Content Include="packages.config" />
     <None Include="Scripts\ext\resources\images\default\form\clear-trigger.psd" />
     <None Include="Scripts\ext\resources\images\default\form\date-trigger.psd" />
     <None Include="Scripts\ext\resources\images\default\form\search-trigger.psd" />

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Data;
 
 namespace SmartHyd.BLL {
     public class BASE_ANNEX {
@@ -22,6 +23,10 @@ namespace SmartHyd.BLL {
         }
 
         public void Del(decimal id) {
+        }
+
+        public DataTable GetList(string sqlString) {
+            return dal.GetList(sqlString).Tables[0];
         }
     }
 }
