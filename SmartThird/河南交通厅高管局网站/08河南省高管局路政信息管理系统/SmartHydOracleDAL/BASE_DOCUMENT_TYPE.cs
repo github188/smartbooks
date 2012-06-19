@@ -83,7 +83,6 @@ namespace SmartHyd.OracleDAL {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("update BASE_DOCUMENT_TYPE set ");
 
-            strSql.Append(" ID = :ID , ");
             strSql.Append(" NAME = :NAME , ");
             strSql.Append(" SUMMARY = :SUMMARY , ");
             strSql.Append(" STATUS = :STATUS , ");
@@ -94,25 +93,26 @@ namespace SmartHyd.OracleDAL {
             strSql.Append(" where ID=:ID  ");
 
             OracleParameter[] parameters = {
-			            new OracleParameter(":ID", OracleType.Number,4) ,            
-                        new OracleParameter(":NAME", OracleType.VarChar,50) ,            
+			            new OracleParameter(":NAME", OracleType.VarChar,50) ,            
                         new OracleParameter(":SUMMARY", OracleType.VarChar,200) ,            
                         new OracleParameter(":STATUS", OracleType.Number,4) ,            
                         new OracleParameter(":SORT", OracleType.Number,4) ,            
                         new OracleParameter(":DEPTCODE", OracleType.Number,4) ,            
                         new OracleParameter(":ISSHARE", OracleType.Number,4) ,            
-                        new OracleParameter(":PARENTID", OracleType.Number,4)             
+                        new OracleParameter(":PARENTID", OracleType.Number,4) ,
+                        new OracleParameter(":ID", OracleType.Number,4) 
               
             };
+                        
+            parameters[0].Value = model.NAME;
+            parameters[1].Value = model.SUMMARY;
+            parameters[2].Value = model.STATUS;
+            parameters[3].Value = model.SORT;
+            parameters[4].Value = model.DEPTCODE;
+            parameters[5].Value = model.ISSHARE;
+            parameters[6].Value = model.PARENTID;
+            parameters[7].Value = model.ID;
 
-            parameters[8].Value = model.ID;
-            parameters[9].Value = model.NAME;
-            parameters[10].Value = model.SUMMARY;
-            parameters[11].Value = model.STATUS;
-            parameters[12].Value = model.SORT;
-            parameters[13].Value = model.DEPTCODE;
-            parameters[14].Value = model.ISSHARE;
-            parameters[15].Value = model.PARENTID;
             int rows = OracleHelper.ExecuteNonQuery(strSql.ToString(), parameters);
             if (rows > 0) {
                 return true;
@@ -225,7 +225,9 @@ namespace SmartHyd.OracleDAL {
             return OracleHelper.Query(strSql.ToString());
         }
 
-
+        public void Query(string sqlString) {
+            OracleHelper.Query(sqlString);
+        }
     }
 }
 

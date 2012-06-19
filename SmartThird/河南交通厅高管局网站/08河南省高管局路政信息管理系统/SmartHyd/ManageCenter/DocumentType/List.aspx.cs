@@ -7,7 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace SmartHyd.ManageCenter.DocumentType {
     public partial class List : System.Web.UI.Page {
+        private Utility.UserSession session;
+        private BLL.BASE_DOCUMENT_TYPE bll = new BLL.BASE_DOCUMENT_TYPE();
+
         protected void Page_Load(object sender, EventArgs e) {
+            session = (Utility.UserSession)Session["user"];
             if (!IsPostBack) {
                 BindDataSource();
             }
@@ -17,6 +21,7 @@ namespace SmartHyd.ManageCenter.DocumentType {
             System.Data.DataTable dt = new System.Data.DataTable();
 
             //获取数据
+            dt = bll.GetList(Convert.ToDecimal(session.DEPTID));
 
             //初始化分页数据
             AspNetPager1.RecordCount = dt.Rows.Count;
@@ -42,10 +47,14 @@ namespace SmartHyd.ManageCenter.DocumentType {
         }
 
         protected void grvList_RowCommand(object sender, GridViewCommandEventArgs e) {
-            int id = Convert.ToInt32(e.CommandArgument.ToString());
+            decimal id = Convert.ToDecimal(e.CommandArgument.ToString());
             switch (e.CommandName) {
-                case "view": break;
-                case "del": break;
+                case "edit":
+                    Response.Redirect(string.Format("Add.aspx?id={0}", id.ToString()), true);
+                    break;
+                case "del":
+                    bll.UpdateStatusAsDelete(id);
+                    break;
             }
 
             /*重新绑定数据*/

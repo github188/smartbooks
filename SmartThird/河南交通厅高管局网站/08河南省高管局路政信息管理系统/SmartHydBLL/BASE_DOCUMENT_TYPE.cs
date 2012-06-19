@@ -24,5 +24,10 @@ namespace SmartHyd.BLL {
             string sqlString = string.Format("DEPTCODE={0} AND STATUS=0", deptCode.ToString());
             return dal.GetList(sqlString).Tables[0];
         }
+
+        public void UpdateStatusAsDelete(decimal id) {
+            string sqlString = string.Format("update BASE_DOCUMENT_TYPE set STATUS=1 where ID={0}", id.ToString());
+            dal.Query(sqlString);
+        }
     }
 }

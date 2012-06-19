@@ -58,16 +58,9 @@
             </tr>
 
             <tr>
-                <td nowrap="nowrap" class="TableData" width="30">选择单位:</td>
-                <td nowrap="nowrap" class="TableData" align="left">
-                    <uc1:Department ID="Department1" runat="server" />
-                    <asp:HiddenField ID="hidPrimary" runat="server" Value="-1" />
-                </td>
-            </tr>
-
-            <tr>
                 <td nowrap="nowrap" class="TableData" width="30">分类名称:</td>
                 <td nowrap="nowrap" class="TableData" align="left">
+                    <asp:HiddenField ID="hidPrimary" runat="server" Value="-1" />
                     <asp:TextBox ID="txtName" runat="server" CssClass="input {required:true}" Width="200">
                     </asp:TextBox>
                     <div class="validate ui-state-highlight ui-corner-all" style="border: none;"></div>
@@ -86,7 +79,7 @@
             <tr>
                 <td nowrap="nowrap" class="TableData" width="30">父级分类:</td>
                 <td nowrap="nowrap" class="TableData" align="left">
-                    <asp:DropDownList ID="ddlParentType" runat="server" CssClass="input" Width="200">
+                    <asp:DropDownList ID="ddlParentType" runat="server" CssClass="input" Width="210">
                     </asp:DropDownList>
                 </td>
             </tr>
@@ -94,7 +87,7 @@
             <tr>
                 <td nowrap="nowrap" class="TableData" width="30">共享特性:</td>
                 <td nowrap="nowrap" class="TableData" align="left">
-                    <asp:DropDownList ID="ddlShare" runat="server" CssClass="input" Width="200">
+                    <asp:DropDownList ID="ddlShare" runat="server" CssClass="input" Width="210">
                         <asp:ListItem Selected="True" Value="0">仅允许本单位查看</asp:ListItem>
                         <asp:ListItem Value="1">允许上级单位查看</asp:ListItem>
                         <asp:ListItem Value="2">允许下级单位查看</asp:ListItem>
@@ -106,7 +99,7 @@
             <tr>
                 <td nowrap="nowrap" class="TableData" width="30">分类排序:</td>
                 <td nowrap="nowrap" class="TableData" align="left">
-                    <asp:TextBox ID="txtSort" runat="server" CssClass="input {required:true}" Width="30" Text="0">
+                    <asp:TextBox ID="txtSort" runat="server" CssClass="input {required:true}" Width="30" Text="1">
                     </asp:TextBox>
                     <div class="validate ui-state-highlight ui-corner-all" style="border: none;"></div>
                 </td>
@@ -118,7 +111,7 @@
                 <td nowrap="nowrap" colspan="2">
                     <asp:Button ID="btnSubmit" runat="server" Text="提交" CssClass="Button" 
                         onclick="btnSubmit_Click" />
-                    <asp:Button ID="btnCancel" runat="server" Text="取消" CssClass="Button" />
+                    <asp:Button ID="btnCancel" runat="server" Text="取消" CssClass="Button"  Visible="false"/>
                 </td>
             </tr>
         </tbody>
