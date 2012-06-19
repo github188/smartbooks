@@ -71,11 +71,11 @@ namespace SmartHyd.ManageCenter.Affiche
         {
             if (state == 0)
             {
-                return "未读";
+                return "已读";
             }
             else
             {
-                return "已读";
+                return "未读";
             }
 
         }

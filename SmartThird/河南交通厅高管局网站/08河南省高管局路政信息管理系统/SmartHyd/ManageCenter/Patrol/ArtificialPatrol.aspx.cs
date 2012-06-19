@@ -41,7 +41,6 @@ namespace SmartHyd.Patrol
 
             }
         }
-
         private void bindDeptLog(string sqlwhere)
         {
            
@@ -78,7 +77,6 @@ namespace SmartHyd.Patrol
                 bindDeptLog(sqlwhere);
             }
         }
-
         /// <summary>
         /// 人工巡逻日志查询
         /// </summary>

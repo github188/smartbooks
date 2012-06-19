@@ -90,7 +90,6 @@
         function delete_notify(notify_id) {
             msg = '删除后将不可恢复，确认要删除该条公告吗？';
             if (window.confirm(msg))
-                alert("Affiche.aspx?Action=del&id=" + notify_id);
             window.location = "Affiche.aspx?Action=del&id=" + notify_id;
         }
         function delete_all() {
@@ -238,9 +237,8 @@
                                             <%#TransState(Convert.ToDecimal(Eval("STATES")))%>
                                         </td>
                                         <td align="center">
-                                            <%-- <a href="AfficheEdit.aspx?aid=<%# Eval("AFFICHEID")%>">编辑</a>--%>
-                                            <%--onclick="javascript:delete_notify(<%# Eval("AFFICHEID")%>)"--%>
-                                            <a href="Affiche.aspx?Action=del&id=<%# Eval("AFFICHEID")%>" id="delhref">删除</a>
+                                             <a href="AfficheEdit.aspx?aid=<%# Eval("AFFICHEID")%>">查看</a>
+                                            <a href="Affiche.aspx?Action=del&id=<%# Eval("AFFICHEID")%>" onclick="javascript:delete_notify(<%# Eval("AFFICHEID")%>)" id="delhref">删除</a>
                                         </td>
                                     </tr>
                                 </tbody>

@@ -52,7 +52,7 @@
                     <asp:BoundField DataField="DESCRIPTION" HeaderText="日志内容" />
                     <asp:TemplateField HeaderText="操作">
                         <ItemTemplate>
-                            <asp:LinkButton ID="LinkButton1" runat="server" CommandName="del" CommandArgument='<%#Eval("LOGID") %>'>删除</asp:LinkButton>
+                            <asp:LinkButton ID="LinkButton1" runat="server" OnClientClick="return confirm('确定要删除该日志吗？')" CommandName="del" CommandArgument='<%#Eval("LOGID") %>'>删除</asp:LinkButton>
                         </ItemTemplate>
                         <ItemStyle Width="60" />
                     </asp:TemplateField>

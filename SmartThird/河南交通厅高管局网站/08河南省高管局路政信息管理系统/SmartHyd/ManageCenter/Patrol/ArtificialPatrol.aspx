@@ -67,7 +67,7 @@
                                             <td width="140" height="24">
                                                 <asp:TextBox ID="txt_startTime" runat="server" class="Wdate controlstyle" onFocus="WdatePicker({isShowClear:false,startDate:'%y-%M-01 00:00:00',dateFmt:'yyyy-MM-dd HH:mm:ss',alwaysUseStartDate:true,readOnly:true})"></asp:TextBox>
                                             </td>
-                                           <%-- <td width="80" height="24" align="right">
+                                            <%-- <td width="80" height="24" align="right">
                                                 <span id="PatrolSearch" class="PatrolSearch">Ωÿ÷π ±º‰£∫</span>
                                             </td>
                                             <td width="120" height="24">
