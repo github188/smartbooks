@@ -128,9 +128,9 @@ namespace SmartHyd.ManageCenter.Affiche
             Response.Redirect("Affiche.aspx", true);
         }
 
-        protected void BtnBack_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("Affiche.aspx", true);
-        }
+        //protected void BtnBack_Click(object sender, EventArgs e)
+        //{
+        //    Response.Redirect("Affiche.aspx", true);
+        //}
     }
 }

@@ -17,6 +17,7 @@
     <script type="text/javascript" src="../../Scripts/jquery-validation-1.9.0/messages_cn.js"></script>
     <script type="text/javascript" src="../../Scripts/jquery-validation-1.9.0/jquery.metadata.js"></script>
     <script type="text/javascript" src="../../Scripts/My97DatePicker/WdatePicker.js"></script>
+    <script type="text/javascript" src="../../Scripts/base.js"></script>
    <script type="text/jscript">
        $(function () {
            /*向页面注册表单验证全局*/
@@ -103,8 +104,7 @@
                 <tr>
                     <td colspan="2" style="text-align: center;">
                         <asp:Button ID="btnSubmit" runat="server" Text="提交" CssClass="BigButtonA" OnClick="btnSubmit_Click" />
-                        <asp:Button ID="btnBack" runat="server" Text="返回" CssClass="BigButtonA" 
-                            onclick="btnBack_Click" />
+                        <asp:Button ID="btnBack" runat="server" Text="返回" CssClass="BigButtonA" OnClientClick="GoBack()"/>
                     </td>
                 </tr>
             </tfoot>

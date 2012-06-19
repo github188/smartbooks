@@ -22,26 +22,29 @@ namespace SmartHyd.Patrol
             if (!IsPostBack)
             {
                 ////初始化数据
+                
                 if (null == Request.QueryString["deptid"] || "" == Request.QueryString["deptid"])
                 {
                     ViewState["id"] = 1;
-                    bindDeptLog(1);
+                    string sqlwhere = "1=1 AND DEPTID=1 AND STATE=0 order by PATROLID desc ";
+                    bindDeptLog(sqlwhere);
                     // BindAcceptUnit();//绑定单位信息
                 }
                 else
                 {
                     decimal id = Convert.ToDecimal(Request.QueryString["deptid"]);
                     ViewState["id"] = Request.QueryString["deptid"];
-                    bindDeptLog(id);
+                    string sqlwhere = "1=1 AND DEPTID=" + id + " AND STATE=0 order by PATROLID desc ";
+                    bindDeptLog(sqlwhere);
                     // BindAcceptUnit();//绑定单位信息
                 }
 
             }
         }
 
-        private void bindDeptLog(decimal id)
+        private void bindDeptLog(string sqlwhere)
         {
-            string sqlwhere = "1=1 AND DEPTID=" + id + " AND STATE=0 order by PATROLID desc ";
+           
             DataTable dt = new DataTable();
             // dt = bll.GetDeptLog(deptCode, state);
             //获取全部人工巡逻日志
@@ -71,7 +74,8 @@ namespace SmartHyd.Patrol
             if (ViewState["id"] != null)
             {
                 decimal id = Convert.ToDecimal(ViewState["id"]);
-                bindDeptLog(id);
+                string sqlwhere = "1=1 AND DEPTID=" + id + " AND STATE=0 order by PATROLID desc ";
+                bindDeptLog(sqlwhere);
             }
         }
 
@@ -82,27 +86,22 @@ namespace SmartHyd.Patrol
         /// <param name="e"></param>
         protected void btn_ok_Click(object sender, EventArgs e)
         {
-            // int deptCode = 0;
-            // int state = 0;
-            // DateTime beginTime = DateTime.Now.AddDays(-100);
-            // DateTime endTime = DateTime.Now;
-            // DropDownList ddr = (DropDownList)this.Department1.FindControl("ddlDepartment");//找到用户控件中的子控件
-            //// if (this.txt_vehicleLicense.Text == "" && this.txt_startTime.Text == "" && this.txt_endTime.Text == "")
-            // if (this.txt_startTime.Text == "" && this.txt_endTime.Text == "")
-            // {
-            //     //按单位查询
-            //     deptCode = Convert.ToInt32(ddr.SelectedValue);
-
-            // }
-            // else
-            // { 
-            //     //综合查询
-            //     deptCode = Convert.ToInt32(ddr.SelectedValue);
-            //     beginTime = Convert.ToDateTime(this.txt_startTime.Text);
-            //     endTime = Convert.ToDateTime(this.txt_endTime.Text);
-            // }
-            // bindDeptLog(beginTime, endTime, deptCode, state);
+            string sqlwhere = string.Empty;
+            if (ViewState["id"] != null)
+            {
+                decimal id = Convert.ToDecimal(ViewState["id"]);
+                if (this.txt_startTime.Text == "")
+                {
+                    sqlwhere = "1=1 AND DEPTID=" + id + " AND STATE=0 order by PATROLID desc ";
+                }
+                else
+                {
+                    sqlwhere = "TICKTIME>=to_date('" + this.txt_startTime.Text + "','yyyy-MM-dd') AND DEPTID=" + id + " AND STATE=0 order by PATROLID desc ";
+                }
+            }
+            bindDeptLog(sqlwhere);
         }
+    
 
         protected void gv_patrollist_RowCommand(object sender, GridViewCommandEventArgs e)
         {

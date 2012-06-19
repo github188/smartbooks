@@ -39,7 +39,7 @@
                             </td>
                             <td height="24">
                                 <asp:DropDownList ID="DDLType" runat="server">
-                                <asp:ListItem Value="0">工作事务</asp:ListItem>
+                                <asp:ListItem Value="0">工作计划</asp:ListItem>
                                 <asp:ListItem Value="1">个人事务</asp:ListItem>
                                 </asp:DropDownList>
                             </td>

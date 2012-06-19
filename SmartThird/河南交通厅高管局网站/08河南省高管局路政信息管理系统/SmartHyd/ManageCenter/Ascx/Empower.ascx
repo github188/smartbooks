@@ -28,7 +28,8 @@
                             Text=""></asp:Label></span> ，该用户可被授予以下权限中的一项
                     </td>
                 </tr>
-                <asp:Repeater ID="RptList" runat="server">
+
+             <%--   <asp:Repeater ID="RptList" runat="server">
                     <ItemTemplate>
                         <tr class="TableLine1">
                             <td>
@@ -41,14 +42,14 @@
                             </td>
                         </tr>
                     </ItemTemplate>
-                </asp:Repeater>
-                <%--  <tr>
+                </asp:Repeater>--%>
+                <tr>
                     <td style="font-size: 12px;">
-                        <div id="divList" runat="server">
-                        </div>
+                        <asp:RadioButtonList ID="RBLRole" runat="server">
+                        </asp:RadioButtonList>
                     </td>
                 </tr>
-                   <tr>
+              <%--       <tr>
                     <td style="font-size: 12px;">
                         <asp:RadioButton ID="RadioButton1" runat="server" ValidationGroup="role" GroupName="role" />
                         <asp:Label ID="LabRole" runat="server" Text=""></asp:Label>（拥有系统最高权限）

@@ -467,7 +467,6 @@
     <Content Include="ManageCenter\Ascx\Handling.ascx" />
     <Content Include="ManageCenter\Ascx\ImportData.ascx" />
     <Content Include="ManageCenter\Ascx\Office.ascx" />
-    <Content Include="ManageCenter\Ascx\Plan.ascx" />
     <Content Include="ManageCenter\Ascx\Role.ascx" />
     <Content Include="ManageCenter\Ascx\SysLog.ascx" />
     <Content Include="ManageCenter\Ascx\SysManager.ascx" />
@@ -518,7 +517,6 @@
     <Content Include="ManageCenter\Patrol\Electronic.aspx" />
     <Content Include="ManageCenter\PersonTerm\PersonTerm.aspx" />
     <Content Include="ManageCenter\PersonTerm\Term.aspx" />
-    <Content Include="ManageCenter\Plan.aspx" />
     <Content Include="ManageCenter\readme.txt" />
     <Content Include="ManageCenter\RoadLicense\Add.aspx" />
     <Content Include="ManageCenter\RoadLicense\List.aspx" />
@@ -2077,13 +2075,6 @@
     <Compile Include="ManageCenter\Ascx\ImportData.ascx.designer.cs">
       <DependentUpon>ImportData.ascx</DependentUpon>
     </Compile>
-    <Compile Include="ManageCenter\Ascx\Plan.ascx.cs">
-      <DependentUpon>Plan.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ManageCenter\Ascx\Plan.ascx.designer.cs">
-      <DependentUpon>Plan.ascx</DependentUpon>
-    </Compile>
     <Compile Include="ManageCenter\Ascx\Role.ascx.cs">
       <DependentUpon>Role.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2174,13 +2165,6 @@
     </Compile>
     <Compile Include="ManageCenter\PersonTerm\Term.aspx.designer.cs">
       <DependentUpon>Term.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ManageCenter\Plan.aspx.cs">
-      <DependentUpon>Plan.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ManageCenter\Plan.aspx.designer.cs">
-      <DependentUpon>Plan.aspx</DependentUpon>
     </Compile>
     <Compile Include="ManageCenter\RoadTerm\RoadTermAdd.aspx.cs">
       <DependentUpon>RoadTermAdd.aspx</DependentUpon>

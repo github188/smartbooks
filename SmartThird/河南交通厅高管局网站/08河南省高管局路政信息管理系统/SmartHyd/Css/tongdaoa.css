@@ -320,7 +320,7 @@ select.SmallStatic{ COLOR: #000066; BACKGROUND: #E0E0E0; border:solid 1px black;
 .TableHeader { COLOR:#fff; FONT-WEIGHT: bold; FONT-SIZE: 9pt; background:#5d99da; line-height:21px;}
 .TableContent{ BACKGROUND: #f2f8ff;}
 .TableData   { BACKGROUND: #FFFFFF;COLOR:#000000;}
-.TableLine1  { BACKGROUND: #F3F3F3;}
+.TableLine1  { BACKGROUND: #F3F3F3;border-bottom: 1px solid #8cb2e2;}
 .TableLine2  { BACKGROUND: #FFFFFF;}
 .TableRed{background:#f2f8ff;}
 .TextColor1  { COLOR: #FF6600;}

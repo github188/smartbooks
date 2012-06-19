@@ -66,38 +66,10 @@
             });
 
         }
-
-        function open_notify(NOTIFY_ID, FORMAT) {
-            URL = "../show/read_notify.php?IS_MANAGE=1&NOTIFY_ID=" + NOTIFY_ID;
-            myleft = (screen.availWidth - 780) / 2;
-            mytop = 100
-            mywidth = 780;
-            myheight = 500;
-            if (FORMAT == "1") {
-                myleft = 0;
-                mytop = 0
-                mywidth = screen.availWidth - 15;
-                myheight = screen.availHeight - 60;
-            }
-            window.open(URL, "read_news", "height=" + myheight + ",width=" + mywidth + ",status=1,toolbar=no,menubar=no,location=no,scrollbars=yes,top=" + mytop + ",left=" + myleft + ",resizable=yes");
-        }
-
-        function open_urladdress(NOTIFY_ID) {
-            URL = "../show/url_address.php?NOTIFY_ID=" + NOTIFY_ID;
-            myleft = (screen.availWidth - 780) / 2;
-            window.open(URL, "read_notify", "height=500,width=780,status=1,toolbar=no,menubar=no,location=no,scrollbars=yes,top=100,left=" + myleft + ",resizable=yes");
-        }
-
         function show_reader(NOTIFY_ID) {
             URL = "show_reader.php?NOTIFY_ID=" + NOTIFY_ID;
             myleft = (screen.availWidth - 500) / 2;
             window.open(URL, "read_notify", "height=500,width=700,status=0,toolbar=no,menubar=no,location=no,scrollbars=yes,top=150,left=" + myleft + ",resizable=yes");
-        }
-
-        function show_toobject(NOTIFY_ID) {
-            URL = "show_object.php?NOTIFY_ID=" + NOTIFY_ID;
-            myleft = (screen.availWidth - 500) / 2;
-            window.open(URL, "read_notify", "height=250,width=600,status=0,toolbar=no,menubar=no,location=no,scrollbars=yes,top=150,left=" + myleft + ",resizable=yes");
         }
         //删除公告
         //        function delete_notify(notify_id) {
@@ -113,52 +85,7 @@
             }
         }
 
-        function order_by(field, asc_desc) {
-            window.location = "index1.php?start=0&TYPE=0&FIELD=" + field + "&ASC_DESC=" + asc_desc;
-        }
-
-        function change_type(type) {
-            window.location = "index1.php?start=0&TYPE=" + type + "&FIELD=&ASC_DESC=";
-        }
-
-        function delete_mail() {
-            delete_str = "";
-            for (i = 0; i < document.all("email_select").length; i++) {
-
-                el = document.all("email_select").item(i);
-                if (el.checked) {
-                    val = el.value;
-                    delete_str += val + ",";
-                }
-            }
-
-            if (i == 0) {
-                el = document.all("email_select");
-                if (el.checked) {
-                    val = el.value;
-                    delete_str += val + ",";
-                }
-            }
-
-            if (delete_str == "") {
-                alert("要删除公告通知，请至少选择其中一条。");
-                return;
-            }
-
-            msg = '确认要删除所选公告通知吗？';
-            if (window.confirm(msg)) {
-                url = "delete.php?DELETE_STR=" + delete_str + "&start=0";
-                location = url;
-            }
-        }
-
-
-        function my_affair(NOTIFY_ID) {
-            myleft = (screen.availWidth - 250) / 2;
-            mytop = (screen.availHeight - 200) / 2;
-            URL = "note.php?NOTIFY_ID=" + NOTIFY_ID;
-            window.open(URL, "", "height=200,width=250,status=0,toolbar=no,menubar=no,location=no,scrollbars=auto,resizable=no,top=" + mytop + ",left=" + myleft);
-        }
+    
 
     </script>
 </head>
@@ -229,7 +156,7 @@
                         <input type="hidden" name="TOP_FLAG" value="0" />
                         <asp:Button ID="Btn_Send" runat="server" Text="发布" class="BigButton" OnClick="Btn_Send_Click" />
                         <asp:Button ID="Btn_Save" runat="server" Text="保存" class="BigButton" OnClick="Btn_Save_Click" />
-                        <asp:Button ID="BtnBack" runat="server" Text="返回" class="BigButton" OnClick="BtnBack_Click" />
+                        <asp:Button ID="BtnBack" runat="server" Text="返回" class="BigButton" OnClientClick="GoBack()"/>
                     </td>
                 </tr>
             </tbody>

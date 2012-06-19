@@ -12,9 +12,8 @@ namespace SmartHyd.ManageCenter.UserManager
     public partial class UserCenter : System.Web.UI.Page
     {
         private BLL.BASE_USER bll = new BLL.BASE_USER();
+        private BLL.BASE_USER_ROLE urbll = new BLL.BASE_USER_ROLE();
         private BLL.BASE_LOG logbll = new BLL.BASE_LOG();
-
-        
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -140,6 +139,30 @@ namespace SmartHyd.ManageCenter.UserManager
         /// </summary>
         /// <param name="userId"></param>
         private void DelUser(decimal userId)
+        {
+            //删除用户之前先删除用户所拥有的权限
+            //判断权限列表中是否有该用户存在
+            if (urbll.ExistsUserid(userId))
+            {
+                if (urbll.deletelist("USERID=" + userId))
+                {
+                    DelUserByID(userId);
+                }
+                else
+                {
+                    AjaxAlert(this.UpdatePanel1, "请先删除该用户权限！");
+                }
+            }
+            else
+            {
+                DelUserByID(userId);
+            }
+        }
+        /// <summary>
+        /// 根据用户编号删除用户
+        /// </summary>
+        /// <param name="userId"></param>
+        private void DelUserByID(decimal userId)
         {
             if (bll.Del(userId))
             {

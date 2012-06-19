@@ -19,42 +19,47 @@ namespace SmartHyd.ManageCenter.Affiche
 
                 if (null == Request.QueryString["Action"] || "" == Request.QueryString["Action"])
                 {
-                    dataBindToRepeater();//绑定电子公告数据
+                    dataBindToRepeater("1=1");//绑定电子公告数据
                 }
                 else
                 {
                     if (null == Request.QueryString["id"] || "" == Request.QueryString["id"])
                     {
                         //提示未选择要删除的项
-                       // Response.Redirect();
+                        // Response.Redirect();
                     }
                     else
-                    { 
+                    {
                         //执行删除操作
                         DEl(Convert.ToDecimal(Request.QueryString["id"]));
-                        dataBindToRepeater();//绑定电子公告数据
+                        dataBindToRepeater("1=1");//绑定电子公告数据
                     }
                 }
             }
         }
         //使用dataBindToRepeater()方法绑定电子公告数据
-        private void dataBindToRepeater()
+        private void dataBindToRepeater(string sqlwhere)
         {
             DataTable dt = new DataTable();
-            dt = bll.GetAfficheList("1=1");
-            if (dt.Rows.Count>0)
+            dt = bll.GetAfficheList(sqlwhere);
+            if (dt != null && dt.Rows.Count > 0)
             {
-            AspNetPager1.RecordCount = dt.Rows.Count;
+                AspNetPager1.RecordCount = dt.Rows.Count;
 
-            PagedDataSource pds = new PagedDataSource();
-            pds.DataSource = dt.DefaultView;
-            pds.AllowPaging = true;
-            pds.CurrentPageIndex = AspNetPager1.CurrentPageIndex - 1;
-            pds.PageSize = AspNetPager1.PageSize;
+                PagedDataSource pds = new PagedDataSource();
+                pds.DataSource = dt.DefaultView;
+                pds.AllowPaging = true;
+                pds.CurrentPageIndex = AspNetPager1.CurrentPageIndex - 1;
+                pds.PageSize = AspNetPager1.PageSize;
 
 
-            this.RptAffiche.DataSource = pds; //定义数据源
-            this.RptAffiche.DataBind(); //绑定数据
+                this.RptAffiche.DataSource = pds; //定义数据源
+                this.RptAffiche.DataBind(); //绑定数据
+            }
+            else
+            {
+                litmsg.Visible = true;
+                litmsg.Text = "<div style='font-size:16px; font-family:微软雅黑; color:red;font-weight:bold; text-align:center;'>无相关事务记录!</div>";
             }
         }
         /// <summary>
@@ -98,9 +103,9 @@ namespace SmartHyd.ManageCenter.Affiche
         protected void DEl(decimal AFFICHEID)
         {
             if (bll.del(AFFICHEID))
-           {
-               Response.Write("<script type='text/javascript'>alert('删除成功！');</script>");
-           }
+            {
+                Response.Write("<script type='text/javascript'>alert('删除成功！');</script>");
+            }
             else
             {
                 Response.Write("<script type='text/javascript'>alert('删除失败！');</script>");
@@ -114,14 +119,7 @@ namespace SmartHyd.ManageCenter.Affiche
         protected void btn_ok_Click(object sender, EventArgs e)
         {
             string sqlwhere = string.Empty;
-            if ("" == this.txt_title.Text && "" == this.txtTime.Text)
-            {
-                sqlwhere = "1=1";
-            }
-            else
-            {
-                sqlwhere = "";
-            }
+
             if ("" == this.txt_title.Text)
             {
                 if ("" == this.txtTime.Text)
@@ -130,16 +128,28 @@ namespace SmartHyd.ManageCenter.Affiche
                 }
                 else
                 {
-                    sqlwhere = " AFFICHEDATE=to_char(" + this.txtTime.Text + ",'yyyy-MM-dd')";
+                    sqlwhere = " AFFICHEDATE=to_date('" + this.txtTime.Text + "','yyyy-MM-dd')";
                 }
             }
-            bll.GetAfficheList(sqlwhere);
+            else
+            {
+                if ("" == this.txtTime.Text)
+                {
+                    sqlwhere = "AFFICHETITLE='" + this.txt_title.Text + "'";
+                }
+                else
+                {
+                    sqlwhere = "AFFICHETITLE='" + this.txt_title.Text + "' AND AFFICHEDATE=to_date('" + this.txtTime.Text + "','yyyy-MM-dd')";
+                }
+            }
+
+            dataBindToRepeater(sqlwhere);
         }
 
         protected void AspNetPager1_PageChanging(object src, Wuqi.Webdiyer.PageChangingEventArgs e)
         {
             this.AspNetPager1.CurrentPageIndex = e.NewPageIndex;
-            dataBindToRepeater();
+            dataBindToRepeater("1=1");
         }
     }
 }

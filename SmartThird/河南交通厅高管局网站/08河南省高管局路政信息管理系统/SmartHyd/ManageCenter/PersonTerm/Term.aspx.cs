@@ -76,7 +76,17 @@ namespace SmartHyd.ManageCenter.PersonTerm
         /// <param name="e"></param>
         protected void btn_ok_Click(object sender, EventArgs e)
         {
-            BindTermData();
+            string strwhere = string.Empty;
+
+            if ("" == this.TxtTermName.Text)
+            { //根据事务类型查询
+                strwhere = "TYPEID=" + this.DdrType.SelectedValue;
+            }
+            else
+            {
+                strwhere = "TYPEID='" + this.DdrType.SelectedValue + "' and TERMNAME='" + this.TxtTermName.Text + "')";
+            }
+           // BindTermData(strwhere);
         }
 
         protected void gv_patrollist_RowCommand(object sender, GridViewCommandEventArgs e)

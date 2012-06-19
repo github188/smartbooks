@@ -5,21 +5,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>用户管理</title>
-    <style type="text/css">
-        body
-        {
-            margin: 0px;
-            padding: 0px;
-            font-size: 12px;
-        }
-        .TableHeader
-        {
-            background-color: #006699;
-            font-weight: bold;
-            color: #ffffff;
-        }
-    </style>
-
+    <link href="../../Css/tongdaoa.css" type="text/css" rel="Stylesheet"/>
+    <link href="../../Css/patrol.css" type="text/css" rel="Stylesheet" />
+    <script src="../../Scripts/base.js" type="text/javascript"></script>
 </head>
 <body>
     <form id="form1" runat="server">

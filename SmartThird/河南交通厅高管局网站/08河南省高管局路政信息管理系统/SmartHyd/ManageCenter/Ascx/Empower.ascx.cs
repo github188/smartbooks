@@ -56,25 +56,14 @@ namespace SmartHyd.ManageCenter.Ascx
         /// </summary>
         private void RoleBind()
         {
-            DataTable dt = new DataTable();
-            dt = rolebll.GetList("1=1");
-            if (null != dt || dt.Rows.Count > 0)
+            DataTable dt = rolebll.GetList("1=1");
+            if(dt!=null||dt.Rows.Count>0)
             {
-                this.RptList.DataSource = dt;
-                this.RptList.DataBind();
+            this.RBLRole.DataSource = dt;
+                RBLRole.DataTextField = dt.Columns["ROLENAME"].ToString();
+                RBLRole.DataValueField = dt.Columns["ROLEID"].ToString();   
+                this.RBLRole.DataBind();
             }
-            //if (null != dt || dt.Rows.Count > 0)
-            //{
-            //    for (int i = 0; i < dt.Rows.Count; i++)
-            //    {
-            //        this.divList.InnerHtml += "<asp:RadioButton ID=\"RadioButton" + i + 1 + "\" runat=\"server\" ValidationGroup=\"role\" GroupName=\"role\" />" + dt.Rows[i]["ROLENAME"] + "<br/>";
-            //    }
-
-            //}
-            //else
-            //{
-            //    this.divList.InnerHtml = "暂无可用角色！";
-            //}
         }
         #region 6.7用户授权
 
@@ -118,24 +107,24 @@ namespace SmartHyd.ManageCenter.Ascx
         protected void BtnEmp_Click(object sender, EventArgs e)
         {
             decimal userid = Convert.ToDecimal(ViewState["userid"]);
-            decimal roleid = 0;
-            DataTable dt = new DataTable();
-            dt = rolebll.GetList("1=1");
+            decimal roleid = Convert.ToDecimal(this.RBLRole.SelectedValue);
+            //DataTable dt = new DataTable();
+            //dt = rolebll.GetList("1=1");
             
-            if (null != dt || dt.Rows.Count > 0)
-            {
+            //if (null != dt || dt.Rows.Count > 0)
+            //{
                 
-                for (int i = 0; i < dt.Rows.Count; i++)
-                {
-                    RadioButton rb=(RadioButton)this.RptList.FindControl("RadioButton1");
-                    rb.GroupName = "role";
-                    Label lb=(Label)this.RptList.FindControl("ROLEID");
-                    if (rb.Checked)
-                    {
-                        roleid = Convert.ToDecimal(lb.Text);
-                    }
-                }
-            }
+            //    for (int i = 0; i < dt.Rows.Count; i++)
+            //    {
+            //        RadioButton rb=(RadioButton)this.RptList.FindControl("RadioButton1");
+            //        rb.GroupName = "role";
+            //        Label lb=(Label)this.RptList.FindControl("ROLEID");
+            //        if (rb.Checked)
+            //        {
+            //            roleid = Convert.ToDecimal(lb.Text);
+            //        }
+            //    }
+            //}
 
             EmpowerAdd(userid, roleid);
         }

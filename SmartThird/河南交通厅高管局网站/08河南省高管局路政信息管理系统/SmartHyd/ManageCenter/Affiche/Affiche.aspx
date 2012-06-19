@@ -13,7 +13,6 @@
         $(function () {
 
             /*公告内容编辑器*/
-
             var editor;
             KindEditor.ready(function (k) {
                 editor = k.create('textarea[id="ctl00_ContentPlaceHolder1_Affiche1_TxtContent"]', {
@@ -26,7 +25,7 @@
                 });
             });
             /*时间*/
-           // $("#txtTime").datepicker();
+            // $("#txtTime").datepicker();
         });
 
 
@@ -88,12 +87,12 @@
             window.open(URL, "read_notify", "height=250,width=600,status=0,toolbar=no,menubar=no,location=no,scrollbars=yes,top=150,left=" + myleft + ",resizable=yes");
         }
         //删除公告
-                function delete_notify(notify_id) {
-                    msg = '删除后将不可恢复，确认要删除该条公告吗？';
-                    if (window.confirm(msg))
-                        alert("Affiche.aspx?Action=del&id=" + notify_id);
-                        window.location = "Affiche.aspx?Action=del&id=" + notify_id;
-                }
+        function delete_notify(notify_id) {
+            msg = '删除后将不可恢复，确认要删除该条公告吗？';
+            if (window.confirm(msg))
+                alert("Affiche.aspx?Action=del&id=" + notify_id);
+            window.location = "Affiche.aspx?Action=del&id=" + notify_id;
+        }
         function delete_all() {
             msg = '确认要删除所有公告通知吗？\n删除后将不可恢复，确认删除请输入大写字母“OK”';
             if (window.prompt(msg, "") == "OK") {
@@ -162,9 +161,8 @@
                             <span id="buttons">
                                 <img src="../../Images/branch.png" alt="" border="0" />当前位置：<a href="">网络办公&gt;&gt;</a>电子公告</span></div>
                         <ul>
-                            <li id="menu_Title0" class="normal"><a href="AfficheEdit.aspx">
-                                <span id="Span1">
-                                    <img src="../../Images/add.png" alt="" border="0" />新建公告 </span></a></li>
+                            <li id="menu_Title0" class="normal"><a href="AfficheEdit.aspx"><span id="Span1">
+                                <img src="../../Images/add.png" alt="" border="0" />新建公告 </span></a></li>
                         </ul>
                     </div>
                 </td>
@@ -228,7 +226,7 @@
                                             <asp:Label ID="AFFICHEID" runat="server" Text='<%#Eval("AFFICHEID") %>' Visible="false"></asp:Label>
                                         </td>
                                         <td align="center">
-                                                <%# Eval("AFFICHETITLE")%>
+                                            <%# Eval("AFFICHETITLE")%>
                                         </td>
                                         <td align="center">
                                             <%# Eval("AFFICHER")%>
@@ -240,25 +238,16 @@
                                             <%#TransState(Convert.ToDecimal(Eval("STATES")))%>
                                         </td>
                                         <td align="center">
-                                           <%-- <a href="AfficheEdit.aspx?aid=<%# Eval("AFFICHEID")%>">编辑</a>--%>
-                                           <%--onclick="javascript:delete_notify(<%# Eval("AFFICHEID")%>)"--%>
-                                             <a href="Affiche.aspx?Action=del&id=<%# Eval("AFFICHEID")%>" id="delhref">
-                                                删除</a>
+                                            <%-- <a href="AfficheEdit.aspx?aid=<%# Eval("AFFICHEID")%>">编辑</a>--%>
+                                            <%--onclick="javascript:delete_notify(<%# Eval("AFFICHEID")%>)"--%>
+                                            <a href="Affiche.aspx?Action=del&id=<%# Eval("AFFICHEID")%>" id="delhref">删除</a>
                                         </td>
                                     </tr>
                                 </tbody>
                             </ItemTemplate>
-                            <FooterTemplate>
-                                <tfoot>
-                                    <tr>
-                                        <td colspan="6">
-                                            <%--分页--%>
-                                        </td>
-                                    </tr>
-                                </tfoot>
-                            </FooterTemplate>
                         </asp:Repeater>
                     </table>
+                    <asp:Literal ID="litmsg" Visible="false" runat="server"></asp:Literal>
                     <webdiyer:AspNetPager ID="AspNetPager1" runat="server" CustomInfoHTML="共%PageCount%页，当前为第%CurrentPageIndex%页"
                         FirstPageText="首页" LastPageText="尾页" NextPageText="下一页" PageIndexBoxType="TextBox"
                         PrevPageText="上一页" ShowCustomInfoSection="Right" ShowPageIndexBox="Auto" SubmitButtonText="Go"

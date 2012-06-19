@@ -42,7 +42,7 @@
                         <table class="edit" border="0" cellpadding="0" cellspacing="0" width="100%">
                             <tr id="search_condition_panel" style="height: 48px; border-bottom: 1px solid #8cb2e2;">
                                 <td>
-                                    <table id="PatrolSearch" width="480" border="0" cellspacing="0" cellpadding="0">
+                                    <table id="PatrolSearch0" width="480" border="0" cellspacing="0" cellpadding="0">
                                         <%--  <tr>
                                             <td width="80" height="24" align="right">
                                                 <span id="PatrolSearch1">巡逻单位：</span>
@@ -61,18 +61,18 @@
                                             </td>
                                         </tr>--%>
                                         <tr>
-                                            <td height="24" align="right">
-                                                <span id="PatrolSearch3">起始时间：</span>
+                                            <td width="80" height="24" align="right">
+                                                <span id="PatrolSearch3" class="PatrolSearch">起始时间：</span>
                                             </td>
-                                            <td height="24">
-                                                <asp:TextBox ID="txt_startTime" runat="server" class="Wdate" Width="120" onFocus="WdatePicker({isShowClear:false,startDate:'%y-%M-01 00:00:00',dateFmt:'yyyy-MM-dd HH:mm:ss',alwaysUseStartDate:true,readOnly:true})"></asp:TextBox>
+                                            <td width="140" height="24">
+                                                <asp:TextBox ID="txt_startTime" runat="server" class="Wdate controlstyle" onFocus="WdatePicker({isShowClear:false,startDate:'%y-%M-01 00:00:00',dateFmt:'yyyy-MM-dd HH:mm:ss',alwaysUseStartDate:true,readOnly:true})"></asp:TextBox>
                                             </td>
-                                            <td height="24" align="right">
-                                                <span id="PatrolSearch4">截止时间：</span>
+                                           <%-- <td width="80" height="24" align="right">
+                                                <span id="PatrolSearch" class="PatrolSearch">截止时间：</span>
                                             </td>
-                                            <td height="24">
+                                            <td width="120" height="24">
                                                 <asp:TextBox ID="txt_endTime" runat="server" class="Wdate controlstyle" onFocus="WdatePicker({isShowClear:false,startDate:'%y-%M-01 00:00:00',dateFmt:'yyyy-MM-dd HH:mm:ss',alwaysUseStartDate:true,readOnly:true})"></asp:TextBox>
-                                            </td>
+                                            </td>--%>
                                             <td width="80" height="24" align="center">
                                                 <asp:Button ID="btn_ok" runat="server" Text="" CssClass="btn_search" OnClick="btn_ok_Click" />
                                             </td>

@@ -16,16 +16,14 @@ namespace SmartHyd.ManageCenter.WorkPlan
         {
             if (!IsPostBack)
             {
-                
-                dataBindToRepeater();
+                dataBindToRepeater("1=1");
             }
-
         }
         //使用dataBindToRepeater()方法绑定公文数据
-        private void dataBindToRepeater()
+        private void dataBindToRepeater(string sqlwhere)
         {
             DataTable dt = new DataTable();
-            dt = bll.GetPlanList("1=1");
+            dt = bll.GetPlanList(sqlwhere);
             if (dt != null && dt.Rows.Count > 0)
             {
                 AspNetPager1.RecordCount = dt.Rows.Count;
@@ -42,7 +40,7 @@ namespace SmartHyd.ManageCenter.WorkPlan
             else
             {
                 litmsg.Visible = true;
-                litmsg.Text = "<div style='font-size:16px; font-family:微软雅黑; color:red;font-weight:bold; text-align:center;'>无相关系统日志记录!</div>";
+                litmsg.Text = "<div style='font-size:16px; font-family:微软雅黑; color:red;font-weight:bold; text-align:center;'>无相关事务记录!</div>";
             }
         }
 
@@ -62,42 +60,27 @@ namespace SmartHyd.ManageCenter.WorkPlan
         /// <param name="e"></param>
         protected void btn_ok_Click(object sender, EventArgs e)
         {
-            string strwhere=string.Empty;
-           
-            if(""==this.txt_Time.Text)
+            string strwhere = string.Empty;
+
+            if ("" == this.txt_Time.Text)
             { //根据事务类型查询
-            strwhere="CALENDARTYPE='"+this.DDLType.SelectedValue+"'";
+                strwhere = "CALENDARTYPE='" + this.DDLType.SelectedItem.Text + "'";
             }
             else
             {
-            strwhere="CALENDARTYPE='"+this.DDLType.SelectedValue+"' and START_DATE=to_date('"+this.txt_Time.Text+"','yyyy-MM-dd')";
+                strwhere = "CALENDARTYPE='" + this.DDLType.SelectedItem.Text + "' and START_DATE=to_date('" + this.txt_Time.Text + "','yyyy-MM-dd')";
             }
-            DataTable dt = new DataTable();
-           dt= bll.GetPlanList(strwhere);
-            if (dt != null && dt.Rows.Count > 0)
-            {
-                AspNetPager1.RecordCount = dt.Rows.Count;
-
-                PagedDataSource pds = new PagedDataSource();
-                pds.DataSource = dt.DefaultView;
-                pds.AllowPaging = true;
-                pds.CurrentPageIndex = AspNetPager1.CurrentPageIndex - 1;
-                pds.PageSize = AspNetPager1.PageSize;
-
-                this.gv_log.DataSource = pds; //定义数据源
-                this.gv_log.DataBind(); //绑定数据
-            }
-            else
-            {
-                litmsg.Visible = true;
-                litmsg.Text = "<div style='font-size:16px; font-family:微软雅黑; color:red;font-weight:bold; text-align:center;'>无相关系统日志记录!</div>";
-            }    
+            dataBindToRepeater(strwhere);
         }
-
+        /// <summary>
+        /// 分页事件
+        /// </summary>
+        /// <param name="src"></param>
+        /// <param name="e"></param>
         protected void AspNetPager1_PageChanging(object src, Wuqi.Webdiyer.PageChangingEventArgs e)
         {
             this.AspNetPager1.CurrentPageIndex = e.NewPageIndex;
-            dataBindToRepeater();
+            dataBindToRepeater("1=1");
         }
 
         protected void gv_log_RowCommand(object sender, GridViewCommandEventArgs e)

@@ -117,12 +117,12 @@
 <body>
     <form id="form1" runat="server">
     <div id="title">
-        <div class="welcome">欢迎您，Administrator!</div>
+        <div class="welcome">欢迎您，<asp:Label ID="Label1" runat="server" Text=""></asp:Label></div>
         <div class="weather">今日天气：郑州 21°C-35°C 晴</div>
     </div>
     <div id="message">
         <div class="notify">未读公文:公文收件箱<span style="color:Red;">2</span>封</div>
-        <div class="history">最近登录的时间：2012-06-18 09:10:25</div>
+        <div class="history">最近登录的时间：<asp:Label ID="LabTime" runat="server" Text=""></asp:Label></div>
     </div>
     <div id="work">
     <div class="menu">

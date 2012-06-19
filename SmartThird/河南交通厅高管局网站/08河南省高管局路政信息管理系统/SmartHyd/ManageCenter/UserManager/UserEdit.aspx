@@ -7,6 +7,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>用户信息编辑</title>
+    <link href="../../Css/patrol.css" rel="Stylesheet" type="text/css" />
+    <link href="../../Css/tongdaoa.css" rel="Stylesheet" type="text/css" />
     <style type="text/css">
         body
         {
@@ -94,7 +96,7 @@
             <td align="center">
                 <asp:Button ID="btnSubmit" runat="server" Width="80px" Text="提交" CssClass="BigButtonA" 
                             onclick="btnSubmit_Click" />&nbsp;
-                        <input id="btnBakc" type="button" value="返回" style="width:80px;" onclick="javascript:history.go(-1);" /></td>
+                        <input id="btnBakc" type="button" value="返回" class="BigButtonA" style="width:80px;" onclick="javascript:history.go(-1);" /></td>
           </tr>
         </table>
     </div>

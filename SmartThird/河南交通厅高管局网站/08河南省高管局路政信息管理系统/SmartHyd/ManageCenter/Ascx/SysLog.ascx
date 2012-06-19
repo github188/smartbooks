@@ -13,18 +13,18 @@
     </tr>
     <tr id="search_condition_panel" style="height: 24px; border-bottom: 1px solid #8cb2e2;">
         <td>
-            <table id="PatrolSearch0" width="480px" border="0" cellspacing="0" cellpadding="0">
+            <table id="PatrolSearch" width="100%" border="0" cellspacing="0" cellpadding="0">
                 <tr>
-                    <td height="24" align="right">
-                        <span id="PatrolSearch">起始时间：</span>
+                    <td  width="80" height="24" align="right">
+                        <span id="PatrolSearch1" class="PatrolSearch">起始时间：</span>
                     </td>
-                    <td height="24">
-                        <asp:TextBox ID="txt_startTime" runat="server" class="Wdate" Width="120" onFocus="WdatePicker({isShowClear:false,readOnly:true})"></asp:TextBox>
+                    <td  width="120" height="24">
+                        <asp:TextBox ID="txt_startTime" runat="server" class="Wdate" onFocus="WdatePicker({isShowClear:false,readOnly:true})"></asp:TextBox>
                     </td>
-                    <td height="24" align="right">
-                        <span id="PatrolSearch">截止时间：</span>
+                    <td  width="80" height="24" align="right">
+                        <span id="PatrolSearch2" class="PatrolSearch">截止时间：</span>
                     </td>
-                    <td height="24">
+                    <td  width="120" height="24">
                         <asp:TextBox ID="txt_endTime" runat="server" Width="120" class="Wdate" onFocus="WdatePicker({isShowClear:false,readOnly:true})"></asp:TextBox>
                     </td>
                     <td width="80" height="24" align="center">
@@ -38,7 +38,7 @@
         <td valign="top">
             <asp:GridView ID="gv_log" runat="server" AutoGenerateColumns="False" BackColor="White"
                 BorderColor="#CCCCCC" BorderStyle="None" Font-Size="12px" BorderWidth="1px" CellPadding="3"
-                Width="100%">
+                Width="100%" OnRowCommand="gv_log_RowCommand">
                 <Columns>
                     <asp:BoundField DataField="LOGID" HeaderText="日志编号">
                         <ItemStyle Width="80px" />
@@ -50,6 +50,12 @@
                         <ItemStyle Width="150px" />
                     </asp:BoundField>
                     <asp:BoundField DataField="DESCRIPTION" HeaderText="日志内容" />
+                    <asp:TemplateField HeaderText="操作">
+                        <ItemTemplate>
+                            <asp:LinkButton ID="LinkButton1" runat="server" CommandName="del" CommandArgument='<%#Eval("LOGID") %>'>删除</asp:LinkButton>
+                        </ItemTemplate>
+                        <ItemStyle Width="60" />
+                    </asp:TemplateField>
                 </Columns>
                 <FooterStyle BackColor="White" ForeColor="#000066" />
                 <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />

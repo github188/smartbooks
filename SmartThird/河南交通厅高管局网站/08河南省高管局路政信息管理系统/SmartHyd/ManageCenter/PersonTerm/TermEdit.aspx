@@ -27,6 +27,8 @@
                     error.appendTo(element.siblings("div:first"));
                 }
             });
+            //投入时间
+            $("#txtUSETIME").datepicker();
         });
    </script>
 </head>

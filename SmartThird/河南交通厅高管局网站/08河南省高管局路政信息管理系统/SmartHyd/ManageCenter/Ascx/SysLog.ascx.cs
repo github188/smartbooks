@@ -81,5 +81,18 @@ namespace SmartHyd.ManageCenter.Ascx
                 litmsg.Text = "<div style='font-size:16px; font-family:微软雅黑; color:red;font-weight:bold; text-align:center;'>无相关系统日志记录!</div>";
             }
         }
+
+        protected void gv_log_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            int id = Convert.ToInt32(e.CommandArgument.ToString());
+            switch (e.CommandName)
+            {
+                /*删除*/
+                case "del":
+                    bll.Del(id);
+                    break;
+            }
+            dataBindToRepeater();
+        }
     }
 }

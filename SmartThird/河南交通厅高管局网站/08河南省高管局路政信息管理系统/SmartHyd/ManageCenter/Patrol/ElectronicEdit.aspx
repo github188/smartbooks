@@ -19,8 +19,9 @@
     <script type="text/javascript" src="../../Scripts/jquery-validation-1.9.0/jquery.validate.min.js"></script>
     <script type="text/javascript" src="../../Scripts/jquery-validation-1.9.0/messages_cn.js"></script>
     <script type="text/javascript" src="../../Scripts/jquery-validation-1.9.0/jquery.metadata.js"></script>
-    <script src="../../Scripts/base.js" type="text/javascript"></script>
-    <script type="text/jscript">
+    <script type="text/javascript" src="../../Scripts/jquery-ui-1.8.18.custom/js/jquery.ui.timepicker.addon.js"></script>
+    <script type="text/javascript" src="../../Scripts/base.js"></script>
+    <script type="text/javascript">
         $(function () {
             /*编辑器*/
             var editor;
@@ -141,8 +142,8 @@
                 <tfoot>
                     <tr>
                         <td colspan="3" style="text-align: center;">
-                            <asp:Button ID="btnSubmit" runat="server" Text="提交" OnClick="btnSubmit_Click" />
-                            <asp:Button ID="btnCancel" runat="server" Text="重置" OnClick="btnCancel_Click" />
+                            <asp:Button ID="btnSubmit" runat="server" Text="提交" CssClass="BigButtonA" OnClick="btnSubmit_Click" />
+                            <asp:Button ID="btnCancel" runat="server" Text="重置" CssClass="BigButtonA" OnClick="btnCancel_Click" />
                         </td>
                     </tr>
                 </tfoot>
