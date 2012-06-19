@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="BASE_ACTION.cs" />
     <Compile Include="BASE_AFFICHE.cs" />
+    <Compile Include="BASE_ANNEX.cs" />
     <Compile Include="BASE_AREA.cs" />
     <Compile Include="BASE_AREA_TYPE.cs" />
     <Compile Include="BASE_ARTICLE.cs" />
@@ -51,6 +52,7 @@
     <Compile Include="BASE_ASSESS_TYPE.cs" />
     <Compile Include="BASE_BUS_OVERRUN.cs" />
     <Compile Include="BASE_DEPT.cs" />
+    <Compile Include="BASE_DOCUMENT.cs" />
     <Compile Include="BASE_DOCUMENT_TYPE.cs" />
     <Compile Include="BASE_FAWEN.cs" />
     <Compile Include="BASE_FILETYPE.cs" />

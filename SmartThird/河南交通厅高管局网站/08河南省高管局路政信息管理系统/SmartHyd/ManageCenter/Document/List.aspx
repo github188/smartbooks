@@ -44,13 +44,29 @@
                         BorderColor="#CCCCCC" BorderStyle="None" Font-Size="12px" BorderWidth="1px" CellPadding="3"
                         Width="100%" OnRowCommand="grvList_RowCommand">
                         <Columns>
-                            <asp:BoundField DataField="title" HeaderText="档案名称"></asp:BoundField>
-                            <asp:BoundField DataField="sendcode" HeaderText="档案编号">
-                                <ItemStyle Width="140" />
+                            <asp:BoundField DataField="TIELE" HeaderText="标题"></asp:BoundField>
+                            <asp:BoundField DataField="YEAR" HeaderText="年度">
+                                <ItemStyle Width="30" />
                             </asp:BoundField>
-                            <asp:BoundField DataField="TIMESTAMP" HeaderText="创建时间">
-                                <ItemStyle Width="110" />
+
+                            <asp:BoundField DataField="FONDSNO" HeaderText="全宗号">
+                                <ItemStyle Width="120" />
                             </asp:BoundField>
+
+                            <asp:BoundField DataField="CATALOGNUMBER" HeaderText="目录号">
+                                <ItemStyle Width="120" />
+                            </asp:BoundField>
+
+                            <asp:BoundField DataField="CASEFILENUMBER" HeaderText="案卷号">
+                                <ItemStyle Width="120" />
+                            </asp:BoundField>
+                            
+                            <asp:BoundField DataField="RETENTION" HeaderText="保管期限">
+                                <ItemStyle Width="120" />
+                            </asp:BoundField>
+
+                            <asp:BoundField DataField="UNIT" HeaderText="单位"></asp:BoundField>
+                            
                             <asp:TemplateField HeaderText="操作选项">
                                 <ItemTemplate>
                                     <asp:LinkButton runat="server" CommandName="view" CommandArgument='<%#Eval("id") %>'>查看</asp:LinkButton>
