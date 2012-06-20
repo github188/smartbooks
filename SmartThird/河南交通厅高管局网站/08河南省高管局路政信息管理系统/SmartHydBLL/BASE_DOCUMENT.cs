@@ -7,7 +7,7 @@ using System.Data;
 namespace SmartHyd.BLL {
     public class BASE_DOCUMENT {
         private OracleDAL.BASE_DOCUMENT dal = new OracleDAL.BASE_DOCUMENT();
-        
+
         public void Add(Entity.BASE_DOCUMENT model) {
             dal.Add(model);
         }
@@ -25,6 +25,7 @@ namespace SmartHyd.BLL {
         }
 
         public void Del(decimal id) {
+            dal.Delete(id);
         }
     }
 }

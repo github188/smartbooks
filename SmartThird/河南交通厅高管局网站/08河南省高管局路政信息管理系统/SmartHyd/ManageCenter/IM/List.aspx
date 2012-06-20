@@ -20,22 +20,17 @@
                         <span id="buttons">
                             <img src="../../Images/branch.png" border="0" />当前位置：网络办公 > 即时通讯 > 查看消息 </span>
                     </div>
-                    <div class="ReturnPreview">
-                        <span id="buttons1" onclick="javascript:history.go(-1);">
-                            <img src="../../Images/back.png" alt="" border="0" />返回上一页面</span></div>
+                    <ul>
+                                <li id="menu_Title0" onclick="nTabs('menu',this,1)" class="normal"><a href="Add.aspx"
+                                    title="发送消息" target="InstantMessagingFrame"><span id="Span1">
+                                        <img src="../../Images/add.png" alt="" border="0" />发送消息</span></a></li>
+                            </ul>
                 </div>
             </td>
         </tr>
     </table>
     <table class="TableBlock" width="100%" align="center" cellpadding="0" cellspacing="0">
         <tbody>
-            <!--首选行-->
-            <tr class="TableHeader">
-                <td >
-                    <img src="../../images/ui-left-menustar.png" />
-                    <a href="Add.aspx" style=" line-height:32px; color:#ffffff; height:32px; text-decoration:none;">新建消息</a>
-                </td>
-            </tr>
             <tr>
                 <td nowrap="nowrap" class="TableData">
                    <asp:GridView ID="grvList" runat="server" AutoGenerateColumns="False" BackColor="White"
