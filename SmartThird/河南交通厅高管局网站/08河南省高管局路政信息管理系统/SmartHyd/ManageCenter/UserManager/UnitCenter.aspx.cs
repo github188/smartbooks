@@ -142,7 +142,6 @@ namespace SmartHyd.ManageCenter.UserManager {
                 return;
             }
             else {
-                this.btnDelete.Attributes.Add("onclick ", "return confirm( '你确定要删除该单位？ ') ");
                 //提示确认删除该记录；判断该记录下是否有子单位：先删除子单位；删除后该记录下用户不可用
                 delDept(Convert.ToDecimal(unitId));//执行删除
             }
@@ -155,10 +154,24 @@ namespace SmartHyd.ManageCenter.UserManager {
         /// </summary>
         public void delDept(decimal deptid)
         {
-            if (deptbll.del(deptid))//删除数据
+            if (deptbll.ExistsChildDept(deptid))
             {
-                //重新加载当前页
-                Response.Redirect(Request.Url.AbsoluteUri, true);
+                AjaxAlert(UpdatePanel1, "请先删除下级单位！");
+                return;
+            }
+            else
+            {
+                if (deptbll.del(deptid))//删除数据
+                {
+                    AjaxAlert(UpdatePanel1, "删除成功！");
+                    //重新加载当前页
+                    Response.Redirect(Request.Url.AbsoluteUri, true);
+                }
+                else {
+                    AjaxAlert(UpdatePanel1, "未能删除该单位！");
+                    //重新加载当前页
+                    Response.Redirect(Request.Url.AbsoluteUri, true);
+                }
             }
             //#region 删除数据：更新数据库数据状态
             ////获取实体

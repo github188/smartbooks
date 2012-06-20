@@ -28,9 +28,9 @@
                     <asp:Repeater ID="repList" runat="server">
                         <HeaderTemplate>
                             <tr class="TableHeader" align="center">
-                                <td>
+                             <%--   <td>
                                     <asp:CheckBox ID="Checkall" runat="server" Text="全选" OnClick="javascript:selectall(this);" />
-                                </td>
+                                </td>--%>
                                 <td>
                                     登录账号
                                 </td>
@@ -50,9 +50,9 @@
                         </HeaderTemplate>
                         <ItemTemplate>
                             <tr class="TableLine1" align="center">
-                                <td style="background-color: #ffffff;">
+                              <%--  <td style="background-color: #ffffff;">
                                     <asp:CheckBox ID="CheckSingle" runat="server" />
-                                </td>
+                                </td>--%>
                                 <td style="background-color: #ffffff;">
                                     <%# Eval("username")%>
                                 </td>

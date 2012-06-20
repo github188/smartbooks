@@ -28,7 +28,7 @@
                             <asp:ImageButton ID="btnEdit" runat="server" ImageUrl="~/Images/editUnit.png" 
                                 onclick="btnEdit_Click" />
                             <asp:ImageButton ID="btnDelete" runat="server" 
-                                ImageUrl="~/Images/deleteUnit.png" onclick="btnDelete_Click" />
+                                ImageUrl="~/Images/deleteUnit.png" OnClientClick="return confirm( '你确定要删除该单位？')" onclick="btnDelete_Click" />
 &nbsp;&nbsp;
                         &nbsp;
                         &nbsp;

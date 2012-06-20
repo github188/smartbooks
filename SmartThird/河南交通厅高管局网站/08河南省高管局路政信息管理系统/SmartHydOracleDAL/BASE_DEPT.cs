@@ -36,7 +36,30 @@ namespace SmartHyd.OracleDAL {
                 return false;
             }
         }
+        /// <summary>
+        /// 确定子单位记录是否存在
+        /// </summary>
+        /// <param name="DEPTID"></param>
+        /// <returns></returns>
+        public bool ExistsChildDept(decimal DEPTID)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("select count(1) from BASE_DEPT");
+            strSql.Append(" where ");
+            strSql.Append(" PARENTID = :PARENTID  ");
+            OracleParameter[] parameters = {
+					new OracleParameter(":PARENTID", OracleType.Number,4)			};
+            parameters[0].Value = DEPTID;
 
+            if (OracleHelper.ExecuteNonQuery(strSql.ToString(), parameters) > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
 
         /// <summary>

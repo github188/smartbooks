@@ -58,6 +58,15 @@ namespace SmartHyd.BLL {
                 return false;
             }
         }
+         /// <summary>
+        /// 确定子单位记录是否存在
+        /// </summary>
+        /// <param name="DEPTID"></param>
+        /// <returns></returns>
+        public bool ExistsChildDept(decimal DEPTID)
+        {
+            return dal.ExistsChildDept(DEPTID);
+        }
         /// <summary>
         /// 更新数据
         /// </summary>

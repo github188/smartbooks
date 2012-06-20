@@ -14,8 +14,10 @@ namespace SmartHyd.ManageCenter.UserManager
         private BLL.BASE_USER bll = new BLL.BASE_USER();
         private BLL.BASE_USER_ROLE urbll = new BLL.BASE_USER_ROLE();
         private BLL.BASE_LOG logbll = new BLL.BASE_LOG();
+        private Utility.UserSession userSession;
         protected void Page_Load(object sender, EventArgs e)
         {
+            userSession = (Utility.UserSession)Session["user"];
             if (!IsPostBack)
             {
                 string deptId=Request.QueryString["deptid"];
@@ -150,7 +152,7 @@ namespace SmartHyd.ManageCenter.UserManager
                 }
                 else
                 {
-                    AjaxAlert(this.UpdatePanel1, "请先删除该用户权限！");
+                    AjaxAlert(this.UpdatePanel1, "请先检查该用户权限关系！");
                 }
             }
             else

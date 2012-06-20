@@ -63,6 +63,7 @@ namespace SmartHyd.ManageCenter.Ascx
                 RBLRole.DataTextField = dt.Columns["ROLENAME"].ToString();
                 RBLRole.DataValueField = dt.Columns["ROLEID"].ToString();   
                 this.RBLRole.DataBind();
+                this.RBLRole.Items[0].Selected = true;//默认第一项选中
             }
         }
         #region 6.7用户授权
