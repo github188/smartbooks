@@ -26,7 +26,7 @@
 
             var value = $('#hidAnnex').attr('value');
 
-            $.get('http://localhost/Ashx/Annex.ashx',
+            $.get('../../Ashx/Annex.ashx',
                 { id: value },
                 function (data) {
                     rs = eval(data);
