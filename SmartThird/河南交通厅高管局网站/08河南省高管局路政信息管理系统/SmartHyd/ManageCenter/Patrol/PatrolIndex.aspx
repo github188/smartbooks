@@ -10,14 +10,6 @@
     <script src="../../Scripts/jquery-ui-1.8.18.custom/js/jquery-1.7.1.min.js" type="text/javascript"></script>
     <script src="../../Scripts/My97DatePicker/WdatePicker.js" type="text/javascript"></script>
     
-    <style type="text/css">
-        .treeViewStyle
-        {
-            height: 740px;
-            overflow-y: scroll;
-            color: #000000;
-        }
-    </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -38,7 +30,7 @@
         </tr>
         <tr>
             <td style="border-right: 4px double #045185; width: 28%" valign="top">
-                <iframe src="DeptTree.aspx?type=0" name="TreeFrame" id="TreeFrame" frameborder="0" height="100%">
+                <iframe src="DeptTree.aspx?type=0" name="TreeFrame" id="TreeFrame" frameborder="0" width="100%" height="100%" scrolling="auto"">
                 </iframe>
             </td>
             <td valign="top">

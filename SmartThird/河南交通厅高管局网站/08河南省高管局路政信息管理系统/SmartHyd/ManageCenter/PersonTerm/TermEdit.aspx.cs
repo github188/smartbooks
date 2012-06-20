@@ -58,7 +58,7 @@ namespace SmartHyd.ManageCenter
             model.DEPTID = Convert.ToDecimal(ddr.SelectedValue);//所属单位；
             model.FORMAT = this.txtFORMAT.Text;//规格型号
             model.REMARK = this.txtRemark.Text;//备注
-            model.SAVEPOINT = "";//存放地点
+            model.SAVEPOINT = this.TxtPosition.Text;//存放地点
             model.SERIALCODE = this.txtSERIALCODE.Text;//出厂编号
             model.STATUS = 0;//状态（0：正常；1：删除）
             model.TERMCODE = this.txtTERMCODE.Text;//设备编号
@@ -79,7 +79,7 @@ namespace SmartHyd.ManageCenter
             ddr.SelectedValue = model.DEPTID.ToString();//所属单位；
             this.txtFORMAT.Text = model.FORMAT;//规格型号
             this.txtRemark.Text = model.REMARK;//备注
-            //model.SAVEPOINT;//存放地点
+            this.TxtPosition.Text=model.SAVEPOINT;//存放地点
             this.txtSERIALCODE.Text = model.SERIALCODE;//出厂编号
             //model.STATUS = 0;//状态（0：正常；1：删除）
             this.txtTERMCODE.Text = model.TERMCODE;//设备编号

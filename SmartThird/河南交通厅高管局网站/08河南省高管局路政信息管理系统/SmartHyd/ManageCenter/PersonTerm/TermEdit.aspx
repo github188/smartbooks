@@ -115,9 +115,13 @@
                                     <asp:ListItem Text="删除" Value="1"></asp:ListItem>
                                 </asp:DropDownList>
                             </td>
-                            <td colspan="2">
+                            <td>
                                 <asp:Label ID="Label9" runat="server" Text="备注信息:"></asp:Label>
                                 <asp:TextBox ID="txtRemark" runat="server" CssClass="input"></asp:TextBox>
+                            </td>
+                            <td>
+                                <asp:Label ID="Label10" runat="server" Text="存放地点:"></asp:Label>
+                                <asp:TextBox ID="TxtPosition" runat="server" CssClass="input"></asp:TextBox>
                             </td>
                         </tr>
                     </tbody>
