@@ -2,7 +2,7 @@
     Inherits="index" %>
 
 <%@ Import Namespace="RoadEntity" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div class="main">
         <%
             RoadDepart depart = (RoadDepart)Session["roadinfo"];   
@@ -26,13 +26,15 @@
             </dd>
         </dl>
         <dl id="contact" class="left wid240 mar_l10">
-            <dt> <p class="right mar_t15 mar_r20" style="margin-top:6px;">
-                    <a href="NewsList.aspx?tid=4">更多>></a></p></dt>
+            <dt>
+                <p class="right mar_t15 mar_r20" style="margin-top: 6px;">
+                    <a href="NewsList.aspx?tid=4">更多>></a></p>
+            </dt>
             <dd>
                 <div class="jianjie_r">
                     <div class="jianjie_l">
                         <div style="margin: 10px 15px;">
-                           <%-- 单位负责人：<%=depart.RD_Manager %><br />
+                            <%-- 单位负责人：<%=depart.RD_Manager %><br />
                             联系电话：<%=depart.RD_Phone %><br />
                             单位传真：<%=depart.RD_Fax %>
                             <br />
@@ -42,18 +44,26 @@
                             <br />
                             地址：<%=depart.RD_Address %>--%>
                             <ul>
-                            <asp:Repeater ID="rptGGGS" runat="server">
-                                <itemtemplate>
-                                <li><span>[<%# PubClass.Tool.Get_MonthAndDay(Eval("N_Date").ToString()) %>]</span><a href='NewsInfo.aspx?nid=<%# Eval("N_ID") %>' target="_blank" title='<%# Eval("N_Title") %>'><%# PubClass.Tool.SubString(Eval("N_Title").ToString(),23) %></a></li>
-                              </itemtemplate>
-                            </asp:Repeater>
-                        </ul>
+                                <asp:Repeater ID="rptGGGS" runat="server">
+                                    <ItemTemplate>
+                                        <li><span>[<%# PubClass.Tool.Get_MonthAndDay(Eval("N_Date").ToString()) %>]</span><a
+                                            href='NewsInfo.aspx?nid=<%# Eval("N_ID") %>' target="_blank" title='<%# Eval("N_Title") %>'><%# PubClass.Tool.SubString(Eval("N_Title").ToString(),23) %></a></li>
+                                    </ItemTemplate>
+                                </asp:Repeater>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </dd>
         </dl>
         <div class="clear">
+        </div>
+    </div>
+    <div class="main">
+        <div style="width: 798px; height: 98px;">
+            <div style="width: 794px; height: 96px; margin-left: auto; margin-right: auto;">
+                <a href="NewsList.aspx?tid=5">
+                    <img src="images/manyigongwuyuan.jpg" width="794" height="96" alt="争创人民满意公务员活动" /></a></div>
         </div>
     </div>
     <div class="main">
@@ -67,9 +77,10 @@
                     <div class="new_l">
                         <ul>
                             <asp:Repeater ID="rptLZFG" runat="server">
-                                <itemtemplate>
-                                <li><span>[<%# PubClass.Tool.Get_MonthAndDay(Eval("N_Date").ToString()) %>]</span><a href='NewsInfo.aspx?nid=<%# Eval("N_ID") %>' target="_blank" title='<%# Eval("N_Title") %>'><%# PubClass.Tool.SubString(Eval("N_Title").ToString(),23) %></a></li>
-                              </itemtemplate>
+                                <ItemTemplate>
+                                    <li><span>[<%# PubClass.Tool.Get_MonthAndDay(Eval("N_Date").ToString()) %>]</span><a
+                                        href='NewsInfo.aspx?nid=<%# Eval("N_ID") %>' target="_blank" title='<%# Eval("N_Title") %>'><%# PubClass.Tool.SubString(Eval("N_Title").ToString(),23) %></a></li>
+                                </ItemTemplate>
                             </asp:Repeater>
                         </ul>
                     </div>
@@ -86,9 +97,10 @@
                     <div class="new_l">
                         <ul>
                             <asp:Repeater ID="rptGZDT" runat="server">
-                                <itemtemplate>
-                                <li><span>[<%# PubClass.Tool.Get_MonthAndDay(Eval("N_Date").ToString()) %>]</span><a href='NewsInfo.aspx?nid=<%# Eval("N_ID") %>' target="_blank" title='<%# Eval("N_Title") %>'><%# PubClass.Tool.SubString(Eval("N_Title").ToString(),23) %></a></li>
-                              </itemtemplate>
+                                <ItemTemplate>
+                                    <li><span>[<%# PubClass.Tool.Get_MonthAndDay(Eval("N_Date").ToString()) %>]</span><a
+                                        href='NewsInfo.aspx?nid=<%# Eval("N_ID") %>' target="_blank" title='<%# Eval("N_Title") %>'><%# PubClass.Tool.SubString(Eval("N_Title").ToString(),23) %></a></li>
+                                </ItemTemplate>
                             </asp:Repeater>
                         </ul>
                     </div>
@@ -115,12 +127,14 @@
                                         <table cellpadding="0" cellspacing="0" border="0" class="gundong2">
                                             <tr>
                                                 <asp:Repeater ID="rptRongYu" runat="server">
-                                                    <itemtemplate>
-                           <td>
-                             <a href='NewsImg/<%# Eval("N_ImgPath") %>' rel="lightbox[rongyu1]" title='标题：<%# Eval("N_Title") %><br>简介：<%# Eval("N_Content") %>'><img src='NewsImg/<%# Eval("N_ImgView") %>'  alt='标题：<%# Eval("N_Title") %><br>简介：<%# Eval("N_Content") %>' /></a><br />
-                             <a href='NewsImg/<%# Eval("N_ImgPath") %>' rel="lightbox[rongyu2]" title='标题：<%# Eval("N_Title") %><br>简介：<%# Eval("N_Content") %>'><%# PubClass.Tool.SubString(Eval("N_Title").ToString(),9) %></a>
-                            </td>
-                          </itemtemplate>
+                                                    <ItemTemplate>
+                                                        <td>
+                                                            <a href='NewsImg/<%# Eval("N_ImgPath") %>' rel="lightbox[rongyu1]" title='标题：<%# Eval("N_Title") %><br>简介：<%# Eval("N_Content") %>'>
+                                                                <img src='NewsImg/<%# Eval("N_ImgView") %>' alt='标题：<%# Eval("N_Title") %><br>简介：<%# Eval("N_Content") %>' /></a><br />
+                                                            <a href='NewsImg/<%# Eval("N_ImgPath") %>' rel="lightbox[rongyu2]" title='标题：<%# Eval("N_Title") %><br>简介：<%# Eval("N_Content") %>'>
+                                                                <%# PubClass.Tool.SubString(Eval("N_Title").ToString(),9) %></a>
+                                                        </td>
+                                                    </ItemTemplate>
                                                 </asp:Repeater>
                                             </tr>
                                         </table>

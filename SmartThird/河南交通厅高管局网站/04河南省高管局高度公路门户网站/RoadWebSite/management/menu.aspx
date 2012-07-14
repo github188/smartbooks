@@ -64,8 +64,8 @@
         </div>
         <%
 }
-           else if (info.U_IsSuper == 0)
-           { 
+            else if (info.U_IsSuper == 0)
+            { 
         %>
         <div class="menu_default" id="item4" onclick='ExchangeItem("item4","itemcontainer4")'>
             路政单位信息管理</div>
@@ -84,6 +84,8 @@
                 <a href="ArticleMgr.aspx?tid=3" target="mainFrame">单位荣誉</a></div>
             <div class="subitem_default" id="item54" onclick='ExchangeSubItem("item5",3,4)'>
                 <a href="ArticleMgr.aspx?tid=4" target="mainFrame">公告公示</a></div>
+            <div class="subitem_default" id="item55" onclick='ExchangeSubItem("item5",3,5)'>
+                <a href="ArticleMgr.aspx?tid=5" target="mainFrame">争创人民满意公务员</a></div>
         </div>
         <div class="menu_default" id="item6" onclick='ExchangeItem("item6","itemcontainer6")'>
             系统设置</div>

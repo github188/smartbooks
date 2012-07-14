@@ -353,7 +353,8 @@
       <ul class="lzlist" >
           <asp:Repeater ID="rptLZ" runat="server">
           <ItemTemplate>
-             <li><a href='http://road.hngsgl.info/CheckToRoad.aspx?roadid=<%# Eval("RD_ID") %>' target="_blank"><%# Eval("RD_Name") %></a></li>
+           
+             <li><a href='http://localhost:1088/RoadWebSite/CheckToRoad.aspx?roadid=<%# Eval("RD_ID") %>' target="_blank"><%# Eval("RD_Name") %></a></li>
           </ItemTemplate>
           </asp:Repeater>
         

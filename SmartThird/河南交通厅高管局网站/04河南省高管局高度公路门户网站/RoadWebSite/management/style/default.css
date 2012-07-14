@@ -128,7 +128,7 @@ a:hover{ color:#F00; text-decoration:none}
 .menu_hover{width:167px;height:28px;line-height:28px;background:url(../images/item.gif) no-repeat; padding-left:20px; font-weight:bold; cursor:hand;}
 .menu_container{width:167px; background:url(../images/item_shadow.gif) no-repeat; padding-top:5px; overflow:hidden; }
 
-.subitem_default{ width:167px; height:24px; line-height:24px; background:url(../images/subitem_default.gif) no-repeat; padding-left:50px; font-weight:normal;}
+.subitem_default{ width:167px; height:24px; line-height:24px; background:url(../images/subitem_default.gif) no-repeat;  font-weight:normal; text-align:center;}
 .subitem_default a{ color:#000; text-decoration:none;}
 .subitem_default a:hover{ color:#00F; text-decoration:none; font-weight:bold;}
 .subitem_hover{ width:167px; height:24px; line-height:24px; background:url(../images/subitem_hover.jpg) no-repeat; padding-left:50px; font-weight:bold;}
