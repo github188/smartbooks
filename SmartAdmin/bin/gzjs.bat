@@ -1,4 +1,4 @@
-cd D:\workspace\UI\dev\dwz-ria\bin
+cd E:\SmartAdmin\bin
 
 REM -------------- start package javascript --------------
 
