@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>index</title>
+		<meta name="author" content="Administrator" />
+		
+		<link rel="icon" href="favicon.ico" mce_href="favicon.ico" type="image/x-icon">
+		
+		<link type="text/css" rel="stylesheet" href="jquery-easyui-1.3/themes/default/easyui.css" />
+		<link type="text/css" rel="stylesheet" href="jquery-easyui-1.3/themes/icon.css" />
+		<script type="text/javascript" src="jquery-easyui-1.3/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="jquery-easyui-1.3/jquery.easyui.min.js"></script>
+		<script type="text/javascript" src="jquery-easyui-1.3/easyloader.js"></script>
+		<script type="text/javascript" src="jquery-easyui-1.3/locale/easyui-lang-zh_CN.js"></script>
+
+		<script>
+			$(function() {
+
+				//show progress
+				var win = $.messager.progress({
+					title : '请您稍候',
+					msg : '正在努力加载页面...'
+				});
+				setTimeout(function() {
+					$.messager.progress('close');
+				}, 3000)
+
+				//show alert
+				$.messager.show({
+					title : '系统提示',
+					msg : '欢迎登陆，管理员。上次登录时间：2012-12-30 12:30:35',
+					timeout : 12000,
+					showType : 'slide'
+				});
+
+				//load calendar
+				using('calendar', function() {
+					$('#cc').calendar({
+						width : 175,
+						height : 180
+					});
+				});
+			})
+
+		</script>
+
+	</head>
+	<body class="easyui-layout">
+		<div data-options="region:'north'" style="overflow:hidden;padding:10px">
+			<h2>Web Site logo baner.</h2>
+		</div>
+		<div data-options="region:'east',iconCls:'icon-reload',split:true" title="快捷菜单" style="width:180px;">
+			<div id="cc"></div>
+		</div>
+		<div data-options="region:'west',split:true" title="功能菜单" style="width:280px;padding1:1px;overflow:hidden;">
+			<div class="easyui-accordion" data-options="fit:true,border:false">
+				<div title="系统管理" style="padding:10px;overflow:auto;">
+					<ul id="tt1" class="easyui-tree" data-options="animate:true,dnd:true">
+						<li>
+							<span>网站设置</span>
+							<ul>
+								<li>
+									<span>基础配置</span>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<span>用户管理</span>
+							<ul>
+								<li>
+									<span>添加用户</span>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div data-options="region:'center'" title="欢迎您，超级管理员。" style="overflow:hidden;">
+			<div class="easyui-tabs" data-options="fit:true,border:false">
+				<div title="我的主页" style="padding:20px;overflow:hidden;">
+					今天是2013年01月01日，星期一。
+				</div>
+				<div title="你的主页" style="padding:20px;overflow:hidden;">
+					今天是2014年01月01日，星期一。
+				</div>
+			</div>
+		</div>
+
+	</body>
+</html>
+
