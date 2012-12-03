@@ -15,14 +15,18 @@ public partial class AdminMgr_AddPicNews : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (!IsPostBack) {
+        if (!IsPostBack)
+        {
             CommonFunction.isLoginCheck();
+            txtdate.Text = DateTime.Now.ToString("yyyy-MM-dd");
             ViewState["strAction"] = Request.QueryString["action"].ToString();
-            if (Request.QueryString["nid"] != null) {
-               int nid = Convert.ToInt32(Request.QueryString["nid"]);
-               ViewState["nid"] = nid;
+            if (Request.QueryString["nid"] != null)
+            {
+                int nid = Convert.ToInt32(Request.QueryString["nid"]);
+                ViewState["nid"] = nid;
                 DataTable dt = ServiceNewService.Get_News(nid);
-                txtTitle.Text = CommonFunction._GetMidInfo(dt.Rows[0]["N_Title"].ToString(),"(",")");
+                txtTitle.Text = CommonFunction._GetMidInfo(dt.Rows[0]["N_Title"].ToString(), "(", ")");
+                txtdate.Text = DateTime.Parse(dt.Rows[0]["N_Time"].ToString()).ToString("yyyy-MM-dd");
                 ViewState["strContent"] = dt.Rows[0]["N_Content"].ToString();
                 ViewState["VImgURL"] = CommonFunction._GetMidInfo(dt.Rows[0]["N_Title"].ToString(), "[", "]");
                 ViewState["VVImgURL"] = CommonFunction._GetMidInfo(dt.Rows[0]["N_Title"].ToString(), "{", "}");
@@ -57,6 +61,7 @@ public partial class AdminMgr_AddPicNews : System.Web.UI.Page
         news.N_From = "本站原创";
         news.N_SID = ((UserInfo)Session["ServiceUser"]).U_SID;
         news.N_NewsType = "6";
+        news.N_Time = DateTime.Parse(txtdate.Text.Trim());
         if (ViewState["strAction"].ToString() == "update")
         {
             news.N_ID = Convert.ToInt32(ViewState["nid"]);
