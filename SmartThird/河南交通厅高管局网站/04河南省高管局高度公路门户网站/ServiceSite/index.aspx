@@ -262,8 +262,7 @@
                                                 <%# Eval("N_Content") %><span>[<%# PubClass.Tool.Get_ShortDate(Eval("N_Time").ToString())%>]</span></li>
                                         </ItemTemplate>
                                     </asp:Repeater>
-                                </ul>
-                            </marquee>
+                                </ul></marquee>
                         </div>
                         </dd>
                     <dd class="gonggao_b">

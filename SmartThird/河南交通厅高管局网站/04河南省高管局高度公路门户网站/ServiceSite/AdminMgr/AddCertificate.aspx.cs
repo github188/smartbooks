@@ -37,6 +37,7 @@ public partial class AdminMgr_AddCertificate : System.Web.UI.Page
             news.N_Title ="["+vfileName+"]{"+vvfileName+"}";
             news.N_Content = txtRemark.Text;
             news.N_SID = ((UserInfo)Session["ServiceUser"]).U_SID;
+            news.N_Time = DateTime.Now;
             news.N_NewsType = "9";
             news.N_From = "本站原创";
             ServiceNewService.Insert_News(news);

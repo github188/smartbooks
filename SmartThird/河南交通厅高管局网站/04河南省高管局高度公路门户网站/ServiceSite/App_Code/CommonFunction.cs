@@ -352,7 +352,7 @@ public class CommonFunction
             int pos1 = strVal.IndexOf(start);
             int pos2 = strVal.IndexOf(end);
             pos1 = pos1 + 1;
-            pos2 = pos2 - pos1 - 1;
+            pos2 = pos2 - pos1;
 
             string mid = "";
             if (strVal.Length > pos1 && strVal.Length > pos2 + pos1 && pos1>0 && pos2>0)
